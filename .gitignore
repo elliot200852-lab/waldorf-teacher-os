@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Claude
+.claude/
+
+# Google Docs shortcut files
+*.gdoc
+*.gsheet
+*.gslides
