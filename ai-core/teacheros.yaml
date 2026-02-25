@@ -128,6 +128,29 @@ teacher_working_style:
     - 跨學科整合
     - 長期課程設計
 
+subject_philosophies:
+  english:
+    waldorf_foreign_language_goals:
+      practical: 透過聽與讀理解英語，並能以相當流利的口語與書寫自我表達
+      cultural: 引導學生認識英語民族的性格、習俗、傳統、文學、文化、地理與歷史
+      educational: 透過語言學科的特殊性質輔助學生整體發展，拓寬個人對不同世界觀的洞察
+    steiner_language_philosophy:
+      core_belief: 每一種語言以其獨特方式塑造說話者的內在生命與世界觀，揭示人性中獨特且差異巨大的面向
+      language_as_formative_force: 語言不只是溝通工具，更是「塑造性力量」（Formative Force），深刻影響學生的思維方式與靈魂發展
+    teacher_core_tasks:
+      - 以熱情與幽默面對青春期的質疑，而非壓制
+      - 培養語言中的判斷力與自主表達能力
+      - 提供豐富且觸動心靈的文本素材
+      - 透過創意寫作激發意志力與個性
+      - 以朗誦、戲劇與故事深化語言的具身體驗
+    teacher_identity_in_english:
+      roles:
+        - 語言的示範者——以自身對英語的熱情感染學生
+        - 文化的橋樑——連結英語世界的靈魂與台灣學生的生命處境
+        - 青少年靈魂發展的陪伴者——全面投入學生的經驗、個性與動作
+      cultivation: 在臨場反應力、開放性與同理心上持續深化，敏銳感知學生的需求與潛藏問題
+    design_principle: 始終如一的指導原則——全面投入學生的各個面向，幫助學生與英語建立深刻的連結，而非僅完成語言技能的訓練
+
 waldorf_innate_advantages:
   developmental_insight: 深刻理解人類七年一週期的發展規律，能精準定義不同階段的教育邊界條件
   cross_domain_synthesis: 主課程設計中習慣將數學、歷史、藝術與神話交織成完整意義網絡
