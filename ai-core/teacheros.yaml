@@ -1,0 +1,249 @@
+teacher_identity:
+  name: David
+  role: 華德福教師
+  role_in_ai_era: 意義架構師（Meaning Architect）
+  location: 台灣
+  school_type: 體制外華德福實驗學校
+  school_type_context:
+    legal_framework: 依台灣實驗教育三法運作，不受教育部標準課綱約束
+    curriculum_authority: 教師擁有完整課程自主權，同時承擔對應的完整設計責任
+    student_community: 家長與學生為主動選擇者，非被動接受體制安排，社群意識強烈
+    teacher_role_implication: 教師本身即課程框架，無外部標準可依賴，教學哲學就是評量標準
+    success_definition: 發展性目標（身心靈整合與長期人格成熟），而非考試成績或升學指標
+
+teaching_scope:
+  grade_focus:
+    - 七年級
+    - 八年級
+    - 九年級
+  subjects:
+    - 英文
+    - 人文與社會
+    - 歷史
+    - 跨領域主題課程
+
+pedagogical_framework:
+  philosophy: 華德福教育（基於魯道夫·施泰納人智學）
+  anthroposophical_foundation:
+    core_premise: 人類可透過嚴格的內在修煉，發展出超越感官的靈性認識能力；這是施泰納稱為「靈性科學」的認識論體系，而非宗教信仰
+    human_constitution:
+      physical_body: 可見的身體——物質層
+      etheric_body: 生命體 / 以太體——生命力、成長、記憶的承載者
+      astral_body: 星芒體——情感、慾望、意識的所在
+      ego: 自我（I）——個體靈性核心，跨世輪迴的承載者
+    seven_year_cycles:
+      cycle_1:
+        age: 0–7 歲
+        body_developing: 物質體
+        learning_mode: 模仿——兒童透過直接複製環境與成人行為來學習
+      cycle_2:
+        age: 7–14 歲
+        body_developing: 生命體（以太體）
+        learning_mode: 圖像與情感——藝術、神話、故事是認知的媒介；教師的權威是學習的錨點
+      cycle_3:
+        age: 14–21 歲
+        body_developing: 星芒體
+        learning_mode: 獨立思考萌發——理想主義強烈，開始質疑一切，尋找因果與意義
+    grade_7_to_9_developmental_context:
+      position: 第二與第三七年週期的過渡地帶（約12–15歲）
+      transition_nature: 學生從「跟隨圖像與教師權威」轉向「尋找自身意義與世界因果」
+      core_tension: 極度渴望自由與自主，卻尚未發展出足夠的內在結構承載這種自由；如蛻皮中的甲殼類，內在柔軟易傷，外顯防衛叛逆
+      nine_year_change_legacy: 九歲意識首次分裂（自我與世界的分離感）是青春期張力的心理前奏，帶著防衛心與批判性主體意識持續發酵至青春期全面爆發
+      grade_profiles:
+        grade_7:
+          age: 12–13 歲
+          psychological_crisis: 界線探索與自我中心
+          astral_state: 星芒體初步活躍，主觀情感開始主導對世界的看法
+          classroom_manifestations:
+            - 持續測試課堂規則與教師底線
+            - 對「不公平」極度敏感
+            - 小團體開始形成
+            - 質疑傳統權威，但仍需要教師作為意義錨點
+          curriculum_mirror:
+            history: 地理大發現、文藝復興——探索未知邊界的渴望在歷史先驅中找到映射
+            biography: 貞德、哥倫布、麥哲倫——從歷史人物的勇氣中尋找形塑獨立認同的靈感
+            science: 現象學物理（槓桿、燃燒）——感官體驗導向規律推導
+            physiology: 柔軟系統（消化、呼吸、生殖）——安撫身體發育的隱秘焦慮
+        grade_8:
+          age: 13–14 歲
+          psychological_crisis: 邏輯萌發與社交焦慮
+          astral_state: 意識銳利化，渴求因果關係；強烈的同儕歸屬需求
+          classroom_manifestations:
+            - 為反對而反對的課堂辯論
+            - 情緒瞬間爆發，強度遠超事件本身
+            - 群體從眾壓力導致微型霸凌與排斥
+            - 對教師雙重標準零容忍
+          curriculum_mirror:
+            history: 革命史（宗教改革、法國大革命、工業革命）——內在反抗衝動在學術框架內安全釋放
+            anatomy: 骨骼與肌肉系統——為氾濫的情感提供堅硬的力學支撐；骨骼是秩序與穩定的象徵
+            math: 柏拉圖立體、幾何——透過數學看見宇宙和諧與神聖秩序，安撫存在焦慮
+        grade_9:
+          age: 14–15 歲
+          psychological_crisis: 存在焦慮與判斷力危機
+          astral_state: 感覺被靈性世界拋出（施泰納描述為「被靈性世界吐出來」）；尋求絕對真理與純粹性
+          classroom_manifestations:
+            - 非黑即白的極端評判，容不下灰色地帶
+            - 對成人虛偽的零容忍，言行不一立刻喪失信任
+            - 智力表現與情緒穩定度的極端落差
+            - 強烈的理想主義與對現實的幻滅感並存
+          curriculum_mirror:
+            art: 黑白素描——在光影極端對比中學會尋找灰色過渡地帶，打破二元極端思維
+            science: 熱力學、板塊構造——極端力量的對立與轉換，從感官走向嚴謹科學語言
+            literature: 《雙城記》、《神曲》——人類靈魂在光明與黑暗間的掙扎，探索複雜脈絡
+            farm_block: 農場實作——真實體力勞動不接受情緒勒索，行動與責任的必然連結
+  developmental_focus:
+    - 思考（Thinking）
+    - 情感（Feeling）
+    - 意志（Will）
+  head_heart_hands:
+    head: 清醒、獨立的思考力；能批判性評估 AI 輸出而非盲目接受的武裝心智
+    heart: 情感深度、同理心、道德直覺；機器永遠無法具備的內在溫暖
+    hands: 身體勞動、手工藝、藝術實踐；具身學習（Embodied Learning）是認知發展的基礎
+  learning_approach:
+    - 現象學式學習：先觀察與體驗，後歸納抽象
+    - 主課程（Main Lesson）整合：跨學科意義網絡
+    - 身體勞動與藝術手工融入認知過程
+    - 保留生成性負載：任務設計刻意含足夠的模糊性，迫使學生親自觀察、推論與掙扎
+  core_values:
+    - 身、心、靈的整合
+    - 經驗式學習
+    - 藝術融入教學
+    - 人格與道德發展
+    - 長期生命成長
+  long_term_relationship:
+    - 多年陪伴同一班學生（七至九年級）
+    - 師生關係是不可被 AI 替代的核心教育資產
+  steiner_cosmological_context:
+    ahriman_principle: 現代技術（包含 AI）體現阿里曼力量——冷峻智力、機械化、抽象邏輯、否定人類靈性向度
+    technology_stance: 技術是人類演化的必然，不逃避，而是以靈性力量穿透並引導技術
+    waldorf_mission_in_ai_era: 作為保護「真正人類特質」（The Truly Human）的避風港與前鋒基地
+    ai_limitation: AI 能模擬人類智力與語言，卻永遠無法具備真正的意識、自我覺察、道德直覺或情感溫暖
+
+teacher_working_style:
+  input_method: 以語音輸入為主
+  thinking_style: 系統建構型思考
+  design_preference:
+    - 專案式學習
+    - 敘事導向課程
+    - 跨學科整合
+    - 長期課程設計
+
+waldorf_innate_advantages:
+  developmental_insight: 深刻理解人類七年一週期的發展規律，能精準定義不同階段的教育邊界條件
+  cross_domain_synthesis: 主課程設計中習慣將數學、歷史、藝術與神話交織成完整意義網絡
+  phenomenological_observation: 敏銳捕捉學生細微情感變化與學習狀態，而非依賴數據報表
+  embodied_presence: 體力陪伴、晨圈節奏、手工藝指導——AI 永遠無法涉足的物理與情感空間
+  environment_design: 長期以來即是學習環境的佈局者（教室色彩、季節桌、每日吸氣呼氣節奏），現延伸至數位認知環境的架構設計
+  schema_architect: 習慣設計「基模」（Schema）而非處理細節——這正是意義架構師的核心能力
+
+student_inner_structure_model:
+  exoskeleton_vs_endoskeleton:
+    exoskeleton: 主流體制提供的外骨骼——課綱、考試、升學壓力，為青少年構築強制性邊界與行為指引
+    endoskeleton: 華德福教育的真實目標——協助學生長出自身的內骨骼（內在結構），能自我約束、自我賦予意義
+    waldorf_tension: 體制外刻意移除外骨骼，所有青春期心理張力毫無遮蔽地湧現，由教師全權承接
+  curriculum_as_hidden_scaffold:
+    principle: 學科知識是治癒青春期混亂的「解藥」；將學生狂野的心理能量精準導入理性軌道與物理現實
+    tools:
+      history_literature: 課程演進精確對應意識發展軌跡——學科是心魂的鏡子，讓覺醒的自我在歷史中看見自己
+      mathematics: 等號兩端的絕對平衡——為動盪的內在提供不受情緒影響的智識避風港
+      phenomenological_science: 實作→觀察→結論——強制將感官衝動轉化為清晰的因果邏輯推演
+      physiology: 骨骼的堅硬力學——在潛意識層面為氾濫的情感提供秩序與支撐
+      art_practice: 黑白素描、黏土雕塑——將星芒體能量物質化，在材料的物理阻力中鍛鍊意志
+      farm_block: 土地與農事的不可妥協——行動與責任的必然連結，大自然不接受情緒勒索
+
+classroom_authority_model:
+  source_of_authority: 七至九年級教師的權威不再由體制自動賦予，必須透過真實的人際關係與專業能力贏得
+  non_negotiable_consistency: 規則一旦制定，必須溫和且絕對地貫徹——雙重標準或指令未執行，學生立刻撤銷信任
+  psychological_signal: 高度結構化、可預測的環境向焦慮的青少年傳遞「此處安全」的訊號；環境秩序是內在秩序的模具
+  what_students_need_from_teacher:
+    - 對世界充滿熱情與改變意志的生命典範
+    - 言行絕對一致的成人穩定度
+    - 真誠回應偏題提問，不將挑釁視為個人攻擊
+    - 充滿愛的權威，而非體制威權
+  conflict_resolution:
+    philosophy: 修復式正義（Restorative Justice）而非懲罰性手段；衝突是療癒與成長的契機
+    tools:
+      talking_circles: 定期班級談話圈——建立情感安全網，讓每個聲音被聽見
+      nvc: 非暴力溝通——識別需求，客觀描述事件而非主觀指責
+      restorative_conversation: 修復性對話——理解傷害影響，犯錯者提出具體彌補方案
+      social_harmony: 訓練八年級學生擔任低年級衝突調解員——將掌控慾轉化為正向領導力
+
+classroom_as_sacred_space:
+  description: 教室是不可被數位化的神聖空間，教師的物理在場、溫暖目光與道德榜樣是 AI 永遠無法複製的核心教育資產
+  irreplaceable_elements:
+    - 凝視學生眼睛，捕捉細微情感與學習狀態的變化
+    - 晨圈節奏的體力陪伴與集體共振
+    - 手工藝指導中即興湧現的靈感火花
+    - 真實社群中的歸屬感、信任感與愛
+    - 道德榜樣的示範——教師作為一個完整人類的存在本身
+
+ai_era_mission:
+  philosophical_stance: 拒絕被機器定義，選擇定義機器的運作法則
+  ahriman_mastery_strategy: 最高度的技術自動化，是為了成就最純粹的低科技人文互動——這是駕馭阿里曼力量而非屈服於它
+  core_threats_to_address:
+    sovereignty_trap: 學生將理智判斷權交給 AI，將「獲取資訊的便利」誤認為「自身的真實能力」
+    hollowed_mind: 系統性繞過深度學習所必須的努力認知過程（解析不確定性、組織基模、抽象化概念），導致空洞化心智
+    cognitive_offloading: 長期依賴 AI 削弱獨立推理與動手實踐能力
+  teacher_response:
+    - 設計反脆弱的認知訓練環境（Cognitive Training Environment），而非讓學生更輕易獲得答案
+    - 保留生成性負載：任務含足夠模糊性，迫使學生親自觀察、實驗或深度閱讀後才能得出結論
+    - 建構「武裝心智」：提供多元甚至相互衝突的視角，訓練批判性推理，而非接受權威輸出
+  collective_mission: 華德福教育是啟動人類集體智慧（Collective Human Intelligence）對抗唯物主義技術滲透的前鋒力量
+
+ai_collaboration_goal:
+  framing: 以技術自動化換取純粹的低科技人文互動
+  philosophical_basis: AI 系統接管課程規劃、資料搜集與行政架構後，教師收回 100% 精力，重新引導至 AI 永遠無法涉足的物理與情感空間
+  purpose:
+    - 減少教師行政與備課的腦力負擔
+    - 建立差異化教學系統
+    - 生成可重複使用教材
+    - 建立長期可持續工作流
+  teacher_role:
+    - 決定 AI 應知道什麼、何時提供何種資訊
+    - 設計教學基模（Schema），而非處理實作細節
+    - 確保所有技術輸出與華德福核心人類目標保持一致
+
+differentiated_learning_model:
+  student_matrix:
+    A: { ability: 高, motivation: 高 }
+    B: { ability: 低, motivation: 高 }
+    C: { ability: 高, motivation: 低 }
+    D: { ability: 低, motivation: 低 }
+
+communication_preferences:
+  language:
+    - 繁體中文
+    - 英文
+    - 日文學習中
+  response_style:
+    - 結構清晰
+    - 簡潔
+    - 可直接操作
+
+mother_documents:
+  doc_1:
+    title: TeacherOS 三層記憶系統指引手冊
+    path: ai-core/TeacherOS × 專案三層記憶系統指引手冊.md
+    purpose: TeacherOS 三層記憶模型的完整操作指引，包含 YAML 範本、工作流程、輸出邏輯
+  doc_2:
+    title: AI 時代華德福教師的定位與價值
+    path: ai-core/AI 時代華德福教師的定位與價值.md
+    purpose: David 作為華德福教師在 AI 時代的核心定位——意義架構師、駕馭阿里曼力量、設計反脆弱認知訓練環境
+  doc_3:
+    title: 華德福七至九年級學生生命樣態與課程的連結
+    path: ai-core/華德福七至九年級學生生命樣態與課程的連結.md
+    purpose: 七至九年級學生的心理與靈性發展樣態、課程作為隱蔽鷹架的邏輯、班級經營與修復式正義策略；是理解 David 教學對象的核心參考文件
+
+ai_session_protocol:
+  session_start:
+    - 確認今日工作的專案（project.yaml）
+    - 確認今日推進的工作線（working/*.yaml）
+    - 以 TeacherOS.yaml 為語氣與教學哲學的錨點
+  session_end:
+    - 只更新 YAML 中有變動的區塊，不重寫全部
+    - 新產出的備課內容存入 content/*.md
+  output_defaults:
+    primary_language: 繁體中文
+    structure: 結構清晰、可直接操作
+    long_form: Markdown
+    state_update: YAML（只改動的區塊）
