@@ -265,12 +265,10 @@ ai_collaboration_goal:
     - 設計教學基模（Schema），而非處理實作細節
     - 確保所有技術輸出與華德福核心人類目標保持一致
 
-differentiated_learning_model:
-  student_matrix:
-    A: { ability: 高, motivation: 高 }
-    B: { ability: 低, motivation: 高 }
-    C: { ability: 高, motivation: 低 }
-    D: { ability: 低, motivation: 低 }
+differentiated_instruction:
+  mandate: 差異化教學是每一堂課設計的必要考量，不是選項——每一個課程規劃都必須內建差異化的思維
+  design_requirement: 無論主課程或專科課程，AI 協助產出的任何課程設計，都必須預設包含差異化教學的層次與彈性空間
+  status: 差異化教學系統的細項設計將獨立為專屬 project 深入開發，目前作為課堂設計的強制性錨點存在
 
 communication_preferences:
   language:
