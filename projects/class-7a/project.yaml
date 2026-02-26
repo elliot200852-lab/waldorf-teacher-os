@@ -1,0 +1,15 @@
+class: 7A
+grade: 七年級
+teacher_role: 英文科任教師
+di_framework_ref: projects/_di-framework/project.yaml
+
+subjects_taught:
+  english:
+    type: 英文專科
+    weekly_sessions: 4
+
+current_semester: 2025-2026
+current_focus: 待確認
+next_steps:
+  - 建立 7A 學生 DI 樣態（students.yaml）
+  - 確認本學期英文課程主題

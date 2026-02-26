@@ -1,0 +1,12 @@
+class: 9C
+subject: 英文
+di_framework_ref: projects/_di-framework/project.yaml
+
+assessment_philosophy: >
+  英文評量涵蓋聽、說、讀、寫四個面向。
+  差異化評量允許學生以不同深度與形式展現語言能力，
+  避免單一標準掩蓋不同類型學習者的真實能力。
+
+current_assessments: []
+next_steps:
+  - 確認第一單元後設計對應評量

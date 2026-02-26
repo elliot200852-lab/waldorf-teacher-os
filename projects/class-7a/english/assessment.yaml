@@ -1,0 +1,11 @@
+class: 7A
+subject: 英文
+di_framework_ref: projects/_di-framework/project.yaml
+
+assessment_philosophy: >
+  差異化評量允許學生以不同深度與形式展現語言能力。
+  七年級學生對公平性高度敏感，評量設計需讓每個人都有機會展現自己的強項。
+
+current_assessments: []
+next_steps:
+  - 確認第一單元後設計對應評量

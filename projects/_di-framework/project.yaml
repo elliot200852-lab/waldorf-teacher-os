@@ -1,0 +1,37 @@
+project: 差異化教學框架
+type: shared_framework
+status: in_development
+description: >
+  跨班級、跨科目的差異化教學方法論系統。
+  這是所有班級（7A、8A、9C）與所有科目課程設計的共用基礎框架。
+  任何課程設計工作開始前，必須載入此框架作為設計依據。
+
+applies_to:
+  - class-9c（主課程 + 英文）
+  - class-8a（英文）
+  - class-7a（英文）
+
+core_principle: >
+  差異化教學不是補救教學，而是預設學生之間存在差異，
+  並在課程設計階段就主動為不同能力與動機的學生建立多層次的學習路徑。
+
+student_di_matrix:
+  A: { ability: 高, motivation: 高, strategy: 延伸挑戰、自主探究、引導同儕 }
+  B: { ability: 低, motivation: 高, strategy: 鷹架支持、小步驟成功經驗、建立自信 }
+  C: { ability: 高, motivation: 低, strategy: 提升意義感、連結個人興趣、減少無效重複 }
+  D: { ability: 低, motivation: 低, strategy: 降低焦慮、建立安全感、從具體操作切入 }
+
+design_layers:
+  content: 同樣主題，不同深度的素材供不同學生使用
+  process: 同樣目標，不同的學習路徑與支持程度
+  product: 同樣學習成果，允許不同的表達與輸出形式
+  environment: 調整教室節奏、座位安排與師生互動方式
+
+current_focus: 建立各科目的 DI 設計模板與學生樣態評估工具
+next_steps:
+  - 定義各班級 A/B/C/D 學生的具體樣態
+  - 建立英文課 DI 設計模板
+  - 建立主課程 DI 設計模板
+  - 發展差異化評量框架
+
+content_output: projects/_di-framework/content/

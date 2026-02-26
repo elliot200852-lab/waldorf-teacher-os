@@ -1,0 +1,12 @@
+class: 9C
+subject: 主課程
+di_framework_ref: projects/_di-framework/project.yaml
+
+assessment_philosophy: >
+  華德福評量不以標準化測驗為主，而是觀察學生的整體發展、
+  主課本品質、口語表達與自我反思能力。
+  差異化評量允許不同形式的成果展現。
+
+current_assessments: []
+next_steps:
+  - 確認主課程主題後設計對應評量方式
