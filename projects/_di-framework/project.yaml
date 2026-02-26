@@ -1,37 +1,132 @@
 project: 差異化教學框架
+code: _di-framework
 type: shared_framework
-status: in_development
-description: >
-  跨班級、跨科目的差異化教學方法論系統。
-  這是所有班級（7A、8A、9C）與所有科目課程設計的共用基礎框架。
-  任何課程設計工作開始前，必須載入此框架作為設計依據。
+status: active_development
+scale: 全校推廣（目前以 class-9c / class-8a / class-7a 為試點）
 
-applies_to:
-  - class-9c（主課程 + 英文）
-  - class-8a（英文）
-  - class-7a（英文）
+mother_document:
+  title: 華德福差異化教學模組：系統邏輯與關聯矩陣
+  path: projects/_di-framework/content/system-logic-map.md
+
+purpose: >
+  跨班級、跨科目的差異化教學方法論系統。
+  所有班級與科目課程設計的共用基礎框架。
+  每次工作開始前必須載入，作為課程設計的規則底層。
+  長期目標：建立可供全校教師使用的 DI 設計系統，
+  並發展為 AI 協作介面，協助教師完成差異化課程設計。
 
 core_principle: >
   差異化教學不是補救教學，而是預設學生之間存在差異，
-  並在課程設計階段就主動為不同能力與動機的學生建立多層次的學習路徑。
+  在課程設計階段主動為不同學習狀態的學生建立多層次的學習路徑。
 
-student_di_matrix:
-  A: { ability: 高, motivation: 高, strategy: 延伸挑戰、自主探究、引導同儕 }
-  B: { ability: 低, motivation: 高, strategy: 鷹架支持、小步驟成功經驗、建立自信 }
-  C: { ability: 高, motivation: 低, strategy: 提升意義感、連結個人興趣、減少無效重複 }
-  D: { ability: 低, motivation: 低, strategy: 降低焦慮、建立安全感、從具體操作切入 }
+# ── 兩個獨立軸線 ──────────────────────────────────────────
+
+di_axes:
+
+  axis_learning_strengths:
+    name: 學習優勢
+    description: >
+      學生認知與表達的偏好模式，與能力程度無關，為獨立軸線。
+      每次課程設計與評量應涵蓋至少 2–3 個優勢入口，
+      確保不同偏好的學生都有進入學習的管道。
+    dimensions:
+      - 語言型（閱讀、文字、口語討論）
+      - 圖像型（圖表、視覺化、素描記錄）
+      - 動作型（身體移動、實作、手工）
+      - 藝術型（音樂、繪畫、戲劇、詩歌）
+    granularity: >
+      班級層次。students.yaml 記錄各班主要學習優勢的人數分布，
+      不追蹤個別學生（特殊狀況見 special_cases）。
+
+  axis_ability_motivation:
+    name: 能力 × 動機矩陣
+    description: >
+      每位學生都有一個 DI 類型（A/B/C/D），代表其在特定科目中的能力與動機狀態。
+      「高能力」與「高動機」的具體定義因科目而異，須在各班 students.yaml
+      的科目段落中另行定義。
+    matrix:
+      A: { ability: 高, motivation: 高, strategy: 延伸挑戰、自主探究、引導同儕 }
+      B: { ability: 低, motivation: 高, strategy: 鷹架支持、小步驟成功經驗、建立自信 }
+      C: { ability: 高, motivation: 低, strategy: 提升意義感、連結個人興趣、減少無效重複 }
+      D: { ability: 低, motivation: 低, strategy: 降低焦慮、建立安全感、從具體操作切入 }
+    dynamic_labeling:
+      principle: >
+        學生的 DI 類型是動態標籤，應隨教師觀察而更新；
+        同一學生在不同科目可有不同類型。
+      default_behavior: 教師未手動更新時，系統維持上次記錄的類型不變。
+      update_trigger: 教師主動觀察到學生狀態轉變時手動調整，記錄於 last_updated。
+    definition_location: >
+      各科目「高能力」與「高動機」的定義存放於各班
+      students.yaml → subject_contexts → {科目} → ability_definition /
+      motivation_definition。
+
+# ── 模板強制要求（所有課程設計與評量必須同時滿足）──────────────
+
+template_requirements:
+  mandatory_axes:
+    - axis: 學習優勢（axis_learning_strengths）
+      requirement: >
+        每一份課程設計與每一項評量，必須涵蓋至少 2–3 種學習優勢入口。
+        四種類型（語言型 / 圖像型 / 動作型 / 藝術型）不需要全覆蓋，
+        但不可只有單一形式。這是所有模板的硬性結構要求。
+      applies_to: [課程設計, 評量設計]
+    - axis: 能力 × 動機矩陣（axis_ability_motivation）
+      requirement: >
+        每一份課程設計必須針對 A/B/C/D 四類學生提供差異化任務或支持。
+        至少區分高挑戰（A/C）與鷹架版本（B/D）兩個層次；
+        條件允許時進一步細化為四層。
+      applies_to: [課程設計, 評量設計]
+  checklist_note: >
+    未來的 AI 協作介面將以此 mandatory_axes 為核對清單，
+    確保每份產出模板都符合雙軸要求才能完成。
+
+# ── 設計層次 ─────────────────────────────────────────────
 
 design_layers:
-  content: 同樣主題，不同深度的素材供不同學生使用
-  process: 同樣目標，不同的學習路徑與支持程度
-  product: 同樣學習成果，允許不同的表達與輸出形式
-  environment: 調整教室節奏、座位安排與師生互動方式
+  content: 同主題，不同深度的素材
+  process: 同目標，不同學習路徑與支持程度
+  product: 同成果期待，允許不同的表達與輸出形式
+  environment: 調整課堂節奏、座位安排與師生互動方式
 
-current_focus: 建立各科目的 DI 設計模板與學生樣態評估工具
+design_constraints:
+  - 一人執行可行性：單一教師在實際課堂中可操作，不依賴額外人力
+  - 差異化是設計預設，不是補救手段
+  - 避免標準化：策略保留彈性，不同班級與科目允許各自發展
+
+# ── 科目框架（在此樹狀下發展）─────────────────────────────
+
+subject_frameworks:
+  template_base_requirement: >
+    所有科目模板在建立時，必須同時包含：
+    （1）學習優勢多元入口設計欄位；
+    （2）A/B/C/D 差異化任務層次設計欄位。
+    見 template_requirements.mandatory_axes。
+  english:
+    status: 待建立
+    path: projects/_di-framework/content/english-di-template.md
+    applies_to: [class-9c, class-8a, class-7a]
+    note: 英文專科課 DI 設計模板，各班依此模板填入班級情境
+  main_lesson:
+    status: 待建立
+    path: projects/_di-framework/content/main-lesson-di-template.md
+    applies_to: [class-9c]
+    note: 主課程 DI 設計模板，目前適用 9C，未來可擴展至其他班級
+
+# ── 適用範圍 ─────────────────────────────────────────────
+
+applies_to:
+  current_classes: [class-9c, class-8a, class-7a]
+  current_subjects: [英文, 主課程]
+  expandable: true
+  expansion_note: 其他科目與班級（包括全校教師）可依需求加入
+
+# ── 工作狀態 ─────────────────────────────────────────────
+
+current_focus: 建立英文課與主課程的 DI 設計模板
 next_steps:
-  - 定義各班級 A/B/C/D 學生的具體樣態
-  - 建立英文課 DI 設計模板
-  - 建立主課程 DI 設計模板
+  - 建立英文課 DI 設計模板（content/english-di-template.md）
+  - 建立主課程 DI 設計模板（content/main-lesson-di-template.md）
+  - 填入各班 students.yaml（依新格式：科目定義 + 人數分布 + 學習優勢 + 特殊狀況）
   - 發展差異化評量框架
 
 content_output: projects/_di-framework/content/

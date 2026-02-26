@@ -3,10 +3,36 @@ grade: 七年級
 di_framework_ref: projects/_di-framework/project.yaml
 total_students: 待填入
 
-di_profiles:
-  status: 待建立
-
 class_dynamic:
   developmental_stage: 七年級（12–13歲）
   key_tension: 界線探索與自我中心；對「不公平」極度敏感；小團體開始形成
   teacher_approach: 以熱情與幽默接住質疑，用歷史先驅的故事映照他們探索未知的渴望
+
+# ── 科目情境（各科獨立定義「高能力」與「高動機」）────────────
+
+subject_contexts:
+
+  english:
+    ability_definition: 待填入  # 在這個班，英文「高能力」指的是什麼
+    motivation_definition: 待填入  # 在這個班，英文「高動機」指的是什麼
+    di_distribution:
+      A: { count: 待填, note: "" }
+      B: { count: 待填, note: "" }
+      C: { count: 待填, note: "" }
+      D: { count: 待填, note: "" }
+    learning_strengths_distribution:
+      語言型: 待填
+      圖像型: 待填
+      動作型: 待填
+      藝術型: 待填
+    last_updated: null
+
+# ── 特殊狀況（班級層次，跨科目通用）────────────────────────
+
+special_cases: []
+# 格式範例：
+# - student_ref: S01
+#   di_type_override:
+#     english: D
+#   learning_strength_note: 強烈動作型，靜態任務參與度低
+#   special_note: 待填
