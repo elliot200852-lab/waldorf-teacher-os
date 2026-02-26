@@ -1,0 +1,11 @@
+class: 8A
+subject: 英文
+di_framework_ref: projects/_di-framework/project.yaml
+
+assessment_philosophy: >
+  差異化評量允許學生以不同深度與形式展現語言能力。
+  八年級學生需要感受到評量的公平性與意義，否則容易引發強烈反彈。
+
+current_assessments: []
+next_steps:
+  - 確認第一單元後設計對應評量

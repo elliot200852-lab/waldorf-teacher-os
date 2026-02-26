@@ -1,0 +1,12 @@
+class: 7A
+grade: 七年級
+di_framework_ref: projects/_di-framework/project.yaml
+total_students: 待填入
+
+di_profiles:
+  status: 待建立
+
+class_dynamic:
+  developmental_stage: 七年級（12–13歲）
+  key_tension: 界線探索與自我中心；對「不公平」極度敏感；小團體開始形成
+  teacher_approach: 以熱情與幽默接住質疑，用歷史先驅的故事映照他們探索未知的渴望

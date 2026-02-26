@@ -1,0 +1,23 @@
+class: 9C
+subject: 主課程
+lesson_type: main_lesson
+di_framework_ref: projects/_di-framework/project.yaml
+
+structure:
+  total_sessions: 15
+  duration_per_session: 約 2 小時
+  session_rhythm:
+    - 回顧
+    - 課程進行
+    - 課程結尾
+    - 自由書寫
+
+current_block:
+  theme: 待確認
+  status: pending
+  sessions_completed: 0
+  sessions_total: 15
+
+next_steps:
+  - 確認本學期主課程主題
+  - 設計第一堂課（含 DI 差異化層次）

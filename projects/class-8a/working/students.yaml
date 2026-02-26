@@ -1,0 +1,12 @@
+class: 8A
+grade: 八年級
+di_framework_ref: projects/_di-framework/project.yaml
+total_students: 待填入
+
+di_profiles:
+  status: 待建立
+
+class_dynamic:
+  developmental_stage: 八年級（13–14歲）
+  key_tension: 邏輯萌發與社交焦慮；情緒瞬間爆發；群體從眾壓力；對教師雙重標準零容忍
+  teacher_approach: 溫和且絕對一致的規則執行，以革命史映照內在反抗衝動

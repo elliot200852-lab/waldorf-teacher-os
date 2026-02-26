@@ -296,9 +296,10 @@ mother_documents:
 
 ai_session_protocol:
   session_start:
-    - 確認今日工作的專案（project.yaml）
-    - 確認今日推進的工作線（working/*.yaml）
-    - 以 TeacherOS.yaml 為語氣與教學哲學的錨點
+    - 載入 TeacherOS.yaml 作為教師身份與哲學錨點
+    - 載入 projects/_di-framework/project.yaml 作為差異化教學共用框架（每次工作必載，不論班級或科目）
+    - 確認今日工作的班級專案（class-*/project.yaml）
+    - 確認今日推進的工作線（working/*.yaml 或科目子資料夾）
   session_end:
     - 只更新 YAML 中有變動的區塊，不重寫全部
     - 新產出的備課內容存入 content/*.md

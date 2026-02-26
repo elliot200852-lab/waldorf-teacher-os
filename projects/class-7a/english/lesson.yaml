@@ -1,0 +1,18 @@
+class: 7A
+subject: 英文
+lesson_type: subject_lesson
+di_framework_ref: projects/_di-framework/project.yaml
+
+structure:
+  duration_per_session: 45 分鐘
+  weekly_sessions: 4
+  sessions_per_semester: 80
+
+current_unit:
+  theme: 待確認
+  status: pending
+  sessions_completed: 0
+
+next_steps:
+  - 確認本學期英文課程主題與文本
+  - 設計第一單元（含 DI 差異化層次）

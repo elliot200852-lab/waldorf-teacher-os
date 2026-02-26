@@ -1,0 +1,23 @@
+class: 9C
+grade: 九年級
+teacher_role: 導師（班導師）
+di_framework_ref: projects/_di-framework/project.yaml
+
+subjects_taught:
+  main_lesson:
+    type: 主課程
+    note: David 為 9C 主課程教師，課程主題待本學期確認
+  english:
+    type: 英文專科
+    weekly_sessions: 4
+
+homeroom_context: >
+  David 為 9C 導師，與學生關係最深。
+  同時承擔主課程與英文課，對班級整體發展有完整的觀察與責任。
+
+current_semester: 2025-2026
+current_focus: 待確認
+next_steps:
+  - 確認本學期主課程主題
+  - 建立 9C 學生 DI 樣態（students.yaml）
+  - 啟動英文課第一單元設計

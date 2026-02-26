@@ -1,0 +1,16 @@
+class: 9C
+grade: 九年級
+di_framework_ref: projects/_di-framework/project.yaml
+total_students: 待填入
+
+di_profiles:
+  status: 待建立
+  note: >
+    9C 學生的 DI 樣態將在差異化教學框架專案啟動後，
+    依據 A/B/C/D 矩陣（ability × motivation）逐步建立。
+    建立後將成為所有 9C 課程設計的學生脈絡基礎。
+
+class_dynamic:
+  developmental_stage: 九年級（14–15歲）
+  key_tension: 存在焦慮與判斷力危機；非黑即白極端評判；對成人虛偽零容忍
+  teacher_approach: 充滿愛的權威，言行絕對一致，提供複雜脈絡打破二元思維
