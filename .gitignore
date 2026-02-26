@@ -6,6 +6,9 @@
 # Claude
 .claude/
 
+# Obsidian
+.obsidian/
+
 # Google Docs shortcut files
 *.gdoc
 *.gsheet
