@@ -119,6 +119,27 @@ pedagogical_framework:
     waldorf_mission_in_ai_era: 作為保護「真正人類特質」（The Truly Human）的避風港與前鋒基地
     ai_limitation: AI 能模擬人類智力與語言，卻永遠無法具備真正的意識、自我覺察、道德直覺或情感溫暖
 
+lesson_structure:
+  main_lesson:
+    duration_per_session: 約 2 小時
+    schedule: 每天固定進行，一週五天
+    block_length: 連續三週
+    total_sessions: 約 15 堂
+    session_rhythm:
+      step_1_recall: 回顧——複習前一天內容，讓知識在睡眠後沉澱重新浮現
+      step_2_new_content: 課程進行——引入新素材、敘事、概念或現象學體驗
+      step_3_closing: 課程結尾——統整本日主題，留下完整印象
+      step_4_free_writing: 自由書寫——學生以個人方式消化與表達當日學習
+    design_implication: 主課程是跨學科深度探索的容器，適合敘事導向、傳記式、現象學式的長期主題展開；15 堂的完整弧線需要有頭有尾的敘事結構
+  subject_lesson:
+    duration_per_session: 45 分鐘
+    weekly_frequency: 每週 2–4 節（視科目而定）
+    english_structure:
+      weekly_sessions: 4 節
+      sessions_per_term: 40 節（10 週學季）
+      sessions_per_semester: 80 節（20 週學期）
+    design_implication: 專科課程節奏較快，每節課需具備完整性；設計上須注重技能的累積性與每節課的起承轉合
+
 teacher_working_style:
   input_method: 以語音輸入為主
   thinking_style: 系統建構型思考
