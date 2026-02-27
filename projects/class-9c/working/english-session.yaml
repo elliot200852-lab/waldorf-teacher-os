@@ -1,0 +1,35 @@
+# 英文課工作進度錨點
+# 每次對話結束後由 AI 更新，只改動有變化的欄位，不可手動大幅改寫
+
+english_session:
+  class: class-9c
+  last_updated: null
+
+  current_position:
+    block: null        # 一 / 二
+    step: null         # 1 / 2 / 3
+    sub_block: null    # 區塊二時填入：2-A / 2-B
+    unit_number: null  # 區塊二時填入：目前在第幾單元
+
+  confirmed_decisions:
+    []
+
+  next_action:
+    description: null
+    input_needed_from_teacher: null
+
+  output_files:
+    # 雙路徑同時記錄，格式：[班級視角路徑, 科目視角路徑]
+    # 命名規則：{類型}-v{N}-{YYYYMMDD}.md
+    syllabus_versions: []
+    # 範例：
+    # - version: v1
+    #   date: 20260227
+    #   paths:
+    #     class_view: projects/class-9c/content/english/english-syllabus-v1-20260227.md
+    #     subject_view: projects/class-9c/english/content/english-syllabus-v1-20260227.md
+    units_completed: []
+    extensions_completed: []
+
+  open_questions:
+    []
