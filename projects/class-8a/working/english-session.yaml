@@ -1,0 +1,33 @@
+# 英文課工作進度錨點
+# 每次對話結束後由 AI 更新，只改動有變化的欄位，不可手動大幅改寫
+
+english_session:
+  class: class-8a
+  last_updated: null
+
+  current_position:
+    block: null
+    step: null
+    sub_block: null
+    unit_number: null
+
+  confirmed_decisions:
+    []
+
+  next_action:
+    description: null
+    input_needed_from_teacher: null
+
+  output_files:
+    syllabus_versions: []
+    # 範例：
+    # - version: v1
+    #   date: 20260227
+    #   paths:
+    #     class_view: projects/class-8a/content/english/english-syllabus-v1-20260227.md
+    #     subject_view: projects/class-8a/english/content/english-syllabus-v1-20260227.md
+    units_completed: []
+    extensions_completed: []
+
+  open_questions:
+    []

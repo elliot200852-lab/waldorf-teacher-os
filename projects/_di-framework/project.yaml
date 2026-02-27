@@ -102,10 +102,32 @@ subject_frameworks:
     （2）A/B/C/D 差異化任務層次設計欄位。
     見 template_requirements.mandatory_axes。
   english:
-    status: 待建立
-    path: projects/_di-framework/content/english-di-template.md
+    status: 已建立
+    master_template: projects/_di-framework/content/english-di-template.md
     applies_to: [class-9c, class-8a, class-7a]
-    note: 英文專科課 DI 設計模板，各班依此模板填入班級情境
+    last_updated: 2026-02-27
+    block_architecture:
+      principle: >
+        英文課模板採區塊化設計（Block 1、Block 2…）。
+        每個區塊可獨立觸發，不強制按順序跑完全部，以保留教師的靈活操作空間。
+        區塊間有建議的前後參照關係，後置區塊應引用前置區塊的產出。
+        所有區塊共享同一進度錨點（class-*/working/english-session.yaml）。
+      blocks:
+        block_1:
+          name: 學季整體規劃
+          status: 已建立
+          path: projects/_di-framework/content/english-di-block1.md
+          requires: null
+          output: class-*/content/english-syllabus.md
+        block_2:
+          name: 班級實際教學
+          status: 待建立
+          path: projects/_di-framework/content/english-di-block2.md
+          requires: block_1（建議，非強制）
+          output:
+            - class-*/content/english-unit-{n}.md
+            - class-*/content/english-extension-{n}.md
+      session_anchor: class-*/working/english-session.yaml
   main_lesson:
     status: 待建立
     path: projects/_di-framework/content/main-lesson-di-template.md
@@ -124,7 +146,6 @@ applies_to:
 
 current_focus: 建立英文課與主課程的 DI 設計模板
 next_steps:
-  - 建立英文課 DI 設計模板（content/english-di-template.md）
   - 建立主課程 DI 設計模板（content/main-lesson-di-template.md）
   - 填入各班 students.yaml（依新格式：科目定義 + 人數分布 + 學習優勢 + 特殊狀況）
   - 發展差異化評量框架
