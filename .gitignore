@@ -3,8 +3,9 @@
 .AppleDouble
 .LSOverride
 
-# Claude
-.claude/
+# Claude（追蹤 commands/ 與 scripts/，排除其餘）
+.claude/worktrees/
+.claude/settings.local.json
 
 # Obsidian
 .obsidian/
