@@ -260,6 +260,17 @@ english-di-template.md（主控索引）
 | 表情符號 | 不使用 |
 | 教學策略建議 | 必須符合品質標準（strategy-output-quality-standard.md） |
 
+### Google Drive 輸出協議（AI 必須執行）
+
+每次 .md 版本確認後，AI 必須主動詢問：
+
+> 「這份文件要輸出到 Google Drive 嗎？」
+
+- 教師說「要」→ AI 執行 `./publish/build.sh <md檔案路徑>`，**不需教師輸入任何指令**
+- 教師說「不用」→ 跳過，僅保留 .md 版本
+- 腳本會自動從路徑解析班級與科目，AI 只需傳入檔案路徑
+- 執行後告知教師：「已輸出至 Google Drive，同步後可在 Google Docs 開啟。」
+
 ---
 
 *本文件最後更新：2026-02-27*
