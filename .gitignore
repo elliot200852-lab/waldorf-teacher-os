@@ -14,3 +14,6 @@
 *.gdoc
 *.gsheet
 *.gslides
+
+# TeacherOS 個人環境設定（每位使用者各自設定，不上傳）
+setup/environment.env
