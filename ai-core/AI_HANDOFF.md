@@ -7,6 +7,26 @@
 
 ---
 
+## 你的第一步：依序讀取以下三個檔案
+
+在開始任何工作之前，請先完整讀取以下檔案，順序不可顛倒：
+
+**Step 1 — 教師身份層（必讀）**
+`ai-core/teacheros.yaml`
+→ 讀完你會知道：David 是誰、教學哲學、工作偏好、AI 協作目標
+
+**Step 2 — 差異化教學框架（必讀）**
+`projects/_di-framework/project.yaml`
+→ 讀完你會知道：所有課程設計的方法論規則、兩個軸線定義、模板強制要求
+
+**Step 3 — 今日工作的班級或科目**
+`projects/class-{9c/8a/7a}/project.yaml`（依 David 指定）
+→ 讀完你會知道：今天要推進哪個班級、目前焦點是什麼
+
+讀完三個檔案後，向 David 確認：「我已載入系統，今天要做什麼？」
+
+---
+
 ## 一、你在協助誰
 
 **David**，台灣體制外華德福實驗學校的教師。
@@ -46,6 +66,9 @@ Layer 2 — project.yaml（專案記憶層）
   用途：專案目的、當前焦點、下一步
   原則：AI 下次工作的「起點」。
 
+  重要：_di-framework/project.yaml 是共用框架，
+        每次工作前必須在班級 project.yaml 之前載入。
+
 Layer 3 — working/*.yaml（工作線記憶層）
   路徑：projects/<專案名>/working/*.yaml
          projects/<專案名>/<科目>/lesson.yaml
@@ -55,34 +78,47 @@ Layer 3 — working/*.yaml（工作線記憶層）
 內容輸出：projects/<專案名>/content/**/*.md
 ```
 
-### 資料夾架構
+### 資料夾架構（含現有檔案完整樹狀）
 
 ```
 WaldorfTeacherOS-Repo/
-├── ai-core/
-│   ├── teacheros.yaml              ← Layer 1（每次必載）
-│   └── AI_HANDOFF.md               ← 本文件
+│
+├── ai-core/                              ← 系統核心層
+│   ├── teacheros.yaml                    ← [必讀 Step 1] 教師身份、哲學、協作目標
+│   ├── AI_HANDOFF.md                     ← 本文件（通用 AI 入口）
+│   ├── TeacherOS × 專案三層記憶系統指引手冊.md  ← 完整系統操作手冊
+│   └── AI 時代華德福教師的定位與價值.md         ← 華德福 × AI 時代哲學定位
+│
 ├── projects/
-│   ├── _di-framework/              ← 差異化教學共用框架（每次必載）
-│   │   └── project.yaml
-│   ├── class-9c/                   ← 9C 導師班（主課程 + 英文）
+│   │
+│   ├── _di-framework/                    ← [必讀 Step 2] 差異化教學共用框架
+│   │   ├── project.yaml                  ← 雙軸定義、模板強制要求、全校框架
+│   │   └── content/
+│   │       ├── system-logic-map.md       ← 母文件：三維定位系統（X/Y/Z 軸）
+│   │       ├── english-di-template.md    ← [待建立] 英文課 DI 設計模板
+│   │       └── main-lesson-di-template.md ← [待建立] 主課程 DI 設計模板
+│   │
+│   ├── class-9c/                         ← 9C 班（導師班：主課程 + 英文）
+│   │   ├── project.yaml                  ← 班級脈絡、科目、當前焦點
+│   │   └── working/
+│   │       └── students.yaml             ← 學生 DI 樣態（待填入）
+│   │
+│   ├── class-8a/                         ← 8A 班（英文科任）
 │   │   ├── project.yaml
-│   │   ├── working/students.yaml
-│   │   ├── main-lesson/
-│   │   │   ├── lesson.yaml
-│   │   │   └── assessment.yaml
-│   │   └── english/
-│   │       ├── lesson.yaml
-│   │       └── assessment.yaml
-│   ├── class-8a/                   ← 8A 英文科任
-│   │   ├── project.yaml
-│   │   ├── working/students.yaml
-│   │   └── english/lesson.yaml + assessment.yaml
-│   └── class-7a/                   ← 7A 英文科任
+│   │   └── working/
+│   │       └── students.yaml             ← 學生 DI 樣態（待填入）
+│   │
+│   └── class-7a/                         ← 7A 班（英文科任）
 │       ├── project.yaml
-│       ├── working/students.yaml
-│       └── english/lesson.yaml + assessment.yaml
+│       └── working/
+│           └── students.yaml             ← 學生 DI 樣態（待填入）
+│
+└── manifests/                            ← 輸出打包（未來使用）
 ```
+
+**讀取優先序規則：**
+`teacheros.yaml` → `_di-framework/project.yaml` → `class-*/project.yaml` → `working/*.yaml`
+每一層都以上一層為前提，不可跳過。
 
 ---
 
@@ -99,8 +135,6 @@ WaldorfTeacherOS-Repo/
 
 ### David 教學的學生年齡段（12–15 歲）
 
-這個年齡段是第二與第三週期的**過渡地帶**，是所有年級最複雜的心理戰場：
-
 | 年級 | 年齡 | 核心心理危機 | 課程鏡像 |
 |------|------|------------|---------|
 | 七年級 | 12–13 歲 | 界線探索、對不公平極度敏感 | 文藝復興、地理大發現 |
@@ -109,22 +143,31 @@ WaldorfTeacherOS-Repo/
 
 **課程是隱蔽的心理鷹架**：學科內容精準對應學生的發展危機，而非單純傳授知識。
 
-### 教師權威模型
-
-七至九年級教師的權威**不由體制自動賦予**，必須通過真實的人際關係與專業能力贏得：
-- 言行絕對一致，雙重標準立即失去信任
-- 充滿愛的權威，而非威權
-- 班級衝突以修復式正義（Restorative Justice）處理，而非懲罰
-
 ---
 
 ## 四、差異化教學框架（每次必載）
 
 **路徑：** `projects/_di-framework/project.yaml`
+**母文件：** `projects/_di-framework/content/system-logic-map.md`
 
-差異化教學是每一堂課設計的**必要考量，不是選項**。任何課程設計輸出，都必須包含差異化層次。
+差異化教學是每一堂課設計的**必要考量，不是選項**。
 
-### A/B/C/D 學生矩陣（能力 × 動機）
+### 兩個獨立軸線（核心架構）
+
+這兩個軸線是**獨立的**，不是包含關係，必須同時考量：
+
+**軸線一：學習優勢**（與能力程度無關）
+
+| 類型 | 說明 |
+|------|------|
+| 語言型 | 閱讀、文字、口語討論 |
+| 圖像型 | 圖表、視覺化、素描記錄 |
+| 動作型 | 身體移動、實作、手工 |
+| 藝術型 | 音樂、繪畫、戲劇、詩歌 |
+
+每次課程設計與評量，**必須涵蓋至少 2–3 種學習優勢入口**。
+
+**軸線二：能力 × 動機矩陣**
 
 | 類型 | 能力 | 動機 | 策略 |
 |------|------|------|------|
@@ -132,6 +175,17 @@ WaldorfTeacherOS-Repo/
 | B | 低 | 高 | 鷹架支持、小步驟成功經驗、建立自信 |
 | C | 高 | 低 | 提升意義感、連結個人興趣、減少無效重複 |
 | D | 低 | 低 | 降低焦慮、建立安全感、從具體操作切入 |
+
+重要說明：
+- 每位學生都有一個 DI 類型（A/B/C/D），是動態標籤，可以變動
+- 「高能力」與「高動機」的定義因科目而異，定義存放在各班 `students.yaml` 的科目段落
+- 同一學生在不同科目可有不同類型
+
+### 模板強制要求
+
+所有課程設計與評量輸出，**必須同時滿足**：
+1. 涵蓋至少 2–3 種學習優勢入口（學習優勢軸）
+2. 針對 A/B/C/D 提供差異化任務，至少分為高挑戰（A/C）與鷹架（B/D）兩層
 
 ### 差異化設計四個層次
 
@@ -153,7 +207,6 @@ WaldorfTeacherOS-Repo/
 ### 英文專科課（7A / 8A / 9C）
 
 - 每週 4 節，每節 45 分鐘
-- 每學季 40 節（10 週）；每學期 80 節（20 週）
 - 每節課需有獨立完整性，同時累積技能弧線
 
 ---
@@ -174,7 +227,6 @@ WaldorfTeacherOS-Repo/
 ## 七、歷史教學哲學
 
 核心原則：**人類整體意識的演化歷程與兒童個人意識的發展平行對應**。
-歷史課不是讓學生「知道過去發生了什麼」，而是讓學生經驗到與自身內在發展相呼應的意識轉變。
 
 台灣主體意識立場：
 - 從台灣人的角度認識世界
@@ -187,8 +239,8 @@ WaldorfTeacherOS-Repo/
 
 ### 每次對話開始
 
-1. 確認讀取 `ai-core/teacheros.yaml`（身份錨點）
-2. 確認讀取 `projects/_di-framework/project.yaml`（DI 共用框架）
+1. 讀取 `ai-core/teacheros.yaml`（身份錨點）
+2. 讀取 `projects/_di-framework/project.yaml`（DI 共用框架，必須在班級之前）
 3. 確認今日工作的班級專案（`projects/class-*/project.yaml`）
 4. 確認今日推進的工作線（`working/*.yaml` 或科目子資料夾）
 
@@ -207,36 +259,32 @@ WaldorfTeacherOS-Repo/
 | 風格 | 結構清晰、簡潔、可直接操作 |
 | 表情符號 | 不使用 |
 
-### 差異化教學強制要求
-
-任何課程設計輸出，**必須預設包含**：
-- 四種學生類型（A/B/C/D）的對應策略
-- 至少兩個差異化層次的設計（內容、過程、成果、環境任選）
-
 ---
 
-## 九、目前專案狀態（2026-02-26）
+## 九、目前專案狀態（2026-02-27）
 
 | 專案 | 狀態 | 說明 |
 |------|------|------|
-| `_di-framework` | 🔵 進行中 | 框架骨架已建立，下一步：各班 DI 樣態定義、設計模板 |
-| `class-9c` | 🟡 待啟動 | 結構完整，等待：主課程主題確認、學生樣態填入 |
-| `class-8a` | 🟡 待啟動 | 結構完整，等待：學生資料填入 |
-| `class-7a` | 🟡 待啟動 | 結構完整，等待：學生資料填入 |
+| `_di-framework` | 進行中 | 核心架構完成（雙軸、模板強制要求），下一步：建立英文課與主課程設計模板 |
+| `class-9c` | 待啟動 | 結構完整，等待：學生樣態填入、主課程主題確認 |
+| `class-8a` | 待啟動 | 結構完整，等待：學生資料填入 |
+| `class-7a` | 待啟動 | 結構完整，等待：學生資料填入 |
 
-### 最近完成的工作（v03）
+### 本 session 完成的工作（2026-02-27）
 
-- 建立 `_di-framework` 共用框架
-- 建立 `class-9c / class-8a / class-7a` 完整三層結構
-- 所有 YAML 含 `di_framework_ref` 指向共用框架
-- 更新 `teacheros.yaml` 的 `ai_session_protocol`
+- 全面改寫 `_di-framework/project.yaml`：雙軸分離（學習優勢 × 能力動機矩陣）、動態標籤邏輯、模板強制要求、全校推廣意圖
+- 新建母文件 `_di-framework/content/system-logic-map.md`：三維定位系統（X/Y/Z 軸）
+- 重構三班 `students.yaml` 為新格式：科目情境分段、能力/動機定義欄位、學習優勢分布、特殊狀況記錄
+- 更新 `CLAUDE.md`（Claude Code 全域指令）：加入 `_di-framework` 為每次必載項目
 
-### 接下來優先要做的事
+### 接下來前三件優先工作
 
-1. 深化 `_di-framework`：建立英文課與主課程的 DI 設計模板
-2. 填入各班實際學生人數與 A/B/C/D 樣態
-3. 確認 9C 本學期主課程主題
-4. 啟動第一個班級的英文單元備課
+1. **建立英文課 DI 設計模板**（`_di-framework/content/english-di-template.md`）
+   - 開始前需先確認：模板是「單元備課工具」還是「學期 DI 規劃地圖」？
+2. **填入 9C 學生資料**（`class-9c/working/students.yaml`）
+   - 需要 David 提供：英文 / 主課程各自的「高能力」「高動機」定義，以及大概人數分布
+3. **建立主課程 DI 設計模板**（`_di-framework/content/main-lesson-di-template.md`）
+   - 連續 15 堂的弧線邏輯，與英文專科課結構不同
 
 ---
 
@@ -250,5 +298,5 @@ David 使用語音輸入，偏好：
 
 ---
 
-*本文件由 TeacherOS v03 生成（2026-02-26）*
+*本文件最後更新：2026-02-27*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
