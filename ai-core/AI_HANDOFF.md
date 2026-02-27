@@ -118,7 +118,15 @@ WaldorfTeacherOS-Repo/
 │   ├── class-8a/                    ← 結構同 class-9c（無 main-lesson）
 │   └── class-7a/                    ← 結構同 class-9c（無 main-lesson）
 │
-├── publish/                         ← 輸出打包（待建立轉換腳本）
+├── setup/                           ← 環境設定與使用說明
+│   ├── environment.env.example      ← 個人設定範本（已提交）
+│   ├── environment.env              ← David 個人設定（gitignored）
+│   ├── setup-check.sh               ← 環境檢查腳本（新老師第一次使用）
+│   └── teacher-guide.md             ← 教師試用手冊（已 publish 至 Google Drive）
+│
+├── publish/
+│   └── build.sh                     ← 自動輸出腳本（.md → .docx → Google Drive）
+│
 └── manifests/                       ← 輸出打包（未來使用）
 ```
 
@@ -191,18 +199,31 @@ english-di-template.md（主控索引）
 
 ---
 
-## 五、2026-02-27 本次 session 完成的工作
+## 五、歷次 session 完成工作記錄
+
+### 2026-02-27 第一次 session
 
 | 項目 | 說明 |
 |------|------|
 | Reference 資料夾機制 | 建立 8 個 reference 資料夾（_di-framework、各班級、各科目層），邏輯寫入 project.yaml |
 | 輸出格式協議 | 確認版本後 Markdown → Pandoc → .docx → Google Docs，已寫入 project.yaml |
-| 產出品質標準 | 建立 strategy-output-quality-standard.md（強制品質指令）與 strategy-analysis-quality-example.md（The Giver 範例） |
-| 品質標準寫入 project.yaml | output_quality_standard 區塊，含 5 條核心規則與自檢清單 |
-| Block 2 模板建立 | english-di-block2.md 完整建立（2-A 單元教學流程 + 2-B 差異化任務與驗收回饋機制設計） |
-| Block 1 品質校準 | 教學目標改為條列式（兩句話如詩）、教學策略精簡加幽默、語言基本功列為哲學底線 |
-| Block 1 範例 | block1-output-example-draft.md（9C 教學大綱完整範例），已驗證 PDF 排版 |
-| Pandoc 安裝 | 已在系統安裝 Pandoc，可執行 .md → .docx 轉換 |
+| 產出品質標準 | 建立 strategy-output-quality-standard.md 與 strategy-analysis-quality-example.md |
+| Block 2 模板建立 | english-di-block2.md 完整建立（2-A 單元教學流程 + 2-B 差異化任務與驗收機制） |
+| Block 1 品質校準 | 教學目標條列式（兩句話如詩）、語言基本功列為哲學底線 |
+| Block 1 範例 | block1-output-example-draft.md（9C 教學大綱完整範例） |
+| Pandoc 安裝 | 系統已安裝 Pandoc 3.9 |
+| v04 版本 | 打 tag 推上 GitHub |
+
+### 2026-02-27 第二次 session
+
+| 項目 | 說明 |
+|------|------|
+| Google Drive 自動輸出 | build.sh 建立，動態讀取 environment.env，路徑自動解析，AI 代跑無需教師輸入指令 |
+| Google Drive 資料夾 | 建立 class-9c/8a/7a 各 english 子資料夾，已與本機同步 |
+| 環境設定系統 | setup/ 資料夾建立：environment.env.example、setup-check.sh、environment.env（David 個人，gitignored） |
+| 教師試用手冊 | teacher-guide.md 建立，含 GitHub clone、三種 AI 工具選項、TeacherOS 改寫說明 |
+| 手冊 publish | 教師試用手冊已輸出為 .docx，存入 Google Drive TeacherOS 根目錄 |
+| project.yaml 更新 | 輸出格式協議、reference 機制、environment 設定系統全部寫入 |
 
 ---
 
@@ -210,10 +231,13 @@ english-di-template.md（主控索引）
 
 | 專案 | 狀態 | 說明 |
 |------|------|------|
-| `_di-framework` | 進行中 | 核心架構完成；Block 1 已建立並校準品質；Block 2 已建立；品質標準已建立 |
-| `class-9c` | 待啟動 | 結構完整（含 reference），等待：學生樣態填入後即可開始備課 |
-| `class-8a` | 待啟動 | 結構完整（含 reference），等待：學生資料填入 |
-| `class-7a` | 待啟動 | 結構完整（含 reference），等待：學生資料填入 |
+| `_di-framework` | 完成 | Block 1/2 模板、品質標準、reference 機制、輸出協議全部就緒 |
+| 環境設定系統 | 完成 | build.sh、setup-check.sh、environment.env、教師試用手冊均已建立並測試通過 |
+| `class-9c` 英文 | 尚未開始 | 結構完整，等待：students.yaml 填入、Block 1 實際執行 |
+| `class-8a` 英文 | 尚未開始 | 結構完整，等待：students.yaml 填入 |
+| `class-7a` 英文 | 尚未開始 | 結構完整，等待：students.yaml 填入 |
+| `class-9c` 主課程 | 尚未開始 | 等待：main-lesson-di-template.md 建立後啟動 |
+| 教師試用計畫 | 準備中 | 手冊已備妥；待 David 跑完一次 Block 1 產出樣品後，可邀請測試老師 |
 
 ---
 
@@ -334,5 +358,5 @@ AI 只需知道要輸出的 .md 檔案路徑，其餘全部自動處理。
 
 ---
 
-*本文件最後更新：2026-02-27*
+*本文件最後更新：2026-02-27（第二次 session 後）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
