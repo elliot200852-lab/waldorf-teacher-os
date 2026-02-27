@@ -205,11 +205,13 @@ content_output: projects/_di-framework/content/
 output_protocol:
   draft_format: Markdown（.md）
   confirmed_format: Google Docs
-  conversion_tool: Pandoc 3.9（.md → .docx）
+  conversion_tool: Pandoc（.md → .docx）
   publish_script: publish/build.sh
+  environment_config: setup/environment.env  # 個人設定，不上傳 GitHub
+  environment_template: setup/environment.env.example  # 範本，已提交 GitHub
   google_drive:
-    account: elliot200852@gmail.com
-    local_base: ~/Library/CloudStorage/GoogleDrive-elliot200852@gmail.com/我的雲端硬碟/00-01-TeacherOS-專案三層記憶/projects
+    # 帳號與路徑由 setup/environment.env 動態讀取，不寫死於此
+    # 腳本自動組合路徑：~/Library/CloudStorage/GoogleDrive-{EMAIL}/我的雲端硬碟/{FOLDER}/projects/
     structure:
       class-9c_english: class-9c/english/
       class-8a_english: class-8a/english/
