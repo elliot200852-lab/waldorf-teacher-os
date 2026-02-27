@@ -80,6 +80,47 @@ template_requirements:
     未來的 AI 協作介面將以此 mandatory_axes 為核對清單，
     確保每份產出模板都符合雙軸要求才能完成。
 
+# ── 產出品質標準（AI 每次產出前必讀）─────────────────────────
+
+output_quality_standard:
+  mandatory: true
+  scope: 所有 Block 產出（策略分析、教學流程、學習單、講義等）
+  full_specification: projects/_di-framework/content/strategy-output-quality-standard.md
+  quality_example: projects/_di-framework/reference/strategy-analysis-quality-example.md
+  ai_instruction: >
+    每次產出差異化教學建議或課程設計前，你必須先讀取上述
+    full_specification 與 quality_example，確認你理解產出的品質基準。
+    如果你的產出無法通過 full_specification 中的品質自檢清單，
+    必須修正後才能呈現給教師。
+
+  core_rules_summary:
+    rule_1_human_first: >
+      先描述學生的內在狀態與心理需求，再展開教學策略。
+      每類學生（A/B/C/D）的段落必須以心理素描開頭。
+    rule_2_no_abstract_labels: >
+      禁止使用無法操作的抽象標籤。
+      「鷹架支持」「延伸挑戰」「連結興趣」「提升意義感」
+      這些詞彙不可作為策略本身出現——必須展開為
+      課堂中實際會發生的具體畫面與操作步驟。
+    rule_3_classroom_scene: >
+      每一條策略必須讓教師讀完後，腦海中能浮現課堂場景。
+      包含：具體的材料、時機、動作、話語、任務內容。
+    rule_4_warmth: >
+      語氣必須像教師之間的專業對話，帶有對學生的理解與溫度。
+      不是 AI 式分類報告。華德福教育對人的理解應自然融入，
+      但不刻意堆砌術語。
+    rule_5_actionable: >
+      老師讀完後可以直接挑選一條策略，改造後明天帶進教室。
+      這是品質的最終檢驗標準。
+
+  self_check_before_output:
+    - 每類學生是否以心理素描開頭？
+    - 每條策略是否描述了課堂中實際會發生的畫面？
+    - 是否消除了所有抽象標籤？
+    - 學習優勢建議是否跟本單元的具體內容結合？
+    - 整體語氣是否像教師之間的專業對話？
+    - 老師讀完後能否直接拿走用？
+
 # ── 設計層次 ─────────────────────────────────────────────
 
 design_layers:
@@ -121,12 +162,19 @@ subject_frameworks:
           output: class-*/content/english-syllabus.md
         block_2:
           name: 班級實際教學
-          status: 待建立
+          status: 已建立
           path: projects/_di-framework/content/english-di-block2.md
           requires: block_1（建議，非強制）
+          sub_blocks:
+            2-A:
+              name: 單元教學流程設計
+              scope: 教學單元規劃 + 逐節 45 分鐘課堂流程
+            2-B:
+              name: 差異化任務與驗收回饋機制設計
+              scope: 課中差異化延伸 + 家庭任務 + 減負驗收機制
           output:
             - class-*/content/english-unit-{n}.md
-            - class-*/content/english-extension-{n}.md
+            - class-*/content/english-task-{n}.md
       session_anchor: class-*/working/english-session.yaml
   main_lesson:
     status: 待建立
@@ -151,3 +199,51 @@ next_steps:
   - 發展差異化評量框架
 
 content_output: projects/_di-framework/content/
+
+# ── 輸出格式協議 ─────────────────────────────────────────────
+
+output_protocol:
+  draft_format: Markdown（.md）
+  confirmed_format: Google Docs
+  conversion_tool: Pandoc（.md → .docx）
+  workflow: >
+    Step 1：AI 產出 .md 草稿，存入對應 content/ 資料夾與版本命名。
+    Step 2：教師確認版本後，執行 Pandoc 將 .md 轉換為 .docx。
+    Step 3：將 .docx 上傳 Google Drive，Google Drive 自動轉換為 Google Docs 格式。
+    Step 4：教師在 Google Docs 中進行最終排版微調、分享或列印。
+  scope: 適用所有 Block 產出（Block 1 教學大綱、Block 2 單元教學、學習單、講義等）
+  publish_output: publish/（待建立轉換腳本）
+  note: >
+    Pandoc 指令範例：pandoc input.md -o output.docx
+    未來可在 publish/ 建立批次轉換腳本，供一鍵輸出整個班級的文件。
+
+# ── Reference 資料夾機制 ──────────────────────────────────────
+
+reference_protocol:
+  trigger_phrase: 請把這一份文件列為重要參考文件
+  purpose: >
+    使用者提供文件時，AI 將其存入對應的 reference/ 資料夾，
+    集中保存備課、方法論與外部素材，以便未來出版與跨班查閱時取用。
+  folder_structure:
+    di_framework_level: projects/_di-framework/reference/
+    class_level: projects/class-{x}/reference/
+    subject_level: projects/class-{x}/{subject}/reference/
+  placement_rule: >
+    文件與 DI 框架方法論相關 → 存入 _di-framework/reference/。
+    文件與某班整體相關 → 存入班級層 reference/。
+    文件與某班某科目相關 → 存入科目層 reference/。
+    若範疇不明確，AI 應主動詢問教師後再存入。
+  naming_convention: 原始檔名保留，不重新命名，除非教師另行指示。
+  current_reference_paths:
+    - projects/_di-framework/reference/
+    - projects/class-9c/reference/
+    - projects/class-9c/english/reference/
+    - projects/class-9c/main-lesson/reference/
+    - projects/class-8a/reference/
+    - projects/class-8a/english/reference/
+    - projects/class-7a/reference/
+    - projects/class-7a/english/reference/
+  expansion_note: >
+    未來若新增班級或科目資料夾，依相同規則在其下建立 reference/ 子資料夾，
+    並將路徑補入 current_reference_paths。
+
