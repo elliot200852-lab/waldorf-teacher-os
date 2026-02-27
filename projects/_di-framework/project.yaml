@@ -216,16 +216,23 @@ output_protocol:
       class-7a_english: class-7a/english/
   workflow: >
     Step 1：AI 產出 .md 草稿，存入 Repo 對應 content/ 資料夾（版本命名）。
-    Step 2：教師確認版本後，執行輸出腳本（一行指令）。
-    Step 3：腳本自動 Pandoc 轉換為 .docx，直接放入 Google Drive 本機資料夾。
-    Step 4：Google Drive Desktop 自動同步至雲端。
-    Step 5：Google Drive 網頁端右鍵 → 用 Google 文件開啟，即可分享或列印。
+    Step 2：AI 向教師確認版本內容。
+    Step 3：AI 主動詢問：「要輸出到 Google Drive 嗎？」
+    Step 4：教師回答「要」後，AI 執行 publish/build.sh，不需教師輸入任何指令。
+    Step 5：腳本自動 Pandoc 轉換為 .docx，直接放入 Google Drive 本機資料夾。
+    Step 6：Google Drive Desktop 自動同步至雲端，即可用 Google Docs 開啟。
+  ai_publish_protocol:
+    trigger: 教師確認版本內容後
+    ai_action: 主動詢問「這份文件要輸出到 Google Drive 嗎？」
+    on_yes: 執行 ./publish/build.sh <已存入的md路徑>（只傳路徑，班級科目自動解析）
+    on_no: 跳過，僅保留 .md 版本在 Repo
+    教師不需輸入: 任何指令或參數
   publish_command_example: >
-    ./publish/build.sh projects/class-9c/content/english/english-syllabus-v1-20260227.md class-9c english
+    ./publish/build.sh projects/class-9c/content/english/english-syllabus-v1-20260227.md
   scope: 適用所有 Block 產出（Block 1 教學大綱、Block 2 單元教學、學習單、講義等）
   note: >
-    .docx 放入 Google Drive 本機資料夾後會自動同步，不需手動上傳。
-    未來可在 publish/ 建立批次腳本，一次輸出整個班級所有文件。
+    腳本會從檔案路徑自動解析班級（class-9c/8a/7a）與科目（english/main-lesson），
+    教師無需手動輸入參數。.docx 放入 Google Drive 本機資料夾後自動同步，不需手動上傳。
 
 # ── Reference 資料夾機制 ──────────────────────────────────────
 
