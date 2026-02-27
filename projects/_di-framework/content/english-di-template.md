@@ -51,7 +51,7 @@
 |--------|----------|
 | 教學大綱 | `english-syllabus-v1-20260227.md` |
 | 單元教學流程 | `english-unit-1-v1-20260301.md` |
-| 課外延伸任務 | `english-extension-1-v1-20260305.md` |
+| 差異化任務設計 | `english-task-1-v1-20260305.md` |
 
 > 每次新增內容建立新版本（v2、v3…），舊版本保留。
 > 老師自行決定哪個版本要列印給學生——系統不代為決定。
@@ -89,7 +89,7 @@
 | 區塊 | 名稱 | 檔案 | 狀態 | 建議前置 | 核心產出 |
 |------|------|------|------|----------|----------|
 | Block 1 | 學季整體規劃 | [english-di-block1.md](english-di-block1.md) | 已建立 | — | `english-syllabus.md` |
-| Block 2 | 班級實際教學 | `english-di-block2.md` | 待建立 | Block 1 | `english-unit-{n}.md` + `english-extension-{n}.md` |
+| Block 2 | 班級實際教學 | [english-di-block2.md](english-di-block2.md) | 已建立 | Block 1 | `english-unit-{n}.md` + `english-task-{n}.md` |
 | Block 3+ | 待定 | — | 待確認 | — | — |
 
 ### 區塊連接說明
@@ -99,12 +99,13 @@ Block 1（學季整體規劃）
     └─ 產出：english-syllabus.md（教學大綱）
               ↓ 作為基準參照
 Block 2（班級實際教學）
-    ├─ 2-A：逐單元教學流程（對照大綱單元）
+    ├─ 2-A：單元教學流程設計（單元規劃 + 逐節 45 分鐘課堂流程）
     │         └─ 產出：english-unit-{n}.md
-    └─ 2-B：課外延伸支援（依課堂觀察觸發）
-              └─ 產出：english-extension-{n}.md
-                        ↓ 觀察回饋
-                  students.yaml（動態標籤更新）
+    └─ 2-B：差異化任務與驗收回饋機制設計
+              ├─ 課中差異化延伸
+              ├─ 家庭任務（習慣導向、可驗收）
+              ├─ 減負驗收機制（同儕支援方式）
+              └─ 產出：english-task-{n}.md
 ```
 
 **區塊間的參照規則：**
