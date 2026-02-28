@@ -1,0 +1,22 @@
+# TeacherOS 系統狀態快照
+# AI 開工前可快速掃描此檔案，確認系統現況
+# 最後更新：2026-02-28
+
+system_status:
+
+  di_framework: 完成
+  english_template: 完成（Block 1 + Block 2 + 品質標準 + 品質範例）
+  main_lesson_template: 待建立
+
+  students_yaml:
+    class-9c: 完成（含 private/public/di-profile 分離架構）
+    class-8a: 待填入
+    class-7a: 待填入
+
+  environment: 完成（build.sh + Pandoc 3.9 + Google Drive）
+  github_version: v04
+
+  last_context_review: 2026-02-28
+  context_review_path: ai-core/reviews/context-review-20260228.md
+
+  next_priority: 實際執行 Block 1 — 為 9C 產出英文教學大綱
