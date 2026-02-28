@@ -1,0 +1,58 @@
+class: 9C
+grade: 九年級
+di_framework_ref: projects/_di-framework/project.yaml
+total_students: 22
+
+# ── 班級動態（跨科通用）──────────────────────────────────
+
+class_dynamic:
+  developmental_stage: 九年級（14-15歲）
+  key_tension: 存在焦慮與判斷力危機；非黑即白極端評判；對成人虛偽零容忍
+  teacher_approach: 充滿愛的權威，言行絕對一致，提供複雜脈絡打破二元思維
+
+# ── DI 分布摘要（從各科 di-profile.yaml 同步）──────────────
+# 課程設計時 AI 只需讀這裡的統計，不需載入個人資料
+
+di_summary:
+
+  english:
+    di_distribution:
+      A: 7
+      B: 5
+      C: 3
+      D: 7  # 含 9C-08/12 兩位特殊生
+    learning_strengths_distribution:
+      語言型: 14
+      圖像型: 12
+      藝術型: 13
+      動作型: 7
+    detail_ref: projects/class-9c/english/di-profile.yaml
+
+  main_lesson:
+    di_distribution:
+      A: 待填
+      B: 待填
+      C: 待填
+      D: 待填
+    learning_strengths_distribution:
+      語言型: 待填
+      圖像型: 待填
+      動作型: 待填
+      藝術型: 待填
+    detail_ref: projects/class-9c/main-lesson/di-profile.yaml
+
+# ── 跨科特殊狀況（班級層次，所有科目共用）──────────────────
+
+special_cases:
+  - id: 9C-08
+    note: 特殊生
+    cross_subject_impact: 各科均歸類為低能力低動機
+
+  - id: 9C-12
+    note: 特殊生
+    cross_subject_impact: 各科均歸類為低能力低動機
+
+# 格式範例：
+# - id: 9C-XX
+#   note: 狀況描述
+#   cross_subject_impact: 對各科的影響說明

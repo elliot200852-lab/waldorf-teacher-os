@@ -30,6 +30,10 @@
 `projects/class-{9c/8a/7a}/project.yaml`（依 David 指定）
 → 讀完你會知道：今天要推進哪個班級、目前焦點是什麼
 
+**Step 6 — 學生知識庫操作協議（凡涉及學生資料時必讀）**
+`projects/_di-framework/content/student-knowledge-protocol.md`
+→ 讀完你會知道：如何讀取三層知識庫、角色確認必問問題、資料寫入路由、不可跳過的規則
+
 讀完後，向 David 確認：「我已載入系統，今天要做什麼？」
 
 ---
@@ -84,7 +88,10 @@ WaldorfTeacherOS-Repo/
 │
 ├── ai-core/
 │   ├── teacheros.yaml               ← [必讀 Step 1] 教師身份層
-│   └── AI_HANDOFF.md                ← 本文件
+│   ├── AI_HANDOFF.md                ← 本文件
+│   ├── system-status.yaml           ← 系統狀態快照（AI 開工前快速掃描）
+│   └── reviews/                     ← 定期 Context Review 存放處（AI 平時不載入）
+│       └── context-review-20260228.md
 │
 ├── projects/
 │   │
@@ -214,6 +221,22 @@ english-di-template.md（主控索引）
 | Pandoc 安裝 | 系統已安裝 Pandoc 3.9 |
 | v04 版本 | 打 tag 推上 GitHub |
 
+### 2026-02-28 第四次 session：學生知識庫建構
+
+| 項目 | 說明 |
+|------|------|
+| 架構重構 | 建立 `roster.yaml`（真名+ID，gitignored）、`students.yaml`（班級共用）、各科 `di-profile.yaml` |
+| 學生知識庫協議 | 建立 `student-knowledge-protocol.md`（角色確認必問、讀寫路由表），登錄於 AI_HANDOFF |
+| 9C DI 分類 | 完成 9C 全班 22 人英文課 DI 觀察（ABCD、優勢、細項、成績）輸入 |
+
+### 2026-02-28 第三次 session：系統盤點與狀態快照
+
+| 項目 | 說明 |
+|------|------|
+| Context Review | 全資料夾 30+ 檔案完整審查，產出 `ai-core/reviews/context-review-20260228.md` |
+| system-status.yaml | 建立精簡系統狀態快照（20 行），供 AI 開工前快速掃描 |
+| AI_HANDOFF.md 更新 | 登錄新檔案、更新專案狀態表 |
+
 ### 2026-02-27 第二次 session
 
 | 項目 | 說明 |
@@ -227,13 +250,15 @@ english-di-template.md（主控索引）
 
 ---
 
-## 六、目前專案狀態（2026-02-27 更新）
+## 六、目前專案狀態（2026-02-28 更新）
 
 | 專案 | 狀態 | 說明 |
 |------|------|------|
 | `_di-framework` | 完成 | Block 1/2 模板、品質標準、reference 機制、輸出協議全部就緒 |
 | 環境設定系統 | 完成 | build.sh、setup-check.sh、environment.env、教師試用手冊均已建立並測試通過 |
-| `class-9c` 英文 | 尚未開始 | 結構完整，等待：students.yaml 填入、Block 1 實際執行 |
+| 系統狀態快照 | 完成 | `ai-core/system-status.yaml`——AI 開工前可快速掃描（20 行） |
+| Context Review | 完成 | `ai-core/reviews/context-review-20260228.md`——首次全資料夾健檢 |
+| `class-9c` 英文 | 等待執行 Block 1 | 結構完整，students.yaml 與 di-profile 皆已填入完成。等待執行 Block 1 教學大綱設計 |
 | `class-8a` 英文 | 尚未開始 | 結構完整，等待：students.yaml 填入 |
 | `class-7a` 英文 | 尚未開始 | 結構完整，等待：students.yaml 填入 |
 | `class-9c` 主課程 | 尚未開始 | 等待：main-lesson-di-template.md 建立後啟動 |
@@ -243,9 +268,9 @@ english-di-template.md（主控索引）
 
 ## 七、接下來前三件優先工作
 
-1. **填入各班 students.yaml**
-   - 需 David 提供：英文課「高能力」「高動機」的定義、A/B/C/D 人數分布、學習優勢分布
-   - 可以先從一個班開始（建議 9C，導師班）
+1. **實際執行 Block 1 — 為 9C 產出英文教學大綱**
+   - Block 1 模板、品質標準、9C 學生 DI 分布皆已就緒
+   - 可以實際產出第一份教學大綱
 
 2. **實際執行 Block 1 — 為一個班級產出教學大綱**
    - Block 1 模板與品質標準已就緒，可以開始實際產出第一份教學大綱
@@ -272,6 +297,16 @@ english-di-template.md（主控索引）
 1. 條列今天確認的決定
 2. 更新 `english-session.yaml`（只改動有變化的欄位）
 3. 告知 David 下次需要準備什麼
+
+### 學生資料讀寫協議
+
+> 完整規則請見正式協議文件：
+> `projects/_di-framework/content/student-knowledge-protocol.md`
+
+**核心原則（三條不可跳過）：**
+- 教師提供學生資訊前，**必須先問角色**（導師 / 英文老師 / 主課程老師 / 其他科任）
+- 角色決定寫入位置（詳見協議文件的角色路由表）
+- 學生 ID 一律從 `roster.yaml` 查找，不接受以姓名操作
 
 ### 輸出規範
 
@@ -358,5 +393,5 @@ AI 只需知道要輸出的 .md 檔案路徑，其餘全部自動處理。
 
 ---
 
-*本文件最後更新：2026-02-27（第二次 session 後）*
+*本文件最後更新：2026-02-28（第三次 session 後）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

@@ -17,3 +17,6 @@
 
 # TeacherOS 個人環境設定（每位使用者各自設定，不上傳）
 setup/environment.env
+
+# 學生個人資料（含真名，不上傳）
+projects/*/roster.yaml

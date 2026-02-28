@@ -1,0 +1,30 @@
+# 主課程差異化教學觀察檔
+# 觀察者：主課程授課教師
+# 載入時機：進行主課程工作時
+# 參照：roster.yaml（學生身份）、students.yaml（班級共用資訊）
+
+main_lesson_di_profile:
+  class: 9C
+  observer: David
+  last_updated: null
+
+  # ── 本科定義 ────────────────────────────────────────────
+  ability_definition: 待填入  # 在 9C 主課程，「高能力」指的是什麼
+  motivation_definition: 待填入  # 在 9C 主課程，「高動機」指的是什麼
+
+  # ── ABCD 分類統計 ──────────────────────────────────────
+  di_distribution:
+    A: { count: 待填, ids: [] }
+    B: { count: 待填, ids: [] }
+    C: { count: 待填, ids: [] }
+    D: { count: 待填, ids: [] }
+
+  # ── 學習優勢分布 ────────────────────────────────────────
+  learning_strengths_distribution:
+    語言型: 待填
+    圖像型: 待填
+    動作型: 待填
+    藝術型: 待填
+
+  # ── 個別學生觀察 ────────────────────────────────────────
+  student_observations: {}

@@ -1,0 +1,374 @@
+# 英文課差異化教學觀察檔
+# 觀察者：英文授課教師
+# 載入時機：進行英文課工作時
+# 參照：roster.yaml（學生身份）、students.yaml（班級共用資訊）
+
+english_di_profile:
+  class: 9C
+  observer: David
+  last_updated: 2026-02-28（全班 22 位完成）
+
+  # ── 本科定義 ────────────────────────────────────────────
+  ability_definition: >
+    聽、說、讀、寫各方面均優於班級平均。個別學生仍有細項差異
+    （例如聽力強但口說弱），細項差異將在個別學生觀察中補充說明。
+  motivation_definition: 想要把英文學好，或對英文有喜愛。
+
+  # ── 上學期成績（114 上）────────────────────────────────
+  prior_grades:
+    9C-01: 80
+    9C-04: 65
+    9C-05: 60
+    9C-06: 62
+    9C-07: 65
+    9C-08: 0
+    9C-09: 90
+    9C-11: 75
+    9C-12: 0
+    9C-13: 75
+    9C-14: 60
+    9C-15: 85
+    9C-17: 90
+    9C-19: 92
+    9C-21: 80
+    9C-22: 78
+    9C-23: 87
+    9C-24: 70
+    9C-25: 95
+    9C-26: 80
+    9C-27: 84
+    9C-28: 85
+
+  # ── ABCD 分類統計（填入後同步更新 students.yaml 公開版）──
+  di_distribution:
+    A: { count: 7, ids: [9C-09, 9C-13, 9C-17, 9C-19, 9C-23, 9C-25, 9C-28] }
+    B: { count: 5, ids: [9C-01, 9C-05, 9C-06, 9C-21, 9C-27] }
+    C: { count: 3, ids: [9C-11, 9C-22, 9C-26] }
+    D: { count: 7, ids: [9C-04, 9C-07, 9C-08, 9C-12, 9C-14, 9C-15, 9C-24], note: 含 9C-08/12 兩位特殊生 }
+
+  # ── 學習優勢分布 ────────────────────────────────────────
+  learning_strengths_distribution:
+    語言型: 14  # 9C-01/05/06/09/11/13/17/19/21/22/23/25/27/28
+    圖像型: 12  # 9C-04/05/06/07/09/12/14/15/22/24/26/28（部分重複）
+    藝術型: 13  # 9C-01/09/11/13/17/19/21/23/25/26/27/28（部分重複）
+    動作型: 7   # 9C-04/06/07/11/12/14/26
+
+  # ── 個別學生觀察（Level 1：依 David 口述逐步填入）──────
+  # 尚未描述的學生不列出，待補充時再加入
+  student_observations:
+
+    9C-01:
+      di_type: B
+      ability_level: 中
+      motivation_level: 中上
+      strengths: [語言型, 藝術型]
+      skill_detail:
+        listening: 中
+        speaking: 中
+        reading: 中
+        writing: 中偏強
+      notes: >
+        中文能力強。英文字彙與句構邏輯不清晰，缺乏系統性建構，
+        導致缺乏信心。可認真投入，需要協助建立英文的邏輯架構感。
+
+    9C-04:
+      di_type: D
+      ability_level: 中下
+      motivation_level: 低
+      strengths: [動作型, 圖像型]
+      skill_detail:
+        listening: 中下
+        speaking: 中下
+        reading: 中下
+        writing: 中下
+      notes: >
+        整體英文基礎不紮實，學習習慣未建立。
+        動機偏低，但對競爭壓力與分數刺激有反應（外部動機）。
+        非內在型動機，設計時需利用競爭感作為短期誘因。
+
+    9C-05:
+      di_type: B
+      ability_level: 中下
+      motivation_level: 中
+      strengths: [語言型, 圖像型]
+      skill_detail:
+        listening: 中
+        speaking: 低
+        reading: 中下
+        writing: 極低
+      notes: >
+        中文理解能力強，有真實的英文學習意願，但成效不理想。
+        書寫是最大弱點。需要框架協助，逐步建立信心與成功經驗。
+
+    9C-06:
+      di_type: B
+      ability_level: 中下
+      motivation_level: 中
+      strengths: [圖像型, 動作型]
+      skill_detail:
+        listening: 低
+        speaking: 低
+        reading: 中
+        writing: 中下
+      notes: >
+        學習態度認真。同儕協作是最有效的觸動方式（非標準優勢軸線，列為教學設計提示）。
+        對邏輯有敏銳觀察力，可作為搭鷹架的切入點。
+
+    9C-07:
+      di_type: D
+      ability_level: 低
+      motivation_level: 低
+      strengths: [動作型, 圖像型]
+      skill_detail:
+        listening: 低
+        speaking: 低
+        reading: 低
+        writing: 低
+      notes: >
+        語言學習動機低落。目前在讀課外材料。
+        首要目標：提升聽說輸入量、引發學習動機。
+        設計需以動作與圖像入口切入，避免文字導向任務。
+
+    9C-08:
+      di_type: D
+      ability_level: 特殊
+      motivation_level: 特殊
+      strengths: [圖像型]
+      skill_detail:
+        listening: 特殊
+        speaking: 特殊
+        reading: 特殊
+        writing: 特殊
+      notes: >
+        特殊狀況學生。不在一般英文課堂中，不納入常規 DI 教學設計。
+        學習表現（中英文閱讀）均屬特殊需求。學習入口完全圖像型。
+
+    9C-09:
+      di_type: A
+      ability_level: 中上
+      motivation_level: 高
+      strengths: [語言型, 藝術型, 圖像型]
+      skill_detail:
+        listening: 高（大幅進步）
+        speaking: 中上
+        reading: 中（進步空間大）
+        writing: 中下（弱項）
+      notes: >
+        高學習動機、高成就導向。聽力進步題著，口說表現良好。
+        書寫與閱讀仍是發展中弱項，設計時需兼顧延伸與基礎補強。
+        英文專案總監（與 9C-17 共同擔任）。
+
+    9C-11:
+      di_type: C
+      ability_level: 中上
+      motivation_level: 低中
+      strengths: [語言型, 藝術型, 動作型]
+      skill_detail:
+        listening: 高
+        speaking: 高
+        reading: 中
+        writing: 中（雜亂）
+      notes: >
+        中文能力強，表達型學習者，聽說為明顯強項。
+        有懶散風格，動機需外部觸動。對音樂有興趣，可作設計切入點。
+        需要肢體參與元素，避免純文字導向課堂。
+
+    9C-12:
+      di_type: D
+      ability_level: 特殊
+      motivation_level: 特殊（同儕在場時有意願）
+      strengths: [圖像型, 動作型]
+      skill_detail:
+        listening: 特殊
+        speaking: 特殊
+        reading: 特殊
+        writing: 特殊
+      notes: >
+        特教生，不在一般課堂中，不納入常規 DI 教學設計。
+        整體學習能力較低。缺乏學習信心，同儕在場時較願意參與配合。
+        學習入口以圖像型與動作型為主。
+
+    9C-13:
+      di_type: A
+      ability_level: 高
+      motivation_level: 中上
+      strengths: [藝術型, 語言型, 圖像型]
+      skill_detail:
+        listening: 高
+        speaking: 高
+        reading: 高
+        writing: 中（弱項相對）
+      notes: >
+        整體英文能力紮實，聽說讀均無問題，書寫相對較弱。
+        人際關係較差，有內在心理障礙。設計時需關注情感安全感，
+        協助其突破內在心理阻力，建立自信表達。
+
+    9C-14:
+      di_type: D
+      ability_level: 低
+      motivation_level: 低
+      strengths: [動作型, 圖像型]
+      skill_detail:
+        listening: 低
+        speaking: 低
+        reading: 低
+        writing: 低
+      notes: >
+        主動逃避英文學習，所有面向均偏下。
+        需要同傅協作才能啟動學習意愿。
+        設計時以動作與圖像入口切入，携配同傅任務降低個人壓力。
+
+    9C-15:
+      di_type: D
+      ability_level: 中
+      motivation_level: 低中
+      strengths: [藝術型, 圖像型]
+      skill_detail:
+        listening: 中
+        speaking: 中
+        reading: 中
+        writing: 中
+      notes: >
+        整體表現中等，邏輯與學習敏錠度偏低。
+        性格溫和、配合度高，具備工作意愿。字彙與文法是明顯弱項。
+        動機需外部引導，設計時指引清楚比提高要求更重要。
+
+    9C-17:
+      di_type: A
+      ability_level: 高
+      motivation_level: 高
+      strengths: [語言型, 圖像型, 藝術型]
+      skill_detail:
+        listening: 高
+        speaking: 高
+        reading: 高
+        writing: 高
+      notes: >
+        高成就高動機，創意表現出色。英文專案總監。
+        適合專案型學習、獨立完成任務，延伸發展領導力。
+
+    9C-19:
+      di_type: A
+      ability_level: 高
+      motivation_level: 高
+      strengths: [語言型, 藝術型]
+      skill_detail:
+        listening: 高
+        speaking: 中（信心不足）
+        reading: 高
+        writing: 高
+      notes: >
+        高能力高動機，非常認真。口說信心不足是平詰要點。
+        思考太多導致完成速度慢，設計時需給予充裕處理時間。
+
+    9C-21:
+      di_type: B
+      ability_level: 中下
+      motivation_level: 中
+      strengths: [語言型, 藝術型]
+      skill_detail:
+        listening: 中下
+        speaking: 中下
+        reading: 中
+        writing: 低
+      notes: >
+        中文有敏錠度，英文邏輯思維少。有學習意愿但思維固化，需協助打破價倴資心。
+        設計時將多元表達機會內建，輕實在漸少。
+
+    9C-22:
+      di_type: C
+      ability_level: 高
+      motivation_level: 中
+      strengths: [語言型, 圖像型]
+      skill_detail:
+        listening: 高
+        speaking: 高
+        reading: 高
+        writing: 高
+      notes: >
+        高能力學習快，動機中等。具有亞斯特質，較不易感知環境需求。
+        總慎相對高、非常善良。同傅協作設計需要明確引導。
+
+    9C-23:
+      di_type: A
+      ability_level: 高
+      motivation_level: 高
+      strengths: [語言型, 藝術型]
+      skill_detail:
+        listening: 高
+        speaking: 高
+        reading: 高
+        writing: 高
+      notes: >
+        班上英文佼佼者，配合度高。
+        適合擔任助教或學習啟動者，帶動同傅寫作。
+
+    9C-24:
+      di_type: D
+      ability_level: 中下
+      motivation_level: 低中
+      strengths: [藝術型, 圖像型]
+      skill_detail:
+        listening: 中下
+        speaking: 中下
+        reading: 中
+        writing: 中下
+      notes: >
+        能力中下，缺乏信心導致動機弱。同傅協作時會愿意投入。
+        需建立學習習慣，自藝型與圖像型任務能降低展現壓力。
+
+    9C-25:
+      di_type: A
+      ability_level: 高
+      motivation_level: 高
+      strengths: [語言型, 藝術型]
+      skill_detail:
+        listening: 高
+        speaking: 高
+        reading: 高
+        writing: 高
+      notes: >
+        高能高動機，自我要求高。追求完美導致產出速度慢。
+        圖像型也可，動作型少。設計時可給予一定自主間，同時設定明確交繳畫點。
+
+    9C-26:
+      di_type: C
+      ability_level: 中上
+      motivation_level: 中
+      strengths: [動作型, 圖像型]
+      skill_detail:
+        listening: 中上
+        speaking: 高
+        reading: 中
+        writing: 低
+      notes: >
+        口說強項，英文浸泡時間長、語感佳。邏輯表達不清晰。
+        寫作為最大弱項。動機需外力推動，設計时利用口說強項作為建信入口。
+
+    9C-27:
+      di_type: B
+      ability_level: 中
+      motivation_level: 中
+      strengths: [語言型, 藝術型]
+      skill_detail:
+        listening: 中上
+        speaking: 中（信心不足）
+        reading: 中
+        writing: 中（信心不足）
+      notes: >
+        沉默型學生，能力中等但信心不足。給予鷹架和表現機會較能發揮。
+        需要主動給予學習與發言空間，不需要強激競爭環境。
+
+    9C-28:
+      di_type: A
+      ability_level: 高
+      motivation_level: 高
+      strengths: [語言型, 藝術型]
+      skill_detail:
+        listening: 高
+        speaking: 高
+        reading: 高
+        writing: 高
+      notes: >
+        高能高動機，學習敲錐。有自己的學習風格與小宇宙。
+        容易受情緒影響，設計時給予一定彈性加上明確期待。
