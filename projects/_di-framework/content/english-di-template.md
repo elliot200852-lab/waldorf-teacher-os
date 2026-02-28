@@ -26,6 +26,8 @@
 
 **如果對話途中察覺岔題：** AI 必須主動說「我們先回到中軸：目前在 {區塊/Step}，確認要繼續嗎？」
 
+**如果面臨資源匱乏：** 當教師提議一個新單元或學期規劃，但未提供充分的參考材料或初步想法時，AI 必須主動踩煞車，要求：「為了維持產出品質，請先提供您準備好的網路搜尋研究成果或文本分析 Markdown 檔案，我們再繼續。」除非教師明確授權跳過，否則不應無資源強行展開設計。
+
 ---
 
 ## 產出檔案位置規範
@@ -89,23 +91,37 @@
 | 區塊 | 名稱 | 檔案 | 狀態 | 建議前置 | 核心產出 |
 |------|------|------|------|----------|----------|
 | Block 1 | 學季整體規劃 | [english-di-block1.md](english-di-block1.md) | 已建立 | — | `english-syllabus.md` |
-| Block 2 | 班級實際教學 | [english-di-block2.md](english-di-block2.md) | 已建立 | Block 1 | `english-unit-{n}.md` + `english-task-{n}.md` |
-| Block 3+ | 待定 | — | 待確認 | — | — |
+| Block 2 | 班級實際教學 | [english-di-block2.md](english-di-block2.md) | 已建立 | Block 1, Block 3 | `english-unit-{n}.md` + `english-task-{n}.md` |
+| Block 3 | 教學歷程紀錄與觀察 | [english-di-block3.md](english-di-block3.md) | 已建立 | 獨立運行 | 學生歷程、班級歷程、教學心得 |
+| Block 4 | 學習評量與教學結案 | [english-di-block4.md](english-di-block4.md) | 已建立 | Block 1, Block 3 | 學生評量總檔、教學歷程結案檔 |
 
-### 區塊連接說明
+### 區塊全系統連接說明（TeacherOS Workflow）
 
 ```
-Block 1（學季整體規劃）
-    └─ 產出：english-syllabus.md（教學大綱）
-              ↓ 作為基準參照
-Block 2（班級實際教學）
-    ├─ 2-A：單元教學流程設計（單元規劃 + 逐節 45 分鐘課堂流程）
-    │         └─ 產出：english-unit-{n}.md
-    └─ 2-B：差異化任務與驗收回饋機制設計
-              ├─ 課中差異化延伸
-              ├─ 家庭任務（習慣導向、可驗收）
-              ├─ 減負驗收機制（同儕支援方式）
-              └─ 產出：english-task-{n}.md
+[起點] Block 1（學季整體規劃）
+    └─ 產出：english-syllabus.md（教學大綱、核心檢核任務）
+              │
+              ├─▶ 作為最高指導原則 ＆ Block 4 結案指標
+              │
+[日常] Block 2（班級實際教學） ◀──────────┐ (回饋循環)
+    ├─ 2-A：單元教學流程設計             │
+    │         └─ 產出：english-unit-{n}.md │
+    └─ 2-B：差異化任務與驗收回饋機制     │
+              └─ 產出：english-task-{n}.md │
+                                           │
+[日常] Block 3（教學歷程紀錄與觀察）────────┘ (獨立運作收集資料)
+    ├─ 收集與解構：將一次性的課堂長文 / 音檔拆解
+    └─ 產出三維紀錄庫：
+         ├─ student-logs/{ID}-log.md (個人動態)
+         ├─ unit-logs.md (班級整體進度與困難)
+         └─ teacher-reflections.md (教學反思)
+              │
+              ├─▶ 作為 Block 4 總結性評量來源
+              │
+[結案] Block 4（學習評量與歷程結案）
+    ├─ 教學歷程合併 (讀取 unit-logs + teacher-reflections)
+    └─ 期末專屬評量 (讀取 student-logs + 學季大綱任務 + 最終成績)
+         └─ 產出：student-assessments-YYYYMMDD.md (含全班歷程摘要)
 ```
 
 **區塊間的參照規則：**

@@ -83,6 +83,9 @@ AI 必須在分析前讀取以下檔案（若尚未在本次對話中載入）�
 3. projects/_di-framework/content/strategy-output-quality-standard.md（品質標準）
 4. projects/class-{班級}/working/students.yaml（學生 DI 樣態）
 5. projects/class-{班級}/working/english-session.yaml（進度錨點）
+6. projects/class-{班級}/english/content/records/（讀取教學歷程紀錄）
+   - 請檢索 `unit-logs.md`、`teacher-reflections.md` 及相關學生的 `student-logs/`。
+   - **檢索規則**：各類檔案只須篩選出**最後（最新）的三個日期紀錄**閱讀，不必讀完全文。
 ```
 
 ### Step 3：產出策略分析表

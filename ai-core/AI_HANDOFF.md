@@ -103,9 +103,11 @@ WaldorfTeacherOS-Repo/
 │   │   └── content/
 │   │       ├── system-logic-map.md                   ← 母文件：三維定位系統
 │   │       ├── strategy-output-quality-standard.md   ← [必讀 Step 3] 產出品質標準
-│   │       ├── english-di-template.md                ← 英文課主控索引（已建立）
-│   │       ├── english-di-block1.md                  ← 區塊一：學季整體規劃（已建立、已校準品質）
-│   │       ├── english-di-block2.md                  ← 區塊二：班級實際教學（已建立）
+│   │       ├── english-di-template.md                ← 英文課主控索引
+│   │       ├── english-di-block1.md                  ← 區塊一：學季整體規劃
+│   │       ├── english-di-block2.md                  ← 區塊二：班級實際教學
+│   │       ├── english-di-block3.md                  ← 區塊三：教學歷程紀錄與觀察
+│   │       ├── english-di-block4.md                  ← 區塊四：學習評量與教學結案
 │   │       ├── student-knowledge-protocol.md          ← [必讀 Step 6] 學生知識庫操作協議
 │   │       └── main-lesson-di-template.md            ← 主課程 DI 模板（待建立）
 │   │
@@ -147,28 +149,28 @@ WaldorfTeacherOS-Repo/
 
 ## 三、英文課 DI 模板架構
 
-### 區塊化設計
+### 區塊化設計與 TeacherOS 工作流
 
 ```
-english-di-template.md（主控索引）
-    │
-    ├─ Block 1：學季整體規劃（english-di-block1.md）【已建立、已校準品質】
-    │   Step 1 教師輸入 → Step 2 AI 雙軸檢核 → Step 3 產出教學大綱
-    │   必要欄位：標題、班級、授課老師、教學目標、教學策略、
-    │             教學規劃、學生任務、評量方式（含佔分百分比）
-    │   寫作風格：每條兩句話如寫詩、語言基本功不可省略
-    │   品質範例：reference/block1-output-example-draft.md
-    │
-    └─ Block 2：班級實際教學（english-di-block2.md）【已建立】
-        ├─ 2-A：單元教學流程設計
-        │   三階段對話流程：策略層（AI 分析）→ 教師選擇 → 產出
-        │   彈性單元（單節 / 多節 / 主題式）+ 固定 45 分鐘四段結構
-        │   （Warm-up → Main Activity → Check → Closing）
-        │
-        └─ 2-B：差異化任務與驗收回饋機制設計
-            ├─ 課中差異化延伸（預裝式，不需老師即時指派）
-            ├─ 家庭任務（習慣導向、輕量、可驗收）
-            └─ 減負驗收機制（同儕支援方式）
+[起點] Block 1：學季整體規劃（english-di-block1.md）
+    ├─ 課前準備阻擋機制：AI 必須在 Step 1 攔截並要求老師提供研究/文本分析檔案，除非獲強制明確授權。
+    └─ 產出：english-syllabus.md（教學大綱、核心檢核任務），作為最高指導原則。
+
+[日常] Block 2：班級實際教學（english-di-block2.md） ◀︎─┐
+    ├─ 2-A：單元教學流程設計（固定 45 分鐘四段結構）         │ (AI 主動查閱 Block 3 最近期紀錄，提出修正建議)
+    └─ 2-B：差異化任務與驗收回饋機制設計                  │
+                                                     │
+[日常] Block 3：教學歷程紀錄與觀察（english-di-block3.md）─┘ (可獨立隨時插入)
+    ├─ 收集與解構：將一次性的長文描述或錄音拆解，具備學生 ID 模糊對齊能力。
+    └─ 產出三維紀錄庫 (皆帶 [YYYY-MM-DD] 日期標籤)：
+         ├─ student-logs/{ID}-log.md (個別學生動態)
+         ├─ unit-logs.md (班級整體進度與困難)
+         └─ teacher-reflections.md (教學反思)
+                                                     │
+[結案] Block 4：學習評量與歷程結案（english-di-block4.md）◀︎─┘ (期末總結)
+    ├─ 教學歷程合併 (讀取 unit-logs + teacher-reflections)
+    └─ 期末專屬評量 (讀取 student-logs + 學季大綱任務 + 最終成績)
+         └─ 產出單一合併檔：student-assessments-YYYYMMDD.md
 ```
 
 ### 防迷路機制：進度錨點
@@ -226,6 +228,15 @@ english-di-template.md（主控索引）
 | Block 1 範例 | block1-output-example-draft.md（9C 教學大綱完整範例） |
 | Pandoc 安裝 | 系統已安裝 Pandoc 3.9 |
 | v04 版本 | 打 tag 推上 GitHub |
+
+### 2026-02-28 第六次 session：TeacherOS 系統四區塊閉環完備
+
+| 項目 | 說明 |
+|------|------|
+| 課前準備硬性阻擋 | 更新 `teacher-guide.md` 與 `Block 1` 模板，導入對話開頭主動詢問並阻擋無檔案狀態的機制（除非明確授權放行）。 |
+| Block 3 實作完成 | 建立 `english-di-block3.md` 教學歷程紀錄與觀察：定義非同步模糊比對與拆解能力，建立 MD 格式的「三維紀錄庫」(學生/單元/反思) 取代舊底 YAML 囤積。寫入時強制綁定 `[YYYY-MM-DD]` 標籤。 |
+| Block 4 實作完成 | 建立 `english-di-block4.md` 學習評量與教學結案：定義結案的「合併單檔評量」總檔架構，設定含 200 字「全班歷程摘要」及個別學生（質性描述、大綱檢核、分數）的輸出模板。 |
+| 檢索降載機制 | 修改 `Block 2` 前置讀取，設定為只讀取日誌「最近三筆日期」，避免資訊超載；全面繪製 1 至 4 區塊的系統連接圖示。 |
 
 ### 2026-02-28 第五次 session：9C 英文教學大綱設計
 
