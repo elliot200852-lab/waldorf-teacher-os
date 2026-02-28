@@ -3,33 +3,36 @@
 
 english_session:
   class: class-9c
-  last_updated: null
+  last_updated: 2026-02-28
 
   current_position:
-    block: null        # 一 / 二
-    step: null         # 1 / 2 / 3
-    sub_block: null    # 區塊二時填入：2-A / 2-B
-    unit_number: null  # 區塊二時填入：目前在第幾單元
+    block: 一
+    step: 3         # Step 3 已完成——教學大綱 v1 確認並輸出
+    sub_block: null
+    unit_number: null
 
   confirmed_decisions:
-    []
+    - "學期範圍：下學期，10 週，40 節課"
+    - "每週節奏：2 節小說研讀（The House on Mango Street）+ 2 節語言工坊"
+    - "語言工坊內容骨幹：108 課綱三維度（2,000 字彙 + 46 溝通功能 + 文法句構）"
+    - "語言工坊工具：文法教材 + 會考題本 + 教室雙電腦站點旋轉（具體名稱不列入大綱）"
+    - "文學產出：個人短篇素描（vignette），模仿 Cisneros 風格"
+    - "評量分配（定案）：小說討論 20% + 創意寫作 20% + 詞彙溝通 25% + 文法閱讀 25% + 學習歷程 10%"
 
   next_action:
-    description: null
+    description: "進入 Block 2 — 設計第一單元的 45 分鐘課堂流程（第 1–2 週，小說研讀 + 語言工坊）"
     input_needed_from_teacher: null
 
   output_files:
-    # 雙路徑同時記錄，格式：[班級視角路徑, 科目視角路徑]
-    # 命名規則：{類型}-v{N}-{YYYYMMDD}.md
-    syllabus_versions: []
-    # 範例：
-    # - version: v1
-    #   date: 20260227
-    #   paths:
-    #     class_view: projects/class-9c/content/english/english-syllabus-v1-20260227.md
-    #     subject_view: projects/class-9c/english/content/english-syllabus-v1-20260227.md
+    syllabus_versions:
+      - version: v1
+        date: 20260228
+        status: 已確認並輸出
+        paths:
+          class_view: projects/class-9c/content/english/english-syllabus-v1-20260228.md
+          subject_view: projects/class-9c/english/content/english-syllabus-v1-20260228.md
+        google_drive: 00-01-TeacherOS-專案三層記憶/projects/class-9c/english/english-syllabus-v1-20260228.docx
     units_completed: []
     extensions_completed: []
 
-  open_questions:
-    []
+  open_questions: []

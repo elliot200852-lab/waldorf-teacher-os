@@ -4,8 +4,8 @@
 
 system_status:
 
-  di_framework: 完成
-  english_template: 完成（Block 1 + Block 2 + 品質標準 + 品質範例）
+  di_framework: 完成（含 108 課綱語言參考對照，已寫入 english-di-template.md）
+  english_template: 完成（Block 1 + Block 2 + 品質標準 + 品質範例 + 108 課綱語言參考）
   main_lesson_template: 待建立
 
   students_yaml:
@@ -13,10 +13,15 @@ system_status:
     class-8a: 待填入
     class-7a: 待填入
 
+  english_syllabus:
+    class-9c: 完成（v1-20260228，已輸出 Google Drive）
+    class-8a: 尚未開始
+    class-7a: 尚未開始
+
   environment: 完成（build.sh + Pandoc 3.9 + Google Drive）
-  github_version: v04
+  github_version: v05
 
   last_context_review: 2026-02-28
   context_review_path: ai-core/reviews/context-review-20260228.md
 
-  next_priority: 實際執行 Block 1 — 為 9C 產出英文教學大綱
+  next_priority: 9C 英文 Block 2 — 設計第一單元 45 分鐘課堂流程（第 1–2 週）
