@@ -360,64 +360,10 @@ WaldorfTeacherOS-Repo/
 
 ---
 
-## 九、新使用者環境設定（首次使用必讀）
+## 九、新使用者環境設定
 
-> 本節適用於第一次設定 TeacherOS 的老師，或協助老師設定環境的 AI。
-
-### 必要帳號清單
-
-| 帳號 | 用途 | 是否必須 |
-|------|------|----------|
-| Google 帳號 | Google Drive 備份與 Google Docs 輸出 | 必須 |
-| GitHub 帳號 | 取得 / 同步 TeacherOS Repo | 必須 |
-| Homebrew | 安裝 Pandoc 等工具（macOS） | 必須 |
-| Claude Code / 其他 AI | 執行備課工作 | 必須 |
-
-### 設定步驟（新老師第一次使用）
-
-**Step 1 — 安裝 Google Drive for Desktop**
-1. 前往 https://www.google.com/drive/download/ 下載並安裝
-2. 登入你的 Google 帳號
-3. 開啟「我的雲端硬碟」同步
-4. 確認本機路徑出現：`~/Library/CloudStorage/GoogleDrive-{你的帳號}/`
-
-**Step 2 — 安裝 Pandoc**
-```bash
-# 先安裝 Homebrew（若尚未安裝）
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# 安裝 Pandoc
-brew install pandoc
-```
-
-**Step 3 — 取得 TeacherOS Repo**
-```bash
-git clone https://github.com/elliot200852-lab/waldorf-teacher-os.git
-cd waldorf-teacher-os
-```
-
-**Step 4 — 建立個人環境設定檔**
-```bash
-cp setup/environment.env.example setup/environment.env
-# 用文字編輯器打開 setup/environment.env，填入你的個人資訊
-```
-
-**Step 5 — 在 Google Drive 建立 TeacherOS 資料夾**
-- 在你的 Google Drive 建立資料夾（名稱與 `GOOGLE_DRIVE_FOLDER` 一致）
-- 在資料夾內依班級建立子資料夾：`projects/class-9c/english/` 等
-- 或向系統管理員（David）申請共用資料夾
-
-**Step 6 — 執行環境檢查**
-```bash
-bash setup/setup-check.sh
-```
-全部通過後即可開始使用。
-
-### 環境是否跨 AI 通用？
-
-是。`publish/build.sh` 腳本存放在 Repo 內，任何有 Bash 執行能力的 AI 都可以直接呼叫。
-個人路徑設定在 `setup/environment.env`（本機存放，不上傳 GitHub），腳本每次執行時自動讀取。
-AI 只需知道要輸出的 .md 檔案路徑，其餘全部自動處理。
+> 若需協助新老師進行本機環境（包含 Google Drive、Pandoc、Git Repo）之設定，
+> **請改為查閱 `setup/teacher-guide.md`，該檔案有最完整的操作指南。**
 
 ---
 
