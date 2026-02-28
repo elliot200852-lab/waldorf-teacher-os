@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeacherOS - 釋放教學靈魂的 AI 協作系統</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            /* 華德福風格色彩配置 */
+            --bg-color: #fdfbf7;
+            --text-main: #4a4036;
+            --text-muted: #7c7166;
+            --accent-warm: #d97757;
+            /* 溫暖的磚紅/桃紅 */
+            --accent-earth: #8fa074;
+            /* 柔和的鼠尾草綠 */
+            --accent-sun: #e6b85c;
+            /* 柔和的鵝黃/金黃 */
+            --accent-sky: #6b8ea6;
+            /* 柔和的灰藍 */
+
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-shadow: 0 8px 32px rgba(90, 80, 70, 0.08);
+            --card-border: rgba(230, 220, 210, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* 設置水彩背景 */
+            background-color: var(--bg-color);
+            background-image: url('images/watercolor_bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            /* 使用具有人文氣息的明體/黑體組合 */
+            font-family: 'Noto Sans TC', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 3rem 1.5rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif-font {
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--accent-earth);
+            border-radius: 9999px;
+            color: var(--accent-earth);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(143, 160, 116, 0.15);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        /* 佈局架構 */
+        .workflow-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Block 1 & 2 並列的容器 */
+        .top-blocks-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            width: 100%;
+            margin-bottom: -1rem;
+            /* 讓居中的 Block 3 可以往上貼一點 */
+            z-index: 10;
+        }
+
+        @media (min-width: 768px) {
+            .top-blocks-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* 獨立居中的區塊容器 */
+        .centered-block-container {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            z-index: 20;
+            /* 確保疊在並列區塊之上 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .block-3-container {
+            margin-top: 1.5rem;
+            /* 與上方並列區塊的距離 */
+        }
+
+        .block-4-container {
+            margin-top: 1rem;
+        }
+
+        /* 繪製箭頭 */
+        .flow-arrow {
+            color: var(--accent-earth);
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            padding: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed var(--accent-earth);
+        }
+
+        /* 卡片設計 (水彩/紙質風格) */
+        .block-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        /* 邊角水彩暈染裝飾 */
+        .block-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            border-radius: 0 16px 0 100%;
+            opacity: 0.1;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .b1-bg::after {
+            background: var(--accent-sun);
+        }
+
+        .b2-bg::after {
+            background: var(--accent-sky);
+        }
+
+        .b3-bg::after {
+            background: var(--accent-earth);
+        }
+
+        .b4-bg::after {
+            background: var(--accent-warm);
+        }
+
+        .block-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(90, 80, 70, 0.12);
+        }
+
+        .block-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .block-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
+        }
+
+        .b1-icon {
+            color: var(--accent-sun);
+        }
+
+        .b2-icon {
+            color: var(--accent-sky);
+        }
+
+        .b3-icon {
+            color: var(--accent-earth);
+        }
+
+        .b4-icon {
+            color: var(--accent-warm);
+        }
+
+        .block-title h2 {
+            font-size: 1.35rem;
+            margin-bottom: 0.2rem;
+            color: var(--text-main);
+        }
+
+        .block-title p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .content-list {
+            list-style: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .content-list li::before {
+            content: '✿';
+            /* 使用有機的符號取代點 */
+            position: absolute;
+            left: 0;
+            font-size: 0.7rem;
+            top: 4px;
+            color: var(--text-muted);
+            opacity: 0.5;
+        }
+
+        /* AI 魔法亮點區塊 */
+        .magic-box {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.6);
+            border-left: 3px solid #ccc;
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1.25rem;
+        }
+
+        .magic-box.gold {
+            border-left-color: var(--accent-sun);
+        }
+
+        .magic-box.blue {
+            border-left-color: var(--accent-sky);
+        }
+
+        .magic-box.green {
+            border-left-color: var(--accent-earth);
+        }
+
+        .magic-box.red {
+            border-left-color: var(--accent-warm);
+        }
+
+        .magic-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .magic-title.gold-text {
+            color: #d4a042;
+        }
+
+        .magic-title.blue-text {
+            color: var(--accent-sky);
+        }
+
+        .magic-title.green-text {
+            color: #6d8253;
+        }
+
+        .magic-title.red-text {
+            color: #c45c3c;
+        }
+
+        .magic-box p {
+            font-size: 0.9rem;
+            color: #5a5046;
+        }
+
+        /* 收尾 CTA 區塊 */
+        .cta-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            width: 100%;
+        }
+
+        .cta-title {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-desc {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--accent-earth);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .cta-button:hover {
+            background-color: #7a8c62;
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(143, 160, 116, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="badge">
+                <i data-lucide="leaf"
+                    style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>
+                加入陪伴生命的教學協作
+            </div>
+            <h1>TeacherOS 釋放教學靈魂</h1>
+            <p class="subtitle">讓 AI 處理繁瑣的「資料對齊與整理紀錄」，把溫暖的眼神與力氣 100% 留給教室裡的孩子。<br>（以華德福英文科差異化教學 workflow 為例）</p>
+        </header>
+
+        <div class="workflow-layout">
+
+            <!-- 第一排：Block 1 & Block 2 並列 -->
+            <div class="top-blocks-row">
+                <!-- Block 1 -->
+                <div class="block-card b1-bg">
+                    <div class="block-header">
+                        <div class="block-icon b1-icon">
+                            <i data-lucide="map" stroke-width="2" style="width: 28px; height: 28px;"></i>
+                        </div>
+                        <div class="block-title">
+                            <h2>Block 1：學季整體規劃</h2>
+                            <p>學期初的導航圖</p>
+                        </div>
+                    </div>
+                    <ul class="content-list">
+                        <li><strong>你提供</strong>：班級情境、想上的文本或故事點子。</li>
+                        <li><strong>系統要求</strong>：開始前，AI 會溫柔阻擋你，要求提供做好的備課文本分析檔案。</li>
+                    </ul>
+                    <div class="magic-box gold">
+                        <div class="magic-title gold-text">
+                            <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+                            AI 魔幻時刻
+                        </div>
+                        <p>AI 將你的備課點子與全班學生的「能力×動機」DI 樣態交纏對齊。產出嚴守「先說人，再說策略」的教學大綱，確保班上的特教或資優孩子都獲得適切的學習鷹架。</p>
+                    </div>
+                </div>
+
+                <!-- Block 2 -->
+                <div class="block-card b2-bg">
+                    <div class="block-header">
+                        <div class="block-icon b2-icon">
+                            <i data-lucide="layout-template" stroke-width="2" style="width: 28px; height: 28px;"></i>
+                        </div>
+                        <div class="block-title">
+                            <h2>Block 2：班級實際教學</h2>
+                            <p>日常備課的最佳副駕</p>
+                        </div>
+                    </div>
+                    <ul class="content-list">
+                        <li><strong>你提供</strong>：今天要上的單元目標與範圍。</li>
+                        <li><strong>產出結果</strong>：標準 45 分鐘脈絡（暖身、主活動、檢核、收心）的「有機」課堂設計。</li>
+                    </ul>
+                    <div class="magic-box blue">
+                        <div class="magic-title blue-text">
+                            <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+                            AI 魔幻時刻
+                        </div>
+                        <p>在設計課表前，AI 會聰明地往前尋找「最近三次的教學日誌（Block 3）」，主動提出：「上次分組討論部分同學遇到挫折，今天我們是否要增加同儕支持機制？」形成正向教學循環。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 3 置中，放在 1 ＆ 2 的正下方 -->
+            <div class="centered-block-container block-3-container">
+                <div class="block-card b3-bg">
+                    <div class="block-header">
+                        <div class="block-icon b3-icon">
+                            <i data-lucide="mic" stroke-width="2" style="width: 28px; height: 28px;"></i>
+                        </div>
+                        <div class="block-title">
+                            <h2>Block 3：歷程紀錄與觀察</h2>
+                            <p>下課後的一鍵傾倒</p>
+                        </div>
+                    </div>
+                    <ul class="content-list">
+                        <li><strong>你提供</strong>：下課後，隨興錄下一段語音，或打一串流水帳式的課堂碎碎念。</li>
+                        <li><strong>使用情境</strong>：不需前置作業，隨時獨立呼叫，讓心思落地。</li>
+                    </ul>
+                    <div class="magic-box green">
+                        <div class="magic-title green-text">
+                            <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+                            AI 魔幻時刻
+                        </div>
+                        <p>AI 負責苦力活！自動運用「模糊比對」將綽號還原對齊座號。將一團混亂的描述無縫解構並歸檔為：【個別學生歷程】、【全班單元進展】與【教師反思】，建構立體的神經網絡記憶庫。</p>
+                    </div>
+                </div>
+
+                <!-- 指向 Block 4 的箭頭 -->
+                <div class="flow-arrow">
+                    <i data-lucide="arrow-down" style="width: 20px; height: 20px; stroke-width: 2.5;"></i>
+                </div>
+            </div>
+
+            <!-- Block 4 置中排列於圖表底部 -->
+            <div class="centered-block-container block-4-container">
+                <div class="block-card b4-bg">
+                    <div class="block-header">
+                        <div class="block-icon b4-icon">
+                            <i data-lucide="award" stroke-width="2" style="width: 28px; height: 28px;"></i>
+                        </div>
+                        <div class="block-title">
+                            <h2>Block 4：學習評量與結案</h2>
+                            <p>期末成績單自動收成</p>
+                        </div>
+                    </div>
+                    <ul class="content-list">
+                        <li><strong>你提供</strong>：期末分數表或簡單總評意見。</li>
+                        <li><strong>隱私保護</strong>：結案報告因含有還原的全名，系統將嚴格隔離於本機端，不上傳雲端。</li>
+                    </ul>
+                    <div class="magic-box red">
+                        <div class="magic-title red-text">
+                            <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+                            AI 魔幻時刻
+                        </div>
+                        <p>告別期末填寫空泛評語的夢魘！AI 抓取一整學期 Block 3 的隨手碎片，為每位學生生成包含「大綱任務達標勾選」與「言之有物的質性文字評量」，為這一學季的旅程畫下完美的總結點。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title serif-font">準備好體驗更輕盈的備課日常了嗎？</h2>
+            <p class="cta-desc">將僵硬的格式與紀錄交給 TeacherOS，把你的心靈空間還給學生。<br>我們正在邀請第一批前導教師共同參與這趟溫暖的科技實驗。</p>
+            <a href="#" class="cta-button">
+                <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
+                索取測試包與設定指南
+            </a>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
