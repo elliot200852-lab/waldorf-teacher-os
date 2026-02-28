@@ -57,9 +57,12 @@ projects/class-{x}/
 | 教師角色 | 資料寫入 | 使用 ID |
 |----------|----------|---------|
 | 導師 | `students.yaml` 的 `special_cases` 或 `class_dynamic` | 是 |
-| 英文老師 | `english/di-profile.yaml` 的 `student_observations` | 是 |
-| 主課程老師 | `main-lesson/di-profile.yaml` 的 `student_observations` | 是 |
+| 英文老師 | `english/di-profile.yaml` 或 `records/student-logs/{ID}-log.md` | 是 |
+| 主課程老師 | `main-lesson/di-profile.yaml` 或 `records/student-logs/{ID}-log.md` | 是 |
 | 其他科任 | `{科目}/di-profile.yaml`（不存在則先建立） | 是 |
+
+> [!NOTE]
+> 關於日常的課堂觀察與教學日誌，系統目前採用 **三維 Markdown 紀錄庫**（如 `records/student-logs/`）。這些動態的歷程故事應寫入對應的 .md 檔案，而非囤積在 `di-profile.yaml` 中；`di-profile.yaml` 僅保留核心的 DI 分類標籤、成績與最重要的結案簡述。
 
 > [!IMPORTANT]
 > 學生 ID 必須從 `roster.yaml` 查找（格式：`9C-01`）。
