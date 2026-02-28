@@ -20,3 +20,6 @@ setup/environment.env
 
 # 學生個人資料（含真名，不上傳）
 projects/*/roster.yaml
+
+# 期末學生評量總檔（含還原的真實姓名，不上傳）
+projects/*/english/content/student-assessments*.md
