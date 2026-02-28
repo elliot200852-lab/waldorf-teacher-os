@@ -106,20 +106,26 @@ WaldorfTeacherOS-Repo/
 │   │       ├── english-di-template.md                ← 英文課主控索引（已建立）
 │   │       ├── english-di-block1.md                  ← 區塊一：學季整體規劃（已建立、已校準品質）
 │   │       ├── english-di-block2.md                  ← 區塊二：班級實際教學（已建立）
+│   │       ├── student-knowledge-protocol.md          ← [必讀 Step 6] 學生知識庫操作協議
 │   │       └── main-lesson-di-template.md            ← 主課程 DI 模板（待建立）
 │   │
 │   ├── class-9c/                    ← 9C 班（導師班：主課程 + 英文）
-│   │   ├── project.yaml
-│   │   ├── reference/               ← 班級參考文件
+│   │   ├── project.yaml                ← 班級入口（含 class_files 檔案索引）
+│   │   ├── roster.yaml                 ← 學生身份名冊（gitignored，含真名）
+│   │   ├── students.yaml               ← 班級共用 DI 摘要 + 跨科特殊狀況
+│   │   ├── reference/                  ← 班級參考文件
 │   │   ├── working/
-│   │   │   ├── students.yaml            ← 學生 DI 樣態（待填入）
-│   │   │   └── english-session.yaml     ← 英文課進度錨點（已建立）
-│   │   ├── content/english/             ← 班級視角產出目錄
+│   │   │   └── english-session.yaml    ← 英文課進度錨點
 │   │   ├── english/
-│   │   │   ├── content/                 ← 英文科目視角產出目錄
-│   │   │   └── reference/              ← 英文科參考文件
+│   │   │   ├── lesson.yaml             ← 課程結構
+│   │   │   ├── di-profile.yaml         ← 英文 DI 觀察（22 人完成）
+│   │   │   ├── assessment.yaml         ← 英文評量設定
+│   │   │   ├── content/                ← 英文產出目錄
+│   │   │   └── reference/              ← 英文參考文件
 │   │   └── main-lesson/
-│   │       ├── content/                 ← 主課程產出目錄
+│   │       ├── lesson.yaml
+│   │       ├── di-profile.yaml         ← 主課程 DI 觀察（待填入）
+│   │       ├── assessment.yaml
 │   │       └── reference/              ← 主課程參考文件
 │   │
 │   ├── class-8a/                    ← 結構同 class-9c（無 main-lesson）

@@ -93,6 +93,17 @@ output_quality_standard:
     如果你的產出無法通過 full_specification 中的品質自檢清單，
     必須修正後才能呈現給教師。
 
+# ── 學生知識庫操作協議（凡涉及學生資料時必讀）─────────────────
+
+student_knowledge_protocol:
+  mandatory: true
+  scope: 所有涉及學生資料讀寫的操作
+  path: projects/_di-framework/content/student-knowledge-protocol.md
+  ai_instruction: >
+    凡涉及學生能力、程度、喜好等資訊的讀取或寫入，
+    必須先讀取此協議文件，確認角色、路由與操作規則。
+    未確認教師角色前，不得寫入任何學生資料。
+
   core_rules_summary:
     rule_1_human_first: >
       先描述學生的內在狀態與心理需求，再展開教學策略。
