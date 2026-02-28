@@ -227,6 +227,16 @@ english-di-template.md（主控索引）
 | Pandoc 安裝 | 系統已安裝 Pandoc 3.9 |
 | v04 版本 | 打 tag 推上 GitHub |
 
+### 2026-02-28 第五次 session：9C 英文教學大綱設計
+
+| 項目 | 說明 |
+|------|------|
+| 108 課綱語言參考表 | `108-curriculum-language-reference.md` 存入 `_di-framework/content/`；寫入 `english-di-template.md` 主控索引（語言基本能力參考對照章節） |
+| 9C 英文 reference 建立 | 存入兩份研究文件：`9C下學期英文差異化教學策略研究.md`、`The house on Mango Street 小說教學研究報告範本.md` |
+| 9C 英文教學大綱 v1 | 以三份參考文件為基礎設計，確認三軸架構（小說 + 語言工坊 + 108 課綱），雙路徑存檔 + Google Drive 輸出完成 |
+| 評量比例定案 | 小說討論 20% + 創意寫作 20% + 詞彙溝通 25% + 文法閱讀 25% + 學習歷程 10% |
+| Block 1 完成 | 9C 英文 Block 1 全部流程跑完，english-session.yaml 進度錨點更新 |
+
 ### 2026-02-28 第四次 session：學生知識庫建構
 
 | 項目 | 說明 |
@@ -264,23 +274,23 @@ english-di-template.md（主控索引）
 | 環境設定系統 | 完成 | build.sh、setup-check.sh、environment.env、教師試用手冊均已建立並測試通過 |
 | 系統狀態快照 | 完成 | `ai-core/system-status.yaml`——AI 開工前可快速掃描（20 行） |
 | Context Review | 完成 | `ai-core/reviews/context-review-20260228.md`——首次全資料夾健檢 |
-| `class-9c` 英文 | 等待執行 Block 1 | 結構完整，students.yaml 與 di-profile 皆已填入完成。等待執行 Block 1 教學大綱設計 |
+| `class-9c` 英文 | Block 1 完成，等待 Block 2 | 教學大綱 v1 已產出並輸出至 Google Drive；評量比例定案；下一步：第一單元課堂設計（Block 2） |
 | `class-8a` 英文 | 尚未開始 | 結構完整，等待：students.yaml 填入 |
 | `class-7a` 英文 | 尚未開始 | 結構完整，等待：students.yaml 填入 |
 | `class-9c` 主課程 | 尚未開始 | 等待：main-lesson-di-template.md 建立後啟動 |
-| 教師試用計畫 | 準備中 | 手冊已備妥；待 David 跑完一次 Block 1 產出樣品後，可邀請測試老師 |
+| 教師試用計畫 | 準備中 | 手冊已備妥；9C 大綱為第一份樣品；可開始邀請測試老師 |
 
 ---
 
 ## 七、接下來前三件優先工作
 
-1. **實際執行 Block 1 — 為 9C 產出英文教學大綱**
-   - Block 1 模板、品質標準、9C 學生 DI 分布皆已就緒
-   - 可以實際產出第一份教學大綱
+1. **9C 英文 Block 2 — 第一單元課堂設計（第 1–2 週）**
+   - 教學大綱 v1 已確認，Block 2 隨時可啟動
+   - 設計 2 節小說研讀課 + 2 節語言工坊課的 45 分鐘課堂流程
+   - 參照：`english-di-block2.md`、`english-session.yaml`（進度錨點）
 
-2. **實際執行 Block 1 — 為一個班級產出教學大綱**
-   - Block 1 模板與品質標準已就緒，可以開始實際產出第一份教學大綱
-   - 建議從 9C 開始
+2. **8A / 7A 英文 — 填入 students.yaml，啟動 Block 1**
+   - 8A 與 7A 結構就緒，等待學生 DI 資料輸入後即可執行大綱設計
 
 3. **建立主課程 DI 設計模板**（`main-lesson-di-template.md`）
    - 適用 9C，連續 15 堂（3 週）的弧線邏輯，與英文課結構不同
@@ -399,5 +409,5 @@ AI 只需知道要輸出的 .md 檔案路徑，其餘全部自動處理。
 
 ---
 
-*本文件最後更新：2026-02-28（第三次 session 後）*
+*本文件最後更新：2026-02-28（第五次 session 後）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
