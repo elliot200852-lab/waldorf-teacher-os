@@ -3,21 +3,34 @@ grade: 九年級
 teacher_role: 導師（班導師）
 di_framework_ref: projects/_di-framework/project.yaml
 
-subjects_taught:
-  main_lesson:
-    type: 主課程
-    note: David 為 9C 主課程教師，課程主題待本學期確認
-  english:
-    type: 英文專科
-    weekly_sessions: 4
-
 homeroom_context: >
   David 為 9C 導師，與學生關係最深。
   同時承擔主課程與英文課，對班級整體發展有完整的觀察與責任。
 
+# ── 班級檔案索引（AI 讀這裡就知道要載入什麼）────────────────
+class_files:
+  roster: roster.yaml              # gitignored，學生身份（真名+ID+座號）
+  students: students.yaml          # 班級共用 DI 摘要 + 跨科特殊狀況
+  session_state: working/english-session.yaml  # 英文課工作進度錨點
+
+subjects:
+  english:
+    type: 英文專科
+    weekly_sessions: 4
+    lesson: english/lesson.yaml
+    di_profile: english/di-profile.yaml
+    assessment: english/assessment.yaml
+    content_output: english/content/
+  main_lesson:
+    type: 主課程
+    note: David 為 9C 主課程教師，課程主題待本學期確認
+    lesson: main-lesson/lesson.yaml
+    di_profile: main-lesson/di-profile.yaml
+    assessment: main-lesson/assessment.yaml
+
 current_semester: 2025-2026
-current_focus: 待確認
+current_focus: 執行 Block 1 — 9C 英文教學大綱設計
 next_steps:
+  - 執行 Block 1：產出 9C 英文教學大綱
   - 確認本學期主課程主題
-  - 建立 9C 學生 DI 樣態（students.yaml）
-  - 啟動英文課第一單元設計
+  - 建立主課程 DI 設計模板
