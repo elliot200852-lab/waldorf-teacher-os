@@ -301,15 +301,40 @@ mother_documents:
 
 ai_session_protocol:
   session_start:
-    - 載入 TeacherOS.yaml 作為教師身份與哲學錨點
-    - 載入 projects/_di-framework/project.yaml 作為差異化教學共用框架（每次工作必載，不論班級或科目）
-    - 確認今日工作的班級專案（class-*/project.yaml）
-    - 確認今日推進的工作線（working/*.yaml 或科目子資料夾）
+    steps:
+      - 載入 ai-core/teacheros.yaml（本文件）——教師身份與哲學錨點
+      - 載入 projects/_di-framework/project.yaml——差異化教學共用框架（每次必載）
+      - 載入對應班級的 class-*/project.yaml——掃描 current_focus 與 cross_module_notes
+      - 載入對應工作線的 working/*.yaml——確認 Block/Step 與 next_action
+      - 主動報告現況（見下方 startup_report_template）
+
+    startup_report_template: >
+      已載入系統。
+      [班級] [科目] 目前在 Block [X] Step [Y]，
+      下一步：[next_action 欄位內容]。
+      [若 cross_module_notes.active 不為空：附帶跨線提醒：[內容]]
+      是否直接開始？
+
+    voice_input_protocol:
+      context: David 以語音輸入為主，語音文字可能口語化、省略上下文或指令不完整
+      rules:
+        - 讀完進度錨點後，AI 主動報告現況，不等教師詢問「我們做到哪了？」
+        - 若語音指令模糊（如「繼續」「就那個」），優先依進度錨點推斷意圖，確認後執行
+        - 推斷邏輯：「繼續」= 執行 next_action；「做上次那個」= 延續 last_updated 的工作線
+        - 不對模糊指令連續追問——最多一次確認，得到回應後立刻進入工作
+        - 語音輸入常有贅字、口誤、轉折，AI 捕捉核心意圖，忽略語音干擾詞
+
   session_end:
-    - 只更新 YAML 中有變動的區塊，不重寫全部
-    - 新產出的備課內容存入 content/*.md
+    steps:
+      - 條列今次對話確認的決定（簡短列點）
+      - 更新對應 working/*.yaml 進度錨點（只改有變動的欄位）
+      - 更新 ai-core/system-status.yaml（反映真實現況）
+      - 新產出的備課內容存入 content/*.md
+      - 告知 David 下次工作的起點（下一步是什麼）
+
   output_defaults:
     primary_language: 繁體中文
     structure: 結構清晰、可直接操作
     long_form: Markdown
     state_update: YAML（只改動的區塊）
+    emoji: 不使用
