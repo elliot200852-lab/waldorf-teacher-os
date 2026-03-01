@@ -19,6 +19,12 @@ try:
     from docx.oxml import OxmlElement
     from docx.enum.table import WD_ALIGN_VERTICAL
     from docx.enum.text import WD_ALIGN_PARAGRAPH
+    
+    # 擴展 namespace 支援
+    from docx.oxml.ns import nsmap
+    if 'wp' not in nsmap:
+        nsmap['wp'] = 'http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing'
+        nsmap['a'] = 'http://schemas.openxmlformats.org/drawingml/2006/main'
 except ImportError:
     print("錯誤：缺少 python-docx 套件。請執行：pip3 install python-docx")
     sys.exit(1)
@@ -132,6 +138,7 @@ def logo_to_bytes(logo_path):
     return buf
 
 
+
 def detect_font_pt(para):
     """從段落 run 與樣式鏈取得字體大小（pt）。"""
     pt = None
@@ -148,6 +155,7 @@ def detect_font_pt(para):
     return pt or LOGO_DEFAULT_PT
 
 
+
 def clear_header(doc):
     """清除所有 section 的頁首內容"""
     for section in doc.sections:
@@ -157,88 +165,100 @@ def clear_header(doc):
             para.clear()
 
 
-def _get_or_create_child(parent, tag):
-    """在 parent 下取得或新建指定 tag 的第一個子元素"""
-    el = parent.find(qn(tag))
-    if el is None:
-        el = OxmlElement(tag)
-        parent.insert(0, el)
-    return el
-
-
-def _set_no_borders(pr_el, sides, borders_tag):
-    """在 tblPr 或 tcPr 中，將指定框線設為 none"""
-    for existing in pr_el.findall(qn(borders_tag)):
-        pr_el.remove(existing)
-    borders_el = OxmlElement(borders_tag)
-    for side in sides:
-        el = OxmlElement(side)
-        el.set(qn('w:val'), 'none')
-        el.set(qn('w:sz'), '0')
-        el.set(qn('w:space'), '0')
-        el.set(qn('w:color'), 'auto')
-        borders_el.append(el)
-    pr_el.append(borders_el)
-
-
-def remove_all_borders(table):
-    """移除表格及所有儲存格的框線"""
-    tbl   = table._tbl
-    tblPr = _get_or_create_child(tbl, 'w:tblPr')
-    _set_no_borders(tblPr,
-        ['w:top','w:left','w:bottom','w:right','w:insideH','w:insideV'],
-        'w:tblBorders')
-
-    for row in table.rows:
-        for cell in row.cells:
-            tcPr = cell._tc.get_or_add_tcPr()
-            _set_no_borders(tcPr,
-                ['w:top','w:left','w:bottom','w:right'],
-                'w:tcBorders')
-
-
-def set_cell_margins_zero(cell):
-    """清除儲存格內距"""
-    tcPr = cell._tc.get_or_add_tcPr()
-    for existing in tcPr.findall(qn('w:tcMar')):
-        tcPr.remove(existing)
-    tcMar = OxmlElement('w:tcMar')
-    for side in ['w:top', 'w:start', 'w:bottom', 'w:end']:
-        el = OxmlElement(side)
-        el.set(qn('w:w'), '0')
-        el.set(qn('w:type'), 'dxa')
-        tcMar.append(el)
-    tcPr.append(tcMar)
-
-
-def set_cell_width(cell, width_twips):
-    """設定儲存格寬度（twips）"""
-    tcPr = cell._tc.get_or_add_tcPr()
-    for existing in tcPr.findall(qn('w:tcW')):
-        tcPr.remove(existing)
-    tcW = OxmlElement('w:tcW')
-    tcW.set(qn('w:w'), str(width_twips))
-    tcW.set(qn('w:type'), 'dxa')
-    tcPr.append(tcW)
-
-
-def add_logo_table_layout(docx_path: str, logo_path: Path):
+def add_watermark_background(doc, bg_path_str):
     """
-    以無框雙欄表格排版標題行：
+    將背景圖片作為全頁浮水印插入每頁頁首。
+    使用 XML 操作將 inline picture 轉為 floating behind text。
+    """
+    from docx.shared import Inches
+    import copy
 
-      ┌─────────────────────────────┬──────┐
-      │  9C 春季班親會通知（Heading 1） │  ●   │  ← Logo 垂直置中
-      └─────────────────────────────┴──────┘
+    bg_path = Path(bg_path_str)
+    if not bg_path.exists():
+        print(f"警告：找不到背景圖片 {bg_path}，略過浮水印邏輯。")
+        return
 
-    技術說明：
-      - w:position 對 inline drawing 無效，只能作用於文字 run
-      - 唯一可靠的垂直置中方式是 table cell 的 w:vAlign
-      - 表格設為無框線、無內距，視覺上與普通標題段落相同
+    for section in doc.sections:
+        header = section.header
+        header.is_linked_to_previous = False
+        para = header.paragraphs[0] if header.paragraphs else header.add_paragraph()
+
+        # 先插入一般的 inline 圖片
+        run = para.add_run()
+        run.add_picture(str(bg_path), width=Inches(8.27), height=Inches(11.69))
+
+        # 取得最後插入的 shape (inline)
+        drawing = run._r.find(qn('w:drawing'))
+        if drawing is None:
+            continue
+        inline = drawing.find(qn('wp:inline'))
+        if inline is None:
+            continue
+
+        # 建立 anchor (floating)
+        anchor = OxmlElement('wp:anchor')
+        anchor.set('distT', "0")
+        anchor.set('distB', "0")
+        anchor.set('distL', "0")
+        anchor.set('distR', "0")
+        anchor.set('simplePos', "0")
+        anchor.set('relativeHeight', "0")
+        anchor.set('behindDoc', "1")  # 文字後方
+        anchor.set('locked', "0")
+        anchor.set('layoutInCell', "1")
+        anchor.set('allowOverlap', "1")
+        
+        # simplePos="0" 的必要子元素
+        simplePos = OxmlElement('wp:simplePos')
+        simplePos.set('x', "0")
+        simplePos.set('y', "0")
+        anchor.append(simplePos)
+
+        # 水平對齊配置: 相對於 page, align center
+        positionH = OxmlElement('wp:positionH')
+        positionH.set('relativeFrom', 'page')
+        alignH = OxmlElement('wp:align')
+        alignH.text = 'center'
+        positionH.append(alignH)
+        anchor.append(positionH)
+
+        # 垂直對齊配置: 相對於 page, align center
+        positionV = OxmlElement('wp:positionV')
+        positionV.set('relativeFrom', 'page')
+        alignV = OxmlElement('wp:align')
+        alignV.text = 'center'
+        positionV.append(alignV)
+        anchor.append(positionV)
+
+        # 取消文字環繞 (Wrap None)，這是避免推擠文字並造成分頁異常的關鍵
+        wrapNone = OxmlElement('wp:wrapNone')
+        anchor.append(wrapNone)
+
+        # 複製原本 inline 的內容: extent, effectExtent, docPr, cNvGraphicFramePr, graphic
+        for tag in ['wp:extent', 'wp:effectExtent', 'wp:docPr', 'wp:cNvGraphicFramePr', 'a:graphic']:
+            el = inline.find(qn(tag))
+            if el is not None:
+                anchor.append(copy.deepcopy(el))
+                
+        # 替換 docPr 的 id 確保唯一
+        docPr = anchor.find(qn('wp:docPr'))
+        if docPr is not None:
+            import random
+            docPr.set('id', str(random.randint(10000, 99999)))
+
+        # 用 anchor 取代 inline
+        drawing.replace(inline, anchor)
+
+
+def add_logo_inline_layout(docx_path: str, logo_path: Path):
+    """
+    以 Inline 方式插入 Logo，避免表格切割文字。
+    為了垂直置中 Logo，我們改為「提昇標題文字」的 baseline (w:position)，
+    讓 Logo 維持在其原本基準網格。
     """
     doc = Document(docx_path)
     clear_header(doc)
 
-    # 找第一個非空段落（標題）
     title_para = None
     for para in doc.paragraphs:
         if para.text.strip():
@@ -252,86 +272,36 @@ def add_logo_table_layout(docx_path: str, logo_path: Path):
 
     font_pt   = detect_font_pt(title_para)
     logo_h_cm = max(font_pt * 0.06, 1.2)
+    logo_h_pt = logo_h_cm * 28.346
+    
+    # 預估標題字體的視覺高度 (Cap height) 約為 70% pt
+    cap_height = font_pt * 0.7
+    
+    # 計算需要提升文字多少點，才能讓文字中心對齊 Logo 中心
+    diff_pt = max(0, (logo_h_pt / 2.0) - (cap_height / 2.0))
+    pos_val = int(diff_pt * 2)  # half-points for OpenXML
 
-    # 計算欄寬（twips，1cm = 567 twips）
-    section     = doc.sections[0]
-    page_w      = section.page_width.twips  if section.page_width  else 11906
-    left_m      = section.left_margin.twips if section.left_margin else 1800
-    right_m     = section.right_margin.twips if section.right_margin else 1800
-    text_w      = page_w - left_m - right_m
-    logo_col_w  = int((logo_h_cm + 0.4) * 567)   # Logo 直徑 + 左右各 0.2cm
-    title_col_w = text_w - logo_col_w
-
-    # 在標題段落之前插入表格
-    body     = title_para._p.getparent()
-    title_p  = title_para._p
-    title_idx = list(body).index(title_p)
-
-    table = doc.add_table(rows=1, cols=2)
-    tbl   = table._tbl
-    body.remove(tbl)                    # add_table 會 append 到最後，先取出
-    body.insert(title_idx, tbl)         # 插入到標題原本的位置
-
-    # 表格屬性：固定寬度、全文字寬
-    tblPr = _get_or_create_child(tbl, 'w:tblPr')
-
-    # 移除任何繼承樣式（避免帶入框線）
-    for el in tblPr.findall(qn('w:tblStyle')):
-        tblPr.remove(el)
-    tblW  = OxmlElement('w:tblW')
-    tblW.set(qn('w:w'), str(text_w))
-    tblW.set(qn('w:type'), 'dxa')
-    tblPr.append(tblW)
-    tblLayout = OxmlElement('w:tblLayout')
-    tblLayout.set(qn('w:type'), 'fixed')
-    tblPr.append(tblLayout)
-
-    # 移除所有框線
-    remove_all_borders(table)
-
-    left_cell  = table.rows[0].cells[0]
-    right_cell = table.rows[0].cells[1]
-
-    # 設定欄寬與零內距
-    set_cell_width(left_cell,  title_col_w)
-    set_cell_width(right_cell, logo_col_w)
-    set_cell_margins_zero(left_cell)
-    set_cell_margins_zero(right_cell)
-
-    # 左欄：標題文字（保留原始樣式與 run 格式）
-    left_cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
-    left_para = left_cell.paragraphs[0]
-    left_para.style = title_para.style
+    # 提昇所有既有文字 run
     for run in title_para.runs:
-        new_run = left_para.add_run(run.text)
-        new_run.bold   = run.bold
-        new_run.italic = run.italic
-        if run.font.name:
-            new_run.font.name = run.font.name
-        if run.font.size:
-            new_run.font.size = run.font.size
-        try:
-            if run.font.color.type:
-                new_run.font.color.rgb = run.font.color.rgb
-        except Exception:
-            pass
-    # 若無 runs（純文字段落），直接設定文字
-    if not title_para.runs:
-        left_para.add_run(title_para.text)
+        rPr = run._r.get_or_add_rPr()
+        pos_el = OxmlElement('w:position')
+        pos_el.set(qn('w:val'), str(pos_val))
+        rPr.append(pos_el)
 
-    # 右欄：Logo，垂直置中 + 水平置中
-    right_cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
-    right_para = right_cell.paragraphs[0]
-    right_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    logo_run = right_para.add_run()
+    # 加兩個空白格，一樣要提升
+    space_run = title_para.add_run("  ")
+    rPr_space = space_run._r.get_or_add_rPr()
+    pos_space = OxmlElement('w:position')
+    pos_space.set(qn('w:val'), str(pos_val))
+    rPr_space.append(pos_space)
+
+    # 插入 Logo (不套用偏移，讓他直立於 Paragraph 基準線)
+    logo_run = title_para.add_run()
     logo_run.add_picture(logo_to_bytes(logo_path), height=Cm(logo_h_cm))
-
-    # 移除原始標題段落
-    body.remove(title_p)
 
     doc.save(docx_path)
     print(
-        f"Logo 已嵌入標題右側（高度 {logo_h_cm:.2f}cm，無框表格排版，垂直置中）："
+        f"Logo 已嵌入標題末端（高度 {logo_h_cm:.2f}cm，Inline 模式，文字基線偏移 {diff_pt:.1f}pt）："
         f"{Path(docx_path).name}"
     )
 
@@ -352,7 +322,14 @@ def main():
         return
 
     logo_ready = prepare_logo()
-    add_logo_table_layout(docx_path, logo_ready)
+    add_logo_inline_layout(docx_path, logo_ready)
+    
+    # 加入華德福水彩背景
+    bg_jpg_path = REPO_ROOT / "setup" / "assets" / "waldorf-bg.jpg"
+    doc = Document(docx_path)
+    add_watermark_background(doc, str(bg_jpg_path))
+    doc.save(docx_path)
+    print(f"已加入華德福淡彩水彩浮水印背景：{Path(docx_path).name}")
 
 
 if __name__ == "__main__":
