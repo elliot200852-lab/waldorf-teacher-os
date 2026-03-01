@@ -1,28 +1,61 @@
-# TeacherOS 系統狀態快照
-# AI 開工前可快速掃描此檔案，確認系統現況
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 系統狀態快照】
+# 路徑：ai-core/system-status.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# 維護協議：
+#   讀取 — AI 平時「不主動」讀取此檔。
+#           以下情況才讀：
+#             1. David 說「查狀態」、「現在系統在哪」
+#             2. AI 需要跨班級比較現況
+#             3. 新 AI 首次接手且 AI_HANDOFF.md 不足以定位
+#   寫入 — 每次對話結束，AI「必須」更新有變動的欄位。
+#           只改有變化的欄位，不重寫整份文件。
+#   主要入口仍是 AI_HANDOFF.md，此文件是補充快照。
+#
 # 最後更新：2026-03-01
 
 system_status:
 
-  di_framework: 完成（含 108 課綱語言參考對照，已寫入 english-di-template.md）
-  english_template: 完成（Block 1 + Block 2 + 品質標準 + 品質範例 + 108 課綱語言參考）
-  homeroom_template: 完成（HM Block 1-4 + Google iCal 同步機制 + 標籤分離協議）
+  # ── 框架與模板 ──────────────────────────────────────
+  di_framework: 完成（Block 1-4 模板、品質標準、輸出協議、108 課綱語言參考）
+  english_template: 完成（Block 1 含寫作風格邊界 + Block 2 + Block 3 + Block 4）
+  homeroom_template: 完成（HM Block 1-4 + Google iCal 同步機制）
   main_lesson_template: 待建立
 
+  # ── 學生資料 ────────────────────────────────────────
   students_yaml:
-    class-9c: 完成（含 private/public/di-profile 分離架構）
-    class-8a: 待填入
-    class-7a: 待填入
+    class-9c: 完成（roster + students + di-profile，22 人英文 DI 分類完成）
+    class-8a: 待填入（結構就緒，休眠中）
+    class-7a: 待填入（結構就緒，休眠中）
 
-  english_syllabus:
-    class-9c: 完成（v1-20260228，已輸出 Google Drive）
-    class-8a: 尚未開始
-    class-7a: 尚未開始
+  # ── 英文課進度 ──────────────────────────────────────
+  english_progress:
+    class-9c:
+      syllabus: v2-20260301（已輸出 Google Drive）
+      block: Block 1 完成 → 等待 Block 2
+      next: 設計第 1–2 週 45 分鐘課堂流程（小說研讀 + 語言工坊）
+    class-8a:
+      syllabus: 尚未開始
+      block: 休眠
+    class-7a:
+      syllabus: 尚未開始
+      block: 休眠
 
-  environment: 完成（build.sh + Pandoc 3.9 + Google Drive）
-  github_version: v06
+  # ── 導師業務進度 ────────────────────────────────────
+  homeroom_progress:
+    class-9c:
+      block: Block 3 Step 1 進行中
+      next: 確認春季班親會細節（2026-03-21）
 
+  # ── 環境與輸出系統 ──────────────────────────────────
+  environment:
+    build_sh: 完成（中文化 + 自動子資料夾分類 + /tmp 暫存 + Logo + 浮水印）
+    pandoc: 3.9
+    google_drive: 已連接
+    logo_watermark: 完成（Inline Logo + 華德福水彩浮水印，Gemini 完成）
+
+  # ── 系統維護 ────────────────────────────────────────
   last_context_review: 2026-02-28
   context_review_path: ai-core/reviews/context-review-20260228.md
-
-  next_priority: 9C 導師 HM Block 1 — 正式啟動行事規劃與工作週數設定
+  session_log: ai-core/reviews/session-log.md
