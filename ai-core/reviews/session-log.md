@@ -108,3 +108,25 @@
 | YAML 中文識別標頭 | 為所有 project.yaml 與 session.yaml 加入五行 # 註解識別區塊（不影響結構） |
 | AI_HANDOFF.md 瘦身 | 從 420 行壓縮至 ~50 行；歷史紀錄移至本文件 |
 | 系統全面 Review | 提出 9 項結構與 UX 問題，依優先順序逐項修正 |
+
+---
+
+## 2026-03-01 系統 8 項優化全部完成 + Demo HTML
+
+| 項目 | 說明 |
+|------|------|
+| UX0：AI_HANDOFF.md 精簡 | 420 行→66 行（84% 削減）；只留：載入協議、開工報告格式、結束規則、參考表 |
+| UX0：session-log.md 建立 | 歷史紀錄從 HANDOFF 移出，新建 ai-core/reviews/session-log.md（AI 平時不讀取） |
+| UX0：system-status.yaml 維護協議 | 加入「讀取 on-demand / 寫入 every session-end」明文協議；內容校正至正確現況 |
+| 結構1：build.sh Front Matter | 新增 `fm_value()` 函式讀取 Markdown Front Matter；解析順序：FM → 路徑推斷 → 報錯含操作說明 |
+| 結構1：6 份內容檔加入 Front Matter | class-9c 英文（v1/v2）與導師通知（v1/v2）各兩路徑，共 6 份 .md 加入 YAML Header |
+| 結構2：cross_module_notes | class-9c/project.yaml 新增 `cross_module_notes: active/resolved` 跨線協調結構；首筆：導師↔英文春季班親會 |
+| UX1：voice_input_protocol | teacheros.yaml 新增語音輸入 5 條協議（模糊→推斷、最多追問一次等） |
+| UX2：startup_report_template | teacheros.yaml 新增開工報告標準模板；session_start 步驟加入 cross_module_notes 掃描 |
+| UX2：session_end steps | teacheros.yaml 新增 session_end 四步驟明文協議 |
+| UX3：8A/7A dormant status | 兩班 project.yaml 加入 `status: dormant`，定義啟動觸發語與 AI 執行步驟 |
+| UX3：teacher-guide.md 第十節 | 新增「新增班級或科目」完整 SOP（啟動休眠班、新班克隆、新增科目三情境） |
+| UX4：current_week 欄位 | english-session.yaml 新增 `current_week: 0`，附 10 週單元換算對照表（comments） |
+| Demo HTML | `publish/teacheros-demo.html`（153KB，自含）：4 分頁（英文老師/導師/主課程/架構師），waldorf-bg + logo 以 base64 嵌入，互動展開卡片 |
+| generate-demo.py | `publish/generate-demo.py`：產生 demo HTML 的 Python 腳本，base64 資產嵌入邏輯 |
+| Q&A：Session Protocol | 確認 Claude Code 可全自動執行 session-end；ChatGPT/Gemini/Antigravity 只能輸出 YAML 變更，需手動 apply 或由 Claude Code 收尾 |
