@@ -14,7 +14,22 @@ subjects_taught:
     weekly_sessions: 4
 
 current_semester: 2025-2026
-current_focus: 待確認
+
+# ── 班級狀態 ──────────────────────────────────────────────────
+status: dormant
+# dormant 意義：結構就緒，但尚未啟動任何工作線。AI 載入系統時不主動讀取此班級。
+#
+# 啟動條件（滿足任一即可啟動）：
+#   - David 說「我要開始 8A 英文課」
+#   - David 說「新增一個班級科目」
+#   - David 明確指示開始 8A 的任何工作
+#
+# 啟動後 AI 應執行：
+#   1. 將 status 改為 active
+#   2. 提示教師填入 students.yaml（DI 樣態）
+#   3. 開始 Block 1（英文學季大綱設計）
+
+current_focus: 休眠中（尚未啟動）
 next_steps:
-  - 建立 8A 學生 DI 樣態（students.yaml）
-  - 確認本學期英文課程主題
+  - 啟動時：填入 8A 學生 DI 樣態（students.yaml）
+  - 啟動時：開始 Block 1 — 8A 英文學季大綱設計（可直接複用 9C 英文 Block 1 模板）
