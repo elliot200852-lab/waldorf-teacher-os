@@ -12,8 +12,15 @@ class_files:
   roster: roster.yaml              # gitignored，學生身份（真名+ID+座號）
   students: students.yaml          # 班級共用 DI 摘要 + 跨科特殊狀況
   session_state: working/english-session.yaml  # 英文課工作進度錨點
+  homeroom_session: homeroom/session.yaml      # 導師專用進度錨點
 
 subjects:
+  homeroom:
+    type: 班級導師模組
+    note: 負責班級經營、活動行事與親師溝通
+    session_anchor: homeroom/session.yaml
+    calendar_ref: homeroom/reference/calendar.md
+    content_output: homeroom/content/
   english:
     type: 英文專科
     weekly_sessions: 4

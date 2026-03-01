@@ -3,11 +3,11 @@
 
 english_session:
   class: class-9c
-  last_updated: 2026-02-28
+  last_updated: 2026-03-01
 
   current_position:
     block: 一
-    step: 3         # Step 3 已完成——教學大綱 v1 確認並輸出
+    step: 3         # Step 3 已完成——教學大綱 v2 確認並輸出（v1 原版保留）
     sub_block: null
     unit_number: null
 
