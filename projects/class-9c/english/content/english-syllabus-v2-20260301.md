@@ -1,3 +1,7 @@
+---
+class: class-9c
+subject: english
+---
 # 9C 英文課 114 學年度下學期 教學大綱
 
 授課老師：David

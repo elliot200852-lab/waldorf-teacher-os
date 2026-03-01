@@ -6,7 +6,12 @@
 # 用法（AI 直接呼叫，不需教師手動輸入）：
 #   ./publish/build.sh <markdown檔案路徑>
 #
-# 班級與科目從路徑自動解析。帳號與路徑從 setup/environment.env 讀取。
+# 班級與科目解析優先順序：
+#   1. Markdown 檔案頂部 Front Matter（class: / subject: 欄位）
+#   2. 備援：從檔案路徑自動推斷
+#   3. 兩者皆失敗 → 輸出說明並終止
+#
+# 帳號與路徑從 setup/environment.env 讀取。
 
 set -e
 
@@ -67,18 +72,57 @@ if [ ! -f "$INPUT" ]; then
   exit 1
 fi
 
-# ── 從路徑自動解析班級與科目 ─────────────────────────────────
+# ── 解析班級與科目（Front Matter 優先，路徑為備援）─────────────
 
-CLASS=$(echo "$INPUT_REL" | grep -oE 'class-[0-9]+[a-z]+' | head -1)
-SUBJECT=$(echo "$INPUT_REL" | grep -oE 'english|main-lesson|homeroom' | head -1)
+# Front Matter 讀取輔助函式
+# 讀取 Markdown 檔案開頭 --- 區塊中的指定 key 值
+fm_value() {
+  local key="$1"
+  local file="$2"
+  awk 'BEGIN{f=0} /^---/{f++; next} f==1{print} f>=2{exit}' "$file" \
+    | grep "^${key}:" | head -1 \
+    | sed "s/^${key}:[[:space:]]*//" | tr -d "'\""
+}
 
+# Step 1：優先從 Front Matter 讀取
+CLASS_FM=$(fm_value "class" "$INPUT")
+SUBJECT_FM=$(fm_value "subject" "$INPUT")
+
+# Step 2：若 Front Matter 缺失，從路徑備援推斷
+CLASS_PATH=$(echo "$INPUT_REL" | grep -oE 'class-[0-9]+[a-z]+' | head -1)
+SUBJECT_PATH=$(echo "$INPUT_REL" | grep -oE 'english|main-lesson|homeroom' | head -1)
+
+CLASS="${CLASS_FM:-$CLASS_PATH}"
+SUBJECT="${SUBJECT_FM:-$SUBJECT_PATH}"
+
+# 來源標記（供輸出訊息顯示）
+[[ -n "$CLASS_FM" ]]   && CLASS_SRC="Front Matter" || CLASS_SRC="路徑推斷"
+[[ -n "$SUBJECT_FM" ]] && SUBJ_SRC="Front Matter"  || SUBJ_SRC="路徑推斷"
+
+# Step 3：失敗保護——兩種方式都無法取得時終止並給出說明
 if [ -z "$CLASS" ]; then
-  echo "錯誤：無法從路徑解析班級（需包含 class-9c / class-8a / class-7a）"
+  echo "錯誤：無法識別班級。"
+  echo ""
+  echo "解決方式：在 Markdown 檔案最頂部加入 Front Matter，例如："
+  echo "  ---"
+  echo "  class: class-9c"
+  echo "  subject: english"
+  echo "  ---"
+  echo ""
+  echo "目前支援的班級：class-9c / class-8a / class-7a"
   exit 1
 fi
 
 if [ -z "$SUBJECT" ]; then
-  echo "錯誤：無法從路徑解析科目（需包含 english / main-lesson / homeroom）"
+  echo "錯誤：無法識別科目。"
+  echo ""
+  echo "解決方式：在 Markdown 檔案最頂部加入 Front Matter，例如："
+  echo "  ---"
+  echo "  class: class-9c"
+  echo "  subject: english"
+  echo "  ---"
+  echo ""
+  echo "目前支援的科目：english / main-lesson / homeroom"
   exit 1
 fi
 
@@ -182,7 +226,7 @@ echo ""
 echo "── TeacherOS 輸出 ──────────────────────────────"
 echo "使用者  ：${USER_NAME:-未設定}"
 echo "來源    ：$INPUT_REL"
-echo "班級    ：$CLASS_CN　科目：$SUBJECT_CN"
+echo "班級    ：$CLASS_CN（$CLASS_SRC）　科目：$SUBJECT_CN（$SUBJ_SRC）"
 echo "目標    ：Google Drive / $DISPLAY_PATH"
 echo "檔名    ：$CN_FILENAME"
 echo "────────────────────────────────────────────────"
