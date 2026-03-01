@@ -34,6 +34,10 @@
 `projects/_di-framework/content/student-knowledge-protocol.md`
 → 讀完你會知道：如何讀取三層知識庫、角色確認必問問題、資料寫入路由、不可跳過的規則
 
+**Step 7 — 導師模組主控索引（如進行導師業務、行事曆規劃，必讀）**
+`projects/_di-framework/content/homeroom-template.md`
+→ 讀完你會知道：導師四大作業區塊 (HM Block 1-4)、Google 日曆匯入機制、盲區提醒防呆 SOP
+
 讀完後，向 David 確認：「我已載入系統，今天要做什麼？」
 
 ---
@@ -109,6 +113,7 @@ WaldorfTeacherOS-Repo/
 │   │       ├── english-di-block3.md                  ← 區塊三：教學歷程紀錄與觀察
 │   │       ├── english-di-block4.md                  ← 區塊四：學習評量與教學結案
 │   │       ├── student-knowledge-protocol.md          ← [必讀 Step 6] 學生知識庫操作協議
+│   │       ├── homeroom-template.md                   ← [必讀 Step 7] 導師模組主控索引
 │   │       └── main-lesson-di-template.md            ← 主課程 DI 模板（待建立）
 │   │
 │   ├── class-9c/                    ← 9C 班（導師班：主課程 + 英文）
@@ -124,11 +129,16 @@ WaldorfTeacherOS-Repo/
 │   │   │   ├── assessment.yaml         ← 英文評量設定
 │   │   │   ├── content/                ← 英文產出目錄
 │   │   │   └── reference/              ← 英文參考文件
-│   │   └── main-lesson/
-│   │       ├── lesson.yaml
-│   │       ├── di-profile.yaml         ← 主課程 DI 觀察（待填入）
-│   │       ├── assessment.yaml
-│   │       └── reference/              ← 主課程參考文件
+│   │   ├── main-lesson/
+│   │   │   ├── lesson.yaml
+│   │   │   ├── di-profile.yaml         ← 主課程 DI 觀察（待填入）
+│   │   │   ├── assessment.yaml
+│   │   │   └── reference/              ← 主課程參考文件
+│   │   └── homeroom/
+│   │       ├── session.yaml            ← 導師進度錨點（含 Google iCal 更新紀錄）
+│   │       ├── reference/
+│   │       │   └── calendar.md         ← 班級獨立行事曆（已聯動 Google iCal）
+│   │       └── content/                ← 導師產出（活動、溝通草稿）
 │   │
 │   ├── class-8a/                    ← 結構同 class-9c（無 main-lesson）
 │   └── class-7a/                    ← 結構同 class-9c（無 main-lesson）
@@ -275,7 +285,13 @@ WaldorfTeacherOS-Repo/
 | 手冊 publish | 教師試用手冊已輸出為 .docx，存入 Google Drive TeacherOS 根目錄 |
 | project.yaml 更新 | 輸出格式協議、reference 機制、environment 設定系統全部寫入 |
 
-### 2026-03-01 session：Block 1 品質精進 + 輸出系統中文化
+### 2026-03-01 導師模組與 Google 行事曆連動
+| 項目 | 說明 |
+|------|------|
+| 導師模組框架建立 | 建立 `homeroom-template.md` 定義 HM Block 1-4 工作流、學生日誌標籤分離機制 |
+| 9C 導師基礎建設 | 建立 `class-9c/homeroom/` 目錄、進度錨點 `session.yaml` 與 `calendar.md` |
+| Google iCal 解析系統 | 建立支援 Google 私人/公開網址的 Python 擷取工具，實現行事曆快照 (Snapshotting) 更新機制 |
+| SOP 協議登錄 | 在 `AI_HANDOFF.md` 與 `student-knowledge-protocol.md` 加入導師角色協議 |
 
 | 項目 | 說明 |
 |------|------|

@@ -1,0 +1,27 @@
+# 導師工作進度錨點 (Homeroom Session Anchor)
+# 每次導師對話結束後由 AI 更新，不可手動大幅改寫
+
+homeroom_session:
+  class: class-9c
+  last_updated: 2026-03-01
+
+  # HM Block 1 會在此處確認後寫入
+  current_season:
+    name: 春季  # 春/夏/秋/冬
+    progress: 學季剛開始
+    active_project: 未定
+
+  current_position:
+    block: 一
+    step: 0
+    sub_block: null
+
+  # 無紀錄防呆提醒專用
+  tracker:
+    last_checked: 2026-03-01  # AI 每次檢查後更新此欄位
+
+  next_action:
+    description: "啟動 HM Block 1：建立本學季的行事曆與班級動力工作規劃"
+    input_needed_from_teacher: "請老師說明：(1) 現在是哪一季？ (2) 這一學季預計規劃幾週的導師課？"
+
+  open_questions: []

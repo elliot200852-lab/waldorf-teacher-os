@@ -52,17 +52,18 @@ projects/class-{x}/
 >   3. **主課程老師**——主課程的學生能力、程度、喜好
 >   4. **其他科任老師**——請說明科目名稱」
 
-### 角色 → 寫入位置
+### 角色 → 寫入位置與標籤機制
 
-| 教師角色 | 資料寫入 | 使用 ID |
-|----------|----------|---------|
-| 導師 | `students.yaml` 的 `special_cases` 或 `class_dynamic` | 是 |
-| 英文老師 | `english/di-profile.yaml` 或 `records/student-logs/{ID}-log.md` | 是 |
-| 主課程老師 | `main-lesson/di-profile.yaml` 或 `records/student-logs/{ID}-log.md` | 是 |
-| 其他科任 | `{科目}/di-profile.yaml`（不存在則先建立） | 是 |
+| 教師角色 | 資料寫入 | 使用 ID | 強制標籤 |
+|----------|----------|---------|----------|
+| 導師 | `students.yaml` (全班動態) 或 `records/student-logs/{ID}-log.md` | 是 | `[Source: 導師記錄]` |
+| 英文老師 | `english/di-profile.yaml` 或 `records/student-logs/{ID}-log.md` | 是 | `[Source: 英文科]` |
+| 主課程老師 | `main-lesson/di-profile.yaml` 或 `records/student-logs/{ID}-log.md` | 是 | `[Source: 主課程]` |
+| 其他科任 | `{科目}/di-profile.yaml` 或 `records/student-logs/{ID}-log.md` | 是 | `[Source: {科目}]` |
 
 > [!NOTE]
-> 關於日常的課堂觀察與教學日誌，系統目前採用 **三維 Markdown 紀錄庫**（如 `records/student-logs/`）。這些動態的歷程故事應寫入對應的 .md 檔案，而非囤積在 `di-profile.yaml` 中；`di-profile.yaml` 僅保留核心的 DI 分類標籤、成績與最重要的結案簡述。
+> 關於日常觀察與親師溝通紀錄，系統採用 **三維 Markdown 紀錄庫**（如 `records/student-logs/`）。
+> **標籤隔離原則**：任何寫入個別學生日誌（`-log.md`）的觀察，都必須在每一筆紀錄的開頭明確標註來源（如 `[Source: 導師記錄]`）。這樣才能確保導師的身心發展觀察與任課老師的學科認知觀察**互相獨立且能分離檢索**。
 
 > [!IMPORTANT]
 > 學生 ID 必須從 `roster.yaml` 查找（格式：`9C-01`）。
