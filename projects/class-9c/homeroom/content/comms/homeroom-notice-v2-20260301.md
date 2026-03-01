@@ -1,3 +1,7 @@
+---
+class: class-9c
+subject: homeroom
+---
 # 9C 春季班親會通知
 
 各位 9C 家長好，
