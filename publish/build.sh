@@ -1,6 +1,7 @@
 #!/bin/bash
 # TeacherOS 輸出腳本
 # 用途：將 .md 草稿轉換為 .docx，自動放入 Google Drive（本機資料夾同步）
+# 輸出資料夾與檔名皆使用繁體中文，版本號保留 V1/V2 格式。
 #
 # 用法（AI 直接呼叫，不需教師手動輸入）：
 #   ./publish/build.sh <markdown檔案路徑>
@@ -41,7 +42,8 @@ if ! command -v "$PANDOC_BIN" &>/dev/null; then
   exit 1
 fi
 
-GDRIVE_BASE="$HOME/Library/CloudStorage/GoogleDrive-${GOOGLE_DRIVE_EMAIL}/我的雲端硬碟/${GOOGLE_DRIVE_FOLDER}/projects"
+GDRIVE_ROOT="$HOME/Library/CloudStorage/GoogleDrive-${GOOGLE_DRIVE_EMAIL}/我的雲端硬碟/${GOOGLE_DRIVE_FOLDER}"
+GDRIVE_BASE="$GDRIVE_ROOT/班級專案"
 
 if [ ! -d "$HOME/Library/CloudStorage/GoogleDrive-${GOOGLE_DRIVE_EMAIL}" ]; then
   echo "錯誤：找不到 Google Drive 本機資料夾。"
@@ -80,25 +82,97 @@ if [ -z "$SUBJECT" ]; then
   exit 1
 fi
 
-# ── 路徑計算與執行 ────────────────────────────────────────────
+# ── 班級與科目中文對照 ────────────────────────────────────────
 
-OUTPUT_DIR="$GDRIVE_BASE/$CLASS/$SUBJECT"
-mkdir -p "$OUTPUT_DIR"
+case "$CLASS" in
+  class-9c) CLASS_CN="九年級C班" ;;
+  class-8a) CLASS_CN="八年級A班" ;;
+  class-7a) CLASS_CN="七年級A班" ;;
+  *) CLASS_CN="$CLASS" ;;
+esac
+
+case "$SUBJECT" in
+  english) SUBJECT_CN="英文" ;;
+  main-lesson) SUBJECT_CN="主課程" ;;
+  *) SUBJECT_CN="$SUBJECT" ;;
+esac
+
+# ── 中文數字輔助函式 ──────────────────────────────────────────
+
+cn_num() {
+  case "$1" in
+    1) echo "一" ;; 2) echo "二" ;; 3) echo "三" ;;
+    4) echo "四" ;; 5) echo "五" ;; 6) echo "六" ;;
+    7) echo "七" ;; 8) echo "八" ;; 9) echo "九" ;;
+    10) echo "十" ;; *) echo "$1" ;;
+  esac
+}
+
+# ── 依檔名判斷文件類型、資料夾與中文檔名 ─────────────────────
 
 BASENAME=$(basename "$INPUT" .md)
-OUTPUT_DOCX="$OUTPUT_DIR/$BASENAME.docx"
+VERSION=$(echo "$BASENAME" | grep -oiE 'v[0-9]+' | head -1 | tr '[:lower:]' '[:upper:]')
+DATE=$(echo "$BASENAME" | grep -oE '[0-9]{8}' | head -1)
+UNIT_NUM=$(echo "$BASENAME" | grep -oE 'unit-[0-9]+' | grep -oE '[0-9]+' | head -1)
+
+if [[ "$BASENAME" == *syllabus* ]]; then
+  DOC_FOLDER="教學大綱"
+  CN_FILENAME="教學大綱-${VERSION}-${DATE}.docx"
+
+elif [[ "$BASENAME" == *unit* ]]; then
+  DOC_FOLDER="單元教學"
+  if [ -n "$UNIT_NUM" ]; then
+    UNIT_CN=$(cn_num "$UNIT_NUM")
+    CN_FILENAME="第${UNIT_CN}單元教學流程-${VERSION}-${DATE}.docx"
+  else
+    CN_FILENAME="單元教學流程-${VERSION}-${DATE}.docx"
+  fi
+
+elif [[ "$BASENAME" == *task* ]]; then
+  DOC_FOLDER="差異化任務"
+  if [ -n "$UNIT_NUM" ]; then
+    UNIT_CN=$(cn_num "$UNIT_NUM")
+    CN_FILENAME="第${UNIT_CN}單元差異化任務-${VERSION}-${DATE}.docx"
+  else
+    CN_FILENAME="差異化任務-${VERSION}-${DATE}.docx"
+  fi
+
+elif [[ "$BASENAME" == *assessment* ]]; then
+  DOC_FOLDER="學習評量"
+  CN_FILENAME="學習評量-${DATE}.docx"
+
+elif [[ "$BASENAME" == *log* ]] || [[ "$BASENAME" == *record* ]] || [[ "$BASENAME" == *reflection* ]]; then
+  DOC_FOLDER="教學紀錄"
+  CN_FILENAME="${BASENAME}.docx"
+
+else
+  DOC_FOLDER=""
+  CN_FILENAME="${BASENAME}.docx"
+fi
+
+# ── 路徑計算與執行 ────────────────────────────────────────────
+
+if [ -n "$DOC_FOLDER" ]; then
+  OUTPUT_DIR="$GDRIVE_BASE/$CLASS_CN/$SUBJECT_CN/$DOC_FOLDER"
+else
+  OUTPUT_DIR="$GDRIVE_BASE/$CLASS_CN/$SUBJECT_CN"
+fi
+mkdir -p "$OUTPUT_DIR"
+
+OUTPUT_DOCX="$OUTPUT_DIR/$CN_FILENAME"
+DISPLAY_PATH="${GOOGLE_DRIVE_FOLDER}/班級專案/$CLASS_CN/$SUBJECT_CN${DOC_FOLDER:+/$DOC_FOLDER}/"
 
 echo ""
 echo "── TeacherOS 輸出 ──────────────────────────────"
 echo "使用者  ：${USER_NAME:-未設定}"
 echo "來源    ：$INPUT_REL"
-echo "班級    ：$CLASS　科目：$SUBJECT"
-echo "目標    ：Google Drive / ${GOOGLE_DRIVE_FOLDER}/projects/$CLASS/$SUBJECT/"
-echo "檔名    ：$BASENAME.docx"
+echo "班級    ：$CLASS_CN　科目：$SUBJECT_CN"
+echo "目標    ：Google Drive / $DISPLAY_PATH"
+echo "檔名    ：$CN_FILENAME"
 echo "────────────────────────────────────────────────"
 
 "$PANDOC_BIN" "$INPUT" --from markdown --to docx -o "$OUTPUT_DOCX"
 
 echo "完成。Google Drive Desktop 將自動同步。"
-echo "雲端路徑：${GOOGLE_DRIVE_FOLDER}/projects/$CLASS/$SUBJECT/$BASENAME.docx"
+echo "雲端路徑：${DISPLAY_PATH}${CN_FILENAME}"
 echo ""
