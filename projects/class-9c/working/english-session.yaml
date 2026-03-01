@@ -15,6 +15,14 @@ english_session:
     step: 3         # Step 3 已完成——教學大綱 v2 確認並輸出（v1 原版保留）
     sub_block: null
     unit_number: null
+    current_week: 0   # 目前實際上課到第幾週（0 = 尚未開始授課）
+                      # AI 在 Block 2 工作時，若此欄為 0，應詢問教師當前週次後更新
+                      # 週次換算參考（依 confirmed_decisions 的 10 週規劃）：
+                      #   week 1-2  → 單元一（小說導讀 + 語言工坊基礎）
+                      #   week 3-4  → 單元二
+                      #   week 5-6  → 單元三
+                      #   week 7-8  → 單元四
+                      #   week 9-10 → 單元五（含期末 vignette 完稿）
 
   confirmed_decisions:
     - "學期範圍：下學期，10 週，40 節課"
