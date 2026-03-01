@@ -50,12 +50,14 @@ system_status:
 
   # ── 環境與輸出系統 ──────────────────────────────────
   environment:
-    build_sh: 完成（中文化 + 自動子資料夾分類 + /tmp 暫存 + Logo + 浮水印）
+    build_sh: 完成（中文化 + 自動子資料夾 + /tmp 暫存 + Logo + 浮水印 + Front Matter 讀取 + 失敗保護）
     pandoc: 3.9
     google_drive: 已連接
     logo_watermark: 完成（Inline Logo + 華德福水彩浮水印，Gemini 完成）
+    demo_html: 完成（publish/teacheros-demo.html，153KB 自含，4 分頁，base64 資產嵌入）
+    voice_protocol: 完成（teacheros.yaml 內含 5 條語音輸入協議 + 開工報告模板）
 
   # ── 系統維護 ────────────────────────────────────────
-  last_context_review: 2026-02-28
+  last_context_review: 2026-03-01
   context_review_path: ai-core/reviews/context-review-20260228.md
   session_log: ai-core/reviews/session-log.md
