@@ -1,3 +1,8 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 2】
+# 名稱：差異化教學共用框架（所有班級共用，必讀）
+# 路徑：projects/_di-framework/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 project: 差異化教學框架
 code: _di-framework
 type: shared_framework
