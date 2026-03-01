@@ -41,8 +41,21 @@ subjects:
     assessment: main-lesson/assessment.yaml
 
 current_semester: 2025-2026
-current_focus: 執行 Block 1 — 9C 英文教學大綱設計
+current_focus: 英文 Block 2（第 1–2 週課堂設計）；導師 Block 3（春季班親會準備）
+
 next_steps:
-  - 執行 Block 1：產出 9C 英文教學大綱
-  - 確認本學期主課程主題
-  - 建立主課程 DI 設計模板
+  - 英文：Block 2 — 設計第 1–2 週 45 分鐘課堂流程（小說研讀 + 語言工坊）
+  - 導師：Block 3 — 確認春季班親會細節（2026-03-21）
+  - 主課程：建立 main-lesson-di-template.md 後啟動 Block 1
+
+# ── 班內橫向連結備忘（AI 開工前可快速掃描）──────────────────
+# 用途：記錄英文、主課程、導師三個工作線之間的協調事項
+# 維護：AI 在任何科目工作時，若發現跨線影響，主動寫入此區塊
+# 格式：- "[日期] [科目A]→[科目B] 說明"
+cross_module_notes:
+  active:
+    - "2026-03-01 導師→英文 春季班親會 2026-03-21 在第 3 週，規劃課堂進度時留意該週節奏可能調整"
+  resolved: []
+  # 說明：
+  #   active  — 目前仍需要跨線注意的事項
+  #   resolved — 已解決或已過期，定期清理
