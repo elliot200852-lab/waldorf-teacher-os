@@ -109,6 +109,34 @@ PANDOC_PATH=/opt/homebrew/bin/pandoc
 
 ---
 
+### （選用）設定 Google Calendar 直接寫入
+
+> 若你希望 AI 能直接把行程寫入你的 Google Calendar（而不只是更新本機的 calendar.md），需要完成以下一次性設定。
+> **這是選用功能，不設定也不影響其他所有備課與文件輸出功能。**
+
+**重要說明：這是個人憑證，不可共用**
+
+- `credentials.json` 與 `token.json` 是你個人的 Google 授權憑證
+- 這兩個檔案已列入 `.gitignore`，**不會上傳至 GitHub，不會與其他老師共用**
+- 每位老師必須自己建立一組，不可複製他人的憑證
+
+**設定步驟（約 10 分鐘，只需做一次）**
+
+1. 前往 [https://console.cloud.google.com/](https://console.cloud.google.com/)，以你的 Google 帳號登入
+2. 建立新專案（名稱建議：`TeacherOS`）
+3. 左側選單 → API 和服務 → 程式庫 → 搜尋 `Google Calendar API` → 啟用
+4. 左側選單 → API 和服務 → 憑證 → 建立憑證 → OAuth 用戶端 ID
+   → 應用程式類型選「電腦版應用程式」→ 建立
+5. 下載 JSON 憑證，**重新命名為 `credentials.json`**，放入 `setup/` 資料夾
+6. 左側選單 → OAuth 同意畫面 → 測試使用者 → 加入你自己的 Email → 儲存
+7. 在 `setup/environment.env` 中確認已填入：`GCAL_CALENDAR_ID=primary`
+
+設定完成後，第一次使用 Google Calendar 寫入功能時，系統會自動開啟瀏覽器要求你授權一次。之後免操作，`token.json` 會自動更新。
+
+**費用說明：Google Calendar API 完全免費，不會產生任何費用。**
+
+---
+
 ### 確認環境設定完成
 
 打開終端機，進入系統資料夾，執行：

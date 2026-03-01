@@ -301,6 +301,72 @@ WaldorfTeacherOS-Repo/
 | 自動子資料夾分類 | build.sh 依檔名自動判斷類型：教學大綱 / 單元教學 / 差異化任務 / 學習評量 / 教學紀錄 |
 | Google Drive 清理 | 刪除舊英文命名檔案，統一移至新中文結構 |
 
+### 2026-03-01 輸出系統擴充（本次 session，進行中）
+
+| 項目 | 說明 | 狀態 |
+|------|------|------|
+| 9C 導師班親會通知 | 起草春季班親會通知 v1（2026-03-21），輸出至 Google Drive | 完成 |
+| gcal-write.py | 建立 Google Calendar API OAuth2 寫入腳本（`setup/gcal-write.py`），支援直接建立 Google 行事曆活動；首次授權完成，token.json 已儲存 | 完成 |
+| build.sh 擴充導師支援 | 新增 `homeroom` 科目偵測、導師文件類型分類（通知/計畫/活動）、/tmp 暫存避免 Stale NFS 問題、輸出前先刪舊檔再複製 | 完成 |
+| 識別 Logo 嵌入系統 | 建立 `setup/add-logo.py`：BFS flood fill 去背 → 精確圓形遮罩 → 嵌入 .docx；Logo 原始檔 `setup/assets/logo.png`（已壓縮至 183KB） | 完成 |
+| Logo 排版位置 | **未完成，待 Gemini 接手** — 詳見下方「⚠️ 未完成任務：交棒 Gemini」 | 進行中 |
+
+---
+
+## ⚠️ 未完成任務：交棒 Gemini（Logo 排版）
+
+> **這是接手 AI 的第一件工作。請在完成下列環境確認後，立刻處理此任務，再執行其他工作。**
+
+### 任務說明
+
+David 的 TeacherOS 輸出系統（`publish/build.sh`）會在每份輸出 .docx 文件中，自動透過 `setup/add-logo.py` 嵌入識別 Logo。
+
+**目前問題：** Logo 雖然已能正確去背（圓形，四角透明），但在 Google Docs 中顯示時，位置無法正確垂直置中對齊標題文字。
+
+### 需要達成的效果
+
+```
+9C 春季班親會通知   ●
+                   ↑ Logo 緊接在標題文字右側，中心與標題字的視覺中線對齊
+```
+
+- Logo 大小：1.2cm（高），已確認合適，不需更改
+- Logo 位置：標題文字（Heading 1）末尾右側，inline，不是推到頁面最右
+- 垂直對齊：Logo 中心與標題字母的視覺中心（cap height 中線）對齊
+- 圓形去背：已完成，`setup/assets/logo-ready.png` 可直接使用
+
+### 現有程式碼位置
+
+```
+setup/add-logo.py        ← 主腳本（圖片去背 + 嵌入邏輯）
+setup/assets/logo.png    ← 原始 Logo（圓形騎者剪影，183KB）
+setup/assets/logo-ready.png ← 處理後的去背版本（68KB，由腳本自動生成）
+```
+
+### 目前已嘗試但失敗的方法
+
+1. **Header（頁首）右對齊**：Logo 在每頁都出現，視覺上與文件內容分離，感覺怪
+2. **Tab 右對齊**：`\t` + 右邊界 tab stop → Logo 被推到頁面最右邊，與標題文字分離太遠
+3. **inline run + `w:position` 半點偏移**：`w:position` 對 inline drawing 無效，只作用於文字 run，導致 Logo 浮在標題文字上方
+4. **無框雙欄表格**：理論上應該有效，但目前在 Google Docs 中顯示垂直置中仍有問題
+
+### 測試指令
+
+修改 `setup/add-logo.py` 後，執行以下指令測試效果：
+
+```bash
+bash publish/build.sh projects/class-9c/homeroom/content/comms/homeroom-notice-v2-20260301.md
+```
+
+輸出至：`Google Drive / 00-01-TeacherOS-專案三層記憶/班級專案/九年級C班/導師/親師溝通/班親會通知-V2-20260301.docx`
+
+### 完成標準
+
+1. 在 Google Docs 開啟輸出的 .docx 後，Logo 出現在標題文字「9C 春季班親會通知」的右側
+2. Logo 與標題文字在同一視覺行，中心高度大致對齊
+3. 不影響標題以下的正文排版
+4. 腳本執行無錯誤
+
 ---
 
 ## 六、目前專案狀態（2026-03-01 更新）
@@ -321,15 +387,17 @@ WaldorfTeacherOS-Repo/
 
 ## 七、接下來前三件優先工作
 
-1. **9C 英文 Block 2 — 第一單元課堂設計（第 1–2 週）**
+1. **⚠️ Logo 排版修正（見上方「交棒 Gemini」章節）** ← 最優先
+
+2. **9C 英文 Block 2 — 第一單元課堂設計（第 1–2 週）**
    - 教學大綱 v2 已確認，Block 2 隨時可啟動
    - 設計 2 節小說研讀課 + 2 節語言工坊課的 45 分鐘課堂流程
    - 參照：`english-di-block2.md`、`english-session.yaml`（進度錨點）
 
-2. **8A / 7A 英文 — 填入 students.yaml，啟動 Block 1**
+3. **8A / 7A 英文 — 填入 students.yaml，啟動 Block 1**
    - 8A 與 7A 結構就緒，等待學生 DI 資料輸入後即可執行大綱設計
 
-3. **建立主課程 DI 設計模板**（`main-lesson-di-template.md`）
+4. **建立主課程 DI 設計模板**（`main-lesson-di-template.md`）
    - 適用 9C，連續 15 堂（3 週）的弧線邏輯，與英文課結構不同
 
 ---
@@ -393,5 +461,5 @@ WaldorfTeacherOS-Repo/
 
 ---
 
-*本文件最後更新：2026-03-01（Block 1 精進 + 輸出系統中文化）*
+*本文件最後更新：2026-03-01（輸出系統擴充：gcal-write.py + add-logo.py + build.sh；Logo 排版待完成）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
