@@ -12,16 +12,26 @@ homeroom_session:
     active_project: 未定
 
   current_position:
-    block: 一
-    step: 0
+    block: 三
+    step: 1
     sub_block: null
+
+  confirmed_decisions:
+    - "春季班親會：2026-03-21（六）09:00–11:00，9C 教室，已排入 calendar.md 並寫入 Google Calendar"
+    - "班親會通知：v1 已確認，存入 homeroom/content/comms/，輸出至 Google Drive"
+    - "gcal-write.py 首次授權完成，token.json 已儲存，往後寫入免重新授權"
 
   # 無紀錄防呆提醒專用
   tracker:
     last_checked: 2026-03-01  # AI 每次檢查後更新此欄位
 
+  output_files:
+    - type: 親師溝通
+      file: homeroom-notice-v1-20260301.md
+      google_drive: 00-01-TeacherOS-專案三層記憶/班級專案/九年級C班/導師/親師溝通/班親會通知-V1-20260301.docx
+
   next_action:
-    description: "啟動 HM Block 1：建立本學季的行事曆與班級動力工作規劃"
-    input_needed_from_teacher: "請老師說明：(1) 現在是哪一季？ (2) 這一學季預計規劃幾週的導師課？"
+    description: "持續 HM Block 3 日常紀錄；HM Block 1 學季整體規劃待啟動"
+    input_needed_from_teacher: null
 
   open_questions: []

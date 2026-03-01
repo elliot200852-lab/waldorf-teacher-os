@@ -70,7 +70,7 @@ fi
 # ── 從路徑自動解析班級與科目 ─────────────────────────────────
 
 CLASS=$(echo "$INPUT_REL" | grep -oE 'class-[0-9]+[a-z]+' | head -1)
-SUBJECT=$(echo "$INPUT_REL" | grep -oE 'english|main-lesson' | head -1)
+SUBJECT=$(echo "$INPUT_REL" | grep -oE 'english|main-lesson|homeroom' | head -1)
 
 if [ -z "$CLASS" ]; then
   echo "錯誤：無法從路徑解析班級（需包含 class-9c / class-8a / class-7a）"
@@ -78,7 +78,7 @@ if [ -z "$CLASS" ]; then
 fi
 
 if [ -z "$SUBJECT" ]; then
-  echo "錯誤：無法從路徑解析科目（需包含 english / main-lesson）"
+  echo "錯誤：無法從路徑解析科目（需包含 english / main-lesson / homeroom）"
   exit 1
 fi
 
@@ -94,6 +94,7 @@ esac
 case "$SUBJECT" in
   english) SUBJECT_CN="英文" ;;
   main-lesson) SUBJECT_CN="主課程" ;;
+  homeroom) SUBJECT_CN="導師" ;;
   *) SUBJECT_CN="$SUBJECT" ;;
 esac
 
@@ -145,6 +146,18 @@ elif [[ "$BASENAME" == *log* ]] || [[ "$BASENAME" == *record* ]] || [[ "$BASENAM
   DOC_FOLDER="教學紀錄"
   CN_FILENAME="${BASENAME}.docx"
 
+elif [[ "$BASENAME" == *notice* ]]; then
+  DOC_FOLDER="親師溝通"
+  CN_FILENAME="班親會通知-${VERSION}-${DATE}.docx"
+
+elif [[ "$BASENAME" == *season-plan* ]] || [[ "$BASENAME" == *plan* ]]; then
+  DOC_FOLDER="班級計畫"
+  CN_FILENAME="學季計畫-${VERSION}-${DATE}.docx"
+
+elif [[ "$BASENAME" == *activity* ]]; then
+  DOC_FOLDER="班級活動"
+  CN_FILENAME="活動紀錄-${VERSION}-${DATE}.docx"
+
 else
   DOC_FOLDER=""
   CN_FILENAME="${BASENAME}.docx"
@@ -162,6 +175,9 @@ mkdir -p "$OUTPUT_DIR"
 OUTPUT_DOCX="$OUTPUT_DIR/$CN_FILENAME"
 DISPLAY_PATH="${GOOGLE_DRIVE_FOLDER}/班級專案/$CLASS_CN/$SUBJECT_CN${DOC_FOLDER:+/$DOC_FOLDER}/"
 
+# 先輸出至本機暫存，避免 Google Drive Desktop 的 Stale file handle 問題
+TEMP_DOCX="/tmp/teacheros-$(date +%s)-${CN_FILENAME}"
+
 echo ""
 echo "── TeacherOS 輸出 ──────────────────────────────"
 echo "使用者  ：${USER_NAME:-未設定}"
@@ -171,7 +187,21 @@ echo "目標    ：Google Drive / $DISPLAY_PATH"
 echo "檔名    ：$CN_FILENAME"
 echo "────────────────────────────────────────────────"
 
-"$PANDOC_BIN" "$INPUT" --from markdown --to docx -o "$OUTPUT_DOCX"
+# Step 1：Pandoc 轉換至暫存路徑
+"$PANDOC_BIN" "$INPUT" --from markdown --to docx -o "$TEMP_DOCX"
+
+# Step 2：加入識別 Logo（圓形去背、頁首右上角）
+LOGO_SCRIPT="$REPO_ROOT/setup/add-logo.py"
+if [ -f "$LOGO_SCRIPT" ]; then
+  python3 "$LOGO_SCRIPT" "$TEMP_DOCX"
+fi
+
+# Step 3：複製至 Google Drive 資料夾
+# 先移除舊檔，避免 Google Drive Desktop 的 Stale NFS file handle 問題
+mkdir -p "$OUTPUT_DIR"
+rm -f "$OUTPUT_DOCX" 2>/dev/null || true
+cp "$TEMP_DOCX" "$OUTPUT_DOCX"
+rm -f "$TEMP_DOCX"
 
 echo "完成。Google Drive Desktop 將自動同步。"
 echo "雲端路徑：${DISPLAY_PATH}${CN_FILENAME}"
