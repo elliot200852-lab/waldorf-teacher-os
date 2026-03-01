@@ -32,6 +32,14 @@ english_session:
           class_view: projects/class-9c/content/english/english-syllabus-v1-20260228.md
           subject_view: projects/class-9c/english/content/english-syllabus-v1-20260228.md
         google_drive: 00-01-TeacherOS-專案三層記憶/projects/class-9c/english/english-syllabus-v1-20260228.docx
+      - version: v2
+        date: 20260301
+        status: 已確認並輸出
+        changes: 套用寫作風格邊界——移除道德型收尾句、簡化過度解釋、評量表不加詮釋句
+        paths:
+          class_view: projects/class-9c/content/english/english-syllabus-v2-20260301.md
+          subject_view: projects/class-9c/english/content/english-syllabus-v2-20260301.md
+        google_drive: 00-01-TeacherOS-專案三層記憶/projects/class-9c/english/english-syllabus-v2-20260301.docx
     units_completed: []
     extensions_completed: []
 

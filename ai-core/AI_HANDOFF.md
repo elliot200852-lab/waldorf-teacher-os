@@ -275,28 +275,38 @@ WaldorfTeacherOS-Repo/
 | 手冊 publish | 教師試用手冊已輸出為 .docx，存入 Google Drive TeacherOS 根目錄 |
 | project.yaml 更新 | 輸出格式協議、reference 機制、environment 設定系統全部寫入 |
 
+### 2026-03-01 session：Block 1 品質精進 + 輸出系統中文化
+
+| 項目 | 說明 |
+|------|------|
+| Block 1 寫作風格邊界 | 在 `english-di-block1.md` 新增「寫作風格邊界」規範：禁止道德型收尾句、禁止強調語堆疊、教學目標寫行為而非感受、評量表不加詮釋句 |
+| 9C 教學大綱 v2 | 套用新風格邊界，產出 v2，雙路徑存檔，已輸出 Google Drive |
+| build.sh 中文化 | Google Drive 輸出全面中文化：資料夾 `班級專案/九年級C班/英文/教學大綱/`，檔名 `教學大綱-V2-20260301.docx` |
+| 自動子資料夾分類 | build.sh 依檔名自動判斷類型：教學大綱 / 單元教學 / 差異化任務 / 學習評量 / 教學紀錄 |
+| Google Drive 清理 | 刪除舊英文命名檔案，統一移至新中文結構 |
+
 ---
 
-## 六、目前專案狀態（2026-02-28 更新）
+## 六、目前專案狀態（2026-03-01 更新）
 
 | 專案 | 狀態 | 說明 |
 |------|------|------|
-| `_di-framework` | 完成 | Block 1/2 模板、品質標準、reference 機制、輸出協議全部就緒 |
-| 環境設定系統 | 完成 | build.sh、setup-check.sh、environment.env、教師試用手冊均已建立並測試通過 |
-| 系統狀態快照 | 完成 | `ai-core/system-status.yaml`——AI 開工前可快速掃描（20 行） |
-| Context Review | 完成 | `ai-core/reviews/context-review-20260228.md`——首次全資料夾健檢 |
-| `class-9c` 英文 | Block 1 完成，等待 Block 2 | 教學大綱 v1 已產出並輸出至 Google Drive；評量比例定案；下一步：第一單元課堂設計（Block 2） |
+| `_di-framework` | 完成 | Block 1–4 模板、品質標準、reference 機制、輸出協議全部就緒；Block 1 已加入寫作風格邊界 |
+| 環境設定系統 | 完成 | build.sh 已中文化，輸出路徑自動分類，Google Drive 結構已重組 |
+| 系統狀態快照 | 完成 | `ai-core/system-status.yaml` |
+| Context Review | 完成 | `ai-core/reviews/context-review-20260228.md` |
+| `class-9c` 英文 | Block 1 完成（v2），等待 Block 2 | 教學大綱 v2 已產出並輸出至 Google Drive；下一步：第一單元課堂設計（Block 2） |
 | `class-8a` 英文 | 尚未開始 | 結構完整，等待：students.yaml 填入 |
 | `class-7a` 英文 | 尚未開始 | 結構完整，等待：students.yaml 填入 |
 | `class-9c` 主課程 | 尚未開始 | 等待：main-lesson-di-template.md 建立後啟動 |
-| 教師試用計畫 | 準備中 | 手冊已備妥；9C 大綱為第一份樣品；可開始邀請測試老師 |
+| 教師試用計畫 | 準備中 | 手冊已備妥；9C 大綱 v2 為第一份樣品 |
 
 ---
 
 ## 七、接下來前三件優先工作
 
 1. **9C 英文 Block 2 — 第一單元課堂設計（第 1–2 週）**
-   - 教學大綱 v1 已確認，Block 2 隨時可啟動
+   - 教學大綱 v2 已確認，Block 2 隨時可啟動
    - 設計 2 節小說研讀課 + 2 節語言工坊課的 45 分鐘課堂流程
    - 參照：`english-di-block2.md`、`english-session.yaml`（進度錨點）
 
@@ -367,5 +377,5 @@ WaldorfTeacherOS-Repo/
 
 ---
 
-*本文件最後更新：2026-02-28（第五次 session 後）*
+*本文件最後更新：2026-03-01（Block 1 精進 + 輸出系統中文化）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
