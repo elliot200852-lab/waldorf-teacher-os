@@ -1,0 +1,27 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 學生樣態記憶 — Layer 2】
+# 名稱：九年級 D 班・DI 樣態與跨科觀察
+# 路徑：projects/class-9d/students.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+class: class-9d
+last_updated: ''
+
+learning_strengths_distribution:
+  language: 待填入
+  visual: 待填入
+  kinesthetic: 待填入
+  artistic: 待填入
+  note: ''
+
+subject_contexts:
+  main_lesson:
+    ability_definition: 待定義該科目的「高能力」
+    motivation_definition: 待定義該科目的「高動機」
+    student_distribution:
+      A: [] # 高能力、高動機
+      B: [] # 低能力、高動機
+      C: [] # 高能力、低動機
+      D: [] # 低能力、低動機
+
+special_cases: []

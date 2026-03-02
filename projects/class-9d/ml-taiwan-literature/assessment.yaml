@@ -1,0 +1,8 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 評量配置】
+# 名稱：九年級 D 班・台灣文學主課程評量原則
+# 路徑：projects/class-9d/ml-taiwan-literature/assessment.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+subject: ml_taiwan_literature
+criteria: []
+weights: {}

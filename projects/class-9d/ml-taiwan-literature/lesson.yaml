@@ -1,0 +1,16 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 科目參數】
+# 名稱：九年級 D 班・台灣文學主課程
+# 路徑：projects/class-9d/ml-taiwan-literature/lesson.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+subject: ml_taiwan_literature
+grade: 九年級
+class: 9D
+
+structure:
+  duration_per_session: 120
+  total_sessions: 15
+  session_rhythm: 待定義
+
+goals: []
+core_concepts: []

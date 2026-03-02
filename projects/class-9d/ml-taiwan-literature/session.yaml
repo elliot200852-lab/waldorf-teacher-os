@@ -1,0 +1,28 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：九年級 D 班・台灣文學主課程進度錨點
+# 路徑：projects/class-9d/ml-taiwan-literature/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ml_taiwan_literature_session:
+  class: class-9d
+  last_updated: ''
+
+  current_position:
+    block: 零
+    step: 0
+    sub_block: null
+    unit_number: null
+    current_week: 0
+
+  confirmed_decisions: []
+
+  next_action:
+    description: 啟動 Block 1 學季大綱設計
+    input_needed_from_teacher: null
+
+  output_files:
+    syllabus_versions: []
+    units_completed: []
+    extensions_completed: []
+
+  open_questions: []

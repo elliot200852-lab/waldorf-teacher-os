@@ -26,8 +26,8 @@ system_status:
   # ── 學生資料 ────────────────────────────────────────
   students_yaml:
     class-9c: 完成（roster + students + di-profile，22 人英文 DI 分類完成）
-    class-8a: 待填入（結構就緒，休眠中）
-    class-7a: 待填入（結構就緒，休眠中）
+    class-4c: 待填入（結構就緒，休眠中）
+    class-9d: 待填入（結構就緒，休眠中）
 
   # ── 英文課進度 ──────────────────────────────────────
   english_progress:
@@ -35,10 +35,22 @@ system_status:
       syllabus: v2-20260301（已輸出 Google Drive）
       block: Block 1 完成 → 等待 Block 2
       next: 設計第 1–2 週 45 分鐘課堂流程（小說研讀 + 語言工坊）
-    class-8a:
+
+  # ── 台語課進度 ──────────────────────────────────────
+  taiwanese_progress:
+    class-4c:
       syllabus: 尚未開始
       block: 休眠
-    class-7a:
+
+  # ── 台灣文學主課程進度（9D） ──────────────────────────────────────
+  ml_taiwan_literature_progress:
+    class-9d:
+      syllabus: 尚未開始
+      block: 休眠
+
+  # ── 未定主課程進度（9C） ──────────────────────────────────────
+  ml_undecided_progress:
+    class-9c:
       syllabus: 尚未開始
       block: 休眠
 

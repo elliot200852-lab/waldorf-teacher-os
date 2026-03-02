@@ -33,12 +33,13 @@ subjects:
     di_profile: english/di-profile.yaml
     assessment: english/assessment.yaml
     content_output: english/content/
-  main_lesson:
+  ml_undecided:
     type: 主課程
-    note: David 為 9C 主課程教師，課程主題待本學期確認
-    lesson: main-lesson/lesson.yaml
-    di_profile: main-lesson/di-profile.yaml
-    assessment: main-lesson/assessment.yaml
+    topic: 未定（待本學期確認）
+    lesson: ml-undecided/lesson.yaml
+    di_profile: ml-undecided/di-profile.yaml
+    assessment: ml-undecided/assessment.yaml
+    content_output: ml-undecided/content/
 
 current_semester: 2025-2026
 current_focus: 英文 Block 2（第 1–2 週課堂設計）；導師 Block 3（春季班親會準備）

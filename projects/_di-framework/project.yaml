@@ -7,7 +7,7 @@ project: 差異化教學框架
 code: _di-framework
 type: shared_framework
 status: active_development
-scale: 全校推廣（目前以 class-9c / class-8a / class-7a 為試點）
+scale: 全校推廣（目前以 class-9c / class-9d 為試點）
 
 mother_document:
   title: 華德福差異化教學模組：系統邏輯與關聯矩陣
@@ -161,7 +161,7 @@ subject_frameworks:
   english:
     status: 已建立
     master_template: projects/_di-framework/content/english-di-template.md
-    applies_to: [class-9c, class-8a, class-7a]
+    applies_to: [class-9c, class-9d]
     last_updated: 2026-02-27
     block_architecture:
       principle: >
@@ -201,7 +201,7 @@ subject_frameworks:
 # ── 適用範圍 ─────────────────────────────────────────────
 
 applies_to:
-  current_classes: [class-9c, class-8a, class-7a]
+  current_classes: [class-9c, class-9d]
   current_subjects: [英文, 主課程]
   expandable: true
   expansion_note: 其他科目與班級（包括全校教師）可依需求加入
@@ -230,8 +230,7 @@ output_protocol:
     # 腳本自動組合路徑：~/Library/CloudStorage/GoogleDrive-{EMAIL}/我的雲端硬碟/{FOLDER}/projects/
     structure:
       class-9c_english: class-9c/english/
-      class-8a_english: class-8a/english/
-      class-7a_english: class-7a/english/
+      class-9d_main_lesson: class-9d/main-lesson/
   workflow: >
     Step 1：AI 產出 .md 草稿，存入 Repo 對應 content/ 資料夾（版本命名）。
     Step 2：AI 向教師確認版本內容。
@@ -274,10 +273,9 @@ reference_protocol:
     - projects/class-9c/reference/
     - projects/class-9c/english/reference/
     - projects/class-9c/main-lesson/reference/
-    - projects/class-8a/reference/
-    - projects/class-8a/english/reference/
-    - projects/class-7a/reference/
-    - projects/class-7a/english/reference/
+    - projects/class-9d/reference/
+    - projects/class-9d/main-lesson/reference/
+
   expansion_note: >
     未來若新增班級或科目資料夾，依相同規則在其下建立 reference/ 子資料夾，
     並將路徑補入 current_reference_paths。

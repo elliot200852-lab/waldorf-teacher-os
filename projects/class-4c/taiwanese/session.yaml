@@ -1,0 +1,28 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：四年級 C 班・台語課進度錨點
+# 路徑：projects/class-4c/taiwanese/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+taiwanese_session:
+  class: class-4c
+  last_updated: ''
+
+  current_position:
+    block: 零
+    step: 0
+    sub_block: null
+    unit_number: null
+    current_week: 0
+
+  confirmed_decisions: []
+
+  next_action:
+    description: 啟動 Block 1 學季大綱設計
+    input_needed_from_teacher: null
+
+  output_files:
+    syllabus_versions: []
+    units_completed: []
+    extensions_completed: []
+
+  open_questions: []
