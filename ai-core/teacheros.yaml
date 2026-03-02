@@ -28,101 +28,28 @@ teaching_scope:
     - 跨領域主題課程
 
 pedagogical_framework:
+  _type: reference_pointer
+  _path: ai-core/reference/pedagogy-framework.yaml
+  _summary: >
+    華德福人智學：四體論（物質體/生命體/星芒體/自我）、七年週期發展論、
+    頭心手三元（思考/情感/意志）、七至九年級星芒體轉型期
+    （七：界線探索 → 八：邏輯萌發 → 九：存在焦慮）、
+    現象學式學習、阿里曼原則（AI 時代技術的靈性定位）。
+  _load_when:
+    - 涉及學生心理發展或課堂行為的深層分析
+    - 設計課程需要教育哲學依據或年級課程鏡像邏輯
+    - 討論七年週期、星芒體、人智學、四體論
+    - 主課程弧線設計（15 堂完整敘事結構）
+    - 理解 AI 時代的華德福定位（阿里曼力量）
   philosophy: 華德福教育（基於魯道夫·施泰納人智學）
-  anthroposophical_foundation:
-    core_premise: 人類可透過嚴格的內在修煉，發展出超越感官的靈性認識能力；這是施泰納稱為「靈性科學」的認識論體系，而非宗教信仰
-    human_constitution:
-      physical_body: 可見的身體——物質層
-      etheric_body: 生命體 / 以太體——生命力、成長、記憶的承載者
-      astral_body: 星芒體——情感、慾望、意識的所在
-      ego: 自我（I）——個體靈性核心，跨世輪迴的承載者
-    seven_year_cycles:
-      cycle_1:
-        age: 0–7 歲
-        body_developing: 物質體
-        learning_mode: 模仿——兒童透過直接複製環境與成人行為來學習
-      cycle_2:
-        age: 7–14 歲
-        body_developing: 生命體（以太體）
-        learning_mode: 圖像與情感——藝術、神話、故事是認知的媒介；教師的權威是學習的錨點
-      cycle_3:
-        age: 14–21 歲
-        body_developing: 星芒體
-        learning_mode: 獨立思考萌發——理想主義強烈，開始質疑一切，尋找因果與意義
-    grade_7_to_9_developmental_context:
-      position: 第二與第三七年週期的過渡地帶（約12–15歲）
-      transition_nature: 學生從「跟隨圖像與教師權威」轉向「尋找自身意義與世界因果」
-      core_tension: 極度渴望自由與自主，卻尚未發展出足夠的內在結構承載這種自由；如蛻皮中的甲殼類，內在柔軟易傷，外顯防衛叛逆
-      nine_year_change_legacy: 九歲意識首次分裂（自我與世界的分離感）是青春期張力的心理前奏，帶著防衛心與批判性主體意識持續發酵至青春期全面爆發
-      grade_profiles:
-        grade_7:
-          age: 12–13 歲
-          psychological_crisis: 界線探索與自我中心
-          astral_state: 星芒體初步活躍，主觀情感開始主導對世界的看法
-          classroom_manifestations:
-            - 持續測試課堂規則與教師底線
-            - 對「不公平」極度敏感
-            - 小團體開始形成
-            - 質疑傳統權威，但仍需要教師作為意義錨點
-          curriculum_mirror:
-            history: 地理大發現、文藝復興——探索未知邊界的渴望在歷史先驅中找到映射
-            biography: 貞德、哥倫布、麥哲倫——從歷史人物的勇氣中尋找形塑獨立認同的靈感
-            science: 現象學物理（槓桿、燃燒）——感官體驗導向規律推導
-            physiology: 柔軟系統（消化、呼吸、生殖）——安撫身體發育的隱秘焦慮
-        grade_8:
-          age: 13–14 歲
-          psychological_crisis: 邏輯萌發與社交焦慮
-          astral_state: 意識銳利化，渴求因果關係；強烈的同儕歸屬需求
-          classroom_manifestations:
-            - 為反對而反對的課堂辯論
-            - 情緒瞬間爆發，強度遠超事件本身
-            - 群體從眾壓力導致微型霸凌與排斥
-            - 對教師雙重標準零容忍
-          curriculum_mirror:
-            history: 革命史（宗教改革、法國大革命、工業革命）——內在反抗衝動在學術框架內安全釋放
-            anatomy: 骨骼與肌肉系統——為氾濫的情感提供堅硬的力學支撐；骨骼是秩序與穩定的象徵
-            math: 柏拉圖立體、幾何——透過數學看見宇宙和諧與神聖秩序，安撫存在焦慮
-        grade_9:
-          age: 14–15 歲
-          psychological_crisis: 存在焦慮與判斷力危機
-          astral_state: 感覺被靈性世界拋出（施泰納描述為「被靈性世界吐出來」）；尋求絕對真理與純粹性
-          classroom_manifestations:
-            - 非黑即白的極端評判，容不下灰色地帶
-            - 對成人虛偽的零容忍，言行不一立刻喪失信任
-            - 智力表現與情緒穩定度的極端落差
-            - 強烈的理想主義與對現實的幻滅感並存
-          curriculum_mirror:
-            art: 黑白素描——在光影極端對比中學會尋找灰色過渡地帶，打破二元極端思維
-            science: 熱力學、板塊構造——極端力量的對立與轉換，從感官走向嚴謹科學語言
-            literature: 《雙城記》、《神曲》——人類靈魂在光明與黑暗間的掙扎，探索複雜脈絡
-            farm_block: 農場實作——真實體力勞動不接受情緒勒索，行動與責任的必然連結
-  developmental_focus:
-    - 思考（Thinking）
-    - 情感（Feeling）
-    - 意志（Will）
-  head_heart_hands:
-    head: 清醒、獨立的思考力；能批判性評估 AI 輸出而非盲目接受的武裝心智
-    heart: 情感深度、同理心、道德直覺；機器永遠無法具備的內在溫暖
-    hands: 身體勞動、手工藝、藝術實踐；具身學習（Embodied Learning）是認知發展的基礎
+  developmental_focus: [思考（Thinking）, 情感（Feeling）, 意志（Will）]
   learning_approach:
     - 現象學式學習：先觀察與體驗，後歸納抽象
-    - 主課程（Main Lesson）整合：跨學科意義網絡
-    - 身體勞動與藝術手工融入認知過程
-    - 保留生成性負載：任務設計刻意含足夠的模糊性，迫使學生親自觀察、推論與掙扎
-  core_values:
-    - 身、心、靈的整合
-    - 經驗式學習
-    - 藝術融入教學
-    - 人格與道德發展
-    - 長期生命成長
+    - 主課程整合：跨學科意義網絡，15 堂完整弧線
+    - 保留生成性負載：任務含足夠模糊性，迫使學生親自推論
   long_term_relationship:
     - 多年陪伴同一班學生（七至九年級）
     - 師生關係是不可被 AI 替代的核心教育資產
-  steiner_cosmological_context:
-    ahriman_principle: 現代技術（包含 AI）體現阿里曼力量——冷峻智力、機械化、抽象邏輯、否定人類靈性向度
-    technology_stance: 技術是人類演化的必然，不逃避，而是以靈性力量穿透並引導技術
-    waldorf_mission_in_ai_era: 作為保護「真正人類特質」（The Truly Human）的避風港與前鋒基地
-    ai_limitation: AI 能模擬人類智力與語言，卻永遠無法具備真正的意識、自我覺察、道德直覺或情感溫暖
 
 lesson_structure:
   main_lesson:
@@ -156,77 +83,40 @@ teacher_working_style:
 
 subject_philosophies:
   english:
-    waldorf_foreign_language_goals:
-      practical: 透過聽與讀理解英語，並能以相當流利的口語與書寫自我表達
-      cultural: 引導學生認識英語民族的性格、習俗、傳統、文學、文化、地理與歷史
-      educational: 透過語言學科的特殊性質輔助學生整體發展，拓寬個人對不同世界觀的洞察
-    steiner_language_philosophy:
-      core_belief: 每一種語言以其獨特方式塑造說話者的內在生命與世界觀，揭示人性中獨特且差異巨大的面向
-      language_as_formative_force: 語言不只是溝通工具，更是「塑造性力量」（Formative Force），深刻影響學生的思維方式與靈魂發展
-    teacher_core_tasks:
-      - 以熱情與幽默面對青春期的質疑，而非壓制
-      - 培養語言中的判斷力與自主表達能力
-      - 提供豐富且觸動心靈的文本素材
-      - 透過創意寫作激發意志力與個性
-      - 以朗誦、戲劇與故事深化語言的具身體驗
-    teacher_identity_in_english:
-      roles:
-        - 語言的示範者——以自身對英語的熱情感染學生
-        - 文化的橋樑——連結英語世界的靈魂與台灣學生的生命處境
-        - 青少年靈魂發展的陪伴者——全面投入學生的經驗、個性與動作
-      cultivation: 在臨場反應力、開放性與同理心上持續深化，敏銳感知學生的需求與潛藏問題
-    design_principle: 始終如一的指導原則——全面投入學生的各個面向，幫助學生與英語建立深刻的連結，而非僅完成語言技能的訓練
-
+    _type: reference_pointer
+    _path: ai-core/reference/subject-english.yaml
+    _summary: >
+      語言即塑造性力量（Formative Force）；英文不只是技能訓練，
+      而是引導學生進入英語民族的文化靈魂。
+      教師角色：語言示範者 / 文化橋樑 / 青少年靈魂陪伴者。
+    _load_when:
+      - 設計英文課的教學目標、哲學定位或評量
+      - 討論英文課的文化面向或文學素材選擇
+      - 需要向家長或學生說明英文課的意義
   history:
-    steiner_core_principle: 人類整體意識的演化歷程與兒童個人意識的發展平行對應——歷史課不是讓學生「知道過去發生了什麼」，而是讓學生透過歷史素材經驗到與自身內在發展相呼應的意識轉變
-    consciousness_curriculum_mapping:
-      grade_7: 中世紀、文藝復興、宗教改革、地理大發現——對應青春期初期從「集體性」中醒來、萌生個體意識；文藝復興正是人類從中世紀集體宗教秩序中覺醒、追求個人主體性的時代
-      grade_8: 法國大革命、工業革命、美國獨立、近代民族主義——對應八年級學生內在的叛逆、對權威的質疑、對公平正義的強烈感受
-      grade_9: 當代歷史與現代世界的形成——進入高中門檻，開始處理更複雜的當代全球秩序
-    teacher_core_tasks:
-      - 透過生動敘事與傳記式教學讓歷史人物「活過來」
-      - 讓學生在情感上與人類歷史經驗產生真實連結
-      - 引導學生發展自己的歷史判斷力，而非灌輸標準史觀
-    taiwan_subjectivity:
-      core_stance: 從台灣主體意識出發，從台灣人的角度認識世界，藉由認識世界進而更了解台灣
-      worldview: 以全球史觀取代歐洲中心史觀
-      spiral_curriculum_integration:
-        grade_7: 地理大發現時台灣正是葡萄牙人口中的「Formosa」——從原住民、荷蘭人、漢人移民三個視角多元敘述，讓學生體驗「同一歷史事件有不同詮釋立場」，發展批判思考力
-        grade_8_9: 革命與現代化主題自然連結台灣日治時期現代化、二二八、白色恐怖到民主化歷程；台灣民主運動史與八年級強烈正義感的發展階段高度吻合
-      historical_moment: 台灣華德福歷史教學正從「移植歐洲課綱」走向「自主創造」——在保持施泰納意識演化哲學核心的同時，以原住民南島文化、多重殖民歷史、民主化運動作為教學素材
-
-waldorf_innate_advantages:
-  developmental_insight: 深刻理解人類七年一週期的發展規律，能精準定義不同階段的教育邊界條件
-  cross_domain_synthesis: 主課程設計中習慣將數學、歷史、藝術與神話交織成完整意義網絡
-  phenomenological_observation: 敏銳捕捉學生細微情感變化與學習狀態，而非依賴數據報表
-  embodied_presence: 體力陪伴、晨圈節奏、手工藝指導——AI 永遠無法涉足的物理與情感空間
-  environment_design: 長期以來即是學習環境的佈局者（教室色彩、季節桌、每日吸氣呼氣節奏），現延伸至數位認知環境的架構設計
-  schema_architect: 習慣設計「基模」（Schema）而非處理細節——這正是意義架構師的核心能力
+    _type: reference_pointer
+    _path: ai-core/reference/subject-history.yaml
+    _summary: >
+      歷史課是意識演化的鏡子：人類集體意識演化與學生個人意識發展平行對應。
+      台灣主體史觀（全球史觀取代歐洲中心）。
+      課程對應：七年級→文藝復興、八年級→革命史、九年級→當代史。
+    _load_when:
+      - 設計歷史課教學方向或內容
+      - 討論台灣主體史觀的課程整合
+      - 需要確認年級與歷史主題的對應邏輯
 
 student_inner_structure_model:
-  exoskeleton_vs_endoskeleton:
-    exoskeleton: 主流體制提供的外骨骼——課綱、考試、升學壓力，為青少年構築強制性邊界與行為指引
-    endoskeleton: 華德福教育的真實目標——協助學生長出自身的內骨骼（內在結構），能自我約束、自我賦予意義
-    waldorf_tension: 體制外刻意移除外骨骼，所有青春期心理張力毫無遮蔽地湧現，由教師全權承接
-  curriculum_as_hidden_scaffold:
-    principle: 學科知識是治癒青春期混亂的「解藥」；將學生狂野的心理能量精準導入理性軌道與物理現實
-    tools:
-      history_literature: 課程演進精確對應意識發展軌跡——學科是心魂的鏡子，讓覺醒的自我在歷史中看見自己
-      mathematics: 等號兩端的絕對平衡——為動盪的內在提供不受情緒影響的智識避風港
-      phenomenological_science: 實作→觀察→結論——強制將感官衝動轉化為清晰的因果邏輯推演
-      physiology: 骨骼的堅硬力學——在潛意識層面為氾濫的情感提供秩序與支撐
-      art_practice: 黑白素描、黏土雕塑——將星芒體能量物質化，在材料的物理阻力中鍛鍊意志
-      farm_block: 土地與農事的不可妥協——行動與責任的必然連結，大自然不接受情緒勒索
-
-classroom_authority_model:
-  source_of_authority: 七至九年級教師的權威不再由體制自動賦予，必須透過真實的人際關係與專業能力贏得
-  non_negotiable_consistency: 規則一旦制定，必須溫和且絕對地貫徹——雙重標準或指令未執行，學生立刻撤銷信任
-  psychological_signal: 高度結構化、可預測的環境向焦慮的青少年傳遞「此處安全」的訊號；環境秩序是內在秩序的模具
-  what_students_need_from_teacher:
-    - 對世界充滿熱情與改變意志的生命典範
-    - 言行絕對一致的成人穩定度
-    - 真誠回應偏題提問，不將挑釁視為個人攻擊
-    - 充滿愛的權威，而非體制威權
+  _type: reference_pointer
+  _path: ai-core/reference/student-development.yaml
+  _summary: >
+    外骨骼 vs 內骨骼：華德福移除體制外骨骼，教師全權承接青春期張力。
+    學科是隱藏鷹架：數學、藝術、農場實作將星芒體能量物質化導入秩序。
+    班級經營：修復式正義、充滿愛的權威、高度一致性傳遞「此處安全」。
+  _load_when:
+    - 分析特定學生的行為問題或動機狀態
+    - 設計班級經營策略或處理衝突
+    - 需要理解學科如何作為心理療癒工具
+    - 導師工作（班親會、個案討論、修復性對話）
   conflict_resolution:
     philosophy: 修復式正義（Restorative Justice）而非懲罰性手段；衝突是療癒與成長的契機
     tools:
@@ -299,14 +189,64 @@ mother_documents:
     path: ai-core/華德福七至九年級學生生命樣態與課程的連結.md
     purpose: 七至九年級學生的心理與靈性發展樣態、課程作為隱蔽鷹架的邏輯、班級經營與修復式正義策略；是理解 David 教學對象的核心參考文件
 
+# ── Reference 按需載入協議 ──────────────────────────────
+reference_loading_protocol:
+  convention: >
+    凡欄位中出現 _type: reference_pointer，代表該段內容已外部化。
+    _summary 是每次必讀的摘要；完整內容在 _path 指向的檔案。
+  rule: >
+    AI 在對話中遇到 _load_when 所列的任何情況時，
+    必須在回應前主動讀取對應的 _path 檔案，不需詢問教師。
+  trigger_check_timing: >
+    每次教師提出工作需求後，先掃描所有 reference_pointer 的 _load_when 條件，
+    確認是否需要讀取，再開始產出。
+  skill_override: >
+    若使用 slash command（/lesson、/syllabus 等），
+    skill 本身的「讀取必要檔案」步驟已明確指定要讀的 reference 檔，
+    skill 指令優先，本協議作為自由對話時的安全網。
+  reference_index:
+    pedagogy:  ai-core/reference/pedagogy-framework.yaml
+    english:   ai-core/reference/subject-english.yaml
+    history:   ai-core/reference/subject-history.yaml
+    student:   ai-core/reference/student-development.yaml
+
 ai_session_protocol:
   session_start:
     steps:
       - 載入 ai-core/teacheros.yaml（本文件）——教師身份與哲學錨點
+      - 載入 ai-core/acl.yaml——確認使用者授權範圍（見下方 acl_enforcement）
+      - 確認使用者身份：優先讀取 setup/environment.env 的 USER_EMAIL；
+          若無法取得，主動詢問「請確認你的帳號 Email」；
+          admin 角色跳過路徑限制，teacher 角色全程只允許操作 allowed_paths 範圍內的路徑
+      - 設定 workspace 路由（teacher 角色）：若 acl.yaml 中有 workspace 欄位，
+          查找設定、模板或框架檔案時優先從 workspaces/{teacher_id}/ 尋找；
+          找到覆寫版本則使用，找不到則退回 Repo 根目錄標準版（見下方 workspace_routing）
       - 載入 projects/_di-framework/project.yaml——差異化教學共用框架（每次必載）
       - 載入對應班級的 class-*/project.yaml——掃描 current_focus 與 cross_module_notes
       - 載入對應工作線的 working/*.yaml——確認 Block/Step 與 next_action
       - 主動報告現況（見下方 startup_report_template）
+
+    acl_enforcement:
+      on_unauthorized_request: >
+        若 teacher 角色要求操作不在其 allowed_paths 範圍內的路徑，
+        AI 應主動拒絕，說明：「你目前沒有操作 [路徑] 的授權。
+        如需擴充權限，請聯絡 David 更新 ai-core/acl.yaml。」
+      on_unknown_user: >
+        若 Email 不在 acl.yaml 中，通知使用者聯絡 David 登記，
+        並在確認前暫停所有寫入操作，僅允許讀取。
+      admin_bypass: >
+        admin 角色（allowed_paths: ["*"]）跳過所有路徑限制檢查，行為與原系統相同。
+
+    workspace_routing:
+      principle: >
+        teacher 角色的 AI 工作階段中，查找任何輔助設定、模板或框架檔案時，
+        先去 workspaces/{teacher_id}/ 尋找同路徑的覆寫版本；
+        找到則使用 workspace 版本，找不到則退回 Repo 根目錄的標準版。
+      example: >
+        AI 需要 projects/_di-framework/project.yaml →
+        先找 workspaces/teacher-lin/_di-framework/project.yaml →
+        若存在則使用 workspace 覆寫版；不存在則使用根目錄標準版。
+      scope: 僅適用 teacher 角色；admin 角色不啟用 workspace 路由邏輯。
 
     startup_report_template: >
       已載入系統。
@@ -338,3 +278,36 @@ ai_session_protocol:
     long_form: Markdown
     state_update: YAML（只改動的區塊）
     emoji: 不使用
+
+# ── 多 AI Agent 工作環境 ──────────────────────────────────
+ai_agent_context:
+  primary_agents:
+    claude_code:
+      name: Claude Code
+      type: CLI 工具
+      file_access: 完整本機讀寫（Edit / Write / Read 工具）
+      skill_entry: >
+        .claude/commands/ 薄層入口 → 自動引導至 ai-core/skills/ 正本
+      strength: 複雜多步驟任務、檔案系統操作、slash command 自動化
+    google_antigravity:
+      name: Google Antigravity（Gemini）
+      type: Gemini-based IDE 整合工具
+      file_access: 完整本機讀寫（可直接讀取電腦資料夾）
+      skill_entry: >
+        直接讀取 ai-core/skills/ 正本執行，不經 .claude/commands/ 層
+      strength: 日常對話協作、快速迭代、語音輸入友善
+
+  workflow:
+    switching_pattern: 兩工具每日交替使用，視當日工作性質選擇
+    continuity_mechanism: >
+      工具切換透過 projects/class-*/working/*.yaml 保持工作連續。
+      切換前：執行 session-end 技能同步進度錨點。
+      切換後：執行 load 技能讀取上次停止位置。
+    handoff_note: >
+      若此次對話是從另一個 AI Agent 接手的，
+      讀取對應班級的 english-session.yaml，即可從上次停止處繼續。
+      無需 David 重新說明背景。
+
+  skill_access:
+    canonical_path: ai-core/skills/
+    note: 技能正本對所有 AI 工具開放，任何有檔案讀取能力的 Agent 皆可執行

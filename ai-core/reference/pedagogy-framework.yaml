@@ -1,0 +1,88 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS Reference — 教學哲學框架（按需載入）
+# 路徑：ai-core/reference/pedagogy-framework.yaml
+# 觸發入口：teacheros.yaml → pedagogical_framework._load_when
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 包含：人智學基礎、四體論、七年週期、七至九年級發展樣態、
+#        頭心手三元、阿里曼力量與 AI 時代定位
+
+anthroposophical_foundation:
+  core_premise: 人類可透過嚴格的內在修煉，發展出超越感官的靈性認識能力；這是施泰納稱為「靈性科學」的認識論體系，而非宗教信仰
+  human_constitution:
+    physical_body: 可見的身體——物質層
+    etheric_body: 生命體 / 以太體——生命力、成長、記憶的承載者
+    astral_body: 星芒體——情感、慾望、意識的所在
+    ego: 自我（I）——個體靈性核心，跨世輪迴的承載者
+
+seven_year_cycles:
+  cycle_1:
+    age: 0–7 歲
+    body_developing: 物質體
+    learning_mode: 模仿——兒童透過直接複製環境與成人行為來學習
+  cycle_2:
+    age: 7–14 歲
+    body_developing: 生命體（以太體）
+    learning_mode: 圖像與情感——藝術、神話、故事是認知的媒介；教師的權威是學習的錨點
+  cycle_3:
+    age: 14–21 歲
+    body_developing: 星芒體
+    learning_mode: 獨立思考萌發——理想主義強烈，開始質疑一切，尋找因果與意義
+
+grade_7_to_9_developmental_context:
+  position: 第二與第三七年週期的過渡地帶（約12–15歲）
+  transition_nature: 學生從「跟隨圖像與教師權威」轉向「尋找自身意義與世界因果」
+  core_tension: 極度渴望自由與自主，卻尚未發展出足夠的內在結構承載這種自由；如蛻皮中的甲殼類，內在柔軟易傷，外顯防衛叛逆
+  nine_year_change_legacy: 九歲意識首次分裂（自我與世界的分離感）是青春期張力的心理前奏，帶著防衛心與批判性主體意識持續發酵至青春期全面爆發
+  grade_profiles:
+    grade_7:
+      age: 12–13 歲
+      psychological_crisis: 界線探索與自我中心
+      astral_state: 星芒體初步活躍，主觀情感開始主導對世界的看法
+      classroom_manifestations:
+        - 持續測試課堂規則與教師底線
+        - 對「不公平」極度敏感
+        - 小團體開始形成
+        - 質疑傳統權威，但仍需要教師作為意義錨點
+      curriculum_mirror:
+        history: 地理大發現、文藝復興——探索未知邊界的渴望在歷史先驅中找到映射
+        biography: 貞德、哥倫布、麥哲倫——從歷史人物的勇氣中尋找形塑獨立認同的靈感
+        science: 現象學物理（槓桿、燃燒）——感官體驗導向規律推導
+        physiology: 柔軟系統（消化、呼吸、生殖）——安撫身體發育的隱秘焦慮
+    grade_8:
+      age: 13–14 歲
+      psychological_crisis: 邏輯萌發與社交焦慮
+      astral_state: 意識銳利化，渴求因果關係；強烈的同儕歸屬需求
+      classroom_manifestations:
+        - 為反對而反對的課堂辯論
+        - 情緒瞬間爆發，強度遠超事件本身
+        - 群體從眾壓力導致微型霸凌與排斥
+        - 對教師雙重標準零容忍
+      curriculum_mirror:
+        history: 革命史（宗教改革、法國大革命、工業革命）——內在反抗衝動在學術框架內安全釋放
+        anatomy: 骨骼與肌肉系統——為氾濫的情感提供堅硬的力學支撐；骨骼是秩序與穩定的象徵
+        math: 柏拉圖立體、幾何——透過數學看見宇宙和諧與神聖秩序，安撫存在焦慮
+    grade_9:
+      age: 14–15 歲
+      psychological_crisis: 存在焦慮與判斷力危機
+      astral_state: 感覺被靈性世界拋出（施泰納描述為「被靈性世界吐出來」）；尋求絕對真理與純粹性
+      classroom_manifestations:
+        - 非黑即白的極端評判，容不下灰色地帶
+        - 對成人虛偽的零容忍，言行不一立刻喪失信任
+        - 智力表現與情緒穩定度的極端落差
+        - 強烈的理想主義與對現實的幻滅感並存
+      curriculum_mirror:
+        art: 黑白素描——在光影極端對比中學會尋找灰色過渡地帶，打破二元極端思維
+        science: 熱力學、板塊構造——極端力量的對立與轉換，從感官走向嚴謹科學語言
+        literature: 《雙城記》、《神曲》——人類靈魂在光明與黑暗間的掙扎，探索複雜脈絡
+        farm_block: 農場實作——真實體力勞動不接受情緒勒索，行動與責任的必然連結
+
+head_heart_hands:
+  head: 清醒、獨立的思考力；能批判性評估 AI 輸出而非盲目接受的武裝心智
+  heart: 情感深度、同理心、道德直覺；機器永遠無法具備的內在溫暖
+  hands: 身體勞動、手工藝、藝術實踐；具身學習（Embodied Learning）是認知發展的基礎
+
+steiner_cosmological_context:
+  ahriman_principle: 現代技術（包含 AI）體現阿里曼力量——冷峻智力、機械化、抽象邏輯、否定人類靈性向度
+  technology_stance: 技術是人類演化的必然，不逃避，而是以靈性力量穿透並引導技術
+  waldorf_mission_in_ai_era: 作為保護「真正人類特質」（The Truly Human）的避風港與前鋒基地
+  ai_limitation: AI 能模擬人類智力與語言，卻永遠無法具備真正的意識、自我覺察、道德直覺或情感溫暖

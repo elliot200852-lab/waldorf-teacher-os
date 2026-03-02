@@ -1,0 +1,40 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# GitHub CODEOWNERS — 最終合併守門員
+# 路徑：.github/CODEOWNERS
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# 規則說明：
+#   任何 Pull Request 若修改了下方列出的路徑，
+#   必須由 @elliot200852-lab（David）審核通過才能合併。
+#
+# 前提設定（需在 GitHub 介面手動完成一次）：
+#   Settings → Branches → main → Branch protection rules：
+#     ✓ Require a pull request before merging
+#     ✓ Require approvals（設為 1）
+#     ✓ Require review from Code Owners
+#     ✓ Do not allow bypassing the above settings
+#
+# 格式：路徑規則  @GitHub帳號
+# 規則按從上到下優先順序排列，下方的規則可覆蓋上方。
+
+# ── 系統核心（最高保護）────────────────────────────────
+
+# 整個 ai-core 資料夾（teacheros.yaml、acl.yaml 等）
+ai-core/                    @elliot200852-lab
+
+# GitHub 設定本身（包含本 CODEOWNERS 檔案）
+.github/                    @elliot200852-lab
+
+# Hook 腳本（防呆機制的程式碼）
+setup/hooks/                @elliot200852-lab
+
+# 輸出腳本（影響所有老師的文件轉換流程）
+publish/                    @elliot200852-lab
+
+# DI 共用框架（修改影響全校所有班級）
+projects/_di-framework/     @elliot200852-lab
+
+# ── 全域 Catch-all（兜底保護）──────────────────────────
+# 任何未被上方規則明確涵蓋的路徑，也需要 David 審核。
+# 這確保即使新增了新路徑，也不會漏掉保護。
+*                           @elliot200852-lab

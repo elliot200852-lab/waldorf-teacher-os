@@ -1,0 +1,46 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS Reference — 學生內在結構與班級經營（按需載入）
+# 路徑：ai-core/reference/student-development.yaml
+# 觸發入口：teacheros.yaml → student_inner_structure_model._load_when
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 包含：外骨骼 vs 內骨骼論、學科作為隱藏鷹架、班級經營與修復式正義
+
+student_inner_structure_model:
+  exoskeleton_vs_endoskeleton:
+    exoskeleton: 主流體制提供的外骨骼——課綱、考試、升學壓力，為青少年構築強制性邊界與行為指引
+    endoskeleton: 華德福教育的真實目標——協助學生長出自身的內骨骼（內在結構），能自我約束、自我賦予意義
+    waldorf_tension: 體制外刻意移除外骨骼，所有青春期心理張力毫無遮蔽地湧現，由教師全權承接
+  curriculum_as_hidden_scaffold:
+    principle: 學科知識是治癒青春期混亂的「解藥」；將學生狂野的心理能量精準導入理性軌道與物理現實
+    tools:
+      history_literature: 課程演進精確對應意識發展軌跡——學科是心魂的鏡子，讓覺醒的自我在歷史中看見自己
+      mathematics: 等號兩端的絕對平衡——為動盪的內在提供不受情緒影響的智識避風港
+      phenomenological_science: 實作→觀察→結論——強制將感官衝動轉化為清晰的因果邏輯推演
+      physiology: 骨骼的堅硬力學——在潛意識層面為氾濫的情感提供秩序與支撐
+      art_practice: 黑白素描、黏土雕塑——將星芒體能量物質化，在材料的物理阻力中鍛鍊意志
+      farm_block: 土地與農事的不可妥協——行動與責任的必然連結，大自然不接受情緒勒索
+
+classroom_authority_model:
+  source_of_authority: 七至九年級教師的權威不再由體制自動賦予，必須透過真實的人際關係與專業能力贏得
+  non_negotiable_consistency: 規則一旦制定，必須溫和且絕對地貫徹——雙重標準或指令未執行，學生立刻撤銷信任
+  psychological_signal: 高度結構化、可預測的環境向焦慮的青少年傳遞「此處安全」的訊號；環境秩序是內在秩序的模具
+  what_students_need_from_teacher:
+    - 對世界充滿熱情與改變意志的生命典範
+    - 言行絕對一致的成人穩定度
+    - 真誠回應偏題提問，不將挑釁視為個人攻擊
+    - 充滿愛的權威，而非體制威權
+  conflict_resolution:
+    philosophy: 修復式正義（Restorative Justice）而非懲罰性手段；衝突是療癒與成長的契機
+    tools:
+      talking_circles: 定期班級談話圈——建立情感安全網，讓每個聲音被聽見
+      nvc: 非暴力溝通——識別需求，客觀描述事件而非主觀指責
+      restorative_conversation: 修復性對話——理解傷害影響，犯錯者提出具體彌補方案
+      social_harmony: 訓練八年級學生擔任低年級衝突調解員——將掌控慾轉化為正向領導力
+
+waldorf_innate_advantages:
+  developmental_insight: 深刻理解人類七年一週期的發展規律，能精準定義不同階段的教育邊界條件
+  cross_domain_synthesis: 主課程設計中習慣將數學、歷史、藝術與神話交織成完整意義網絡
+  phenomenological_observation: 敏銳捕捉學生細微情感變化與學習狀態，而非依賴數據報表
+  embodied_presence: 體力陪伴、晨圈節奏、手工藝指導——AI 永遠無法涉足的物理與情感空間
+  environment_design: 長期以來即是學習環境的佈局者（教室色彩、季節桌、每日吸氣呼氣節奏），現延伸至數位認知環境的架構設計
+  schema_architect: 習慣設計「基模」（Schema）而非處理細節——這正是意義架構師的核心能力
