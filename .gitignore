@@ -27,3 +27,6 @@ projects/*/roster.yaml
 
 # 期末學生評量總檔（含還原的真實姓名，不上傳）
 projects/*/english/content/student-assessments*.md
+
+# Firebase 快取
+.firebase/
