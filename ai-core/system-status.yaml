@@ -13,7 +13,7 @@
 #           只改有變化的欄位，不重寫整份文件。
 #   主要入口仍是 AI_HANDOFF.md，此文件是補充快照。
 #
-# 最後更新：2026-03-01
+# 最後更新：2026-03-02
 
 system_status:
 
@@ -69,7 +69,19 @@ system_status:
     demo_html: 完成（publish/teacheros-demo.html，153KB 自含，4 分頁，base64 資產嵌入）
     voice_protocol: 完成（teacheros.yaml 內含 5 條語音輸入協議 + 開工報告模板）
 
+  # ── 多使用者防呆機制 ─────────────────────────────────
+  multi_user_acl:
+    acl_yaml: 完成（雙身份建立：admin elliot200852@gmail.com + teacher elliot200852+teacher@gmail.com）
+    codeowners: 完成（.github/CODEOWNERS，@elliot200852-lab 全域保護）
+    pre_commit_hook: 完成（setup/hooks/pre-commit，雙重 email 驗證 + Python ACL 比對）
+    install_script: 完成（setup/install-hooks.sh）
+    teacheros_yaml: 已更新（session_start 加入 ACL 身份確認 + workspace 路由邏輯）
+    workspace_template: 完成（workspaces/_template/）
+    workspace_david_teacher: 完成（workspaces/david-teacher/，授權 class-9c + 本 workspace）
+    teacher_guide: 已更新（加入權限說明、hook 安裝步驟、資料夾一覽）
+    github_branch_protection: 待手動設定（需 David 至 GitHub 介面完成）
+
   # ── 系統維護 ────────────────────────────────────────
-  last_context_review: 2026-03-01
+  last_context_review: 2026-03-02
   context_review_path: ai-core/reviews/context-review-20260228.md
   session_log: ai-core/reviews/session-log.md

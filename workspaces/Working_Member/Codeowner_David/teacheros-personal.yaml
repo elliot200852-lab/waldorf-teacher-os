@@ -192,17 +192,10 @@ workspace_system:
     description: >
       完整的 Block 1-4 產出範例，供新進老師參考。
       涵蓋八年級英文課全學期（10週）的教學設計、紀錄與評量。
-  workspace_naming:
-    convention: "{Role}_{RealName}"
-    examples:
-      - Codeowner_David（系統管理員）
-      - Teacher_林信宏（一般教師）
-    container: workspaces/Working_Member/（所有活躍教師 workspace 的上層資料夾）
-    special: workspaces/工作範例參考/（不套命名規則）
   onboarding_flow:
     step_1: 老師執行 bash setup/quick-start.sh（技術安裝）
     step_2: David 執行 bash setup/add-teacher.sh（認證 + 建立 workspace）
-    step_3: 老師 git pull 取得自己的 workspace（位於 workspaces/Working_Member/Teacher_{姓名}/）
+    step_3: 老師 git pull 取得自己的 workspace
     step_4: 在 workspace 中填入個人資料，開始 Block 1
 
 differentiated_instruction:

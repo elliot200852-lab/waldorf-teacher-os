@@ -1,0 +1,94 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Workspace 狀態追蹤
+# 此檔案由 setup/add-teacher.sh 自動生成，記錄你的工作空間基本資訊
+# 路徑：workspaces/{teacher_id}/workspace.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+teacher_identity:
+  # 老師姓名（中文）
+  name: （老師姓名）
+
+  # 英文 ID（用於系統識別與路徑，例：chen-mei-ling、lin-xiao-wei）
+  # 重要：建立後不應改變，會影響整個工作空間的檔案路由
+  teacher_id: （英文ID，例：chen-mei-ling）
+
+  # 職稱或角色描述（例：八年級英文科任教師、華德福導師、小學數學教師）
+  role: （職稱，例：八年級英文科任教師）
+
+  # 聯絡信箱
+  email: （Email）
+
+workspace_status: active
+
+# 工作空間建立時間（自動填入，格式：YYYY-MM-DD）
+created_date: （建立日期）
+
+# 此工作空間的用途說明
+purpose: （老師的個人 workspace）
+
+# ────────────────────────────────────────────────────────
+# 班級清單 / Classes
+# ────────────────────────────────────────────────────────
+#
+# 說明：
+#   這裡列出你在此工作空間管理的所有班級。
+#   每個班級對應 projects/class-{code}/ 資料夾。
+#
+# 結構說明：
+#   - class_code: 班級代碼（例：8a、homeroom-2025、bi-seventh）
+#   - grade: 年級（例：八年級）
+#   - subject: 科目（例：英文、導師課、綜合學習）
+#   - student_count: 學生人數（方便快速參考）
+#   - status: active（活躍）| archived（已結束）
+#   - blocks_completed: 已完成的 Block 數（如 Block 1、Block 2 等）
+
+classes: []
+
+# ──────────────────────────────────────────────────────
+# 範例：
+# ──────────────────────────────────────────────────────
+# classes:
+#   - class_code: 8a
+#     grade: 八年級
+#     subject: 英文
+#     student_count: 22
+#     status: active
+#     blocks_completed: []
+#     notes: 下學期開始新的文學閱讀主題
+#
+#   - class_code: 8a-homeroom
+#     grade: 八年級
+#     subject: 導師課
+#     student_count: 22
+#     status: active
+#     blocks_completed: []
+#
+#   - class_code: 6th-intro
+#     grade: 六年級
+#     subject: 英文入門
+#     student_count: 18
+#     status: active
+#     blocks_completed: [Block 1]
+# ──────────────────────────────────────────────────────
+
+# ────────────────────────────────────────────────────────
+# 附註
+# ────────────────────────────────────────────────────────
+#
+# 1. 新增班級：
+#    a. 在此 classes: [] 下方加入班級資訊
+#    b. 執行 setup/add-teacher.sh 或手動建立 projects/class-{code}/ 資料夾
+#    c. AI 系統會自動掃描並同步
+#
+# 2. 班級代碼規則：
+#    - 使用英文小寫與數字
+#    - 多詞時用 dash 分隔（例：8a-english、middle-school-biology）
+#    - 導師課建議加 -homeroom 後綴（例：7th-homeroom）
+#
+# 3. 進度追蹤：
+#    - blocks_completed 欄位會由 AI 自動更新
+#    - 詳細進度在 projects/class-{code}/working/*.yaml 中查看
+#
+# 4. 注意隱私：
+#    - roster.yaml（學生名單）通常放在 .gitignore 中
+#    - 不要在公開 repo 中提交實名學生資料

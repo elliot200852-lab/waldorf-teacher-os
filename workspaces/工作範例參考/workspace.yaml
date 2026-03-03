@@ -1,0 +1,23 @@
+# 工作範例參考 Workspace
+# 此 workspace 為 Teacher Claude 的完整教學產出範例
+# 狀態：唯讀參考（供其他老師閱讀學習）
+
+teacher_identity:
+  name: Teacher Claude
+  teacher_id: teacher-claude
+  role: 八年級英文科任教師 + 班級導師
+  email: teacher-claude@example.com
+
+workspace_status: reference_only
+created_date: 2026-03-03
+purpose: >
+  Teacher Claude 完成的 Block 1-4 全流程產出，
+  作為新進老師的工作範例參考。
+
+classes:
+  - class_code: class-claude
+    grade: 八年級
+    subject: 英文
+    student_count: 18
+    status: completed
+    blocks_completed: [1, 2, 3, 4]

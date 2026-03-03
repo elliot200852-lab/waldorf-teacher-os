@@ -1,8 +1,0 @@
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 【TeacherOS 評量配置】
-# 名稱：四年級 C 班・台語課評量原則
-# 路徑：projects/class-4c/taiwanese/assessment.yaml
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-subject: taiwanese
-criteria: []
-weights: {}

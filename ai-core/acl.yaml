@@ -14,7 +14,13 @@
 #   1. 在 teachers 清單中複製範例格式，填入真實資料。
 #   2. 在 GitHub 合併後生效（需要 David 審核此檔案的 PR）。
 #
-# 最後更新：2026-03-02
+# Workspace 命名規則：{身份}_{真實姓名}
+#   - Codeowner_{Name}：系統管理員（擁有合併權限）
+#   - Teacher_{Name}：一般教師
+#   所有教師 workspace 位於 workspaces/Working_Member/ 下
+#   工作範例參考 為特殊命名，不套 Role_Name 格式
+#
+# 最後更新：2026-03-03
 
 # ── 管理員（無限制）────────────────────────────────────
 
@@ -44,7 +50,48 @@ roles:
 #       - setup/
 #       - .github/
 
-  teachers: []
+  teachers:
+    # ── Workspace 建立流程 ──
+    # 1. 新教師提供：姓名、Email、班級代碼、科目
+    # 2. 管理員執行：bash setup/add-teacher.sh
+    # 3. 腳本自動：寫入 acl.yaml + 建立 workspace + 複製模板
+    # 4. 管理員 commit + push，教師 pull 即可使用
+    #
+    # 新增格式（複製下方範例，修改相關欄位）：
+    #   - name: 老師姓名
+    #     email: teacher@school.edu.tw
+    #     github_username: github-username
+    #     workspace: workspaces/Working_Member/Teacher_{教師姓名}/
+    #     allowed_paths:
+    #       - workspaces/Working_Member/Teacher_{教師姓名}/
+    #     blocked_paths:
+    #       - ai-core/
+    #       - setup/
+    #       - .github/
+
+    - name: Teacher Claude
+      email: teacher-claude@waldorf.example
+      github_username: teacher-claude-ref
+      workspace: workspaces/工作範例參考/
+      allowed_paths:
+        - workspaces/工作範例參考/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: David（Codeowner）
+      email: elliot200852+teacher@gmail.com
+      github_username: elliot200852-lab
+      workspace: workspaces/Working_Member/Codeowner_David/
+      allowed_paths:
+        - workspaces/Working_Member/Codeowner_David/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
 
 # ── 永遠受保護的核心路徑（任何 Teacher 角色均不得修改）──
 #
