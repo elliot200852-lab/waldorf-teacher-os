@@ -26,9 +26,14 @@
 
 **指定班級（依 David 指示，或從上次工作線 YAML 推斷）**
 
-- `projects/class-{9c/8a/7a}/project.yaml` — 班級脈絡與焦點
-- `projects/class-{9c/8a/7a}/working/english-session.yaml` — 英文課進度錨點
-- `projects/class-9c/homeroom/session.yaml` — 導師業務進度錨點
+班級資料位於各教師的 workspace 內：
+- David：`workspaces/Working_Member/Codeowner_David/projects/class-{code}/`
+- 其他教師：`workspaces/Working_Member/Teacher_{姓名}/projects/class-{code}/`
+
+載入順序：
+- `{workspace}/projects/class-{code}/project.yaml` — 班級脈絡與焦點
+- `{workspace}/projects/class-{code}/working/english-session.yaml` — 英文課進度錨點
+- `{workspace}/projects/class-{code}/homeroom/session.yaml` — 導師業務進度錨點（如有）
 
 ---
 
@@ -139,5 +144,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-02*
+*最後更新：2026-03-03*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
