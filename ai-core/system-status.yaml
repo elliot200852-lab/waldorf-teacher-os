@@ -13,9 +13,30 @@
 #           只改有變化的欄位，不重寫整份文件。
 #   主要入口仍是 AI_HANDOFF.md，此文件是補充快照。
 #
-# 最後更新：2026-03-02
+# 最後更新：2026-03-03
 
 system_status:
+
+  # ── 系統架構版本 ────────────────────────────────────
+  version: v7
+  architecture: Workspace + Collaborator + Branch 模式
+  last_major_restructure: 2026-03-03
+
+  # ── Workspace 結構 ─────────────────────────────────
+  workspace_structure:
+    container: workspaces/Working_Member/
+    naming_convention: "{Role}_{RealName}"
+    david_workspace: workspaces/Working_Member/Codeowner_David/
+    example_workspace: workspaces/工作範例參考/
+    template: workspaces/_template/
+
+  # ── Git 協作模型 ────────────────────────────────────
+  git_collaboration:
+    model: Collaborator + Branch
+    branch_naming: "workspace/{Teacher_ID}"
+    protection: Branch Protection + CODEOWNERS + Pre-commit Hook
+    teacher_daily_workflow: 在個人 branch 自由 commit/push
+    merge_to_main: 透過 PR，僅 David 可合併
 
   # ── 框架與模板 ──────────────────────────────────────
   di_framework: 完成（Block 1-4 模板、品質標準、輸出協議、108 課綱語言參考）
@@ -23,40 +44,38 @@ system_status:
   homeroom_template: 完成（HM Block 1-4 + Google iCal 同步機制）
   main_lesson_template: 待建立
 
-  # ── 學生資料 ────────────────────────────────────────
+  # ── David 的班級資料（位於 Codeowner_David workspace）──
+  # 路徑前綴：workspaces/Working_Member/Codeowner_David/projects/
   students_yaml:
     class-9c: 完成（roster + students + di-profile，22 人英文 DI 分類完成）
-    class-4c: 待填入（結構就緒，休眠中）
     class-9d: 待填入（結構就緒，休眠中）
 
   # ── 英文課進度 ──────────────────────────────────────
   english_progress:
     class-9c:
+      workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9c/
       syllabus: v2-20260301（已輸出 Google Drive）
       block: Block 1 完成 → 等待 Block 2
       next: 設計第 1–2 週 45 分鐘課堂流程（小說研讀 + 語言工坊）
 
-  # ── 台語課進度 ──────────────────────────────────────
-  taiwanese_progress:
-    class-4c:
-      syllabus: 尚未開始
-      block: 休眠
-
-  # ── 台灣文學主課程進度（9D） ──────────────────────────────────────
+  # ── 台灣文學主課程進度（9D） ────────────────────────
   ml_taiwan_literature_progress:
     class-9d:
+      workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9d/
       syllabus: 尚未開始
       block: 休眠
 
-  # ── 未定主課程進度（9C） ──────────────────────────────────────
+  # ── 未定主課程進度（9C） ────────────────────────────
   ml_undecided_progress:
     class-9c:
+      workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9c/
       syllabus: 尚未開始
       block: 休眠
 
   # ── 導師業務進度 ────────────────────────────────────
   homeroom_progress:
     class-9c:
+      workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9c/
       block: Block 3 Step 1 進行中
       next: 確認春季班親會細節（2026-03-21）
 
@@ -69,19 +88,22 @@ system_status:
     demo_html: 完成（publish/teacheros-demo.html，153KB 自含，4 分頁，base64 資產嵌入）
     voice_protocol: 完成（teacheros.yaml 內含 5 條語音輸入協議 + 開工報告模板）
 
-  # ── 多使用者防呆機制 ─────────────────────────────────
+  # ── 多使用者與權限機制 ──────────────────────────────
   multi_user_acl:
-    acl_yaml: 完成（雙身份建立：admin elliot200852@gmail.com + teacher elliot200852+teacher@gmail.com）
-    codeowners: 完成（.github/CODEOWNERS，@elliot200852-lab 全域保護）
+    acl_yaml: 完成（David = Codeowner，教師 = Teacher_{姓名}，路徑皆指向 Working_Member/）
+    codeowners: 完成（.github/CODEOWNERS，@elliot200852-lab 全域保護 + 核心路徑保護）
     pre_commit_hook: 完成（setup/hooks/pre-commit，雙重 email 驗證 + Python ACL 比對）
     install_script: 完成（setup/install-hooks.sh）
-    teacheros_yaml: 已更新（session_start 加入 ACL 身份確認 + workspace 路由邏輯）
     workspace_template: 完成（workspaces/_template/）
-    workspace_david_teacher: 完成（workspaces/david-teacher/，授權 class-9c + 本 workspace）
-    teacher_guide: 已更新（加入權限說明、hook 安裝步驟、資料夾一覽）
-    github_branch_protection: 待手動設定（需 David 至 GitHub 介面完成）
+    workspace_david: 完成（workspaces/Working_Member/Codeowner_David/，含 class-9c + class-9d）
+    teacher_guide: v2.0（AI 口語指令版，含 Git 工作流程）
+    github_branch_protection: 已啟用（main branch 保護，PR 合併需 David 審批）
+    skills_save: 完成（ai-core/skills/save.md — 「存檔」觸發 git commit + push）
+    skills_pull_request: 完成（ai-core/skills/pull-request.md — 「發 PR」觸發合併申請）
+    add_teacher_sh: 完成（自動建立 workspace + 權限 + 個人 branch）
+    quick_start_sh: 完成（含 Check 8 自動偵測並切換個人 branch）
 
   # ── 系統維護 ────────────────────────────────────────
-  last_context_review: 2026-03-02
+  last_context_review: 2026-03-03
   context_review_path: ai-core/reviews/context-review-20260228.md
   session_log: ai-core/reviews/session-log.md

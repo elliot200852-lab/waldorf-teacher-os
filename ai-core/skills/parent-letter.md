@@ -28,7 +28,12 @@ args_format: "[班級代碼] [類型] (例: 9c 學期評語)"
 
 ### Step 1 — 讀取相關資料
 
-1. `projects/class-[班級]/working/students.yaml`（學生資料 + 觀察記錄）
+1. `{workspace}/projects/class-[班級]/working/students.yaml`（學生資料 + 觀察記錄）
+
+# {workspace} 路徑解析：
+# 從 acl.yaml 取得當前使用者的 workspace 路徑。
+# David：workspaces/Working_Member/Codeowner_David/
+# 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 **Reference 模組（必讀）：**
 
@@ -71,9 +76,9 @@ David 敬上
 
 ### Step 4 — 確認並儲存
 
-教師確認後，詢問：「確認儲存草稿至 `projects/class-[班級]/content/parent-letters/[YYYYMMDD]-[學生代號].md` 嗎？」
+教師確認後，詢問：「確認儲存草稿至 `{workspace}/projects/class-[班級]/content/parent-letters/[YYYYMMDD]-[學生代號].md` 嗎？」
 
-若為班級通知，路徑為：`projects/class-[班級]/content/parent-letters/[YYYYMMDD]-class-notice.md`
+若為班級通知，路徑為：`{workspace}/projects/class-[班級]/content/parent-letters/[YYYYMMDD]-class-notice.md`
 
 ## 注意事項
 

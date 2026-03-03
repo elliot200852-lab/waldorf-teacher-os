@@ -27,7 +27,12 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 ### Step 1 — 讀取必要檔案
 
-1. `projects/class-[班級]/homeroom/session.yaml`（導師業務進度錨點）
+1. `{workspace}/projects/class-[班級]/homeroom/session.yaml`（導師業務進度錨點）
+
+# {workspace} 路徑解析：
+# 從 acl.yaml 取得當前使用者的 workspace 路徑。
+# David：workspaces/Working_Member/Codeowner_David/
+# 教師：workspaces/Working_Member/Teacher_{姓名}/
 2. `projects/_di-framework/content/homeroom-template.md`（若存在）
 
 **Reference 模組（必讀）：**
