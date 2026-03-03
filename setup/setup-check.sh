@@ -13,9 +13,17 @@ check_pass() { echo "  [OK]  $1"; PASS=$((PASS+1)); }
 check_fail() { echo "  [!!]  $1"; FAIL=$((FAIL+1)); }
 section()    { echo ""; echo "── $1 ──────────────────────────────────────────"; }
 
+# ── OS 偵測 ───────────────────────────────────────────────────
+
+case "$(uname -s)" in
+  Darwin*)               OS_TYPE="macos" ;;
+  MINGW*|MSYS*|CYGWIN*)  OS_TYPE="windows" ;;
+  *)                     OS_TYPE="unknown" ;;
+esac
+
 echo ""
 echo "════════════════════════════════════════════════"
-echo "  TeacherOS 環境檢查"
+echo "  TeacherOS 環境檢查（$OS_TYPE）"
 echo "════════════════════════════════════════════════"
 
 # ── 1. 個人設定檔 ─────────────────────────────────────────────
@@ -57,34 +65,74 @@ else
   check_fail "找不到 Pandoc"
   echo ""
   echo "  請安裝 Pandoc："
-  echo "  1. 先安裝 Homebrew（如尚未安裝）："
-  echo "     /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
-  echo "  2. 安裝 Pandoc："
-  echo "     brew install pandoc"
+  if [ "$OS_TYPE" = "windows" ]; then
+    echo "    winget install JohnMacFarlane.Pandoc"
+    echo ""
+    echo "  安裝後重新開啟終端機，若仍找不到，請在 environment.env 設定完整路徑："
+    echo "    PANDOC_PATH=/c/Users/<帳號>/AppData/Local/Microsoft/WinGet/Packages/..."
+  else
+    echo "  1. 先安裝 Homebrew（如尚未安裝）："
+    echo "     /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
+    echo "  2. 安裝 Pandoc："
+    echo "     brew install pandoc"
+  fi
 fi
 
 # ── 3. Google Drive for Desktop ───────────────────────────────
 
 section "3. Google Drive for Desktop"
 
-if [ -d "$HOME/Library/CloudStorage" ]; then
-  GDRIVE_ACCOUNTS=$(ls "$HOME/Library/CloudStorage/" | grep "GoogleDrive-" | sed 's/GoogleDrive-//')
-  if [ -n "$GDRIVE_ACCOUNTS" ]; then
-    check_pass "Google Drive for Desktop 已安裝並登入"
-    echo ""
-    echo "  已連線帳號："
-    while IFS= read -r acct; do
-      echo "    • $acct"
-    done <<< "$GDRIVE_ACCOUNTS"
+if [ "$OS_TYPE" = "macos" ]; then
+  if [ -d "$HOME/Library/CloudStorage" ]; then
+    GDRIVE_ACCOUNTS=$(ls "$HOME/Library/CloudStorage/" | grep "GoogleDrive-" | sed 's/GoogleDrive-//')
+    if [ -n "$GDRIVE_ACCOUNTS" ]; then
+      check_pass "Google Drive for Desktop 已安裝並登入"
+      echo ""
+      echo "  已連線帳號："
+      while IFS= read -r acct; do
+        echo "    • $acct"
+      done <<< "$GDRIVE_ACCOUNTS"
+    else
+      check_fail "Google Drive for Desktop 已安裝但未登入任何 Google 帳號"
+    fi
   else
-    check_fail "Google Drive for Desktop 已安裝但未登入任何 Google 帳號"
+    check_fail "找不到 Google Drive for Desktop"
+    echo ""
+    echo "  請安裝 Google Drive for Desktop："
+    echo "  https://www.google.com/drive/download/"
+    echo "  安裝後登入你的 Google 帳號，並開啟「我的雲端硬碟」同步。"
   fi
+
+elif [ "$OS_TYPE" = "windows" ]; then
+  GDRIVE_FOUND=false
+
+  # 優先使用 environment.env 中手動設定的 GOOGLE_DRIVE_ROOT
+  if [ -n "$GOOGLE_DRIVE_ROOT" ] && [ -d "$GOOGLE_DRIVE_ROOT" ]; then
+    check_pass "Google Drive 已掛載：$GOOGLE_DRIVE_ROOT"
+    GDRIVE_FOUND=true
+  else
+    # 自動偵測：掃描常見磁碟機代號下的「我的雲端硬碟」
+    for DRIVE in /d /e /f /g /h /i /j /k; do
+      if [ -d "${DRIVE}/我的雲端硬碟" ]; then
+        check_pass "Google Drive 已掛載：${DRIVE}/我的雲端硬碟"
+        GOOGLE_DRIVE_ROOT="${DRIVE}/我的雲端硬碟"
+        GDRIVE_FOUND=true
+        break
+      fi
+    done
+  fi
+
+  if [ "$GDRIVE_FOUND" = false ]; then
+    check_fail "找不到 Google Drive 掛載點"
+    echo ""
+    echo "  請確認 Google Drive for Desktop 已安裝並登入："
+    echo "  https://www.google.com/drive/download/"
+    echo "  安裝後，在 environment.env 加入掛載根目錄（例如）："
+    echo "    GOOGLE_DRIVE_ROOT=/h/我的雲端硬碟"
+  fi
+
 else
-  check_fail "找不到 Google Drive for Desktop"
-  echo ""
-  echo "  請安裝 Google Drive for Desktop："
-  echo "  https://www.google.com/drive/download/"
-  echo "  安裝後登入你的 Google 帳號，並開啟「我的雲端硬碟」同步。"
+  echo "  （不支援的 OS，跳過此項檢查）"
 fi
 
 # ── 4. Google Drive TeacherOS 資料夾 ──────────────────────────
@@ -92,8 +140,23 @@ fi
 section "4. Google Drive TeacherOS 資料夾"
 
 if [ -n "$GOOGLE_DRIVE_EMAIL" ] && [ -n "$GOOGLE_DRIVE_FOLDER" ]; then
-  GDRIVE_PATH="$HOME/Library/CloudStorage/GoogleDrive-${GOOGLE_DRIVE_EMAIL}/我的雲端硬碟/${GOOGLE_DRIVE_FOLDER}"
-  if [ -d "$GDRIVE_PATH" ]; then
+  # 將 Windows 反斜線統一轉為正斜線
+  GDRIVE_FOLDER_UNIX=$(echo "$GOOGLE_DRIVE_FOLDER" | tr '\\' '/')
+
+  if [ "$OS_TYPE" = "macos" ]; then
+    GDRIVE_PATH="$HOME/Library/CloudStorage/GoogleDrive-${GOOGLE_DRIVE_EMAIL}/我的雲端硬碟/${GDRIVE_FOLDER_UNIX}"
+  elif [ "$OS_TYPE" = "windows" ]; then
+    if [ -n "$GOOGLE_DRIVE_ROOT" ]; then
+      GDRIVE_PATH="${GOOGLE_DRIVE_ROOT}/${GDRIVE_FOLDER_UNIX}"
+    else
+      # GOOGLE_DRIVE_ROOT 未偵測到，以腳本所在位置推算
+      GDRIVE_PATH="$REPO_ROOT"
+    fi
+  else
+    GDRIVE_PATH=""
+  fi
+
+  if [ -n "$GDRIVE_PATH" ] && [ -d "$GDRIVE_PATH" ]; then
     check_pass "TeacherOS 資料夾存在：${GOOGLE_DRIVE_FOLDER}"
     # 確認子資料夾
     for CLASS in class-9c class-8a class-7a; do
@@ -109,6 +172,10 @@ if [ -n "$GOOGLE_DRIVE_EMAIL" ] && [ -n "$GOOGLE_DRIVE_FOLDER" ]; then
     echo "  請確認："
     echo "  1. 你的 Google Drive 內有「${GOOGLE_DRIVE_FOLDER}」資料夾"
     echo "  2. 若無，請向系統管理員申請共用或複製"
+    if [ "$OS_TYPE" = "windows" ]; then
+      echo "  3. 請在 environment.env 設定 GOOGLE_DRIVE_ROOT，例如："
+      echo "     GOOGLE_DRIVE_ROOT=/h/我的雲端硬碟"
+    fi
   fi
 fi
 
@@ -131,7 +198,11 @@ if command -v git &>/dev/null; then
   fi
 else
   check_fail "找不到 Git"
-  echo "  請安裝 Git：brew install git"
+  if [ "$OS_TYPE" = "windows" ]; then
+    echo "  請安裝 Git for Windows：https://git-scm.com/download/win"
+  else
+    echo "  請安裝 Git：brew install git"
+  fi
 fi
 
 # ── 結果摘要 ──────────────────────────────────────────────────
