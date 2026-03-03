@@ -3,6 +3,11 @@
 .AppleDouble
 .LSOverride
 
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
 # Claude（追蹤 commands/ 與 scripts/，排除其餘）
 .claude/worktrees/
 .claude/settings.local.json
