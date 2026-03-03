@@ -23,9 +23,12 @@ class_files:
 subjects:
   homeroom:
     type: 班級導師模組
+    weekly_sessions: 3
     note: 負責班級經營、活動行事與親師溝通
     session_anchor: homeroom/session.yaml
     content_output: homeroom/content/
+    status: completed
+    blocks_completed: [HM-1, HM-2, HM-3, HM-4]
   english:
     type: 英文專科
     weekly_sessions: 4
