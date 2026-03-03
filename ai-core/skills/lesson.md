@@ -34,8 +34,13 @@ args_format: "[班級代碼] [區塊編號] (例: 9c 2)"
 
 依序讀取：
 
-1. `projects/class-[班級]/working/english-session.yaml`（確認目前位置）
-2. `projects/class-[班級]/working/students.yaml`（DI 人數與學習優勢資料）
+1. `{workspace}/projects/class-[班級]/working/english-session.yaml`（確認目前位置）
+2. `{workspace}/projects/class-[班級]/working/students.yaml`（DI 人數與學習優勢資料）
+
+# {workspace} 路徑解析：
+# 從 acl.yaml 取得當前使用者的 workspace 路徑。
+# David：workspaces/Working_Member/Codeowner_David/
+# 教師：workspaces/Working_Member/Teacher_{姓名}/
 3. 依區塊編號讀取對應模板：
    - 區塊一：`projects/_di-framework/content/english-di-block1.md`
    - 區塊二：`projects/_di-framework/content/english-di-block2.md`

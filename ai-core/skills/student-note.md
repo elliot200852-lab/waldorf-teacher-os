@@ -28,7 +28,12 @@ args_format: "[班級代碼] [學生識別] (例: 9c 5號 或 9c 小明)"
 
 ### Step 1 — 讀取學生資料
 
-讀取：`projects/class-[班級]/working/students.yaml`
+讀取：`{workspace}/projects/class-[班級]/working/students.yaml`
+
+# {workspace} 路徑解析：
+# 從 acl.yaml 取得當前使用者的 workspace 路徑。
+# David：workspaces/Working_Member/Codeowner_David/
+# 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 找到對應學生的條目。若找不到，詢問：「未找到這位學生，是否要先確認名單？」
 

@@ -345,7 +345,7 @@ ai_agent_context:
   workflow:
     switching_pattern: 兩工具每日交替使用，視當日工作性質選擇
     continuity_mechanism: >
-      工具切換透過 projects/class-*/working/*.yaml 保持工作連續。
+      工具切換透過 {workspace}/projects/class-*/working/*.yaml 保持工作連續。
       切換前：執行 session-end 技能同步進度錨點。
       切換後：執行 load 技能讀取上次停止位置。
     handoff_note: >

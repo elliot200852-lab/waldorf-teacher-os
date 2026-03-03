@@ -27,8 +27,13 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 ### Step 1 — 讀取本區塊記錄
 
-1. `projects/class-[班級]/working/english-session.yaml`（本區塊的決策與產出記錄）
-2. `projects/class-[班級]/working/students.yaml`（學生學習狀態）
+1. `{workspace}/projects/class-[班級]/working/english-session.yaml`（本區塊的決策與產出記錄）
+2. `{workspace}/projects/class-[班級]/working/students.yaml`（學生學習狀態）
+
+# {workspace} 路徑解析：
+# 從 acl.yaml 取得當前使用者的 workspace 路徑。
+# David：workspaces/Working_Member/Codeowner_David/
+# 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 **Reference 模組（必讀）：**
 
@@ -70,7 +75,7 @@ AI 將口述整理為結構化記錄。
 
 ### Step 4 — 儲存反思筆記
 
-詢問：「確認將反思筆記附加至 `projects/class-[班級]/content/english/block-reflections.md` 嗎？（是 / 否）」
+詢問：「確認將反思筆記附加至 `{workspace}/projects/class-[班級]/content/english/block-reflections.md` 嗎？（是 / 否）」
 
 採附加邏輯，不覆蓋前次反思。
 

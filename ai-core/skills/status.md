@@ -26,8 +26,13 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 只讀取以下兩個檔案：
 
-1. `projects/class-[班級]/working/english-session.yaml`
-2. `projects/class-[班級]/project.yaml`（只在 english-session 無位置資訊時補充）
+1. `{workspace}/projects/class-[班級]/working/english-session.yaml`
+2. `{workspace}/projects/class-[班級]/project.yaml`（只在 english-session 無位置資訊時補充）
+
+# {workspace} 路徑解析：
+# 從 acl.yaml 取得當前使用者的 workspace 路徑。
+# David：workspaces/Working_Member/Codeowner_David/
+# 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 ## 輸出格式
 

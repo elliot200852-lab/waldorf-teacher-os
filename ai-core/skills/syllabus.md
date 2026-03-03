@@ -29,10 +29,15 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 依序讀取：
 
-1. `projects/class-[班級]/project.yaml`
-2. `projects/class-[班級]/working/students.yaml`
-3. `projects/class-[班級]/working/english-session.yaml`
+1. `{workspace}/projects/class-[班級]/project.yaml`
+2. `{workspace}/projects/class-[班級]/working/students.yaml`
+3. `{workspace}/projects/class-[班級]/working/english-session.yaml`
 4. `projects/_di-framework/content/english-di-block1.md`
+
+# {workspace} 路徑解析：
+# 從 acl.yaml 取得當前使用者的 workspace 路徑。
+# David：workspaces/Working_Member/Codeowner_David/
+# 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 **Reference 模組（學季規劃必讀）：**
 
@@ -94,8 +99,8 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 | 路徑 | 用途 |
 |------|------|
-| `projects/class-[班級]/content/english/english-syllabus-v{N}-{YYYYMMDD}.md` | 班級視角 |
-| `projects/class-[班級]/english/content/english-syllabus-v{N}-{YYYYMMDD}.md` | 英文科目視角 |
+| `{workspace}/projects/class-[班級]/content/english/english-syllabus-v{N}-{YYYYMMDD}.md` | 班級視角 |
+| `{workspace}/projects/class-[班級]/english/content/english-syllabus-v{N}-{YYYYMMDD}.md` | 英文科目視角 |
 
 寫入前確認：「確認產出 [檔名] 並寫入雙路徑嗎？（是 / 否）」
 

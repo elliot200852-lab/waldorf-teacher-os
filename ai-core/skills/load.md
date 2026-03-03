@@ -28,8 +28,13 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 1. `ai-core/teacheros.yaml`
 2. `projects/_di-framework/project.yaml`
-3. `projects/class-[班級]/project.yaml`
-4. `projects/class-[班級]/working/english-session.yaml`
+3. `{workspace}/projects/class-[班級]/project.yaml`
+4. `{workspace}/projects/class-[班級]/working/english-session.yaml`
+
+# {workspace} 路徑解析：
+# 從 acl.yaml 取得當前使用者的 workspace 路徑。
+# David：workspaces/Working_Member/Codeowner_David/
+# 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 ## 輸出格式
 
