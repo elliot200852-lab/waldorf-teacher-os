@@ -1,0 +1,55 @@
+class: Claude
+grade: 八年級
+di_framework_ref: projects/_di-framework/project.yaml
+total_students: 18
+
+# ── 班級動態（跨科通用）──────────────────────────────────
+
+class_dynamic:
+  developmental_stage: 八年級（13-14歲）
+  key_tension: 邏輯萌發與社交焦慮；為反對而反對；情緒瞬間爆發；群體從眾壓力
+  teacher_approach: 言行絕對一致、提供因果邏輯滿足智力覺醒、以穩定結構安撫內在動盪
+
+# ── DI 分布摘要 ──────────────────────────────────────────
+
+di_summary:
+
+  english:
+    ability_definition: >
+      高能力：能閱讀並理解適齡英文文本（如短篇故事、簡單新聞），
+      能以簡單但完整的句子表達想法，具備基礎文法結構的運用能力。
+    motivation_definition: >
+      高動機：主動參與英文課堂活動，願意嘗試用英文表達，
+      對英語學習材料展現好奇心，不迴避口語練習。
+    di_distribution:
+      A: 5   # 高能力高動機
+      B: 4   # 低能力高動機
+      C: 3   # 高能力低動機
+      D: 6   # 低能力低動機（含 CL-07、CL-15 兩位特殊生）
+    learning_strengths_distribution:
+      語言型: 10
+      圖像型: 8
+      藝術型: 11
+      動作型: 6
+
+# ── 科目脈絡定義 ──────────────────────────────────────────
+
+subject_contexts:
+  english:
+    ability_definition: >
+      高能力：能獨立閱讀 200-300 字英文段落並掌握大意，
+      能以正確文法寫出 5 句以上的短文，聽力理解率達 70% 以上。
+    motivation_definition: >
+      高動機：課堂參與度穩定，主動回答問題或參與討論，
+      家庭任務完成率達 80% 以上，對英文素材有主動探索行為。
+
+# ── 跨科特殊狀況 ──────────────────────────────────────────
+
+special_cases:
+  - id: CL-07
+    note: 學習障礙（讀寫困難），需額外視覺輔助與口語替代評量
+    cross_subject_impact: 各科書寫類任務需提供替代形式
+
+  - id: CL-15
+    note: 情緒調節困難，容易在高壓情境下關機
+    cross_subject_impact: 避免公開點名回答，提供安全的退場機制

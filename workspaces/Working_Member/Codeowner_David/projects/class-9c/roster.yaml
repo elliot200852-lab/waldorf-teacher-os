@@ -1,0 +1,124 @@
+class: 9C
+grade: 九年級
+school_year: 114
+total_students: 22
+last_updated: 2026-02-28
+
+# ── 學生名冊（全科共用）──────────────────────────────────
+# ID 格式：{班級}-{兩位座號}，建立後不再更改
+# 缺號（2/3/10/16/18/20）為已轉出學生
+# 本檔案含真實姓名，已列入 .gitignore，不上傳 GitHub
+
+roster:
+
+  - id: 9C-01
+    name: 廖晨希
+    seat: 1
+    status: active
+
+  - id: 9C-04
+    name: 陳冠之
+    seat: 4
+    status: active
+
+  - id: 9C-05
+    name: 陳彥妤
+    seat: 5
+    status: active
+
+  - id: 9C-06
+    name: 鄭宇泰
+    seat: 6
+    status: active
+
+  - id: 9C-07
+    name: 黃又羿
+    seat: 7
+    status: active
+
+  - id: 9C-08
+    name: 任以恩
+    seat: 8
+    status: active
+    notes: 特殊生
+
+  - id: 9C-09
+    name: 王妤帆
+    seat: 9
+    status: active
+
+  - id: 9C-11
+    name: 黃馨瑩
+    seat: 11
+    status: active
+
+  - id: 9C-12
+    name: 連子寬
+    seat: 12
+    status: active
+    notes: 特殊生
+
+  - id: 9C-13
+    name: 謝知妤
+    seat: 13
+    status: active
+
+  - id: 9C-14
+    name: 塗喬崴
+    seat: 14
+    status: active
+
+  - id: 9C-15
+    name: 高詠昕
+    seat: 15
+    status: active
+
+  - id: 9C-17
+    name: 邱若妍
+    seat: 17
+    status: active
+
+  - id: 9C-19
+    name: 薛甯云
+    seat: 19
+    status: active
+
+  - id: 9C-21
+    name: 吳芷安
+    seat: 21
+    status: active
+
+  - id: 9C-22
+    name: 洪宇昕
+    seat: 22
+    status: active
+
+  - id: 9C-23
+    name: 林妤芃
+    seat: 23
+    status: active
+
+  - id: 9C-24
+    name: 陳羽羽
+    seat: 24
+    status: active
+
+  - id: 9C-25
+    name: 張顥馨
+    seat: 25
+    status: active
+
+  - id: 9C-26
+    name: 陳品妡
+    seat: 26
+    status: active
+
+  - id: 9C-27
+    name: 洪芷彤
+    seat: 27
+    status: active
+
+  - id: 9C-28
+    name: 胡軒寧
+    seat: 28
+    status: active

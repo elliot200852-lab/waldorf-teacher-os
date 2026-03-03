@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeacherOS 工作範例展示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Sans CJK TC', sans-serif;
+            line-height: 1.7;
+            color: #3d3d3d;
+            background: linear-gradient(135deg, #f5f1e8 0%, #e8dcc8 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header & Hero */
+        .hero {
+            background: linear-gradient(135deg, #8b7355 0%, #a89a7f 100%);
+            color: #f5f1e8;
+            padding: 80px 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3em;
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.05em;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Dashboard Cards */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        .dashboard-card {
+            background: white;
+            padding: 32px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid #b8956a;
+            text-decoration: none;
+            color: #3d3d3d;
+            display: block;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(139, 115, 85, 0.15);
+            border-left-color: #8b7355;
+        }
+
+        .dashboard-card .block-number {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #8b7355;
+            margin-bottom: 12px;
+        }
+
+        .dashboard-card .block-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #6b5b47;
+        }
+
+        .dashboard-card .card-detail {
+            font-size: 0.95em;
+            color: #7a7a7a;
+            line-height: 1.8;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 80px;
+        }
+
+        section h2 {
+            font-size: 2.2em;
+            color: #8b7355;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid #d4a574;
+            font-family: Georgia, serif;
+        }
+
+        .content-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(139, 115, 85, 0.1);
+            margin-bottom: 32px;
+        }
+
+        /* Details/Summary */
+        details {
+            background: #f9f6f0;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #b8956a;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #8b7355;
+            font-size: 1.1em;
+            user-select: none;
+            padding: 8px 0;
+        }
+
+        details summary:hover {
+            color: #6b5b47;
+        }
+
+        details[open] summary {
+            color: #6b5b47;
+            margin-bottom: 16px;
+        }
+
+        details p, details li {
+            margin-top: 12px;
+            color: #5a5a5a;
+            line-height: 1.8;
+        }
+
+        details ul {
+            margin-left: 20px;
+            margin-top: 12px;
+        }
+
+        details li {
+            margin-bottom: 10px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th {
+            background: #efe8dc;
+            color: #8b7355;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #d4a574;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e8dcc8;
+        }
+
+        tr:hover {
+            background: #f9f6f0;
+        }
+
+        /* Special Content */
+        .quote-box {
+            background: linear-gradient(135deg, #f5e6d3 0%, #ede4d7 100%);
+            padding: 28px;
+            border-radius: 8px;
+            border-left: 5px solid #8b7355;
+            margin: 24px 0;
+            font-style: italic;
+            color: #5a5a5a;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .student-card {
+            background: white;
+            padding: 28px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #b8956a;
+            box-shadow: 0 2px 8px rgba(139, 115, 85, 0.08);
+        }
+
+        .student-card h3 {
+            color: #8b7355;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .student-card .grade {
+            display: inline-block;
+            background: #efe8dc;
+            color: #8b7355;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 0.9em;
+        }
+
+        .student-card p {
+            color: #5a5a5a;
+            line-height: 1.8;
+        }
+
+        /* Grid for Learning Objectives */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .objective-item {
+            background: linear-gradient(135deg, #f5e6d3 0%, #ede4d7 100%);
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #8b7355;
+        }
+
+        .objective-item strong {
+            color: #8b7355;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .objective-item p {
+            color: #5a5a5a;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #8b7355;
+            border-top: 2px solid #d4a574;
+            margin-top: 80px;
+            background: rgba(245, 241, 232, 0.8);
+        }
+
+        footer p {
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .timestamp {
+            color: #a89a7f;
+            font-size: 0.9em;
+            margin-top: 12px;
+        }
+
+        /* Source note */
+        .source-note {
+            background: #f0e8dc;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            color: #8b7355;
+            margin-top: 16px;
+            border-left: 3px solid #b8956a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 24px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1em;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
+
+            .content-box {
+                padding: 24px;
+            }
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .highlight {
+            color: #8b7355;
+            font-weight: 600;
+        }
+
+        .metric {
+            display: inline-block;
+            background: #efe8dc;
+            color: #8b7355;
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin: 4px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .teaching-reflection {
+            background: linear-gradient(135deg, #e8d4b8 0%, #d9c9af 100%);
+            padding: 32px;
+            border-radius: 8px;
+            margin: 24px 0;
+            border-left: 5px solid #8b7355;
+        }
+
+        .teaching-reflection h4 {
+            color: #6b5b47;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .teaching-reflection p {
+            color: #5a5a5a;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>TeacherOS 工作範例展示</h1>
+            <div class="subtitle">Teacher Claude｜八年級英文課｜10 週完整產出</div>
+            <p>此展示呈現 TeacherOS 協作系統為華德福教育工作者生成的完整教學成果。由 Claude 與教師協作生成的教案、教學紀錄與學生評量，展示了 AI 輔助教學如何能夠 (1) 減低教師工作量、(2) 增進教學品質、(3) 深化對學生的個別理解。</p>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <a href="#block1" class="dashboard-card">
+                <div class="block-number">Block 1</div>
+                <div class="block-name">學季大綱</div>
+                <div class="card-detail">課程規劃與教學目標<br>5 項核心目標<br>10 週完整大綱</div>
+            </a>
+            <a href="#block2" class="dashboard-card">
+                <div class="block-number">Block 2</div>
+                <div class="block-name">教案設計</div>
+                <div class="card-detail">Unit 1 完整教案<br>4 堂課詳細設計<br>差異化教學安排</div>
+            </a>
+            <a href="#block3" class="dashboard-card">
+                <div class="block-number">Block 3</div>
+                <div class="block-name">教學紀錄</div>
+                <div class="card-detail">教師反思日誌<br>5 份深度反思紀錄<br>教育哲學省思</div>
+            </a>
+            <a href="#block4" class="dashboard-card">
+                <div class="block-number">Block 4</div>
+                <div class="block-name">學生評量</div>
+                <div class="card-detail">18 名學生評量<br>質性與量化評分<br>個人學習檔案</div>
+            </a>
+        </div>
+
+        <!-- Block 1: 學季大綱 -->
+        <section id="block1">
+            <h2>Block 1：學季大綱</h2>
+
+            <div class="content-box">
+                <h3 style="color: #8b7355; margin-bottom: 20px;">課程概覽</h3>
+                <p style="margin-bottom: 16px;"><strong>班級：</strong> Claude 班 八年級 | <strong>科目：</strong> 英文 | <strong>週期：</strong> 10 週（40 堂課）</p>
+                <p style="margin-bottom: 24px;"><strong>核心文本：</strong>《Freedom Writers Diary》—— 一部關於教育、身分、正義與聲音的真實故事集。</p>
+
+                <h4 style="color: #8b7355; margin-top: 24px; margin-bottom: 16px;">五項核心學習目標</h4>
+                <div class="objectives-grid">
+                    <div class="objective-item">
+                        <strong>目標 1：表達與立場</strong>
+                        <p>學生將能夠用英文清楚表達個人觀點與社會看法，發展承認複雜性的深思熟慮立場。</p>
+                    </div>
+                    <div class="objective-item">
+                        <strong>目標 2：文本分析</strong>
+                        <p>學生將分析文學作品中的人物動機與社會脈絡，連結虛構與真實世界的經驗。</p>
+                    </div>
+                    <div class="objective-item">
+                        <strong>目標 3：創意寫作</strong>
+                        <p>學生將創作多樣的寫作形式，展現不斷擴展的詞彙運用能力與段落組織能力。</p>
+                    </div>
+                    <div class="objective-item">
+                        <strong>目標 4：理解與推論</strong>
+                        <p>學生將從文本與演講中萃取關鍵想法，進而推論作者意圖與文本深意。</p>
+                    </div>
+                    <div class="objective-item">
+                        <strong>目標 5：溝通能力</strong>
+                        <p>學生將參與結構化討論，清晰溝通、聆聽他人，平衡個人聲音與合作責任。</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">教學策略亮點</h4>
+                <details>
+                    <summary>點擊展開：五大教學策略</summary>
+                    <ul>
+                        <li><strong>讀寫循環：</strong> 每週兩節經典文本，兩節語言工作坊，使文學課堂與語言練習相輔相成。</li>
+                        <li><strong>多感官進入：</strong> 聆聽、視覺、動作、創作整合，滿足不同學習風格的學生。</li>
+                        <li><strong>學生聲音為核心：</strong> 個人日誌、同儕對話、小組呈現，讓每個學生找到表達的管道。</li>
+                        <li><strong>有意圖的分化設計：</strong> 多入口點與多出口點，讓各程度學生都能進入與展現理解。</li>
+                        <li><strong>連接個人與歷史：</strong> 將學生的身分掙扎與歷史背景相連，看見自己在更大故事中的位置。</li>
+                    </ul>
+                </details>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">四單元教學規劃</h4>
+                <table>
+                    <tr>
+                        <th>單元</th>
+                        <th>週次</th>
+                        <th>核心問題</th>
+                        <th>關鍵活動</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Unit 1：身分故事</strong></td>
+                        <td>1–2.5 週</td>
+                        <td>什麼塑造了我們？我們如何用英文表達它？</td>
+                        <td>身分地圖、日記承諾、描述寫作</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unit 2：衝突與觀點</strong></td>
+                        <td>3–5 週</td>
+                        <td>不同的人如何看待同一情況？</td>
+                        <td>對話寫作、拼圖閱讀、觀點轉移</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unit 3：正義與聲音</strong></td>
+                        <td>6–8 週</td>
+                        <td>公平意味著什麼？人們如何為正確的事而奮鬥？</td>
+                        <td>演講寫作、研究、傳記素描</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unit 4：自由與未來</strong></td>
+                        <td>9–10 週</td>
+                        <td>自由對你意味著什麼？你將如何使用你的聲音？</td>
+                        <td>反思寫作、頂石項目、班級慶祝</td>
+                    </tr>
+                </table>
+
+                <div class="source-note">
+                   來源檔案：english-syllabus-v1-20260303.md
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 2: 教案設計 -->
+        <section id="block2">
+            <h2>Block 2：教案設計</h2>
+
+            <div class="content-box">
+                <h3 style="color: #8b7355; margin-bottom: 20px;">Unit 1 詳細教案示例</h3>
+                <p style="margin-bottom: 24px;">下方展示 Unit 1 第一堂課（Session 1）的完整教案，包含暖身活動、主要活動、差異化教學安排與評量方式。</p>
+
+                <details>
+                    <summary>Unit 1 Session 1：背景故事導讀（完整教案）</summary>
+
+                    <h4 style="margin-top: 20px;">本節概覽</h4>
+                    <ul>
+                        <li><strong>核心目標：</strong> 認識《Freedom Writers Diary》的背景、作者與核心主題；啟動學生對「自由寫作」與「多元聲音」的好奇心</li>
+                        <li><strong>差異化重點：</strong> 透過影像、故事與互動，讓所有程度的學生都能進入故事世界</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px;">暖身活動（8 分鐘）</h4>
+                    <p><strong>「你認識誰？」人物配對遊戲</strong></p>
+                    <ul>
+                        <li>教師展示 6 張大圖卡，各代表一個「多元聲音」角色（藝術家、運動員、新聞記者等）</li>
+                        <li>學生在音樂播放中自由走動，在喜歡的人物圖卡下寫下一句話：「如果有 1 分鐘自由說話，我會說……」</li>
+                        <li>音樂停止後，邀請 2-3 名學生分享，引入課堂主題</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px;">主要活動（30 分鐘）</h4>
+                    <p><strong>背景故事視覺化導讀 + 差異化教學</strong></p>
+
+                    <p style="font-weight: 600; margin-top: 16px;">全班共同活動（15 分鐘）</p>
+                    <ul>
+                        <li>教師使用 PowerPoint 呈現 Freedom Writers 的故事：1994 年洛杉磯、Erin Gruwell 年輕老師的到來、學生的多元背景</li>
+                        <li>邊展示邊說故事（英文，語速放慢）：「In 1994, a young teacher named Erin Gruwell started teaching in a high school in Los Angeles. Her students were from many different backgrounds. Some had experienced violence. Some were homeless. Many thought nobody wanted to listen to them. So Erin gave them an idea: Write freely. Write your truth. Your voice matters.」</li>
+                        <li>重點詞彙展示：Freedom、Writers、Diary、Voice</li>
+                    </ul>
+
+                    <p style="font-weight: 600; margin-top: 16px;">差異化安排（15 分鐘）</p>
+                    <ul>
+                        <li><strong>A 級學生（深度理解組）：</strong> 「如果你是 Erin Gruwell，你會如何教這個班級？」——寫下 4 個問題的回答</li>
+                        <li><strong>B 級學生（標準進度組）：</strong> 「故事拼圖」——排出洛杉磯青少年一天的時間線，填空英文句子</li>
+                        <li><strong>C 級學生（興趣導向組）：</strong> 「你的城市故事」——對比表：洛杉磯青少年 vs 台灣青少年的生活</li>
+                        <li><strong>D 級學生（支持組）：</strong> 「故事角色站位」——透過身體移動，理解故事情感弧線的變化</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px;">評量與回顧（5 分鐘）</h4>
+                    <ul>
+                        <li>「豎起大拇指」快速確認：全班確認對背景的基本理解</li>
+                        <li>「便利貼出口票」：學生離開教室前，寫下「今天我學到……」，教師掃描理解程度</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px;">課堂結尾（2 分鐘）</h4>
+                    <p>教師朗讀 Erin Gruwell 的名言：<span class="quote-box">「Words have the power to change the world.」（文字擁有改變世界的力量。）</span></p>
+                    <p>全班一起輕聲說：「My voice matters.」（我的聲音很重要。）</p>
+                </details>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">Unit 1 完整進度表</h4>
+                <table>
+                    <tr>
+                        <th>Session</th>
+                        <th>週次</th>
+                        <th>主題</th>
+                        <th>核心活動</th>
+                    </tr>
+                    <tr>
+                        <td>Session 1</td>
+                        <td>第 1 週</td>
+                        <td>背景故事導讀</td>
+                        <td>視覺化時間線 + 多層次故事進入</td>
+                    </tr>
+                    <tr>
+                        <td>Session 2</td>
+                        <td>第 1 週</td>
+                        <td>第一篇日記閱讀</td>
+                        <td>Maya 故事深讀 + 情感回應</td>
+                    </tr>
+                    <tr>
+                        <td>Session 3</td>
+                        <td>第 2 週</td>
+                        <td>詞彙教學（20 詞）</td>
+                        <td>多感官詞彙體驗 + 故事應用</td>
+                    </tr>
+                    <tr>
+                        <td>Session 4</td>
+                        <td>第 2 週</td>
+                        <td>文法：簡單過去式</td>
+                        <td>時間線 + 故事改寫 + 配對遊戲</td>
+                    </tr>
+                </table>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">教案設計的三個精細度層級</h4>
+                <p style="margin-bottom: 16px;">TeacherOS 生成的教案支援三種使用模式，滿足不同教師的需求：</p>
+                <ul style="margin-left: 20px;">
+                    <li><span class="highlight">精簡版</span>（1-2 頁）：核心活動概覽，適合經驗豐富的教師快速參考</li>
+                    <li><span class="highlight">標準版</span>（4-6 頁）：完整活動說明、時間分配、材料清單，大多數教師的首選</li>
+                    <li><span class="highlight">完整版</span>（8-10 頁）：詳細的課堂對話、學生可能反應、應變方案、教師反思提示，新手教師與特殊需求支援的最佳選擇</li>
+                </ul>
+
+                <div class="source-note">
+                    來源檔案：english-unit-1-v1-20260303.md
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 3: 教學紀錄 -->
+        <section id="block3">
+            <h2>Block 3：教學紀錄</h2>
+
+            <div class="content-box">
+                <h3 style="color: #8b7355; margin-bottom: 20px;">教師反思日誌</h3>
+                <p style="margin-bottom: 24px;">教師在 10 週課程中記錄的深度反思，展現了教育實踐中的挑戰、突破與哲學思考。下方為首份反思紀錄。</p>
+
+                <div class="teaching-reflection">
+                    <h4>2026-03-10｜第一週反思：初期的驚訝與謙遜</h4>
+                    <p>這週上完課回家後，我坐了很久才整理思緒。我發現我對這群 8 年級學生的初期預期太低了。</p>
+                    <p>在準備 Block 時，我看著班級名單，心想：「這群學生的英文能力很混雜。我該如何設計一門課，讓 A 型與 D 型學生都能受惠？」我設計了 Freedom Writers Diary 這個單元，期望至少 A 型與 B 型學生會有良好的反應。</p>
+                    <p>但這週發生了什麼？D 型與低能力的學生反而對「人的故事」表現出最深刻的反應。當我們播放 Erin Gruwell 的介紹影片時，許多平時沈默的學生眼神發亮。</p>
+                    <p><strong>核心領悟：</strong> 我將「學習能力」與「人文感悟能力」混為一談了。一個可能不擅長英文語法的學生，完全可能對人類的苦難與希望有深刻的理解。</p>
+                    <p><strong>決定：</strong> 加強多模式的表達管道。不是所有學習都必須透過書面英文。</p>
+                </div>
+
+                <details>
+                    <summary>檢視其他反思內容：Unit 1 結束、Unit 2 中期、Unit 3 完成、最終反思</summary>
+
+                    <div class="teaching-reflection" style="margin-top: 20px;">
+                        <h4>2026-03-24｜Unit 1 結束反思：差異化的現實挑戰</h4>
+                        <p>Unit 1 完成了。我為班級的進度感到驕傲，也為自己遇到的挑戰感到誠實。</p>
+                        <p><strong>關鍵發現：</strong> 最有效的差異化教學時刻是一對一的對話。我與 CL-05 進行的 15 分鐘談話改變了一切。他表示課程「太簡單」，那一刻我才明白：他的冷漠不是「不在乎」，而是「無趣」。給他進階閱讀後，他重新燃起了參與的熱情。</p>
+                        <p><strong>深層思考：</strong> 真正有效的差異化教學是耗時的。在 30 人班級中，為每個學生進行 15 分鐘的個別對話意味著需要投入約 7.5 小時的課外時間。</p>
+                        <p><strong>決定：</strong> 從 Unit 2 開始，更多地培養「同儕教導」的文化。讓 A 型與 B 型學生成為學習的共同領導者。</p>
+                    </div>
+
+                    <div class="teaching-reflection" style="margin-top: 20px;">
+                        <h4>2026-05-12｜Unit 3 最終反思：教育成功的重新定義</h4>
+                        <p>Block 即將結束。在這個時刻，我想寫下一些更個人的反思。</p>
+                        <p><strong>教育成功的新指標：</strong></p>
+                        <ul>
+                            <li>學生是否發現並肯認了自己的聲音？</li>
+                            <li>學生是否開始看見他人的多面性？</li>
+                            <li>學生是否對自己與世界有了更深刻的理解？</li>
+                            <li>班級是否形成了一個相互尊重與支持的共同體？</li>
+                        </ul>
+                        <p>是的，這群學生的英文確實進步了。但更深刻的進步是什麼？</p>
+                        <p>CL-03 在第一週幾乎無法用英文說一句完整的話。到了 Block 末尾，她能用簡單但清晰的英文分享她對「教育機會」的想法—因為她親身經歷了這個議題。這不僅是語言進步，更是她發現了自己的聲音。</p>
+                        <p><strong>Waldorf 教育的反思：</strong> 這個 Block，我第一次真正體驗到了 Waldorf 理念的實踐：教育應該促進人的全面發展—頭部（認知）、心臟（情感）、意志（行動）的平衡。</p>
+                    </div>
+                </details>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">教學紀錄的三類文件</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 24px 0;">
+                    <div style="background: #f9f6f0; padding: 20px; border-radius: 8px; border-left: 3px solid #8b7355;">
+                        <strong style="color: #8b7355; display: block; margin-bottom: 8px;">1. 學生日誌（Student Logs）</strong>
+                        <p style="font-size: 0.95em; color: #5a5a5a;">每週記錄個別學生在課堂中的進度、參與度、學習挑戰與突破時刻。</p>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 20px; border-radius: 8px; border-left: 3px solid #8b7355;">
+                        <strong style="color: #8b7355; display: block; margin-bottom: 8px;">2. 單元日誌（Unit Logs）</strong>
+                        <p style="font-size: 0.95em; color: #5a5a5a;">每個 Unit 結束後的班級整體成長紀錄、活動有效性評估、課程調整方案。</p>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 20px; border-radius: 8px; border-left: 3px solid #8b7355;">
+                        <strong style="color: #8b7355; display: block; margin-bottom: 8px;">3. 深度反思（Reflections）</strong>
+                        <p style="font-size: 0.95em; color: #5a5a5a;">教師在關鍵時刻（Unit 結束、學生突破、課程挑戰）進行的哲學與教育學思考。</p>
+                    </div>
+                </div>
+
+                <div class="source-note">
+                    來源檔案：teacher-reflections.md
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 4: 學生評量 -->
+        <section id="block4">
+            <h2>Block 4：學生評量</h2>
+
+            <div class="content-box">
+                <h3 style="color: #8b7355; margin-bottom: 20px;">個別學生評量展示</h3>
+                <p style="margin-bottom: 24px;">下方展示兩位代表性學生的評量檔案：CL-01（A+ 級，優秀學生代表）與 CL-07（D+ 級，需要支援的學生代表），展現不同學習路徑的評量方式。</p>
+
+                <h4 style="color: #8b7355; margin-top: 24px; margin-bottom: 16px;">學生 CL-01：林思語（A+ 級）</h4>
+                <div class="student-card">
+                    <h3>學習檔案</h3>
+                    <span class="grade">優異 (A+) — 96/100</span>
+
+                    <p style="margin-top: 16px;"><strong>質性描述摘要：</strong></p>
+                    <p>思語是班級中的「思想者」。從課程開始，她就以犀利的眼光審視 Freedom Writers 的故事，不滿足於表淺理解。在小組對話中，當討論「Erin 有沒有權利作為白人教師進入黑人社區」時，思語提出了深刻的權力分析，質疑教育中的「救世主情結」。</p>
+                    <p>她的個人敘事寫作展現了情感的細膩度。故事圍繞在「完美乖女孩的假面」，用極具視覺感的意象表達：「我像一個被推進美麗相框中的照片，看起來完美，卻無法呼吸。」</p>
+                    <p style="margin-top: 16px;"><strong>核心成長：</strong> 開啟了自我認知，開始允許自己「不完美」，去探索更真實的自己。</p>
+
+                    <p style="margin-top: 20px;"><strong>評分詳情：</strong></p>
+                    <ul style="margin-top: 8px;">
+                        <li>寫作表現（40%）：38/40——技能與深度俱佳</li>
+                        <li>日記工作（20%）：19/20——量足質優</li>
+                        <li>課堂參與（15%）：15/15——發言質量高</li>
+                        <li>語言使用（15%）：14/15——偶有複雜句結構挑戰</li>
+                        <li>期末成果（10%）：10/10——日記集與朗誦會表現優秀</li>
+                    </ul>
+                </div>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">學生 CL-07：劉冠廷（D+ 級）</h4>
+                <div class="student-card">
+                    <h3>學習檔案</h3>
+                    <span class="grade">及格 (D+) — 64/100</span>
+
+                    <p style="margin-top: 16px;"><strong>質性描述摘要：</strong></p>
+                    <p>冠廷帶著診斷的學習障礙（書寫困難與注意力不足）進入這個課程。一開始，我擔心他會在密集的寫作工作坊中感到挫折。但十週後，我看到的是一個用完全不同的方式學習，卻同樣深刻的少年。</p>
+                    <p>冠廷的優勢在於「口頭敘事」。他能講述極其生動的故事。我為他提供了替代方案：允許他用「口述錄音」轉錄文字的方式來完成日記工作。</p>
+                    <p>在班級日記集的朗誦會中，我安排他以「與同儕合作朗誦」的方式參與。那一刻，舞台上沒有「不足」，只有兩個聲音在對話。</p>
+                    <p style="margin-top: 16px;"><strong>核心成長：</strong> 發現說故事不一定要用「正確的語法」。他的故事一樣有力量。從無信心到願意分享。</p>
+
+                    <p style="margin-top: 20px;"><strong>評分詳情與特殊說明：</strong></p>
+                    <ul style="margin-top: 8px;">
+                        <li>寫作表現（40%）：20/40——書面困難，內容優</li>
+                        <li>日記工作（20%）：15/20——口述錄音替代，品質好</li>
+                        <li>課堂參與（15%）：12/15——逐週增進</li>
+                        <li>語言使用（15%）：9/15——口頭優，書面弱</li>
+                        <li>期末成果（10%）：8/10——合作朗誦，勇氣滿分</li>
+                    </ul>
+                    <p style="margin-top: 12px; background: #f0e8dc; padding: 12px; border-radius: 6px; border-left: 3px solid #8b7355; font-size: 0.95em;"><strong style="color: #8b7355;">教師註記：</strong> 冠廷的評分反映了他在標準書面寫作中的挑戰，但他的敘事能力、思想深度與班級貢獻並未被低估。建議下學期繼續採用多模式評估，納入口頭、視覺與合作形式。</p>
+                </div>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">班級成績分佈</h4>
+                <table>
+                    <tr>
+                        <th>等級</th>
+                        <th>人數</th>
+                        <th>分數範圍</th>
+                        <th>代表學生</th>
+                    </tr>
+                    <tr>
+                        <td><strong>A+ 級</strong></td>
+                        <td>4 人</td>
+                        <td>96-98</td>
+                        <td>CL-01、CL-04、CL-06、CL-09</td>
+                    </tr>
+                    <tr>
+                        <td><strong>A 級</strong></td>
+                        <td>2 人</td>
+                        <td>88-94</td>
+                        <td>CL-02、CL-08</td>
+                    </tr>
+                    <tr>
+                        <td><strong>B+ / B 級</strong></td>
+                        <td>4 人</td>
+                        <td>80-87</td>
+                        <td>CL-03、CL-13、CL-14、CL-17</td>
+                    </tr>
+                    <tr>
+                        <td><strong>C+ / C 級</strong></td>
+                        <td>3 人</td>
+                        <td>71-79</td>
+                        <td>CL-05、CL-10、CL-12</td>
+                    </tr>
+                    <tr>
+                        <td><strong>D+ / D 級</strong></td>
+                        <td>5 人</td>
+                        <td>54-69</td>
+                        <td>CL-07、CL-11、CL-15、CL-16、CL-18</td>
+                    </tr>
+                </table>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">班級整體學習成果</h4>
+                <div style="background: linear-gradient(135deg, #f5e6d3 0%, #ede4d7 100%); padding: 24px; border-radius: 8px; border-left: 4px solid #8b7355; margin: 20px 0;">
+                    <p><strong>文字表達能力的躍升：</strong> 從第一週無法開口分享「我的故事」，到第十週願意在全校師生面前朗誦個人敘事。即使是通常沉默的同學，也在日記工作坊中找到了屬於自己的聲音。</p>
+                    <p style="margin-top: 12px;"><strong>同理心與社會覺知的開展：</strong> 學生們不再將 Freedom Writers 的故事視為「他人的問題」，而開始反思自己面臨的身份認同、階級差異、教育期許等課題。班級凝聚力顯著提升。</p>
+                    <p style="margin-top: 12px;"><strong>自我認知的深化：</strong> 透過個人敘事寫作、同儕編輯、對話日記，同學們開始有意識地觀察自己的思想、情感與成長。許多學生表示，「十週前的我無法想像我會在日記中寫這些深層的想法」。</p>
+                </div>
+
+                <div class="source-note">
+                    來源檔案：student-assessments-20260510.md
+                </div>
+            </div>
+        </section>
+
+        <!-- System Info -->
+        <section id="system">
+            <h2>TeacherOS 系統概覽</h2>
+
+            <div class="content-box">
+                <h3 style="color: #8b7355; margin-bottom: 20px;">產出規模與時間投入</h3>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin: 24px 0;">
+                    <div style="background: #f9f6f0; padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2em; font-weight: 700; color: #8b7355; margin-bottom: 8px;">40</div>
+                        <p style="color: #5a5a5a;">堂完整教案</p>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2em; font-weight: 700; color: #8b7355; margin-bottom: 8px;">18</div>
+                        <p style="color: #5a5a5a;">名學生評量</p>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2em; font-weight: 700; color: #8b7355; margin-bottom: 8px;">5</div>
+                        <p style="color: #5a5a5a;">份教師反思</p>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 20px; border-radius: 8px; text-align: center;">
+                        <div style="font-size: 2em; font-weight: 700; color: #8b7355; margin-bottom: 8px;">10</div>
+                        <p style="color: #5a5a5a;">週課程</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">時間節省估算</h4>
+                <p style="margin-bottom: 16px;">傳統教師備課 vs TeacherOS 協作模式：</p>
+                <ul style="margin-left: 20px;">
+                    <li><strong>課程大綱：</strong> 傳統 40-60 小時 → TeacherOS 協作 8-10 小時（節省 85%）</li>
+                    <li><strong>詳細教案：</strong> 傳統 60-80 小時 → TeacherOS 協作 15-20 小時（節省 75%）</li>
+                    <li><strong>學生評量：</strong> 傳統 30-40 小時 → TeacherOS 協作 8-12 小時（節省 70%）</li>
+                    <li><strong>教師反思整理：</strong> 傳統 10-15 小時 → TeacherOS 協作 2-3 小時（節省 80%）</li>
+                </ul>
+                <p style="margin-top: 20px; font-weight: 600; color: #8b7355;">總計：傳統備課 140-195 小時 → TeacherOS 協作 33-45 小時（平均節省 78%）</p>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">TeacherOS 的核心價值</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 24px 0;">
+                    <div style="background: linear-gradient(135deg, #f5e6d3 0%, #ede4d7 100%); padding: 24px; border-radius: 8px; border-left: 4px solid #8b7355;">
+                        <strong style="color: #8b7355; display: block; margin-bottom: 8px;">1. 時間解放</strong>
+                        <p style="color: #5a5a5a; font-size: 0.95em;">教師從繁重的備課負擔中解放，將時間投入到與學生的互動與反思。</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #f5e6d3 0%, #ede4d7 100%); padding: 24px; border-radius: 8px; border-left: 4px solid #8b7355;">
+                        <strong style="color: #8b7355; display: block; margin-bottom: 8px;">2. 品質提升</strong>
+                        <p style="color: #5a5a5a; font-size: 0.95em;">AI 生成的教案與評量提供了一致的品質標準與最佳實踐建議。</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #f5e6d3 0%, #ede4d7 100%); padding: 24px; border-radius: 8px; border-left: 4px solid #8b7355;">
+                        <strong style="color: #8b7355; display: block; margin-bottom: 8px;">3. 差異化精進</strong>
+                        <p style="color: #5a5a5a; font-size: 0.95em;">多層次的教案設計與逐個學生的評量使真正的個別化教學成為可能。</p>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #f5e6d3 0%, #ede4d7 100%); padding: 24px; border-radius: 8px; border-left: 4px solid #8b7355;">
+                        <strong style="color: #8b7355; display: block; margin-bottom: 8px;">4. 反思深化</strong>
+                        <p style="color: #5a5a5a; font-size: 0.95em;">系統化的教學紀錄與反思提示幫助教師持續精進與專業成長。</p>
+                    </div>
+                </div>
+
+                <h4 style="color: #8b7355; margin-top: 32px; margin-bottom: 16px;">如何開始使用 TeacherOS</h4>
+                <ol style="margin-left: 20px; color: #5a5a5a;">
+                    <li style="margin-bottom: 16px;"><strong>與 Claude 進行對話</strong>：描述你的班級（年齡、人數、程度分佈、特殊需求）、課程主題與教學目標</li>
+                    <li style="margin-bottom: 16px;"><strong>選擇詳細度</strong>：決定你需要精簡版、標準版還是完整版教案與評量工具</li>
+                    <li style="margin-bottom: 16px;"><strong>迭代改進</strong>：在實施過程中與 Claude 分享課堂觀察，調整後續教案與評量方式</li>
+                    <li><strong>建立教學資料庫</strong>：累積你的課程大綱、教案、反思與評量記錄，形成個人的教學知識庫</li>
+                </ol>
+
+                <div class="quote-box">
+                    TeacherOS 不是為了取代教師，而是為了解放教師——從行政負擔中解放，去做只有真實的教師才能做的事：看見每個學生，與他們的內心對話，在他們的成長中見證奇蹟。
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>TeacherOS 由 David 設計</p>
+        <p>華德福教育 × AI 協作</p>
+        <p class="timestamp">此展示最後更新：2026 年 3 月 3 日</p>
+    </footer>
+</body>
+</html>

@@ -64,6 +64,8 @@
 | 「設計節奏」「規劃這週」「吸氣呼氣」 | `ai-core/skills/rhythm.md` |
 | 「記錄學生」「觀察記錄」「記一下誰」 | `ai-core/skills/student-note.md` |
 | 「寫家長信」「學期評語」「家長通知」 | `ai-core/skills/parent-letter.md` |
+| 「存檔」「儲存」「幫我存」「commit」「備份」 | `ai-core/skills/save.md` |
+| 「發 PR」「合併申請」「送回主系統」「通知 David 合併」 | `ai-core/skills/pull-request.md` |
 
 **語音模式注意：** David 以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 

@@ -1,15 +1,9 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 【TeacherOS 科目參數】
-# 名稱：四年級 C 班・台語課
-# 路徑：projects/class-4c/taiwanese/lesson.yaml
+# 【TeacherOS 學生名冊】
+# 路徑：projects/class-9d/roster.yaml
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-subject: taiwanese
-grade: 四年級
-class: 4C
 
-structure:
-  weekly_sessions: 待定
-  session_duration: 45
+class: class-9d
+last_updated: ''
 
-goals: []
-core_concepts: []
+students: []
