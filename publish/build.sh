@@ -234,13 +234,7 @@ echo "────────────────────────�
 # Step 1：Pandoc 轉換至暫存路徑
 "$PANDOC_BIN" "$INPUT" --from markdown --to docx -o "$TEMP_DOCX"
 
-# Step 2：加入識別 Logo（圓形去背、頁首右上角）
-LOGO_SCRIPT="$REPO_ROOT/setup/add-logo.py"
-if [ -f "$LOGO_SCRIPT" ]; then
-  python3 "$LOGO_SCRIPT" "$TEMP_DOCX"
-fi
-
-# Step 3：複製至 Google Drive 資料夾
+# Step 2：複製至 Google Drive 資料夾
 # 先移除舊檔，避免 Google Drive Desktop 的 Stale NFS file handle 問題
 mkdir -p "$OUTPUT_DIR"
 rm -f "$OUTPUT_DOCX" 2>/dev/null || true

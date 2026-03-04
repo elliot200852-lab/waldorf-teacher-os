@@ -168,86 +168,61 @@ def clear_header(doc):
 def add_watermark_background(doc, bg_path_str):
     """
     將背景圖片作為全頁浮水印插入每頁頁首。
-    使用 XML 操作將 inline picture 轉為 floating behind text。
+    使用 VML 格式（Word 原生浮水印機制），Google Docs 相容性較好。
     """
     from docx.shared import Inches
-    import copy
+    from docx.opc.constants import RELATIONSHIP_TYPE as RT
+    import hashlib
 
     bg_path = Path(bg_path_str)
     if not bg_path.exists():
         print(f"警告：找不到背景圖片 {bg_path}，略過浮水印邏輯。")
         return
 
+    # A4 尺寸（pt）
+    page_w_pt = 595
+    page_h_pt = 842
+
     for section in doc.sections:
         header = section.header
         header.is_linked_to_previous = False
+
+        # 將背景圖片加入 header 的 relationship
+        rId = header.part.relate_to(
+            doc.part.package.get_or_add_image_part(str(bg_path)),
+            'http://schemas.openxmlformats.org/officeDocument/2006/relationships/image'
+        )
+
+        # 清除既有內容
+        for para in header.paragraphs:
+            para.clear()
+
         para = header.paragraphs[0] if header.paragraphs else header.add_paragraph()
 
-        # 先插入一般的 inline 圖片
+        # 建立 VML 浮水印（Word 原生格式）
         run = para.add_run()
-        run.add_picture(str(bg_path), width=Inches(8.27), height=Inches(11.69))
+        pict = OxmlElement('w:pict')
 
-        # 取得最後插入的 shape (inline)
-        drawing = run._r.find(qn('w:drawing'))
-        if drawing is None:
-            continue
-        inline = drawing.find(qn('wp:inline'))
-        if inline is None:
-            continue
+        # VML shape：全頁置中、文字後方
+        shape_xml = (
+            f'<v:shape xmlns:v="urn:schemas-microsoft-com:vml" '
+            f'xmlns:o="urn:schemas-microsoft-com:office:office" '
+            f'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" '
+            f'id="WordPictureWatermark" o:spid="_x0000_s2049" '
+            f'type="#_x0000_t75" '
+            f'style="position:absolute;margin-left:0;margin-top:0;'
+            f'width:{page_w_pt}pt;height:{page_h_pt}pt;z-index:-251658752;'
+            f'mso-position-horizontal:center;mso-position-horizontal-relative:margin;'
+            f'mso-position-vertical:center;mso-position-vertical-relative:margin" '
+            f'o:allowincell="f">'
+            f'<v:imagedata r:id="{rId}" o:title="waldorf-bg"/>'
+            f'</v:shape>'
+        )
 
-        # 建立 anchor (floating)
-        anchor = OxmlElement('wp:anchor')
-        anchor.set('distT', "0")
-        anchor.set('distB', "0")
-        anchor.set('distL', "0")
-        anchor.set('distR', "0")
-        anchor.set('simplePos', "0")
-        anchor.set('relativeHeight', "0")
-        anchor.set('behindDoc', "1")  # 文字後方
-        anchor.set('locked', "0")
-        anchor.set('layoutInCell', "1")
-        anchor.set('allowOverlap', "1")
-        
-        # simplePos="0" 的必要子元素
-        simplePos = OxmlElement('wp:simplePos')
-        simplePos.set('x', "0")
-        simplePos.set('y', "0")
-        anchor.append(simplePos)
-
-        # 水平對齊配置: 相對於 page, align center
-        positionH = OxmlElement('wp:positionH')
-        positionH.set('relativeFrom', 'page')
-        alignH = OxmlElement('wp:align')
-        alignH.text = 'center'
-        positionH.append(alignH)
-        anchor.append(positionH)
-
-        # 垂直對齊配置: 相對於 page, align center
-        positionV = OxmlElement('wp:positionV')
-        positionV.set('relativeFrom', 'page')
-        alignV = OxmlElement('wp:align')
-        alignV.text = 'center'
-        positionV.append(alignV)
-        anchor.append(positionV)
-
-        # 取消文字環繞 (Wrap None)，這是避免推擠文字並造成分頁異常的關鍵
-        wrapNone = OxmlElement('wp:wrapNone')
-        anchor.append(wrapNone)
-
-        # 複製原本 inline 的內容: extent, effectExtent, docPr, cNvGraphicFramePr, graphic
-        for tag in ['wp:extent', 'wp:effectExtent', 'wp:docPr', 'wp:cNvGraphicFramePr', 'a:graphic']:
-            el = inline.find(qn(tag))
-            if el is not None:
-                anchor.append(copy.deepcopy(el))
-                
-        # 替換 docPr 的 id 確保唯一
-        docPr = anchor.find(qn('wp:docPr'))
-        if docPr is not None:
-            import random
-            docPr.set('id', str(random.randint(10000, 99999)))
-
-        # 用 anchor 取代 inline
-        drawing.replace(inline, anchor)
+        from lxml import etree
+        shape_el = etree.fromstring(shape_xml)
+        pict.append(shape_el)
+        run._r.append(pict)
 
 
 def add_logo_inline_layout(docx_path: str, logo_path: Path):
