@@ -80,8 +80,7 @@ WaldorfTeacherOS-Repo/
 │   │   └── projects/class-{code}/    ← 你的班級資料
 │   │       ├── project.yaml          ← 班級元資料
 │   │       ├── students.yaml         ← 全班 DI 分類
-│   │       ├── {subject}/            ← 科目資料（大綱、DI、評量、教材）
-│   │       └── working/              ← 進度錨點（*-session.yaml）
+│   │       └── {subject}/            ← 科目資料（大綱、DI、評量、session.yaml 進度錨點）
 │   └── 其他教師工作空間/
 │
 ├── publish/                          ← 輸出管線（Markdown → Word → Google Drive）
@@ -95,7 +94,7 @@ WaldorfTeacherOS-Repo/
 <!-- ═══════════════════════════════════════════════════════ -->
 <!-- SECTION 3: COMPILED — 當前系統狀態                     -->
 <!-- 編譯來源：{workspace}/workspace.yaml                    -->
-<!--          {workspace}/projects/class-*/working/*.yaml    -->
+<!--          {workspace}/projects/class-*/{科目}/session.yaml    -->
 <!--          ai-core/system-status.yaml（系統層級狀態）      -->
 <!-- sync-cowork 會用教師的班級進度填入此區塊                -->
 <!-- ═══════════════════════════════════════════════════════ -->
@@ -105,7 +104,7 @@ WaldorfTeacherOS-Repo/
 > ⏱ 此區塊由 Claude Code 的 session-end 流程自動更新
 
 <!-- COMPILE:STATUS:START -->
-**此區塊將由 sync-cowork 從你的 working/*.yaml 編譯生成。**
+**此區塊將由 sync-cowork 從你的 {科目}/session.yaml 編譯生成。**
 
 編譯後應包含：
 - 你的每個活躍班級的當前進度（Block / Step）
@@ -115,7 +114,7 @@ WaldorfTeacherOS-Repo/
 
 **編譯規則：**
 - 從 `{workspace}/workspace.yaml` 的 classes 列表取得班級清單
-- 對每個 active 班級，讀取 `{workspace}/projects/class-{code}/working/*.yaml` 取得最新進度
+- 對每個 active 班級，讀取 `{workspace}/projects/class-{code}/{科目}/session.yaml` 取得最新進度
 - 從 `ai-core/system-status.yaml` 取得系統層級狀態（架構版本、共用框架完成度）
 - 進度描述用人類可讀的中文，不需要暴露 YAML 欄位名稱
 <!-- COMPILE:STATUS:END -->
@@ -220,7 +219,7 @@ WaldorfTeacherOS-Repo/
 
 **你看到過期資訊怎麼辦：**
 - 如果區塊三的「最後更新」日期明顯過舊，提醒教師：「Cowork 的系統狀態可能不是最新的，要不要在 Claude Code 做一次同步？」
-- 不要自行猜測當前狀態——以錨點檔案（working/*.yaml）為準
+- 不要自行猜測當前狀態——以錨點檔案（{科目}/session.yaml）為準
 
 ---
 
