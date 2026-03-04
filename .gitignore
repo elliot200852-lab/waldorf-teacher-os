@@ -33,5 +33,8 @@ projects/*/roster.yaml
 # 期末學生評量總檔（含還原的真實姓名，不上傳）
 projects/*/english/content/student-assessments*.md
 
+# Cowork Folder Instructions（個人編譯版，每位教師各自生成，不上傳）
+INSTRUCTIONS.md
+
 # Firebase 快取
 .firebase/

@@ -100,15 +100,18 @@ english_session:
 
 寫入 english-session.yaml 後，**自動執行** `ai-core/skills/sync-cowork.md` 的快速模式（只更新區塊三）。
 
+前提：`INSTRUCTIONS.md` 必須已存在（由首次 sync-cowork 或 quick-start 生成）。若不存在，提示教師先執行一次「同步 Cowork」。
+
 具體操作：
-1. 讀取 `ai-core/system-status.yaml` 和剛更新的 `working/*.yaml`
-2. 更新 `INSTRUCTIONS.md` 的「三、當前系統狀態」區塊
-3. 更新 metadata header 的 `last_compiled` 日期
-4. 輸出一行確認：「Cowork INSTRUCTIONS.md 區塊三已同步。」
+1. 識別當前教師（git config user.email → acl.yaml → workspace 路徑）
+2. 讀取 `ai-core/system-status.yaml` 和剛更新的 `{workspace}/projects/class-*/working/*.yaml`
+3. 更新 `INSTRUCTIONS.md` 的「三、當前系統狀態」區塊
+4. 更新 metadata header 的 `last_compiled` 日期
+5. 輸出一行確認：「Cowork INSTRUCTIONS.md 區塊三已同步。」
 
 **不需要另外詢問確認** — 這是 session-end 的自動延伸步驟。
 
-若本次工作涉及**架構變動**（新增班級、新增科目、修改 DI 框架、新增/修改技能），教師會說「這次架構有改動」，則改為執行 sync-cowork 的完整模式（全區塊重編譯）。
+若本次工作涉及**架構變動**（新增班級、新增科目、修改 DI 框架、新增/修改技能），教師會說「這次架構有改動」，則改為執行 sync-cowork 的完整模式（從 INSTRUCTIONS.template.md 全區塊重編譯）。
 
 ## 注意事項
 
