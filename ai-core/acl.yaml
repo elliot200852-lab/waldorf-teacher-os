@@ -101,9 +101,11 @@ roles:
 # 修改這些路徑的 PR 在 GitHub 上必須由 David 審核。
 
 protected_always:
-  - ai-core/acl.yaml            # 本文件——權限的根基
-  - ai-core/teacheros.yaml      # 系統身份核心
-  - .github/CODEOWNERS          # GitHub 審核規則
-  - .github/                    # 整個 GitHub 設定資料夾
-  - setup/hooks/                # Hook 腳本
-  - publish/build.sh            # 輸出腳本
+  - ai-core/acl.yaml                    # 本文件——權限的根基
+  - ai-core/teacheros.yaml              # 系統路由中樞
+  - ai-core/teacheros-foundation.yaml   # 華德福教育共用根基（所有教師共讀）
+  - ai-core/reference/                  # 教學哲學完整參考文件
+  - .github/CODEOWNERS                  # GitHub 審核規則
+  - .github/                            # 整個 GitHub 設定資料夾
+  - setup/hooks/                        # Hook 腳本
+  - publish/build.sh                    # 輸出腳本

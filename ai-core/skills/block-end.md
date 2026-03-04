@@ -1,6 +1,6 @@
 ---
 name: block-end
-description: 15堂主課程區塊結束後執行。收集教師觀察，產出教學反思筆記，為下一個弧線定位起點。
+description: 主課程區塊結束後執行。收集教師觀察，產出教學反思筆記，為下一個弧線定位起點。適用於所有科目。
 triggers:
   - 區塊結束
   - 做反思
@@ -8,37 +8,40 @@ triggers:
   - 這個block完成
   - 主課程結束
 requires_args: true
-args_format: "[班級代碼] (9c/8a/7a)"
+args_format: "[班級代碼] [科目] (例: 9c english、8a history)"
 ---
 
 # skill: block-end — 主課程區塊結尾反思
 
-在 15 堂主課程區塊結束後，產出教學反思筆記，為下一個弧線定位起點。
+在主課程區塊結束後，產出教學反思筆記，為下一個弧線定位起點。
 
 ## 參數
 
-班級代碼（9c / 8a / 7a）。未提供則詢問。
+班級代碼（9c / 8a / 7a）+ 科目（english / history / homeroom 等）。
+未提供則依序詢問班級與科目。
 
 ## 根目錄
 
-`/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
+以 Repo 根目錄為基準（相對路徑）。
+AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從當前已知的工作目錄推斷。
 
 ## 執行步驟
 
 ### Step 1 — 讀取本區塊記錄
 
-1. `{workspace}/projects/class-[班級]/working/english-session.yaml`（本區塊的決策與產出記錄）
+1. `{workspace}/projects/class-[班級]/[科目]/session.yaml`（本區塊的決策與產出記錄）
 2. `{workspace}/projects/class-[班級]/working/students.yaml`（學生學習狀態）
 
 # {workspace} 路徑解析：
 # 從 acl.yaml 取得當前使用者的 workspace 路徑。
-# David：workspaces/Working_Member/Codeowner_David/
+# Codeowner：workspaces/Working_Member/Codeowner_David/
 # 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 **Reference 模組（必讀）：**
 
 3. `ai-core/reference/pedagogy-framework.yaml`（15 堂弧線結構、年級發展邏輯）
-4. `ai-core/reference/subject-english.yaml`（英文科哲學）
+4. `ai-core/reference/subject-[科目].yaml`（科目哲學）
+   （若該科目的 reference 不存在，跳過）
 
 ### Step 2 — 收集教師的課堂觀察
 
@@ -54,7 +57,7 @@ AI 將口述整理為結構化記錄。
 
 ---
 
-**區塊結尾反思｜class-[班級]｜[日期]**
+**區塊結尾反思｜class-[班級]｜[科目]｜[日期]**
 
 **本區塊完成了什麼**
 （從 confirmed_decisions 和 output_files 摘取，加上教師補充）
@@ -75,16 +78,16 @@ AI 將口述整理為結構化記錄。
 
 ### Step 4 — 儲存反思筆記
 
-詢問：「確認將反思筆記附加至 `{workspace}/projects/class-[班級]/content/english/block-reflections.md` 嗎？（是 / 否）」
+詢問：「確認將反思筆記附加至 `{workspace}/projects/class-[班級]/content/[科目]/block-reflections.md` 嗎？（是 / 否）」
 
 採附加邏輯，不覆蓋前次反思。
 
-### Step 5 — 更新 english-session.yaml
+### Step 5 — 更新 session.yaml
 
 自動生成 diff：
 
 ```yaml
-english_session:
+session:
   last_updated: [今天日期]
   current_position:
     block_status: completed
@@ -94,7 +97,7 @@ english_session:
     description: [下一個區塊或單元的起點]
 ```
 
-詢問確認後寫入。
+詢問確認後寫入 `[科目]/session.yaml`。
 
 ## 注意事項
 

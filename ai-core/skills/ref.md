@@ -25,7 +25,8 @@ args_format: "[模組] (pedagogy/english/history/student/all) — 可選"
 
 ## 根目錄
 
-`/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
+以 Repo 根目錄為基準（相對路徑）。
+AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從當前已知的工作目錄推斷。
 
 ## 模組對照表
 
@@ -71,5 +72,5 @@ args_format: "[模組] (pedagogy/english/history/student/all) — 可選"
 ## 注意事項
 
 - 讀取完成後不貼出完整 YAML 原文，只輸出摘要確認
-- 若模組路徑不存在，回應：「[模組] 的 reference 檔案尚未建立，請聯絡 David。」
+- 若模組路徑不存在，回應：「[模組] 的 reference 檔案尚未建立。」
 - `all` 模式下，四個模組全部讀取完成後才輸出確認

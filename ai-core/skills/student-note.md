@@ -22,7 +22,8 @@ args_format: "[班級代碼] [學生識別] (例: 9c 5號 或 9c 小明)"
 
 ## 根目錄
 
-`/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
+以 Repo 根目錄為基準（相對路徑）。
+AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從當前已知的工作目錄推斷。
 
 ## 執行步驟
 
@@ -32,7 +33,7 @@ args_format: "[班級代碼] [學生識別] (例: 9c 5號 或 9c 小明)"
 
 # {workspace} 路徑解析：
 # 從 acl.yaml 取得當前使用者的 workspace 路徑。
-# David：workspaces/Working_Member/Codeowner_David/
+# Codeowner：workspaces/Working_Member/Codeowner_David/
 # 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 找到對應學生的條目。若找不到，詢問：「未找到這位學生，是否要先確認名單？」

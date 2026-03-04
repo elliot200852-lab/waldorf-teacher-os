@@ -22,7 +22,8 @@ args_format: "[班級代碼] [類型] (例: 9c 學期評語)"
 
 ## 根目錄
 
-`/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
+以 Repo 根目錄為基準（相對路徑）。
+AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從當前已知的工作目錄推斷。
 
 ## 執行步驟
 
@@ -32,12 +33,16 @@ args_format: "[班級代碼] [類型] (例: 9c 學期評語)"
 
 # {workspace} 路徑解析：
 # 從 acl.yaml 取得當前使用者的 workspace 路徑。
-# David：workspaces/Working_Member/Codeowner_David/
+# Codeowner：workspaces/Working_Member/Codeowner_David/
 # 教師：workspaces/Working_Member/Teacher_{姓名}/
+
+2. 讀取教師身份 YAML 以取得教師姓名（用於簽名）：
+   - 所有使用者：`{workspace}/teacheros-personal.yaml`
+   （workspace 路徑從 `ai-core/acl.yaml` 取得）
 
 **Reference 模組（必讀）：**
 
-2. `ai-core/reference/student-development.yaml`（發展性目標定義、外骨骼論）
+3. `ai-core/reference/student-development.yaml`（發展性目標定義、外骨骼論）
 
 ### Step 2 — 確認信件範圍
 
@@ -67,7 +72,7 @@ args_format: "[班級代碼] [類型] (例: 9c 學期評語)"
 
 （結尾 — 1句：對下學期的期待，以及對家長合作的感謝）
 
-David 敬上
+[從教師身份 YAML 讀取姓名] 敬上
 [日期]
 
 ---

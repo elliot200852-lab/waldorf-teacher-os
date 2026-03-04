@@ -20,7 +20,8 @@ requires_args: false
 
 ## 根目錄
 
-`/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
+以 Repo 根目錄為基準（相對路徑）。
+AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從當前已知的工作目錄推斷。
 
 ## 執行步驟
 

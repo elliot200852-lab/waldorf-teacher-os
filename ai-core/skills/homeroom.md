@@ -8,7 +8,7 @@ triggers:
   - 班親會
   - 班級經營
 requires_args: true
-args_format: "[班級代碼] (9c/8a/7a)"
+args_format: "[班級代碼] (例: 9c、8a、7a)"
 ---
 
 # skill: homeroom — 導師業務
@@ -17,11 +17,12 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 ## 參數
 
-班級代碼（目前支援：9c）。未提供則詢問：「請問要處理哪個班的導師業務？」
+班級代碼。未提供則詢問：「請問要處理哪個班的導師業務？」
 
 ## 根目錄
 
-`/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
+以 Repo 根目錄為基準（相對路徑）。
+AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從當前已知的工作目錄推斷。
 
 ## 執行步驟
 
@@ -31,8 +32,9 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 # {workspace} 路徑解析：
 # 從 acl.yaml 取得當前使用者的 workspace 路徑。
-# David：workspaces/Working_Member/Codeowner_David/
+# Codeowner：workspaces/Working_Member/Codeowner_David/
 # 教師：workspaces/Working_Member/Teacher_{姓名}/
+
 2. `projects/_di-framework/content/homeroom-template.md`（若存在）
 
 **Reference 模組（必讀）：**

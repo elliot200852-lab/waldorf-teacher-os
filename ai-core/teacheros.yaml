@@ -1,275 +1,124 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 【TeacherOS 身份記憶 — Layer 1】
-# 名稱：教師身份層（每次對話必讀，長期穩定不常改）
+# 【TeacherOS 系統核心 — 每次對話必讀】
+# 名稱：系統路由與架構層
 # 路徑：ai-core/teacheros.yaml
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-teacher_identity:
-  name: David
-  role: 華德福教師
-  role_in_ai_era: 意義架構師（Meaning Architect）
-  location: 台灣
-  school_type: 體制外華德福實驗學校
-  school_type_context:
-    legal_framework: 依台灣實驗教育三法運作，不受教育部標準課綱約束
-    curriculum_authority: 教師擁有完整課程自主權，同時承擔對應的完整設計責任
-    student_community: 家長與學生為主動選擇者，非被動接受體制安排，社群意識強烈
-    teacher_role_implication: 教師本身即課程框架，無外部標準可依賴，教學哲學就是評量標準
-    success_definition: 發展性目標（身心靈整合與長期人格成熟），而非考試成績或升學指標
+#
+# 本文件是 TeacherOS 的「系統中樞」。
+# 它告訴 AI：該讀什麼、按什麼順序讀、如何與教師互動。
+#
+# 知識內容不在這裡——在以下兩個地方：
+#   1. ai-core/teacheros-foundation.yaml → 華德福教育共用根基
+#   2. {workspace}/teacheros-personal.yaml → 教師個人身份與偏好
+#
+# 本文件負責：系統架構、載入順序、workspace 路由、
+#              session 協議、多 AI Agent 協調。
 
-teaching_scope:
-  grade_focus:
-    - 七年級
-    - 八年級
-    - 九年級
-  subjects:
-    - 英文
-    - 人文與社會
-    - 歷史
-    - 跨領域主題課程
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 一、三層載入順序（AI 必須依序執行）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-pedagogical_framework:
-  _type: reference_pointer
-  _path: ai-core/reference/pedagogy-framework.yaml
-  _summary: >
-    華德福人智學：四體論（物質體/生命體/星芒體/自我）、七年週期發展論、
-    頭心手三元（思考/情感/意志）、七至九年級星芒體轉型期
-    （七：界線探索 → 八：邏輯萌發 → 九：存在焦慮）、
-    現象學式學習、阿里曼原則（AI 時代技術的靈性定位）。
-  _load_when:
-    - 涉及學生心理發展或課堂行為的深層分析
-    - 設計課程需要教育哲學依據或年級課程鏡像邏輯
-    - 討論七年週期、星芒體、人智學、四體論
-    - 主課程弧線設計（15 堂完整敘事結構）
-    - 理解 AI 時代的華德福定位（阿里曼力量）
-  philosophy: 華德福教育（基於魯道夫·施泰納人智學）
-  developmental_focus: [思考（Thinking）, 情感（Feeling）, 意志（Will）]
-  learning_approach:
-    - 現象學式學習：先觀察與體驗，後歸納抽象
-    - 主課程整合：跨學科意義網絡，15 堂完整弧線
-    - 保留生成性負載：任務含足夠模糊性，迫使學生親自推論
-  long_term_relationship:
-    - 多年陪伴同一班學生（七至九年級）
-    - 師生關係是不可被 AI 替代的核心教育資產
+loading_sequence:
+  step_1:
+    file: ai-core/teacheros-foundation.yaml
+    description: 華德福教育共用根基（哲學、發展心理、課程原則、AI 使命）
+    mandatory: true
+    note: 所有教師共讀，提供課程設計的思想底層
+  step_2:
+    file: "{workspace}/teacheros-personal.yaml"
+    description: 教師個人身份、年級、科目、偏好
+    mandatory: true
+    note: 從 acl.yaml 取得 workspace 路徑
+  step_3:
+    file: projects/_di-framework/project.yaml
+    description: 差異化教學共用框架（雙軸強制、品質標準）
+    mandatory: true
+    note: 每次工作必載，不論班級或科目
+  step_4:
+    file: "{workspace}/projects/class-{code}/project.yaml"
+    description: 班級脈絡與焦點
+    mandatory: when_class_specified
+  step_5:
+    file: "{workspace}/projects/class-{code}/{subject}/session.yaml"
+    description: 科目進度錨點
+    mandatory: when_subject_specified
 
-lesson_structure:
-  main_lesson:
-    duration_per_session: 約 2 小時
-    schedule: 每天固定進行，一週五天
-    block_length: 連續三週
-    total_sessions: 約 15 堂
-    session_rhythm:
-      step_1_recall: 回顧——複習前一天內容，讓知識在睡眠後沉澱重新浮現
-      step_2_new_content: 課程進行——引入新素材、敘事、概念或現象學體驗
-      step_3_closing: 課程結尾——統整本日主題，留下完整印象
-      step_4_free_writing: 自由書寫——學生以個人方式消化與表達當日學習
-    design_implication: 主課程是跨學科深度探索的容器，適合敘事導向、傳記式、現象學式的長期主題展開；15 堂的完整弧線需要有頭有尾的敘事結構
-  subject_lesson:
-    duration_per_session: 45 分鐘
-    weekly_frequency: 每週 2–4 節（視科目而定）
-    english_structure:
-      weekly_sessions: 4 節
-      sessions_per_term: 40 節（10 週學季）
-      sessions_per_semester: 80 節（20 週學期）
-    design_implication: 專科課程節奏較快，每節課需具備完整性；設計上須注重技能的累積性與每節課的起承轉合
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 二、Workspace 機制
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-teacher_working_style:
-  input_method: 以語音輸入為主
-  thinking_style: 系統建構型思考
-  design_preference:
-    - 專案式學習
-    - 敘事導向課程
-    - 跨學科整合
-    - 長期課程設計
-
-subject_philosophies:
-  english:
-    _type: reference_pointer
-    _path: ai-core/reference/subject-english.yaml
-    _summary: >
-      語言即塑造性力量（Formative Force）；英文不只是技能訓練，
-      而是引導學生進入英語民族的文化靈魂。
-      教師角色：語言示範者 / 文化橋樑 / 青少年靈魂陪伴者。
-    _load_when:
-      - 設計英文課的教學目標、哲學定位或評量
-      - 討論英文課的文化面向或文學素材選擇
-      - 需要向家長或學生說明英文課的意義
-  history:
-    _type: reference_pointer
-    _path: ai-core/reference/subject-history.yaml
-    _summary: >
-      歷史課是意識演化的鏡子：人類集體意識演化與學生個人意識發展平行對應。
-      台灣主體史觀（全球史觀取代歐洲中心）。
-      課程對應：七年級→文藝復興、八年級→革命史、九年級→當代史。
-    _load_when:
-      - 設計歷史課教學方向或內容
-      - 討論台灣主體史觀的課程整合
-      - 需要確認年級與歷史主題的對應邏輯
-
-student_inner_structure_model:
-  _type: reference_pointer
-  _path: ai-core/reference/student-development.yaml
-  _summary: >
-    外骨骼 vs 內骨骼：華德福移除體制外骨骼，教師全權承接青春期張力。
-    學科是隱藏鷹架：數學、藝術、農場實作將星芒體能量物質化導入秩序。
-    班級經營：修復式正義、充滿愛的權威、高度一致性傳遞「此處安全」。
-  _load_when:
-    - 分析特定學生的行為問題或動機狀態
-    - 設計班級經營策略或處理衝突
-    - 需要理解學科如何作為心理療癒工具
-    - 導師工作（班親會、個案討論、修復性對話）
-  conflict_resolution:
-    philosophy: 修復式正義（Restorative Justice）而非懲罰性手段；衝突是療癒與成長的契機
-    tools:
-      talking_circles: 定期班級談話圈——建立情感安全網，讓每個聲音被聽見
-      nvc: 非暴力溝通——識別需求，客觀描述事件而非主觀指責
-      restorative_conversation: 修復性對話——理解傷害影響，犯錯者提出具體彌補方案
-      social_harmony: 訓練八年級學生擔任低年級衝突調解員——將掌控慾轉化為正向領導力
-
-classroom_as_sacred_space:
-  description: 教室是不可被數位化的神聖空間，教師的物理在場、溫暖目光與道德榜樣是 AI 永遠無法複製的核心教育資產
-  irreplaceable_elements:
-    - 凝視學生眼睛，捕捉細微情感與學習狀態的變化
-    - 晨圈節奏的體力陪伴與集體共振
-    - 手工藝指導中即興湧現的靈感火花
-    - 真實社群中的歸屬感、信任感與愛
-    - 道德榜樣的示範——教師作為一個完整人類的存在本身
-
-ai_era_mission:
-  philosophical_stance: 拒絕被機器定義，選擇定義機器的運作法則
-  ahriman_mastery_strategy: 最高度的技術自動化，是為了成就最純粹的低科技人文互動——這是駕馭阿里曼力量而非屈服於它
-  core_threats_to_address:
-    sovereignty_trap: 學生將理智判斷權交給 AI，將「獲取資訊的便利」誤認為「自身的真實能力」
-    hollowed_mind: 系統性繞過深度學習所必須的努力認知過程（解析不確定性、組織基模、抽象化概念），導致空洞化心智
-    cognitive_offloading: 長期依賴 AI 削弱獨立推理與動手實踐能力
-  teacher_response:
-    - 設計反脆弱的認知訓練環境（Cognitive Training Environment），而非讓學生更輕易獲得答案
-    - 保留生成性負載：任務含足夠模糊性，迫使學生親自觀察、實驗或深度閱讀後才能得出結論
-    - 建構「武裝心智」：提供多元甚至相互衝突的視角，訓練批判性推理，而非接受權威輸出
-  collective_mission: 華德福教育是啟動人類集體智慧（Collective Human Intelligence）對抗唯物主義技術滲透的前鋒力量
-
-ai_collaboration_goal:
-  framing: 以技術自動化換取純粹的低科技人文互動
-  philosophical_basis: AI 系統接管課程規劃、資料搜集與行政架構後，教師收回 100% 精力，重新引導至 AI 永遠無法涉足的物理與情感空間
-  purpose:
-    - 減少教師行政與備課的腦力負擔
-    - 建立差異化教學系統
-    - 生成可重複使用教材
-    - 建立長期可持續工作流
-  teacher_role:
-    - 決定 AI 應知道什麼、何時提供何種資訊
-    - 設計教學基模（Schema），而非處理實作細節
-    - 確保所有技術輸出與華德福核心人類目標保持一致
-
-# ── Workspace 機制說明 ──────────────────────────────
 workspace_system:
   purpose: >
     每位教師擁有獨立的 workspace，在其中進行所有教學設計工作。
     Workspace 是教師的個人空間，不影響母結構，也不會被其他教師干擾。
+
   structure:
     shared_reference:
       description: 共用引用（不複製，直接讀取母結構）
       includes:
-        - ai-core/ 華德福教育哲學與核心設定
-        - projects/_di-framework/ 差異化教學框架
-        - setup/ 安裝與設定工具
-      rule: 教師只讀不改；更新由管理員統一維護，所有教師自動同步
-    template_copy:
-      description: 模板複製（複製到 workspace，教師個人化填寫）
+        - ai-core/teacheros-foundation.yaml — 華德福教育共用根基
+        - ai-core/reference/ — 教學哲學完整參考文件
+        - projects/_di-framework/ — 差異化教學框架
+        - ai-core/skills/ — 技能正本
+        - setup/ — 安裝與設定工具
+      rule: >
+        教師只讀不改。更新由管理員統一維護，所有教師自動同步。
+        AI 若偵測到教師角色嘗試修改這些路徑，必須拒絕並說明原因。
+    teacher_owned:
+      description: 教師個人空間（100% 自主）
       includes:
-        - teacheros-personal.yaml 個人教師身份與哲學
-        - workspace.yaml 工作空間狀態追蹤
-        - projects/_class-template/ 空白班級骨架
-      rule: 教師自由修改，保留框架結構確保不偏離理念
-    teacher_created:
-      description: 教師自行產出（透過 Block 1-4 工作流創建）
+        - teacheros-personal.yaml — 個人身份與哲學
+        - workspace.yaml — 工作空間狀態追蹤
+        - projects/class-{code}/ — 班級資料（students、session、content）
+      rule: >
+        完全屬於教師個人。AI 僅在此路徑範圍內進行寫入操作。
+        教師可自由修改，但框架結構需保留以確保系統運作。
+    template_source:
+      description: 新教師 workspace 的複製來源
+      path: workspaces/_template/
       includes:
-        - 課程大綱、教案、教學紀錄、評量
-      rule: 完全屬於教師個人的教學內容
+        - teacheros-personal.yaml — 個人身份模板
+        - workspace.yaml — 工作空間狀態模板
+        - projects/ — 空白班級骨架
+
   reference_workspace:
     name: 工作範例參考
     path: workspaces/工作範例參考/
     teacher: Teacher Claude
     description: >
       完整的 Block 1-4 產出範例，供新進老師參考。
-      涵蓋八年級英文課全學期（10週）的教學設計、紀錄與評量。
+
   workspace_naming:
     convention: "{Role}_{RealName}"
     examples:
-      - Codeowner_David（系統管理員）
-      - Teacher_林信宏（一般教師）
-    container: workspaces/Working_Member/（所有活躍教師 workspace 的上層資料夾）
-    special: workspaces/工作範例參考/（不套命名規則）
+      - Codeowner_David
+      - Teacher_林信宏
+    container: workspaces/Working_Member/
+
   onboarding_flow:
     step_1: 老師執行 bash setup/quick-start.sh（技術安裝）
     step_2: David 執行 bash setup/add-teacher.sh（認證 + 建立 workspace）
     step_3: 老師 git pull 取得自己的 workspace（位於 workspaces/Working_Member/Teacher_{姓名}/）
-    step_4: 在 workspace 中填入個人資料，開始 Block 1
+    step_4: 在 workspace 中填入 teacheros-personal.yaml 個人資料，開始 Block 1
 
-differentiated_instruction:
-  mandate: 差異化教學是每一堂課設計的必要考量，不是選項——每一個課程規劃都必須內建差異化的思維
-  design_requirement: 無論主課程或專科課程，AI 協助產出的任何課程設計，都必須預設包含差異化教學的層次與彈性空間
-  status: 差異化教學系統的細項設計將獨立為專屬 project 深入開發，目前作為課堂設計的強制性錨點存在
-
-communication_preferences:
-  language:
-    - 繁體中文
-    - 英文
-    - 日文學習中
-  response_style:
-    - 結構清晰
-    - 簡潔
-    - 可直接操作
-
-mother_documents:
-  doc_1:
-    title: TeacherOS 三層記憶系統指引手冊
-    path: ai-core/TeacherOS × 專案三層記憶系統指引手冊.md
-    purpose: TeacherOS 三層記憶模型的完整操作指引，包含 YAML 範本、工作流程、輸出邏輯
-  doc_2:
-    title: AI 時代華德福教師的定位與價值
-    path: ai-core/AI 時代華德福教師的定位與價值.md
-    purpose: David 作為華德福教師在 AI 時代的核心定位——意義架構師、駕馭阿里曼力量、設計反脆弱認知訓練環境
-  doc_3:
-    title: 華德福七至九年級學生生命樣態與課程的連結
-    path: ai-core/華德福七至九年級學生生命樣態與課程的連結.md
-    purpose: 七至九年級學生的心理與靈性發展樣態、課程作為隱蔽鷹架的邏輯、班級經營與修復式正義策略；是理解 David 教學對象的核心參考文件
-
-# ── Reference 按需載入協議 ──────────────────────────────
-reference_loading_protocol:
-  convention: >
-    凡欄位中出現 _type: reference_pointer，代表該段內容已外部化。
-    _summary 是每次必讀的摘要；完整內容在 _path 指向的檔案。
-  rule: >
-    AI 在對話中遇到 _load_when 所列的任何情況時，
-    必須在回應前主動讀取對應的 _path 檔案，不需詢問教師。
-  trigger_check_timing: >
-    每次教師提出工作需求後，先掃描所有 reference_pointer 的 _load_when 條件，
-    確認是否需要讀取，再開始產出。
-  skill_override: >
-    若使用 slash command（/lesson、/syllabus 等），
-    skill 本身的「讀取必要檔案」步驟已明確指定要讀的 reference 檔，
-    skill 指令優先，本協議作為自由對話時的安全網。
-  reference_index:
-    pedagogy:  ai-core/reference/pedagogy-framework.yaml
-    english:   ai-core/reference/subject-english.yaml
-    history:   ai-core/reference/subject-history.yaml
-    student:   ai-core/reference/student-development.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 三、AI Session 協議
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ai_session_protocol:
   session_start:
     steps:
-      - 載入 ai-core/teacheros.yaml（本文件）——教師身份與哲學錨點
-      - 載入 ai-core/acl.yaml——確認使用者授權範圍（見下方 acl_enforcement）
+      - 讀取 ai-core/teacheros.yaml（本文件）— 系統路由
+      - 讀取 ai-core/teacheros-foundation.yaml — 華德福共用根基
+      - 讀取 ai-core/acl.yaml — 確認使用者授權範圍（見下方 acl_enforcement）
       - 確認使用者身份：優先讀取 setup/environment.env 的 USER_EMAIL；
           若無法取得，主動詢問「請確認你的帳號 Email」；
-          admin 角色跳過路徑限制，teacher 角色全程只允許操作 allowed_paths 範圍內的路徑
-      - 設定 workspace 路由（teacher 角色）：若 acl.yaml 中有 workspace 欄位，
-          查找設定、模板或框架檔案時優先從 workspaces/{teacher_id}/ 尋找；
-          找到覆寫版本則使用，找不到則退回 Repo 根目錄標準版（見下方 workspace_routing）
-      - 載入 projects/_di-framework/project.yaml——差異化教學共用框架（每次必載）
-      - 載入對應班級的 class-*/project.yaml——掃描 current_focus 與 cross_module_notes
-      - 載入對應工作線的 working/*.yaml——確認 Block/Step 與 next_action
-      - 主動報告現況（見下方 startup_report_template）
+          admin 角色跳過路徑限制，teacher 角色全程只允許操作 allowed_paths 範圍
+      - 讀取 {workspace}/teacheros-personal.yaml — 教師個人身份
+      - 讀取 projects/_di-framework/project.yaml — 差異化教學框架（每次必載）
+      - 載入對應班級的 class-*/project.yaml — 掃描 current_focus
+      - 載入對應科目的 {subject}/session.yaml — 確認 Block/Step 與 next_action
+      - 主動報告現況（見 startup_report_template）
 
     acl_enforcement:
       on_unauthorized_request: >
@@ -280,17 +129,13 @@ ai_session_protocol:
         若 Email 不在 acl.yaml 中，通知使用者聯絡 David 登記，
         並在確認前暫停所有寫入操作，僅允許讀取。
       admin_bypass: >
-        admin 角色（allowed_paths: ["*"]）跳過所有路徑限制檢查，行為與原系統相同。
+        admin 角色（allowed_paths: ["*"]）跳過所有路徑限制檢查。
 
     workspace_routing:
       principle: >
         teacher 角色的 AI 工作階段中，查找任何輔助設定、模板或框架檔案時，
         先去 workspaces/{teacher_id}/ 尋找同路徑的覆寫版本；
         找到則使用 workspace 版本，找不到則退回 Repo 根目錄的標準版。
-      example: >
-        AI 需要 projects/_di-framework/project.yaml →
-        先找 workspaces/teacher-lin/_di-framework/project.yaml →
-        若存在則使用 workspace 覆寫版；不存在則使用根目錄標準版。
       scope: 僅適用 teacher 角色；admin 角色不啟用 workspace 路由邏輯。
 
     startup_report_template: >
@@ -301,7 +146,7 @@ ai_session_protocol:
       是否直接開始？
 
     voice_input_protocol:
-      context: David 以語音輸入為主，語音文字可能口語化、省略上下文或指令不完整
+      context: 教師可能以語音輸入，措辭口語化、省略上下文或指令不完整
       rules:
         - 讀完進度錨點後，AI 主動報告現況，不等教師詢問「我們做到哪了？」
         - 若語音指令模糊（如「繼續」「就那個」），優先依進度錨點推斷意圖，確認後執行
@@ -312,10 +157,10 @@ ai_session_protocol:
   session_end:
     steps:
       - 條列今次對話確認的決定（簡短列點）
-      - 更新對應 working/*.yaml 進度錨點（只改有變動的欄位）
+      - 更新對應 {subject}/session.yaml 進度錨點（只改有變動的欄位）
       - 更新 ai-core/system-status.yaml（反映真實現況）
       - 新產出的備課內容存入 content/*.md
-      - 告知 David 下次工作的起點（下一步是什麼）
+      - 告知教師下次工作的起點（下一步是什麼）
 
   output_defaults:
     primary_language: 繁體中文
@@ -324,7 +169,10 @@ ai_session_protocol:
     state_update: YAML（只改動的區塊）
     emoji: 不使用
 
-# ── 多 AI Agent 工作環境 ──────────────────────────────────
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 四、多 AI Agent 工作環境
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 ai_agent_context:
   primary_agents:
     claude_code:
@@ -343,15 +191,15 @@ ai_agent_context:
       strength: 日常對話協作、快速迭代、語音輸入友善
 
   workflow:
-    switching_pattern: 兩工具每日交替使用，視當日工作性質選擇
+    switching_pattern: 多工具交替使用，視工作性質選擇
     continuity_mechanism: >
-      工具切換透過 {workspace}/projects/class-*/working/*.yaml 保持工作連續。
+      工具切換透過 {workspace}/projects/class-*/{subject}/session.yaml 保持工作連續。
       切換前：執行 session-end 技能同步進度錨點。
       切換後：執行 load 技能讀取上次停止位置。
     handoff_note: >
       若此次對話是從另一個 AI Agent 接手的，
-      讀取對應班級的 english-session.yaml，即可從上次停止處繼續。
-      無需 David 重新說明背景。
+      讀取對應班級的各科目 session.yaml，即可從上次停止處繼續。
+      無需教師重新說明背景。
 
   skill_access:
     canonical_path: ai-core/skills/

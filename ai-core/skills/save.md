@@ -63,5 +63,5 @@ git push
 
 - 不要顯示原始 git 輸出給教師，用中文摘要即可
 - pre-commit hook 會自動檢查權限，若被攔截，向教師解釋哪些檔案超出授權範圍
-- 此技能不更新 english-session.yaml 的進度欄位——那是 session-end 的工作
+- 此技能不更新各科目 session.yaml 的進度欄位——那是 session-end 的工作
 - 建議教師在使用 session-end（收尾）之後再使用 save（存檔），確保進度紀錄也一起上傳
