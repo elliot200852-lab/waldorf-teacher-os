@@ -279,6 +279,52 @@ else
 fi
 
 # ──────────────────────────────────────────────────────────
+# 檢查 9：Claude Code Hook 設定（選用，不影響其他 AI 工具）
+# ──────────────────────────────────────────────────────────
+
+print_section "檢查 9：Claude Code Hook 設定（選用）"
+
+CLAUDE_SETTINGS="$REPO_ROOT/.claude/settings.local.json"
+CLAUDE_SCRIPTS="$REPO_ROOT/.claude/scripts"
+
+if [ -f "$CLAUDE_SETTINGS" ]; then
+  # 已有設定檔，檢查是否包含 hook
+  if grep -q "session-init.py" "$CLAUDE_SETTINGS" 2>/dev/null; then
+    print_success "Claude Code Hook 已設定"
+  else
+    print_info "settings.local.json 已存在但未包含 Hook，跳過自動寫入"
+    print_info "如需手動設定，請參考 setup/teacher-guide.md"
+  fi
+else
+  # 沒有設定檔，建立新的（僅含 hook，不含 permissions）
+  if [ -f "$CLAUDE_SCRIPTS/session-init.py" ]; then
+    mkdir -p "$(dirname "$CLAUDE_SETTINGS")"
+    cat > "$CLAUDE_SETTINGS" << 'ENDJSON'
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/scripts/session-init.py"
+          }
+        ]
+      }
+    ]
+  }
+}
+ENDJSON
+    print_success "Claude Code Hook 已自動設定"
+    print_info "每次使用 Claude Code 時，會自動顯示你的班級工作狀態"
+  else
+    print_warning "找不到 .claude/scripts/session-init.py，跳過 Hook 設定"
+  fi
+fi
+
+print_info "不使用 Claude Code？此步驟不影響任何其他 AI 工具"
+
+# ──────────────────────────────────────────────────────────
 # 完成提示
 # ──────────────────────────────────────────────────────────
 

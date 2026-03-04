@@ -32,8 +32,10 @@
 
 載入順序：
 - `{workspace}/projects/class-{code}/project.yaml` — 班級脈絡與焦點
-- `{workspace}/projects/class-{code}/working/english-session.yaml` — 英文課進度錨點
-- `{workspace}/projects/class-{code}/homeroom/session.yaml` — 導師業務進度錨點（如有）
+- `{workspace}/projects/class-{code}/{科目}/session.yaml` — 各科目進度錨點
+
+每個科目資料夾（english/、homeroom/、ml-taiwan-literature/ 等）內都有自己的 `session.yaml`。
+掃描規則：`class-*/*/session.yaml`（一層子資料夾內找 session.yaml）。
 
 ---
 
@@ -145,5 +147,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-03*
+*最後更新：2026-03-04*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
