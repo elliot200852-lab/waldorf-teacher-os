@@ -16,7 +16,7 @@ homeroom_context: >
 class_files:
   roster: roster.yaml              # gitignored，學生身份（真名+ID+座號）
   students: students.yaml          # 班級共用 DI 摘要 + 跨科特殊狀況
-  session_state: working/english-session.yaml  # 英文課工作進度錨點
+  session_state: english/session.yaml           # 英文課工作進度錨點
   homeroom_session: homeroom/session.yaml      # 導師專用進度錨點
 
 subjects:

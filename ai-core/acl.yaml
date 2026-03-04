@@ -27,10 +27,11 @@
 roles:
 
   admin:
-    - name: David
+    - name: 林信宏（David）
       email: elliot200852@gmail.com
-      github_username: elliot200852-lab   # 請至 github.com 確認實際 username
-      workspace: null                      # Admin 不使用 workspace 隔離
+      github_username: elliot200852-lab
+      role: 系統管理員（Codeowner）兼華德福教師
+      workspace: workspaces/Working_Member/Codeowner_David/
       allowed_paths:
         - "*"                              # 最高權限，無任何路徑限制
 
@@ -81,12 +82,13 @@ roles:
         - .github/
         - publish/build.sh
 
-    - name: David（Codeowner）
-      email: elliot200852+teacher@gmail.com
-      github_username: elliot200852-lab
-      workspace: workspaces/Working_Member/Codeowner_David/
+    - name: 郭耀新
+      email: null                              # 待補
+      github_username: dylankuo84137
+      role: 學校網路工程師
+      workspace: workspaces/Working_Member/Teacher_郭耀新/
       allowed_paths:
-        - workspaces/Working_Member/Codeowner_David/
+        - workspaces/Working_Member/Teacher_郭耀新/
       blocked_paths:
         - ai-core/
         - setup/
