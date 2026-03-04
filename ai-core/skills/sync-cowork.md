@@ -1,6 +1,6 @@
 ---
 name: sync-cowork
-description: 更新 INSTRUCTIONS.md（Cowork folder instructions）。從 YAML 系統編譯最新狀態快照，讓 Cowork 的上下文保持同步。
+description: 從 INSTRUCTIONS.template.md + 個人 YAML 編譯 INSTRUCTIONS.md（Cowork folder instructions）。支援多使用者，每位教師編譯自己的版本。
 triggers:
   - 同步 Cowork
   - 更新 Cowork
@@ -11,80 +11,133 @@ requires_args: false
 
 # skill: sync-cowork — 編譯 Cowork Folder Instructions
 
-從 YAML 系統的 Source of Truth 編譯 `INSTRUCTIONS.md`，讓 Cowork 在下次開啟資料夾時載入最新上下文。
+從共用模板 `INSTRUCTIONS.template.md` + 教師個人 YAML 編譯 `INSTRUCTIONS.md`。
+INSTRUCTIONS.md 已加入 .gitignore，每位教師在本機生成自己的版本，不進版本控制。
 
 ## 根目錄
 
 `/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
 
+## 架構說明
+
+```
+INSTRUCTIONS.template.md （committed，共用模板）
+        ↓ sync-cowork 讀取模板
+        ↓ + 教師個人 YAML（身份、班級進度）
+        ↓ 編譯
+INSTRUCTIONS.md （gitignored，個人編譯版）
+        ↓ Cowork 開啟資料夾時自動載入
+```
+
+**模板中的標記：**
+- `<!-- COMPILE:IDENTITY:START -->` ~ `<!-- COMPILE:IDENTITY:END -->` → 用教師身份填入
+- `<!-- COMPILE:STATUS:START -->` ~ `<!-- COMPILE:STATUS:END -->` → 用教師班級進度填入
+- 其餘區塊（二、四、五、六）為共用 STATIC 內容，從模板原樣複製
+
 ## 使用時機
 
-1. **自動觸發：** session-end 的 Step 5 會呼叫此技能的「快速模式」，只更新區塊三（當前狀態）
-2. **手動觸發：** David 說「同步 Cowork」或「更新 Cowork」時執行完整重編譯
-3. **架構變動後：** 當 DI 框架、技能系統、YAML 結構有重大改動，David 會說「這次架構有改動，Cowork 全區塊都要更新」
+1. **自動觸發：** session-end 的 Step 5 呼叫「快速模式」（只更新區塊三）
+2. **手動觸發：** 教師說「同步 Cowork」「更新 Cowork」→ 更新區塊三 + 檢查其他區塊
+3. **架構變動後：** 教師說「架構有改動」→ 從模板完整重編譯所有區塊
+4. **首次生成：** 新教師 clone 後第一次執行，從模板 + 個人 YAML 生成完整 INSTRUCTIONS.md
 
 ## 執行步驟
+
+### Step 0 — 識別當前教師
+
+1. 讀取 `git config user.email`
+2. 比對 `ai-core/acl.yaml`，找到對應的教師身份與 workspace 路徑
+3. 確定 workspace 變數：
+
+| 教師 | workspace 路徑 |
+|------|---------------|
+| David（Codeowner） | `workspaces/Working_Member/Codeowner_David/` |
+| 其他教師 | `workspaces/Working_Member/Teacher_{姓名}/` |
+
+若比對失敗，詢問：「找不到你的 workspace，請確認 git config user.email 與 acl.yaml 是否一致。」
 
 ### Step 1 — 判斷更新範圍
 
 | 觸發情境 | 更新範圍 |
 |----------|---------|
 | session-end 自動呼叫 | 只更新**區塊三**（當前系統狀態） |
-| David 說「同步 Cowork」 | 更新**區塊三** + 檢查區塊一/二/四是否需要調整 |
-| David 說「架構有改動」 | **全部六個區塊**重新編譯 |
+| 教師說「同步 Cowork」 | 更新**區塊三** + 檢查區塊一是否有變動 |
+| 教師說「架構有改動」 | **全部區塊**從模板重新編譯 |
+| INSTRUCTIONS.md 不存在（首次） | **全部區塊**從模板重新編譯 |
 
 ### Step 2 — 讀取 Source of Truth
 
-依更新範圍讀取：
+**區塊一（教師身份）：**
 
-**區塊三（必讀）：**
-- `ai-core/system-status.yaml`
-- 各班 `working/*.yaml`（掃描有變動的班級）
+| 教師 | 身份來源 |
+|------|---------|
+| David（Codeowner） | `ai-core/teacheros.yaml` |
+| 其他教師 | `{workspace}/teacheros-personal.yaml` |
 
-**區塊一（身份錨點，架構更新時讀取）：**
-- `ai-core/teacheros.yaml`
+編譯規則：
+- 從 YAML 提取：姓名、角色、學校類型、年級、科目、教學哲學、AI 立場、溝通偏好
+- 濃縮為人類可讀的段落，不超過 300 字
+- 標題改為教師姓名（例：「## 一、小美是誰」→「## 一、教師身份」）
+- 保持溫暖專業的語氣
 
-**區塊二（檔案地圖，架構更新時讀取）：**
-- 掃描目錄結構，確認有無新增班級、科目、資料夾
+**區塊二（檔案地圖）：**
+- 從 `INSTRUCTIONS.template.md` 的 STATIC 區塊原樣複製
+- 架構更新時：掃描目錄結構，將 `{你的工作空間}` 替換為實際 workspace 路徑
+- 列出教師自己的班級資料夾（從 `{workspace}/workspace.yaml` 的 classes 讀取）
 
-**區塊四（品質標準，架構更新時讀取）：**
-- `projects/_di-framework/project.yaml`
-- `projects/_di-framework/content/strategy-output-quality-standard.md`
+**區塊三（當前狀態，必讀）：**
+- `ai-core/system-status.yaml`（系統層級狀態：版本、框架完成度）
+- `{workspace}/workspace.yaml`（教師的班級清單）
+- 對每個 active 班級：`{workspace}/projects/class-{code}/working/*.yaml`（進度錨點）
+
+**區塊四、五、六（共用 STATIC）：**
+- 從 `INSTRUCTIONS.template.md` 原樣複製
+- 架構更新時讀取 `projects/_di-framework/project.yaml` 確認品質標準是否有變動
 
 ### Step 3 — 編譯寫入
 
-讀取現有 `INSTRUCTIONS.md`，只更新對應區塊的內容。
-
-**區塊三更新規則：**
-- 從 `system-status.yaml` 提取各班進度
-- 從 `working/*.yaml` 提取最新的 `current_position`、`next_action`
-- 更新 metadata header 的 `last_compiled` 日期
+**若 INSTRUCTIONS.md 已存在（日常更新）：**
+- 讀取現有 INSTRUCTIONS.md
+- 只替換需要更新的區塊內容
+- 更新 metadata header（last_compiled、source_files）
 - 保持其他區塊不變
 
-**全區塊更新規則：**
-- 區塊一：從 `teacheros.yaml` 重新濃縮身份描述（保持簡潔，不超過原有篇幅）
-- 區塊二：重新掃描目錄結構，更新檔案地圖
-- 區塊三：同上
-- 區塊四：從 DI 框架重新提取核心規則與品質標準
-- 區塊五：檢查角色邊界是否需要調整（例如新增了 Cowork 可以做的事）
-- 區塊六：維持不變（除非更新協議本身有變）
+**若 INSTRUCTIONS.md 不存在或需全區塊重編譯：**
+1. 讀取 `INSTRUCTIONS.template.md` 作為骨架
+2. 將 `<!-- COMPILE:IDENTITY:START -->` ~ `END` 之間的內容替換為編譯後的教師身份
+3. 將 `<!-- COMPILE:STATUS:START -->` ~ `END` 之間的內容替換為編譯後的班級進度
+4. 將 STATIC 區塊中的 `{你的工作空間}` 替換為實際 workspace 路徑
+5. 寫入 metadata header：
+   ```
+   last_compiled: [今天日期]
+   compiled_by: Claude Code (sync-cowork)
+   compiled_for: [教師姓名] ([workspace 名稱])
+   workspace: [workspace 路徑]
+   template: INSTRUCTIONS.template.md
+   source_files:
+     - [列出所有讀取的 YAML 檔案]
+   ```
+6. 寫入 `INSTRUCTIONS.md`（根目錄）
 
 ### Step 4 — 確認
 
 輸出變更摘要：
 
 ```
-Cowork INSTRUCTIONS.md 已更新：
-- 區塊三：9C 英文 Block [X] Step [Y] → [next_action]
+Cowork INSTRUCTIONS.md 已更新（{教師姓名}）：
+- 區塊三：{班級} {科目} Block [X] Step [Y] → [next_action]
 - last_compiled: [今天日期]
 [如有其他區塊變動，列出]
 ```
 
-不需要詢問確認（因為是從 Source of Truth 編譯，不涉及判斷）。
+不需要詢問確認（從 Source of Truth 編譯，不涉及判斷）。
 
 ## 注意事項
 
-- INSTRUCTIONS.md 是**編譯產物**，永遠從 YAML 生成，不反向寫回 YAML
-- 如果 YAML 和 INSTRUCTIONS.md 有衝突，以 YAML 為準
-- 區塊三的格式要保持簡潔——Cowork 載入時不需要看到完整 YAML 欄位，只需要人類可讀的進度摘要
-- 保持 INSTRUCTIONS.md 的 HTML 註解 metadata header（last_compiled、source_files 等），供追蹤用
+- INSTRUCTIONS.md 是**編譯產物**，永遠從 YAML + 模板生成，不反向寫回
+- INSTRUCTIONS.md 已加入 .gitignore，**不會出現在 PR diff 中**，不會造成合併衝突
+- 共用內容的修改入口是 `INSTRUCTIONS.template.md`（由管理者維護）
+- 個人內容的修改入口是教師的 `teacheros-personal.yaml` 和 `working/*.yaml`
+- 如果模板有更新（例如管理者修改了品質標準），教師下次執行 sync-cowork 時會自動同步
+- 區塊三的格式保持簡潔——Cowork 不需要看 YAML 欄位名，只需人類可讀的進度摘要
+- 保持 metadata header（HTML 註解格式），供追蹤編譯來源與時間
