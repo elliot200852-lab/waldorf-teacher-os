@@ -96,9 +96,24 @@ english_session:
 - 若確認：將 diff 中的欄位合併寫入原檔案，不覆蓋未列出的欄位
 - 若否定：保留 diff 供教師手動調整，不執行寫入
 
+### Step 5 — 同步 Cowork Folder Instructions
+
+寫入 english-session.yaml 後，**自動執行** `ai-core/skills/sync-cowork.md` 的快速模式（只更新區塊三）。
+
+具體操作：
+1. 讀取 `ai-core/system-status.yaml` 和剛更新的 `working/*.yaml`
+2. 更新 `INSTRUCTIONS.md` 的「三、當前系統狀態」區塊
+3. 更新 metadata header 的 `last_compiled` 日期
+4. 輸出一行確認：「Cowork INSTRUCTIONS.md 區塊三已同步。」
+
+**不需要另外詢問確認** — 這是 session-end 的自動延伸步驟。
+
+若本次工作涉及**架構變動**（新增班級、新增科目、修改 DI 框架、新增/修改技能），教師會說「這次架構有改動」，則改為執行 sync-cowork 的完整模式（全區塊重編譯）。
+
 ## 注意事項
 
 - `confirmed_decisions` 與 `open_questions` 採**附加邏輯**：新增項目，不清空舊項目
 - `open_questions` 中若某問題本次已解決，從列表移除
 - 不更新 `project.yaml`，除非教師明確要求
-- 若本次對話沒有任何可提取的變動，回應：「本次對話無可更新的狀態，english-session.yaml 維持不變。」
+- 若本次對話沒有任何可提取的變動，回應：「本次對話無可更新的狀態，english-session.yaml 維持不變。」但仍**檢查 INSTRUCTIONS.md 的 last_compiled 日期是否超過 3 天**，若超過則執行一次區塊三同步
+- Step 5 的 Cowork 同步是自動步驟，不計入「無可更新」的判斷——即使 YAML 無變動，若 INSTRUCTIONS.md 過期仍會更新
