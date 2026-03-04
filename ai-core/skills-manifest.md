@@ -21,6 +21,7 @@
 | 「設計節奏」「規劃這週」「吸氣呼氣」 | `rhythm` | `ai-core/skills/rhythm.md` |
 | 「記錄學生」「個案觀察」「記一下誰」 | `student-note` | `ai-core/skills/student-note.md` |
 | 「寫家長信」「學期評語」「家長通知」 | `parent-letter` | `ai-core/skills/parent-letter.md` |
+| 「同步 Cowork」「更新 Cowork」 | `sync-cowork` | `ai-core/skills/sync-cowork.md` |
 
 ---
 
