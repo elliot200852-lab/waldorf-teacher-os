@@ -1,6 +1,6 @@
 ---
 name: rhythm
-description: 依照華德福吸氣↔呼氣原則，為一節課、一週或一個主課程設計動靜平衡的節奏規劃。
+description: 依照華德福吸氣↔呼氣原則，為一節課、一週或一個主課程設計動靜平衡的節奏規劃。適用於所有科目。
 triggers:
   - 設計節奏
   - 規劃這週
@@ -8,7 +8,7 @@ triggers:
   - 課堂節奏
   - 節奏設計
 requires_args: false
-args_format: "[班級代碼] [範圍] (選填，例: 9c 這節課)"
+args_format: "[班級代碼] [科目] [範圍] (選填，例: 9c english 這節課)"
 ---
 
 # skill: rhythm — 課堂節奏設計
@@ -18,22 +18,24 @@ args_format: "[班級代碼] [範圍] (選填，例: 9c 這節課)"
 
 ## 參數
 
-可選：班級代碼 + 範圍（「這節課」「這週」「這個主課程」）。
-若未提供，詢問：「要設計哪個範圍的節奏？（這節課 / 這週 / 這個主課程）」
+可選：班級代碼 + 科目 + 範圍（「這節課」「這週」「這個主課程」）。
+若未提供班級與科目，依序詢問。
+若未提供範圍，詢問：「要設計哪個範圍的節奏？（這節課 / 這週 / 這個主課程）」
 
 ## 根目錄
 
-`/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
+以 Repo 根目錄為基準（相對路徑）。
+AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從當前已知的工作目錄推斷。
 
 ## 執行步驟
 
 ### Step 1 — 載入脈絡
 
-1. `{workspace}/projects/class-[班級]/working/english-session.yaml`（確認目前位置與單元方向）
+1. `{workspace}/projects/class-[班級]/[科目]/session.yaml`（確認目前位置與單元方向）
 
 # {workspace} 路徑解析：
 # 從 acl.yaml 取得當前使用者的 workspace 路徑。
-# David：workspaces/Working_Member/Codeowner_David/
+# Codeowner：workspaces/Working_Member/Codeowner_David/
 # 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 **Reference 模組（必讀）：**
@@ -72,7 +74,7 @@ args_format: "[班級代碼] [範圍] (選填，例: 9c 這節課)"
 
 ---
 
-**節奏設計｜class-[班級]｜[範圍]**
+**節奏設計｜class-[班級]｜[科目]｜[範圍]**
 
 | 時段 | 活動 | 性質 | 時長 | DI 備註 |
 |------|------|------|------|---------|

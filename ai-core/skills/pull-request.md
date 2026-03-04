@@ -1,11 +1,11 @@
 ---
 name: pull-request
-description: 學期末或階段性完成時，協助教師將工作發送合併申請（Pull Request）給 David，請求合併進主系統。
+description: 學期末或階段性完成時，協助教師將工作發送合併申請（Pull Request）給管理者，請求合併進主系統。
 triggers:
   - 發 PR
   - 合併申請
   - 送回主系統
-  - 通知 David 可以合併
+  - 通知管理者可以合併
   - 我想合併
   - pull request
 requires_args: false
@@ -14,7 +14,7 @@ args_format: "[選填：PR 標題或說明]"
 
 # skill: pull-request — 發送合併申請
 
-協助教師將個人 branch 的工作成果，發送合併申請（Pull Request）給 David 審核。
+協助教師將個人 branch 的工作成果，發送合併申請（Pull Request）給管理者審核。
 
 ## 什麼時候用
 
@@ -35,11 +35,13 @@ args_format: "[選填：PR 標題或說明]"
 
 ### Step 2 — 收集 PR 資訊
 
+讀取教師身份 YAML：`{workspace}/teacheros-personal.yaml`（workspace 路徑從 `ai-core/acl.yaml` 取得）以取得教師姓名。
+
 若教師已提供說明，直接使用。若未提供，詢問：
 
-> 「要用什麼標題通知 David？例如：『林信宏：九年級英文學期末備課整合』」
+> 「要用什麼標題通知管理者？例如：『[教師姓名]：[班級][科目]學期末備課整合』」
 
-> 「有什麼需要 David 特別留意的嗎？（沒有的話直接說『沒有』就好）」
+> 「有什麼需要管理者特別留意的嗎？（沒有的話直接說『沒有』就好）」
 
 ### Step 3 — 確認當前 branch 與遠端狀態
 
@@ -62,7 +64,7 @@ git push
 > 4. 說明欄填：[教師提供的說明，或『本學期備課完成，請審核合併。』]
 > 5. 點擊『Create pull request』就完成了
 >
-> David 會收到通知，審核後合併。你不需要等待，可以繼續工作。」
+> 管理者會收到通知，審核後合併。你不需要等待，可以繼續工作。」
 
 ### Step 5（選用） — 若 AI 環境支援 gh CLI
 
@@ -73,11 +75,11 @@ gh pr create --title "[標題]" --body "[說明]" --base main
 ```
 
 執行成功後回應：
-> 「合併申請已送出！David 會收到通知。PR 連結：[URL]」
+> 「合併申請已送出！管理者會收到通知。PR 連結：[URL]」
 
 ## 注意事項
 
-- 教師的 branch 名稱格式為 `workspace/Teacher_{姓名}` 或 `workspace/Codeowner_David`
+- 教師的 branch 名稱格式為 `workspace/Teacher_{姓名}` 或 `workspace/Codeowner_{姓名}`
 - PR 的 base branch 永遠是 `main`
-- 不要自動合併 PR，只有 David 有權合併
+- 不要自動合併 PR，只有管理者有權合併
 - 若教師不在個人 branch 上（例如在 main 上），先提醒並協助切換

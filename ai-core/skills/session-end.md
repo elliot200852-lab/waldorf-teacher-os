@@ -1,6 +1,6 @@
 ---
 name: session-end
-description: 對話結束前同步進度。掃描本次對話有變動的欄位，產生YAML diff並寫入english-session.yaml。每次對話結束必須執行。
+description: 對話結束前同步進度。掃描本次對話有變動的欄位，產生 YAML diff 並寫入該科目的 session.yaml。每次對話結束必須執行。
 triggers:
   - 收尾
   - 更新進度
@@ -8,31 +8,34 @@ triggers:
   - 同步進度
   - 儲存進度
 requires_args: true
-args_format: "[班級代碼] (9c/8a/7a)"
+args_format: "[班級代碼] [科目] (例: 9c english、8a history)"
 ---
 
 # skill: session-end — 對話收尾同步
 
-從當前對話中提取有變動的資訊，產生 YAML diff，寫入 english-session.yaml。
+從當前對話中提取有變動的資訊，產生 YAML diff，寫入該科目的 session.yaml。
 只更新有變動的欄位，不重寫整份文件。
 
 ## 參數
 
-班級代碼（9c / 8a / 7a）。未提供則詢問：「請問要收尾哪個班級的工作？（9c / 8a / 7a）」
+班級代碼（9c / 8a / 7a）+ 科目（english / history / homeroom 等）。
+未提供班級則詢問：「請問要收尾哪個班級的工作？」
+未提供科目則詢問：「要收尾哪個科目？」或從本次對話內容推斷科目。
 
 ## 根目錄
 
-`/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
+以 Repo 根目錄為基準（相對路徑）。
+AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從當前已知的工作目錄推斷。
 
 ## 執行步驟
 
 ### Step 1 — 讀取現有狀態
 
-讀取：`{workspace}/projects/class-[班級]/working/english-session.yaml`
+讀取：`{workspace}/projects/class-[班級]/[科目]/session.yaml`
 
 # {workspace} 路徑解析：
 # 從 acl.yaml 取得當前使用者的 workspace 路徑。
-# David：workspaces/Working_Member/Codeowner_David/
+# Codeowner：workspaces/Working_Member/Codeowner_David/
 # 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 ### Step 2 — 掃描當前對話，提取變動
@@ -54,10 +57,10 @@ args_format: "[班級代碼] (9c/8a/7a)"
 只列出有變動的欄位。格式如下：
 
 ```yaml
-# session-end diff｜class-[班級]｜[今天日期]
+# session-end diff｜class-[班級]｜[科目]｜[今天日期]
 # 以下為有變動的欄位，其餘欄位維持不變
 
-english_session:
+session:
   last_updated: [今天日期]
 
   current_position:
@@ -91,14 +94,14 @@ english_session:
 
 輸出 diff 後，詢問：
 
-「確認寫入 `english-session.yaml` 嗎？（是 / 否）」
+「確認寫入 `[科目]/session.yaml` 嗎？（是 / 否）」
 
 - 若確認：將 diff 中的欄位合併寫入原檔案，不覆蓋未列出的欄位
 - 若否定：保留 diff 供教師手動調整，不執行寫入
 
 ### Step 5 — 同步 Cowork Folder Instructions
 
-寫入 english-session.yaml 後，**自動執行** `ai-core/skills/sync-cowork.md` 的快速模式（只更新區塊三）。
+寫入 session.yaml 後，**自動執行** `ai-core/skills/sync-cowork.md` 的快速模式（只更新區塊三）。
 
 前提：`INSTRUCTIONS.md` 必須已存在（由首次 sync-cowork 或 quick-start 生成）。若不存在，提示教師先執行一次「同步 Cowork」。
 
@@ -113,10 +116,23 @@ english_session:
 
 若本次工作涉及**架構變動**（新增班級、新增科目、修改 DI 框架、新增/修改技能），教師會說「這次架構有改動」，則改為執行 sync-cowork 的完整模式（從 INSTRUCTIONS.template.md 全區塊重編譯）。
 
+### Step 6 — 跨平台開機提醒
+
+進度同步完成後，輸出以下提醒：
+
+> 📌 **下次啟動新對話時**，請先告訴 AI：
+> 「請讀取 `ai-core/AI_HANDOFF.md` 並依照載入序列初始化。」
+> 這樣就能接續今天的工作。
+>
+> （使用 Claude Code 的教師可直接輸入 `/load [班級] [科目]`，無需手動載入。）
+
+此提醒在所有 AI 平台（Claude Code、Gemini、ChatGPT 等）皆適用。
+
 ## 注意事項
 
 - `confirmed_decisions` 與 `open_questions` 採**附加邏輯**：新增項目，不清空舊項目
 - `open_questions` 中若某問題本次已解決，從列表移除
 - 不更新 `project.yaml`，除非教師明確要求
-- 若本次對話沒有任何可提取的變動，回應：「本次對話無可更新的狀態，english-session.yaml 維持不變。」但仍**檢查 INSTRUCTIONS.md 的 last_compiled 日期是否超過 3 天**，若超過則執行一次區塊三同步
+- 若本次對話沒有任何可提取的變動，回應：「本次對話無可更新的狀態，session.yaml 維持不變。」但仍**檢查 INSTRUCTIONS.md 的 last_compiled 日期是否超過 3 天**，若超過則執行一次區塊三同步
 - Step 5 的 Cowork 同步是自動步驟，不計入「無可更新」的判斷——即使 YAML 無變動，若 INSTRUCTIONS.md 過期仍會更新
+- Step 6 的跨平台提醒是每次收尾的固定輸出，確保非 Claude Code 環境的教師不會遺忘載入步驟

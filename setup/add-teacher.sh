@@ -208,10 +208,15 @@ create_workspace() {
   # Copy template files
   print_info "Copying template files..."
 
-  if [ -f "$TEMPLATE_DIR/philosophy.yaml" ]; then
-    cp "$TEMPLATE_DIR/philosophy.yaml" "$WORKSPACE_DIR/philosophy.yaml"
-    print_success "philosophy.yaml copied"
+  # teacheros-personal.yaml — 新教師最重要的檔案
+  if [ -f "$TEMPLATE_DIR/teacheros-personal.yaml" ]; then
+    cp "$TEMPLATE_DIR/teacheros-personal.yaml" "$WORKSPACE_DIR/teacheros-personal.yaml"
+    print_success "teacheros-personal.yaml copied (teacher must fill this in)"
+  else
+    print_warning "teacheros-personal.yaml template not found — teacher must create manually"
   fi
+
+  # philosophy.yaml 已廢除（2026-03-04），個人哲學統一在 teacheros-personal.yaml
 
   if [ -f "$TEMPLATE_DIR/README.md" ]; then
     cp "$TEMPLATE_DIR/README.md" "$WORKSPACE_DIR/README.md"

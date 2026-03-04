@@ -8,7 +8,7 @@ triggers:
   - 課堂設計
   - 設計課堂
 requires_args: true
-args_format: "[班級代碼] [區塊編號] (例: 9c 2)"
+args_format: "[班級代碼] [科目] [區塊編號] (例: 9c english 2、8a history 1)"
 ---
 
 # skill: lesson — 進入指定班級課程設計流程
@@ -18,15 +18,17 @@ args_format: "[班級代碼] [區塊編號] (例: 9c 2)"
 
 ## 參數
 
-格式：`[班級代碼] [區塊編號]`
+格式：`[班級代碼] [科目] [區塊編號]`
 
 - 班級代碼：9c / 8a / 7a
+- 科目：english / history / homeroom 等
 - 區塊編號：1（學季整體規劃）/ 2（班級實際教學）
 - 若缺少任一參數，詢問補齊後再繼續
 
 ## 根目錄
 
-`/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
+以 Repo 根目錄為基準（相對路徑）。
+AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從當前已知的工作目錄推斷。
 
 ## 執行步驟
 
@@ -34,33 +36,36 @@ args_format: "[班級代碼] [區塊編號] (例: 9c 2)"
 
 依序讀取：
 
-1. `{workspace}/projects/class-[班級]/working/english-session.yaml`（確認目前位置）
+1. `{workspace}/projects/class-[班級]/[科目]/session.yaml`（確認目前位置）
 2. `{workspace}/projects/class-[班級]/working/students.yaml`（DI 人數與學習優勢資料）
 
 # {workspace} 路徑解析：
 # 從 acl.yaml 取得當前使用者的 workspace 路徑。
-# David：workspaces/Working_Member/Codeowner_David/
+# Codeowner：workspaces/Working_Member/Codeowner_David/
 # 教師：workspaces/Working_Member/Teacher_{姓名}/
+
 3. 依區塊編號讀取對應模板：
-   - 區塊一：`projects/_di-framework/content/english-di-block1.md`
-   - 區塊二：`projects/_di-framework/content/english-di-block2.md`
+   - 區塊一：`projects/_di-framework/content/[科目]-di-block1.md`
+   - 區塊二：`projects/_di-framework/content/[科目]-di-block2.md`
+   （若該科目的模板不存在，提示教師並詢問是否使用通用 DI 框架）
 
 **Reference 模組（課程設計必讀）：**
 
 4. `ai-core/reference/pedagogy-framework.yaml`（年級發展樣態 + 課程鏡像邏輯）
-5. `ai-core/reference/subject-english.yaml`（英文科哲學 + 教師核心任務）
+5. `ai-core/reference/subject-[科目].yaml`（科目哲學 + 教師核心任務）
+   （若該科目的 reference 不存在，跳過並提示教師）
 
 ### Step 2 — 輸出定位摘要
 
 ---
 
-**已就位｜class-[班級]｜英文課區塊[編號]**
+**已就位｜class-[班級]｜[科目]區塊[編號]**
 
 **班級 DI 概況**
-（從 students.yaml 摘取英文科目的 A/B/C/D 人數分布 + 學習優勢分布）
+（從 students.yaml 摘取該科目的 A/B/C/D 人數分布 + 學習優勢分布）
 
 **目前進度**
-（從 english-session.yaml 摘取 current_position，若為空顯示「尚未開始」）
+（從 [科目]/session.yaml 摘取 current_position，若為空顯示「尚未開始」）
 
 **本區塊工作目標**
 （從模板摘取該區塊的 purpose，1–2 句）
@@ -76,5 +81,5 @@ args_format: "[班級代碼] [區塊編號] (例: 9c 2)"
 ## 注意事項
 
 - 若 students.yaml 的 DI 資料欄位為「待填入」，提示：「students.yaml 尚未填入 DI 資料，建議先填入後再進行設計，或繼續並在設計中手動說明班級狀況。」
-- 若 english-session.yaml 顯示目前已在不同區塊，提示教師確認是否切換
-- 區塊二模板若尚未建立，回應：「english-di-block2.md 尚未建立，建議先使用 syllabus 技能完成區塊一。」
+- 若 session.yaml 顯示目前已在不同區塊，提示教師確認是否切換
+- 區塊二模板若尚未建立，回應：「[科目]-di-block2.md 尚未建立，建議先使用 syllabus 技能完成區塊一。」

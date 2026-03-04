@@ -7,7 +7,7 @@ triggers:
   - 學季計畫
   - 規劃學期
 requires_args: true
-args_format: "[班級代碼] (9c/8a/7a)"
+args_format: "[班級代碼] [科目] (例: 9c english、8a history)"
 ---
 
 # skill: syllabus — 啟動學季教學大綱規劃
@@ -17,11 +17,13 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 ## 參數
 
-班級代碼（9c / 8a / 7a）。未提供則詢問：「請問要為哪個班級規劃教學大綱？（9c / 8a / 7a）」
+班級代碼（9c / 8a / 7a）+ 科目（english / history / homeroom 等）。
+未提供則依序詢問班級與科目。
 
 ## 根目錄
 
-`/Users/Dave/Desktop/WaldorfTeacherOS-Repo/`
+以 Repo 根目錄為基準（相對路徑）。
+AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從當前已知的工作目錄推斷。
 
 ## 執行步驟
 
@@ -31,22 +33,24 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 1. `{workspace}/projects/class-[班級]/project.yaml`
 2. `{workspace}/projects/class-[班級]/working/students.yaml`
-3. `{workspace}/projects/class-[班級]/working/english-session.yaml`
-4. `projects/_di-framework/content/english-di-block1.md`
+3. `{workspace}/projects/class-[班級]/[科目]/session.yaml`
+4. `projects/_di-framework/content/[科目]-di-block1.md`
+   （若該科目的 DI Block 1 模板不存在，提示教師：「[科目]-di-block1.md 尚未建立，是否使用通用 DI 框架繼續？」）
 
 # {workspace} 路徑解析：
 # 從 acl.yaml 取得當前使用者的 workspace 路徑。
-# David：workspaces/Working_Member/Codeowner_David/
+# Codeowner：workspaces/Working_Member/Codeowner_David/
 # 教師：workspaces/Working_Member/Teacher_{姓名}/
 
 **Reference 模組（學季規劃必讀）：**
 
-5. `ai-core/reference/subject-english.yaml`（英文科哲學，確保大綱理念定位正確）
+5. `ai-core/reference/subject-[科目].yaml`（科目哲學，確保大綱理念定位正確）
+   （若該科目的 reference 不存在，跳過並提示教師）
 6. `ai-core/reference/pedagogy-framework.yaml`（年級發展樣態，確保教學目標符合年齡特質）
 
 ### Step 2 — 確認是否已有既有大綱
 
-從 `english-session.yaml` 的 `output_files.syllabus_versions` 確認：
+從 `[科目]/session.yaml` 的 `output_files.syllabus_versions` 確認：
 
 - 若已有版本，提示：「此班已有 [版本號] 大綱（[日期]）。要建立新版本，還是修改現有版本？」等待確認後繼續
 - 若尚無版本，直接進入 Step 3
@@ -55,10 +59,10 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 ---
 
-**學季大綱規劃已啟動｜class-[班級]**
+**學季大綱規劃已啟動｜class-[班級]｜[科目]**
 
 **班級 DI 概況**
-（從 students.yaml 摘取英文科目 A/B/C/D 人數 + 學習優勢分布）
+（從 students.yaml 摘取該科目 A/B/C/D 人數 + 學習優勢分布）
 
 **需要收集的資訊（共 8 項）**
 1. 標題與學年度
@@ -74,14 +78,14 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 ### Step 4 — 啟動 Block 1 Step 1
 
-依照 `english-di-block1.md` 的流程，開始逐項收集 8 個必要欄位。
+依照 `[科目]-di-block1.md` 的流程，開始逐項收集 8 個必要欄位。
 
 不一次問所有問題。先詢問前 3 項（教學目標 / 主題方向 / 教材），
 收到回應後繼續收集剩餘項目。
 
 ### Step 5 — 資訊收集完成後，執行 DI 強化
 
-依照 `english-di-block1.md` Step 2，對教師輸入進行 DI 雙軸檢核：
+依照 `[科目]-di-block1.md` Step 2，對教師輸入進行 DI 雙軸檢核：
 - 學習優勢覆蓋度
 - A/B/C/D 矩陣覆蓋度
 
@@ -89,22 +93,22 @@ args_format: "[班級代碼] (9c/8a/7a)"
 
 ### Step 6 — 產出教學大綱
 
-依照 `english-di-block1.md` Step 3 的格式規範產出大綱。
+依照 `[科目]-di-block1.md` Step 3 的格式規範產出大綱。
 
 **版本命名規則：**
 - 新建：v1（若已有則依序遞增）
-- 檔名格式：`english-syllabus-v{N}-{YYYYMMDD}.md`
+- 檔名格式：`[科目]-syllabus-v{N}-{YYYYMMDD}.md`
 
 **雙路徑同時寫入：**
 
 | 路徑 | 用途 |
 |------|------|
-| `{workspace}/projects/class-[班級]/content/english/english-syllabus-v{N}-{YYYYMMDD}.md` | 班級視角 |
-| `{workspace}/projects/class-[班級]/english/content/english-syllabus-v{N}-{YYYYMMDD}.md` | 英文科目視角 |
+| `{workspace}/projects/class-[班級]/content/[科目]/[科目]-syllabus-v{N}-{YYYYMMDD}.md` | 班級視角 |
+| `{workspace}/projects/class-[班級]/[科目]/content/[科目]-syllabus-v{N}-{YYYYMMDD}.md` | 科目視角 |
 
 寫入前確認：「確認產出 [檔名] 並寫入雙路徑嗎？（是 / 否）」
 
-### Step 7 — 更新 english-session.yaml
+### Step 7 — 更新 session.yaml
 
 大綱產出後，自動生成 session-end diff，更新以下欄位：
 - `current_position.block: 一`
@@ -112,7 +116,7 @@ args_format: "[班級代碼] (9c/8a/7a)"
 - `output_files.syllabus_versions`（新增版本記錄）
 - `next_action.description: 進入區塊二，開始第一單元實際教學設計`
 
-詢問：「確認更新 english-session.yaml 嗎？（是 / 否）」
+詢問：「確認更新 [科目]/session.yaml 嗎？（是 / 否）」
 
 ## 注意事項
 
