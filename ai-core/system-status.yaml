@@ -13,14 +13,14 @@
 #           只改有變化的欄位，不重寫整份文件。
 #   主要入口仍是 AI_HANDOFF.md，此文件是補充快照。
 #
-# 最後更新：2026-03-03
+# 最後更新：2026-03-04
 
 system_status:
 
   # ── 系統架構版本 ────────────────────────────────────
   version: v7
   architecture: Workspace + Collaborator + Branch 模式
-  last_major_restructure: 2026-03-03
+  last_major_restructure: 2026-03-04
 
   # ── Workspace 結構 ─────────────────────────────────
   workspace_structure:
@@ -63,7 +63,7 @@ system_status:
     class-9d:
       workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9d/
       syllabus: 尚未開始
-      block: 休眠
+      block: Block 0 Step 0 → 等待啟動 Block 1 學季大綱設計
 
   # ── 未定主課程進度（9C） ────────────────────────────
   ml_undecided_progress:
@@ -101,9 +101,10 @@ system_status:
     skills_save: 完成（ai-core/skills/save.md — 「存檔」觸發 git commit + push）
     skills_pull_request: 完成（ai-core/skills/pull-request.md — 「發 PR」觸發合併申請）
     add_teacher_sh: 完成（自動建立 workspace + 權限 + 個人 branch）
-    quick_start_sh: 完成（含 Check 8 自動偵測並切換個人 branch）
+    quick_start_sh: 完成（含 Check 8 自動偵測並切換個人 branch + Check 9 Claude Code Hook 自動設定）
+    session_init_hook: 完成（.claude/scripts/session-init.py，動態 workspace 掃描，WORKSPACE_ID 驅動）
 
   # ── 系統維護 ────────────────────────────────────────
-  last_context_review: 2026-03-03
+  last_context_review: 2026-03-04
   context_review_path: ai-core/reviews/context-review-20260228.md
   session_log: ai-core/reviews/session-log.md
