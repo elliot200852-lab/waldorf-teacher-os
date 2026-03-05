@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>技能引擎 | TeacherOS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">TeacherOS</a>
+      <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="architecture.html">系統架構</a></li>
+        <li><a href="skills.html">技能引擎</a></li>
+        <li><a href="di-framework.html">差異化教學</a></li>
+        <li><a href="workspace-demo.html">工作範例</a></li>
+        <li><a href="david-live.html">真實現場</a></li>
+        <li><a href="evolution.html">演變歷程</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>技能引擎</h1>
+      <p class="hero-subtitle">教師只需一句口語指令，AI 自動讀取規格並精確執行。</p>
+    </div>
+  </div>
+
+  <main class="page-body">
+
+    <!-- Chapter Quote -->
+    <section class="section section-intro">
+      <div class="container">
+        <blockquote class="chapter-quote reveal">
+          <p>教師只需說一句口語指令，AI 即自動讀取對應規格並執行。</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- How Skills Work -->
+    <section class="section">
+      <div class="container">
+        <h2>技能如何運作</h2>
+        
+        <div class="reveal">
+          <p>TeacherOS 的技能系統將重複性、結構化的教務工作標準化為 15 個自動化 AI 指令。每一個技能都是一份獨立的 .md 規格文件，存放在 <code>ai-core/skills/</code> 資料夾中。</p>
+
+          <p>工作流程簡單而優雅：教師說一句自然口語——可以不夠精確，AI 會進行模糊比對——系統自動讀取對應的技能規格、抓取當下的班級與科目資訊、並按步驟執行。</p>
+
+          <p>這套系統跨越多個 AI 平台運作：Claude Code（斜線指令）、Google Gemini、ChatGPT，以及任何擁有檔案存取權限的 AI 系統。語音友善設計意味著教師不需記住精確指令——只需表達意圖，模糊比對會自動啟動正確的技能。</p>
+
+          <p>換句話說，這不是傳統的「命令列介面」，而是一個<strong>會聽懂教師語言的智能助教系統</strong>。</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>技能架構三層</h3>
+        
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="step-num">1</div>
+            <div class="step-label">
+              <strong>技能規格檔案</strong><br>
+              每個技能是一份 YAML + Markdown 混合規格，定義執行參數、所需資源、輸出邏輯
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="step-num">2</div>
+            <div class="step-label">
+              <strong>模糊語音觸發</strong><br>
+              教師說「進入備課」、「開始上課」、「該備課了」——任何接近的表述都會被正確判斷為 lesson 技能
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="step-num">3</div>
+            <div class="step-label">
+              <strong>自動上下文注入</strong><br>
+              技能啟動時自動讀取當下班級、科目、進度資訊，無需重複說明
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Skill Catalog -->
+    <section class="section">
+      <div class="container">
+        <h2>技能目錄</h2>
+        <p style="margin-bottom: 3rem; color: var(--color-text-secondary);">TeacherOS 的 15 個核心技能，覆蓋課程規劃、課堂備課、學生管理、行政作業與版本控制。</p>
+
+        <div class="card-grid">
+
+          <!-- load -->
+          <div class="card">
+            <h3>載入班級</h3>
+            <span class="card-tag">load</span>
+            <p>讀取班級與科目脈絡，定位工作起點。觸發後自動讀取 <code>session.yaml</code>、班級專案設定、學生名單，建立 AI 的當下工作坐標。</p>
+          </div>
+
+          <!-- status -->
+          <div class="card">
+            <h3>狀態檢查</h3>
+            <span class="card-tag">status</span>
+            <p>快速進度確認。教師問「現在在哪？」系統立刻回報：目前班級、科目、區塊進度、已完成課數、下一步應做的工作。</p>
+          </div>
+
+          <!-- syllabus -->
+          <div class="card">
+            <h3>學期大綱</h3>
+            <span class="card-tag">syllabus</span>
+            <p>啟動學期層級教學計畫。讀取課程理念、學生發展目標、主課程區塊規劃、評量架構，生成完整的 20 週學期路線圖。</p>
+          </div>
+
+          <!-- lesson -->
+          <div class="card">
+            <h3>課堂備課</h3>
+            <span class="card-tag">lesson</span>
+            <p>進入單堂教學設計流程。指定班級、科目、區塊號碼後，系統自動拉出學生特徵、教學進度、差異化框架，指引教師完成該堂課的設計。</p>
+          </div>
+
+          <!-- session-end -->
+          <div class="card">
+            <h3>收尾保存</h3>
+            <span class="card-tag">session-end</span>
+            <p>談話結束前的同步檢查點。彙整本次工作內容、更新進度日誌、確認所有變動已妥善記錄，為下一次工作做好準備。</p>
+          </div>
+
+          <!-- di-check -->
+          <div class="card">
+            <h3>差異化檢核</h3>
+            <span class="card-tag">di-check</span>
+            <p>快速的差異化教學合規檢查。審視課程設計是否涵蓋多個難度層次、多元學習模式與支持方案，確保沒有遺漏任何學生。</p>
+          </div>
+
+          <!-- ref -->
+          <div class="card">
+            <h3>載入參考資源</h3>
+            <span class="card-tag">ref</span>
+            <p>載入特定知識背景模組。教師可請求「載入教學哲學」、「載入英文教學原則」、「載入七年級發展特徵」，AI 會注入對應的深層參考框架。</p>
+          </div>
+
+          <!-- block-end -->
+          <div class="card">
+            <h3>區塊結束</h3>
+            <span class="card-tag">block-end</span>
+            <p>主課程區塊的教學反思與總結。15 堂區塊完成後的沉澱期——回顧學生成長、蒐集反饋、準備過渡到下一個主題區塊。</p>
+          </div>
+
+          <!-- rhythm -->
+          <div class="card">
+            <h3>課堂節奏設計</h3>
+            <span class="card-tag">rhythm</span>
+            <p>設計教室吸氣呼氣的節奏結構。從課堂開場、專注期、過渡、收尾，逐一思考學生心魂所需的節奏形式與活動轉換。</p>
+          </div>
+
+          <!-- homeroom -->
+          <div class="card">
+            <h3>導師業務</h3>
+            <span class="card-tag">homeroom</span>
+            <p>導師職務的全面支援：班級經營個案、家庭接洽紀錄、班級圈活動設計、衝突調解、學生心理觀察。</p>
+          </div>
+
+          <!-- student-note -->
+          <div class="card">
+            <h3>學生觀察紀錄</h3>
+            <span class="card-tag">student-note</span>
+            <p>建立學生個別觀察檔案。記錄細微的行為變化、學習突破、情緒模式、課堂參與品質，為差異化教學與學生談話提供實證基礎。</p>
+          </div>
+
+          <!-- parent-letter -->
+          <div class="card">
+            <h3>家長信撰寫</h3>
+            <span class="card-tag">parent-letter</span>
+            <p>生成區塊家長通信的初稿。融合班級整體進度、個別學生亮點、教學理念、本區塊的深層目標，產生溫暖而專業的家長通訊。</p>
+          </div>
+
+          <!-- save -->
+          <div class="card">
+            <h3>存檔發送</h3>
+            <span class="card-tag">save</span>
+            <p>將本次工作成果存檔至本地版本庫。整理所有新產出的備課內容、課程設計、學生紀錄、家長信，準備推送至雲端。</p>
+          </div>
+
+          <!-- pull-request -->
+          <div class="card">
+            <h3>發送合併請求</h3>
+            <span class="card-tag">pull-request</span>
+            <p>生成並發送 GitHub 合併請求。自動撰寫 PR 說明、標籤分類、連結相關議題，將本地工作同步至團隊版本庫。</p>
+          </div>
+
+          <!-- sync-cowork -->
+          <div class="card">
+            <h3>同步協作空間</h3>
+            <span class="card-tag">sync-cowork</span>
+            <p>編譯「協作資料夾指令」。將本週工作內容轉譯為 Google Drive 同步指令，使協作教師、家長、行政人員能即時掌握最新進度。</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Deep Dive: lesson Skill -->
+    <section class="section">
+      <div class="container">
+        <h2>深入示例：「課堂備課」技能</h2>
+        <p style="margin-bottom: 2rem; color: var(--color-text-secondary);">以最常用的 lesson 技能為例，展示技能如何精確執行。</p>
+
+        <div class="collapse-group">
+          <div class="collapse-item">
+            <div class="collapse-header">
+              <span>技能參數與觸發邏輯</span>
+              <span class="collapse-arrow">▼</span>
+            </div>
+            <div class="collapse-body">
+              <div class="collapse-content">
+                <p><strong>典型觸發語句：</strong></p>
+                <ul>
+                  <li>「進入備課 9C English 第 3 區塊」</li>
+                  <li>「開始上課——八年級歷史」</li>
+                  <li>「該備課了」（系統會詢問班級與科目）</li>
+                </ul>
+
+                <p><strong>必需參數：</strong></p>
+                <ul>
+                  <li><code>[class-code]</code> — 班級代碼，如 7A、8B、9C</li>
+                  <li><code>[subject]</code> — 科目，如 English、History、Main Lesson</li>
+                  <li><code>[block-number]</code> — 區塊編號（可選，預設為當前區塊）</li>
+                </ul>
+
+                <p><strong>參數模糊比對：</strong>教師說「進入備課」時，系統會詢問班級與科目；說「9C 英文」時，系統自動判讀為 class=9C, subject=English；說「該備課了」時觸發狀態檢查以決定工作對象。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="collapse-item">
+            <div class="collapse-header">
+              <span>執行流程：三步驟</span>
+              <span class="collapse-arrow">▼</span>
+            </div>
+            <div class="collapse-body">
+              <div class="collapse-content">
+                <div class="flow-steps">
+                  <div class="flow-step">
+                    <div class="step-num">第一步</div>
+                    <div class="step-label">
+                      <strong>讀取上下文檔案</strong><br>
+                      <code>session.yaml</code>（當下工作狀態）<br>
+                      <code>class-9C/project.yaml</code>（班級年度計畫）<br>
+                      <code>class-9C/students.yaml</code>（學生名單與差異化基線）<br>
+                      <code>class-9C/english/block-3-template.yaml</code>（區塊教學計畫）<br>
+                      <code>ai-core/references/subject-english.yaml</code>（英文教學哲學）
+                    </div>
+                  </div>
+
+                  <div class="flow-step">
+                    <div class="step-num">第二步</div>
+                    <div class="step-label">
+                      <strong>輸出定位摘要</strong><br>
+                      班級差異化整體掃描（該班有哪些學習類型、支持需求、優秀表現者）<br>
+                      當下進度摘報（區塊已進行 X 堂，還剩 Y 堂；上堂課的關鍵亮點與待補強點）<br>
+                      今堂課的目標定位（該堂在區塊弧線中的位置、今日教學目標的深層意義）
+                    </div>
+                  </div>
+
+                  <div class="flow-step">
+                    <div class="step-num">第三步</div>
+                    <div class="step-label">
+                      <strong>進入課程設計工作流</strong><br>
+                      詢問教師：「想重點教什麼？」「想看到學生做出什麼？」「哪類學生需要什麼支持？」<br>
+                      協助教師逐層設計：開場節奏 → 核心活動 → 差異化配置 → 收尾與銜接<br>
+                      實時輸出課程架構、教材素材、評量方式、備案方案
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="collapse-item">
+            <div class="collapse-header">
+              <span>輸出成果範例</span>
+              <span class="collapse-arrow">▼</span>
+            </div>
+            <div class="collapse-body">
+              <div class="collapse-content">
+                <p><strong>lesson 技能會產出的課程設計包括：</strong></p>
+                <ul>
+                  <li>課堂進度表（分鐘級別的時間配置）</li>
+                  <li>三層差異化設計（基礎、核心、延伸活動）</li>
+                  <li>學生參與清單（誰做什麼，以及觀察重點）</li>
+                  <li>教學素材與提問清單</li>
+                  <li>應變預案（若 X 情況發生，則改為 Y）</li>
+                  <li>課後觀察紀錄表</li>
+                </ul>
+
+                <p>所有輸出都存放在 <code>class-9C/english/lesson-[date].md</code>，便於日後檢索與迭代優化。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Reference Module System -->
+    <section class="section">
+      <div class="container">
+        <h2>參考資源模組系統</h2>
+        <p style="margin-bottom: 2rem; color: var(--color-text-secondary);">四個核心知識背景模組，根據工作情境自動注入，為 AI 輸出提供教學哲學與發展學基礎。</p>
+
+        <div class="card-grid">
+
+          <div class="card" style="border-left: 4px solid var(--color-accent);">
+            <h3>教學哲學框架</h3>
+            <span class="card-tag" style="background: var(--color-accent); color: var(--color-dark);">pedagogy-framework.yaml</span>
+            <p>華德福教育的核心信念、人智學七年週期、思考・情感・意志三層教學、課程作為隱蔽鷹架的邏輯。課程設計、區塊規劃、長期目標相關工作自動觸發此模組。</p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid var(--color-accent);">
+            <h3>英文教學特殊性</h3>
+            <span class="card-tag" style="background: var(--color-accent); color: var(--color-dark);">subject-english.yaml</span>
+            <p>語言作為塑造力的施泰納理解、英語民族性格與文化、母語學習 vs 外語學習的差異、英文課的文化橋樑角色。英文科工作自動載入此模組。</p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid var(--color-accent);">
+            <h3>歷史教學特殊性</h3>
+            <span class="card-tag" style="background: var(--color-accent); color: var(--color-dark);">subject-history.yaml</span>
+            <p>人類意識演化與兒童心理發展的平行對應、傳記式教學與敘事結構、台灣主體意識的歷史課程定位。歷史科工作自動載入此模組。</p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid var(--color-accent);">
+            <h3>學生發展特徵</h3>
+            <span class="card-tag" style="background: var(--color-accent); color: var(--color-dark);">student-development.yaml</span>
+            <p>七、八、九年級的心理危機、星芒體發展狀態、教室表現特徵、教師應對策略、課程如何成為發展鷹架。導師業務、學生觀察、班級經營相關工作自動載入此模組。</p>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: rgba(212, 175, 105, 0.05); border-left: 4px solid var(--color-accent); border-radius: 4px;">
+          <p><strong>模組注入的智能設計：</strong>教師不需主動說「載入教學哲學」——只要開始備課，系統會自動偵測工作類型，在正確的時刻注入對應的知識背景。例如，lesson 技能會自動載入 pedagogy-framework + subject-specific 模組；student-note 技能會自動載入 student-development 模組。結果是教師的對話始終被最相關的教學理念所環繞。</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Closing -->
+    <section class="section">
+      <div class="container">
+        <h2>技能系統的終極目標</h2>
+        <div class="reveal">
+          <p>技能引擎並非為了「自動化教學」，而是為了<strong>解放教師的精力</strong>。透過標準化與自動化那些結構清晰、步驟明確的教務工作——資訊搜集、版本管理、進度同步、家長溝通——教師得以將 100% 的生命力回歸到<strong>不可被自動化的核心工作</strong>上：</p>
+
+          <ul style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+            <li><strong>現場觀察與臨機應變</strong> — 凝視學生眼睛，捕捉細微情感變化，在課堂中即興調整</li>
+            <li><strong>心靈陪伴與修復</strong> — 聆聽學生，透過對話修復班級衝突，見證心理成長</li>
+            <li><strong>藝術與創意示範</strong> — 在手工藝、朗誦、音樂、戲劇中示範真實的創意過程</li>
+            <li><strong>道德榜樣與意義架構</strong> — 作為一個完整的人類，向學生展示如何面對複雜世界</li>
+          </ul>
+
+          <p>技能引擎的真實定位，就是<strong>最高度的技術自動化，是為了成就最純粹的低科技人文互動</strong>。</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>TeacherOS v7 — 台灣華德福實驗學校・AI 協作教學系統</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://github.com/elliot200852-lab/waldorf-teacher-os" target="_blank">GitHub</a>
+      &nbsp;·&nbsp; 設計者：David &nbsp;·&nbsp; 2026
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

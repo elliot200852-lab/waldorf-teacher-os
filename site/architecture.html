@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>系統架構 - TeacherOS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">TeacherOS</a>
+      <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="architecture.html">系統架構</a></li>
+        <li><a href="skills.html">技能引擎</a></li>
+        <li><a href="di-framework.html">差異化教學</a></li>
+        <li><a href="workspace-demo.html">工作範例</a></li>
+        <li><a href="david-live.html">真實現場</a></li>
+        <li><a href="evolution.html">演變歷程</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>系統架構</h1>
+      <p class="subtitle">每位教師都值得擁有一個安全、獨立、完全由自己掌控的工作空間。<br>
+      TeacherOS 的工程基礎，確保了這份信任。</p>
+    </div>
+  </section>
+
+  <!-- 前言 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-intro">
+        <p>當教師開始與 AI 協作時，第一個疑問往往不是「AI 能做什麼」，而是「我的課程資料在哪裡？」「系統如何保障我的教學自主權？」「多個 AI 之間如何協調運作？」</p>
+        <p>TeacherOS 的架構設計回應這些問題。它不是一個龐大的雲端平台，而是一個「有脊椎骨的系統」——既有堅實的共用基礎，也保留每位教師的完整自主空間。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三層記憶模型 -->
+  <section class="section">
+    <div class="container">
+      <h2>三層記憶模型：分層、分權、分工</h2>
+      <p style="margin-bottom: 2rem;">如果把 TeacherOS 比作一座建築，三層記憶模型就是它的結構系統。下層承載共用的教育哲學，上層容納每位教師獨特的教學世界。中間層則像樞紐一樣，連結理念與實踐。</p>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <div class="step-label">
+            <strong>系統核心</strong>
+            <span style="display: block; font-size: 0.9rem; margin-top: 0.5rem;">ai-core/</span>
+          </div>
+          <p style="font-size: 0.95rem; margin-top: 0.5rem;">TeacherOS 的思想根源——兩份 READ-ONLY 文件定義了整個系統的教育立場。<strong>teacheros.yaml</strong> 是路由樞紐，決定了資訊流如何從各層向教師流動；<strong>teacheros-foundation.yaml</strong> 是華德福教育的共用根基，確保每位教師都從同一套教育哲學出發。沒有教師可以改寫這一層——正如沒有人可以改寫人智學的基本原理一樣。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <div class="step-label">
+            <strong>共用框架</strong>
+            <span style="display: block; font-size: 0.9rem; margin-top: 0.5rem;">projects/_di-framework/</span>
+          </div>
+          <p style="font-size: 0.95rem; margin-top: 0.5rem;">差異化教學的通用框架，跨越所有班級與科目。這裡不存放具體課程，而是存放設計邏輯——學習階段的定義、評估方式、上課節奏的原則。每一堂課的設計都必須載入並參考這份框架，就像建築師在設計每棟房子前必須參照建築法規一樣。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <div class="step-label">
+            <strong>教師個人空間</strong>
+            <span style="display: block; font-size: 0.9rem; margin-top: 0.5rem;">{workspace}/</span>
+          </div>
+          <p style="font-size: 0.95rem; margin-top: 0.5rem;">每位教師的獨立領地。在這裡，教師擁有 100% 的自主權。<strong>teacheros-personal.yaml</strong> 記錄教師的身份、教學風格與長期目標；<strong>projects/class-{code}/</strong> 存放班級數據、學生資訊、課程進度；<strong>workspace.yaml</strong> 則是教師當前工作狀態的即時快照。這些文件只有教師及其信任的 AI 可以修改。</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: rgba(218, 165, 32, 0.08); border-left: 4px solid var(--gold); border-radius: 4px;">
+        <h3 style="margin-top: 0; font-size: 1.1rem;">三層的權力分配</h3>
+        <ul style="line-height: 1.8;">
+          <li><strong>第一層（系統核心）：</strong>讀取專用，確保教育哲學的一致性</li>
+          <li><strong>第二層（共用框架）：</strong>參考導向，教師可選擇與之互動的程度</li>
+          <li><strong>第三層（個人空間）：</strong>完全掌控，教師的想法、決定、教學內容都在這裡扎根</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 五步載入序列 -->
+  <section class="section">
+    <div class="container">
+      <h2>五步載入序列：從理念到實踐</h2>
+      <p style="margin-bottom: 2rem;">每當教師與 AI 開始一次工作對話，系統的喚醒就遵循一個固定的五步序列。這個序列就像一場晨圈——從宇宙層次逐漸收縮到當下這一堂課。</p>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <div class="step-label">華德福共用根基</div>
+          <p><code>teacheros-foundation.yaml</code> — 加載整個系統的教育世界觀。人類七年週期、星芒體發展、意義架構師的角色定位……所有後續的課程設計都從這份宣言書出發。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <div class="step-label">教師個人身份</div>
+          <p><code>teacheros-personal.yaml</code> — 加載「你是誰」。David 教 7-9 年級的英文、歷史與跨領域課程；他使用語音輸入，思考方式是系統建構型……這一層將系統的一般性轉化為教師的特殊性。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <div class="step-label">差異化教學框架</div>
+          <p><code>_di-framework/project.yaml</code> — 加載課程設計的核心框架。無論今天要上哪一班、教哪一科，都必須經過這份框架的篩選——確保課程內建差異化的思維，照顧到班級中不同能力與風格的學生。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-num">4</div>
+          <div class="step-label">班級脈絡</div>
+          <p><code>class-{code}/project.yaml</code> — 加載這一班的故事。班級代碼、學生名單、班級動力、目前的教學進度、上一次課的完成狀況……系統現在知道「今天的聽眾是誰」。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-num">5</div>
+          <div class="step-label">科目進度錨點</div>
+          <p><code>{subject}/session.yaml</code> — 加載今日的具體工作。英文課還是歷史課？這個教學區塊的主題是什麼？上次課進行到哪裡？學生提出了什麼問題？系統現在可以開始工作了。</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: rgba(218, 165, 32, 0.08); border-left: 4px solid var(--gold); border-radius: 4px;">
+        <p style="margin: 0; font-style: italic;">五步序列的邏輯是<strong>從宇宙性到特殊性</strong>。從「人類為什麼需要教育」逐漸收縮到「David 的 7B 班今天的英文課需要什麼」。每一步都是對焦，直到系統和教師的視線在同一個教室裡相遇。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workspace 隔離機制 -->
+  <section class="section">
+    <div class="container">
+      <h2>Workspace 隔離：各自獨立，各自安全</h2>
+      <p style="margin-bottom: 2rem;">TeacherOS 最核心的承諾是：<strong>你的課程資料只屬於你</strong>。系統如何實現這一點？</p>
+
+      <div class="card-grid" style="grid-template-columns: 1fr 1fr 1fr; margin-bottom: 2rem;">
+        <div class="card">
+          <h3 style="margin-top: 0; font-size: 1rem;">只讀區</h3>
+          <p style="font-size: 0.95rem;"><code>ai-core/</code><br><code>reference/</code><br><code>_di-framework/</code><br><code>skills/</code></p>
+          <p style="font-size: 0.9rem; color: var(--text-light);">教師從這些資料夾中讀取，永遠無法寫入。共用智慧的來源地，但不是個人創作的地方。</p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top: 0; font-size: 1rem;">教師專屬區</h3>
+          <p style="font-size: 0.95rem;"><code>teacheros-personal.yaml</code><br><code>workspace.yaml</code><br><code>projects/class-*/</code><br><code>content/</code></p>
+          <p style="font-size: 0.9rem; color: var(--text-light);">100% 由教師掌控。課程資料、班級進度、教學反思、產出的教材，全部在這裡。</p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top: 0; font-size: 1rem;">樣板區</h3>
+          <p style="font-size: 0.95rem;"><code>workspaces/_template/</code></p>
+          <p style="font-size: 0.9rem; color: var(--text-light);">新教師加入時的複製來源。包含所有必要的資料夾結構與初始文件，確保快速上手。</p>
+        </div>
+      </div>
+
+      <div style="padding: 2rem; background: rgba(29, 28, 30, 0.5); border-radius: 8px; margin-bottom: 2rem;">
+        <h3 style="margin-top: 0; font-size: 1.05rem;">參考工作範例</h3>
+        <p style="margin: 1rem 0 0 0; font-size: 0.95rem;">系統內存有一份「Teacher Claude」完成的參考案例（<code>workspaces/reference/</code>）。新教師可以查看它，理解課程設計的實際樣貌，但永遠無法直接修改——這確保了參考的純淨性，也保護了 Claude 的工作成果。</p>
+      </div>
+
+      <div style="padding: 2rem; background: rgba(218, 165, 32, 0.08); border-left: 4px solid var(--gold); border-radius: 4px;">
+        <h3 style="margin-top: 0; font-size: 1.05rem;">隔離的深層意義</h3>
+        <p style="margin: 1rem 0 0 0;">Workspace 隔離不只是技術設計，更是對教師自主權的哲學承諾。在華德福體制外教育中，教師本身即課程。你的思考、決定、反思不應該與其他人的混淆。TeacherOS 透過資料夾隔離這一物理形式，將「教師主體性」具體化。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 多 AI 引擎協作 -->
+  <section class="section">
+    <div class="container">
+      <h2>多 AI 引擎協作：不同的工具，共同的世界觀</h2>
+      <p style="margin-bottom: 2rem;">TeacherOS 不依賴單一的 AI。教師可能在 Claude Code 上做複雜的多步任務，在 Google Gemini 上進行日常對話，也許還會用到其他工具。多個 AI 如何協調？</p>
+
+      <div class="collapse-group">
+        <div class="collapse-item">
+          <div class="collapse-header">
+            <span class="collapse-arrow">▸</span>
+            <strong>Claude Code：深度工作引擎</strong>
+          </div>
+          <div class="collapse-body">
+            <div class="collapse-content">
+              <p><strong>角色：</strong>主課程框架設計、跨週期課程架構、複雜數據分析</p>
+              <p><strong>特點：</strong>原生支援 Bash、Git、檔案系統操作；適合多步驟、需要檔案操作的任務</p>
+              <p><strong>工作方式：</strong>CLI 為主，支援斜杠指令（slash commands）；教師可以要求「生成 7B 班下週的三週主課程框架」，Claude Code 會執行完整的工作流</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapse-item">
+          <div class="collapse-header">
+            <span class="collapse-arrow">▸</span>
+            <strong>Google Gemini：日常對話夥伴</strong>
+          </div>
+          <div class="collapse-body">
+            <div class="collapse-content">
+              <p><strong>角色：</strong>快速問答、課程思路討論、聲音友善</p>
+              <p><strong>特點：</strong>能與 IDE 無縫整合；接納語音輸入，特別適合 David 的語音工作模式</p>
+              <p><strong>工作方式：</strong>即時對話驅動；教師用語音說「我想設計一個關於法國大革命的課程，但班上有些學生對歷史不感興趣」，Gemini 可以即時激盪想法</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapse-item">
+          <div class="collapse-header">
+            <span class="collapse-arrow">▸</span>
+            <strong>Continuity：時間記憶機制</strong>
+          </div>
+          <div class="collapse-body">
+            <div class="collapse-content">
+              <p><strong>角色：</strong>在不同 AI 之間傳遞脈絡</p>
+              <p><strong>機制：</strong>教師在 Gemini 上思考了課程方向後，可以切換到 Claude Code 執行具體實作。<code>session.yaml</code> 充當「交棒機制」——前一個 AI 的工作結果被記錄下來，新的 AI 讀取它，整個協作流暢地接續</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapse-item">
+          <div class="collapse-header">
+            <span class="collapse-arrow">▸</span>
+            <strong>Skill Access：共同的技能庫</strong>
+          </div>
+          <div class="collapse-body">
+            <div class="collapse-content">
+              <p><strong>路徑：</strong><code>ai-core/skills/</code> 是所有 AI 引擎的共同技能庫</p>
+              <p><strong>用途：</strong>預定義的工作流、教學模板、課程設計模式；任何 AI 都可以調用這些 Skill，確保一致的輸出品質</p>
+              <p><strong>範例：</strong>「生成差異化作業」Skill 無論由哪個 AI 執行，輸出結構都是一致的</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: rgba(218, 165, 32, 0.08); border-left: 4px solid var(--gold); border-radius: 4px;">
+        <h3 style="margin-top: 0; font-size: 1.05rem;">多引擎的邏輯</h3>
+        <p style="margin: 1rem 0 0 0;">不同的 AI 有不同的擅長領域。Claude Code 擅長架構化思維與檔案操作；Gemini 親切而即時。TeacherOS 不強制教師選擇一個，而是讓教師根據當下需求選擇合適的工具。所有 AI 都讀同一套系統文件，說著同一套教育語言，因此無論何時切換，脈絡不會斷裂。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Session 協議 -->
+  <section class="section">
+    <div class="container">
+      <h2>Session 協議：每次對話的啟動儀式</h2>
+      <p style="margin-bottom: 2rem;">當教師和 AI 開始一次新的工作對話時，會發生什麼？</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+        <div style="background: rgba(29, 28, 30, 0.5); padding: 2rem; border-radius: 8px;">
+          <h3 style="margin-top: 0; font-size: 1.05rem;">Session 開始</h3>
+          <ol style="line-height: 1.8; font-size: 0.95rem;">
+            <li>依序載入五層 YAML 文件（上述五步序列）</li>
+            <li>透過 <code>acl.yaml</code> 確認使用者身份（David？）</li>
+            <li>檢查 <code>workspace.yaml</code> 中的「當前位置」——教師上次工作停在哪裡？</li>
+            <li>AI 向教師報告系統現狀：「David，今天是 3 月 4 日。你上次工作停在 7B 班英文課的『莎翁戲劇導讀』單元。下一堂課是明天下午 2 點。」</li>
+            <li>等待教師的指令</li>
+          </ol>
+        </div>
+
+        <div style="background: rgba(29, 28, 30, 0.5); padding: 2rem; border-radius: 8px;">
+          <h3 style="margin-top: 0; font-size: 1.05rem;">Session 結束</h3>
+          <ol style="line-height: 1.8; font-size: 0.95rem;">
+            <li>只更新 YAML 中有實際改變的區塊（不重寫整個檔案）</li>
+            <li>新產出的教材存入 <code>content/{class}/{subject}/</code></li>
+            <li>更新 <code>session.yaml</code> 的「當前位置」，記錄今天完成了什麼</li>
+            <li>AI 總結：「今天完成了：(1) 7B 班英文課的三週莎翁戲劇架構 (2) 差異化作業設計。下一步是……」</li>
+          </ol>
+        </div>
+      </div>
+
+      <div style="padding: 2rem; background: rgba(218, 165, 32, 0.08); border-left: 4px solid var(--gold); border-radius: 4px;">
+        <h3 style="margin-top: 0; font-size: 1.05rem;">聲音輸入協議</h3>
+        <p style="margin: 1rem 0 0 0;">因為 David 主要使用語音輸入，Session 協議特別設計了對「模糊指令」的理解機制。</p>
+        <p style="margin: 0.5rem 0 0 0;">教師可能語音說：「我想幫 8B 班設計一個關於工業革命的主課程。」AI 不會立即執行，而是先澄清：「你想要 3 週還是 4 週的課程？使用歷史為主線，還是跨領域混合？班上有沒有特殊學習需求的學生？」確保「模糊指令」被精確化，再開始工作。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 系統安全與信任 -->
+  <section class="section">
+    <div class="container">
+      <h2>系統安全與信任架構</h2>
+      <p style="margin-bottom: 2rem;">TeacherOS 如何確保教師的課程資料安全？核心邏輯很簡單：<strong>最高的自動化，換取最純粹的人文互動</strong>。</p>
+
+      <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
+        <div class="card">
+          <h3 style="margin-top: 0; font-size: 1rem;">讀寫權限管理</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light);">系統核心與共用框架是 READ-ONLY。只有教師的個人 Workspace 可以被寫入。權限邊界清晰，無法越界。</p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top: 0; font-size: 1rem;">身份驗證層</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light);">每次 Session 開始都透過 <code>acl.yaml</code> 驗證身份。非授權使用者無法讀取特定教師的課程資料。</p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top: 0; font-size: 1rem;">版本追蹤</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light);">所有 YAML 更新都帶有時間戳。教師可以回溯課程設計的演變歷程，理解每個決定是何時做出的。</p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top: 0; font-size: 1rem;">備份機制</h3>
+          <p style="font-size: 0.95rem; color: var(--text-light);">每位教師的 Workspace 都有自動備份。意外刪除或修改可以快速復原，保護教學成果。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 架構的人文意義 -->
+  <section class="section">
+    <div class="container">
+      <div class="chapter-quote">
+        <p>「TeacherOS 的架構設計不是為了最大化自動化，而是為了保護教師的精神自主權。</p>
+        <p>在 AI 時代，最危險的不是機器會思考，而是教師漸漸放棄思考——將課程設計權交給演算法，將教學決定權交給數據。</p>
+        <p>三層記憶模型、五步載入序列、Workspace 隔離……看起來是技術細節。但它們的真正目的是：<strong>確保教師始終是教學的設計者與決策者，AI 永遠只是工具。</strong>」</p>
+      </div>
+
+      <p style="margin-top: 3rem; text-align: center; font-size: 1rem; line-height: 1.8;">
+        每個架構決定都回答同一個問題：<br>
+        <strong>我們如何保護教師做一個真正的人，而不是被技術淹沒？</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- 下一步 -->
+  <section class="section" style="background: rgba(218, 165, 32, 0.05);">
+    <div class="container">
+      <h2>下一步</h2>
+      <p>現在你已經理解了 TeacherOS 的骨骼結構。準備好看看它如何在真實教學中運作嗎？</p>
+      <div style="margin-top: 2rem;">
+        <a href="skills.html" style="display: inline-block; padding: 1rem 2rem; background: var(--gold); color: var(--bg); text-decoration: none; border-radius: 4px; font-weight: 500; transition: background 0.2s;">探索技能引擎 →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>TeacherOS v7 — 台灣華德福實驗學校・AI 協作教學系統</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://github.com/elliot200852-lab/waldorf-teacher-os" target="_blank">GitHub</a>
+      &nbsp;·&nbsp; 設計者：David &nbsp;·&nbsp; 2026
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

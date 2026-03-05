@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>演變歷程 — TeacherOS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══ 導覽列 ═══ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">TeacherOS</a>
+    <button class="nav-toggle" aria-label="選單">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="architecture.html">系統架構</a></li>
+      <li><a href="skills.html">技能引擎</a></li>
+      <li><a href="di-framework.html">差異化教學</a></li>
+      <li><a href="workspace-demo.html">工作範例</a></li>
+      <li><a href="david-live.html">真實現場</a></li>
+      <li><a href="evolution.html">演變歷程</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-body">
+
+<!-- ═══ Hero ═══ -->
+<header class="hero">
+  <p class="hero-label">Chapter 6 &mdash; 系統演化史</p>
+  <h1>從一個人的備課筆記<br>到多人協作的教學操作系統</h1>
+  <p class="hero-sub">七個版本、四十天。每一次重構都是對「教師真正需要什麼」的更深回答。<br>這不是軟體開發史，這是一位華德福教師學會駕馭技術的意識演化歷程。</p>
+</header>
+
+<!-- ═══ 演化時間軸 ═══ -->
+<section class="section">
+  <h2 class="section-title">版本演化時間軸</h2>
+  <p class="section-intro">每個版本都解決了一個真實的教學痛點。從最初的個人備課記憶，到今日支援多位教師同時工作的完整系統——演化的動力始終是教室裡的真實需求。</p>
+
+  <!-- v1 -->
+  <div class="collapse-item reveal">
+    <div class="collapse-header">
+      <span>v1 — 記憶的起點：個人備課 YAML</span>
+      <span class="collapse-icon">+</span>
+    </div>
+    <div class="collapse-body">
+      <div class="full-doc">
+        <h4>核心問題</h4>
+        <p>每次開啟新的 AI 對話，教師都必須從零開始解釋自己是誰、教什麼、學生在哪個階段。AI 是一個失憶的天才——能力超群但永遠不記得你。</p>
+
+        <h4>解決方案</h4>
+        <p>建立第一份 <code>teacheros.yaml</code>——一個隨時可以餵給任何 AI 的教師身份檔案。包含教師姓名、教學科目、華德福教育哲學的核心原則、學生的發展階段描述。</p>
+
+        <h4>意義</h4>
+        <p>這是「意義架構師」概念的萌芽。教師第一次意識到：<strong>我不需要學程式，我需要學會告訴機器「我是誰」。</strong>定義自己的身份，就是定義 AI 的行為邊界。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- v2 -->
+  <div class="collapse-item reveal">
+    <div class="collapse-header">
+      <span>v2 — 結構的萌芽：三層記憶模型</span>
+      <span class="collapse-icon">+</span>
+    </div>
+    <div class="collapse-body">
+      <div class="full-doc">
+        <h4>核心問題</h4>
+        <p>單一檔案越來越龐大。教育哲學、班級資料、備課進度全部混在一起，AI 讀取時既慢又混亂。需要一個層次分明的記憶結構。</p>
+
+        <h4>解決方案</h4>
+        <p>將單一 YAML 拆分為三層記憶架構：</p>
+        <table>
+          <thead><tr><th>層次</th><th>內容</th><th>更新頻率</th></tr></thead>
+          <tbody>
+            <tr><td>系統核心層</td><td>華德福教育哲學、發展心理學、AI 使命宣言</td><td>極少變動</td></tr>
+            <tr><td>專案框架層</td><td>差異化教學規則、品質標準、模板</td><td>學期初設定</td></tr>
+            <tr><td>工作進度層</td><td>session.yaml 進度錨點、備課內容</td><td>每次對話更新</td></tr>
+          </tbody>
+        </table>
+
+        <h4>意義</h4>
+        <p>教師開始像系統架構師一樣思考：哪些知識是永恆的？哪些是會變動的？如何讓 AI 在最短時間內進入工作狀態？這是教育工作者第一次有意識地設計「認知載入協議」。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- v3 -->
+  <div class="collapse-item reveal">
+    <div class="collapse-header">
+      <span>v3 — 差異化的覺醒：DI 雙軸框架</span>
+      <span class="collapse-icon">+</span>
+    </div>
+    <div class="collapse-body">
+      <div class="full-doc">
+        <h4>核心問題</h4>
+        <p>AI 產出的教案漂亮但「平均」——每個學生拿到一樣的內容。華德福教育的核心是看見每一個獨特的孩子，而非生產標準化教案。</p>
+
+        <h4>解決方案</h4>
+        <p>建立差異化教學（DI）雙軸框架，成為所有課程設計的強制性錨點：</p>
+        <p><strong>軸一：學習風格偏好</strong>——語言型、視覺型、動覺型、藝術型四種路徑，每堂課至少覆蓋兩種。</p>
+        <p><strong>軸二：能力 × 動機矩陣（ABCD）</strong>——A 組（高能力高動機：深化挑戰）、B 組（高能力低動機：點燃熱情）、C 組（低能力高動機：鷹架支持）、D 組（低能力低動機：先建立安全感）。</p>
+
+        <h4>意義</h4>
+        <p>這是系統從「幫教師產出教案」躍升為「幫教師看見學生」的轉折點。AI 不再是打字機，而是差異化教學的設計夥伴。品質標準不再是「好不好看」，而是「有沒有照顧到每一個孩子」。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- v4 -->
+  <div class="collapse-item reveal">
+    <div class="collapse-header">
+      <span>v4 — 進度的錨點：Session 協議與技能系統</span>
+      <span class="collapse-icon">+</span>
+    </div>
+    <div class="collapse-body">
+      <div class="full-doc">
+        <h4>核心問題</h4>
+        <p>教師在不同 AI 工具之間切換（Claude Code、Gemini），每次都要重新說明「上次做到哪了」。多個 AI 無法接力工作。</p>
+
+        <h4>解決方案</h4>
+        <p>建立 <code>session.yaml</code> 作為進度錨點——每次對話結束前，AI 必須更新當前的 Block、Step、下一步行動。下一個 AI 開啟時，讀取 session.yaml 即可從上次停止處繼續。</p>
+        <p>同時建立技能系統（Skills）：將常見工作流程封裝為標準化的 Markdown 規格檔。教師說「進入備課」，AI 自動讀取 <code>lesson.md</code> 技能檔，按步驟執行。不同 AI 工具讀取同一份技能檔，產出行為一致。</p>
+
+        <h4>意義</h4>
+        <p>系統第一次具備了「工具無關性」——技能正本是純 Markdown，任何有檔案讀取能力的 AI 都能執行。教師的智慧被編碼在文字檔中，不被任何特定 AI 平台綁架。這是真正的數位自主權。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- v5 -->
+  <div class="collapse-item reveal">
+    <div class="collapse-header">
+      <span>v5 — 品質的尺度：輸出標準與模板系統</span>
+      <span class="collapse-icon">+</span>
+    </div>
+    <div class="collapse-body">
+      <div class="full-doc">
+        <h4>核心問題</h4>
+        <p>AI 產出的教案品質不穩定——有時出色，有時遺漏關鍵的差異化設計。教師需要一把明確的尺，衡量每份產出是否達標。</p>
+
+        <h4>解決方案</h4>
+        <p>建立五條品質標準規則、英文課 Block 1-4 教案模板、導師業務模板。每份 AI 產出都必須通過品質自檢清單：差異化雙軸是否覆蓋？學習風格路徑是否至少兩種？ABCD 各組是否有對應的教學策略？</p>
+        <p>同時建立 <code>build.sh</code> 輸出腳本，一鍵將 Markdown 教案轉換為可列印的 PDF 文件，含學校 Logo 與華德福水彩浮水印。</p>
+
+        <h4>意義</h4>
+        <p>品質不再靠運氣。模板系統確保每位教師站在同一個起跑線上，而品質標準確保終點線的位置不會降低。AI 的角色從「自由發揮」被框定為「在明確規範內發揮創意」。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- v6 -->
+  <div class="collapse-item reveal">
+    <div class="collapse-header">
+      <span>v6 — 空間的隔離：Workspace 獨立工作區</span>
+      <span class="collapse-icon">+</span>
+    </div>
+    <div class="collapse-body">
+      <div class="full-doc">
+        <h4>核心問題</h4>
+        <p>系統開始準備迎接第二位教師。但如果兩位教師的備課資料混在一起，修改一方可能破壞另一方的工作。需要隔離機制。</p>
+
+        <h4>解決方案</h4>
+        <p>建立 Workspace（工作空間）機制。每位教師擁有完全獨立的工作區：</p>
+        <p><strong>共讀層</strong>（所有教師共用）：教育哲學根基、差異化框架、技能正本。教師只讀不改，由管理者統一維護。</p>
+        <p><strong>私有層</strong>（教師完全自主）：個人身份檔、班級資料、備課內容、進度錨點。100% 屬於教師個人。</p>
+        <p>同時建立 ACL（存取控制清單），明確定義每位教師的可操作路徑範圍。</p>
+
+        <h4>意義</h4>
+        <p>這是系統從「一個人的工具」轉變為「組織的基礎設施」的關鍵時刻。共讀層確保所有教師站在同一個華德福哲學基礎上；私有層確保每位教師的創造自由不被干擾。就像華德福學校本身——共同的教育理念，獨立的教學藝術。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- v7 -->
+  <div class="collapse-item reveal">
+    <div class="collapse-header">
+      <span>v7 — 協作的誕生：Git 多人工作流程（當前版本）</span>
+      <span class="collapse-icon">+</span>
+    </div>
+    <div class="collapse-body">
+      <div class="full-doc">
+        <h4>核心問題</h4>
+        <p>Workspace 隔離了資料，但教師之間還無法安全地「分享」與「合併」工作。需要一個機制讓教師能在自己的空間自由工作，同時能在準備好時將成果合併回共用系統。</p>
+
+        <h4>解決方案</h4>
+        <p>採用 <strong>Collaborator + Branch</strong> 協作模式：</p>
+        <p>每位教師擁有個人分支（branch），命名規則為 <code>workspace/{Teacher_ID}</code>。教師在個人分支上自由存檔，不影響主系統。當工作準備好時，透過合併申請（Pull Request）提交審核，由管理者確認後合併回主系統。</p>
+
+        <h4>三層保護機制</h4>
+        <table>
+          <thead><tr><th>層次</th><th>機制</th><th>強度</th><th>說明</th></tr></thead>
+          <tbody>
+            <tr><td>第一層</td><td>Pre-commit Hook</td><td>軟保護</td><td>存檔前自動檢查，提醒教師是否操作了不在權限範圍內的檔案</td></tr>
+            <tr><td>第二層</td><td>CODEOWNERS</td><td>硬保護</td><td>核心檔案修改必須經過指定審核者同意</td></tr>
+            <tr><td>第三層</td><td>Branch Protection</td><td>硬保護</td><td>主系統分支受保護，只有通過審核的合併申請才能進入</td></tr>
+          </tbody>
+        </table>
+
+        <h4>新增技能</h4>
+        <p><strong>save（存檔）</strong>——教師說「存檔」或「幫我存」，AI 自動執行版本控制的存檔流程（git add → commit → push）。教師完全不需要理解 Git 命令。</p>
+        <p><strong>pull-request（合併申請）</strong>——教師說「發 PR」或「送回主系統」，AI 引導完成合併申請的建立，包含工作摘要與變更清單。</p>
+
+        <h4>操作介面全面升級</h4>
+        <p>教師手冊從技術文件重寫為 AI 口語操作介面。所有操作都提供兩種路徑：「方式 A：跟 AI 說」（自然語言）+ 「方式 B：終端機一行」（備用指令）。教師永遠優先用自然語言與 AI 對話完成工作。</p>
+
+        <h4>v7 檔案異動總覽</h4>
+        <table>
+          <thead><tr><th>類別</th><th>數量</th><th>主要檔案</th></tr></thead>
+          <tbody>
+            <tr><td>新增</td><td>10 個</td><td>save.md、pull-request.md、save.sh、quick-start.sh、add-teacher.sh、交接文件 v3、CHANGELOG v7</td></tr>
+            <tr><td>修改</td><td>6 個</td><td>AI_HANDOFF.md、teacheros.yaml、acl.yaml、teacher-guide.md、workspaces/README.md</td></tr>
+            <tr><td>搬遷</td><td>2 個班級</td><td>class-9c、class-9d 移入 Codeowner_David workspace</td></tr>
+          </tbody>
+        </table>
+
+        <h4>意義</h4>
+        <p>v7 是系統從「個人工具」正式成為「組織基礎設施」的里程碑。多人協作、版本控制、權限管理、AI 口語操作——這些能力的組合，意味著一所華德福學校的教師團隊可以在同一個系統上協作，共享教育哲學的根基，同時保有各自的教學藝術空間。</p>
+        <p>更重要的是，<strong>教師從頭到尾不需要學任何程式語言</strong>。他們需要的只是：說出自己想做什麼，AI 負責翻譯成技術操作。這就是「意義架構師」的完整實現——教師定義意義，機器執行操作。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 演化洞見 ═══ -->
+<section class="section">
+  <h2 class="section-title">七次演化的洞見</h2>
+
+  <div class="card-grid">
+    <div class="card reveal">
+      <h3>從記憶到結構</h3>
+      <p>v1 → v2 的跳躍不只是檔案數量增加，而是教師第一次以系統思維理解知識的層次：什麼是永恆的？什麼是變動的？什麼是當下的？這種分層思維本身就是華德福教育中「秩序帶來安全感」的數位延伸。</p>
+    </div>
+    <div class="card reveal">
+      <h3>從產出到品質</h3>
+      <p>v3 → v5 的演化揭示了一個關鍵洞見：AI 協作的價值不在於「產出更多」，而在於「每一份產出都照顧到每一個孩子」。差異化教學框架將 AI 從打字機升級為教學設計夥伴。品質標準則確保這個夥伴的表現穩定可靠。</p>
+    </div>
+    <div class="card reveal">
+      <h3>從個人到集體</h3>
+      <p>v6 → v7 的轉變是系統最深層的進化。當一個工具能服務整個教師團隊時，它就不再是工具——它是基礎設施。Workspace 隔離與 Git 協作的組合，創造了一個前所未有的可能：華德福教師團隊可以在保持個體教學自由的同時，共享智慧的基礎層。</p>
+    </div>
+    <div class="card reveal">
+      <h3>從依賴到自主</h3>
+      <p>貫穿七個版本的核心線索：教師越來越不依賴特定 AI 工具。技能正本是純文字檔，session.yaml 是開放格式，Git 是全球標準。如果某個 AI 明天消失，教師的知識體系、備課內容、教學框架全部安全地保存在自己的檔案系統中。這才是真正的數位自主權。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 系統現況快照 ═══ -->
+<section class="section">
+  <h2 class="section-title">系統現況快照</h2>
+  <p class="section-intro">截至 2026 年 3 月 4 日，TeacherOS v7 的完整建設狀態一覽。</p>
+
+  <div class="stat-grid reveal">
+    <div class="stat-item">
+      <div class="stat-number">v7</div>
+      <div class="stat-desc">當前系統版本</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">15</div>
+      <div class="stat-desc">標準化技能模組</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3</div>
+      <div class="stat-desc">層記憶架構</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4</div>
+      <div class="stat-desc">教學區塊模板</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2</div>
+      <div class="stat-desc">AI 引擎協同</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">40</div>
+      <div class="stat-desc">天建設歷程</div>
+    </div>
+  </div>
+
+  <div class="card-grid" style="margin-top:2.5rem;">
+    <div class="card reveal">
+      <h3>已完成的框架</h3>
+      <div class="full-doc">
+        <table>
+          <thead><tr><th>模組</th><th>狀態</th></tr></thead>
+          <tbody>
+            <tr><td>差異化教學框架（Block 1-4 模板 + 品質標準）</td><td>完成</td></tr>
+            <tr><td>英文課教案模板（Block 1-4 含寫作風格邊界）</td><td>完成</td></tr>
+            <tr><td>導師業務模板（HM Block 1-4 + 行事曆同步）</td><td>完成</td></tr>
+            <tr><td>輸出系統（build.sh + Logo + 浮水印 + PDF）</td><td>完成</td></tr>
+            <tr><td>語音操作協議（5 條規則 + 開工報告模板）</td><td>完成</td></tr>
+            <tr><td>多使用者 ACL + Git 保護機制</td><td>完成</td></tr>
+            <tr><td>教師入職腳本（add-teacher.sh + quick-start.sh）</td><td>完成</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card reveal">
+      <h3>David 的工作進度</h3>
+      <div class="full-doc">
+        <table>
+          <thead><tr><th>項目</th><th>現況</th></tr></thead>
+          <tbody>
+            <tr><td>9C 英文課 Syllabus</td><td>v2 完成（已輸出 Google Drive）</td></tr>
+            <tr><td>9C 英文課 Block 1</td><td>完成 → 等待 Block 2</td></tr>
+            <tr><td>9C 導師業務</td><td>Block 3 Step 1（春季班親會 2026-03-21）</td></tr>
+            <tr><td>9D 台灣文學主課程</td><td>等待啟動</td></tr>
+            <tr><td>9C 學生 DI 分類</td><td>22 人完成</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 未來願景 ═══ -->
+<section class="section">
+  <h2 class="section-title">未來願景</h2>
+  <p class="section-intro">TeacherOS 的下一步不是更多功能，而是更多教師。當第一位同事加入這個系統時，我們建設的一切將接受真實的考驗。</p>
+
+  <div class="card-grid">
+    <div class="card reveal">
+      <h3>v8 預期：第一位同事加入</h3>
+      <p>所有架構設計的真實壓力測試。Workspace 隔離是否真的有效？技能系統是否真的工具無關？教師手冊是否真的讓非技術教師順利上手？答案不在程式碼裡，在教室裡。</p>
+    </div>
+    <div class="card reveal">
+      <h3>跨校擴展的可能</h3>
+      <p>如果一所華德福學校的教師團隊能在這個系統上協作，那麼兩所呢？五所呢？台灣的華德福學校社群規模不大，但這恰恰是優勢——足夠小以維持緊密的教育理念共識，足夠大以驗證系統的可擴展性。</p>
+    </div>
+    <div class="card reveal">
+      <h3>始終不變的核心</h3>
+      <p>無論系統如何演化，有一件事永遠不會改變：<strong>最高度的技術自動化，是為了成就最純粹的低科技人文互動。</strong>教師走進教室的那一刻，放下所有技術，用溫暖的目光凝視每一個孩子。這就是 TeacherOS 存在的全部理由。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ v7 完整變更日誌（全文嵌入）═══ -->
+<section class="section">
+  <h2 class="section-title">v7 完整變更日誌</h2>
+  <p class="section-intro">以下是 v7 版本的完整技術變更記錄原文，供需要深入了解的讀者參考。</p>
+
+  <div class="collapse-item reveal">
+    <div class="collapse-header">
+      <span>展開：CHANGELOG v7 完整原文</span>
+      <span class="collapse-icon">+</span>
+    </div>
+    <div class="collapse-body">
+      <div class="full-doc">
+        <h3>TeacherOS v7 Changelog — 2026-03-03</h3>
+        <p><em>本版本涵蓋三輪架構重組的所有變更，是自 v6 以來最大的結構性更新。</em></p>
+
+        <h4>版本摘要</h4>
+        <p><strong>v7 核心主題：多人協作基礎建設 + AI 口語操作介面</strong></p>
+        <p>從單人系統升級為支援多位教師的協作系統，建立 Git 工作流程、存檔/合併技能、branch 自動化，並將教師手冊重寫為以 AI 口語指令為主的操作介面。</p>
+
+        <h4>一、Git 多人協作模型</h4>
+        <p>選定 Collaborator + Branch 模式（非 Fork 模式），確保教師能互相看到工作。Branch 命名規則：<code>workspace/{Teacher_ID}</code>。三層保護機制：Pre-commit Hook（軟）→ CODEOWNERS（硬）→ Branch Protection（硬）。Branch Protection 只保護 main 的合併，教師在個人 branch 上自由 commit。</p>
+
+        <h4>二、新增技能：save（存檔）</h4>
+        <p>觸發語：「存檔」「儲存」「幫我存」「commit」「上傳」「備份今天的工作」。流程：檢查變更 → 取得說明 → 執行 git add/commit/push → 確認結果。容錯：push 失敗時自動嘗試 git pull --rebase。</p>
+
+        <h4>三、新增技能：pull-request（合併申請）</h4>
+        <p>觸發語：「發 PR」「合併申請」「送回主系統」「通知 David 合併」。流程：檢查未存檔 → 收集 PR 資訊 → 確認 branch → 引導 GitHub PR 建立。安全：PR base 永遠是 main，只有 David 可合併。</p>
+
+        <h4>四、新增腳本：save.sh（一行存檔）</h4>
+        <p>路徑：<code>setup/save.sh</code>。用法：<code>bash setup/save.sh "完成 Unit 2 教案"</code>。功能：自動執行 git add → commit → push，帶彩色輸出。</p>
+
+        <h4>五、add-teacher.sh 升級</h4>
+        <p>新增 Step 6：<code>create_teacher_branch()</code> — 建立教師個人 branch 並推送至 GitHub。print_summary 升級為 Step 7：顯示 branch 名稱。</p>
+
+        <h4>六、quick-start.sh 升級</h4>
+        <p>新增 Check 8：「切換到你的個人工作分支」。偵測遠端 workspace/ 開頭的 branch，單一 branch 自動 checkout，多個 branch 列出選項，無 branch 提示聯絡 David。</p>
+
+        <h4>七、teacher-guide.md 重寫</h4>
+        <p>第十三節全面重寫：「Git 工作流程：儲存、分享、送出審核」。所有操作改為「方式 A：跟 AI 說」+ 「方式 B：終端機一行」雙路徑。新增附錄：終端機指令速查表。</p>
+
+        <h4>八、AI_HANDOFF.md 更新</h4>
+        <p>技能觸發表新增 save 與 pull-request。新增「工具無關性」說明段落：技能適用於任何有檔案讀取能力的 AI。</p>
+
+        <h4>九、Workspace 架構（延續 v6）</h4>
+        <p>Working_Member/ 容器層。{Role}_{RealName} 命名規則。David 班級（class-9c, class-9d）已搬遷至 Codeowner_David/。Engineer_Reference/ 版本化歸檔。</p>
+
+        <h4>十、交接文件</h4>
+        <p>新增 Engineer_Reference/TeacherOS-AI-交接文件_v3_20260303.md，涵蓋 Git 協作模型決策、Branch 生命週期、三層保護機制、完整技能對照表。</p>
+
+        <h4>檔案異動總覽</h4>
+        <p><strong>新增（10 個檔案）：</strong>ai-core/skills/save.md、ai-core/skills/pull-request.md、.claude/commands/save.md、.claude/commands/pull-request.md、setup/save.sh、setup/quick-start.sh、setup/add-teacher.sh、TeacherOS-AI-交接文件_v3、CHANGELOG_v7（本文件）、workspaces/Working_Member/Codeowner_David/</p>
+        <p><strong>修改（6 個檔案）：</strong>ai-core/AI_HANDOFF.md — 新增技能觸發與工具無關性說明；ai-core/teacheros.yaml — 新增 workspace_naming 區塊；ai-core/acl.yaml — 路徑更新為 Working_Member/；setup/teacher-guide.md — 第十三節重寫 + 附錄；workspaces/README.md — 全面重寫；workspaces/_template/README.md — 路徑更新</p>
+        <p><strong>搬遷：</strong>projects/class-9c/ → workspaces/Working_Member/Codeowner_David/projects/class-9c/；projects/class-9d/ → 同上；projects/class-4c/ → 已移除（測試資料）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 頁尾 ═══ -->
+<footer class="section" style="text-align:center; padding-top:2rem;">
+  <p style="color:var(--gold); font-family:'Playfair Display',serif; font-size:1.1rem;">
+    最高度的技術自動化，是為了成就最純粹的低科技人文互動。
+  </p>
+  <p style="margin-top:1rem;">
+    <a href="#top" style="color:var(--muted);">↑ 回到頂端</a> &nbsp;&middot;&nbsp;
+    <a href="index.html" style="color:var(--muted);">返回首頁</a>
+  </p>
+  <p style="margin-top:2rem; font-size:.75rem; color:var(--muted);">
+    TeacherOS Showcase &copy; 2026 &mdash; Built for the board, inspired by the classroom.
+  </p>
+</footer>
+
+</div><!-- .page-body -->
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>差異化教學框架 | TeacherOS</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Learning Strength Cards */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .strength-card {
+      padding: 2rem;
+      border-left: 4px solid;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .strength-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .strength-card.linguistic {
+      border-left-color: #4A90E2;
+    }
+
+    .strength-card.visual {
+      border-left-color: #7ED321;
+    }
+
+    .strength-card.kinesthetic {
+      border-left-color: #F5A623;
+    }
+
+    .strength-card.artistic {
+      border-left-color: #D0021B;
+    }
+
+    .strength-card h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .strength-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ABCD Matrix */
+    .matrix-container {
+      margin: 3rem 0;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 2.5rem;
+      border-radius: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .matrix-cell {
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 2px;
+    }
+
+    .matrix-cell.type-a {
+      border-top: 3px solid #4A90E2;
+      background: rgba(74, 144, 226, 0.08);
+    }
+
+    .matrix-cell.type-b {
+      border-top: 3px solid #F5A623;
+      background: rgba(245, 166, 35, 0.08);
+    }
+
+    .matrix-cell.type-c {
+      border-top: 3px solid #7ED321;
+      background: rgba(126, 211, 33, 0.08);
+    }
+
+    .matrix-cell.type-d {
+      border-top: 3px solid #D0021B;
+      background: rgba(208, 2, 27, 0.08);
+    }
+
+    .matrix-label {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .matrix-label .ability-bar {
+      display: inline-block;
+      width: 20px;
+      height: 4px;
+      background: currentColor;
+      opacity: 0.7;
+    }
+
+    .matrix-cell h4 {
+      margin: 1rem 0 0.5rem 0;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .matrix-cell ul {
+      margin: 0;
+      padding-left: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .matrix-cell li {
+      margin-bottom: 0.5rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Design Layers */
+    .layers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .layer-card {
+      padding: 1.8rem;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .layer-card:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    }
+
+    .layer-card h4 {
+      margin: 0 0 0.8rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .layer-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Quality Standards */
+    .standards-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+
+    .standards-list li {
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 3px solid #4A90E2;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .standards-list li:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-left-color: #7ED321;
+    }
+
+    .standards-list li strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .standards-list li p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Self-check */
+    .selfcheck-grid {
+      display: grid;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .selfcheck-item {
+      padding: 1.2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .selfcheck-item::before {
+      content: "●";
+      color: #7ED321;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* Axis labels */
+    .axis-intro {
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 4px solid #4A90E2;
+      border-radius: 2px;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .axis-intro strong {
+      color: #fff;
+    }
+
+    /* Section divider */
+    .section-divider {
+      margin: 3rem 0;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .strength-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .matrix-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix-container {
+        padding: 1.5rem;
+      }
+
+      .layers-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">TeacherOS</a>
+      <button class="nav-toggle" aria-label="選單">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="architecture.html">系統架構</a></li>
+        <li><a href="skills.html">技能引擎</a></li>
+        <li><a href="di-framework.html" class="active">差異化教學</a></li>
+        <li><a href="workspace-demo.html">工作範例</a></li>
+        <li><a href="david-live.html">真實現場</a></li>
+        <li><a href="evolution.html">演變歷程</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>差異化教學框架</h1>
+      <p class="hero-subtitle">從課程設計階段主動為每一位學生建立多層次的學習路徑</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Chapter Quote -->
+    <blockquote class="chapter-quote">
+      <p>差異化教學不是補救教學，而是預設學生之間存在差異，在課程設計階段主動為不同學習狀態的學生建立多層次的學習路徑。</p>
+    </blockquote>
+
+    <!-- Core Principle Section -->
+    <section class="section">
+      <h2>核心原則</h2>
+      
+      <div class="section-intro">
+        <p>在華德福教育中，差異化教學（DI）並非額外的教學策略，而是教課程本身的內在結構。每一堂課、每一次評量的設計都必須預先考慮：這些學生不是一個齊一的群體，而是各具獨特學習優勢、能力與動機的個體。</p>
+      </div>
+
+      <ul class="standards-list">
+        <li>
+          <strong>不是補救教學</strong>
+          <p>差異化教學的對象不僅是「落後」的學生，而是全班所有學生。目標是為每一位學生設計最適切的學習路徑，讓高能力學生有延展挑戰，讓低能力學生有紮實的鷹架支撐，讓低動機學生找到課程與己身的意義連結。</p>
+        </li>
+        <li>
+          <strong>強制性的設計義務</strong>
+          <p>差異化思維不是可選項，而是每一份課程計畫的強制性要求。從主課程的3週15堂到專科課程的45分鐘，都必須內建差異化的思考。這是教師專業責任的一部分。</p>
+        </li>
+        <li>
+          <strong>多層次的學習路徑</strong>
+          <p>同一堂課程中，不同學生可能透過不同的學習入口（視覺、聽覺、動作、藝術）進入同一個主題；透過不同的支持層級（獨立挑戰、扶持成長、意義探索、安全開始）深化理解。課程的寬度與深度都必須足夠彈性。</p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="section-divider">★ ★ ★</div>
+
+    <!-- Dual Axis Section -->
+    <section class="section">
+      <h2>雙軸強制設計</h2>
+      
+      <p class="section-intro">
+        差異化教學的核心是兩個互相獨立但都不可或缺的設計維度。每一份課程設計都必須同時滿足兩軸的要求。
+      </p>
+
+      <!-- Axis 1: Learning Strengths -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">軸一：學習優勢</h3>
+      
+      <div class="axis-intro">
+        <strong>原則：</strong>每一堂課至少必須涵蓋 2-3 種學習優勢的入口點。這不是為了迎合學習風格迷思，而是為了確保課程有足夠的豐富度，讓每一位學生至少有一種方式與課程內容產生真實連結。
+      </div>
+
+      <div class="strength-grid">
+        <div class="strength-card linguistic">
+          <h4>語言型</h4>
+          <p>透過朗誦、討論、閱讀、寫作進入課程。這些學生用言語思考，在語言的流動中建構意義。</p>
+        </div>
+        <div class="strength-card visual">
+          <h4>圖像型</h4>
+          <p>透過圖表、圖像、視覺化筆記、黑板畫與空間排列進入課程。這些學生在圖像與空間中思考，用眼睛而非耳朵認知。</p>
+        </div>
+        <div class="strength-card kinesthetic">
+          <h4>動作型</h4>
+          <p>透過身體移動、手工藝、農業實作、戲劇表演進入課程。這些學生在身體行動中思考，具身學習是認知的基礎。</p>
+        </div>
+        <div class="strength-card artistic">
+          <h4>藝術型</h4>
+          <p>透過音樂、繪畫、詩歌、雕塑進入課程。這些學生透過美感與創意表達連結課程意義，將知識轉化為個人美感體驗。</p>
+        </div>
+      </div>
+
+      <!-- Axis 2: Ability × Motivation Matrix -->
+      <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">軸二：能力×動機矩陣</h3>
+      
+      <div class="axis-intro">
+        <strong>原則：</strong>每一份課程設計都必須至少區分「高挑戰層級」（A型與C型學生）與「扶持層級」（B型與D型學生），理想上應該設計四層完整的差異化策略。
+      </div>
+
+      <div class="matrix-container">
+        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">2×2 能力×動機矩陣</h3>
+        <p style="color: rgba(255, 255, 255, 0.6); margin: 0 0 2rem 0; font-size: 0.9rem;">
+          縱軸：學習能力（從低到高）｜ 橫軸：學習動機（從低到高）
+        </p>
+
+        <div class="matrix-grid">
+          <!-- Type A -->
+          <div class="matrix-cell type-a">
+            <div class="matrix-label">
+              A 型：高能力高動機
+            </div>
+            <h4>延展挑戰型</h4>
+            <ul>
+              <li>獨立深度探究</li>
+              <li>同儕教導與領導</li>
+              <li>跨領域連結與創意應用</li>
+              <li>設計開放性問題</li>
+            </ul>
+          </div>
+
+          <!-- Type C -->
+          <div class="matrix-cell type-c">
+            <div class="matrix-label">
+              C 型：高能力低動機
+            </div>
+            <h4>意義探索型</h4>
+            <ul>
+              <li>強化課題與個人興趣的連結</li>
+              <li>減少重複性練習</li>
+              <li>提供選擇自主度</li>
+              <li>探討「為什麼重要？」</li>
+            </ul>
+          </div>
+
+          <!-- Type B -->
+          <div class="matrix-cell type-b">
+            <div class="matrix-label">
+              B 型：低能力高動機
+            </div>
+            <h4>扶持成長型</h4>
+            <ul>
+              <li>小步驟成功建立信心</li>
+              <li>具體的學習鷹架</li>
+              <li>頻繁的鼓勵與反饋</li>
+              <li>化抽象為具體示範</li>
+            </ul>
+          </div>
+
+          <!-- Type D -->
+          <div class="matrix-cell type-d">
+            <div class="matrix-label">
+              D 型：低能力低動機
+            </div>
+            <h4>安全開始型</h4>
+            <ul>
+              <li>降低焦慮與威脅感</li>
+              <li>從具體操作開始</li>
+              <li>建立安全的學習社群</li>
+              <li>尋找隱藏的學習優勢</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider">★ ★ ★</div>
+
+    <!-- Template Requirements Section -->
+    <section class="section">
+      <h2>課程設計的強制性檢查清單</h2>
+      
+      <p class="section-intro">
+        每一份課程設計與評量工具都必須同時滿足「軸一：學習優勢」與「軸二：能力×動機」的要求。這不是建議，而是課程完整性的必要條件。
+      </p>
+
+      <ul class="standards-list">
+        <li>
+          <strong>多入口點原則</strong>
+          <p>課程規劃中至少包含 2-3 種學習優勢的學習入口點（語言、圖像、動作、藝術）。如果一堂課只有「講述」，表示設計不完整。</p>
+        </li>
+        <li>
+          <strong>四層差異化</strong>
+          <p>理想上，課程應該設計四層完整的差異化路徑：高挑戰（A型）、意義探索（C型）、扶持成長（B型）、安全開始（D型）。至少不能少於兩層（高挑戰 vs. 扶持）。</p>
+        </li>
+        <li>
+          <strong>課程寬度與深度</strong>
+          <p>「同一課題，不同深度」是核心邏輯。不是為不同學生設計「不同課題」，而是讓他們在同一課程主軸上以不同路徑與深度進行。</p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="section-divider">★ ★ ★</div>
+
+    <!-- Quality Standards Section -->
+    <section class="section">
+      <h2>品質標準：五大核心原則</h2>
+      
+      <p class="section-intro">
+        差異化教學的設計不是冷酷的學生分類，而是有溫度的教學對話。這五項品質標準確保課程設計始終以學生的內在狀態與真實課堂場景為中心。
+      </p>
+
+      <ul class="standards-list">
+        <li>
+          <strong>Rule 1：人文優先</strong>
+          <p>先描寫學生的內在心靈狀態，而非直接開列教學策略清單。「七年級學生剛從集體意識中醒來，渴望測試界線」遠優於「A型學生需要獨立挑戰」。</p>
+        </li>
+        <li>
+          <strong>Rule 2：拒絕抽象標籤</strong>
+          <p>「提供鷹架支撐」說得再好也不夠具體。必須展開成：「先透過黑板畫示範三個步驟，然後邀請學生在小組內重複一次，最後才是獨立嘗試。」</p>
+        </li>
+        <li>
+          <strong>Rule 3：課堂現場感</strong>
+          <p>每一個策略都必須能被轉化成一個課堂畫面。讀者能否在心中看見：教室裡發生了什麼？誰站在哪裡？學生拿著什麼？老師說了什麼？</p>
+        </li>
+        <li>
+          <strong>Rule 4：溫暖的語調</strong>
+          <p>用專業教師的語調，而非冷硬的 AI 分類報告。「這位學生正經歷…」好過「此學生屬於 D 類」。</p>
+        </li>
+        <li>
+          <strong>Rule 5：可操作性</strong>
+          <p>老師讀完後，應該能明天直接用。不是理論，是行動方案。「明天我可以…」的語句應該很自然地浮現。</p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="section-divider">★ ★ ★</div>
+
+    <!-- Design Layers Section -->
+    <section class="section">
+      <h2>四層設計維度</h2>
+      
+      <p class="section-intro">
+        差異化不是單一維度的工作。課程可以在內容深度、學習過程、產出形式、甚至環境安排上進行差異化。以下四層維度提供完整的設計思路。
+      </p>
+
+      <div class="layers-grid">
+        <div class="layer-card">
+          <h4>內容（Content）</h4>
+          <p>同一課題，不同複雜度。基礎版本聚焦核心概念，進階版本則探討應用、批判或跨領域連結。</p>
+        </div>
+        <div class="layer-card">
+          <h4>過程（Process）</h4>
+          <p>同一學習目標，不同路徑。有人透過直接講述，有人透過探究、有人透過藝術創作。</p>
+        </div>
+        <div class="layer-card">
+          <h4>產出（Product）</h4>
+          <p>同一證明理解的期望，不同表達形式。可以寫評論文章、畫概念圖、錄製影片、製作實體模型。</p>
+        </div>
+        <div class="layer-card">
+          <h4>環境（Environment）</h4>
+          <p>調整節奏、座位安排、互動方式。有人需要獨處思考，有人需要協作對話，有人需要一對一確認。</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider">★ ★ ★</div>
+
+    <!-- Self-Check Section -->
+    <section class="section">
+      <h2>課程設計自我檢查</h2>
+      
+      <p class="section-intro">
+        完成課程設計後，用以下問題檢驗你的設計是否真正落實了差異化教學。
+      </p>
+
+      <div class="selfcheck-grid">
+        <div class="selfcheck-item">
+          這堂課有多少種學習優勢的入口點？（應至少2-3種：語言、圖像、動作、藝術）
+        </div>
+        <div class="selfcheck-item">
+          A型學生（高能力高動機）有沒有延展挑戰與獨立探究的空間？
+        </div>
+        <div class="selfcheck-item">
+          B型學生（低能力高動機）有沒有具體的鷹架支撐與小步驟成功？
+        </div>
+        <div class="selfcheck-item">
+          C型學生（高能力低動機）有沒有被告知「為什麼這很重要」？
+        </div>
+        <div class="selfcheck-item">
+          D型學生（低能力低動機）有沒有安全的開始點，避免立刻被挫折擊倒？
+        </div>
+        <div class="selfcheck-item">
+          我有沒有從學生的內在心靈狀態開始思考，而非套用標籤？
+        </div>
+        <div class="selfcheck-item">
+          每一個教學策略都能被轉化成一個課堂現場的具體畫面嗎？
+        </div>
+        <div class="selfcheck-item">
+          這份設計讀起來像是一個有溫度的教師在思考，還是冷硬的 AI 分類報告？
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider">★ ★ ★</div>
+
+    <!-- Integration Section -->
+    <section class="section">
+      <h2>與華德福教育的深層連結</h2>
+      
+      <p class="section-intro">
+        差異化教學在華德福教育中，並非現代教改的附加品，而是施泰納人智學的本質要求。
+      </p>
+
+      <ul class="standards-list">
+        <li>
+          <strong>認識人的完整性</strong>
+          <p>施泰納強調每一個人都是身、心、靈的完整統一體。課程必須同時觸及思考（頭）、情感（心）、意志（手）。差異化教學要求我們看見每一位學生獨特的身心靈組合，而非將其簡化為「一種學習風格」。</p>
+        </li>
+        <li>
+          <strong>七年週期的發展邏輯</strong>
+          <p>七至九年級的學生正經歷劇烈的靈魂轉變。同齡的青少年，其內在發展狀態可能相差三至五年。差異化教學承認這種真實的發展時間差，而非強制所有學生進度齊一。</p>
+        </li>
+        <li>
+          <strong>尊重個體的使命</strong>
+          <p>華德福教育相信每一個孩子都肩負獨特的人生使命（Karmic Task）。課程設計不是將知識灌輸到被動接收的容器中，而是幫助每位學生發掘自身的內在力量與獨特的表現方式。</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>TeacherOS v7 — 台灣華德福實驗學校・AI 協作教學系統</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://github.com/elliot200852-lab/waldorf-teacher-os" target="_blank">GitHub</a>
+      &nbsp;·&nbsp; 設計者：David &nbsp;·&nbsp; 2026
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
