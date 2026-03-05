@@ -9,6 +9,7 @@
 
 | 教師說 | 技能 | 完整規格 |
 |--------|------|---------|
+| 「開工」「開始」「早安」「我來了」「start」 | `opening` | `ai-core/skills/opening.md` |
 | 「載入 9C」「讀一下狀態」 | `load` | `ai-core/skills/load.md` |
 | 「現在在哪？」「9C 做到哪了？」 | `status` | `ai-core/skills/status.md` |
 | 「開始大綱」「做學季規劃」 | `syllabus` | `ai-core/skills/syllabus.md` |
@@ -28,7 +29,7 @@
 ## 使用方式
 
 **Claude Code**
-直接輸入 slash command，例如 `/load 9c`、`/session-end 9c`。
+直接輸入 slash command，例如 `/opening`、`/load 9c`、`/session-end 9c`。
 `.claude/commands/` 中的薄層入口會自動引導至 `ai-core/skills/` 的正本執行。
 
 **其他 AI（Gemini、ChatGPT、任何有檔案讀取能力的 AI Agent）**
@@ -44,4 +45,4 @@
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-02*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-05*

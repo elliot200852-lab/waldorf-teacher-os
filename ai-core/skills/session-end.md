@@ -120,11 +120,16 @@ session:
 
 進度同步完成後，輸出以下提醒：
 
-> 📌 **下次啟動新對話時**，請先告訴 AI：
-> 「請讀取 `ai-core/AI_HANDOFF.md` 並依照載入序列初始化。」
-> 這樣就能接續今天的工作。
+> 📌 **下次啟動新對話時：**
 >
-> （使用 Claude Code 的教師可直接輸入 `/load [班級] [科目]`，無需手動載入。）
+> **第一步：更新系統**
+> 在終端機執行 `git pull origin main`，確保你有最新版本。
+>
+> **第二步：告訴 AI 開工**
+> 說「開工」或「請讀取 `ai-core/AI_HANDOFF.md` 並依照載入序列初始化」。
+> AI 會自動載入系統、報告進度，接續今天的工作。
+>
+> （使用 Claude Code 的教師可直接輸入 `/opening`，AI 會自動處理 git pull 與載入。）
 
 此提醒在所有 AI 平台（Claude Code、Gemini、ChatGPT 等）皆適用。
 
