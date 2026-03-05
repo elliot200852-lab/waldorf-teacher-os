@@ -1,7 +1,27 @@
-# TeacherOS — AI 入口（AI_HANDOFF）
+# TeacherOS CreatorHub — AI 入口（AI_HANDOFF）
 
 任何 AI 在對話開始時讀取此文件，即可在 30 秒內進入工作狀態。
 不需要教師重新解釋背景。
+
+---
+
+## 第零步：確保 Repo 為最新版本
+
+**每次新對話開始，在讀取任何檔案之前，必須先確認教師的 Repo 已更新至最新版本。**
+
+完整執行規格見：`ai-core/skills/opening.md`
+
+簡要邏輯：
+
+| AI 能力 | 行為 |
+|---------|------|
+| 有終端機（Claude Code、Cowork） | 自動執行 `git fetch origin` → `git pull origin main`，報告結果 |
+| 無終端機（Gemini 語音、ChatGPT） | 提醒教師手動執行 `git pull origin main`，等待確認後才繼續 |
+
+如果教師有未 commit 的改動，先提醒存檔（觸發 save 技能）再 pull。
+如果 pull 有衝突，**停止載入**，請教師聯繫 David。
+
+確認更新完成後，進入第一步。
 
 ---
 
@@ -69,6 +89,7 @@
 
 | 偵測到這些詞語 | 立即讀取並執行 |
 |-------------|--------------|
+| 「開工」「開始」「新對話」「早安」「我來了」「準備好了」「start」 | `ai-core/skills/opening.md` |
 | 「載入」「讀一下」+ 班級名 + 科目 | `ai-core/skills/load.md` |
 | 「現在在哪」「做到哪了」 | `ai-core/skills/status.md` |
 | 「開始大綱」「學季規劃」 | `ai-core/skills/syllabus.md` |
@@ -91,6 +112,37 @@
 
 ---
 
+## 教師個人技能（Personal Skills）
+
+除系統技能（`ai-core/skills/`）外，每位教師可在自己的 workspace 內建立個人技能。
+
+**路徑：** `{workspace}/skills/*.md`
+
+**掃描規則：**
+
+1. AI 在完成第一步（必讀檔案載入）後，掃描 `{workspace}/skills/` 資料夾
+2. 讀取每個 `.md` 檔的 YAML frontmatter（`---` 之間的區塊），**不讀全文**
+3. 將 `triggers` 和 `description` 欄位暫存為觸發比對清單
+4. 當教師口語指令符合任一個人技能的觸發條件，載入該技能全文並執行
+
+**衝突處理規則（明確規則，非語意判斷）：**
+
+當個人技能與系統技能同名時：
+
+| 情境 | 行為 |
+|------|------|
+| 教師在自己的 workspace 中工作 | **使用個人版本**，並主動通知教師 |
+| 教師明確指定「用系統的 [技能名]」 | 使用系統版本 |
+
+通知範例：
+> 「你的個人技能 `lesson` 與系統技能同名，本次對話中我會使用你的個人版本。如需使用系統版本，請說『用系統的 lesson』。」
+
+**個人技能格式：** 與系統技能一致，必須包含 YAML frontmatter，至少具備 `name`、`description`、`triggers` 三個欄位。範本見 `workspaces/_template/skills/EXAMPLE-recitation.md`。
+
+**跨工具適用：** 此規則適用於所有 AI 工具。Claude Code、Gemini、及任何有檔案讀取能力的 AI，在載入教師 workspace 後，均應執行上述掃描流程。
+
+---
+
 ## 第三步：對話結束時必須更新
 
 偵測到「收尾」「更新進度」「結束今天」→ **立即執行 `ai-core/skills/session-end.md`**
@@ -101,7 +153,7 @@
 
 ## 技能系統（Skills）
 
-TeacherOS 內建標準化技能，對應不同工作場景。
+TeacherOS CreatorHub 內建標準化技能，對應不同工作場景。
 
 **技能正本：** `ai-core/skills/`（所有 AI 共用）
 每個技能為獨立 `.md` 檔，任何具備檔案讀取能力的 AI Agent 皆可直接讀取並執行。
@@ -118,6 +170,7 @@ TeacherOS 內建標準化技能，對應不同工作場景。
 
 | 技能 | 教師說 | 用途 |
 |------|--------|------|
+| `opening` | 「開工」「我們開始吧」「早安」 | 新對話開場：更新 Repo → 載入系統 → 報告狀態 |
 | `load` | 「載入 9C english」「讀一下狀態」 | 載入班級與科目脈絡，定位工作起點 |
 | `status` | 「現在在哪？」 | 快速查詢進度 |
 | `syllabus` | 「開始大綱」「做學季規劃」 | 啟動 Block 1 |
@@ -158,5 +211,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-04*
+*最後更新：2026-03-05（新增第零步：Opening 開場與 git pull 機制）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

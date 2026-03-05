@@ -1,6 +1,6 @@
 <!--
   ╔══════════════════════════════════════════════════════════════╗
-  ║  TeacherOS Folder Instructions — 共用模板                    ║
+  ║  TeacherOS CreatorHub Folder Instructions — 共用模板          ║
   ║  此模板由 sync-cowork 技能讀取，編譯為個人 INSTRUCTIONS.md    ║
   ║  INSTRUCTIONS.md 已加入 .gitignore，不進版本控制              ║
   ║  修改此模板 = 修改所有人的 Cowork 上下文共用區塊              ║
@@ -10,7 +10,7 @@
   compilation_engine: ai-core/skills/sync-cowork.md
 -->
 
-# TeacherOS — Cowork 工作上下文
+# TeacherOS CreatorHub — Cowork 工作上下文
 
 你正在為一位教師工作。以下是你需要知道的一切。
 
@@ -52,7 +52,7 @@
 
 ## 二、檔案架構地圖
 
-這個資料夾是 **WaldorfTeacherOS-Repo**——一套 AI 協作教學系統。
+這個資料夾是 **WaldorfTeacherOS-Repo**——華德福教師 AI 共創系統。
 
 ```
 WaldorfTeacherOS-Repo/
@@ -77,6 +77,7 @@ WaldorfTeacherOS-Repo/
 │   ├── {你的工作空間}/               ← 你的個人工作空間
 │   │   ├── teacheros-personal.yaml   ← 你的教師身份與教學哲學
 │   │   ├── workspace.yaml            ← 工作空間狀態與班級清單
+│   │   ├── skills/                   ← 你的個人技能（Personal Skills）
 │   │   └── projects/class-{code}/    ← 你的班級資料
 │   │       ├── project.yaml          ← 班級元資料
 │   │       ├── students.yaml         ← 全班 DI 分類
@@ -223,4 +224,4 @@ WaldorfTeacherOS-Repo/
 
 ---
 
-*此文件由 TeacherOS sync-cowork 技能自動編譯。模板：INSTRUCTIONS.template.md。編譯引擎：ai-core/skills/sync-cowork.md*
+*此文件由 TeacherOS CreatorHub sync-cowork 技能自動編譯。模板：INSTRUCTIONS.template.md。編譯引擎：ai-core/skills/sync-cowork.md*

@@ -1,10 +1,10 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 【TeacherOS 系統核心 — 每次對話必讀】
+# 【TeacherOS CreatorHub 系統核心 — 每次對話必讀】
 # 名稱：系統路由與架構層
 # 路徑：ai-core/teacheros.yaml
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 #
-# 本文件是 TeacherOS 的「系統中樞」。
+# 本文件是 TeacherOS CreatorHub 的「系統中樞」。
 # 它告訴 AI：該讀什麼、按什麼順序讀、如何與教師互動。
 #
 # 知識內容不在這裡——在以下兩個地方：
@@ -70,6 +70,7 @@ workspace_system:
         - teacheros-personal.yaml — 個人身份與哲學
         - workspace.yaml — 工作空間狀態追蹤
         - projects/class-{code}/ — 班級資料（students、session、content）
+        - skills/ — 教師個人技能（Personal Skills）
       rule: >
         完全屬於教師個人。AI 僅在此路徑範圍內進行寫入操作。
         教師可自由修改，但框架結構需保留以確保系統運作。
@@ -80,6 +81,7 @@ workspace_system:
         - teacheros-personal.yaml — 個人身份模板
         - workspace.yaml — 工作空間狀態模板
         - projects/ — 空白班級骨架
+        - skills/ — 個人技能範本與說明
 
   reference_workspace:
     name: 工作範例參考
@@ -202,5 +204,12 @@ ai_agent_context:
       無需教師重新說明背景。
 
   skill_access:
-    canonical_path: ai-core/skills/
-    note: 技能正本對所有 AI 工具開放，任何有檔案讀取能力的 Agent 皆可執行
+    system_skills:
+      canonical_path: ai-core/skills/
+      note: 系統技能正本對所有 AI 工具開放，任何有檔案讀取能力的 Agent 皆可執行
+    personal_skills:
+      path: "{workspace}/skills/"
+      note: >
+        教師個人技能。AI 在載入 workspace 後掃描此資料夾的 frontmatter。
+        個人技能與系統技能同名時，在教師自己的 session 中使用個人版本，
+        並主動通知教師。詳見 AI_HANDOFF.md「教師個人技能」段落。

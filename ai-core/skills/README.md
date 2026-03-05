@@ -1,6 +1,6 @@
-# TeacherOS — 通用技能目錄（ai-core/skills/）
+# TeacherOS CreatorHub — 系統技能目錄（ai-core/skills/）
 
-> **這是所有 TeacherOS 技能的正本。**
+> **這是所有 TeacherOS CreatorHub 系統技能的正本。**
 > 任何具備檔案讀取能力的 AI Agent（Claude Code、Gemini、ChatGPT 等）都可以直接讀取並執行。
 
 ---
@@ -77,4 +77,18 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS Admin。最後更新：2026-03-04*
+---
+
+## 教師個人技能
+
+除系統技能外，每位教師可在自己的 workspace 建立個人技能：`{workspace}/skills/*.md`
+
+個人技能格式與系統技能一致（YAML frontmatter + Markdown 執行步驟）。
+範本見 `workspaces/_template/skills/EXAMPLE-recitation.md`。
+
+**衝突處理：** 個人技能與系統技能同名時，在教師自己的 session 中使用個人版本。
+詳見 `ai-core/AI_HANDOFF.md`「教師個人技能」段落。
+
+---
+
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-05*
