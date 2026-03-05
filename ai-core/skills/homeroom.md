@@ -71,6 +71,8 @@ AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從
 | 「班會」「談話圈」 | 依修復式正義框架設計班會流程 |
 | 「衝突」「事件」 | 引導修復性對話設計，不建議懲罰性處置 |
 | 「學生觀察」「記一下誰」 | 執行 `ai-core/skills/student-note.md` |
+| 「查行事曆」「本週排程」「班級活動時間」 | 透過 gws MCP 查詢 Google Calendar 事件 |
+| 「排進行事曆」「加行事曆」 | 透過 gws MCP 建立 Google Calendar 事件 |
 
 ### Step 4 — 收尾時更新 homeroom session
 
