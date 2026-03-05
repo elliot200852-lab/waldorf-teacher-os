@@ -105,6 +105,8 @@
 | 「存檔」「儲存」「幫我存」「commit」「備份」 | `ai-core/skills/save.md` |
 | 「發 PR」「合併申請」「送回主系統」 | `ai-core/skills/pull-request.md` |
 | 「同步 Cowork」「更新 Cowork」「編譯 instructions」 | `ai-core/skills/sync-cowork.md` |
+| 「上傳到雲端」「同步 Drive」「傳到 Drive」 | 使用 gws MCP 上傳檔案至 Google Drive |
+| 「查行事曆」「排課表」「加行事曆」 | 使用 gws MCP 查詢或建立 Google Calendar 事件 |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 
@@ -211,5 +213,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-05（新增第零步：Opening 開場與 git pull 機制）*
+*最後更新：2026-03-05（新增 GWS CLI 觸發詞：Drive 上傳、Calendar 查詢）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

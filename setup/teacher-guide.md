@@ -418,6 +418,57 @@ AI 會提供格式化的文字內容，你複製後貼到 Google 文件即可。
 
 ---
 
+## 九之二、Google Workspace CLI（讓 AI 直接操作你的 Google 服務）
+
+Google Workspace CLI（指令名稱：`gws`）是一個讓 AI 能直接幫你操作 Google Drive、Calendar、Gmail 等服務的工具。安裝後，Claude Code 可以在對話中直接幫你上傳檔案到 Google Drive、查詢行事曆、搜尋 Email。
+
+### 安裝（約 3 分鐘）
+
+**前提：需要先安裝 Node.js**
+
+前往 [https://nodejs.org](https://nodejs.org) 下載並安裝 Node.js（選 LTS 版本）。
+
+**安裝 gws**
+
+在終端機執行：
+
+```bash
+npm install -g @googleworkspace/cli
+```
+
+### 登入你的 Google 帳號
+
+```bash
+gws auth login
+```
+
+瀏覽器會自動開啟 Google 登入頁面。用你的 Google 帳號登入並授權即可。授權完成後，終端機會顯示成功訊息。
+
+**這個步驟只需做一次。** 之後每次使用時，gws 會自動使用你已登入的帳號。
+
+### 你能做什麼
+
+安裝並登入後，Claude Code 在對話中可以直接幫你：
+
+| 你說 | AI 會做 |
+|------|---------|
+| 「上傳到雲端」「傳到 Drive」 | 直接上傳檔案到你的 Google Drive |
+| 「查行事曆」「本週排程」 | 查詢你的 Google Calendar |
+| 「加行事曆」「排進去」 | 在你的 Google Calendar 建立事件 |
+
+### 常見問題
+
+**Q：我沒有安裝 Node.js，能用嗎？**
+A：不行。gws 需要 Node.js 才能運行。請先安裝 Node.js。
+
+**Q：其他老師也能用嗎？**
+A：可以。每位老師在自己的電腦安裝 gws 後，用 `gws auth login` 登入自己的 Google 帳號，就能使用自己的 Google 服務。
+
+**Q：如果我已經安裝了 Google Drive for Desktop，還需要 gws 嗎？**
+A：文件輸出仍然可以用 Google Drive for Desktop（原有方式）。gws 是額外的能力，讓 AI 可以幫你操作 Calendar 和搜尋 Drive 檔案。兩者可以並存。
+
+---
+
 ## 十、權限與安全（用門鎖、鑰匙、管理員的比喻）
 
 TeacherOS CreatorHub 用三層保護確保每位老師只能操作自己的班級，不會誤改他人資料。

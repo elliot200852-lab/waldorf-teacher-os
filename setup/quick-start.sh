@@ -161,6 +161,49 @@ else
 fi
 
 # ──────────────────────────────────────────────────────────
+# 檢查 4.5：Google Workspace CLI（gws）安裝狀態
+# ──────────────────────────────────────────────────────────
+
+print_section "檢查 4.5：Google Workspace CLI（gws）安裝狀態"
+
+# 先檢查 Node.js / npm（gws 的前置條件）
+if command -v node &> /dev/null && command -v npm &> /dev/null; then
+  NODE_VERSION=$(node --version)
+  print_success "Node.js 已安裝：$NODE_VERSION"
+
+  if command -v gws &> /dev/null; then
+    GWS_VERSION=$(gws --version 2>/dev/null || echo "已安裝")
+    print_success "Google Workspace CLI 已安裝：$GWS_VERSION"
+
+    # 檢查是否已登入
+    if gws auth status &>/dev/null; then
+      print_success "gws 已登入 Google 帳號"
+    else
+      print_warning "gws 尚未登入 Google 帳號"
+      echo ""
+      echo -e "${YELLOW}請執行以下指令登入：${NC}"
+      echo "  gws auth login"
+      echo ""
+    fi
+  else
+    print_warning "Google Workspace CLI（gws）尚未安裝"
+    echo ""
+    echo -e "${YELLOW}建議安裝 gws（讓 AI 可直接操作 Google Drive、Calendar 等服務）：${NC}"
+    echo "  npm install -g @googleworkspace/cli"
+    echo ""
+    echo -e "${YELLOW}安裝後，執行以下指令登入你的 Google 帳號：${NC}"
+    echo "  gws auth login"
+    echo ""
+  fi
+else
+  print_info "Node.js / npm 未安裝，跳過 gws 檢查"
+  echo ""
+  echo -e "${YELLOW}若需要使用 Google Workspace CLI，請先安裝 Node.js：${NC}"
+  echo "  https://nodejs.org"
+  echo ""
+fi
+
+# ──────────────────────────────────────────────────────────
 # 檢查 5：安裝 Git Pre-commit Hook（門鎖）
 # ──────────────────────────────────────────────────────────
 

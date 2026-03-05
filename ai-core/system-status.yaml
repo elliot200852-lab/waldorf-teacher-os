@@ -13,7 +13,7 @@
 #           只改有變化的欄位，不重寫整份文件。
 #   主要入口仍是 AI_HANDOFF.md，此文件是補充快照。
 #
-# 最後更新：2026-03-04
+# 最後更新：2026-03-05
 
 system_status:
 
@@ -84,6 +84,7 @@ system_status:
     build_sh: 完成（中文化 + 自動子資料夾 + /tmp 暫存 + Logo + 浮水印 + Front Matter 讀取 + 失敗保護）
     pandoc: 3.9
     google_drive: 已連接
+    gws_cli: 已整合（MCP server 配置於 .claude/settings.json，涵蓋 drive/calendar/gmail/sheets/docs）
     logo_watermark: 完成（Inline Logo + 華德福水彩浮水印，Gemini 完成）
     demo_html: 完成（publish/teacheros-demo.html，153KB 自含，4 分頁，base64 資產嵌入）
     voice_protocol: 完成（teacheros.yaml 內含 5 條語音輸入協議 + 開工報告模板）
