@@ -26,6 +26,11 @@ subjects:
     session_anchor: homeroom/session.yaml
     calendar_ref: homeroom/reference/calendar.md
     content_output: homeroom/content/
+    farm_internship:
+      name: 農場實習
+      note: 九年級實作體驗課程，由導師負責帶領，檔案獨立於 farm-internship/
+      session_anchor: farm-internship/session.yaml
+      content_output: farm-internship/content/
   english:
     type: 英文專科
     weekly_sessions: 4

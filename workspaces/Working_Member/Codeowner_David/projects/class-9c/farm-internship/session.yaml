@@ -1,0 +1,45 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：九年級 C 班・農場實習
+# 路徑：projects/class-9c/homeroom/farm-internship/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+farm_internship_session:
+  class: class-9c
+  last_updated: 2026-03-06
+
+  overview:
+    name: 農場實習
+    type: 九年級實作體驗課程
+    description: >
+      學生分散至全台 19 個有機農場，進行 10 天實際土地工作。
+      體驗農場生活，進行紀錄、訪談與學習。
+      部分農場提供住宿，部分不提供。
+      回校後互相分享不同農場的經驗，拼湊為完整的實作學習。
+    total_farms: 19
+
+  current_position:
+    phase: 返校準備
+    status: 規劃中
+
+  upcoming_schedule:
+    week_next:
+      wed_thu:
+        name: 交叉準備 / 聚會帶領
+        scope: 學生回校後的經驗整理與交流工作
+        status: 待設計
+      friday:
+        name: 農場實習發表
+        scope: 學生正式報告農場實習經驗
+        status: 待設計
+
+  confirmed_decisions: []
+
+  next_action:
+    description: "準備週三四帶領草案與週五發表草案，待今日會議討論後定案"
+    input_needed_from_teacher: "今日會議結論"
+
+  output_files: []
+  open_questions:
+    - 週三四帶領形式（待會議確認）
+    - 週五發表形式（待會議確認）

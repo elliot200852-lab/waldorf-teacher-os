@@ -236,8 +236,9 @@ output_protocol:
     Step 2：AI 向教師確認版本內容。
     Step 3：AI 主動詢問：「要輸出到 Google Drive 嗎？」
     Step 4：教師回答「要」後，AI 執行 publish/build.sh，不需教師輸入任何指令。
-    Step 5：腳本自動 Pandoc 轉換為 .docx，直接放入 Google Drive 本機資料夾。
-    Step 6：Google Drive Desktop 自動同步至雲端，即可用 Google Docs 開啟。
+    Step 5：腳本自動 Pandoc 轉換為 .docx，上傳至 Google Drive。
+    上傳方式：GWS CLI 優先（直接 API 上傳）；若未安裝或失敗，
+    無縫切換至 Google Drive Desktop 本機同步。使用者無需知道背後使用哪種方式。
   ai_publish_protocol:
     trigger: 教師確認版本內容後
     ai_action: 主動詢問「這份文件要輸出到 Google Drive 嗎？」
