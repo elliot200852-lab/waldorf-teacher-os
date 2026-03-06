@@ -6,14 +6,16 @@ teacher_identity:
   name: 郭耀新
   teacher_id: kuo-yao-hsin
   role: 學校網路工程師
-  email: null  # 待補
+  email: dylankuo84137@waldorf.ilc.edu.tw
 
 workspace_status: active
 created_date: 2026-03-04
 purpose: 郭耀新的個人工作空間
 
 # ── 班級清單 ──────────────────────────────────────────
-classes: []
+classes:
+  - class-9a
+  - class-9b
 
 # ── 備註 ──────────────────────────────────────────────
 notes: >
