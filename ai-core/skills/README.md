@@ -24,6 +24,11 @@
 | `save.md` | 儲存工作並上傳 GitHub | 「存檔」「儲存」 |
 | `pull-request.md` | 發送合併申請 | 「發 PR」「合併申請」 |
 | `sync-cowork.md` | 編譯 Cowork Folder Instructions | 「同步 Cowork」 |
+| `send-email.md` | 透過 gws CLI 寄送 Email | 「寄信」「寄 Email」「寄給」 |
+| `drive.md` | Google Drive 檔案操作（上傳/下載/搜尋） | 「上傳到雲端」「傳到 Drive」 |
+| `calendar.md` | Google Calendar 行程管理 | 「查行事曆」「加行事曆」 |
+| `sheets.md` | Google Sheets 讀寫操作 | 「開試算表」「寫入 Sheets」 |
+| `docs-edit.md` | Google Docs 文件編輯 | 「編輯文件」「寫入 Docs」 |
 
 ---
 
@@ -91,4 +96,4 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-05*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-06*

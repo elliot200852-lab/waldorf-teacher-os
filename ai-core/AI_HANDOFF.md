@@ -105,12 +105,17 @@
 | 「存檔」「儲存」「幫我存」「commit」「備份」 | `ai-core/skills/save.md` |
 | 「發 PR」「合併申請」「送回主系統」 | `ai-core/skills/pull-request.md` |
 | 「同步 Cowork」「更新 Cowork」「編譯 instructions」 | `ai-core/skills/sync-cowork.md` |
-| 「上傳到雲端」「同步 Drive」「傳到 Drive」 | 使用 gws MCP 上傳檔案至 Google Drive |
-| 「查行事曆」「排課表」「加行事曆」 | 使用 gws MCP 查詢或建立 Google Calendar 事件 |
+| 「上傳到雲端」「同步 Drive」「傳到 Drive」 | `ai-core/skills/drive.md` |
+| 「查行事曆」「排課表」「加行事曆」 | `ai-core/skills/calendar.md` |
+| 「寄信」「寄 Email」「發郵件」「寄給」 | `ai-core/skills/send-email.md` |
+| 「開試算表」「寫入 Sheets」「讀 Sheets」 | `ai-core/skills/sheets.md` |
+| 「編輯文件」「寫入 Docs」「開 Google Docs」 | `ai-core/skills/docs-edit.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 
 **工具無關性：** 以上規則適用於任何 AI 工具（Claude Code、Gemini、未來任何工具）。技能正本統一在 `ai-core/skills/`，任何有檔案讀取能力的 AI 都可直接執行。
+
+**Google Workspace 操作：** 所有 Google Workspace 操作（Drive、Calendar、Gmail、Sheets、Docs）統一使用 gws CLI（跨工具通用）。無終端機時提示教師手動操作。完整指令參考見 `ai-core/reference/gws-cli-guide.md`。
 
 ---
 
