@@ -20,7 +20,7 @@
 #   所有教師 workspace 位於 workspaces/Working_Member/ 下
 #   工作範例參考 為特殊命名，不套 Role_Name 格式
 #
-# 最後更新：2026-03-03
+# 最後更新：2026-03-06
 
 # ── 管理員（無限制）────────────────────────────────────
 
@@ -83,7 +83,7 @@ roles:
         - publish/build.sh
 
     - name: 郭耀新
-      email: null                              # 待補
+      email: dylankuo84137@waldorf.ilc.edu.tw
       github_username: dylankuo84137
       role: 學校網路工程師
       workspace: workspaces/Working_Member/Teacher_郭耀新/

@@ -1,0 +1,57 @@
+# TeacherOS Agent Sync Spec
+# 定義系統預期狀態，供 sync_check.py 驗證一致性
+# 維護者：David | 最後更新：2026-03-05
+
+version: "1.0"
+
+# --- 核心系統檔案（必須存在） ---
+system_files:
+  - ai-core/AI_HANDOFF.md
+  - ai-core/teacheros.yaml
+  - ai-core/teacheros-foundation.yaml
+  - ai-core/acl.yaml
+  - ai-core/skills-manifest.md
+  - ai-core/skills/README.md
+  - projects/_di-framework/project.yaml
+
+# --- Skill 定義 ---
+# required_frontmatter: 每個 skill .md 必須包含的 YAML frontmatter 欄位
+skills:
+  canonical_path: ai-core/skills
+  claude_commands_path: .claude/commands
+  required_frontmatter:
+    - name
+    - description
+    - triggers
+  expected_skills:
+    - opening
+    - load
+    - status
+    - syllabus
+    - lesson
+    - session-end
+    - di-check
+    - ref
+    - homeroom
+    - block-end
+    - rhythm
+    - student-note
+    - parent-letter
+    - sync-cowork
+    - pull-request
+    - save
+
+# --- Reference 知識模組 ---
+reference_modules:
+  path: ai-core/reference
+  expected_files:
+    - pedagogy-framework.yaml
+    - subject-english.yaml
+    - subject-history.yaml
+    - student-development.yaml
+
+# --- Claude Command 路由格式 ---
+claude_command_format:
+  # 每個 .claude/commands/*.md 應包含的內容模式
+  must_contain: "ai-core/skills/"
+  # 說明：Claude commands 是 thin routing layer，必須指向 canonical skill 路徑

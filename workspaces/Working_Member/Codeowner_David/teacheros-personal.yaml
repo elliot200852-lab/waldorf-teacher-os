@@ -81,6 +81,27 @@ lesson_structure:
     sessions_per_term: 40（10 週學季）
     sessions_per_semester: 80（20 週學期）
 
+google_accounts:
+  default: elliot200852@gmail.com
+  accounts:
+    - email: elliot200852@gmail.com
+      alias: 個人
+      keywords: ["個人", "個人信箱", "elliot", "個人帳號"]
+      usage: 預設帳號，未指定時一律使用此帳號
+    - email: linintellectdave@gmail.com
+      alias: 公用
+      keywords: ["公用", "公用信箱", "intellect", "dave", "第二帳號", "另一個"]
+      usage: 第二帳號，需明確指定才使用
+  oral_examples:
+    - 教師說「寄信給 xxx」→ 用預設帳號（個人）
+    - 教師說「用公用的寄信給 xxx」→ 用 linintellectdave
+    - 教師說「用個人的上傳到 Drive」→ 用 elliot200852
+    - 教師說「用另一個帳號查行事曆」→ 用 linintellectdave
+  ai_rule: >
+    偵測到 keywords 中的任何詞語時，切換至對應帳號。
+    未偵測到帳號關鍵字時，一律使用 default 帳號。
+    切換方式：在 gws 指令前加 GOOGLE_WORKSPACE_CLI_ACCOUNT=<email>。
+
 communication_preferences:
   language:
     - 繁體中文

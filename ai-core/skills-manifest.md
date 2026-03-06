@@ -23,6 +23,11 @@
 | 「記錄學生」「個案觀察」「記一下誰」 | `student-note` | `ai-core/skills/student-note.md` |
 | 「寫家長信」「學期評語」「家長通知」 | `parent-letter` | `ai-core/skills/parent-letter.md` |
 | 「同步 Cowork」「更新 Cowork」 | `sync-cowork` | `ai-core/skills/sync-cowork.md` |
+| 「寄信」「寄 Email」「發郵件」「寄給」 | `send-email` | `ai-core/skills/send-email.md` |
+| 「上傳到雲端」「同步 Drive」「傳到 Drive」 | `drive` | `ai-core/skills/drive.md` |
+| 「查行事曆」「排課表」「加行事曆」 | `calendar` | `ai-core/skills/calendar.md` |
+| 「開試算表」「寫入 Sheets」「讀 Sheets」 | `sheets` | `ai-core/skills/sheets.md` |
+| 「編輯文件」「寫入 Docs」「開 Google Docs」 | `docs-edit` | `ai-core/skills/docs-edit.md` |
 
 ---
 
@@ -45,4 +50,4 @@
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-05*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-06*

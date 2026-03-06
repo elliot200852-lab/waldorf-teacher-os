@@ -59,7 +59,7 @@ print_info() {
   echo -e "${BLUE}${INFO} $1${NC}"
 }
 
-# Prompt for input with validation
+# Prompt for input with validation (required)
 get_input() {
   local prompt_msg="$1"
   local input_value=""
@@ -76,7 +76,7 @@ get_input() {
   echo "$input_value"
 }
 
-# Prompt for optional input with default
+# Prompt for optional input (can be empty)
 get_optional_input() {
   local prompt_msg="$1"
   local default_value="$2"
@@ -86,7 +86,7 @@ get_optional_input() {
   if [ -n "$default_value" ]; then
     echo -ne " (default: $default_value)${NC}: "
   else
-    echo -ne "${NC}: "
+    echo -ne " (optional, press Enter to skip)${NC}: "
   fi
 
   read -r input_value
@@ -134,13 +134,20 @@ collect_teacher_info() {
   print_section "Step 1: Enter teacher information"
 
   echo ""
-  print_info "Please provide the following information about the new teacher"
+  print_info "Required: name, email, GitHub username"
+  print_info "Optional: class code, subject (teacher can add these later)"
   echo ""
 
+  # --- Required fields (identity) ---
   TEACHER_NAME=$(get_input "Teacher name (Traditional Chinese)")
-  EMAIL=$(get_input "Email (for Git authentication)")
-  CLASS_CODE=$(get_input "Class code (example: 4c, 9c)")
-  SUBJECT=$(get_input "Primary subject (example: English, Taiwanese)")
+  EMAIL=$(get_input "Email (must match teacher's environment.env USER_EMAIL)")
+  GITHUB_USERNAME=$(get_input "GitHub username")
+
+  # --- Optional fields (class/subject) ---
+  echo ""
+  print_info "Class and subject are optional. Teacher can create these later in their workspace."
+  CLASS_CODE=$(get_optional_input "Class code (example: 4c, 9c)" "")
+  SUBJECT=$(get_optional_input "Primary subject (example: English, Taiwanese)" "")
 
   echo ""
   print_info "Generating workspace folder name..."
@@ -163,11 +170,20 @@ confirm_info() {
   echo ""
   echo -e "${CYAN}Ready to create workspace for:${NC}"
   echo ""
-  echo "  Teacher name: $TEACHER_NAME"
-  echo "  Email: $EMAIL"
-  echo "  Class code: $CLASS_CODE"
-  echo "  Primary subject: $SUBJECT"
-  echo "  Teacher ID: $TEACHER_ID"
+  echo "  Teacher name:     $TEACHER_NAME"
+  echo "  Email:            $EMAIL"
+  echo "  GitHub username:  $GITHUB_USERNAME"
+  if [ -n "$CLASS_CODE" ]; then
+    echo "  Class code:       $CLASS_CODE"
+  else
+    echo "  Class code:       (none, teacher will add later)"
+  fi
+  if [ -n "$SUBJECT" ]; then
+    echo "  Primary subject:  $SUBJECT"
+  else
+    echo "  Primary subject:  (none, teacher will add later)"
+  fi
+  echo "  Teacher ID:       $TEACHER_ID"
   echo ""
 
   echo -ne "${YELLOW}Is this information correct? (yes/no): ${NC}"
@@ -208,7 +224,7 @@ create_workspace() {
   # Copy template files
   print_info "Copying template files..."
 
-  # teacheros-personal.yaml — 新教師最重要的檔案
+  # teacheros-personal.yaml
   if [ -f "$TEMPLATE_DIR/teacheros-personal.yaml" ]; then
     cp "$TEMPLATE_DIR/teacheros-personal.yaml" "$WORKSPACE_DIR/teacheros-personal.yaml"
     print_success "teacheros-personal.yaml copied (teacher must fill this in)"
@@ -216,12 +232,14 @@ create_workspace() {
     print_warning "teacheros-personal.yaml template not found — teacher must create manually"
   fi
 
-  # philosophy.yaml 已廢除（2026-03-04），個人哲學統一在 teacheros-personal.yaml
-
   if [ -f "$TEMPLATE_DIR/README.md" ]; then
     cp "$TEMPLATE_DIR/README.md" "$WORKSPACE_DIR/README.md"
     print_success "README.md copied"
   fi
+
+  # Create skills directory for personal skills
+  mkdir -p "$WORKSPACE_DIR/skills"
+  print_success "skills/ directory created"
 
   # Create workspace.yaml
   create_workspace_yaml
@@ -241,6 +259,7 @@ create_workspace_yaml() {
 teacher:
   name: {TEACHER_NAME}
   email: {EMAIL}
+  github_username: {GITHUB_USERNAME}
   teacher_id: {TEACHER_ID}
 
 teaching:
@@ -248,7 +267,7 @@ teaching:
   primary_subject: {SUBJECT}
 
 workspace:
-  path: workspaces/{TEACHER_ID}/
+  path: workspaces/Working_Member/{TEACHER_ID}/
   created_at: {TIMESTAMP}
   status: active
 EOF
@@ -256,9 +275,18 @@ EOF
   # Replace placeholders
   sed -i.bak "s/{TEACHER_NAME}/$TEACHER_NAME/g" "$WORKSPACE_YAML"
   sed -i.bak "s/{EMAIL}/$EMAIL/g" "$WORKSPACE_YAML"
+  sed -i.bak "s/{GITHUB_USERNAME}/$GITHUB_USERNAME/g" "$WORKSPACE_YAML"
   sed -i.bak "s/{TEACHER_ID}/$TEACHER_ID/g" "$WORKSPACE_YAML"
-  sed -i.bak "s/{CLASS_CODE}/$CLASS_CODE/g" "$WORKSPACE_YAML"
-  sed -i.bak "s/{SUBJECT}/$SUBJECT/g" "$WORKSPACE_YAML"
+  if [ -n "$CLASS_CODE" ]; then
+    sed -i.bak "s/{CLASS_CODE}/$CLASS_CODE/g" "$WORKSPACE_YAML"
+  else
+    sed -i.bak "s/{CLASS_CODE}/(not yet assigned)/g" "$WORKSPACE_YAML"
+  fi
+  if [ -n "$SUBJECT" ]; then
+    sed -i.bak "s/{SUBJECT}/$SUBJECT/g" "$WORKSPACE_YAML"
+  else
+    sed -i.bak "s/{SUBJECT}/(not yet assigned)/g" "$WORKSPACE_YAML"
+  fi
   sed -i.bak "s/{TIMESTAMP}/$(date -u +"%Y-%m-%d %H:%M:%S UTC")/g" "$WORKSPACE_YAML"
   rm -f "$WORKSPACE_YAML.bak"
 
@@ -285,7 +313,7 @@ update_acl() {
   # Create new teacher entry
   local new_entry="    - name: $TEACHER_NAME
       email: $EMAIL
-      github_username: (TO BE CONFIRMED WITH TEACHER)
+      github_username: $GITHUB_USERNAME
       workspace: workspaces/Working_Member/$TEACHER_ID/
       allowed_paths:
         - workspaces/Working_Member/$TEACHER_ID/
@@ -300,15 +328,19 @@ update_acl() {
   mv "$ACL_FILE.tmp" "$ACL_FILE"
 
   print_success "acl.yaml updated"
-  echo ""
-  print_warning "IMPORTANT: Manually verify and update the github_username field in acl.yaml"
 }
 
 # ============================================================
-# Create class folder
+# Create class folder (only if class code was provided)
 # ============================================================
 
 create_class_folder() {
+  if [ -z "$CLASS_CODE" ]; then
+    print_section "Step 5: Create class folder — skipped (no class code)"
+    print_info "Teacher can create class folders later in their workspace."
+    return
+  fi
+
   print_section "Step 5: Create class folder"
 
   REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -368,7 +400,7 @@ create_teacher_branch() {
 }
 
 # ============================================================
-# Print summary
+# Print summary with self-check
 # ============================================================
 
 print_summary() {
@@ -383,23 +415,34 @@ print_summary() {
   echo ""
 
   echo -e "${CYAN}Resources created:${NC}"
-  echo "  ✓ Workspace directory: workspaces/Working_Member/$TEACHER_ID/"
-  echo "  ✓ Class folder: workspaces/Working_Member/$TEACHER_ID/projects/class-$CLASS_CODE/"
-  echo "  ✓ Permissions updated: ai-core/acl.yaml"
-  echo "  ✓ Personal branch: $BRANCH_NAME"
+  echo "  $CHECK Workspace directory: workspaces/Working_Member/$TEACHER_ID/"
+  if [ -n "$CLASS_CODE" ]; then
+    echo "  $CHECK Class folder: workspaces/Working_Member/$TEACHER_ID/projects/class-$CLASS_CODE/"
+  fi
+  echo "  $CHECK Permissions updated: ai-core/acl.yaml"
+  echo "  $CHECK Personal branch: $BRANCH_NAME"
   echo ""
 
-  echo -e "${YELLOW}Next steps (David must complete):${NC}"
+  # ── Self-check checklist ──
+  echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+  echo -e "${YELLOW}  Self-check (David must verify before notifying teacher)${NC}"
+  echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
   echo ""
-  echo "1. Update ai-core/acl.yaml with the teacher's GitHub username:"
-  echo "   Find the entry for $TEACHER_NAME and fill in github_username"
+  echo "  [ ] acl.yaml email matches what teacher will put in environment.env"
+  echo "      Registered email: $EMAIL"
   echo ""
-  echo "2. Send the following information to the new teacher:"
-  echo "   - Teacher ID: $TEACHER_ID"
-  echo "   - Class code: $CLASS_CODE"
-  echo "   - Confirmed email: $EMAIL"
-  echo "   - Personal branch: $BRANCH_NAME"
-  echo "   - Instruction to run: bash setup/quick-start.sh"
+  echo "  [ ] acl.yaml github_username is correct"
+  echo "      Registered username: $GITHUB_USERNAME"
+  echo ""
+  echo "  [ ] Commit and push this change so teacher can pull"
+  echo ""
+
+  echo -e "${CYAN}Send the following to the new teacher:${NC}"
+  echo ""
+  echo "  - Confirmed email: $EMAIL"
+  echo "    (MUST match your setup/environment.env USER_EMAIL)"
+  echo "  - Personal branch: $BRANCH_NAME"
+  echo "  - Run: bash setup/quick-start.sh"
   echo ""
 
   print_info "All setup complete. Enjoy teaching, $TEACHER_NAME!"
