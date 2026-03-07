@@ -8,14 +8,15 @@
 
 english_session:
   class: class-9c
-  last_updated: 2026-03-01
+  last_updated: 2026-03-07
 
   current_position:
-    block: 一
-    step: 3         # Step 3 已完成——教學大綱 v2 確認並輸出（v1 原版保留）
+    block: 二
+    step: 1         # Block 2 啟動——第五週第一單元教案與學習單已完成
     sub_block: null
-    unit_number: null
-    current_week: 0   # 目前實際上課到第幾週（0 = 尚未開始授課）
+    unit_number: 3    # week 5-6 對應單元三
+    current_week: 5   # 第五週
+                      # 已完成：week5-1 教師教案 + 學生學習單（The Road Not Taken）
                       # AI 在 Block 2 工作時，若此欄為 0，應詢問教師當前週次後更新
                       # 週次換算參考（依 confirmed_decisions 的 10 週規劃）：
                       #   week 1-2  → 單元一（小說導讀 + 語言工坊基礎）
@@ -33,8 +34,8 @@ english_session:
     - "評量分配（定案）：小說討論 20% + 創意寫作 20% + 詞彙溝通 25% + 文法閱讀 25% + 學習歷程 10%"
 
   next_action:
-    description: "進入 Block 2 — 設計第一單元的 45 分鐘課堂流程（第 1–2 週，小說研讀 + 語言工坊）"
-    input_needed_from_teacher: null
+    description: "設計 week5-2 課堂流程（第五週第二節），或依教師指示跳至其他單元"
+    input_needed_from_teacher: "確認 week5-2 主題與素材方向"
 
   output_files:
     syllabus_versions:
@@ -53,7 +54,18 @@ english_session:
           class_view: projects/class-9c/content/english/english-syllabus-v2-20260301.md
           subject_view: projects/class-9c/english/content/english-syllabus-v2-20260301.md
         google_drive: 00-01-TeacherOS-專案三層記憶/projects/class-9c/english/english-syllabus-v2-20260301.docx
-    units_completed: []
+    units_completed:
+      - unit: week5-1
+        date: 20260307
+        theme: "The Road Not Taken — 我們為選擇編織的故事"
+        text: "Robert Frost, The Road Not Taken (1916)"
+        grammar_focus: "if / because 副詞子句"
+        status: 教案與學習單已完成
+        files:
+          教師教案: class-9c/english/content/9C-week5-1-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week5-1-v1-學習單.md
+        skill_used: g9-english-45
+        notes: "首次使用 g9-english-45 Skill 產出的完整教學包，經三輪迭代（v1→v2→v3）"
     extensions_completed: []
 
   open_questions: []
