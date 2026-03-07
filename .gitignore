@@ -38,3 +38,8 @@ INSTRUCTIONS.md
 
 # Firebase 快取
 .firebase/
+
+# Tool Download — 使用者本地環境（不上傳）
+.env
+venv/
+*.app
