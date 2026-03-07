@@ -28,6 +28,8 @@
 | 「查行事曆」「排課表」「加行事曆」 | `calendar` | `ai-core/skills/calendar.md` |
 | 「開試算表」「寫入 Sheets」「讀 Sheets」 | `sheets` | `ai-core/skills/sheets.md` |
 | 「編輯文件」「寫入 Docs」「開 Google Docs」 | `docs-edit` | `ai-core/skills/docs-edit.md` |
+| 「設計一堂課」「45 分鐘」「lesson design」 | `subject-lesson-45` | `ai-core/skills/subject-lesson-45.md` + 科目覆蓋層 |
+| 「英文課設計」「English lesson」 | `english-45`（覆蓋層） | `ai-core/skills/english-45.md` |
 
 ---
 
@@ -50,4 +52,4 @@
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-06*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-07*
