@@ -31,6 +31,7 @@
 | `docs-edit.md` | Google Docs 文件編輯 | 「編輯文件」「寫入 Docs」 |
 | `subject-lesson-45.md` | 45 分鐘單堂課設計通用引擎（需搭配科目覆蓋層） | 「設計一堂課」「45 分鐘」「lesson design」 |
 | `english-45.md` | 英文科覆蓋層（搭配 `subject-lesson-45.md` 使用） | 「英文課設計」「English lesson」 |
+| `git-history.md` | Git History 週記管理（追加或補寫） | 「填進去 Git history」「Git history 編寫」「更新週記」 |
 
 ---
 
@@ -117,3 +118,4 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 ---
 
 *維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-08*
+
