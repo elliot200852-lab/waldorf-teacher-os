@@ -6,7 +6,7 @@
 
 farm_internship_session:
   class: class-9c
-  last_updated: 2026-03-06
+  last_updated: 2026-03-08
 
   overview:
     name: 農場實習
@@ -19,32 +19,36 @@ farm_internship_session:
     total_farms: 19
 
   current_position:
-    phase: 返校準備
-    status: 規劃中
-
-  upcoming_schedule:
-    week_next:
-      wed_thu:
-        name: 交叉準備 / 聚會帶領
-        scope: 學生回校後的經驗整理與交流工作
-        status: 草案已產出，待會議定案
-      friday:
-        name: 農場實習發表
-        scope: 學生正式報告農場實習經驗
-        status: 草案已產出，待會議定案
+    phase: 返校週（week 4）
+    status: 會議定案，流程已確認
+                # week 1-3：學生在各農場實習
+                # week 4（3/11-3/13）：返校整理、彩排、正式發表
+                # 3/11（三）：分組討論（4 場主題討論 + 報告準備）
+                # 3/12（四）：場佈 + 技術彩排（信宏主持彩排）
+                # 3/13（五）：分享會正式日（信宏主持上午場）
 
   confirmed_decisions:
     - "114 學年農場實習全階段分析報告已完成，存入 reference/"
+    - "會議定案：返校三日流程確認（來源：2026九年級農場實習回校工作.docx）"
+    - "信宏角色：3/12 主持技術彩排、3/13 上午場主持（10:50-12:30，10 組報告）"
+    - "報告規則：一組 7 分鐘（5 分鐘報告 + 2 分鐘提問）"
+    - "19 組農場：上午 10 組、下午 9 組"
 
   next_action:
-    description: "會議結論輸入後，定案週三四帶領方式與週五發表形式"
-    input_needed_from_teacher: "會議結論"
+    description: "week 4 返校週執行——依流程帶領分組討論、主持彩排與分享會"
+    input_needed_from_teacher: null
 
   output_files:
     - type: 分析報告
       file: reference/farm-internship-analysis-114.md
       google_drive: 班級專案/九年級C班/農場實習/114學年農場實習全階段分析報告-20260306.docx
+    - type: 返校工作計畫
+      file: content/week4-返校工作計畫.md
+      source: "Google Drive: 2026九年級農場實習回校工作.docx"
+      date: 20260308
+    - type: 分享會流程與場次表
+      file: content/week4-分享會流程與場次.md
+      source: "Google Drive: 2026九年級農場實習回校工作.docx"
+      date: 20260308
 
-  open_questions:
-    - 週三四帶領形式（待會議確認）
-    - 週五發表形式（待會議確認）
+  open_questions: []
