@@ -34,7 +34,7 @@ homeroom_session:
     cities: [台中, 台南, 高雄]
     participants: 22 學生 + 2 教師
     transport: 客運為主、台鐵為輔（不搭高鐵）
-    budget_per_person: 6200-8400 元（含交通、住宿、門票、餐費）
+    budget_per_student: 6500-9000 元（含交通、住宿、門票、餐費；教師公開費用由 22 生均攤）
     confirmed:
       - "交通：客運為主（宜蘭→台北→台中→台南均客運），僅台南→高雄搭台鐵"
       - "台南服務：淨灘（台南社大海廢計畫或環保局）"
