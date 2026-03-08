@@ -8,22 +8,23 @@
 
 english_session:
   class: class-9c
-  last_updated: 2026-03-07
+  last_updated: 2026-03-08
 
   current_position:
     block: 二
     step: 1         # Block 2 啟動——第五週第一單元教案與學習單已完成
     sub_block: null
-    unit_number: 3    # week 5-6 對應單元三
-    current_week: 5   # 第五週
+    unit_number: 1    # week 5-6 對應單元一（英文課第一個教學單元）
+    current_week: 5   # 第五週（學校行事曆週次）
                       # 已完成：week5-1 教師教案 + 學生學習單（The Road Not Taken）
                       # AI 在 Block 2 工作時，若此欄為 0，應詢問教師當前週次後更新
                       # 週次換算參考（依 confirmed_decisions 的 10 週規劃）：
-                      #   week 1-2  → 單元一（小說導讀 + 語言工坊基礎）
-                      #   week 3-4  → 單元二
-                      #   week 5-6  → 單元三
-                      #   week 7-8  → 單元四
-                      #   week 9-10 → 單元五（含期末 vignette 完稿）
+                      #   week 1-4  → 農場實習（無英文課）
+                      #   week 5-6  → 單元一（小說導讀 + 語言工坊基礎）
+                      #   week 7-8  → 單元二
+                      #   week 9-10 → 單元三
+                      #   week 11-12 → 單元四
+                      #   week 13-14 → 單元五（含期末 vignette 完稿）
 
   confirmed_decisions:
     - "學期範圍：下學期，10 週，40 節課"
@@ -64,8 +65,8 @@ english_session:
         files:
           教師教案: class-9c/english/content/9C-week5-1-v1-教師教案.md
           學生學習單: class-9c/english/content/9C-week5-1-v1-學習單.md
-        skill_used: g9-english-45
-        notes: "首次使用 g9-english-45 Skill 產出的完整教學包，經三輪迭代（v1→v2→v3）"
+        skill_used: subject-lesson-45
+        notes: "首次使用 45 分鐘設計引擎產出的完整教學包，經三輪迭代（v1→v2→v3）"
     extensions_completed: []
 
   open_questions: []
