@@ -29,6 +29,26 @@
 | `calendar.md` | Google Calendar 行程管理 | 「查行事曆」「加行事曆」 |
 | `sheets.md` | Google Sheets 讀寫操作 | 「開試算表」「寫入 Sheets」 |
 | `docs-edit.md` | Google Docs 文件編輯 | 「編輯文件」「寫入 Docs」 |
+| `subject-lesson-45.md` | 45 分鐘單堂課設計通用引擎（需搭配科目覆蓋層） | 「設計一堂課」「45 分鐘」「lesson design」 |
+| `english-45.md` | 英文科覆蓋層（搭配 `subject-lesson-45.md` 使用） | 「英文課設計」「English lesson」 |
+
+---
+
+## 引擎＋覆蓋層架構（Engine + Overlay）
+
+`subject-lesson-45.md` 是通用設計引擎，定義五階段工作流（研究 → 設計 → 稽核 → 產出 → 匯出）與六條通用原則。各科目可建立覆蓋層（overlay），補充科目專屬原則、研究任務、稽核維度與產出規格。
+
+**載入順序**：引擎先載入 → Step 0 自動載入對應覆蓋層
+
+**覆蓋層搜尋路徑**（依序）：
+1. `ai-core/skills/[科目]-45.md`（系統共用覆蓋層）
+2. `{workspace}/skills/draft-[科目]-45.md`（教師個人草稿覆蓋層）
+3. 若皆不存在 → 提示教師尚無此科目覆蓋層
+
+**現有覆蓋層**：
+- `english-45.md` — 英文科（七至九年級）
+
+**建立新覆蓋層**：見 `workspaces/_template/skills/EXAMPLE-subject-overlay.md`
 
 ---
 
@@ -96,4 +116,4 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-06*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-08*
