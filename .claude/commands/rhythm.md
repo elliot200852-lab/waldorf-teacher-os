@@ -1,3 +1,8 @@
+---
+aliases:
+  - "節奏設計"
+---
+
 # /rhythm — 課堂節奏設計
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/rhythm.md`

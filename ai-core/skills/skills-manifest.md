@@ -1,3 +1,8 @@
+---
+aliases:
+  - "技能索引"
+---
+
 # TeacherOS — 技能索引（Skills Index）
 
 > **所有技能的完整執行規格位於：`ai-core/skills/`**

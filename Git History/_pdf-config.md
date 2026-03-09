@@ -1,3 +1,8 @@
+---
+aliases:
+  - "PDF 輸出設定"
+---
+
 # Git History PDF 輸出設定
 
 ## 工具方案

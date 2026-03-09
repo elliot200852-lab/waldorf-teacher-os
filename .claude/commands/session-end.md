@@ -1,3 +1,8 @@
+---
+aliases:
+  - "收尾同步"
+---
+
 # /session-end — 對話收尾同步
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/session-end.md`

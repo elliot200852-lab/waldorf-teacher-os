@@ -1,5 +1,7 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# Claude 班 英文課 DI Profile
+# 【TeacherOS Layer 3】
+# 名稱：Claude 班・英文差異化教學設定（範例）
+# 路徑：workspaces/工作範例參考/projects/class-claude/english/di-profile.yaml
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class: Claude
 subject: english

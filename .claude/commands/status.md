@@ -1,3 +1,8 @@
+---
+aliases:
+  - "狀態查詢"
+---
+
 # /status — 快速查詢當前工作位置
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/status.md`

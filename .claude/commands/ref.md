@@ -1,3 +1,8 @@
+---
+aliases:
+  - "參考載入"
+---
+
 # /ref — 顯式 Reference 載入器
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/ref.md`

@@ -1,3 +1,8 @@
+---
+aliases:
+  - "Workspace 目錄說明"
+---
+
 # TeacherOS — Workspace 個人工作區說明
 
 > 本文件供 AI 與教師閱讀。AI 在 session_start 時若識別為 teacher 角色，

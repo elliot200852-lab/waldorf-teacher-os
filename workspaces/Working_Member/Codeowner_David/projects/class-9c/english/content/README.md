@@ -1,3 +1,8 @@
+---
+aliases:
+  - "9C 英文內容說明"
+---
+
 # 9C 英文課產出目錄（科目視角）
 
 本資料夾與 `projects/class-9c/content/english/` **內容完全同步**。

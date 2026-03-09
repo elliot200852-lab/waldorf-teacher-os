@@ -1,3 +1,8 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Layer 3】
+# 名稱：九年級 C 班・主課程科目參數
+# 路徑：projects/class-9c/ml-undecided/lesson.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class: 9C
 subject: 主課程
 lesson_type: main_lesson

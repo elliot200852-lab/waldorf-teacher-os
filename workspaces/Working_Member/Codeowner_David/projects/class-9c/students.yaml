@@ -1,3 +1,8 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Layer 2】
+# 名稱：九年級 C 班・學生樣態記憶
+# 路徑：projects/class-9c/students.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class: 9C
 grade: 九年級
 di_framework_ref: projects/_di-framework/project.yaml

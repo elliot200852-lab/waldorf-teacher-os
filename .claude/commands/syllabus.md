@@ -1,3 +1,8 @@
+---
+aliases:
+  - "學季大綱"
+---
+
 # /syllabus — 啟動學季教學大綱規劃
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/syllabus.md`

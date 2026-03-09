@@ -1,3 +1,8 @@
+---
+aliases:
+  - "工作週記"
+---
+
 # WaldorfTeacherOS — Git History 週記
 
 > 這份文件是 WaldorfTeacherOS 專案的工程回顧週記。

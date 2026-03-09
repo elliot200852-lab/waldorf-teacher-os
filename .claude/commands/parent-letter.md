@@ -1,3 +1,8 @@
+---
+aliases:
+  - "家長信"
+---
+
 # /parent-letter — 家長信草稿
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/parent-letter.md`

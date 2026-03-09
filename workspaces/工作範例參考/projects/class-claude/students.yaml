@@ -1,3 +1,8 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Layer 2】
+# 名稱：Claude 班・學生樣態記憶（範例）
+# 路徑：workspaces/工作範例參考/projects/class-claude/students.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class: Claude
 grade: 八年級
 di_framework_ref: projects/_di-framework/project.yaml
