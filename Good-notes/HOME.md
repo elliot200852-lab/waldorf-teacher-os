@@ -361,6 +361,12 @@ aliases:
 |------|------|
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/session.yaml\|9C 導師進度錨點]] | 導師業務進度 |
 
+9C 工作全貌筆記：
+
+| 檔案 | 說明 |
+|------|------|
+| [[Good-notes/9C 班工作全貌 — 導師與英文教學\|9C 班工作全貌]] | 導師 + 英文教學的完整工作脈絡與方向 |
+
 9C 導師內容產出：
 
 | 檔案 | 說明 |
