@@ -111,6 +111,7 @@ aliases:
 | 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `ai-core/skills/obsidian-sync.md` |
 | 「發 PR」「合併申請」「送回主系統」 | `ai-core/skills/pull-request.md` |
 | 「同步 Cowork」「更新 Cowork」「編譯 instructions」 | `ai-core/skills/sync-cowork.md` |
+| 「加入新老師」「新增老師」「新增教師」「add teacher」 | `ai-core/skills/add-teacher.md` |
 | 「上傳到雲端」「同步 Drive」「傳到 Drive」 | `ai-core/skills/drive.md` |
 | 「查行事曆」「排課表」「加行事曆」 | `ai-core/skills/calendar.md` |
 | 「寄信」「寄 Email」「發郵件」「寄給」 | `ai-core/skills/send-email.md` |
