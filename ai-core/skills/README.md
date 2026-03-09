@@ -36,6 +36,7 @@ aliases:
 | `subject-lesson-45.md` | 45 分鐘單堂課設計通用引擎（需搭配科目覆蓋層） | 「設計一堂課」「45 分鐘」「lesson design」 |
 | `english-45.md` | 英文科覆蓋層（搭配 `subject-lesson-45.md` 使用） | 「英文課設計」「English lesson」 |
 | `git-history.md` | Git History 週記管理（追加或補寫） | 「填進去 Git history」「Git history 編寫」「更新週記」 |
+| `add-teacher.md` | 管理員專用：互動式建立新教師 Workspace 與權限 | 「加入新老師」「新增教師」 |
 
 ---
 
