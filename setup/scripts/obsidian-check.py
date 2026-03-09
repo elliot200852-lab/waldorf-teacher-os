@@ -29,7 +29,7 @@ EXCLUDED_DIRS = {".obsidian", ".claude/worktrees", "__pycache__", "node_modules"
 SKIP_ALIAS_DIRS = {"ai-core/skills"}
 
 # HOME.md 自身不需要被收錄檢查
-SKIP_HOME_CHECK = {"HOME.md"}
+SKIP_HOME_CHECK = {"Good-notes/HOME.md", "HOME.md"}
 
 
 def is_excluded(filepath):
@@ -152,8 +152,10 @@ def main():
     else:
         files = get_tracked_files()
 
-    # 讀取 HOME.md
-    home_path = os.path.join(REPO_ROOT, "HOME.md")
+    # 讀取 HOME.md（優先從 Good-notes/ 讀取，兼容舊路徑）
+    home_path = os.path.join(REPO_ROOT, "Good-notes", "HOME.md")
+    if not os.path.exists(home_path):
+        home_path = os.path.join(REPO_ROOT, "HOME.md")
     home_content = ""
     try:
         with open(home_path, "r", encoding="utf-8") as f:
