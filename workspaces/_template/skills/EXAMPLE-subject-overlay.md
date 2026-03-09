@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "科目覆蓋層範例（模板）"
 name: math-45
 type: subject-overlay
 engine: subject-lesson-45
