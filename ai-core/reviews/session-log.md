@@ -1,3 +1,8 @@
+---
+aliases:
+  - "Session 完成紀錄"
+---
+
 # TeacherOS — 歷次 Session 完成工作記錄
 
 > 此文件為 AI_HANDOFF.md 的歷史紀錄卸載區。AI 平時不讀取。

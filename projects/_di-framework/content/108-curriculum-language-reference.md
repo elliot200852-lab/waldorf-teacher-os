@@ -1,3 +1,8 @@
+---
+aliases:
+  - "108 課綱語言參照"
+---
+
 附錄四：溝通功能參考表
 Asking about abilities
 Asking about ownership

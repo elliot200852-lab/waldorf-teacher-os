@@ -1,3 +1,8 @@
+---
+aliases:
+  - "Cowork 協作指引模板"
+---
+
 <!--
   ╔══════════════════════════════════════════════════════════════╗
   ║  TeacherOS CreatorHub Folder Instructions — 共用模板          ║

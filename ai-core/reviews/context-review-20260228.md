@@ -1,3 +1,8 @@
+---
+aliases:
+  - "脈絡回顧"
+---
+
 # WaldorfTeacherOS — 全資料夾 Context Review
 
 > **審查日期：** 2026-02-28

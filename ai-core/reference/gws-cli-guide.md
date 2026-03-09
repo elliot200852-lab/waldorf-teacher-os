@@ -1,3 +1,8 @@
+---
+aliases:
+  - "Google Workspace CLI 指南"
+---
+
 # GWS CLI 參考指南（AI 專用）
 
 > **用途：** 所有 AI Agent 在執行 Google Workspace 操作前，讀取此文件以取得正確的指令語法。
