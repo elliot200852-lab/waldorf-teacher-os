@@ -1,3 +1,8 @@
+---
+aliases:
+  - "AI 入口文件"
+---
+
 # TeacherOS CreatorHub — AI 入口（AI_HANDOFF）
 
 任何 AI 在對話開始時讀取此文件，即可在 30 秒內進入工作狀態。

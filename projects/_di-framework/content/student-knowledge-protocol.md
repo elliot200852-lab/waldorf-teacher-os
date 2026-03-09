@@ -1,3 +1,8 @@
+---
+aliases:
+  - "學生知識協定"
+---
+
 # 學生知識庫操作協議
 # Student Knowledge Base Protocol
 

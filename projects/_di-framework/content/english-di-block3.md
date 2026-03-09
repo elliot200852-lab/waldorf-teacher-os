@@ -1,3 +1,8 @@
+---
+aliases:
+  - "英文 DI Block 3"
+---
+
 # 英文課 DI 設計模板｜區塊三：教學歷程紀錄與學生觀察
 
 > **所屬模板：** `_di-framework/content/english-di-template.md`（主控索引）

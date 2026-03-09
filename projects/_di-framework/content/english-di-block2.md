@@ -1,3 +1,8 @@
+---
+aliases:
+  - "英文 DI Block 2"
+---
+
 # 英文課 DI 設計模板｜區塊二：班級實際教學
 
 > **所屬模板：** `_di-framework/content/english-di-template.md`（主控索引）

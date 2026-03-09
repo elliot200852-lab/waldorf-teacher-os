@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "導師通知 v1"
 class: class-9c
 subject: homeroom
 ---

@@ -1,3 +1,8 @@
+---
+aliases:
+  - "DI 分類指引"
+---
+
 # DI 學生分類指南
 ## 差異化教學（Differentiated Instruction）實踐工具
 

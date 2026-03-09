@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "英文學季大綱 v2"
 class: class-9c
 subject: english
 ---

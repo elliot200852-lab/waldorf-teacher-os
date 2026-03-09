@@ -1,3 +1,8 @@
+---
+aliases:
+  - "英文 DI Block 1"
+---
+
 # 英文課 DI 設計模板｜區塊一：學季整體規劃
 
 > **所屬模板：** `_di-framework/content/english-di-template.md`（主控索引）
