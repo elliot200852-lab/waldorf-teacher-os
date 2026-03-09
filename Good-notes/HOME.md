@@ -112,6 +112,7 @@ aliases:
 | [[git-history]] | 「更新週記」 | Git History 週記管理 |
 | [[sync-agents]] | 「同步 Agent」 | 多 AI Agent 同步 |
 | [[obsidian-sync]] | 「補標籤」「更新索引」 | Obsidian 標籤與索引同步 |
+| [[add-teacher]] | 「加入新老師」 | 管理員專用：建立新教師 Workspace |
 
 ---
 
@@ -585,6 +586,7 @@ aliases:
 | [[.claude/commands/docs-edit.md\|/docs-edit]] | docs-edit |
 | [[.claude/commands/git-history.md\|/git-history]] | git-history |
 | [[.claude/commands/obsidian-sync.md\|/obsidian-sync]] | obsidian-sync |
+| [[.claude/commands/add-teacher.md\|/add-teacher]] | add-teacher |
 
 ---
 

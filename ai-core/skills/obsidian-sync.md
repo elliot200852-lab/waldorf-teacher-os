@@ -92,7 +92,7 @@ aliases:
 
 ### Step 4 — 更新 HOME.md
 
-讀取 `Good-notes/HOME.md`（HOME.md 已移至 Good-notes 資料夾），將 `FILE:NOT_IN_HOME:` 清單中的檔案插入對應區段。
+讀取 `Good-notes/HOME.md`，將 `FILE:NOT_IN_HOME:` 清單中的檔案插入對應區段。
 
 **區段判斷邏輯：**
 

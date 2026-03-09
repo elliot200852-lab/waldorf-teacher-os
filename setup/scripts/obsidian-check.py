@@ -8,6 +8,7 @@ TeacherOS Obsidian Label Checker
     python3 obsidian-check.py                # 完整掃描（所有 git 追蹤檔案）
     python3 obsidian-check.py --staged-only  # 只掃描 git 暫存區新增檔案
     python3 obsidian-check.py --count-only   # 只輸出數字（供提醒用）
+    python3 obsidian-check.py --self-test    # 內建自測（驗證 file_in_home 比對邏輯）
 
 不依賴外部套件，只使用 Python 標準函式庫。
 """
@@ -131,18 +132,101 @@ def yaml_needs_label(filepath):
 
 
 def file_in_home(filepath, home_content):
-    """檢查檔案是否被 HOME.md 引用"""
+    """檢查檔案是否被 HOME.md 引用（精確比對，避免子字串誤判）"""
     if filepath in SKIP_HOME_CHECK:
         return True
 
     basename = os.path.basename(filepath)
     name_no_ext = os.path.splitext(basename)[0]
+    ext = os.path.splitext(basename)[1]  # e.g. '.md', '.sh', ''
 
-    # 比對完整路徑或不含副檔名的檔名
-    return (filepath in home_content) or (name_no_ext in home_content)
+    # 1. wikilink 精確匹配：[[name]] [[name.ext]] [[path/name]] [[path/name.ext|alias]]
+    #    只匹配檔案自身的副檔名，不接受其他副檔名（避免 add-teacher 匹配 add-teacher.sh）
+    escaped_name = re.escape(name_no_ext)
+    escaped_ext = re.escape(ext) if ext else ''
+    ext_pattern = rf'(?:{escaped_ext})?' if escaped_ext else ''
+    wikilink_pattern = rf'\[\[(?:[^\]]*\/)?{escaped_name}{ext_pattern}(?:\\?\|[^\]]*)?]]'
+    if re.search(wikilink_pattern, home_content):
+        return True
+
+    # 2. 完整路徑比對（含副檔名，不會子字串誤判）
+    if filepath in home_content:
+        return True
+
+    # 3. 完整檔名比對（含副檔名，例如 add-teacher.md 不會匹配 add-teacher.sh）
+    if basename in home_content:
+        return True
+
+    return False
+
+
+def run_self_test():
+    """內建自測：驗證 file_in_home() 不會子字串誤判"""
+    mock_home = """
+| [[setup/add-teacher.sh|add-teacher.sh]] | 新增教師腳本 |
+| [[lesson]] | 進入備課 |
+| [[subject-lesson-45]] | 45 分鐘課設計 |
+| [[setup/quick-start.sh|quick-start.sh]] | 快速安裝 |
+| [[obsidian-sync]] | Obsidian 同步 |
+| [[setup/scripts/obsidian-check.py|obsidian-check.py]] | 偵測腳本 |
+| [[english-45]] | 英文覆蓋層 |
+| [[publish/build.sh|build.sh]] | 發佈腳本 |
+| [[setup/teacher-guide.md|teacher-guide.md]] | 教師指南 |
+| [[setup/teacher-guide-v2.1.html|teacher-guide-v2.1.html]] | 指南 HTML |
+| [[wrap-up]] | 收工 |
+| [[Good-notes/9C 班工作全貌\|9C 班工作全貌]] | 導師筆記 |
+| [[workspaces/Working_Member/Teacher_郭耀新/manual\|郭耀新操作手冊]] | 操作手冊 |
+"""
+    tests = [
+        # (filepath, expected, 說明)
+        # --- 應回傳 True（已收錄）---
+        ("setup/add-teacher.sh",    True,  "完整路徑在 HOME 中"),
+        ("ai-core/skills/lesson.md", True, "[[lesson]] wikilink 存在"),
+        ("ai-core/skills/subject-lesson-45.md", True, "[[subject-lesson-45]] wikilink 存在"),
+        ("setup/quick-start.sh",    True,  "完整路徑在 HOME 中"),
+        ("ai-core/skills/obsidian-sync.md", True, "[[obsidian-sync]] wikilink 存在"),
+        ("setup/scripts/obsidian-check.py", True, "完整路徑在 HOME 中"),
+        ("ai-core/skills/english-45.md", True, "[[english-45]] wikilink 存在"),
+        ("publish/build.sh",        True,  "完整路徑在 HOME 中"),
+        ("setup/teacher-guide-v2.1.html", True, "含版本號的完整檔名在 HOME 中"),
+        ("ai-core/skills/wrap-up.md", True, "[[wrap-up]] wikilink 存在"),
+        # --- 應回傳 False（未收錄，不該被子字串誤判）---
+        ("ai-core/skills/add-teacher.md",    False, "不應被 add-teacher.sh 誤判"),
+        (".claude/commands/add-teacher.md",  False, "不應被 add-teacher.sh 誤判"),
+        ("ai-core/skills/quick-start.md",    False, "不應被 quick-start.sh 誤判"),
+        ("ai-core/skills/build.md",          False, "不應被 build.sh 誤判"),
+        ("ai-core/skills/obsidian.md",       False, "不應被 obsidian-sync 或 obsidian-check 誤判"),
+        ("ai-core/skills/english.md",        False, "不應被 english-45 誤判"),
+        ("setup/teacher-guide-v3.html",      False, "新版本不應被舊版本誤判"),
+        ("ai-core/skills/new-future-skill.md", False, "全新檔案不應被任何既有條目誤判"),
+        # --- 表格內 \| 跳脫 pipe 的 wikilink ---
+        ("Good-notes/9C 班工作全貌.md", True, "wikilink 含 \\| 跳脫 pipe 應正確匹配"),
+        ("workspaces/Working_Member/Teacher_郭耀新/manual.md", True, "路徑型 wikilink 含 \\| 應正確匹配"),
+    ]
+
+    passed = 0
+    failed = 0
+    for filepath, expected, desc in tests:
+        result = file_in_home(filepath, mock_home)
+        status = "PASS" if result == expected else "FAIL"
+        if result != expected:
+            failed += 1
+            print(f"  {status}: {filepath} → got {result}, expected {expected} ({desc})")
+        else:
+            passed += 1
+
+    print(f"[self-test] {passed} passed, {failed} failed")
+    if failed > 0:
+        sys.exit(1)
+    else:
+        print("[self-test] All edge cases verified.")
 
 
 def main():
+    if "--self-test" in sys.argv:
+        run_self_test()
+        return
+
     staged_only = "--staged-only" in sys.argv
     count_only = "--count-only" in sys.argv
 
