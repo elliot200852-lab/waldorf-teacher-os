@@ -1,3 +1,8 @@
+---
+aliases:
+  - "備課設計"
+---
+
 # /lesson — 進入指定班級課程設計流程
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/lesson.md`

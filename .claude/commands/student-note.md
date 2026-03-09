@@ -1,3 +1,8 @@
+---
+aliases:
+  - "學生觀察"
+---
+
 # /student-note — 學生觀察記錄
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/student-note.md`

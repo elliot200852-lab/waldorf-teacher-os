@@ -1,3 +1,8 @@
+---
+aliases:
+  - "導師業務"
+---
+
 # /homeroom — 導師業務
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/homeroom.md`

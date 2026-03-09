@@ -1,3 +1,8 @@
+---
+aliases:
+  - "工具下載區說明"
+---
+
 # Tool Download
 
 TeacherOS 教師工具箱——可獨立下載使用的工具集。

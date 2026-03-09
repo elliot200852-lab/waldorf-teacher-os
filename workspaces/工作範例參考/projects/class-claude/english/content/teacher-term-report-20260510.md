@@ -1,3 +1,8 @@
+---
+aliases:
+  - "範例學期報告"
+---
+
 # 教師教學歷程總檔 (Teacher Term Report)
 ## Block 4: Freedom Writers Diary 與自我聲音的開展
 **班級**: Claude 班 (18名學生)

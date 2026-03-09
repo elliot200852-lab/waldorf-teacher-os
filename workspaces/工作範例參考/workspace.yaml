@@ -1,7 +1,8 @@
-# 工作範例參考 Workspace
-# 此 workspace 為 Teacher Claude 的完整教學產出範例
-# 狀態：唯讀參考（供其他老師閱讀學習）
-
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Workspace】
+# 名稱：工作範例參考・Workspace 狀態（範例）
+# 路徑：workspaces/工作範例參考/workspace.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 teacher_identity:
   name: Teacher Claude
   teacher_id: teacher-claude

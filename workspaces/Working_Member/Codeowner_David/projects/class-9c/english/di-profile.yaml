@@ -1,8 +1,8 @@
-# 英文課差異化教學觀察檔
-# 觀察者：英文授課教師
-# 載入時機：進行英文課工作時
-# 參照：roster.yaml（學生身份）、students.yaml（班級共用資訊）
-
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Layer 3】
+# 名稱：九年級 C 班・英文差異化教學觀察檔
+# 路徑：projects/class-9c/english/di-profile.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 english_di_profile:
   class: 9C
   observer: David

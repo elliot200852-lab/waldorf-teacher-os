@@ -1,3 +1,8 @@
+---
+aliases:
+  - "開工"
+---
+
 # /opening — TeacherOS 新對話開場
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/opening.md`

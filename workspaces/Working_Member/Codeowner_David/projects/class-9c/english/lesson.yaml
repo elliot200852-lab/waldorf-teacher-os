@@ -1,3 +1,8 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Layer 3】
+# 名稱：九年級 C 班・英文科目參數
+# 路徑：projects/class-9c/english/lesson.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class: 9C
 subject: 英文
 lesson_type: subject_lesson

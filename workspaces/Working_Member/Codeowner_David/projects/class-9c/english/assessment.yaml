@@ -1,3 +1,8 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Layer 3】
+# 名稱：九年級 C 班・英文評量配置
+# 路徑：projects/class-9c/english/assessment.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class: 9C
 subject: 英文
 di_framework_ref: projects/_di-framework/project.yaml

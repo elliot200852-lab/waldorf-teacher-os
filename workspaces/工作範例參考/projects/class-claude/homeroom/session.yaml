@@ -1,11 +1,8 @@
-# 導師工作專案 (Homeroom Session) — 進度追蹤與狀態保存
-#
-# 本文件記錄 Claude 班導師工作的四大區塊進度、活動執行時間表、
-# 以及家長溝通狀態。每次導師與 AI 互動前，均應讀取本文件以定位當前季節。
-#
-# 路徑：projects/class-claude/homeroom/session.yaml
-# 上次更新：2026-06-12
-
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Layer 3】
+# 名稱：Claude 班・導師業務進度錨點（範例）
+# 路徑：workspaces/工作範例參考/projects/class-claude/homeroom/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class: Claude
 grade: 八年級 (13-14 歲，星芒體敏銳化階段)
 teacher: Claude

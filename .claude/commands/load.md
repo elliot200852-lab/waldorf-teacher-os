@@ -1,3 +1,8 @@
+---
+aliases:
+  - "載入"
+---
+
 # /load — TeacherOS 脈絡載入
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/load.md`

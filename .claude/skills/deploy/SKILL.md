@@ -1,3 +1,8 @@
+---
+aliases:
+  - "部署技能"
+---
+
 # Deploy Workflow
 1. Run `firebase deploy --only hosting`
 2. Confirm deployment URL is live

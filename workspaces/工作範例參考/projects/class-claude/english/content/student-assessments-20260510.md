@@ -1,3 +1,8 @@
+---
+aliases:
+  - "範例學生評量"
+---
+
 # 學生期末評量總檔 (Student Assessment Summary)
 ## Block 4: Freedom Writers Diary 課程
 **班級**：Claude 班 (Grade 8)

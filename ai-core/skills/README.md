@@ -1,3 +1,8 @@
+---
+aliases:
+  - "技能總目錄"
+---
+
 # TeacherOS CreatorHub — 系統技能目錄（ai-core/skills/）
 
 > **這是所有 TeacherOS CreatorHub 系統技能的正本。**

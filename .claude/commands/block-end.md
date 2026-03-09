@@ -1,3 +1,8 @@
+---
+aliases:
+  - "區塊結束"
+---
+
 # /block-end — 主課程區塊結尾反思
 
 > Claude Code 薄層入口 — 技能正本：`ai-core/skills/block-end.md`

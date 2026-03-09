@@ -1,6 +1,8 @@
-# Teacher Claude - 個人 TeacherOS 設定檔
-# 八年級英文科任教師 + 班級導師
-
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 個人身份】
+# 名稱：Claude 老師・個人身份層（範例）
+# 路徑：workspaces/工作範例參考/teacheros-personal.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 teacher_info:
   name: Claude
   teacher_id: teacher-claude
