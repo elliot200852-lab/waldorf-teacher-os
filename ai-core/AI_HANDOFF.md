@@ -108,6 +108,7 @@ aliases:
 | 「記錄學生」「觀察記錄」「記一下誰」 | `ai-core/skills/student-note.md` |
 | 「寫家長信」「學期評語」「家長通知」 | `ai-core/skills/parent-letter.md` |
 | 「存檔」「儲存」「幫我存」「commit」「備份」 | `ai-core/skills/save.md` |
+| 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `ai-core/skills/obsidian-sync.md` |
 | 「發 PR」「合併申請」「送回主系統」 | `ai-core/skills/pull-request.md` |
 | 「同步 Cowork」「更新 Cowork」「編譯 instructions」 | `ai-core/skills/sync-cowork.md` |
 | 「上傳到雲端」「同步 Drive」「傳到 Drive」 | `ai-core/skills/drive.md` |

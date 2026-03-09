@@ -104,6 +104,7 @@ aliases:
 | [[english-45]] | 「英文課設計」 | 英文科覆蓋層 |
 | [[git-history]] | 「更新週記」 | Git History 週記管理 |
 | [[sync-agents]] | 「同步 Agent」 | 多 AI Agent 同步 |
+| [[obsidian-sync]] | 「補標籤」「更新索引」 | Obsidian 標籤與索引同步 |
 
 ---
 
@@ -198,6 +199,7 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
+| [[setup/scripts/obsidian-check.py\|obsidian-check.py]] | Obsidian 標籤偵測腳本 |
 | [[setup/save.sh\|save.sh]] | 存檔腳本 |
 | [[setup/gcal-write.py\|gcal-write.py]] | Google Calendar 寫入工具 |
 | [[setup/add-logo.py\|add-logo.py]] | Logo 加入工具 |
@@ -569,6 +571,7 @@ aliases:
 | [[.claude/commands/sheets.md\|/sheets]] | sheets |
 | [[.claude/commands/docs-edit.md\|/docs-edit]] | docs-edit |
 | [[.claude/commands/git-history.md\|/git-history]] | git-history |
+| [[.claude/commands/obsidian-sync.md\|/obsidian-sync]] | obsidian-sync |
 
 ---
 
