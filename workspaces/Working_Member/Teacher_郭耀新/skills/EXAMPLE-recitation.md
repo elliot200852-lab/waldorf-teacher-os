@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "朗讀教學範例技能"
 name: recitation
 description: 設計朗讀教學活動——選擇適合年級發展的文本，規劃朗讀節奏、分組方式與差異化支持策略。
 triggers:
