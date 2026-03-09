@@ -109,3 +109,14 @@ protected_always:
   - .github/                            # 整個 GitHub 設定資料夾
   - setup/hooks/                        # Hook 腳本
   - publish/build.sh                    # 輸出腳本
+
+# ── 共用可寫路徑（所有已註冊使用者均可修改）────────────
+#
+# 這些路徑由系統技能（obsidian-sync、wrap-up 等）自動維護。
+# 任何已登記於 acl.yaml 的使用者（admin 或 teacher）都可以修改。
+# 用途：避免自動化技能修改共用檔案時被 pre-commit 攔截。
+#
+# 新增路徑時只需在此清單加一行，不需修改 hook 或個別教師的 allowed_paths。
+
+shared_writable:
+  - Good-notes/HOME.md              # Obsidian 索引首頁（obsidian-sync 自動更新）

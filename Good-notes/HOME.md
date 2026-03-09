@@ -92,7 +92,7 @@ aliases:
 | [[status]] | 「現在在哪」 | 快速查詢進度 |
 | [[syllabus]] | 「開始大綱」 | 學季教學大綱規劃 |
 | [[lesson]] | 「進入備課」 | 課堂教學設計 |
-| [[session-end]] | 「收尾」 | 對話結束同步狀態 |
+| [[wrap-up]] | 「收工」「存檔」「收尾」 | 進度同步 + Obsidian 修正 + Git 存檔推送 |
 | [[di-check]] | 「查 DI」 | 差異化合規核對 |
 | [[ref]] | 「載入教學哲學」 | 按需載入 Reference |
 | [[homeroom]] | 「導師業務」 | 班級經營與個案討論 |
@@ -100,7 +100,6 @@ aliases:
 | [[rhythm]] | 「設計節奏」 | 課堂節奏設計 |
 | [[student-note]] | 「記錄學生」 | 學生觀察記錄 |
 | [[parent-letter]] | 「寫家長信」 | 家長信草稿 |
-| [[save]] | 「存檔」 | Git commit + push |
 | [[pull-request]] | 「發 PR」 | 合併申請 |
 | [[sync-cowork]] | 「同步 Cowork」 | 編譯 instructions |
 | [[drive]] | 「上傳到雲端」 | Google Drive 同步 |
@@ -569,7 +568,7 @@ aliases:
 | [[.claude/commands/status.md\|/status]] | status |
 | [[.claude/commands/syllabus.md\|/syllabus]] | syllabus |
 | [[.claude/commands/lesson.md\|/lesson]] | lesson |
-| [[.claude/commands/session-end.md\|/session-end]] | session-end |
+| [[.claude/commands/wrap-up.md\|/wrap-up]] | wrap-up（收工） |
 | [[.claude/commands/di-check.md\|/di-check]] | di-check |
 | [[.claude/commands/ref.md\|/ref]] | ref |
 | [[.claude/commands/homeroom.md\|/homeroom]] | homeroom |
@@ -577,7 +576,6 @@ aliases:
 | [[.claude/commands/rhythm.md\|/rhythm]] | rhythm |
 | [[.claude/commands/student-note.md\|/student-note]] | student-note |
 | [[.claude/commands/parent-letter.md\|/parent-letter]] | parent-letter |
-| [[.claude/commands/save.md\|/save]] | save |
 | [[.claude/commands/pull-request.md\|/pull-request]] | pull-request |
 | [[.claude/commands/sync-cowork.md\|/sync-cowork]] | sync-cowork |
 | [[.claude/commands/drive.md\|/drive]] | drive |
