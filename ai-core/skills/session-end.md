@@ -116,6 +116,18 @@ session:
 
 若本次工作涉及**架構變動**（新增班級、新增科目、修改 DI 框架、新增/修改技能），教師會說「這次架構有改動」，則改為執行 sync-cowork 的完整模式（從 INSTRUCTIONS.template.md 全區塊重編譯）。
 
+### Step 5.5 — Obsidian 索引檢查
+
+執行 `python3 setup/scripts/obsidian-check.py --count-only`
+
+若有未標籤或未收錄的檔案，在收尾摘要附加提醒：
+
+> 「提醒：有 N 個新檔案尚未加入 Obsidian 索引。下次存檔時會自動處理，或說「sync Obsidian」立即處理。」
+
+若全部正常，不輸出任何提醒（靜默通過）。
+
+此步驟**只提醒，不自動修改檔案**。
+
 ### Step 6 — 跨平台開機提醒
 
 進度同步完成後，輸出以下提醒：

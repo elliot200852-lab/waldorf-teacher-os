@@ -28,6 +28,16 @@ args_format: "[選填：儲存說明]"
 範例回應：
 > 「你目前有 3 個檔案有更動：Unit 2 教案、學生 DI 分類、進度紀錄。要幫你存檔嗎？」
 
+### Step 1.5 — Obsidian 標籤自動檢查
+
+執行 `python3 setup/scripts/obsidian-check.py --staged-only`
+
+- 若有未標籤的新增 .md 檔：自動為其加上中文 aliases frontmatter（根據路徑與前 30 行內容產生）
+- 若有未標籤的新增 .yaml 檔：自動為其加上中文標頭註解
+- 若有未收錄 HOME.md 的新增檔案：自動插入 HOME.md 對應區段
+- 標籤完成後，將新修改的檔案加入暫存區（`git add` 受影響的檔案）
+- 若無新增檔案需要處理：跳過此步驟（零延遲）
+
 ### Step 2 — 產出儲存說明
 
 若教師在觸發時已提供說明（例如「儲存，備註是完成 Unit 2」），直接使用。
