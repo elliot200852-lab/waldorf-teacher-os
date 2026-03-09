@@ -19,7 +19,7 @@ aliases:
 | 「現在在哪？」「9C 做到哪了？」 | `status` | `ai-core/skills/status.md` |
 | 「開始大綱」「做學季規劃」 | `syllabus` | `ai-core/skills/syllabus.md` |
 | 「進入備課」「做 Block 2」 | `lesson` | `ai-core/skills/lesson.md` |
-| 「收尾」「更新進度」 | `session-end` | `ai-core/skills/session-end.md` |
+| 「收工」「存檔」「收尾」「結束今天」「儲存」 | `wrap-up` | `ai-core/skills/wrap-up.md` |
 | 「查 DI」「確認差異化」 | `di-check` | `ai-core/skills/di-check.md` |
 | 「載入教學哲學」「看英文背景」 | `ref` | `ai-core/skills/ref.md` |
 | 「導師業務」「班級事件」「個案討論」 | `homeroom` | `ai-core/skills/homeroom.md` |
@@ -43,7 +43,7 @@ aliases:
 ## 使用方式
 
 **Claude Code**
-直接輸入 slash command，例如 `/opening`、`/load 9c`、`/session-end 9c`。
+直接輸入 slash command，例如 `/opening`、`/load 9c`、`/wrap-up 9c`。
 `.claude/commands/` 中的薄層入口會自動引導至 `ai-core/skills/` 的正本執行。
 
 **其他 AI（Gemini、ChatGPT、任何有檔案讀取能力的 AI Agent）**

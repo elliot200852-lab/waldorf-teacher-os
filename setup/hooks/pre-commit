@@ -126,7 +126,13 @@ def parse_acl(path):
     if pa_m:
         protected = [p.strip().strip('"\'') for p in re.findall(r'-\s+([^\n#]+)', pa_m.group(1))]
 
-    return teachers, protected
+    # 解析 shared_writable（所有已註冊使用者均可修改的共用路徑）
+    shared = []
+    sw_m = re.search(r'shared_writable:\s*\n((?:\s+-[^\n]+\n)*)', content)
+    if sw_m:
+        shared = [p.strip().strip('"\'') for p in re.findall(r'-\s+([^\n#]+)', sw_m.group(1))]
+
+    return teachers, protected, shared
 
 def matches(file_path, pattern):
     if pattern == '*':
@@ -139,7 +145,7 @@ def matches(file_path, pattern):
     return file_path == pattern or file_path.startswith(pattern.rstrip('/') + '/')
 
 try:
-    teachers, protected = parse_acl(acl_path)
+    teachers, protected, shared = parse_acl(acl_path)
 
     if current_email not in teachers:
         print(f"UNKNOWN_USER:{current_email}")
@@ -154,7 +160,7 @@ try:
     blocked = []
     for f in staged_files:
         is_protected = any(matches(f, p) for p in protected)
-        is_allowed = any(matches(f, p) for p in user['allowed_paths'])
+        is_allowed = any(matches(f, p) for p in user['allowed_paths']) or any(matches(f, p) for p in shared)
         if is_protected:
             blocked.append(f"PROTECTED:{f}")
         elif not is_allowed:

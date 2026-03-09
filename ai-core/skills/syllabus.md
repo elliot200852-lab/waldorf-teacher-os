@@ -110,7 +110,7 @@ AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從
 
 ### Step 7 — 更新 session.yaml
 
-大綱產出後，自動生成 session-end diff，更新以下欄位：
+大綱產出後，自動生成 wrap-up diff，更新以下欄位：
 - `current_position.block: 一`
 - `current_position.step: 3`（已完成）
 - `output_files.syllabus_versions`（新增版本記錄）
