@@ -113,6 +113,7 @@ aliases:
 | [[sync-agents]]       | 「同步 Agent」      | 多 AI Agent 同步                 |
 | [[obsidian-sync]]     | 「補標籤」「更新索引」     | Obsidian 標籤與索引同步              |
 | [[add-teacher]]       | 「加入新老師」         | 管理員專用：建立新教師 Workspace         |
+| [[david-voice]]       | 「用 David 語氣寫」   | David 寫作語氣與個人品牌歸檔            |
 
 ---
 
@@ -202,6 +203,7 @@ aliases:
 | [[setup/add-teacher.sh\|add-teacher.sh]] | 新增教師腳本（建立 workspace + 寫入 ACL） |
 | [[setup/install-hooks.sh\|install-hooks.sh]] | 安裝 Git hooks |
 | [[setup/hooks/pre-commit\|hooks/pre-commit]] | Pre-commit hook（ACL 路徑檢查） |
+| [[setup/hooks/post-merge\|hooks/post-merge]] | Post-merge hook |
 
 ### 工具腳本
 
@@ -209,6 +211,8 @@ aliases:
 |------|------|
 | [[setup/scripts/obsidian-check.py\|obsidian-check.py]] | Obsidian 標籤偵測腳本 |
 | [[setup/save.sh\|save.sh]] | 存檔腳本 |
+| [[setup/scripts/publish-drafts.sh\|publish-drafts.sh]] | 個人品牌草稿發佈腳本 |
+| [[setup/scripts/setup-asset-link.sh\|setup-asset-link.sh]] | 素材庫 Symlink 建立腳本 |
 | [[setup/gcal-write.py\|gcal-write.py]] | Google Calendar 寫入工具 |
 | [[setup/add-logo.py\|add-logo.py]] | Logo 加入工具 |
 
@@ -372,6 +376,7 @@ aliases:
 | 檔案 | 說明 |
 |------|------|
 | [[行程總覽與規劃建議]] | 服務學習之旅規劃 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/service-learning-trip/agent1-addresses-phones.md\|景點地址與電話]] | 服務學習之旅景點機構聯絡資訊 |
 | [[V1-可行性評估報告]] | 服務學習之旅 V1 可行性評估 |
 | [[homeroom-notice-v1-20260301]] | 導師通知 v1 |
 | [[homeroom-notice-v2-20260301]] | 導師通知 v2 |
@@ -472,6 +477,23 @@ aliases:
 | [[workspaces/Working_Member/Teacher_郭耀新/projects/class-9b/students.yaml\|9B 學生 DI 分析]] | 學生能力 x 動機矩陣 |
 | [[workspaces/Working_Member/Teacher_郭耀新/projects/class-9b/information_technology/di-profile.yaml\|9B 資訊科技 DI 設定]] | 差異化設定 |
 | [[workspaces/Working_Member/Teacher_郭耀新/projects/class-9b/working/information_technology-session.yaml\|9B 資訊科技進度錨點]] | 目前 Block/Step |
+
+---
+
+## 教師環境預填（env-preset.env）
+
+各教師 Workspace 內的環境變數預填檔，由 `add-teacher` 技能自動產生：
+
+| 教師 | 路徑 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_郭耀新/env-preset.env\|郭耀新]] | Teacher_郭耀新/env-preset.env |
+| [[workspaces/Working_Member/Teacher_劉佳芳/env-preset.env\|劉佳芳]] | Teacher_劉佳芳/env-preset.env |
+| [[workspaces/Working_Member/Teacher_林雅婷/env-preset.env\|林雅婷]] | Teacher_林雅婷/env-preset.env |
+| [[workspaces/Working_Member/Teacher_林詩閔/env-preset.env\|林詩閔]] | Teacher_林詩閔/env-preset.env |
+| [[workspaces/Working_Member/Teacher_莊宜瑾/env-preset.env\|莊宜瑾]] | Teacher_莊宜瑾/env-preset.env |
+| [[workspaces/Working_Member/Teacher_張銘分/env-preset.env\|張銘分]] | Teacher_張銘分/env-preset.env |
+| [[workspaces/Working_Member/Teacher_李佳盈/env-preset.env\|李佳盈]] | Teacher_李佳盈/env-preset.env |
+| [[workspaces/Working_Member/Teacher_張仁謙/env-preset.env\|張仁謙]] | Teacher_張仁謙/env-preset.env |
 
 ---
 
@@ -587,6 +609,17 @@ aliases:
 | [[.claude/commands/git-history.md\|/git-history]] | git-history |
 | [[.claude/commands/obsidian-sync.md\|/obsidian-sync]] | obsidian-sync |
 | [[.claude/commands/add-teacher.md\|/add-teacher]] | add-teacher |
+| [[.claude/commands/david-voice.md\|/david-voice]] | david-voice |
+
+---
+
+## David 個人品牌素材庫（David-personal-asset-base/）
+
+| 檔案 | 說明 |
+|------|------|
+| [[David-personal-asset-base/README.md\|素材庫 README]] | Symlink 連動目錄說明 |
+| [[David-personal-asset-base/drafts\|drafts/]] | 草稿（symlink → Personal-Asset-base） |
+| [[David-personal-asset-base/published\|published/]] | 已發佈（symlink → Personal-Asset-base） |
 
 ---
 
