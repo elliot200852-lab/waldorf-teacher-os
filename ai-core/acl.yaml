@@ -155,6 +155,30 @@ roles:
         - .github/
         - publish/build.sh
 
+    - name: 李佳盈
+      email: tatianachiayinlee@gmail.com
+      github_username: TatTatWaldorf
+      workspace: workspaces/Working_Member/Teacher_李佳盈/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_李佳盈/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 張仁謙
+      email: s0955159620@gmail.com
+      github_username: andy0955
+      workspace: workspaces/Working_Member/Teacher_張仁謙/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_張仁謙/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
 # ── 永遠受保護的核心路徑（任何 Teacher 角色均不得修改）──
 #
 # 這些路徑即使不在 blocked_paths 中也永遠受到保護。
