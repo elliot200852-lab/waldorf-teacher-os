@@ -119,4 +119,4 @@ protected_always:
 # 新增路徑時只需在此清單加一行，不需修改 hook 或個別教師的 allowed_paths。
 
 shared_writable:
-  - Good-notes/HOME.md              # Obsidian 索引首頁（obsidian-sync 自動更新）
+  - Good-notes/                     # 共享筆記區（所有註冊教師可新增與編輯）

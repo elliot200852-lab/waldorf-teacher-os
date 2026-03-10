@@ -26,17 +26,34 @@ chmod +x "$SRC"
 cp "$SRC" "$DEST"
 chmod +x "$DEST"
 
+# ── Post-merge hook（Good-notes 新分享通知）────────────────
+SRC_PM="$REPO_ROOT/setup/hooks/post-merge"
+DEST_PM="$REPO_ROOT/.git/hooks/post-merge"
+
+if [ -f "$SRC_PM" ]; then
+    chmod +x "$SRC_PM"
+    cp "$SRC_PM" "$DEST_PM"
+    chmod +x "$DEST_PM"
+    PM_MSG="  Post-merge hook 已安裝至：.git/hooks/post-merge"
+else
+    PM_MSG="  [略過] 找不到 setup/hooks/post-merge"
+fi
+
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "  TeacherOS Hook 安裝完成"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 echo "  Pre-commit hook 已安裝至：.git/hooks/pre-commit"
+echo "$PM_MSG"
 echo ""
 echo "  往後每次執行 git commit，系統將自動："
 echo "    1. 確認你的身份（USER_EMAIL）"
 echo "    2. 比對 ai-core/acl.yaml 的授權範圍"
 echo "    3. 攔截超出授權的檔案修改"
+echo ""
+echo "  每次 git pull 時，若 Good-notes/ 有新分享，"
+echo "  系統會顯示分享者姓名與檔案清單。"
 echo ""
 echo "  如有任何問題，請聯絡 David。"
 echo ""
