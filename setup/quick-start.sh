@@ -240,7 +240,34 @@ if [ -f "$ENV_FILE" ]; then
     print_info "environment.env 已初步配置"
   fi
 else
-  if [ -f "$ENV_EXAMPLE" ]; then
+  # 嘗試自動偵測：從 workspace 的 env-preset.env 比對 git config user.email
+  GIT_EMAIL_CHECK=$(git config user.email 2>/dev/null || echo "")
+  PRESET_FOUND=""
+
+  if [ -n "$GIT_EMAIL_CHECK" ]; then
+    for PRESET in "$REPO_ROOT"/workspaces/Working_Member/*/env-preset.env; do
+      [ -f "$PRESET" ] || continue
+      PRESET_EMAIL=$(grep -E "^USER_EMAIL=" "$PRESET" 2>/dev/null | cut -d'=' -f2 | tr -d '[:space:]')
+      if [ "$PRESET_EMAIL" = "$GIT_EMAIL_CHECK" ]; then
+        PRESET_FOUND="$PRESET"
+        break
+      fi
+    done
+  fi
+
+  if [ -n "$PRESET_FOUND" ]; then
+    # 找到管理員預填的環境設定，直接使用
+    PRESET_NAME=$(grep -E "^USER_NAME=" "$PRESET_FOUND" 2>/dev/null | cut -d'=' -f2)
+    print_info "偵測到你的預填設定（$PRESET_NAME），自動建立 environment.env..."
+    cp "$PRESET_FOUND" "$ENV_FILE"
+    print_success "environment.env 已自動建立（必填欄位已預填）"
+    echo ""
+    echo -e "${GREEN}以下欄位已自動設定：${NC}"
+    echo "  USER_NAME、USER_EMAIL、WORKSPACE_ID、GITHUB_USERNAME"
+    echo ""
+    echo -e "${YELLOW}選填欄位（Google Drive、Pandoc 等）可之後再補充。${NC}"
+    echo ""
+  elif [ -f "$ENV_EXAMPLE" ]; then
     print_info "複製 environment.env.example → environment.env..."
     cp "$ENV_EXAMPLE" "$ENV_FILE"
     print_success "environment.env 已建立"

@@ -140,6 +140,7 @@ AI 從語句中解析已知欄位，再補問缺失的必填欄位。
 workspaces/Working_Member/Teacher_{name}/
 ├── teacheros-personal.yaml  ← 從 _template 複製
 ├── workspace.yaml           ← 從 _template 複製並填入已知資訊
+├── env-preset.env           ← 自動產生，必填欄位已預填
 ├── README.md                ← 從 _template 複製
 ├── skills/                  ← 從 _template/skills/ 複製（含範例）
 └── projects/
@@ -157,7 +158,22 @@ workspaces/Working_Member/Teacher_{name}/
 - `workspace_status` → active
 - `created_date` → {今天日期 YYYY-MM-DD}
 
-**4c. 預填 teacheros-personal.yaml（可選）**
+**4c. 產生 env-preset.env（環境預填檔）**
+
+在 workspace 根目錄建立 `env-preset.env`，包含從 Step 1 收集到的必填欄位：
+
+```
+USER_NAME={name}
+USER_EMAIL={email}
+WORKSPACE_ID=Teacher_{name}
+GITHUB_USERNAME={github_username}
+```
+
+此檔案被追蹤（commit 到 main），不含機密資訊（所有欄位已在 acl.yaml 中公開）。
+教師執行 `bash setup/quick-start.sh` 時，系統自動比對 `git config user.email`，
+找到匹配的 preset 後複製為 `setup/environment.env`，免去手動填寫。
+
+**4d. 預填 teacheros-personal.yaml（可選）**
 
 若 David 在 Step 1 有口述新教師的背景（教學科目、年級、角色等），
 將這些資訊填入 teacheros-personal.yaml 的對應欄位：
@@ -297,6 +313,7 @@ gh api repos/{owner}/{repo}/collaborators/{github_username} \
 | 項目 | 狀態 |
 |------|------|
 | Workspace 目錄 | `workspaces/Working_Member/Teacher_{name}/` |
+| 環境預填檔 | `env-preset.env` 已建立（quick-start.sh 自動偵測） |
 | ACL 權限 | 已更新 `ai-core/acl.yaml` |
 | Git 分支 | `workspace/Teacher_{name}` |
 | GitHub 權限 | Collaborator 邀請已發送（Write） |
@@ -324,17 +341,12 @@ cd waldorf-teacher-os
 bash setup/quick-start.sh
 ```
 
-**3. 填寫個人設定**
-編輯 `setup/environment.env`（從 `environment.env.example` 複製），填入：
-```
-USER_NAME={name}
-USER_EMAIL={email}
-WORKSPACE_ID=Teacher_{name}
-GITHUB_USERNAME={github_username}
-GOOGLE_DRIVE_EMAIL={google_email}
-```
+**3. 確認個人設定**
+quick-start.sh 會自動偵測你的 `env-preset.env` 並建立 `setup/environment.env`，
+必填欄位（姓名、Email、Workspace ID、GitHub 帳號）已由管理員預先填好。
+若需補充 Google Drive 等選填設定，可之後編輯 `setup/environment.env`。
 
-**4. 連接 Google Workspace（所有 Google 服務一次設定）**
+**4. 連接 Google Workspace（選用，所有 Google 服務一次設定）**
 ```
 npm install -g @googleworkspace/cli
 gws auth login
