@@ -86,12 +86,14 @@ if [ -z "$PYTHON_CMD" ]; then
     exit 0
 fi
 
-RESULT=$($PYTHON_CMD << PYTHON_SCRIPT
+_PRECOMMIT_PY=$(mktemp)
+trap 'rm -f "$_PRECOMMIT_PY"' EXIT
+cat > "$_PRECOMMIT_PY" <<'PYTHON_SCRIPT'
 import sys, os, re
 
-repo_root = """$REPO_ROOT"""
-current_email = """$CURRENT_EMAIL"""
-staged_raw = """$STAGED_FILES"""
+repo_root = sys.argv[1]
+current_email = sys.argv[2]
+staged_raw = sys.argv[3]
 staged_files = [f.strip() for f in staged_raw.strip().split('\n') if f.strip()]
 acl_path = os.path.join(repo_root, 'ai-core', 'acl.yaml')
 
@@ -101,12 +103,23 @@ def parse_acl(path):
 
     teachers = {}
 
+    # 輔助函式：為使用者同時註冊 email 與 github noreply email
+    def register(email, gh_username, entry):
+        teachers[email] = entry
+        if gh_username:
+            noreply = f"{gh_username}@users.noreply.github.com"
+            teachers[noreply] = entry
+
     # 解析 admin 區塊
     admin_m = re.search(r'admin:\s*\n(.*?)(?=\n\S|\Z)', content, re.DOTALL)
     if admin_m:
         admin_block = admin_m.group(0)
-        for email in re.findall(r'email:\s*([^\s#\n]+)', admin_block):
-            teachers[email.strip()] = {'is_admin': True, 'allowed_paths': ['*'], 'name': 'Admin'}
+        emails = re.findall(r'email:\s*([^\s#\n]+)', admin_block)
+        gh_users = re.findall(r'github_username:\s*([^\s#\n]+)', admin_block)
+        for i, email in enumerate(emails):
+            gh = gh_users[i].strip() if i < len(gh_users) else None
+            entry = {'is_admin': True, 'allowed_paths': ['*'], 'name': 'Admin'}
+            register(email.strip(), gh, entry)
 
     # 解析 teachers 清單（逐個 - name: 區塊）
     for m in re.finditer(
@@ -117,8 +130,13 @@ def parse_acl(path):
         email = m.group(2).strip()
         paths_raw = m.group(3)
         paths = [p.strip().strip('"\'') for p in re.findall(r'-\s+([^\n#]+)', paths_raw)]
+        # 找此區塊的 github_username
+        block_text = m.group(0)
+        gh_m = re.search(r'github_username:\s*([^\s#\n]+)', block_text)
+        gh = gh_m.group(1).strip() if gh_m else None
         if email not in teachers:
-            teachers[email] = {'is_admin': False, 'allowed_paths': paths, 'name': name}
+            entry = {'is_admin': False, 'allowed_paths': paths, 'name': name}
+            register(email, gh, entry)
 
     # 解析 protected_always
     protected = []
@@ -175,7 +193,8 @@ try:
 except Exception as e:
     print(f"ERROR:{e}")
 PYTHON_SCRIPT
-)
+
+RESULT=$($PYTHON_CMD "$_PRECOMMIT_PY" "$REPO_ROOT" "$CURRENT_EMAIL" "$STAGED_FILES")
 
 # ── Step 4：解析結果 ────────────────────────────────────
 
