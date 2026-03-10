@@ -137,7 +137,7 @@ session:
 
 - 有未標籤的 .md → 自動加上 aliases frontmatter（根據路徑與內容前 30 行產生）
 - 有未標籤的 .yaml → 自動加上中文標頭註解
-- 有未收錄 HOME.md 的檔案 → 自動插入 `Good-notes/HOME.md` 對應區段
+- 有未收錄 HOME.md 的檔案 → 自動插入根目錄 `HOME.md` 對應區段
 - 標籤/索引修正完成後，將修改的檔案加入 git 暫存區
 - 全部正常 → 靜默通過（不輸出任何訊息）
 
