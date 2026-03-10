@@ -95,4 +95,16 @@ aliases:
 
 ---
 
+<!-- 待納入筆記（週日排程更新時合併至第三週）
+
+[2026-03-10] 七位教師正式加入
+- 成員：林詩閔、劉佳芳、林雅婷、莊宜瑾、張銘分、李佳盈、張仁謙
+- 完成：Workspace 建置、ACL 權限、Git 分支、GitHub Collaborator 邀請（Write）
+- 里程碑：上機測驗開始真正的協作，老師開始熟悉 GitHub
+- 挑戰：測試 GitHub 本機與 Google Antigravity 在 Windows 上的相容性；目前系統架構大部分建立在 macOS + Claude AI 上
+- 方向：之後老師將主要使用 Gemini AI + Antigravity 協作
+- 社群：新群組已建立，下個月第一次聚會分享，之後推廣給更多老師
+
+-->
+
 *下一週回顧將於 2026/03/15（日）下午五點自動更新。*
