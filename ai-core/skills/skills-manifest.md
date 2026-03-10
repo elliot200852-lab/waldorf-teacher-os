@@ -38,6 +38,7 @@ aliases:
 | 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `git-history` | `ai-core/skills/git-history.md` |
 | 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `obsidian-sync` | `ai-core/skills/obsidian-sync.md` |
 | 「加入新老師」「新增老師」「新增教師」「add teacher」 | `add-teacher` | `ai-core/skills/add-teacher.md` |
+| 「寫文章」「寫貼文」「FB 文」「部落格」「演講稿」「品牌文」 | `david-voice` | `ai-core/skills/david-voice.md` |
 
 ---
 
