@@ -1,3 +1,9 @@
+---
+aliases:
+  - David 個人品牌素材庫
+  - Personal Asset Base
+---
+
 # David Personal Asset Base — 連動目錄
 
 此資料夾透過 symlink 連結至 `~/Desktop/Personal-Asset-base/vault/`。
