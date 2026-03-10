@@ -20,7 +20,7 @@
 #   所有教師 workspace 位於 workspaces/Working_Member/ 下
 #   工作範例參考 為特殊命名，不套 Role_Name 格式
 #
-# 最後更新：2026-03-06
+# 最後更新：2026-03-10
 
 # ── 管理員（無限制）────────────────────────────────────
 
@@ -89,6 +89,66 @@ roles:
       workspace: workspaces/Working_Member/Teacher_郭耀新/
       allowed_paths:
         - workspaces/Working_Member/Teacher_郭耀新/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 林詩閔
+      email: main5405@gmail.com
+      github_username: main5405
+      workspace: workspaces/Working_Member/Teacher_林詩閔/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_林詩閔/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 劉佳芳
+      email: funwen1013@gmail.com
+      github_username: funwen1013
+      workspace: workspaces/Working_Member/Teacher_劉佳芳/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_劉佳芳/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 林雅婷
+      email: a0106tin@gmail.com
+      github_username: a0106tin
+      workspace: workspaces/Working_Member/Teacher_林雅婷/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_林雅婷/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 莊宜瑾
+      email: j798546@gmail.com
+      github_username: j798546
+      workspace: workspaces/Working_Member/Teacher_莊宜瑾/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_莊宜瑾/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 張銘分
+      email: chocolates.beans@gmail.com
+      github_username: chocolatesbeans-cmf
+      workspace: workspaces/Working_Member/Teacher_張銘分/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_張銘分/
       blocked_paths:
         - ai-core/
         - setup/
