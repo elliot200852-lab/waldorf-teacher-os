@@ -584,32 +584,32 @@ aliases:
 
 ### Claude Code Commands（薄層入口 → ai-core/skills/）
 
-| 指令 | 指向技能 |
-|------|---------|
-| [[.claude/commands/opening.md\|/opening]] | opening |
-| [[.claude/commands/load.md\|/load]] | load |
-| [[.claude/commands/status.md\|/status]] | status |
-| [[.claude/commands/syllabus.md\|/syllabus]] | syllabus |
-| [[.claude/commands/lesson.md\|/lesson]] | lesson |
-| [[.claude/commands/wrap-up.md\|/wrap-up]] | wrap-up（收工） |
-| [[.claude/commands/di-check.md\|/di-check]] | di-check |
-| [[.claude/commands/ref.md\|/ref]] | ref |
-| [[.claude/commands/homeroom.md\|/homeroom]] | homeroom |
-| [[.claude/commands/block-end.md\|/block-end]] | block-end |
-| [[.claude/commands/rhythm.md\|/rhythm]] | rhythm |
-| [[.claude/commands/student-note.md\|/student-note]] | student-note |
+| 指令                                                    | 指向技能          |
+| ----------------------------------------------------- | ------------- |
+| [[.claude/commands/opening.md\|/opening]]             | opening       |
+| [[.claude/commands/load.md\|/load]]                   | load          |
+| [[.claude/commands/status.md\|/status]]               | status        |
+| [[.claude/commands/syllabus.md\|/syllabus]]           | syllabus      |
+| [[.claude/commands/lesson.md\|/lesson]]               | lesson        |
+| [[.claude/commands/wrap-up.md\|/wrap-up]]             | wrap-up（收工）   |
+| [[.claude/commands/di-check.md\|/di-check]]           | di-check      |
+| [[.claude/commands/ref.md\|/ref]]                     | ref           |
+| [[.claude/commands/homeroom.md\|/homeroom]]           | homeroom      |
+| [[.claude/commands/block-end.md\|/block-end]]         | block-end     |
+| [[.claude/commands/rhythm.md\|/rhythm]]               | rhythm        |
+| [[.claude/commands/student-note.md\|/student-note]]   | student-note  |
 | [[.claude/commands/parent-letter.md\|/parent-letter]] | parent-letter |
-| [[.claude/commands/pull-request.md\|/pull-request]] | pull-request |
-| [[.claude/commands/sync-cowork.md\|/sync-cowork]] | sync-cowork |
-| [[.claude/commands/drive.md\|/drive]] | drive |
-| [[.claude/commands/calendar.md\|/calendar]] | calendar |
-| [[.claude/commands/send-email.md\|/send-email]] | send-email |
-| [[.claude/commands/sheets.md\|/sheets]] | sheets |
-| [[.claude/commands/docs-edit.md\|/docs-edit]] | docs-edit |
-| [[.claude/commands/git-history.md\|/git-history]] | git-history |
+| [[.claude/commands/pull-request.md\|/pull-request]]   | pull-request  |
+| [[.claude/commands/sync-cowork.md\|/sync-cowork]]     | sync-cowork   |
+| [[.claude/commands/drive.md\|/drive]]                 | drive         |
+| [[.claude/commands/calendar.md\|/calendar]]           | calendar      |
+| [[.claude/commands/send-email.md\|/send-email]]       | send-email    |
+| [[.claude/commands/sheets.md\|/sheets]]               | sheets        |
+| [[.claude/commands/docs-edit.md\|/docs-edit]]         | docs-edit     |
+| [[.claude/commands/git-history.md\|/git-history]]     | git-history   |
 | [[.claude/commands/obsidian-sync.md\|/obsidian-sync]] | obsidian-sync |
-| [[.claude/commands/add-teacher.md\|/add-teacher]] | add-teacher |
-| [[.claude/commands/david-voice.md\|/david-voice]] | david-voice |
+| [[.claude/commands/add-teacher.md\|/add-teacher]]     | add-teacher   |
+| [[.claude/commands/david-voice.md\|/david-voice]]     | david-voice   |
 
 ---
 

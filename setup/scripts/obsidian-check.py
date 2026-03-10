@@ -236,10 +236,10 @@ def main():
     else:
         files = get_tracked_files()
 
-    # 讀取 HOME.md（優先從 Good-notes/ 讀取，兼容舊路徑）
-    home_path = os.path.join(REPO_ROOT, "Good-notes", "HOME.md")
+    # 讀取 HOME.md（優先從根目錄讀取，兼容舊路徑 Good-notes/）
+    home_path = os.path.join(REPO_ROOT, "HOME.md")
     if not os.path.exists(home_path):
-        home_path = os.path.join(REPO_ROOT, "HOME.md")
+        home_path = os.path.join(REPO_ROOT, "Good-notes", "HOME.md")
     home_content = ""
     try:
         with open(home_path, "r", encoding="utf-8") as f:
