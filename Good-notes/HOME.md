@@ -85,34 +85,34 @@ aliases:
 
 ### 系統技能正本（ai-core/skills/）
 
-| 技能 | 觸發語 | 說明 |
-|------|--------|------|
-| [[opening]] | 「開工」「早安」 | 新對話開場 |
-| [[load]] | 「載入 9C english」 | 載入班級與科目脈絡 |
-| [[status]] | 「現在在哪」 | 快速查詢進度 |
-| [[syllabus]] | 「開始大綱」 | 學季教學大綱規劃 |
-| [[lesson]] | 「進入備課」 | 課堂教學設計 |
-| [[wrap-up]] | 「收工」「存檔」「收尾」 | 進度同步 + Obsidian 修正 + Git 存檔推送 |
-| [[di-check]] | 「查 DI」 | 差異化合規核對 |
-| [[ref]] | 「載入教學哲學」 | 按需載入 Reference |
-| [[homeroom]] | 「導師業務」 | 班級經營與個案討論 |
-| [[block-end]] | 「區塊結束」 | 主課程區塊反思 |
-| [[rhythm]] | 「設計節奏」 | 課堂節奏設計 |
-| [[student-note]] | 「記錄學生」 | 學生觀察記錄 |
-| [[parent-letter]] | 「寫家長信」 | 家長信草稿 |
-| [[pull-request]] | 「發 PR」 | 合併申請 |
-| [[sync-cowork]] | 「同步 Cowork」 | 編譯 instructions |
-| [[drive]] | 「上傳到雲端」 | Google Drive 同步 |
-| [[calendar]] | 「查行事曆」 | Google Calendar 操作 |
-| [[send-email]] | 「寄信」 | Gmail 寄送 |
-| [[sheets]] | 「開試算表」 | Google Sheets 操作 |
-| [[docs-edit]] | 「編輯文件」 | Google Docs 編輯 |
-| [[subject-lesson-45]] | 「設計一堂課」 | 45 分鐘單堂課設計引擎 |
-| [[english-45]] | 「英文課設計」 | 英文科覆蓋層 |
-| [[git-history]] | 「更新週記」 | Git History 週記管理 |
-| [[sync-agents]] | 「同步 Agent」 | 多 AI Agent 同步 |
-| [[obsidian-sync]] | 「補標籤」「更新索引」 | Obsidian 標籤與索引同步 |
-| [[add-teacher]] | 「加入新老師」 | 管理員專用：建立新教師 Workspace |
+| 技能                    | 觸發語             | 說明                            |
+| --------------------- | --------------- | ----------------------------- |
+| [[opening]]           | 「開工」「早安」        | 新對話開場                         |
+| [[load]]              | 「載入 9C english」 | 載入班級與科目脈絡                     |
+| [[status]]            | 「現在在哪」          | 快速查詢進度                        |
+| [[syllabus]]          | 「開始大綱」          | 學季教學大綱規劃                      |
+| [[lesson]]            | 「進入備課」          | 課堂教學設計                        |
+| [[wrap-up]]           | 「收工」「存檔」「收尾」    | 進度同步 + Obsidian 修正 + Git 存檔推送 |
+| [[di-check]]          | 「查 DI」          | 差異化合規核對                       |
+| [[ref]]               | 「載入教學哲學」        | 按需載入 Reference                |
+| [[homeroom]]          | 「導師業務」          | 班級經營與個案討論                     |
+| [[block-end]]         | 「區塊結束」          | 主課程區塊反思                       |
+| [[rhythm]]            | 「設計節奏」          | 課堂節奏設計                        |
+| [[student-note]]      | 「記錄學生」          | 學生觀察記錄                        |
+| [[parent-letter]]     | 「寫家長信」          | 家長信草稿                         |
+| [[pull-request]]      | 「發 PR」          | 合併申請                          |
+| [[sync-cowork]]       | 「同步 Cowork」     | 編譯 instructions               |
+| [[drive]]             | 「上傳到雲端」         | Google Drive 同步               |
+| [[calendar]]          | 「查行事曆」          | Google Calendar 操作            |
+| [[send-email]]        | 「寄信」            | Gmail 寄送                      |
+| [[sheets]]            | 「開試算表」          | Google Sheets 操作              |
+| [[docs-edit]]         | 「編輯文件」          | Google Docs 編輯                |
+| [[subject-lesson-45]] | 「設計一堂課」         | 45 分鐘單堂課設計引擎                  |
+| [[english-45]]        | 「英文課設計」         | 英文科覆蓋層                        |
+| [[git-history]]       | 「更新週記」          | Git History 週記管理              |
+| [[sync-agents]]       | 「同步 Agent」      | 多 AI Agent 同步                 |
+| [[obsidian-sync]]     | 「補標籤」「更新索引」     | Obsidian 標籤與索引同步              |
+| [[add-teacher]]       | 「加入新老師」         | 管理員專用：建立新教師 Workspace         |
 
 ---
 
