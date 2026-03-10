@@ -127,6 +127,7 @@ AI 從語句中解析已知欄位，再補問缺失的必填欄位。
 | `workspaces/Working_Member/Teacher_{name}/` | 目錄已存在 | 詢問：「Workspace 目錄已存在。要補齊缺失檔案（不覆蓋已有的），還是跳過此步驟？」 |
 | email 已在 acl.yaml teachers 清單中 | 重複 email | 詢問：「此 email 已註冊給 {existing_name}。要更新該筆記錄，還是取消？」 |
 | `workspace/Teacher_{name}` branch | branch 已存在 | 報告：「Git 分支已存在，跳過建立。」 |
+| GitHub Collaborator | 已是 collaborator | 報告：「{github_username} 已是 Collaborator，跳過邀請。」 |
 | `projects/class-{code}/` | class 目錄已存在 | 報告：「班級資料夾已存在，直接使用。」 |
 
 ---
@@ -218,6 +219,8 @@ workspaces/Working_Member/Teacher_{name}/
 
 ### Step 7 — Git 操作
 
+**7a. 本地 commit + push**
+
 ```bash
 # 1. 在 main 上 commit（admin 權限，ACL 需在 main 上才能生效）
 git add workspaces/Working_Member/Teacher_{name}/
@@ -234,6 +237,22 @@ git checkout main
 ```
 
 若 branch 已存在（Step 3 檢查結果），跳過 branch 建立。
+
+**7b. GitHub Collaborator 邀請**
+
+將新教師加為 GitHub Repo 的 Collaborator（Write 權限），使其可以 push 到自己的 branch。
+
+```bash
+gh api repos/{owner}/{repo}/collaborators/{github_username} \
+  -X PUT -f permission=write
+```
+
+- `{owner}/{repo}` 從 `git remote get-url origin` 自動解析
+- 每位教師各執行一次
+- 成功回應：HTTP 201（新邀請）或 204（已是 collaborator）
+- 邀請發出後，教師需在 GitHub 上接受邀請（會收到 email 通知）
+
+**冪等性**：若教師已是 collaborator，API 回傳 204，不影響現有權限。
 
 ---
 
@@ -280,6 +299,7 @@ git checkout main
 | Workspace 目錄 | `workspaces/Working_Member/Teacher_{name}/` |
 | ACL 權限 | 已更新 `ai-core/acl.yaml` |
 | Git 分支 | `workspace/Teacher_{name}` |
+| GitHub 權限 | Collaborator 邀請已發送（Write） |
 | 班級資料夾 | {class-{code} 已建立 / 無} |
 | Git 存檔 | {commit hash} 已推送 |
 
@@ -349,13 +369,15 @@ gws auth login
 | Step 4 建立目錄 | 權限不足、磁碟滿 | 報告錯誤，繼續 Step 5 |
 | Step 5 更新 ACL | acl.yaml 語法問題 | 報告錯誤，建議手動修改，繼續 Step 7 |
 | Step 6 班級資料夾 | 模板缺失 | 報告缺失的模板檔案，建空目錄，繼續 |
-| Step 7 Git 操作 | push 失敗 | 嘗試 `git pull --rebase` 後重試，仍失敗則報告 |
+| Step 7a Git 操作 | push 失敗 | 嘗試 `git pull --rebase` 後重試，仍失敗則報告 |
+| Step 7b Collaborator 邀請 | gh API 失敗、帳號不存在 | 報告失敗的帳號，列出手動邀請指令，繼續 Step 8 |
 
 ### 冪等性保證
 
 - 目錄已存在 → 只補齊缺失檔案（不覆蓋已有的）
 - ACL 條目已存在 → 更新而非重複新增
 - Branch 已存在 → 跳過建立
+- Collaborator 已存在 → API 回傳 204，無副作用
 - Class folder 已存在 → 跳過建立
 
 ### 與 add-teacher.sh 的關係
