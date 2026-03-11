@@ -39,6 +39,9 @@ INSTRUCTIONS.md
 # Firebase 快取
 .firebase/
 
+# 個人通訊錄（含個資，不上傳）
+**/reference/contacts.csv
+
 # Tool Download — 使用者本地環境（不上傳）
 .env
 venv/
