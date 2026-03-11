@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "為什麼一個華德福老師要蓋作業系統"
 series: "TeacherOS x CreatorHub 建造日誌"
 sequence: 1/5
 publish_date: "2026-03-10"
