@@ -117,6 +117,7 @@ aliases:
 | 「寄信」「寄 Email」「發郵件」「寄給」 | `ai-core/skills/send-email.md` |
 | 「開試算表」「寫入 Sheets」「讀 Sheets」 | `ai-core/skills/sheets.md` |
 | 「編輯文件」「寫入 Docs」「開 Google Docs」 | `ai-core/skills/docs-edit.md` |
+| 「設定 gws」「安裝 gws」「gws setup」 | `ai-core/skills/gws-setup.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 

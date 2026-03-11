@@ -37,6 +37,7 @@ aliases:
 | `english-45.md` | 英文科覆蓋層（搭配 `subject-lesson-45.md` 使用） | 「英文課設計」「English lesson」 |
 | `git-history.md` | Git History 週記管理（追加或補寫） | 「填進去 Git history」「Git history 編寫」「更新週記」 |
 | `add-teacher.md` | 管理員專用：互動式建立新教師 Workspace 與權限 | 「加入新老師」「新增教師」 |
+| `gws-setup.md` | Google Workspace CLI 安裝、登入與多帳號設定 | 「設定 gws」「安裝 gws」 |
 
 ---
 

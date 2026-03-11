@@ -8,7 +8,7 @@
 
 homeroom_session:
   class: class-9c
-  last_updated: 2026-03-08
+  last_updated: 2026-03-11
 
   # HM Block 1 會在此處確認後寫入
   current_season:
@@ -26,6 +26,38 @@ homeroom_session:
     - "班親會通知：v1 已確認，存入 homeroom/content/comms/，輸出至 Google Drive"
     - "gcal-write.py 首次授權完成，token.json 已儲存，往後寫入免重新授權"
     - "服務學習之旅：2026/6/8-6/12，5天4夜，宜蘭出發，台中→台南→高雄，全程大眾運輸"
+    - "春季節慶：2026-03-28（六），全天活動"
+    - "三方面訪：3/17、3/24、3/31（二），每週 4 位學生，共 12 位"
+
+  # 三方面訪排程
+  parent_conference:
+    name: 三方面訪
+    status: 已排定，晤談表待發送
+    schedule:
+      - date: 2026-03-17
+        students:
+          - { time: "10:50-11:30", name: 宇泰 }
+          - { time: "11:35-12:15", name: 甯云 }
+          - { time: "14:30-15:10", name: 妤芃 }
+          - { time: "15:15-15:55", name: 若妍 }
+      - date: 2026-03-24
+        students:
+          - { time: "10:50-11:30", name: 芷安 }
+          - { time: "11:35-12:15", name: 軒寧 }
+          - { time: "14:30-15:10", name: 晨希 }
+          - { time: "15:15-15:55", name: 馨瑩 }
+      - date: 2026-03-31
+        students:
+          - { time: "10:50-11:30", name: 品妡 }
+          - { time: "11:35-12:15", name: 羽羽 }
+          - { time: "14:30-15:10", name: 知妤 }
+          - { time: "15:15-15:55", name: 又羿 }
+    form:
+      name: 親師晤談表（空白）
+      source: https://docs.google.com/document/d/1vfFiQMas5JzChe6_2QDmzxtYh0EGvDRH/edit
+      local: content/comms/親師晤談表-空白.md
+    pending:
+      - "【3/12 待辦】發送三方面訪時間通知 + 親師晤談表空白表格到 LINE 群組"
 
   # 服務學習之旅專案追蹤
   service_learning_trip:
