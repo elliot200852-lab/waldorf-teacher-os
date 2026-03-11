@@ -93,7 +93,7 @@ homeroom_session:
       date: 20260308
 
   next_action:
-    description: "服務學習之旅：聯繫台南淨灘單位 + 預約三間博物館 + 確認住宿 + 客運訂票"
+    description: "近期：3/12 發送三方面訪通知+晤談表到 LINE；中期：服務學習之旅聯繫機構與訂票"
     input_needed_from_teacher: "決定台中、高雄服務機構"
 
   open_questions:

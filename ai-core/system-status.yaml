@@ -13,7 +13,7 @@
 #           只改有變化的欄位，不重寫整份文件。
 #   主要入口仍是 AI_HANDOFF.md，此文件是補充快照。
 #
-# 最後更新：2026-03-05
+# 最後更新：2026-03-11
 
 system_status:
 
@@ -55,8 +55,8 @@ system_status:
     class-9c:
       workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9c/
       syllabus: v2-20260301（已輸出 Google Drive）
-      block: Block 1 完成 → 等待 Block 2
-      next: 設計第 1–2 週 45 分鐘課堂流程（小說研讀 + 語言工坊）
+      block: Block 2 Step 1（week5-1 已完成）
+      next: 設計 week5-2 課堂流程
 
   # ── 台灣文學主課程進度（9D） ────────────────────────
   ml_taiwan_literature_progress:
@@ -77,7 +77,7 @@ system_status:
     class-9c:
       workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9c/
       block: Block 3 Step 1 進行中
-      next: 確認春季班親會細節（2026-03-21）
+      next: 3/12 發送三方面訪通知+晤談表；3/17 起三方面訪；3/21 班親會；3/28 春季節慶
 
   # ── 環境與輸出系統 ──────────────────────────────────
   environment:
