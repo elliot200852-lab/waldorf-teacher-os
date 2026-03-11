@@ -113,7 +113,8 @@ aliases:
 | [[sync-agents]]       | 「同步 Agent」      | 多 AI Agent 同步                 |
 | [[obsidian-sync]]     | 「補標籤」「更新索引」     | Obsidian 標籤與索引同步              |
 | [[add-teacher]]       | 「加入新老師」         | 管理員專用：建立新教師 Workspace         |
-| [[david-voice]]       | 「用 David 語氣寫」   | David 寫作語氣與個人品牌歸檔            |
+| [[david-voice]]       | 「用 David 語氣寫」   | David 寫作語氣與個人品牌歸檔             |
+| [[gws-setup]]         | 「設定 gws」        | Google Workspace CLI 安裝與設定    |
 
 ---
 
@@ -342,15 +343,15 @@ aliases:
 
 9C 英文內容產出：
 
-| 檔案 | 說明 |
-|------|------|
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/english-syllabus-v1-20260228.md\|英文大綱 v1（科目路徑）]] | 學季大綱第一版 |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/english-syllabus-v2-20260301.md\|英文大綱 v2（科目路徑）]] | 學季大綱第二版 |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/content/english/english-syllabus-v1-20260228.md\|英文大綱 v1（班級路徑）]] | 班級視角副本 |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/content/english/english-syllabus-v2-20260301.md\|英文大綱 v2（班級路徑）]] | 班級視角副本 |
-| [[9C-week5-1-v1-教師教案]] | 第五週第一節教案 |
-| [[9C-week5-1-v1-學習單]] | 第五週第一節學習單 |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/README.md\|英文 content README]] | 內容資料夾說明 |
+| 檔案                                                                                                                             | 說明        |
+| ------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/english-syllabus-v1-20260228.md\|英文大綱 v1（科目路徑）]] | 學季大綱第一版   |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/english-syllabus-v2-20260301.md\|英文大綱 v2（科目路徑）]] | 學季大綱第二版   |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/content/english/english-syllabus-v1-20260228.md\|英文大綱 v1（班級路徑）]] | 班級視角副本    |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/content/english/english-syllabus-v2-20260301.md\|英文大綱 v2（班級路徑）]] | 班級視角副本    |
+| [[9C-week5-1-v1-教師教案]]                                                                                                         | 第五週第一節教案  |
+| [[9C-week5-1-v1-學習單]]                                                                                                          | 第五週第一節學習單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/README.md\|英文 content README]]                   | 內容資料夾說明   |
 
 9C 英文參考資料：
 
@@ -375,6 +376,7 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
+| [[親師晤談表-空白]] | 三方會談晤談表（家長篇+學生篇） |
 | [[行程總覽與規劃建議]] | 服務學習之旅規劃 |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/service-learning-trip/agent1-addresses-phones.md\|景點地址與電話]] | 服務學習之旅景點機構聯絡資訊 |
 | [[V1-可行性評估報告]] | 服務學習之旅 V1 可行性評估 |
@@ -610,6 +612,7 @@ aliases:
 | [[.claude/commands/obsidian-sync.md\|/obsidian-sync]] | obsidian-sync |
 | [[.claude/commands/add-teacher.md\|/add-teacher]]     | add-teacher   |
 | [[.claude/commands/david-voice.md\|/david-voice]]     | david-voice   |
+| [[.claude/commands/gws-setup.md\|/gws-setup]]       | gws-setup     |
 
 ---
 
