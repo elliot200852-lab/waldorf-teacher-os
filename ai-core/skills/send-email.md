@@ -64,23 +64,55 @@ command -v gws && gws auth status
 
 ### Step 3 — 寄出
 
-**純文字信件（最常見）：**
+> **編碼警告**：`gws gmail +send --subject` 無法正確處理中文主旨（會產生 mojibake 亂碼）。
+> **只有純英文主旨**才能用 `+send` 快捷指令。含中文主旨一律走草稿流程。
+
+**方法 A — 純英文主旨的純文字信件：**
 
 ```bash
-gws gmail +send --to 'EMAIL' --subject '主旨' --body '內文'
+gws gmail +send --to 'EMAIL' --subject 'English subject only' --body '內文'
 ```
 
-**需要 HTML 格式、CC/BCC、或多收件人：**
+**方法 B — 中文主旨（必須使用此方法）、HTML 格式、CC/BCC、或多收件人：**
 
-先建立草稿再寄出：
+使用 Python `email.mime` 模組組裝 MIME 訊息，確保 header 編碼正確：
 
-```bash
-# 建立草稿（base64 編碼的 MIME 訊息）
-gws gmail users drafts create --params '{"userId":"me"}' --json '{"message":{"raw":"BASE64_ENCODED_MIME"}}'
+```python
+import base64, json, subprocess
+from email.mime.text import MIMEText
+
+import shutil
+gws = shutil.which("gws")  # 自動偵測 gws 路徑
+params_me = json.dumps({"userId": "me"})
+
+# 組裝 MIME 訊息（自動處理中文 Subject 的 RFC 2047 編碼）
+msg = MIMEText("內文內容", "plain", "utf-8")  # HTML 信件改 "html"
+msg["To"] = "recipient@example.com"
+msg["Subject"] = "中文主旨完全沒問題"
+# msg["Cc"] = "cc@example.com"       # 選填
+# msg["Bcc"] = "bcc@example.com"     # 選填
+
+raw = base64.urlsafe_b64encode(msg.as_bytes()).decode("ascii")
+draft_json = json.dumps({"message": {"raw": raw}})
+
+# 建立草稿
+r1 = subprocess.run(
+    [gws, "gmail", "users", "drafts", "create",
+     "--params", params_me, "--json", draft_json],
+    capture_output=True, text=True,
+)
+draft_id = json.loads(r1.stdout)["id"]
 
 # 寄出草稿
-gws gmail users drafts send --params '{"userId":"me"}' --json '{"id":"DRAFT_ID"}'
+send_json = json.dumps({"id": draft_id})
+subprocess.run(
+    [gws, "gmail", "users", "drafts", "send",
+     "--params", params_me, "--json", send_json],
+    capture_output=True, text=True,
+)
 ```
+
+**批次寄信**時，將收件人放入 list 迴圈執行即可（每人各建一封草稿再寄出）。
 
 ### Step 4 — 報告結果
 
@@ -94,13 +126,15 @@ gws gmail users drafts send --params '{"userId":"me"}' --json '{"id":"DRAFT_ID"}
 
 | 操作 | 指令 |
 |------|------|
-| 純文字寄信 | `gws gmail +send --to EMAIL --subject '主旨' --body '內文'` |
+| 純文字寄信（英文主旨） | `gws gmail +send --to EMAIL --subject 'Subject' --body '內文'` |
+| 中文主旨寄信 | Python MIME + drafts create → drafts send（見 Step 3 方法 B） |
 | 收件匣摘要 | `gws gmail +triage` |
 | 搜尋信件 | `gws gmail users messages list --params '{"userId":"me","q":"搜尋條件"}'` |
 | 讀信 | `gws gmail users messages get --params '{"userId":"me","id":"MSG_ID"}'` |
 
 ## 注意事項
 
-- 教師說「寄」就寄，不存草稿匣
+- 教師說「寄」就寄，不存草稿匣（草稿僅作為寄送中繼，寄出即刪除）
+- **中文主旨禁用 `+send`**——這是已知 bug，會產生 mojibake 亂碼。一律走 Python MIME 草稿流程
 - 信件附件目前不支援自動處理，需提醒教師手動附加
 - 全程使用繁體中文回應

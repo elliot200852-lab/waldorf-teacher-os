@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "YAML 管結構 Markdown 管內容"
 series: "TeacherOS x CreatorHub 建造日誌"
 sequence: 3/5
 publish_date: "2026-03-12"

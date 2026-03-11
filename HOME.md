@@ -324,6 +324,12 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/teacheros-personal.yaml\|David 個人身份層]] | 教學信念、工作偏好、AI 互動風格 |
 | [[workspaces/Working_Member/Codeowner_David/workspace.yaml\|David workspace 狀態]] | Workspace 狀態追蹤 |
 
+### 個人技能
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/skills/pua-debugging.md\|pua-debugging]] | 反擺爛除錯保護層——強制 AI 進入高能動性除錯模式 |
+
 ### 9C 班級
 
 | 檔案 | 說明 |
@@ -365,12 +371,6 @@ aliases:
 | 檔案 | 說明 |
 |------|------|
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/session.yaml\|9C 導師進度錨點]] | 導師業務進度 |
-
-9C 工作全貌筆記：
-
-| 檔案 | 說明 |
-|------|------|
-| [[Good-notes/9C 班工作全貌 — 導師與英文教學\|9C 班工作全貌]] | 導師 + 英文教學的完整工作脈絡與方向 |
 
 9C 導師內容產出：
 
@@ -432,6 +432,15 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9d/ml-taiwan-literature/di-profile.yaml\|9D 台灣文學 DI 設定]] | 差異化設定 |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9d/ml-taiwan-literature/lesson.yaml\|9D 台灣文學教案]] | 教案紀錄 |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9d/ml-taiwan-literature/assessment.yaml\|9D 台灣文學評量]] | 評量設計 |
+
+### Good-notes 建造日誌
+
+| 檔案 | 說明 |
+|------|------|
+| [[Good-notes/9C 班工作全貌 — 導師與英文教學\|9C 班工作全貌]] | 導師 + 英文教學的完整工作脈絡與方向 |
+| [[Good-notes/2026-03-10-why-build-an-os\|為什麼一個華德福老師要蓋作業系統]] | TeacherOS 建造日誌 1/5 |
+| [[Good-notes/2026-03-11-meaning-architect\|意義架構師]] | TeacherOS 建造日誌 2/5 |
+| [[Good-notes/2026-03-12-yaml-and-markdown\|YAML 管結構 Markdown 管內容]] | TeacherOS 建造日誌 3/5 |
 
 ---
 

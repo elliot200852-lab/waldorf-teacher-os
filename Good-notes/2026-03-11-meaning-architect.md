@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "意義架構師：老師決定 AI 應該知道什麼"
 series: "TeacherOS x CreatorHub 建造日誌"
 sequence: 2/5
 publish_date: "2026-03-11"
