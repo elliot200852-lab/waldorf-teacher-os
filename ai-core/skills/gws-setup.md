@@ -25,25 +25,44 @@ requires_args: false
 | 有終端機（Claude Code、Cowork） | 自動執行每一步，報告結果 |
 | 無終端機（Gemini 語音等） | 逐步提示教師手動執行指令 |
 
+## 操作類型標記
+
+本技能中的每一步標記為以下兩種：
+
+- **AI 自動** — AI 直接在終端執行，教師不需要做任何事
+- **需教師操作** — 會開啟瀏覽器或需要教師輸入，AI 必須暫停並等待教師完成
+
 ## 執行步驟
 
-### Step 1 — 檢查前置條件：Node.js / npm
+### Step 0 — 確認帳號資訊（AI 自動）
+
+讀取教師的 `{workspace}/teacheros-personal.yaml`，檢查是否有 `google_accounts` 區塊。
+
+- 有 → 記下 `default` 帳號與 `accounts` 清單，進入 Step 1
+- 沒有 → **停止**，提示教師：
+
+> 你的 teacheros-personal.yaml 還沒有填寫 `google_accounts`。
+> 請先填入你的 Google 帳號資訊，格式參考 David 的範本：
+> `workspaces/Working_Member/Codeowner_David/teacheros-personal.yaml` 的 `google_accounts` 區塊。
+> 填好後再說「設定 gws」。
+
+### Step 1 — 檢查前置條件：Node.js / npm（AI 自動）
 
 ```bash
 node --version && npm --version
 ```
 
 - 通過 → 進入 Step 2
-- 失敗 → 提示教師安裝 Node.js（https://nodejs.org），安裝後重新執行本技能
+- 失敗 → 提示教師：「請先安裝 Node.js（https://nodejs.org），安裝完成後再說『設定 gws』。」
 
-### Step 2 — 檢查 gws CLI 是否已安裝
+### Step 2 — 檢查 gws CLI 是否已安裝（AI 自動）
 
 ```bash
 command -v gws && gws --version
 ```
 
 - 已安裝 → 顯示版本，進入 Step 3
-- 未安裝 → 執行安裝：
+- 未安裝 → AI 自動執行安裝：
 
 ```bash
 npm install -g @googleworkspace/cli
@@ -55,41 +74,60 @@ npm install -g @googleworkspace/cli
 gws --version
 ```
 
-### Step 3 — 登入主帳號
+### Step 3 — 登入主帳號（需教師操作）
 
-讀取教師的 `{workspace}/teacheros-personal.yaml`，取得 `google_accounts.default` 作為主帳號。
+AI 執行：
 
 ```bash
 gws auth login
 ```
 
-瀏覽器會跳出 Google 授權頁面。教師完成授權後回到終端。
+**執行後 AI 必須暫停，向教師說明：**
 
-驗證登入：
+> 瀏覽器已開啟 Google 登入頁面。請完成以下操作：
+>
+> 1. 在瀏覽器中選擇你的主要 Google 帳號（{default 帳號}）
+> 2. 畫面會顯示「Google Workspace CLI 要求存取你的 Google 帳戶」
+> 3. 點擊「允許」（Allow）
+> 4. 看到「Authentication successful」或類似成功訊息後，回到這裡告訴我「好了」
+>
+> （如果瀏覽器沒有自動開啟，請手動複製終端中的 URL 貼到瀏覽器。）
+
+**等待教師確認後**，AI 驗證登入：
 
 ```bash
 gws auth status
 ```
 
-確認 token 存在且有效。
+- token 有效 → 進入 Step 4
+- 失敗 → 提示教師重試，或檢查是否選對帳號
 
-### Step 4 — 多帳號設定（若有）
+### Step 4 — 多帳號設定（需教師操作，若有多帳號）
 
-讀取 `google_accounts.accounts` 清單，若有多個帳號，逐一登入：
+讀取 `google_accounts.accounts` 清單。若只有一個帳號，跳到 Step 5。
+
+若有多個帳號，對每個額外帳號：
+
+AI 執行：
 
 ```bash
-GOOGLE_WORKSPACE_CLI_ACCOUNT=<第二帳號email> gws auth login
+GOOGLE_WORKSPACE_CLI_ACCOUNT=<額外帳號email> gws auth login
 ```
 
-每個帳號登入後驗證：
+**執行後 AI 暫停，向教師說明：**
+
+> 瀏覽器已開啟。這次請選擇你的第二個帳號（{額外帳號 email}）並按「允許」。
+> 完成後告訴我「好了」。
+
+**等待教師確認後**，AI 驗證：
 
 ```bash
-GOOGLE_WORKSPACE_CLI_ACCOUNT=<第二帳號email> gws auth status
+GOOGLE_WORKSPACE_CLI_ACCOUNT=<額外帳號email> gws auth status
 ```
 
-若教師只有一個帳號，跳過此步。
+重複此流程直到所有帳號都登入完成。
 
-### Step 5 — 驗證各服務可用
+### Step 5 — 驗證各服務可用（AI 自動）
 
 用主帳號快速測試三個核心服務：
 
@@ -106,13 +144,20 @@ gws drive files list --params '{"pageSize":1}'
 
 每個服務回報：可用 / 不可用（附錯誤訊息）。
 
-若出現 403 scope 不足：
+若出現 403 scope 不足（**需教師操作**）：
+
+AI 執行：
 
 ```bash
 gws auth login --scope gmail,drive,calendar,sheets,docs
 ```
 
-### Step 6 — 回報結果
+> 瀏覽器已開啟。這次 Google 會要求你授權更多服務（Gmail、Drive、Calendar、Sheets、Docs）。
+> 請選擇同一個帳號，點擊「允許」，完成後告訴我「好了」。
+
+等待教師確認後重新測試。
+
+### Step 6 — 回報結果（AI 自動）
 
 以表格呈現設定結果：
 
@@ -132,5 +177,5 @@ gws auth login --scope gmail,drive,calendar,sheets,docs
 
 - 本技能不會修改教師的 teacheros-personal.yaml，僅讀取帳號資訊
 - 認證憑證存於 `~/.config/gws/`，不進入 Git
-- 若教師尚未在 teacheros-personal.yaml 填入 google_accounts，提示教師先填寫
+- 重複執行本技能是安全的——登入只是刷新 token，不會產生重複帳號
 - gws CLI 指令參考：`ai-core/reference/gws-cli-guide.md`
