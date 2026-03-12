@@ -38,6 +38,7 @@ aliases:
 | `git-history.md` | Git History 週記管理（追加或補寫） | 「填進去 Git history」「Git history 編寫」「更新週記」 |
 | `add-teacher.md` | 管理員專用：互動式建立新教師 Workspace 與權限 | 「加入新老師」「新增教師」 |
 | `gws-setup.md` | Google Workspace CLI 安裝、登入與多帳號設定 | 「設定 gws」「安裝 gws」 |
+| `new-doc.md` | 新建 Markdown 文件前確認存放路徑、檔名、是否複製 | 「生成新檔案」「建立新文件」「新增文件」 |
 
 ---
 
@@ -123,5 +124,5 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-08*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-12*
 

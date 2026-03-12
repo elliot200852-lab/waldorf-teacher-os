@@ -118,6 +118,7 @@ aliases:
 | 「開試算表」「寫入 Sheets」「讀 Sheets」 | `ai-core/skills/sheets.md` |
 | 「編輯文件」「寫入 Docs」「開 Google Docs」 | `ai-core/skills/docs-edit.md` |
 | 「設定 gws」「安裝 gws」「gws setup」 | `ai-core/skills/gws-setup.md` |
+| 「生成新檔案」「建立新文件」「新增文件」「產出新文件」 | `ai-core/skills/new-doc.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 
@@ -226,5 +227,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-05（新增 GWS CLI 觸發詞：Drive 上傳、Calendar 查詢）*
+*最後更新：2026-03-12（新增 new-doc 技能：新建 Markdown 文件前確認路徑與檔名）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

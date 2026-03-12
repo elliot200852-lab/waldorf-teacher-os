@@ -115,6 +115,7 @@ aliases:
 | [[add-teacher]]       | 「加入新老師」         | 管理員專用：建立新教師 Workspace         |
 | [[david-voice]]       | 「用 David 語氣寫」   | David 寫作語氣與個人品牌歸檔             |
 | [[gws-setup]]         | 「設定 gws」        | Google Workspace CLI 安裝與設定    |
+| [[new-doc]]           | 「生成新檔案」「建立新文件」  | 新建 Markdown 文件路徑與檔名確認        |
 
 ---
 
@@ -401,6 +402,8 @@ aliases:
 |------|------|
 | [[week4-返校工作計畫]] | 第四週返校計畫 |
 | [[week4-分享會流程與場次]] | 第四週分享會流程 |
+| [[快樂的薛西佛斯_農場實習開場詩]] | 成果發表會開場詩 |
+| [[農場實習教學紀錄_9C信宏]] | 教師教學歷程紀錄 |
 
 9C 農場實習參考資料：
 
@@ -622,6 +625,7 @@ aliases:
 | [[.claude/commands/add-teacher.md\|/add-teacher]]     | add-teacher   |
 | [[.claude/commands/david-voice.md\|/david-voice]]     | david-voice   |
 | [[.claude/commands/gws-setup.md\|/gws-setup]]       | gws-setup     |
+| [[.claude/commands/new-doc.md\|/new-doc]]           | new-doc       |
 
 ---
 
