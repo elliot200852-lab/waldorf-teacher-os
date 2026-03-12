@@ -41,6 +41,8 @@ INSTRUCTIONS.md
 
 # 個人通訊錄（含個資，不上傳）
 **/reference/contacts.csv
+**/reference/class_*_directory.csv
+**/reference/class_*_contacts.py
 
 # Tool Download — 使用者本地環境（不上傳）
 .env
