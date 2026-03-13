@@ -179,6 +179,18 @@ roles:
         - .github/
         - publish/build.sh
 
+    - name: 陳佩珊
+      email: vernachen327@gmail.com
+      github_username: vernachen327-eng
+      workspace: workspaces/Working_Member/Teacher_陳佩珊/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_陳佩珊/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
 # ── 永遠受保護的核心路徑（任何 Teacher 角色均不得修改）──
 #
 # 這些路徑即使不在 blocked_paths 中也永遠受到保護。
