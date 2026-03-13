@@ -1,3 +1,8 @@
+---
+aliases:
+  - "技能索引"
+---
+
 # TeacherOS CreatorHub — 技能索引（Skills Manifest）
 
 > 觸發語 → 技能名稱 → 檔案路徑的快速對照表。

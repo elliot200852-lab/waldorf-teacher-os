@@ -99,6 +99,7 @@ aliases:
 | [[block-end]]         | 「區塊結束」          | 主課程區塊反思                       |
 | [[rhythm]]            | 「設計節奏」          | 課堂節奏設計                        |
 | [[student-note]]      | 「記錄學生」          | 學生觀察記錄                        |
+| [[teaching-log]]      | 「教學紀錄」          | 教師教學回顧與觀察                     |
 | [[parent-letter]]     | 「寫家長信」          | 家長信草稿                         |
 | [[pull-request]]      | 「發 PR」          | 合併申請                          |
 | [[sync-cowork]]       | 「同步 Cowork」     | 編譯 instructions               |
@@ -324,6 +325,7 @@ aliases:
 |------|------|
 | [[workspaces/Working_Member/Codeowner_David/teacheros-personal.yaml\|David 個人身份層]] | 教學信念、工作偏好、AI 互動風格 |
 | [[workspaces/Working_Member/Codeowner_David/workspace.yaml\|David workspace 狀態]] | Workspace 狀態追蹤 |
+| [[workspaces/Working_Member/Codeowner_David/teaching-log.md\|David 教學紀錄]] | 跨班跨科教學回顧（累加式） |
 
 ### 個人技能
 
@@ -404,6 +406,8 @@ aliases:
 | [[week4-分享會流程與場次]] | 第四週分享會流程 |
 | [[快樂的薛西佛斯_農場實習開場詩]] | 成果發表會開場詩 |
 | [[農場實習教學紀錄_9C信宏]] | 教師教學歷程紀錄 |
+| [[projects/g9/content/農場實習後的薛西弗斯開場設計_chat-history\|薛西弗斯開場設計對話紀錄]] | 開場詩設計過程 chat history |
+| [[projects/g9/content/農場實習教學紀錄_9C信宏拷貝\|農場實習教學紀錄（g9 拷貝）]] | 教學紀錄 g9 備份 |
 
 9C 農場實習參考資料：
 
@@ -444,6 +448,7 @@ aliases:
 | [[Good-notes/2026-03-10-why-build-an-os\|為什麼一個華德福老師要蓋作業系統]] | TeacherOS 建造日誌 1/5 |
 | [[Good-notes/2026-03-11-meaning-architect\|意義架構師]] | TeacherOS 建造日誌 2/5 |
 | [[Good-notes/2026-03-12-yaml-and-markdown\|YAML 管結構 Markdown 管內容]] | TeacherOS 建造日誌 3/5 |
+| [[Good-notes/農場實習教學紀錄_9C信宏拷貝\|9C 農場實習教學紀錄（備份）]] | 農場實習教學歷程紀錄備份 |
 
 ---
 
