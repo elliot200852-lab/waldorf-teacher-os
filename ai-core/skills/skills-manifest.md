@@ -25,7 +25,8 @@ aliases:
 | 「導師業務」「班級事件」「個案討論」 | `homeroom` | `ai-core/skills/homeroom.md` |
 | 「區塊結束」「做反思」「這個 block 完成了」 | `block-end` | `ai-core/skills/block-end.md` |
 | 「設計節奏」「規劃這週」「吸氣呼氣」 | `rhythm` | `ai-core/skills/rhythm.md` |
-| 「記錄學生」「個案觀察」「記一下誰」 | `student-note` | `ai-core/skills/student-note.md` |
+| 「記錄學生」「個案觀察」「記一下誰」「學生紀錄」 | `student-note` | `ai-core/skills/student-note.md` |
+| 「教學紀錄」「教學回顧」「今天上課」「教學反思」 | `teaching-log` | `ai-core/skills/teaching-log.md` |
 | 「寫家長信」「學期評語」「家長通知」 | `parent-letter` | `ai-core/skills/parent-letter.md` |
 | 「同步 Cowork」「更新 Cowork」 | `sync-cowork` | `ai-core/skills/sync-cowork.md` |
 | 「寄信」「寄 Email」「發郵件」「寄給」 | `send-email` | `ai-core/skills/send-email.md` |
@@ -56,10 +57,15 @@ aliases:
 
 ---
 
-## 新增技能
+## 新增或修改技能
 
 見 `ai-core/skills/README.md` 的「如何新增技能」章節。
 
+**必做：** 每次新增或修改技能後，必須同步更新以下三份索引文件：
+1. `ai-core/skills/README.md` — 技能清單表
+2. `ai-core/skills/skills-manifest.md`（本文件）— 觸發對照表
+3. `ai-core/AI_HANDOFF.md` — 技能觸發表與技能清單
+
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-08*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-13*

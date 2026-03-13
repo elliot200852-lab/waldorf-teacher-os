@@ -24,7 +24,8 @@ aliases:
 | `block-end.md` | 主課程區塊結尾反思 | 「區塊結束」「做反思」 |
 | `rhythm.md` | 課堂節奏設計（吸氣↔呼氣） | 「設計節奏」「規劃這週」 |
 | `homeroom.md` | 導師業務（班級經營、個案） | 「導師業務」「班級事件」 |
-| `student-note.md` | 學生觀察記錄 | 「記錄學生」「記一下誰」 |
+| `student-note.md` | 學生個人觀察紀錄（一人一檔，累加，日期 + tag） | 「記錄學生」「記一下誰」「學生紀錄」 |
+| `teaching-log.md` | 教師教學紀錄（一師一檔，累加，日期 + tag） | 「教學紀錄」「教學回顧」「今天上課」 |
 | `parent-letter.md` | 家長信草稿 | 「寫家長信」「學期評語」 |
 | `pull-request.md` | 發送合併申請 | 「發 PR」「合併申請」 |
 | `sync-cowork.md` | 編譯 Cowork Folder Instructions | 「同步 Cowork」 |
@@ -87,8 +88,11 @@ aliases:
    ## 注意事項
    ```
 
-2. **在 `ai-core/skills-manifest.md` 的技能索引表新增一行**：
-   | `[觸發語]` | `[技能名稱]` | `ai-core/skills/[技能名稱].md` |
+2. **更新三份索引文件（必做）**：
+   - `ai-core/skills/README.md`（本文件）— 技能清單表新增一行
+   - `ai-core/skills/skills-manifest.md` — 觸發對照表新增一行
+   - `ai-core/AI_HANDOFF.md` — 技能觸發表與技能清單各新增一行
+   - 三份文件的「最後更新」日期同步改為當天
 
 3. **（選用，Claude Code slash command）** 在 `.claude/commands/` 新建薄層入口：
    ```markdown
@@ -124,5 +128,5 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-12*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-13*
 

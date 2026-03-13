@@ -105,7 +105,8 @@ aliases:
 | 「導師業務」「班級事件」「個案討論」 | `ai-core/skills/homeroom.md` |
 | 「區塊結束」「做反思」「block 完成」 | `ai-core/skills/block-end.md` |
 | 「設計節奏」「規劃這週」「吸氣呼氣」 | `ai-core/skills/rhythm.md` |
-| 「記錄學生」「觀察記錄」「記一下誰」 | `ai-core/skills/student-note.md` |
+| 「記錄學生」「觀察記錄」「記一下誰」「學生紀錄」 | `ai-core/skills/student-note.md` |
+| 「教學紀錄」「教學回顧」「今天上課」「教學反思」 | `ai-core/skills/teaching-log.md` |
 | 「寫家長信」「學期評語」「家長通知」 | `ai-core/skills/parent-letter.md` |
 | 「存檔」「儲存」「幫我存」「commit」「備份」 | `ai-core/skills/save.md` |
 | 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `ai-core/skills/obsidian-sync.md` |
@@ -194,6 +195,8 @@ TeacherOS CreatorHub 內建標準化技能，對應不同工作場景。
 | `session-end` | 「收尾」「更新進度」 | 對話結束前同步狀態 |
 | `di-check` | 「查 DI」「確認差異化」 | DI 雙軸合規核對 |
 | `ref` | 「載入教學哲學」「看背景」 | 按需載入 Reference 模組 |
+| `student-note` | 「記錄學生」「記一下誰」 | 學生個人觀察紀錄（一人一檔，累加） |
+| `teaching-log` | 「教學紀錄」「教學回顧」 | 教師教學紀錄（一師一檔，累加） |
 
 ---
 
