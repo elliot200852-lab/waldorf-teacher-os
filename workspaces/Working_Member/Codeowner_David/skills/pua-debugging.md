@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "反擺爛除錯模式"
 name: pua-debugging
 description: 強制 AI 進入高能動性除錯模式——避免卡住、擺爛、反覆微調同一路線，或太快把問題丟回給教師。
 triggers:
