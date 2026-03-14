@@ -134,76 +134,39 @@ aliases:
 
 ## 教師個人技能（Personal Skills）
 
-除系統技能（`ai-core/skills/`）外，每位教師可在自己的 workspace 內建立個人技能。
+除系統技能外，每位教師可在 `{workspace}/skills/` 建立個人技能。
+AI 完成第一步後，掃描該資料夾的 YAML frontmatter（`triggers` + `description`），暫存為觸發比對清單。
+個人技能與系統技能同名時，**優先使用個人版本**並通知教師。教師可說「用系統的 [技能名]」切換。
 
-**路徑：** `{workspace}/skills/*.md`
-
-**掃描規則：**
-
-1. AI 在完成第一步（必讀檔案載入）後，掃描 `{workspace}/skills/` 資料夾
-2. 讀取每個 `.md` 檔的 YAML frontmatter（`---` 之間的區塊），**不讀全文**
-3. 將 `triggers` 和 `description` 欄位暫存為觸發比對清單
-4. 當教師口語指令符合任一個人技能的觸發條件，載入該技能全文並執行
-
-**衝突處理規則（明確規則，非語意判斷）：**
-
-當個人技能與系統技能同名時：
-
-| 情境 | 行為 |
-|------|------|
-| 教師在自己的 workspace 中工作 | **使用個人版本**，並主動通知教師 |
-| 教師明確指定「用系統的 [技能名]」 | 使用系統版本 |
-
-通知範例：
-> 「你的個人技能 `lesson` 與系統技能同名，本次對話中我會使用你的個人版本。如需使用系統版本，請說『用系統的 lesson』。」
-
-**個人技能格式：** 與系統技能一致，必須包含 YAML frontmatter，至少具備 `name`、`description`、`triggers` 三個欄位。範本見 `workspaces/_template/skills/EXAMPLE-recitation.md`。
-
-**跨工具適用：** 此規則適用於所有 AI 工具。Claude Code、Gemini、及任何有檔案讀取能力的 AI，在載入教師 workspace 後，均應執行上述掃描流程。
+完整掃描規則、衝突處理範例、格式規範見 `ai-core/skills/opening.md` Step 3。
+個人技能範本見 `workspaces/_template/skills/EXAMPLE-recitation.md`。
 
 ---
 
-## 第三步：對話結束時必須更新
+## 第三步：對話結束前主動提醒
 
-偵測到「收工」「收尾」「更新進度」「結束今天」→ **立即執行 `ai-core/skills/wrap-up.md`**
+多個 AI Agent 可能交替使用，wrap-up 是唯一的工作銜接機制。
+若教師未主動說「收工」，AI 應在對話尾聲主動提醒：
+「今天的工作要更新進度嗎？說『收尾』我來處理。」
 
-多個 AI Agent 可能交替使用，wrap-up 是唯一的工作銜接機制。每次對話結束前若教師未主動說收尾，AI 應主動提醒：「今天的工作要更新進度嗎？說「收尾」我來處理。」
+（wrap-up 的觸發語與執行規格已定義於上方「技能執行規則」，不重複列出。）
 
 ---
 
 ## 技能系統（Skills）
 
-TeacherOS CreatorHub 內建標準化技能，對應不同工作場景。
-
-**技能正本：** `ai-core/skills/`（所有 AI 共用）
-每個技能為獨立 `.md` 檔，任何具備檔案讀取能力的 AI Agent 皆可直接讀取並執行。
+**技能正本：** `ai-core/skills/`（所有 AI 共用）。每個技能為獨立 `.md` 檔。
+完整觸發語對照見上方「技能執行規則」，不重複列出。
 
 **Claude Code 使用者：** 技能為 slash command，直接輸入 `/load 9c english`、`/lesson 9c english 2` 等指令。
 `.claude/commands/` 為薄層入口，讀取後自動指向 `ai-core/skills/` 正本。
 
 **Gemini / ChatGPT / 其他有檔案能力的 AI：**
 1. 讀取 `ai-core/skills/README.md` 取得技能目錄
-2. 讀取對應技能的 `.md` 檔案（如 `ai-core/skills/wrap-up.md`）取得完整規格
+2. 讀取對應技能的 `.md` 檔案取得完整規格
 3. 依照規格執行
 
 **新增技能：** 在 `ai-core/skills/` 新建 `.md` 檔，在 `skills-manifest.md` 加索引即完成。
-
-| 技能 | 教師說 | 用途 |
-|------|--------|------|
-| `opening` | 「開工」「我們開始吧」「早安」 | 新對話開場：更新 Repo → 載入系統 → 報告狀態 |
-| `load` | 「載入 9C english」「讀一下狀態」 | 載入班級與科目脈絡，定位工作起點 |
-| `status` | 「現在在哪？」 | 快速查詢進度 |
-| `syllabus` | 「開始大綱」「做學季規劃」 | 啟動 Block 1 |
-| `lesson` | 「進入備課」「做 Block 2」 | 課堂教學設計 |
-| `wrap-up` | 「收工」「收尾」「存檔」「更新進度」 | 進度同步 + 存檔推送 |
-| `di-check` | 「查 DI」「確認差異化」 | DI 雙軸合規核對 |
-| `ref` | 「載入教學哲學」「看背景」 | 按需載入 Reference 模組 |
-| `student-note` | 「記錄學生」「記一下誰」 | 學生個人觀察紀錄（一人一檔，累加） |
-| `teaching-log` | 「教學紀錄」「教學回顧」 | 教師教學紀錄（一師一檔，累加） |
-| `subject-lesson-45` | 「設計一堂課」「45 分鐘」 | 45 分鐘單堂課設計引擎 |
-| `english-45` | 「英文課設計」 | 英文科覆蓋層 |
-| `git-history` | 「Git history 編寫」「更新週記」 | Git History 週記管理 |
-| `sync-agents` | 「同步檢查」「sync agents」 | 多 AI agent 系統一致性檢查 |
 
 ---
 
@@ -237,5 +200,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-14（修正幽靈引用 session-end→wrap-up、save→wrap-up 合併；補入 subject-lesson-45/english-45/git-history/sync-agents；移除個人技能 david-voice 至 workspace）*
+*最後更新：2026-03-14（瘦身：刪除重複技能摘要表、精簡第三步與個人技能段落；修正幽靈引用；補入缺漏技能；移除個人技能至 workspace）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
