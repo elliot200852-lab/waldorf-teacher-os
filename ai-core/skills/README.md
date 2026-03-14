@@ -14,6 +14,7 @@ aliases:
 
 | 技能檔案 | 用途 | 觸發語（教師說） |
 |---------|------|----------------|
+| `opening.md` | 新對話開場：更新 Repo → 載入系統 → 報告狀態 | 「開工」「開始」「早安」「start」 |
 | `load.md` | 載入班級與科目脈絡，定位工作起點 | 「載入 9C english」「讀一下狀態」 |
 | `status.md` | 快速確認目前進度 | 「現在在哪？」「9C english 做到哪了？」 |
 | `syllabus.md` | 啟動學季整體教學大綱規劃 | 「開始大綱」「做學季規劃」 |
@@ -40,6 +41,8 @@ aliases:
 | `add-teacher.md` | 管理員專用：互動式建立新教師 Workspace 與權限 | 「加入新老師」「新增教師」 |
 | `gws-setup.md` | Google Workspace CLI 安裝、登入與多帳號設定 | 「設定 gws」「安裝 gws」 |
 | `new-doc.md` | 新建 Markdown 文件前確認存放路徑、檔名、是否複製 | 「生成新檔案」「建立新文件」「新增文件」 |
+| `obsidian-sync.md` | Obsidian 標籤與索引自動修正 | 「sync Obsidian」「更新索引」「補標籤」 |
+| `sync-agents.md` | 多 AI agent 系統一致性檢查 | 「同步檢查」「sync agents」「系統一致性」 |
 
 ---
 
@@ -128,5 +131,5 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-13*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-14*
 

@@ -99,7 +99,7 @@ system_status:
     workspace_david: 完成（workspaces/Working_Member/Codeowner_David/，含 class-9c + class-9d）
     teacher_guide: v2.0（AI 口語指令版，含 Git 工作流程）
     github_branch_protection: 已啟用（main branch 保護，PR 合併需 David 審批）
-    skills_save: 完成（ai-core/skills/save.md — 「存檔」觸發 git commit + push）
+    skills_wrap_up: 完成（ai-core/skills/wrap-up.md — 「收工」「存檔」觸發進度同步 + git commit + push）
     skills_pull_request: 完成（ai-core/skills/pull-request.md — 「發 PR」觸發合併申請）
     add_teacher_sh: 完成（自動建立 workspace + 權限 + 個人 branch）
     quick_start_sh: 完成（含 Check 8 自動偵測並切換個人 branch + Check 9 Claude Code Hook 自動設定）

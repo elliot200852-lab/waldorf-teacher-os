@@ -59,7 +59,7 @@ git pull origin main
 
 | 狀況 | 處理 |
 |------|------|
-| `git status` 顯示有未 commit 的改動 | 先提醒：「你有未儲存的工作，要先存檔嗎？」若教師同意，觸發 `save` 技能，存完再繼續 |
+| `git status` 顯示有未 commit 的改動 | 先提醒：「你有未儲存的工作，要先存檔嗎？」若教師同意，觸發 `wrap-up` 技能，存完再繼續 |
 | `git pull` 成功，無衝突 | 報告：「已更新至最新版本。」繼續 Step 1 |
 | `git pull` 有衝突 | **停下來，不繼續載入。** 報告：「更新時發現檔案衝突，請聯繫 David 處理。」列出衝突的檔案清單 |
 | `git pull` 顯示 "Already up to date" | 報告：「已是最新版本。」繼續 Step 1 |
@@ -92,12 +92,16 @@ git pull origin main
 4. `{workspace}/teacheros-personal.yaml`
 5. `projects/_di-framework/project.yaml`
 
-### Step 3 — 掃描個人技能
+### Step 3 — 載入個人技能
 
 依照 AI_HANDOFF.md 的「教師個人技能」章節：
-1. 掃描 `{workspace}/skills/` 資料夾
-2. 讀取每個 `.md` 檔的 YAML frontmatter
-3. 將 `triggers` 和 `description` 暫存為觸發比對清單
+
+1. 檢查 `{workspace}/personal-handoff.md` 是否存在
+   - 若存在：讀取該文件，取得個人技能觸發對照表（這是個人技能的索引，相當於 AI_HANDOFF 的個人延伸層）
+   - 若不存在：跳過，僅使用系統技能
+2. 掃描 `{workspace}/skills/` 資料夾
+3. 讀取每個 `.md` 檔的 YAML frontmatter
+4. 將 `triggers` 和 `description` 暫存為觸發比對清單
 
 ### Step 4 — 報告系統狀態
 

@@ -107,7 +107,7 @@ WaldorfTeacherOS-Repo/
 
 ## 三、當前系統狀態
 
-> ⏱ 此區塊由 Claude Code 的 session-end 流程自動更新
+> ⏱ 此區塊由 Claude Code 的 wrap-up 流程自動更新
 
 <!-- COMPILE:STATUS:START -->
 **此區塊將由 sync-cowork 從你的 {科目}/session.yaml 編譯生成。**
@@ -225,7 +225,7 @@ Opening 技能會引導你完成：
 |--------|-----------|
 | 「載入」+ 班級 + 科目 | `ai-core/skills/load.md` |
 | 「進入備課」「做 Block」 | `ai-core/skills/lesson.md` |
-| 「收尾」「更新進度」 | `ai-core/skills/session-end.md` |
+| 「收尾」「更新進度」 | `ai-core/skills/wrap-up.md` |
 | 「查 DI」「確認差異化」 | `ai-core/skills/di-check.md` |
 
 偵測到觸發語時，先讀取對應的技能檔案，再依步驟執行。教師以語音輸入為主，措辭不精確——任何接近觸發語的口語表達都應觸發，不等待精確指令。
@@ -245,9 +245,9 @@ Opening 技能會引導你完成：
 - `INSTRUCTIONS.md`（你正在讀的）— 不進 Git，每位教師本機編譯生成
 - 編譯引擎：`ai-core/skills/sync-cowork.md`
 
-**日常更新（每次 Claude Code session-end）：**
+**日常更新（每次 Claude Code wrap-up）：**
 - 區塊三（當前狀態）會自動更新，反映最新的班級進度
-- 觸發方式：教師在 Claude Code 中說「收尾」時，session-end 的 Step 5 自動執行
+- 觸發方式：教師在 Claude Code 中說「收尾」時，wrap-up 的 Step 5 自動執行
 
 **架構更新（共用區塊有變動時）：**
 - 管理者修改 `INSTRUCTIONS.template.md` 後，所有教師下次執行 sync-cowork 時會自動同步

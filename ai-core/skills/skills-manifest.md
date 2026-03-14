@@ -39,8 +39,10 @@ aliases:
 | 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `git-history` | `ai-core/skills/git-history.md` |
 | 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `obsidian-sync` | `ai-core/skills/obsidian-sync.md` |
 | 「加入新老師」「新增老師」「新增教師」「add teacher」 | `add-teacher` | `ai-core/skills/add-teacher.md` |
-| 「寫文章」「寫貼文」「FB 文」「部落格」「演講稿」「品牌文」 | `david-voice` | `ai-core/skills/david-voice.md` |
 | 「設定 gws」「安裝 gws」「gws setup」 | `gws-setup` | `ai-core/skills/gws-setup.md` |
+| 「生成新檔案」「建立新文件」「新增文件」「產出新文件」 | `new-doc` | `ai-core/skills/new-doc.md` |
+| 「發 PR」「合併申請」「送回主系統」 | `pull-request` | `ai-core/skills/pull-request.md` |
+| 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `sync-agents` | `ai-core/skills/sync-agents.md` |
 
 ---
 
@@ -68,4 +70,4 @@ aliases:
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-13*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-14*
