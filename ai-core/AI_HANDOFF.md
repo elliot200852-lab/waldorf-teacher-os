@@ -23,7 +23,7 @@ aliases:
 | 有終端機（Claude Code、Cowork） | 自動執行 `git fetch origin` → `git pull origin main`，報告結果 |
 | 無終端機（Gemini 語音、ChatGPT） | 提醒教師手動執行 `git pull origin main`，等待確認後才繼續 |
 
-如果教師有未 commit 的改動，先提醒存檔（觸發 save 技能）再 pull。
+如果教師有未 commit 的改動，先提醒存檔（觸發 wrap-up 技能）再 pull。
 如果 pull 有衝突，**停止載入**，請教師聯繫 David。
 
 確認更新完成後，進入第一步。
@@ -99,7 +99,7 @@ aliases:
 | 「現在在哪」「做到哪了」 | `ai-core/skills/status.md` |
 | 「開始大綱」「學季規劃」 | `ai-core/skills/syllabus.md` |
 | 「進入備課」「做 Block」「開始設計」 | `ai-core/skills/lesson.md` |
-| 「收尾」「更新進度」「結束今天」 | `ai-core/skills/session-end.md` |
+| 「收工」「收尾」「存檔」「儲存」「更新進度」「結束今天」「commit」「備份」 | `ai-core/skills/wrap-up.md` |
 | 「查 DI」「確認差異化」 | `ai-core/skills/di-check.md` |
 | 「載入教學哲學」「看背景」「ref」 | `ai-core/skills/ref.md` |
 | 「導師業務」「班級事件」「個案討論」 | `ai-core/skills/homeroom.md` |
@@ -108,7 +108,6 @@ aliases:
 | 「記錄學生」「觀察記錄」「記一下誰」「學生紀錄」 | `ai-core/skills/student-note.md` |
 | 「教學紀錄」「教學回顧」「今天上課」「教學反思」 | `ai-core/skills/teaching-log.md` |
 | 「寫家長信」「學期評語」「家長通知」 | `ai-core/skills/parent-letter.md` |
-| 「存檔」「儲存」「幫我存」「commit」「備份」 | `ai-core/skills/save.md` |
 | 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `ai-core/skills/obsidian-sync.md` |
 | 「發 PR」「合併申請」「送回主系統」 | `ai-core/skills/pull-request.md` |
 | 「同步 Cowork」「更新 Cowork」「編譯 instructions」 | `ai-core/skills/sync-cowork.md` |
@@ -120,6 +119,10 @@ aliases:
 | 「編輯文件」「寫入 Docs」「開 Google Docs」 | `ai-core/skills/docs-edit.md` |
 | 「設定 gws」「安裝 gws」「gws setup」 | `ai-core/skills/gws-setup.md` |
 | 「生成新檔案」「建立新文件」「新增文件」「產出新文件」 | `ai-core/skills/new-doc.md` |
+| 「設計一堂課」「45 分鐘」「lesson design」 | `ai-core/skills/subject-lesson-45.md` |
+| 「英文課設計」「English lesson」 | `ai-core/skills/english-45.md` |
+| 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `ai-core/skills/git-history.md` |
+| 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 
@@ -162,9 +165,9 @@ aliases:
 
 ## 第三步：對話結束時必須更新
 
-偵測到「收尾」「更新進度」「結束今天」→ **立即執行 `ai-core/skills/session-end.md`**
+偵測到「收工」「收尾」「更新進度」「結束今天」→ **立即執行 `ai-core/skills/wrap-up.md`**
 
-多個 AI Agent 可能交替使用，session-end 是唯一的工作銜接機制。每次對話結束前若教師未主動說收尾，AI 應主動提醒：「今天的工作要更新進度嗎？說「收尾」我來處理。」
+多個 AI Agent 可能交替使用，wrap-up 是唯一的工作銜接機制。每次對話結束前若教師未主動說收尾，AI 應主動提醒：「今天的工作要更新進度嗎？說「收尾」我來處理。」
 
 ---
 
@@ -180,7 +183,7 @@ TeacherOS CreatorHub 內建標準化技能，對應不同工作場景。
 
 **Gemini / ChatGPT / 其他有檔案能力的 AI：**
 1. 讀取 `ai-core/skills/README.md` 取得技能目錄
-2. 讀取對應技能的 `.md` 檔案（如 `ai-core/skills/session-end.md`）取得完整規格
+2. 讀取對應技能的 `.md` 檔案（如 `ai-core/skills/wrap-up.md`）取得完整規格
 3. 依照規格執行
 
 **新增技能：** 在 `ai-core/skills/` 新建 `.md` 檔，在 `skills-manifest.md` 加索引即完成。
@@ -192,11 +195,15 @@ TeacherOS CreatorHub 內建標準化技能，對應不同工作場景。
 | `status` | 「現在在哪？」 | 快速查詢進度 |
 | `syllabus` | 「開始大綱」「做學季規劃」 | 啟動 Block 1 |
 | `lesson` | 「進入備課」「做 Block 2」 | 課堂教學設計 |
-| `session-end` | 「收尾」「更新進度」 | 對話結束前同步狀態 |
+| `wrap-up` | 「收工」「收尾」「存檔」「更新進度」 | 進度同步 + 存檔推送 |
 | `di-check` | 「查 DI」「確認差異化」 | DI 雙軸合規核對 |
 | `ref` | 「載入教學哲學」「看背景」 | 按需載入 Reference 模組 |
 | `student-note` | 「記錄學生」「記一下誰」 | 學生個人觀察紀錄（一人一檔，累加） |
 | `teaching-log` | 「教學紀錄」「教學回顧」 | 教師教學紀錄（一師一檔，累加） |
+| `subject-lesson-45` | 「設計一堂課」「45 分鐘」 | 45 分鐘單堂課設計引擎 |
+| `english-45` | 「英文課設計」 | 英文科覆蓋層 |
+| `git-history` | 「Git history 編寫」「更新週記」 | Git History 週記管理 |
+| `sync-agents` | 「同步檢查」「sync agents」 | 多 AI agent 系統一致性檢查 |
 
 ---
 
@@ -230,5 +237,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-12（新增 new-doc 技能：新建 Markdown 文件前確認路徑與檔名）*
+*最後更新：2026-03-14（修正幽靈引用 session-end→wrap-up、save→wrap-up 合併；補入 subject-lesson-45/english-45/git-history/sync-agents；移除個人技能 david-voice 至 workspace）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

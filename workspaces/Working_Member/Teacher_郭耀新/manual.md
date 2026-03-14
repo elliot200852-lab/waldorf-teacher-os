@@ -75,7 +75,7 @@ workspaces/Working_Member/Teacher_郭耀新/projects/class-{code}/{subject}/sess
 
 - 系統路由：`ai-core/teacheros.yaml`
 - 載入流程：`ai-core/skills/load.md`
-- 收尾流程：`ai-core/skills/session-end.md`
+- 收尾流程：`ai-core/skills/wrap-up.md`
 - 權限設定：`ai-core/acl.yaml`
 
 ---
