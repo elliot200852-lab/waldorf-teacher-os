@@ -385,6 +385,7 @@ aliases:
 | [[V1-可行性評估報告]] | 服務學習之旅 V1 可行性評估 |
 | [[homeroom-notice-v1-20260301]] | 導師通知 v1 |
 | [[homeroom-notice-v2-20260301]] | 導師通知 v2 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/comms/農場實習返校三日歷程-家長版\|農場實習返校三日歷程 家長版]] | 農場實習返校三日歷程——親師溝通 Facebook 文章 |
 
 9C 導師參考資料：
 

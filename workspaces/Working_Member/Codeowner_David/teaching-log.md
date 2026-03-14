@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "David 教學紀錄"
 name: 林信宏（David）
 role: Codeowner
 classes: [9C]
