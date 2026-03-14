@@ -105,6 +105,22 @@ aliases:
 - 方向：之後老師將主要使用 Gemini AI + Antigravity 協作
 - 社群：新群組已建立，下個月第一次聚會分享，之後推廣給更多老師
 
+[2026-03-14] 技能系統全面審查：系統技能與個人技能的邊界問題
+
+起心動念來自一個看似無關的刺激——Karpathy 剛發布的 autoresearch 專案。那個專案的核心是一份 `program.md`，人類用自然語言寫策略指令，AI agent 自主讀取並迭代執行。這跟 TeacherOS 的 skill 架構在精神上完全一致——人寫規格、AI 執行——但 autoresearch 把「迭代迴圈」和「停止條件」也寫進了指令裡，這是 TeacherOS 的 skill 目前還沒做到的。
+
+但真正的收穫不在 autoresearch 本身，而是由它觸發的一次系統全面健檢。審查 28 個技能檔案後，發現問題集中在兩個層級：索引層有兩個幽靈引用（`session-end.md` 和 `save.md` 指向不存在的檔案），以及一個更根本的架構問題——**系統技能與個人技能的邊界從未被明確定義**。
+
+`david-voice`（David 的個人品牌寫作語氣規準）被放在 `ai-core/skills/`（所有教師共用的系統層），它的 slash command 也在 `.claude/commands/`（repo 層級，所有使用者可見）。這意味著如果陳佩珊老師用 Claude Code 操作這個 repo，她寫出來的文章會套用 David 的語氣——這顯然不對。
+
+困擾更深的是判斷準則：每次建一個新功能，David 都要糾結「這該是通用工具還是我個人的版本？」。審查後提煉出一個極簡判斷法：**「陳佩珊老師用得到嗎？」** 用得到就放 `ai-core/skills/`，用不到就放 `workspaces/.../skills/`。
+
+解法是建立 **Personal Handoff 機制**：在教師的 workspace 放一份 `personal-handoff.md`，作為個人技能的索引（相當於 AI_HANDOFF 的個人延伸層）。`opening.md` 載入 workspace 時自動讀取這份文件，任何 AI 工具走完開場流程就同時擁有系統技能和該教師的個人技能觸發表。`.claude/commands/` 只保留系統技能的 slash command，個人技能靠自然語言觸發——反正 David 本來就是語音輸入為主。
+
+這次審查同時修正了所有幽靈引用（session-end→wrap-up、save 合併進 wrap-up），補建了 4 個缺失的 slash command，把孤兒技能 `sync-agents` 納入索引，並統一了三份索引文件。最終驗證：29 個系統技能 = 29 個 slash commands，完全一致。
+
+這個架構決定的意義超越了技術層面。它確立了 TeacherOS 作為多人協作平台的一個關鍵原則：**系統是共用的，但每個教師的聲音是自己的。** 技術工具（載入、存檔、查行事曆）所有人共用；個人風格（寫作語氣、除錯習慣）由各自的 workspace 承載。這跟華德福教育的精神一致——共同的方法論底層，每個教師獨特的教學人格。
+
 -->
 
 *下一週回顧將於 2026/03/15（日）下午五點自動更新。*
