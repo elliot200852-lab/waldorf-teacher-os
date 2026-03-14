@@ -163,74 +163,27 @@ AI 在為 David 代筆或協作撰文時，必須嚴格依循以下規準。
 
 ---
 
-## 九、從第一篇定稿中萃取的額外校準點
+## 九、分類範本路由
 
-以下是 David 親自修改 AI 初稿後浮現的語氣偏好，權重極高：
+不同場合的語氣差異很大。寫作前，根據對象與場合讀取對應範本，寫完後與範本做語氣比對自檢。
 
-- **姿態是「為自己留紀錄，順便讓人看」**，不是「說故事給觀眾聽」。用「回顧留下點紀錄」，不用「說下去」。
-- **不把話說滿**。會在樂觀的陳述前加限定詞（「樂觀地假設」），保持自知之明的距離感。
-- **中英夾雜是武器，不是習慣**。英文短語只在特定節奏點出現，用來打破中文的抒情慣性或製造反差。不是 Chinglish，是刻意的語碼轉換。
-- **段落偏好流動**。一個完整的論述在同一段裡走完。不喜歡被分隔線或過度斷句打斷思考。
-- **「溼水彩」不是「水彩」**。對華德福場景的描述用精確的術語（溼水彩、工作本），但不解釋它們——讓內行人會心，外行人自行想像。
+### 範本位置
 
----
+`voice-samples/`（與本檔同目錄）
 
-## 十、文章歸檔流程
+### 路由表
 
-文章從撰寫到定稿的完整路徑：
+| 類別 | 範本檔 | 適用場合 | 語氣特徵摘要 |
+|------|--------|---------|-------------|
+| 個人情感深度抒發 | `01-personal-emotional.md` | 給至親的信、生日文、紀念日 | 溫度最高、自我揭露最深、隱喻最密、反向收束 |
+| Facebook 隨筆 | `02-facebook-casual.md` | FB 貼文、社群短文 | 最口語、一段到底、中英夾雜最密、自嘲為基調、200 字以內 |
+| 教師→教師（校內外同行） | `03-teacher-to-teachers.md` | 師培演講、教師社群分享、教育觀點文 | 反英雄姿態、允許髒話、政治不迴避、信念宣告收尾 |
+| 教師→學生（兼家長） | `04-teacher-to-students.md` | 期末通知、學季結語、班級公開信 | 溫暖權威、季節開場、三段式（肯定→問題→鼓勵）、班級事件隱喻 |
+| 教師→家長 | `05-teacher-to-parents.md` | 家長文、班親會說明、學習歷程報告 | 引導者報告、群像描述、成長隱喻、誠實但留餘地、期許收束 |
 
-### 10.1 草稿階段
+### 使用規則
 
-存入 `Personal-Asset-base/vault/drafts/`，以週次+星期命名：
-```
-week-2026-w11-tue.md
-week-2026-w11-wed.md
-```
-
-**Frontmatter 必填欄位**（腳本依賴這三個值）：
-```yaml
-publish_date: "2026-03-10"   # ISO 日期，加引號
-pillar: C-teacheros-log       # 四大主軸代號
-slug: why-build-an-os         # 英文語意 slug，AI 寫稿時一併填入
-```
-
-### 10.2 進入審稿
-
-用腳本將草稿批次複製到 published：
-```bash
-bash setup/scripts/publish-drafts.sh
-```
-
-腳本邏輯：
-1. 掃描 `vault/drafts/*.md`
-2. 從 frontmatter 讀取 `publish_date`、`pillar`、`slug`
-3. 複製到 `vault/published/[pillar]/[publish_date]-[slug]-draft.md`
-4. 已存在的檔案跳過（不覆蓋）
-5. 缺欄位的檔案跳過並警告
-
-David 在 published 資料夾裡直接修改內容。
-
-### 10.3 定稿
-
-David 確認後，刪除檔名的 `-draft` 即完成發佈：
-```
-2026-03-10-why-build-an-os-draft.md  →  2026-03-10-why-build-an-os.md
-```
-
-同時將 YAML frontmatter 的 `status` 改為 `published`。
-
-### 10.4 跨 Repo 連動
-
-TeacherOS Repo 內的 `David-personal-asset-base/` 透過 symlink 連結至 Personal-Asset-base，
-在 Obsidian 裡可直接編輯，兩邊即時生效。
-
-設定方式：`bash setup/scripts/setup-asset-link.sh`
-
-### 10.5 四大內容主軸（pillar）
-
-| 代號 | 主題 | published 子資料夾 |
-|------|------|-------------------|
-| A | 今日華德福 | `A-waldorf-today/` |
-| B | AI 時代教師 | `B-teacher-in-ai/` |
-| C | TeacherOS 建造日誌 | `C-teacheros-log/` |
-| D | 教室裡的故事 | `D-classroom-stories/` |
+1. **寫作前**：判斷對象與場合 → 讀取對應範本 → 取得該類別的語氣校準筆記
+2. **寫作中**：以本檔核心規則（二至八節）為底，疊加範本的類別特徵
+3. **寫完後**：與範本做 A/B 比對，列出語氣偏離點，自行修正後交 David 審閱
+4. **無對應範本時**：僅依本檔核心規則寫作，並提醒 David 此類別尚無範本
