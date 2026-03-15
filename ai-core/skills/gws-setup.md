@@ -132,9 +132,11 @@ gws auth login --account <default帳號email>
 > 瀏覽器已開啟 Google 登入頁面。請完成以下操作：
 >
 > 1. 在瀏覽器中選擇你的主要 Google 帳號（{default 帳號}）
-> 2. 畫面會顯示「Google Workspace CLI 要求存取你的 Google 帳戶」
-> 3. 點擊「允許」（Allow）
-> 4. 看到「Authentication successful」或類似成功訊息後，回到這裡告訴我「好了」
+> 2. 畫面可能會顯示「Google 尚未驗證這個應用程式」的警告——這是正常的（TeacherOS 是內部工具）
+>    - 點擊「進階」→「前往 TeacherOS（不安全）」
+> 3. 畫面會顯示「Google Workspace CLI 要求存取你的 Google 帳戶」
+> 4. 點擊「允許」（Allow）
+> 5. 看到「Authentication successful」或類似成功訊息後，回到這裡告訴我「好了」
 >
 > （如果瀏覽器沒有自動開啟，AI 用偵測到的 OS 對應指令開啟瀏覽器。）
 
@@ -164,6 +166,7 @@ gws auth login --account <額外帳號email>
 **執行後 AI 暫停，向教師說明：**
 
 > 瀏覽器已開啟。這次請選擇你的第二個帳號（{額外帳號 email}）並按「允許」。
+> 如果看到「Google 尚未驗證這個應用程式」警告，點「進階」→「前往 TeacherOS（不安全）」即可。
 > 完成後告訴我「好了」。
 >
 > （如果瀏覽器沒有自動開啟，AI 用偵測到的 OS 對應指令開啟瀏覽器。）

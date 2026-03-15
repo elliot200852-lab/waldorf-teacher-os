@@ -198,6 +198,7 @@ aliases:
 | [[setup/quick-start.sh\|quick-start.sh]] | 快速安裝腳本 |
 | [[setup/setup-check.sh\|setup-check.sh]] | 環境檢查腳本 |
 | [[setup/environment.env.example\|environment.env.example]] | 環境變數範本 |
+| [[setup/gws-client-secret.json\|gws-client-secret.json]] | GWS OAuth 用戶端識別檔（TeacherOS GCP 專案） |
 
 ### 教師管理
 
