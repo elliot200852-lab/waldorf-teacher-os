@@ -8,7 +8,7 @@
 
 english_session:
   class: class-9c
-  last_updated: 2026-03-08
+  last_updated: 2026-03-16
 
   current_position:
     block: 二
@@ -67,6 +67,17 @@ english_session:
           學生學習單: class-9c/english/content/9C-week5-1-v1-學習單.md
         skill_used: subject-lesson-45
         notes: "首次使用 45 分鐘設計引擎產出的完整教學包，經三輪迭代（v1→v2→v3）"
+      - unit: week5-3
+        date: 20260316
+        theme: "動詞片語攻防戰 — 寒假作業驗收測驗課"
+        grammar_focus: "動詞片語辨析（講義 #143-#174）"
+        status: 教案、學習單、測驗卷已完成
+        files:
+          教師教案: class-9c/english/content/9C-week5-3-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week5-3-v1-學習單.md
+          動詞片語測驗: class-9c/english/content/9C-week5-phrasal-verb-quiz.md
+        skill_used: subject-lesson-45 + phrase-quiz
+        notes: "配對複習+快閃暖身 8min → 攻防戰 10min → 正式測驗 20min → 片語印象牆 5min。Follow-up 連結《The House on Mango Street》（Task A 找片語 / Task B 寫場景）"
     extensions_completed: []
 
   open_questions: []
