@@ -164,8 +164,10 @@ workspaces/Working_Member/Teacher_林信宏/
 workspaces/
 ├── _template/                    ← 新老師的起點（複製這裡）
 │   ├── README.md                 ← 你在看的檔案
+│   ├── .gitignore                ← 隱私保護規則（自動排除 private/）
 │   ├── workspace.yaml            ← 工作空間設定
 │   ├── teacheros-personal.yaml   ← 個人教學哲學（最重要）
+│   ├── private/                  ← 機密區（只留本機，不上傳）
 │   └── projects/
 │       └── _class-template/      ← 班級資料夾的範本
 │           ├── project.yaml
@@ -229,12 +231,17 @@ workspaces/
 
 ### Q：我的班級資訊敏感（含學生名單），怎麼保護隱私？
 
-**A**：
+**A**：你的 workspace 裡有一個 **`private/`** 資料夾，專門存放機密內容。
 
-- `roster.yaml`（實名學生名單）通常加入 `.gitignore`，不上傳到雲端
-- `students.yaml` 可以用學生 ID（如 CL-01、CL-02）代替真名
-- 如果用 Git 管理，確保 `.gitignore` 包含敏感檔案
-- 將工作空間存在本機，定期備份
+- `private/` 裡的所有檔案**永遠不會上傳到 GitHub**，只留在你的電腦上
+- 其他老師看不到 `private/` 裡的內容
+- 建議放入的內容：
+  - 學生個別輔導紀錄、IEP 資料
+  - 與家長的通訊草稿
+  - 含學生真名的評量檔案
+  - 個人反思筆記（不想公開的部分）
+  - 行政業務機密文件
+- 此外，`roster.yaml`、`students.yaml`、`di-profile.yaml` 也已被 `.gitignore` 排除，不會上傳
 
 ### Q：多位老師可以共享一個班級的工作空間嗎？
 

@@ -170,6 +170,7 @@ class AddTeacher:
         if self.dry_run:
             print_info(f"[預覽] 將建立目錄：{self.workspace_dir}")
             print_info("[預覽] 將複製模板檔案")
+            print_info("[預覽] 將建立 private/ 機密資料夾 + .gitignore")
             print_info("[預覽] 將建立 skills/ 目錄")
             return
 
@@ -205,6 +206,18 @@ class AddTeacher:
         else:
             skills_dir.mkdir(parents=True, exist_ok=True)
             print_success("skills/ 目錄已建立")
+
+        # 建立 private/ 機密資料夾
+        private_dir = self.workspace_dir / "private"
+        private_dir.mkdir(parents=True, exist_ok=True)
+        (private_dir / ".gitkeep").touch()
+        print_success("private/ 機密資料夾已建立（內容不上傳 GitHub）")
+
+        # 複製 .gitignore（隱私保護規則）
+        src_gitignore = self.template_dir / ".gitignore"
+        if src_gitignore.exists():
+            shutil.copy2(src_gitignore, self.workspace_dir / ".gitignore")
+            print_success(".gitignore 已複製（含 private/ 排除規則）")
 
         # 建立 workspace.yaml
         self._create_workspace_yaml()
