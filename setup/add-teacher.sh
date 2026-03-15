@@ -227,7 +227,10 @@ create_workspace() {
   # teacheros-personal.yaml
   if [ -f "$TEMPLATE_DIR/teacheros-personal.yaml" ]; then
     cp "$TEMPLATE_DIR/teacheros-personal.yaml" "$WORKSPACE_DIR/teacheros-personal.yaml"
-    print_success "teacheros-personal.yaml copied (teacher must fill this in)"
+    # 自動填入 google_accounts 區塊的 email（使用教師提供的 EMAIL）
+    sed -i.bak "s/{USER_EMAIL}/$EMAIL/g" "$WORKSPACE_DIR/teacheros-personal.yaml"
+    rm -f "$WORKSPACE_DIR/teacheros-personal.yaml.bak"
+    print_success "teacheros-personal.yaml copied, google_accounts filled with $EMAIL"
   else
     print_warning "teacheros-personal.yaml template not found — teacher must create manually"
   fi

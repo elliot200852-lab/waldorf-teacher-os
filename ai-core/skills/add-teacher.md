@@ -189,6 +189,20 @@ GITHUB_USERNAME={github_username}
 
 若 David 未口述任何背景，保留原始模板不動。
 
+**4e. 自動填入 google_accounts 區塊（必做）**
+
+模板中的 `google_accounts` 區塊使用 `{USER_EMAIL}` 佔位符。
+建立 teacheros-personal.yaml 時，**一律自動將 `{USER_EMAIL}` 替換為教師的 email**
+（即 Step 1 收集的 email，與 acl.yaml 中的 email 相同）。
+
+不需要額外詢問教師的 Google 帳號——直接使用已收集的 email。
+
+替換範圍：
+- `google_accounts.default`
+- `google_accounts.accounts[0].email`
+
+若教師日後有多個 Google 帳號，可自行在 teacheros-personal.yaml 中新增 accounts 條目。
+
 ---
 
 ### Step 5 — 更新 ACL

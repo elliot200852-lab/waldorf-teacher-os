@@ -96,6 +96,26 @@ lesson_structure:
     my_rhythm: null             # 你的專科課有什麼特別的節奏嗎？
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 四之二、Google 帳號設定
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# AI 使用 gws CLI 操作 Google Workspace 服務時，會根據這裡的設定選擇帳號。
+# 預設帳號已由管理員從你的 Email 自動填入。
+# 若你有多個 Google 帳號，可自行新增 accounts 條目。
+
+google_accounts:
+  default: "{USER_EMAIL}"
+  accounts:
+    - email: "{USER_EMAIL}"
+      alias: 個人
+      keywords: ["個人", "個人信箱", "個人帳號"]
+      usage: 預設帳號，未指定時一律使用此帳號
+  ai_rule: >
+    偵測到 keywords 中的任何詞語時，切換至對應帳號。
+    未偵測到帳號關鍵字時，一律使用 default 帳號。
+    切換方式：在 gws 指令前加 GOOGLE_WORKSPACE_CLI_ACCOUNT=<email>。
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 五、你希望 AI 怎麼跟你互動
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
