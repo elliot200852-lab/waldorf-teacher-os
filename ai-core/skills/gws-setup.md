@@ -71,7 +71,13 @@ node --version && npm --version
 ### Step 2 — 檢查 gws CLI 是否已安裝（AI 自動）
 
 ```bash
+# macOS / Linux
 command -v gws && gws --version
+```
+
+```powershell
+# Windows（PowerShell）
+Get-Command gws -ErrorAction SilentlyContinue | ForEach-Object { gws --version }
 ```
 
 - 已安裝 → 顯示版本，進入 Step 3
@@ -174,7 +180,14 @@ gws auth login --account <額外帳號email>
 **等待教師確認後**，AI 驗證：
 
 ```bash
+# macOS / Linux
 GOOGLE_WORKSPACE_CLI_ACCOUNT=<額外帳號email> gws gmail users getProfile --params '{"userId":"me"}'
+```
+
+```powershell
+# Windows（PowerShell）
+$env:GOOGLE_WORKSPACE_CLI_ACCOUNT = "<額外帳號email>"
+gws gmail users getProfile --params '{"userId":"me"}'
 ```
 
 - 回傳 emailAddress 且與額外帳號一致 → 繼續下一個帳號
