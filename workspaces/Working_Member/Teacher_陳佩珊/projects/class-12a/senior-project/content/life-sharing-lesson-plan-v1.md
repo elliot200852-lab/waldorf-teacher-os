@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "12A 畢業專題 生命史教案"
 class: class-12a
 subject: senior-project
 type: lesson-plan

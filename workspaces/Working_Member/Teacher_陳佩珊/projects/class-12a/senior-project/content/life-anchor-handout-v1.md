@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "12A 畢業專題 生命定錨練習單"
 class: class-12a
 subject: senior-project
 type: handout

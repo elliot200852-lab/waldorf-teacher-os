@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "12A 畢業專題 生命轉折 PPT 腳本"
 class: class-12a
 subject: senior-project
 type: ppt-script

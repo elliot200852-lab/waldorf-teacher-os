@@ -16,6 +16,7 @@ aliases:
 |--------|------|---------|
 | 「寫文章」「寫貼文」「FB 文」「部落格」「演講稿」「品牌文」 | `david-voice` | `{workspace}/skills/david-voice.md` |
 | 「pua」「進入除錯模式」「不要放棄」「換路徑查到底」「再試一次」 | `pua-debugging` | `{workspace}/skills/pua-debugging.md` |
+| 「片語測驗」「片語考試」「phrase quiz」「動詞片語測驗」 | `phrase-quiz` | `{workspace}/skills/phrase-quiz.md` |
 
 ---
 
@@ -26,4 +27,4 @@ aliases:
 
 ---
 
-*維護者：David。最後更新：2026-03-14*
+*維護者：David。最後更新：2026-03-16*
