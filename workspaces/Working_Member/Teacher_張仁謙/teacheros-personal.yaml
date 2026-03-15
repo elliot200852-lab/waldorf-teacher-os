@@ -117,6 +117,15 @@ working_style:
   design_preference:
     - 填空                      # 例：專案式學習、敘事導向、跨學科整合
 
+# Google 帳號設定（GWS CLI 使用）
+google_accounts:
+  default: s0955159620@gmail.com
+  accounts:
+    - email: s0955159620@gmail.com
+      label: 個人
+      keywords:
+        - 個人
+
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 七、語氣錨點（voice_anchor）
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

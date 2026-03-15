@@ -118,6 +118,15 @@ working_style:
     - 專案式學習
     - 差異化實作引導
 
+# Google 帳號設定（GWS CLI 使用）
+google_accounts:
+  default: vernachen327@gmail.com
+  accounts:
+    - email: vernachen327@gmail.com
+      label: 個人
+      keywords:
+        - 個人
+
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 七、語氣錨點（voice_anchor）
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
