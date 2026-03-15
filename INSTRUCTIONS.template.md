@@ -254,7 +254,7 @@ Opening 技能會引導你完成：
 - 教師在 Claude Code 中說「同步 Cowork」即可重新編譯
 
 **首次生成：**
-- 新教師執行 `setup/quick-start.sh` 或在 Claude Code 中說「同步 Cowork」
+- 新教師執行 `bash setup/start.sh`（Mac）或 `.\setup\start.ps1`（Windows），或在 Claude Code 中說「同步 Cowork」
 - sync-cowork 會從 template + 個人 YAML 編譯出 INSTRUCTIONS.md
 
 **你看到過期資訊怎麼辦：**

@@ -129,7 +129,7 @@ def show_help():
     print("  4.5 Node.js / npm / Google Workspace CLI（gws）")
     print("  5. Git Pre-commit Hook")
     print("  6. 個人環境設定檔（environment.env）")
-    print("  7. 詳細環境檢查（setup-check.sh）")
+    print("  7. 詳細環境檢查（setup-check.py）")
     print("  8. 切換到個人工作分支")
     print("  9. Claude Code Hook 設定")
 
