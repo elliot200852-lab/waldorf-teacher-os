@@ -2,7 +2,7 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # TeacherOS Pre-commit — 薄層入口，呼叫 Python 檢查腳本
 # 路徑：setup/hooks/pre-commit
-# 安裝方式：執行 bash setup/install-hooks.sh
+# 安裝方式：執行 bash setup/start.sh（或 python3 setup/install-hooks.py）
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 #
 # Git hooks 必須是 shell script。

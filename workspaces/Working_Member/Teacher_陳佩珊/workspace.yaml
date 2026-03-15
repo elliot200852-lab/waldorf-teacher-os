@@ -1,6 +1,6 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # Workspace 狀態追蹤
-# 此檔案由 setup/add-teacher.sh 自動生成，記錄你的工作空間基本資訊
+# 此檔案由 setup/add-teacher.py 自動生成，記錄你的工作空間基本資訊
 # 路徑：workspaces/{teacher_id}/workspace.yaml
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -77,7 +77,7 @@ classes: []
 #
 # 1. 新增班級：
 #    a. 在此 classes: [] 下方加入班級資訊
-#    b. 執行 setup/add-teacher.sh 或手動建立 projects/class-{code}/ 資料夾
+#    b. 執行 setup/add-teacher.py 或手動建立 projects/class-{code}/ 資料夾
 #    c. AI 系統會自動掃描並同步
 #
 # 2. 班級代碼規則：

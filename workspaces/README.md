@@ -42,7 +42,7 @@ Workspace 是每位教師的**專屬工作空間**。
 
 ```
 workspaces/
-  _template/                        ← 範本（由 add-teacher.sh 自動複製）
+  _template/                        ← 範本（由 add-teacher.py 自動複製）
   工作範例參考/                      ← 完整的 Block 1-4 產出範例（唯讀參考）
   Working_Member/                    ← 所有活躍教師的工作空間
     Codeowner_David/                 ← David 的工作空間
@@ -77,7 +77,7 @@ TeacherOS 採用「共享參考 → 範本複製 → 老師創作」的三層架
 **你不需要手動建立。** David（管理員）會執行：
 
 ```bash
-bash setup/add-teacher.sh
+python3 setup/add-teacher.py
 ```
 
 腳本會自動完成：

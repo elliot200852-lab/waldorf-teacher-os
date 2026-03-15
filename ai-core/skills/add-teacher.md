@@ -20,7 +20,7 @@ created: 2026-03-09
 # skill: add-teacher — 加入新老師（管理員專用）
 
 互動式建立新教師的 Workspace、ACL 權限與 Git 分支。
-取代 `setup/add-teacher.sh` 的手動流程，改由 AI 對話引導完成。
+取代 `setup/add-teacher.py`（或舊版 `add-teacher.sh`）的手動流程，改由 AI 對話引導完成。
 
 ## 權限
 
@@ -170,7 +170,7 @@ GITHUB_USERNAME={github_username}
 ```
 
 此檔案被追蹤（commit 到 main），不含機密資訊（所有欄位已在 acl.yaml 中公開）。
-教師執行 `bash setup/quick-start.sh` 時，系統自動比對 `git config user.email`，
+教師執行 `bash setup/start.sh`（或 Windows 的 `.\setup\start.ps1`）時，系統自動比對 `git config user.email`，
 找到匹配的 preset 後複製為 `setup/environment.env`，免去手動填寫。
 
 **4d. 預填 teacheros-personal.yaml（可選）**
@@ -295,7 +295,7 @@ gh api repos/{owner}/{repo}/collaborators/{github_username} \
 2. 新教師有沒有想馬上開始做的工作？
    （例如「他想從學季規劃開始」→ 告知對應技能觸發語 `/syllabus`）
 3. 新教師主要用哪個 AI 工具？
-   - Claude Code → 提醒跑 `bash setup/quick-start.sh`
+   - Claude Code → 提醒跑 `bash setup/start.sh`（Mac）或 `.\setup\start.ps1`（Windows）
    - 其他平台 → 提醒讀取 `ai-core/AI_HANDOFF.md`
 
 **8b. Google Workspace 連接**
@@ -327,7 +327,7 @@ gh api repos/{owner}/{repo}/collaborators/{github_username} \
 | 項目 | 狀態 |
 |------|------|
 | Workspace 目錄 | `workspaces/Working_Member/Teacher_{name}/` |
-| 環境預填檔 | `env-preset.env` 已建立（quick-start.sh 自動偵測） |
+| 環境預填檔 | `env-preset.env` 已建立（start.sh / start.ps1 自動偵測） |
 | ACL 權限 | 已更新 `ai-core/acl.yaml` |
 | Git 分支 | `workspace/Teacher_{name}` |
 | GitHub 權限 | Collaborator 邀請已發送（Write） |
@@ -351,12 +351,19 @@ cd waldorf-teacher-os
 ```
 
 **2. 執行環境安裝**
+
+Mac / Linux：
 ```
-bash setup/quick-start.sh
+bash setup/start.sh
+```
+
+Windows（PowerShell）：
+```
+.\setup\start.ps1
 ```
 
 **3. 確認個人設定**
-quick-start.sh 會自動偵測你的 `env-preset.env` 並建立 `setup/environment.env`，
+安裝腳本會自動偵測你的 `env-preset.env` 並建立 `setup/environment.env`，
 必填欄位（姓名、Email、Workspace ID、GitHub 帳號）已由管理員預先填好。
 若需補充 Google Drive 等選填設定，可之後編輯 `setup/environment.env`。
 
@@ -406,8 +413,8 @@ gws auth login
 - Collaborator 已存在 → API 回傳 204，無副作用
 - Class folder 已存在 → 跳過建立
 
-### 與 add-teacher.sh 的關係
+### 與 add-teacher.py / add-teacher.sh 的關係
 
-- **共存**，不刪除 bash 腳本
+- **共存**，不刪除腳本（Python 版 `add-teacher.py` 為跨平台主版本，Shell 版 `add-teacher.sh` 為備用）
 - 技能比腳本多了：預填 teacheros-personal.yaml、確認個人需求、Google Workspace 連接指引、產出新教師通知清單
 - 技能使用 AI 的 Read/Write/Edit/Bash 工具完成操作

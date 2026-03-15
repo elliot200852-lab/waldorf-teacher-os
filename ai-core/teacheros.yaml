@@ -98,8 +98,8 @@ workspace_system:
     container: workspaces/Working_Member/
 
   onboarding_flow:
-    step_1: 老師執行 bash setup/quick-start.sh（技術安裝）
-    step_2: David 執行 bash setup/add-teacher.sh（認證 + 建立 workspace）
+    step_1: 老師執行 bash setup/start.sh（macOS/Linux）或 .\setup\start.ps1（Windows）進行技術安裝
+    step_2: David 執行 python3 setup/add-teacher.py（認證 + 建立 workspace）
     step_3: 老師 git pull 取得自己的 workspace（位於 workspaces/Working_Member/Teacher_{姓名}/）
     step_4: 在 workspace 中填入 teacheros-personal.yaml 個人資料，開始 Block 1
 

@@ -52,7 +52,7 @@ workspaces/Working_Member/Teacher_郭耀新/projects/class-{code}/{subject}/sess
 
 - `acl.yaml` 是資料來源，hook + GitHub 是執行者，LLM 是最前面的軟約束
 - hook 靠 `.git/hooks/pre-commit` 觸發（git 原生慣例，名稱對了就自動執行）
-- 每個人 clone 後需執行一次 `bash setup/install-hooks.sh` 才會安裝 hook
+- 每個人 clone 後需執行一次安裝腳本才會安裝 hook（Mac: `bash setup/start.sh`；Windows: `.\setup\start.ps1`；或直接 `python3 setup/install-hooks.py`）
 - `acl-proposal.yaml`（`default: deny` 預設拒絕原則）是一個值得提交給 David 的安全改善提案
 
 ---

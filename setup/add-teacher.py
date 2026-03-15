@@ -251,7 +251,7 @@ workspace:
 # TeacherOS — 個人環境預設檔（管理員自動產生）
 # ─────────────────────────────────────────────────────────────
 # 此檔案由 add-teacher 流程自動建立，包含已知的必填欄位。
-# 執行 bash setup/quick-start.sh 時，系統會自動偵測並複製為
+# 執行 bash setup/start.sh（或 .\setup\start.ps1）時，系統會自動偵測並複製為
 # setup/environment.env，你不需要手動編輯必填欄位。
 #
 # 選填欄位（Google Drive、Pandoc 等）請在 setup/environment.env
@@ -449,7 +449,7 @@ status:
         print(f"  - 確認 email：{self.email}")
         print(f"    （必須與你的 setup/environment.env 中的 USER_EMAIL 一致）")
         print(f"  - 個人分支：{self.branch_name}")
-        print(f"  - 執行：bash setup/quick-start.sh")
+        print(f"  - 執行：bash setup/start.sh（Mac/Linux）或 .\\setup\\start.ps1（Windows）")
         print()
 
         print_info(f"設定全部完成。歡迎 {self.name} 加入 TeacherOS！")
