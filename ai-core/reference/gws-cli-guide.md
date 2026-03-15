@@ -6,8 +6,9 @@ aliases:
 # GWS CLI 參考指南（AI 專用）
 
 > **用途：** 所有 AI Agent 在執行 Google Workspace 操作前，讀取此文件以取得正確的指令語法。
-> **CLI 路徑：** `gws`（若未在 PATH 中：`~/.nvm/versions/node/v24.13.0/bin/gws`）
-> **認證：** 加密憑證存於 `~/.config/gws/`，首次使用需 `gws auth login`。
+> **CLI 路徑：** `gws`（若不在 PATH 中，用 `npx @googleworkspace/cli` 替代，或請教師執行 `npm install -g @googleworkspace/cli`）
+> **認證：** 加密憑證存於本機（macOS/Linux: `~/.config/gws/`；Windows: `%APPDATA%\gws\`），首次使用需 `gws auth login --account EMAIL`。
+> **跨平台：** 本指南適用 macOS、Linux、Windows。AI 應偵測 OS 後選擇對應指令。
 
 ---
 
@@ -26,14 +27,19 @@ aliases:
 執行前先確認 gws CLI 可用：
 
 ```bash
-# 確認已安裝
-command -v gws
+# 1. 確認已安裝
+command -v gws || npx @googleworkspace/cli --version
+# 若都失敗 → 提示教師：npm install -g @googleworkspace/cli
 
-# 確認已登入（回傳 JSON，檢查 token_cache_exists）
-gws auth status
+# 2. 確認已登入（直接呼叫 API 驗證——不要用 gws auth status，其輸出不可靠）
+gws gmail users getProfile --params '{"userId":"me"}'
+# 若 401 → 需登入：gws auth login --account <教師的default email>
+
+# 3. 確認帳號清單
+gws auth list
 ```
 
-若未安裝或未登入，退回 MCP 或提示教師。
+若未安裝或未登入，退回 MCP 或提示教師執行 `gws-setup` 技能。
 
 ---
 
@@ -41,14 +47,17 @@ gws auth status
 
 gws 支援多帳號。教師的帳號別名定義在 `{workspace}/teacheros-personal.yaml` 的 `google_accounts` 區塊。
 
-**切換方式：** 在指令前加環境變數。
+**切換方式：** 在指令前加環境變數（注意：登入時用 `--account`，使用時用環境變數，兩者語法不同）。
 
 ```bash
 # 使用預設帳號（不需額外設定）
 gws gmail +send --to "someone@example.com" --subject "..." --body "..."
 
-# 指定帳號
+# 指定帳號（使用時）
 GOOGLE_WORKSPACE_CLI_ACCOUNT=linintellectdave@gmail.com gws gmail +send --to "..." --subject "..." --body "..."
+
+# 登入時綁定帳號（設定時）
+gws auth login --account linintellectdave@gmail.com
 ```
 
 **AI 判斷規則：**
@@ -126,9 +135,9 @@ GOOGLE_WORKSPACE_CLI_ACCOUNT=linintellectdave@gmail.com gws gmail +send --to "..
 
 | 錯誤 | 處理 |
 |------|------|
-| `command not found: gws` | 未安裝。提示：`npm install -g @googleworkspace/cli` |
-| `401 Unauthorized` / auth 失敗 | 需重新登入：`gws auth login` |
-| `403 Forbidden` | scope 不足。提示：`gws auth login --scope gmail,drive,calendar,sheets,docs` |
+| `command not found: gws` | 未安裝。嘗試 `npx @googleworkspace/cli`，或提示：`npm install -g @googleworkspace/cli` |
+| `401 Unauthorized` / auth 失敗 | 需重新登入：`gws auth login --account EMAIL`（必須帶 --account） |
+| `403 Forbidden` | scope 不足。提示：`gws auth login --account EMAIL --scopes gmail,drive,calendar,sheets,docs` |
 | `404 Not Found` | 檔案/文件 ID 不存在，確認 ID 是否正確 |
 | `429 Rate Limit` | 短暫等待後重試 |
 
@@ -146,4 +155,4 @@ gws gmail +triage --format csv         # CSV
 
 ---
 
-*最後更新：2026-03-06*
+*最後更新：2026-03-15*
