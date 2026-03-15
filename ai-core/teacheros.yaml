@@ -156,6 +156,21 @@ ai_session_protocol:
         - 不對模糊指令連續追問——最多一次確認，得到回應後立刻進入工作
         - 語音輸入常有贅字、口誤、轉折，AI 捕捉核心意圖，忽略語音干擾詞
 
+  mid_session_reanchor:
+    trigger: >
+      當對話中出現以下情境時，AI 應主動重讀語氣錨點：
+      1. 連續處理技術性工作（系統架構、程式碼、檔案整理）後，
+         工作切換回課程設計或教育討論
+      2. 教師說「回到備課」「設計課程」「進入教育模式」等語句
+      3. AI 自覺回應風格偏向通用助理時
+    action: >
+      重讀 {workspace}/teacheros-personal.yaml 的 voice_anchor 段落。
+      若需要更完整的脈絡，再讀 core_character 與 subject_philosophies。
+      不需重讀整個檔案。
+    note: >
+      CLAUDE.md 的共通語氣錨點提供最小保障（不會被壓縮），
+      此機制在關鍵時刻補充教師個人的語氣與價值觀脈絡。
+
   session_end:
     steps:
       - 條列今次對話確認的決定（簡短列點）
