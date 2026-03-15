@@ -58,7 +58,7 @@ def matches(file_path: str, pattern: str) -> bool:
 
 # ── ACL 解析 ─────────────────────────────────────────
 
-def parse_acl(acl_path: Path) -> tuple[dict, list[str], list[str]]:
+def parse_acl(acl_path: Path):
     """
     解析 acl.yaml，回傳 (teachers, protected_always, shared_writable)。
     teachers: { email: { is_admin, allowed_paths, name } }
@@ -67,7 +67,7 @@ def parse_acl(acl_path: Path) -> tuple[dict, list[str], list[str]]:
     content = acl_path.read_text(encoding="utf-8")
     teachers: dict = {}
 
-    def register(email: str, gh_username: str | None, entry: dict):
+    def register(email, gh_username, entry):
         teachers[email] = entry
         if gh_username:
             noreply = f"{gh_username}@users.noreply.github.com"
