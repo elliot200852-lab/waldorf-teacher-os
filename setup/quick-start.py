@@ -303,18 +303,37 @@ def main():
 
     print_section("檢查 5：安裝 Git Pre-commit Hook（授權檢查的門鎖）")
 
-    install_hooks_sh = repo_root / "setup" / "install-hooks.sh"
+    # 優先使用 Python 版 install-hooks；若匯入失敗則 fallback 到 shell 版
+    install_hooks_ok = False
+    install_hooks_py = repo_root / "setup" / "install-hooks.py"
 
-    if install_hooks_sh.is_file():
-        print_info("開始安裝 Pre-commit Hook...")
-        r = run_cmd(["bash", str(install_hooks_sh)])
-        if r.returncode == 0:
-            print_success("Pre-commit Hook 安裝完成")
-        else:
-            print_error("Pre-commit Hook 安裝失敗")
-            print(f"請手動執行：bash {install_hooks_sh}")
+    if install_hooks_py.is_file():
+        try:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location("install_hooks", str(install_hooks_py))
+            mod = importlib.util.module_from_spec(spec)  # type: ignore
+            spec.loader.exec_module(mod)  # type: ignore
+            print_info("開始安裝 Git Hooks...")
+            install_hooks_ok = mod.install_hooks(repo_root)
+            if install_hooks_ok:
+                print_success("Git Hooks 安裝完成")
+            else:
+                print_error("Git Hooks 安裝失敗")
+        except Exception as e:
+            print_error(f"install-hooks.py 執行失敗：{e}")
     else:
-        print_warning("找不到 setup/install-hooks.sh，跳過 Hook 安裝")
+        # Fallback: 使用 shell 版
+        install_hooks_sh = repo_root / "setup" / "install-hooks.sh"
+        if install_hooks_sh.is_file():
+            print_info("開始安裝 Pre-commit Hook（shell 備援）...")
+            r = run_cmd(["bash", str(install_hooks_sh)])
+            if r.returncode == 0:
+                print_success("Pre-commit Hook 安裝完成")
+            else:
+                print_error("Pre-commit Hook 安裝失敗")
+                print(f"請手動執行：bash {install_hooks_sh}")
+        else:
+            print_warning("找不到 install-hooks.py 或 install-hooks.sh，跳過 Hook 安裝")
 
     # ──────────────────────────────────────────────────────
     # 檢查 6：個人環境設定檔（鑰匙）
@@ -379,13 +398,23 @@ def main():
 
     print_section("檢查 7：詳細環境檢查")
 
+    setup_check_py = repo_root / "setup" / "setup-check.py"
     setup_check_sh = repo_root / "setup" / "setup-check.sh"
 
-    if setup_check_sh.is_file():
+    if setup_check_py.is_file():
         print_info("執行詳細環境檢查...")
         print()
+        r = run_cmd([sys.executable, str(setup_check_py)])
+        if r.stdout:
+            print(r.stdout, end="")
+        if r.returncode == 0:
+            print_success("所有環境檢查完成")
+        else:
+            print_warning("部分環境檢查未通過，但不影響基本功能")
+    elif setup_check_sh.is_file():
+        print_info("執行詳細環境檢查（shell 備援）...")
+        print()
         r = run_cmd(["bash", str(setup_check_sh)])
-        # 將 setup-check.sh 的輸出印到終端
         if r.stdout:
             print(r.stdout, end="")
         if r.returncode == 0:
@@ -393,7 +422,7 @@ def main():
         else:
             print_warning("部分環境檢查未通過，但不影響基本功能")
     else:
-        print_warning("找不到 setup-check.sh，跳過詳細檢查")
+        print_warning("找不到 setup-check.py 或 setup-check.sh，跳過詳細檢查")
 
     # ──────────────────────────────────────────────────────
     # 檢查 8：切換到個人 Branch

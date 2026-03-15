@@ -56,6 +56,7 @@ aliases:
 | [[ai-core/reference/subject-english.yaml\|subject-english.yaml]] | 英文科教學哲學與設計原則 |
 | [[ai-core/reference/subject-history.yaml\|subject-history.yaml]] | 歷史科教學哲學與設計原則 |
 | [[ai-core/reference/student-development.yaml\|student-development.yaml]] | 學生發展與班級經營框架 |
+| [[ai-core/reference/cross-platform.yaml\|cross-platform.yaml]] | 跨平台指令公約（AI agent 參考） |
 
 ### Reference 操作文件
 
@@ -195,8 +196,12 @@ aliases:
 | [[setup/teacher-guide.md\|teacher-guide.md]] | 新教師環境設定指南 |
 | [[setup/teacher-guide-v2.1.html\|teacher-guide-v2.1.html]] | 設定指南 HTML v2.1 |
 | [[setup/teacher-guide-v2.2.html\|teacher-guide-v2.2.html]] | 設定指南 HTML v2.2 |
-| [[setup/quick-start.sh\|quick-start.sh]] | 快速安裝腳本 |
-| [[setup/setup-check.sh\|setup-check.sh]] | 環境檢查腳本 |
+| [[setup/quick-start.sh\|quick-start.sh]] | 快速安裝腳本（Shell 版） |
+| [[setup/quick-start.py\|quick-start.py]] | 快速安裝腳本（Python 跨平台版） |
+| [[setup/start.sh\|start.sh]] | macOS / Linux 啟動器（自動呼叫 quick-start.py） |
+| [[setup/start.ps1\|start.ps1]] | Windows 啟動器（自動呼叫 quick-start.py） |
+| [[setup/setup-check.sh\|setup-check.sh]] | 環境檢查腳本（Shell 版） |
+| [[setup/setup-check.py\|setup-check.py]] | 環境檢查腳本（Python 跨平台版） |
 | [[setup/environment.env.example\|environment.env.example]] | 環境變數範本 |
 | [[setup/gws-client-secret.json\|gws-client-secret.json]] | GWS OAuth 用戶端識別檔（TeacherOS GCP 專案） |
 
@@ -204,16 +209,20 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
-| [[setup/add-teacher.sh\|add-teacher.sh]] | 新增教師腳本（建立 workspace + 寫入 ACL） |
-| [[setup/install-hooks.sh\|install-hooks.sh]] | 安裝 Git hooks |
-| [[setup/hooks/pre-commit\|hooks/pre-commit]] | Pre-commit hook（ACL 路徑檢查） |
-| [[setup/hooks/post-merge\|hooks/post-merge]] | Post-merge hook |
+| [[setup/add-teacher.sh\|add-teacher.sh]] | 新增教師腳本（Shell 版） |
+| [[setup/add-teacher.py\|add-teacher.py]] | 新增教師腳本（Python 跨平台版） |
+| [[setup/install-hooks.sh\|install-hooks.sh]] | 安裝 Git hooks（Shell 版） |
+| [[setup/install-hooks.py\|install-hooks.py]] | 安裝 Git hooks（Python 跨平台版） |
+| [[setup/hooks/pre-commit\|hooks/pre-commit]] | Pre-commit hook（薄層入口 → pre-commit-check.py） |
+| [[setup/hooks/post-merge\|hooks/post-merge]] | Post-merge hook（薄層入口 → post-merge-check.py） |
 
 ### 工具腳本
 
 | 檔案 | 說明 |
 |------|------|
 | [[setup/scripts/obsidian-check.py\|obsidian-check.py]] | Obsidian 標籤偵測腳本 |
+| [[setup/scripts/pre-commit-check.py\|pre-commit-check.py]] | Pre-commit ACL 檢查（Python 主邏輯） |
+| [[setup/scripts/post-merge-check.py\|post-merge-check.py]] | Post-merge 新分享通知（Python 主邏輯） |
 | [[setup/save.sh\|save.sh]] | 存檔腳本 |
 | [[setup/scripts/publish-drafts.sh\|publish-drafts.sh]] | 個人品牌草稿發佈腳本 |
 | [[setup/scripts/setup-asset-link.sh\|setup-asset-link.sh]] | 素材庫 Symlink 建立腳本 |
