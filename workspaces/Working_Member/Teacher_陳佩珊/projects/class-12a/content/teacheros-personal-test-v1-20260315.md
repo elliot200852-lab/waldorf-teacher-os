@@ -1,4 +1,7 @@
 ---
+aliases:
+  - "陳佩珊個人設定測試"
+  - "12A 行銷測試檔"
 class: class-12a
 subject: marketing
 ---

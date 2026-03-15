@@ -1,4 +1,7 @@
 ---
+aliases:
+  - "12A 畢業專題書面報告鷹架"
+  - "畢業專題課程草案 v1"
 class: class-12a
 subject: senior-project
 ---

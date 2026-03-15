@@ -511,12 +511,31 @@ aliases:
 
 ---
 
+## 陳佩珊老師的工作空間
+
+### 個人設定
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_陳佩珊/teacheros-personal.yaml\|陳佩珊個人身份層]] | 教學信念、工作偏好 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/workspace.yaml\|陳佩珊 workspace 狀態]] | Workspace 狀態 |
+
+### 12A 班級（畢業專題）
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/content/teacheros-personal-test-v1-20260315.md\|個人設定測試檔]] | 行銷科測試用設定 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/senior-project-syllabus-draft-v1.md\|畢業專題書面報告鷹架]] | 兩萬字書面報告寫作鷹架課程草案 |
+
+---
+
 ## 教師環境預填（env-preset.env）
 
 各教師 Workspace 內的環境變數預填檔，由 `add-teacher` 技能自動產生：
 
 | 教師 | 路徑 |
 |------|------|
+| [[workspaces/Working_Member/Teacher_陳佩珊/env-preset.env\|陳佩珊]] | Teacher_陳佩珊/env-preset.env |
 | [[workspaces/Working_Member/Teacher_郭耀新/env-preset.env\|郭耀新]] | Teacher_郭耀新/env-preset.env |
 | [[workspaces/Working_Member/Teacher_劉佳芳/env-preset.env\|劉佳芳]] | Teacher_劉佳芳/env-preset.env |
 | [[workspaces/Working_Member/Teacher_林雅婷/env-preset.env\|林雅婷]] | Teacher_林雅婷/env-preset.env |
