@@ -68,6 +68,8 @@ def has_goodnotes_changes(repo_root: Path, orig_head: str) -> bool:
         ["git", "diff", "--name-only", f"{orig_head}..HEAD", "--", "Good-notes/"],
         capture_output=True, text=True, cwd=str(repo_root)
     )
+    if result.returncode != 0:
+        return False
     return bool(result.stdout.strip())
 
 
@@ -114,6 +116,8 @@ def collect_entries(repo_root: Path, orig_head: str, my_emails: set, name_map: d
          "--", "Good-notes/"],
         capture_output=True, text=True, cwd=str(repo_root)
     )
+    if result.returncode != 0:
+        return []
 
     entries = []
     current_email = ""

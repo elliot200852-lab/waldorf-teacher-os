@@ -539,15 +539,7 @@ def main():
             teacher_id=teacher_id,
             dry_run=args.dry_run,
         )
-        # 互動模式已經印過 banner，跳過 check_admin 的重複提示
-        teacher.check_admin()
-        teacher.confirm_info()
-        teacher.create_workspace()
-        teacher.create_env_preset()
-        teacher.update_acl()
-        teacher.create_class_folder()
-        teacher.create_teacher_branch()
-        teacher.print_summary()
+        teacher.run()
     else:
         # 命令列模式
         teacher = AddTeacher(

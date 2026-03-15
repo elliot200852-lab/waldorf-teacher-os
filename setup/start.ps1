@@ -19,9 +19,14 @@ if (-not $py) {
     Write-Host "  TeacherOS 需要 Python 3 才能執行。" -ForegroundColor Yellow
     Write-Host ""
 
-    # 嘗試 winget 安裝
+    # 嘗試 winget 安裝（先詢問教師確認）
     if (Get-Command winget -ErrorAction SilentlyContinue) {
-        Write-Host "  偵測到 winget，正在安裝 Python 3..." -ForegroundColor Cyan
+        $confirm = Read-Host "  偵測到你的電腦沒有 Python 3。是否要自動安裝？(Y/N)"
+        if ($confirm -ne "Y" -and $confirm -ne "y") {
+            Write-Host "  已取消。請手動安裝 Python 3：https://www.python.org/downloads/" -ForegroundColor Yellow
+            exit 1
+        }
+        Write-Host "  正在透過 winget 安裝 Python 3..." -ForegroundColor Cyan
         winget install Python.Python.3.12 --accept-package-agreements --accept-source-agreements
         # 重新載入 PATH
         $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
