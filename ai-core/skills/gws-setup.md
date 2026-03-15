@@ -91,6 +91,32 @@ gws --version
 > 若安裝後仍然 `command not found`，代表全域 npm bin 不在 PATH 中。
 > AI 可用 `npx @googleworkspace/cli` 替代所有 `gws` 指令，或提示教師將 npm bin 加入 PATH。
 
+### Step 2.5 — 部署 OAuth client_secret（AI 自動）
+
+檢查使用者本機是否已有 `client_secret.json`：
+
+- macOS / Linux：`~/.config/gws/client_secret.json`
+- Windows：`%APPDATA%\gws\client_secret.json`
+
+**已存在** → 跳過，進入 Step 3。
+
+**不存在** → 從 Repo 複製：
+
+```bash
+# macOS / Linux
+mkdir -p ~/.config/gws
+cp setup/gws-client-secret.json ~/.config/gws/client_secret.json
+```
+
+```powershell
+# Windows（PowerShell）
+New-Item -ItemType Directory -Force -Path "$env:APPDATA\gws"
+Copy-Item setup\gws-client-secret.json "$env:APPDATA\gws\client_secret.json"
+```
+
+> 這份檔案是 TeacherOS Google Cloud 專案的 OAuth 用戶端識別檔，不含任何個人資料。
+> 使用者的授權 token 在登入後才產生，存於本機加密檔案中，不進入 Git。
+
 ### Step 3 — 登入主帳號（需教師操作）
 
 AI 執行：

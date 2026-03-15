@@ -174,26 +174,40 @@ if command -v node &> /dev/null && command -v npm &> /dev/null; then
   if command -v gws &> /dev/null; then
     GWS_VERSION=$(gws --version 2>/dev/null || echo "已安裝")
     print_success "Google Workspace CLI 已安裝：$GWS_VERSION"
-
-    # 檢查是否已登入
-    if gws auth status &>/dev/null; then
-      print_success "gws 已登入 Google 帳號"
-    else
-      print_warning "gws 尚未登入 Google 帳號"
-      echo ""
-      echo -e "${YELLOW}請執行以下指令登入：${NC}"
-      echo "  gws auth login"
-      echo ""
-    fi
   else
     print_warning "Google Workspace CLI（gws）尚未安裝"
     echo ""
     echo -e "${YELLOW}建議安裝 gws（讓 AI 可直接操作 Google Drive、Calendar 等服務）：${NC}"
     echo "  npm install -g @googleworkspace/cli"
     echo ""
-    echo -e "${YELLOW}安裝後，執行以下指令登入你的 Google 帳號：${NC}"
-    echo "  gws auth login"
-    echo ""
+  fi
+
+  # 部署 OAuth client_secret（讓 gws auth login 能連到 TeacherOS 專案）
+  GWS_CONFIG_DIR="$HOME/.config/gws"
+  GWS_CLIENT_SECRET="$REPO_ROOT/setup/gws-client-secret.json"
+  if [ -f "$GWS_CLIENT_SECRET" ]; then
+    mkdir -p "$GWS_CONFIG_DIR"
+    if [ ! -f "$GWS_CONFIG_DIR/client_secret.json" ]; then
+      cp "$GWS_CLIENT_SECRET" "$GWS_CONFIG_DIR/client_secret.json"
+      print_success "OAuth 認證檔已部署到 $GWS_CONFIG_DIR/"
+    else
+      print_info "OAuth 認證檔已存在，跳過"
+    fi
+  else
+    print_warning "找不到 setup/gws-client-secret.json，跳過 OAuth 認證檔部署"
+  fi
+
+  # 檢查是否已登入（用 API 呼叫驗證，不用 gws auth status）
+  if command -v gws &> /dev/null; then
+    if gws gmail users getProfile --params '{"userId":"me"}' &>/dev/null; then
+      print_success "gws 已登入 Google 帳號"
+    else
+      print_warning "gws 尚未登入 Google 帳號"
+      echo ""
+      echo -e "${YELLOW}請執行以下指令登入（務必帶上你的 email）：${NC}"
+      echo "  gws auth login --account 你的帳號@gmail.com"
+      echo ""
+    fi
   fi
 else
   print_info "Node.js / npm 未安裝，跳過 gws 檢查"
