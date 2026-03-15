@@ -49,6 +49,13 @@ INSTRUCTIONS.md
 **/reference/class_*_directory.csv
 **/reference/class_*_contacts.py
 
+# David 個人語氣範本（含私人文章，不上傳）
+workspaces/Working_Member/Codeowner_David/skills/voice-samples/
+workspaces/Working_Member/Codeowner_David/skills/voice-calibration-log.md
+
+# HOME.md — Codeowner 個人 Obsidian 導航頁（不上傳）
+HOME.md
+
 # Tool Download — 使用者本地環境（不上傳）
 .env
 venv/
