@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "David 寫作語氣規準"
 name: david-voice
 description: >
   David 的個人品牌寫作語氣規準。任何為 David 撰寫公開文章（Facebook、部落格、

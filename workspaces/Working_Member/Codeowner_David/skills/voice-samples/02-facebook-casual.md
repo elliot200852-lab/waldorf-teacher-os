@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "語氣範本：Facebook 隨筆"
 category: Facebook 隨筆
 description: FB 貼文、社群短文。最口語、最即興、中英夾雜最密集的類別。像在跟朋友傳訊息，但有節奏感。
 source: David 提供的三則 FB 貼文定稿範本

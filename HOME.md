@@ -326,12 +326,20 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/teacheros-personal.yaml\|David 個人身份層]] | 教學信念、工作偏好、AI 互動風格 |
 | [[workspaces/Working_Member/Codeowner_David/workspace.yaml\|David workspace 狀態]] | Workspace 狀態追蹤 |
 | [[workspaces/Working_Member/Codeowner_David/teaching-log.md\|David 教學紀錄]] | 跨班跨科教學回顧（累加式） |
+| [[workspaces/Working_Member/Codeowner_David/personal-handoff.md\|David 個人交接文件]] | 個人工作交接與狀態備忘 |
 
 ### 個人技能
 
 | 檔案 | 說明 |
 |------|------|
 | [[workspaces/Working_Member/Codeowner_David/skills/pua-debugging.md\|pua-debugging]] | 反擺爛除錯保護層——強制 AI 進入高能動性除錯模式 |
+| [[workspaces/Working_Member/Codeowner_David/skills/david-voice.md\|david-voice]] | David 寫作語氣規準（個人品牌語氣錨點） |
+| [[workspaces/Working_Member/Codeowner_David/skills/voice-calibration-log.md\|語氣校準回饋日誌]] | 語氣校準持續回饋紀錄 |
+| [[workspaces/Working_Member/Codeowner_David/skills/voice-samples/01-personal-emotional.md\|語氣範本：個人情感]] | 語氣範本第一類——個人情感深度抒發 |
+| [[workspaces/Working_Member/Codeowner_David/skills/voice-samples/02-facebook-casual.md\|語氣範本：FB 隨筆]] | 語氣範本第二類——Facebook 隨筆 |
+| [[workspaces/Working_Member/Codeowner_David/skills/voice-samples/03-teacher-to-teachers.md\|語氣範本：教師對教師]] | 語氣範本第三類——師培演講與同行分享 |
+| [[workspaces/Working_Member/Codeowner_David/skills/voice-samples/04-teacher-to-students.md\|語氣範本：教師對學生]] | 語氣範本第四類——期末通知與班級公開信 |
+| [[workspaces/Working_Member/Codeowner_David/skills/voice-samples/05-teacher-to-parents.md\|語氣範本：教師對家長]] | 語氣範本第五類——家長文與學習歷程報告 |
 
 ### 9C 班級
 
@@ -406,8 +414,10 @@ aliases:
 | [[week4-返校工作計畫]] | 第四週返校計畫 |
 | [[week4-分享會流程與場次]] | 第四週分享會流程 |
 | [[快樂的薛西佛斯_農場實習開場詩]] | 成果發表會開場詩 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/farm-internship/content/快樂的薛西佛斯-農場實習開場.pptx\|快樂的薛西佛斯 農場實習開場 PPTX]] | 農場實習成果發表會開場簡報 |
 | [[農場實習教學紀錄_9C信宏]] | 教師教學歷程紀錄 |
 | [[projects/g9/content/農場實習後的薛西弗斯開場設計_chat-history\|薛西弗斯開場設計對話紀錄]] | 開場詩設計過程 chat history |
+| [[projects/g9/content/農場實習後的薛西弗斯開場設計_chat-history拷貝\|薛西弗斯開場設計對話紀錄（拷貝）]] | 開場詩設計對話紀錄備份 |
 | [[projects/g9/content/農場實習教學紀錄_9C信宏拷貝\|農場實習教學紀錄（g9 拷貝）]] | 教學紀錄 g9 備份 |
 
 9C 農場實習參考資料：

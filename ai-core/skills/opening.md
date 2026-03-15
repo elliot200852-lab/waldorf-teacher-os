@@ -92,6 +92,23 @@ git pull origin main
 4. `{workspace}/teacheros-personal.yaml`
 5. `projects/_di-framework/project.yaml`
 
+### Step 2.5 — GWS 連線檢查（AI 自動，靜默）
+
+若教師的 `{workspace}/teacheros-personal.yaml` 包含 `google_accounts` 區塊，且本機有 gws CLI：
+
+```bash
+gws gmail users getProfile --params '{"userId":"me"}' 2>/dev/null
+```
+
+| 結果 | 處理 |
+|------|------|
+| 成功（回傳 emailAddress） | 不報告，靜默通過。在 Step 4 的摘要中顯示「GWS 已連線」 |
+| 401 / 失敗 | 在 Step 4 的摘要中顯示「GWS 未連線——需要時請說『設定 gws』」 |
+| gws 未安裝（command not found） | 在 Step 4 的摘要中顯示「GWS 未安裝——需要時請說『設定 gws』」 |
+| teacheros-personal.yaml 無 `google_accounts` | 完全跳過，不顯示任何 GWS 相關訊息 |
+
+> 此步驟不阻擋開工流程。GWS 是選配功能，未設定的教師照常使用所有非 Google Workspace 的功能。
+
 ### Step 3 — 載入個人技能
 
 依照 AI_HANDOFF.md 的「教師個人技能」章節：
@@ -115,6 +132,7 @@ git pull origin main
 **分支** [當前分支名稱]
 **系統版本** [AI_HANDOFF.md 最後更新日期]
 **個人技能** 已載入 [N] 個
+**GWS** [已連線（email）/ 未連線 / 未設定]（僅在教師有設定 google_accounts 時顯示）
 
 **上次工作紀錄**
 （掃描 `{workspace}/projects/class-*/*/session.yaml`，列出最近有更新的班級與科目，顯示 `last_updated` 與 `next_action.description`）
