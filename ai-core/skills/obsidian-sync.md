@@ -25,6 +25,8 @@ requires_args: false
 python3 setup/scripts/obsidian-check.py
 ```
 
+> **跨平台注意：** Windows 上可能需使用 `python` 而非 `python3`，AI 應先偵測可用的 Python 指令（`python3` 或 `python`）。可用 `python3 --version || python --version` 判斷。
+
 解析輸出，取得三類檔案清單：
 - `UNLABELED_MD` — 缺少 `aliases:` frontmatter 的 .md 檔
 - `UNLABELED_YAML` — 前 5 行無中文字元的 .yaml 檔

@@ -70,6 +70,8 @@ git push
 
 如果當前環境安裝了 GitHub CLI（`gh`），可以直接執行：
 
+> **跨平台注意：** 偵測 `gh` 是否可用時，macOS/Linux 用 `command -v gh`，Windows PowerShell 用 `Get-Command gh`。`gh` 與 `git` 指令本身皆為跨平台，無需額外處理。
+
 ```bash
 gh pr create --title "[標題]" --body "[說明]" --base main
 ```

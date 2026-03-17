@@ -47,6 +47,17 @@ requires_args: false
 
 ## 執行步驟
 
+> **跨平台偵測：** AI 在進入 Step 0 前應先偵測作業系統與工具可用性：
+> ```bash
+> python3 -c "import platform; print(platform.system())"
+> # → Darwin (macOS) / Windows / Linux
+> ```
+> ```bash
+> python3 -c "import shutil; print(shutil.which('gws') or shutil.which('npx') or 'NOT_FOUND')"
+> ```
+> - Windows 上 `python3` 可能需改為 `python`
+> - 偵測結果決定後續步驟使用的指令分支（shell vs PowerShell、路徑格式等）
+
 ### Step 0 — 確認帳號資訊（AI 自動）
 
 讀取教師的 `{workspace}/teacheros-personal.yaml`，檢查是否有 `google_accounts` 區塊。

@@ -74,6 +74,7 @@ git pull origin main
 > cd 你的-waldorf-teacher-os-資料夾
 > git pull origin main
 > ```
+> （Windows PowerShell 同樣適用上述指令。）
 > 完成後告訴我「已更新」，我再繼續載入。
 
 **每次開場都必須執行此步驟。** 如果教師跳過確認直接說其他指令，AI 應再次提醒：「我需要確認你的系統已更新到最新版本。請先執行 git pull origin main，或告訴我『已更新』。」

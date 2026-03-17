@@ -54,6 +54,11 @@ AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從
 
 ## 執行步驟
 
+> **跨平台注意：** 本技能支援 macOS 和 Windows。
+> - 路徑使用 `/`（AI 工具會自動處理分隔符）
+> - 暫存目錄：macOS 用 `/tmp/`，Windows 用 `%TEMP%`，或統一用 `python3 -c "import tempfile; print(tempfile.gettempdir())"`
+> - 套件安裝：macOS 用 `npm` 或 `brew`，Windows 用 `npm` 或 `winget`
+
 ### Step 1 — 確認 Node.js 版本
 
 ```bash
