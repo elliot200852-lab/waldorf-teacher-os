@@ -122,6 +122,7 @@ aliases:
 | 「設計一堂課」「45 分鐘」「lesson design」 | `ai-core/skills/subject-lesson-45.md` |
 | 「英文課設計」「English lesson」 | `ai-core/skills/english-45.md` |
 | 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `ai-core/skills/git-history.md` |
+| 「做影片」「製作影片」「影片」「video」「渲染影片」 | `ai-core/skills/video.md` |
 | 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
 | 「下載字幕」「抓字幕」「YouTube 字幕」「提取字幕」「extract subtitles」 | `ai-core/skills/yt-subtitle.md` |
