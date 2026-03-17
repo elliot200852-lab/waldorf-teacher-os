@@ -42,6 +42,7 @@ aliases:
 | 「設定 gws」「安裝 gws」「gws setup」 | `gws-setup` | `ai-core/skills/gws-setup.md` |
 | 「生成新檔案」「建立新文件」「新增文件」「產出新文件」 | `new-doc` | `ai-core/skills/new-doc.md` |
 | 「發 PR」「合併申請」「送回主系統」 | `pull-request` | `ai-core/skills/pull-request.md` |
+| 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `video-setup` | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `sync-agents` | `ai-core/skills/sync-agents.md` |
 
 ---
@@ -70,4 +71,4 @@ aliases:
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-14*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-17*
