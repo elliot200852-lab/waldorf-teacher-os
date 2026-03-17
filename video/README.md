@@ -1,3 +1,8 @@
+---
+aliases:
+  - "Remotion 影片子專案"
+---
+
 # Remotion video
 
 <p align="center">
