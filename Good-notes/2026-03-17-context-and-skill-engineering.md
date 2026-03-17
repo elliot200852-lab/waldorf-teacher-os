@@ -1,4 +1,8 @@
 ---
+aliases:
+  - "Context Engineering"
+  - "Skill Engineering"
+  - "從 Prompt Engineering 到 Context Engineering"
 series: "TeacherOS x CreatorHub 建造日誌"
 publish_date: "2026-03-17"
 pillar: B-teacher-in-ai

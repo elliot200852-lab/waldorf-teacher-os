@@ -1,3 +1,8 @@
+---
+aliases:
+  - "專案級 Claude Code 指引"
+---
+
 # TeacherOS — Claude Code 專案級指引
 
 > 本檔案對所有 clone 此 repo 的 Claude Code 使用者自動生效（鐵打層，不會被 context 壓縮）。
