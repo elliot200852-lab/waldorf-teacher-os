@@ -1,6 +1,6 @@
 ---
 name: wrap-up
-description: End-of-session progress sync, Obsidian tag fix, and git commit+push. Triggers on '收工', '收尾', '存檔', '儲存', '更新進度', '結束今天', 'commit', '備份', or any expression meaning 'save and finish'. Updates YAML progress markers, fixes Obsidian tags, commits and pushes changes.
+description: "End-of-session progress sync, Obsidian tag fix, git commit+push, and session boundary management. Triggers on '收工', '收尾', '存檔', '儲存', '更新進度', '結束今天', 'commit', '備份', '下班', '工作告一段落', '今天到這裡', or any expression meaning 'save and finish'. Updates YAML progress markers, fixes Obsidian tags, commits and pushes changes. Also evaluates whether the current session workload warrants starting a fresh conversation next time (context health check)."
 ---
 
 # 收工（進度同步 + 存檔推送）
