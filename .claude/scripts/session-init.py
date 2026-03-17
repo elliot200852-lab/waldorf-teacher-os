@@ -65,7 +65,9 @@ def extract_field(text, key):
 
 
 def format_position(path):
-    """讀取 session YAML，回傳人類可讀的位置摘要"""
+    """讀取 session YAML，回傳人類可讀的位置摘要
+    已結案的工作線回傳 None（不顯示）
+    """
     try:
         with open(path, "r", encoding="utf-8") as f:
             text = f.read()
@@ -73,6 +75,12 @@ def format_position(path):
         return None
     except Exception:
         return "（讀取失敗）"
+
+    # 已結案的工作線不列出（檢查 status 和 phase 兩個欄位）
+    status = extract_field(text, "status")
+    phase = extract_field(text, "phase")
+    if (status and "已結案" in status) or (phase and "已結案" in phase):
+        return None
 
     block = extract_field(text, "block")
     step = extract_field(text, "step")
