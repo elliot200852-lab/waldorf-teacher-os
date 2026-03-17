@@ -44,6 +44,7 @@ aliases:
 | `obsidian-sync.md` | Obsidian 標籤與索引自動修正 | 「sync Obsidian」「更新索引」「補標籤」 |
 | `video-setup.md` | 建立 Remotion 影片專案環境 | 「建立影片專案」「設定 Remotion」「video setup」 |
 | `sync-agents.md` | 多 AI agent 系統一致性檢查 | 「同步檢查」「sync agents」「系統一致性」 |
+| `yt-subtitle.md` | YouTube 字幕擷取與教學素材轉換 | 「下載字幕」「抓字幕」「YouTube 字幕」「extract subtitles」 |
 
 ---
 
@@ -132,5 +133,5 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-17*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-17（新增 yt-subtitle）*
 
