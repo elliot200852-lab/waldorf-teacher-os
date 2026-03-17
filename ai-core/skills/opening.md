@@ -64,6 +64,25 @@ git pull origin main
 | `git pull` 有衝突 | **停下來，不繼續載入。** 報告：「更新時發現檔案衝突，請聯繫 David 處理。」列出衝突的檔案清單 |
 | `git pull` 顯示 "Already up to date" | 報告：「已是最新版本。」繼續 Step 1 |
 
+**git pull 成功後 — 技能跨平台檢查（僅 Codeowner）：**
+
+若當前使用者是 Codeowner（acl.yaml 中 admin），且 pull 有拉進新 commit，執行：
+
+```bash
+# 在 git pull 之前先記錄當前 HEAD
+OLD_HEAD=$(git rev-parse HEAD)
+
+# （執行 git pull origin main）
+
+# pull 完成後，檢查新進的技能檔案是否缺跨平台支援
+python3 setup/scripts/skill-platform-check.py --range "$OLD_HEAD..HEAD"
+```
+
+- 有警告 → 在 Step 4 開機摘要中加入提醒：「有 N 個技能檔案缺少 Windows 支援，需要修正」
+- 無警告 → 靜默通過
+- 非 Codeowner → 完全跳過此檢查（教師不需要看到此訊息）
+- "Already up to date" → 跳過（沒有新 commit，不需要檢查）
+
 **無終端機能力的 AI（Gemini 語音模式、ChatGPT 等）：**
 
 輸出以下提醒，等待教師確認後才繼續：

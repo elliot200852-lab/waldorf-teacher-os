@@ -77,6 +77,7 @@ migration_status:
   setup/setup-check.sh:      { status: completed, python: setup/setup-check.py }
   setup/hooks/pre-commit:    { status: shell-only, note: "薄層入口 → setup/scripts/pre-commit-check.py" }
   setup/hooks/post-merge:    { status: shell-only, note: "薄層入口 → setup/scripts/post-merge-check.py" }
+  setup/scripts/skill-platform-check.py: { status: completed, note: "技能跨平台檢查，opening Step 0 呼叫" }
   setup/save.sh:             { status: active, note: "wrap-up skill 已涵蓋此功能，低優先" }
   setup/start.sh:            { status: shell-only, note: "macOS/Linux 啟動器 → quick-start.py" }
   setup/start.ps1:           { status: shell-only, note: "Windows 啟動器 → quick-start.py" }
