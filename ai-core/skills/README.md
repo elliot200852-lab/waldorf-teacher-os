@@ -96,9 +96,9 @@ aliases:
 ## 注意事項
 ```
 
-### Step 2 — 跨平台檢核（必做）
+### Step 2 — 跨平台檢核（必做，新增與修改皆適用）
 
-所有技能必須同時支援 macOS 和 Windows。撰寫完成後逐項檢查：
+所有技能必須同時支援 macOS 和 Windows。**新增或修改**技能後，逐項檢查：
 
 | 項目 | macOS / Linux | Windows | 通用替代方案 |
 |------|--------------|---------|-------------|
@@ -179,15 +179,35 @@ $ARGUMENTS：[參數說明]
 
 ### 完整檢查清單
 
-新增技能完成前，確認以下全部到位：
+新增**或修改**技能完成前，確認以下全部到位：
 
-- [ ] `ai-core/skills/[技能名稱].md` — 正本（跨平台檢核通過）
+- [ ] `ai-core/skills/[技能名稱].md` — 正本已建立或更新
+- [ ] **跨平台檢核通過** — AI 必須逐步列出檢查結果（見下方格式），不可跳過
 - [ ] `ai-core/skills/README.md` — 技能清單已更新
 - [ ] `ai-core/skills/skills-manifest.md` — 觸發對照已更新
 - [ ] `ai-core/AI_HANDOFF.md` — 觸發表已更新
 - [ ] `.claude/skills/[技能名稱]/SKILL.md` — Anthropic Skills 封包已建立
 - [ ] `.claude/commands/[技能名稱].md` — Claude Code Command 已建立
 - [ ] `HOME.md` — Obsidian 索引已更新（正本 + 封包 + Command 三處）
+
+#### 跨平台檢核回報格式（必做）
+
+**新增或修改技能後，AI 必須主動輸出以下表格，不等教師詢問：**
+
+```
+**跨平台檢核結果**
+
+| 步驟 | 有終端指令？ | macOS | Windows | 狀態 |
+|------|------------|-------|---------|------|
+| Step 1 | 有 | bash ✓ | PowerShell ✓ | OK |
+| Step 2 | 無 | — | — | OK |
+| Step 3 | 有 | bash ✓ | PowerShell ✗ | 需修正 |
+```
+
+- 每個 Step 逐一檢查，不可籠統帶過
+- 有終端指令的步驟，必須確認 bash 和 PowerShell 兩種寫法都存在
+- 發現缺漏時當場修正，修正後重新輸出表格
+- 此檢核同時適用於「新增技能」與「修改既有技能」
 
 ---
 
