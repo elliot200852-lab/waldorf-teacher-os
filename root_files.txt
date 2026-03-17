@@ -1,0 +1,29 @@
+﻿id                                            kind        mimeType                                                      name                                                        
+????????????????????????????????????????????  ??????????  ????????????????????????????????????????????????????????????  ????????????????????????????????????????????????????????????
+1EX_ymSs8IUWBBhleIzLtNe-cl4zIsB56-tGv-z-sMfU  drive#file  application/vnd.google-apps.document                          ?芸??隞?                                                      
+1dHEZ8FHRxOjXDiTxgceMwoKZVmzVPqqq88F3wzeWvCI  drive#file  application/vnd.google-apps.form                              1??2 撟渡??臬噸蝳隤?摮貊??澆????扛撣怠?閰?                                   
+1LnZu2yj2fBbBZ6v_n5xSGeBRFT7A2XS4             drive#file  application/vnd.openxmlformats-officedocument.spreadsheetml?? (銝?憛怠神)115摮詨僑摨血飛蝧冗蝢文祕?賡脣漲閬???鞎餅?蝞”-嚗隤???.xlsx                    
+1rv6ijDLzZFalkI4B7j3SzlBD_jteyJZ4             drive#file  application/vnd.openxmlformats-officedocument.spreadsheetml?? (銝?憛怠神)115摮詨僑摨血飛蝧冗蝢文祕?賡脣漲閬???鞎餅?蝞”-嚗冗????.xlsx .xlsx              
+1bTse2EHSlQykJO02fyhbYTq4kHsG_aNF             drive#file  application/vnd.google-apps.folder                            01.114摮詨僑                                                    
+1nLO5KDhwbX775TLHMmd7sutZAIuXalSGIfJelzH08t8  drive#file  application/vnd.google-apps.document                          Taipei Nov. 25Your booking is confirmed! (reference_  23966??1PUNdKavrGXEjE-kKVdlpNIAsgmMeXFXC             drive#file  application/vnd.google-apps.folder                            01.115摮詨僑                                                    
+1EdW1GYbiF8zRdmiv2ncBgd10E47b2X8H             drive#file  application/vnd.google-apps.folder                            ???臬噸蝳?銝剛??急???憭雿輻                                            
+1rlxqi9LlM8rFedVQnZkww--q6p43eLLD             drive#file  application/vnd.openxmlformats-officedocument.wordprocessin?? ?舀?霅3c??docx                                                
+1JHP_EACykWvZpJzkan-F-q4I3Mgm4qDv             drive#file  application/vnd.openxmlformats-officedocument.wordprocessin?? ?舀?霅2b ??docx                                               
+1__-AQdoogD-p3xbHrts-pQQCKGd73rCF             drive#file  application/vnd.openxmlformats-officedocument.wordprocessin?? ?舀?霅1 a ??docx                                              
+16K27cwokhdW2WCf3UWWWpgV8z0aLnau9UbSDCyqHcDs  drive#file  application/vnd.google-apps.spreadsheet                       113摮詨僑摨行?敹敺瑞?擃葉9撟渡?颲脣撖衣??? (??)                                 
+18JWxFYiiwyO2NQkvxzjSVmzWT3EepNoR             drive#file  text/plain                                                    Taipei Nov. 25Your booking is confirmed! (reference_  23966??1Wqufo68IswAoRneU8EMWwRRkD0MotDIi             drive#file  application/vnd.google-apps.site                              ?芸??蝬脩?                                                      
+1MGwiU_lVk57rg79GUW_EwtzqeksFTXLB             drive#file  application/vnd.openxmlformats-officedocument.wordprocessin?? 112撟游漲 ?潸玨?葦?????降蝪賢銵?蝛箇).docx ???                           
+1hzoJg_QvUr4FkEKHeT7d0NNyLigXfY7N             drive#file  application/vnd.openxmlformats-officedocument.wordprocessin?? 憟質??典-114摮詨僑摨衣偷?嗅.docx                                         
+13O2K8NqJ3VK7Lm9QDLxSmhAPGK7WC2SW             drive#file  application/vnd.google-apps.folder                            02.????                                                    
+1K0Ig27fe3wAPAG9shp2i__E4bfQz6ynS             drive#file  application/vnd.google-apps.folder                            03.?賊?颲行?                                                     
+1xQq4AAx-VHQZcnfEJz620lMUvUIePg2yOK0pAO0aLQk  drive#file  application/vnd.google-apps.document                          ??擃葉撌格?鞎餌隢(蝛箇)                                              
+1slCKEEQTI9PXk7sYMmcKB-Tasi4tzgRO             drive#file  application/vnd.google-apps.folder                            04.?賊?蝪賢?/銵冽/??                                               
+1eTLcNrp0jvtMwZX6HgN0KOM0t6YeJYHy             drive#file  application/pdf                                               113摮詨僑摨血祕撽??脰?????撚20250729 (1).pdf                           
+16Ym4ndYJWHoz9y8D36LfXI3f9vgyfBOo             drive#file  application/vnd.openxmlformats-officedocument.wordprocessin?? 114摮詨僑 ???臬噸蝳飛??閫霅啗玨撖行閮.docx                                  
+13LPHuVVmZa_JKLr0PJIuYODBvFa5w6qZ             drive#file  application/vnd.google-apps.folder                            library@waldorf.ilc.edu.tw                                  
+14_oBbOgsVGLoBemO2RabhNJfDW09Qon1             drive#file  application/vnd.google-apps.folder                            00.甇瑕僑鞈?                                                     
+1v18hAnqpTSURLzooMmPJQv783wHV8-xF             drive#file  application/vnd.google-apps.folder                            05.隤脩?鞈?                                                     
+1QT9F1fFuKwUC-tPu2Wps8KsYXbdOC1fZ             drive#file  application/vnd.google-apps.folder                            (00)?箸?∪???”?株???                                            
+1_tAVLV6iEy8A-TxnKUlzLIOwXWp6NRJi             drive#file  application/vnd.openxmlformats-officedocument.wordprocessin?? 20201008Martyn?詨?蝝???撣怎黎憒?銝韏瑕極雿?docx                           
+1-xhjpc0bL8pZPPUm-5bOspF90aZ1M1ZF             drive#file  application/vnd.google-apps.folder                            108隤脩雇                                                       
+
