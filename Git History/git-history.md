@@ -127,4 +127,91 @@ aliases:
 
 ---
 
-*下一週回顧將於 2026/03/22（日）下午五點自動更新。*
+## 第四週｜2026/03/16（一）– 03/22（日）
+
+### Skill Engineering × Context Engineering：讓 AI 真正成為可靠的工作夥伴
+
+第三週結束時，系統已經住進了八位教師。但一個關鍵問題浮現：系統「能用」和系統「好用」之間的距離，比想像中更遠。這一週的工作圍繞兩個看似不相關、實則互為表裡的主題展開——**Skill Engineering（技能工程）** 與 **Context Engineering（上下文工程）**。前者確保 AI 能精準地被觸發並執行正確的事；後者確保 AI 在執行過程中不會失去方向。
+
+**起心動念：** 週一的教學備課工作揭露了系統的成熟度：9C 英文 week5-3 動詞片語攻防戰教案順利產出，phrase-quiz 個人技能建立——這是教學設計引擎在教學現場持續落地的證據。但同一天也花了時間完成第三週週記與舊版設定指南的清理，說明系統的文件債務正在累積。真正的轉折在週二——當三個背景 Agent 同時被啟動（build.py 跨平台重寫、gws-setup 跨平台修訂、video-setup 跨平台修訂），並且全部成功完成時，David 開始追問一個更深層的問題：「這些技能在不同平台上真的能正確觸發嗎？Anthropic Skills 的封包層會不會影響執行？Obsidian 追蹤得到這些新檔案嗎？」
+
+這些問題的答案，引出了本週最重要的兩條工程主線。
+
+---
+
+#### 主線一：Skill Engineering — 技能的完整生命週期管理
+
+**問題：** TeacherOS 的技能數量已超過 30 個，但新增技能的流程一直是隱性知識——「寫個 .md、更新索引、大概就這樣吧」。沒有人明確定義過封包層（Anthropic Skills）要不要做、跨平台要不要查、HOME.md 要不要更新。結果就是：部分技能有封包，部分沒有；部分跨平台，部分只能在 macOS 上跑。
+
+**解法：Skill Creator 升級為 6 步驟 + 7 項必做清單。**
+
+1. 撰寫正本（`ai-core/skills/[技能名稱].md`）
+2. 跨平台檢核（python3/python 偵測、路徑用 pathlib、臨時目錄用 tempfile）
+3. 更新三份索引（README.md + skills-manifest.md + AI_HANDOFF.md）
+4. **建立 Anthropic Skills 封包**（`.claude/skills/[技能名稱]/SKILL.md`——純 metadata 路由，零 OS 依賴）
+5. 建立 Claude Code Command 薄層入口
+6. 更新 HOME.md Obsidian 索引
+
+這不是文件規範的更新，而是**對「什麼是一個完整的技能」的重新定義**。一個技能如果只有正本，沒有封包，Claude Code 就無法透過 NLP 語意觸發；如果沒有跨平台檢核，Windows 教師就會卡住；如果沒有 HOME.md 登錄，Obsidian 圖譜就看不見它。六個步驟不是官僚程序，而是技能「可被發現、可被觸發、可被執行、可被追蹤」的四個面向的最小保障。
+
+**跨平台公約的確立**也是 Skill Engineering 的核心成果。所有 shell 腳本統一提供 bash + PowerShell 雙寫法，或改用 Python 統一入口。`build.sh` 被重寫為 12 行薄層包裝，核心邏輯移至 `build.py`（pathlib + subprocess + platform 模組）。gws-setup 和 video-setup 也完成了同樣的改造。這延續了第三週跨平台轉身的精神，但從「救火式修補」進化為「制度性預防」。
+
+同週還完成了兩個新技能的完整生命週期：**yt-subtitle**（YouTube 字幕擷取）和 **video-setup**（Remotion 影片專案環境建立）。兩者都按照新的 6 步驟流程走完，是 Skill Creator 升級後的第一批「合規產出」。農場實習 60 秒短片的 Remotion 專案建立，則是 video-setup 技能的首次實戰驗證。
+
+**本週其他技能系統變動：** session-init hook 加入自動過濾已結案工作線的邏輯（02637b2），讓開機報告不再被已完成的專案佔據版面。
+
+---
+
+#### 主線二：Context Engineering — AI 大腦的新鮮度管理
+
+**問題：** 這一週的工作量橫跨了五條以上的工作線（英文備課、導師業務、影片專案、技能系統、session 管理），David 在長對話的後段明顯感受到 AI 回應品質的下降——語氣錨點被淡化、先前確認的設計決策被遺忘、需要重新讀取已載入的檔案。追根究柢，這是 **context compaction**（上下文壓縮）的必然結果：當對話超過一定長度，AI 會將早期載入的教育哲學、DI 框架等關鍵設定壓縮為摘要，從「完整理解」退化為「大概記得」。
+
+**關鍵認知：** 這個問題不是 Claude Code 專屬的，而是所有 AI 平台（Gemini、ChatGPT、任何 LLM）的結構性限制。因此解法必須是通用的。
+
+**Context 三層生命週期模型的建立：**
+
+| 層級 | 內容 | 被壓縮？ |
+|------|------|---------|
+| 鐵打層 | CLAUDE.md、MEMORY.md、Skill Registry（~6K tokens） | 不會（每個 prompt 重新注入，僅 Claude Code） |
+| 開工層 | teacheros.yaml、foundation、DI framework（~19K tokens） | **會**（所有 AI 都有此風險） |
+| 工作層 | session.yaml、課程內容、對話歷史 | **會**（最先被壓縮） |
+
+這個模型揭示了一個重要事實：**TeacherOS 的啟動成本約 25K tokens，佔 200K context window 的 12.5%**。這個比例是合理的——不需要瘦身，但需要管理。
+
+**四處修改落地：**
+
+1. **`ai-core/AI_HANDOFF.md` — 新增「第四步：Session 管理」**（通用，所有 AI 平台）
+   - AI 必須在對話超過 20 輪、主題大幅切換、或需要重讀已載入檔案時，主動建議教師收工開新 session
+   - 核心原則寫入所有教師的入口文件：「重新開工永遠比在壓縮後的 context 裡硬撐更有效率。」
+
+2. **`CLAUDE.md`（專案級，Repo 根目錄）— 新建**
+   - 這是一個架構性的重要決策：將通用規則（啟動協議、語氣錨點、回應規範、session 管理、技能觸發）從 David 個人的 `~/.claude/CLAUDE.md` 抽離，放在 repo 根目錄
+   - 效果：所有 clone 此 repo 的 Claude Code 使用者自動獲得鐵打層保護，不需要手動設定
+   - David 個人的 CLAUDE.md 精簡為只保留身份、絕對路徑、母文件參考——專屬設定
+
+3. **`wrap-up.md` — 新增 Step 7「Session 邊界判斷」**
+   - 每次收工時自動評估：是否涉及 2+ 工作線、是否超過 20 輪、是否重讀過已載入檔案
+   - 符合條件時主動提醒教師開新 session
+   - `.claude/skills/wrap-up/SKILL.md` 封包同步更新
+
+4. **David 個人 `~/.claude/CLAUDE.md` — 精簡**
+   - 從 ~130 行降至 ~35 行，避免與專案級重複
+
+**為什麼這件事很重要：** Context Engineering 不是技術細節，而是**教師能否長期信任 AI 夥伴的關鍵基礎**。如果教師在長對話後發現 AI 的回應開始偏離——忘了 DI 框架、語氣變成通用助理、重複問已確認的問題——教師會失去對系統的信任，進而放棄使用。建立 session 管理機制，本質上是在告訴教師：「AI 有它的認知極限，而我們已經為此設計了保護措施。」這與華德福教育中「認識工具的局限才能善用工具」的精神完全一致。
+
+---
+
+**本週教學線進度：**
+
+- 9C 英文：week5-3 動詞片語攻防戰教案 + 測驗卷完成，syllabus v1/v2 檔案整理歸位
+- 9C 導師：園遊會攤位規劃定案（飯糰+水果茶+遊戲），服務學習之旅分組啟動，班會紀錄寫入 teaching-log
+- 9D 台灣文學：主課程時間線確認
+- 農場實習：正式結案，session.yaml 標記 completed
+
+**貢獻與意義：** 這一週的工作不在於產出了多少新功能，而在於**系統對自身運作方式的反思與升級**。Skill Engineering 回答的是「AI 怎樣才能正確地做事」——從技能的發現、觸發、執行到追蹤，建立完整的生命週期管理。Context Engineering 回答的是「AI 怎樣才能持續地做對的事」——在有限的認知窗口中，確保最重要的設定不被遺忘。這兩個主題合在一起，構成了 TeacherOS 從「可用」到「可信賴」的關鍵跨越。對於所有正在使用或即將使用此系統的教師而言，理解這兩個概念至關重要：**Skill Engineering 決定了你能要求 AI 做什麼，Context Engineering 決定了 AI 在多長的對話中還能記得你是誰。**
+
+**檢討：** 這一天的 session（03/17）本身就是 Context Engineering 問題的活教材——橫跨技能系統審計、Anthropic Skills 驗收、Skill Creator 升級、token 成本分析、context 管理策略設計、CLAUDE.md 架構拆分六個主題，遠超建議的「一個 session 做一件主要的事」。正是在這個過程中，David 體驗到了 AI 回應品質隨 context 膨脹而下降的現象，才觸發了 session 管理機制的設計。某種意義上，問題本身成為了解法的催化劑。另一個值得注意的是：Skill Creator 的 6 步驟流程雖然完整，但對不熟悉 Git 和 YAML 的教師來說，門檻仍然偏高。目前的假設是「教師建立技能時會有 AI 協助」，但如果 AI 本身因為 context 壓縮而忘了 6 步驟中的某幾步，就會產生不完整的技能——這正是 Skill Engineering 與 Context Engineering 交叉的盲區，值得後續觀察。
+
+---
+
+*本週尚在進行中（03/17），下一次更新預計 2026/03/22（日）下午。*
