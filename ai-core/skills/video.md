@@ -28,10 +28,22 @@ requires_args: false
 ### Step 1 — 素材準備
 
 1. 確認教師提供的素材（音檔、照片、影片片段）
-2. 複製素材到 `~/Videos/TeacherOS/assets/` 對應子目錄：
-   - 照片 → `assets/photos/`
-   - 音檔 → `assets/audio/`
-   - 其他 → 依需求建立子目錄
+2. 建立素材子目錄（若不存在）並複製素材：
+
+**macOS / Linux：**
+```bash
+mkdir -p ~/Videos/TeacherOS/assets/audio
+mkdir -p ~/Videos/TeacherOS/assets/photos
+cp "來源路徑" ~/Videos/TeacherOS/assets/audio/
+```
+
+**Windows（PowerShell）：**
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\Videos\TeacherOS\assets\audio"
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\Videos\TeacherOS\assets\photos"
+Copy-Item "來源路徑" "$env:USERPROFILE\Videos\TeacherOS\assets\audio\"
+```
+
 3. 程式碼中一律使用 `staticFile("audio/xxx.mp3")` 引用，不寫絕對路徑
 
 ### Step 2 — 撰寫 Composition
@@ -79,32 +91,60 @@ Remotion Studio 會在 `http://localhost:3000` 啟動。
 
 教師確認後，執行渲染：
 
+**macOS / Linux：**
 ```bash
 cd <REPO_ROOT>/video && npx remotion render src/index.ts <CompositionId> --output ~/Videos/TeacherOS/<中文檔名>.mp4
+```
+
+**Windows（PowerShell）：**
+```powershell
+Set-Location "<REPO_ROOT>\video"
+npx remotion render src/index.ts <CompositionId> --output "$env:USERPROFILE\Videos\TeacherOS\<中文檔名>.mp4"
 ```
 
 **檔名規則：** 使用繁體中文（中文在前），與教師的檔案命名習慣一致。
 
 渲染完成後：
 1. 回報檔案位置、大小、時長
-2. 若教師要求，複製到 `~/Desktop/Downloads/`
+2. 若教師要求，複製到桌面下載資料夾：
+
+**macOS / Linux：**
+```bash
+cp ~/Videos/TeacherOS/<中文檔名>.mp4 ~/Desktop/Downloads/
+```
+
+**Windows（PowerShell）：**
+```powershell
+Copy-Item "$env:USERPROFILE\Videos\TeacherOS\<中文檔名>.mp4" "$env:USERPROFILE\Desktop\Downloads\"
+```
 
 ### Step 6 — 關閉 Studio
 
-渲染完成且教師不再需要修改時：
+渲染完成且教師不再需要修改時，終止背景的 dev server 程序。
 
+AI 應使用啟動時記錄的 process ID 來關閉：
+
+**macOS / Linux：**
 ```bash
-# 關閉背景的 dev server
+kill <PID>
+```
+
+**Windows（PowerShell）：**
+```powershell
+Stop-Process -Id <PID>
 ```
 
 或在教師收工時自動關閉。
 
 ## 跨平台注意
 
-| 項目 | macOS | Windows |
-|------|-------|---------|
-| 素材目錄 | `~/Videos/TeacherOS/assets/` | `%USERPROFILE%\Videos\TeacherOS\assets\` |
-| 輸出目錄 | `~/Videos/TeacherOS/` | `%USERPROFILE%\Videos\TeacherOS\` |
+| 項目 | macOS / Linux | Windows（PowerShell） |
+|------|---------------|----------------------|
+| 素材目錄 | `~/Videos/TeacherOS/assets/` | `$env:USERPROFILE\Videos\TeacherOS\assets\` |
+| 輸出目錄 | `~/Videos/TeacherOS/` | `$env:USERPROFILE\Videos\TeacherOS\` |
+| 建立目錄 | `mkdir -p` | `New-Item -ItemType Directory -Force` |
+| 複製檔案 | `cp` | `Copy-Item` |
+| 關閉程序 | `kill <PID>` | `Stop-Process -Id <PID>` |
 | 啟動 Studio | `npm run dev` | `npm run dev` |
 | 渲染 | `npx remotion render ...` | `npx remotion render ...` |
 
