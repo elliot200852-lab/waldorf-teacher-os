@@ -122,6 +122,7 @@ aliases:
 | 「設計一堂課」「45 分鐘」「lesson design」 | `ai-core/skills/subject-lesson-45.md` |
 | 「英文課設計」「English lesson」 | `ai-core/skills/english-45.md` |
 | 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `ai-core/skills/git-history.md` |
+| 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
@@ -200,5 +201,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-14（瘦身：刪除重複技能摘要表、精簡第三步與個人技能段落；修正幽靈引用；補入缺漏技能；移除個人技能至 workspace）*
+*最後更新：2026-03-17（新增 video-setup 技能）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

@@ -42,6 +42,7 @@ aliases:
 | `gws-setup.md` | Google Workspace CLI 安裝、登入與多帳號設定 | 「設定 gws」「安裝 gws」 |
 | `new-doc.md` | 新建 Markdown 文件前確認存放路徑、檔名、是否複製 | 「生成新檔案」「建立新文件」「新增文件」 |
 | `obsidian-sync.md` | Obsidian 標籤與索引自動修正 | 「sync Obsidian」「更新索引」「補標籤」 |
+| `video-setup.md` | 建立 Remotion 影片專案環境 | 「建立影片專案」「設定 Remotion」「video setup」 |
 | `sync-agents.md` | 多 AI agent 系統一致性檢查 | 「同步檢查」「sync agents」「系統一致性」 |
 
 ---
@@ -131,5 +132,5 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-14*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-17*
 

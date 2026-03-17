@@ -56,6 +56,12 @@ workspaces/Working_Member/Codeowner_David/skills/voice-calibration-log.md
 # HOME.md — Codeowner 個人 Obsidian 導航頁（不上傳）
 HOME.md
 
+# Remotion 影片專案（追蹤原始碼，排除產出物與依賴）
+video/node_modules/
+video/out/
+video/dist/
+video/.remotion/
+
 # Tool Download — 使用者本地環境（不上傳）
 .env
 venv/
