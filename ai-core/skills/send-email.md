@@ -33,8 +33,14 @@ args_format: "[選填：收件人 Email]"
 
 ### Step 0 — 確認 gws CLI 可用
 
+**macOS / Linux：**
 ```bash
 command -v gws && gws auth status
+```
+
+**Windows（PowerShell）：**
+```powershell
+Get-Command gws -ErrorAction SilentlyContinue && gws auth status
 ```
 
 若未安裝或未登入，提示教師手動寄送。

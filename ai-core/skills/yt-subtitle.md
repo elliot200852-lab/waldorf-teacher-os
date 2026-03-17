@@ -64,8 +64,14 @@ AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從
 
 ### Step 1 — 確認 yt-dlp 可用（首次自動安裝）
 
+**macOS / Linux：**
 ```bash
 command -v yt-dlp && yt-dlp --version
+```
+
+**Windows（PowerShell）：**
+```powershell
+Get-Command yt-dlp -ErrorAction SilentlyContinue && yt-dlp --version
 ```
 
 **已安裝：** 顯示版本，繼續下一步。
@@ -83,7 +89,7 @@ command -v yt-dlp && yt-dlp --version
 偵測邏輯：
 1. macOS：先試 `command -v brew`，有則 `brew install`，無則 `pip3 install`
 2. Linux：`pip3 install yt-dlp`
-3. Windows：先試 `winget install yt-dlp`，失敗則 `pip install yt-dlp`
+3. Windows：先試 `Get-Command winget`，有則 `winget install yt-dlp`，無則 `pip install yt-dlp`
 
 安裝後再次確認版本，確保可用。
 

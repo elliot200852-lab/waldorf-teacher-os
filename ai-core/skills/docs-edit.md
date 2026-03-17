@@ -31,8 +31,14 @@ args_format: "[選填：文件名稱或 ID + 操作描述]"
 
 ### Step 0 — 確認 gws CLI 可用
 
+**macOS / Linux：**
 ```bash
 command -v gws && gws auth status
+```
+
+**Windows（PowerShell）：**
+```powershell
+Get-Command gws -ErrorAction SilentlyContinue && gws auth status
 ```
 
 ### Step 1 — 確認目標文件

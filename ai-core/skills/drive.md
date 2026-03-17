@@ -33,11 +33,15 @@ args_format: "[選填：檔案路徑或操作描述]"
 
 ### Step 0 — 確認 gws CLI 可用
 
+**macOS / Linux：**
 ```bash
 command -v gws && gws auth status
 ```
 
-> **跨平台注意：** macOS/Linux 用 `command -v gws`，Windows PowerShell 用 `Get-Command gws`，或統一用 `python3 -c "import shutil; print(shutil.which('gws'))"`。
+**Windows（PowerShell）：**
+```powershell
+Get-Command gws -ErrorAction SilentlyContinue && gws auth status
+```
 
 ### Step 1 — 判斷操作類型
 

@@ -33,8 +33,14 @@ args_format: "[選填：操作類型 + 日期或事件描述]"
 
 ### Step 0 — 確認 gws CLI 可用
 
+**macOS / Linux：**
 ```bash
 command -v gws && gws auth status
+```
+
+**Windows（PowerShell）：**
+```powershell
+Get-Command gws -ErrorAction SilentlyContinue && gws auth status
 ```
 
 ### Step 1 — 判斷操作類型
