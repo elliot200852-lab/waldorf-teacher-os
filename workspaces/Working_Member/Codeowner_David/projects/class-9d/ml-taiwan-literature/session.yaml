@@ -5,20 +5,34 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ml_taiwan_literature_session:
   class: class-9d
-  last_updated: ''
+  last_updated: 2026-03-17
 
   current_position:
     block: 零
     step: 0
     sub_block: null
     unit_number: null
-    current_week: 0
+    current_week: 0       # week 8（4/7 二）正式開課（4/6 清明連假）
 
-  confirmed_decisions: []
+  confirmed_decisions:
+    - "主課程預計 week 8（4/7 起）開始，連續兩週（week 8-9）"
+    - "4/6（一）為清明連假最後一天，實際開課 4/7（二）"
+
+  # 週次工作節點
+  weekly_roadmap:
+    week_8:
+      dates: 4/7-4/10
+      note: "4/6 清明連假，實際從 4/7（二）開始"
+      items:
+        - "台灣文學主課程正式開課（第一週）"
+    week_9:
+      dates: 4/13-4/17
+      items:
+        - "台灣文學主課程（第二週）"
 
   next_action:
-    description: 啟動 Block 1 學季大綱設計
-    input_needed_from_teacher: null
+    description: "啟動 Block 1 學季大綱設計——需在 week 8（4/7）前完成，建議 week 6-7 進行設計"
+    input_needed_from_teacher: "台灣文學主課程的主題方向、選文範圍"
 
   output_files:
     syllabus_versions: []

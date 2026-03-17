@@ -6,7 +6,7 @@
 
 farm_internship_session:
   class: class-9c
-  last_updated: 2026-03-13
+  last_updated: 2026-03-17
 
   overview:
     name: 農場實習
@@ -19,8 +19,8 @@ farm_internship_session:
     total_farms: 19
 
   current_position:
-    phase: 返校週（week 4）
-    status: 已完成——返校週三日流程與分享會全部結束
+    phase: 已結案
+    status: 課程全部結束，不再追蹤（3/17 教師確認）
                 # week 1-3：學生在各農場實習
                 # week 4（3/11-3/13）：返校整理、彩排、正式發表
                 # 3/11（三）：分組討論（4 場主題討論 + 報告準備）
@@ -38,7 +38,7 @@ farm_internship_session:
     - "教學反思已融入卡繆結論，教學紀錄已輸出至 Google Drive"
 
   next_action:
-    description: "農場實習課程已結束。後續若有個案跟進（張顥馨彈性引導、黃又羿訪談、黃馨瑩選課態度），歸入導師業務處理"
+    description: "已結案。個案跟進歸入導師業務"
     input_needed_from_teacher: null
 
   output_files:
