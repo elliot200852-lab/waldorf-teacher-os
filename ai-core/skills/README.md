@@ -81,34 +81,113 @@ aliases:
 
 ## 如何新增技能
 
-1. **在此目錄新建 `[技能名稱].md`**，依照以下結構撰寫：
-   ```
-   # skill: [技能名稱] — [說明]
+### Step 1 — 撰寫正本（必做）
 
-   ## 參數
-   ## 根目錄
-   ## 讀取的檔案
-   ## 執行步驟
-   ## 輸出格式
-   ## 注意事項
-   ```
+在此目錄新建 `[技能名稱].md`，依照以下結構撰寫：
 
-2. **更新三份索引文件（必做）**：
-   - `ai-core/skills/README.md`（本文件）— 技能清單表新增一行
-   - `ai-core/skills/skills-manifest.md` — 觸發對照表新增一行
-   - `ai-core/AI_HANDOFF.md` — 技能觸發表與技能清單各新增一行
-   - 三份文件的「最後更新」日期同步改為當天
+```
+# skill: [技能名稱] — [說明]
 
-3. **（選用，Claude Code slash command）** 在 `.claude/commands/` 新建薄層入口：
-   ```markdown
-   # /[技能名稱] — [說明]
-   > Claude Code 薄層入口 — 技能正本：`ai-core/skills/[技能名稱].md`
+## 參數
+## 根目錄
+## 讀取的檔案
+## 執行步驟
+## 輸出格式
+## 注意事項
+```
 
-   讀取並執行：`ai-core/skills/[技能名稱].md`
-   （AI 自動偵測 Repo 根目錄位置）
+### Step 2 — 跨平台檢核（必做）
 
-   $ARGUMENTS：[參數說明]
-   ```
+所有技能必須同時支援 macOS 和 Windows。撰寫完成後逐項檢查：
+
+| 項目 | macOS / Linux | Windows | 通用替代方案 |
+|------|--------------|---------|-------------|
+| Python 呼叫 | `python3` | `python` | 先偵測：`python3 --version \|\| python --version` |
+| 指令偵測 | `command -v xxx` | `Get-Command xxx` | `python3 -c "import shutil; print(shutil.which('xxx'))"` |
+| 臨時目錄 | `/tmp/` | `%TEMP%` | `tempfile.mkdtemp()` 或 `tempfile.gettempdir()` |
+| 路徑分隔 | `/` | `\` | `pathlib.Path()` |
+| 家目錄 | `~/` | `%USERPROFILE%` | `Path.home()` |
+| Shell 腳本 | `bash xxx.sh` | N/A | 改用 Python 腳本，shell 只留薄層入口 |
+
+若技能中有終端機指令，必須同時提供 bash 與 PowerShell 兩種寫法，或使用 Python 統一入口。
+完整跨平台公約見 `ai-core/reference/cross-platform.yaml`。
+
+### Step 3 — 更新三份索引文件（必做）
+
+- `ai-core/skills/README.md`（本文件）— 技能清單表新增一行
+- `ai-core/skills/skills-manifest.md` — 觸發對照表新增一行
+- `ai-core/AI_HANDOFF.md` — 技能觸發表與技能清單各新增一行
+- 三份文件的「最後更新」日期同步改為當天
+
+### Step 4 — 建立 Anthropic Skills 封包（必做）
+
+在 `.claude/skills/[技能名稱]/SKILL.md` 建立封包入口，讓 Claude Code 能透過 NLP 語意自動觸發。
+
+```markdown
+---
+name: [技能名稱]
+description: "[豐富的自然語言描述，涵蓋所有可能的觸發語句——中文、英文、口語變體皆列出。越詳細，Claude Code 的觸發比對越精準。]"
+---
+
+# [中文標題]
+
+> 本 SKILL.md 是 Claude Code Anthropic Skills 的入口。
+> 正本位於 TeacherOS 技能系統，確保所有觸發路徑讀取同一份規格。
+
+## 參數（若有）
+
+- 格式：`<參數1> [參數2]`
+
+## 執行方式
+
+讀取並執行以下檔案（以 Repo 根目錄為基準）：
+
+1. `ai-core/skills/[技能名稱].md`
+
+## 注意事項
+
+- 本入口不包含任何執行邏輯——所有流程均在正本中定義
+- 若正本更新，本入口無需同步修改
+```
+
+**封包設計原則：**
+- SKILL.md 只做路由，**絕不包含執行邏輯**（確保正本唯一性）
+- `description` 欄位是觸發精準度的關鍵——把所有觸發語、同義詞、口語變體都寫進去
+- 封包層是純 metadata，不含任何 OS 指令，macOS / Windows 行為完全一致
+- 個人技能的封包路由指向 `{workspace}/skills/` 而非 `ai-core/skills/`
+
+### Step 5 — 建立 Claude Code Command 薄層入口（必做）
+
+在 `.claude/commands/` 新建入口，讓 `/[技能名稱]` slash command 可用：
+
+```markdown
+# /[技能名稱] — [說明]
+> Claude Code 薄層入口 — 技能正本：`ai-core/skills/[技能名稱].md`
+
+讀取並執行：`ai-core/skills/[技能名稱].md`
+（AI 自動偵測 Repo 根目錄位置）
+
+$ARGUMENTS：[參數說明]
+```
+
+### Step 6 — 更新 HOME.md（必做）
+
+將新技能加入 Obsidian HOME.md 的對應區段：
+- 正本 → 「系統技能正本」表格
+- 封包 → 「Claude Code Skills（Anthropic Skills 封包）」表格
+- Command → 「Claude Code Commands」表格
+
+### 完整檢查清單
+
+新增技能完成前，確認以下全部到位：
+
+- [ ] `ai-core/skills/[技能名稱].md` — 正本（跨平台檢核通過）
+- [ ] `ai-core/skills/README.md` — 技能清單已更新
+- [ ] `ai-core/skills/skills-manifest.md` — 觸發對照已更新
+- [ ] `ai-core/AI_HANDOFF.md` — 觸發表已更新
+- [ ] `.claude/skills/[技能名稱]/SKILL.md` — Anthropic Skills 封包已建立
+- [ ] `.claude/commands/[技能名稱].md` — Claude Code Command 已建立
+- [ ] `HOME.md` — Obsidian 索引已更新（正本 + 封包 + Command 三處）
 
 ---
 
@@ -133,5 +212,5 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-17（新增 yt-subtitle）*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-17（Skill Creator 升級：6 步驟 + 跨平台檢核 + Anthropic Skills 封包）*
 

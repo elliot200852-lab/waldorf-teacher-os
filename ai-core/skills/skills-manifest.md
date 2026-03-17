@@ -62,13 +62,20 @@ aliases:
 
 ## 新增或修改技能
 
-見 `ai-core/skills/README.md` 的「如何新增技能」章節。
+完整流程見 `ai-core/skills/README.md`「如何新增技能」（6 步驟 + 檢查清單）。
 
-**必做：** 每次新增或修改技能後，必須同步更新以下三份索引文件：
-1. `ai-core/skills/README.md` — 技能清單表
-2. `ai-core/skills/skills-manifest.md`（本文件）— 觸發對照表
-3. `ai-core/AI_HANDOFF.md` — 技能觸發表與技能清單
+**每次新增或修改技能，必須完成以下全部項目：**
+
+1. `ai-core/skills/[技能名稱].md` — 正本（跨平台檢核通過）
+2. `ai-core/skills/README.md` — 技能清單表
+3. `ai-core/skills/skills-manifest.md`（本文件）— 觸發對照表
+4. `ai-core/AI_HANDOFF.md` — 技能觸發表
+5. `.claude/skills/[技能名稱]/SKILL.md` — Anthropic Skills 封包（純路由，不含邏輯）
+6. `.claude/commands/[技能名稱].md` — Claude Code Command 薄層入口
+7. `HOME.md` — Obsidian 索引（正本 + 封包 + Command 三處）
+
+**跨平台規則：** 所有技能必須同時支援 macOS 和 Windows。詳見 README 的 Step 2 跨平台檢核表。
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-17*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-17（Skill Creator 升級：7 項必做清單）*

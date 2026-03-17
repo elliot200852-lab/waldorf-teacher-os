@@ -168,7 +168,7 @@ AI 完成第一步後，掃描該資料夾的 YAML frontmatter（`triggers` + `d
 2. 讀取對應技能的 `.md` 檔案取得完整規格
 3. 依照規格執行
 
-**新增技能：** 在 `ai-core/skills/` 新建 `.md` 檔，在 `skills-manifest.md` 加索引即完成。
+**新增技能：** 完整 6 步驟見 `ai-core/skills/README.md`「如何新增技能」。必須同時建立正本（`ai-core/skills/`）、Anthropic Skills 封包（`.claude/skills/`）、Command 入口（`.claude/commands/`），並通過跨平台檢核（macOS + Windows）。
 
 ---
 
@@ -202,5 +202,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-17（新增 video-setup、yt-subtitle 技能）*
+*最後更新：2026-03-17（Skill Creator 升級：新增技能必含 Anthropic 封包 + 跨平台檢核）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
