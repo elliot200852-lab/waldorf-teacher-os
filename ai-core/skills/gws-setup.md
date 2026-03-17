@@ -123,6 +123,28 @@ Copy-Item setup\gws-client-secret.json "$env:APPDATA\gws\client_secret.json"
 > 這份檔案是 TeacherOS Google Cloud 專案的 OAuth 用戶端識別檔，不含任何個人資料。
 > 使用者的授權 token 在登入後才產生，存於本機加密檔案中，不進入 Git。
 
+### Step 2.9 — 確認 OAuth 測試使用者（AI 自動 → 可能需管理員操作）
+
+TeacherOS 的 Google Cloud OAuth App 目前為「測試」發布狀態。**只有被加入測試使用者名單的 Google 帳號才能完成授權登入。** 不在名單內的帳號會直接收到 403 錯誤，畫面上沒有「進階」按鈕可按。
+
+AI 檢查教師的 default 帳號與所有 accounts 清單中的 email，逐一確認：
+
+**如果 AI 是由管理員（David）執行此技能為其他教師設定：**
+
+> 這位教師的帳號 `{email}` 需要先加入 Google Cloud 測試使用者名單。
+> 請到 [Google Cloud Console](https://console.cloud.google.com) → 你的 TeacherOS 專案：
+>
+> 1. 左側選單 → **API 和服務** → **OAuth 同意畫面**
+> 2. 往下找到「測試使用者」區塊
+> 3. 點「+ ADD USERS」，填入 `{email}`，儲存
+>
+> 完成後告訴我「好了」，我再繼續登入流程。
+
+**如果 AI 是由教師本人執行：**
+
+> 你的帳號 `{email}` 可能還沒被加入系統的授權名單。
+> 如果接下來登入時直接跳出 403 錯誤（沒有「進階」按鈕），請聯繫 David 將你的帳號加入測試名單。
+
 ### Step 3 — 登入主帳號（需教師操作）
 
 AI 執行：
@@ -140,6 +162,7 @@ gws auth login --account <default帳號email>
 > 1. 在瀏覽器中選擇你的主要 Google 帳號（{default 帳號}）
 > 2. 畫面可能會顯示「Google 尚未驗證這個應用程式」的警告——這是正常的（TeacherOS 是內部工具）
 >    - 點擊「進階」→「前往 TeacherOS（不安全）」
+>    - **如果沒有「進階」按鈕而是直接 403** → 回到 Step 2.9，你的帳號尚未加入測試名單
 > 3. 畫面會顯示「Google Workspace CLI 要求存取你的 Google 帳戶」
 > 4. 點擊「允許」（Allow）
 > 5. 看到「Authentication successful」或類似成功訊息後，回到這裡告訴我「好了」
