@@ -42,6 +42,7 @@ aliases:
 | 「設定 gws」「安裝 gws」「gws setup」 | gws-setup | `ai-core/skills/gws-setup.md` |
 | 「生成新檔案」「建立新文件」「新增文件」「產出新文件」 | new-doc | `ai-core/skills/new-doc.md` |
 | 「下載字幕」「抓字幕」「YouTube 字幕」「提取字幕」 | yt-subtitle | `ai-core/skills/yt-subtitle.md` |
+| 「教學動畫」「做動畫」「概念動畫」「解說動畫」「animate」 | teach-animation | `ai-core/skills/teach-animation.md` |
 
 ---
 
@@ -52,4 +53,4 @@ aliases:
 
 ---
 
-*最後更新：2026-03-17*
+*最後更新：2026-03-18*

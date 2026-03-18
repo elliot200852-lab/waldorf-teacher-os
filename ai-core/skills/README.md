@@ -45,6 +45,7 @@ aliases:
 | `video-setup.md` | 建立 Remotion 影片專案環境 | 「建立影片專案」「設定 Remotion」「video setup」 |
 | `sync-agents.md` | 多 AI agent 系統一致性檢查 | 「同步檢查」「sync agents」「系統一致性」 |
 | `yt-subtitle.md` | YouTube 字幕擷取與教學素材轉換 | 「下載字幕」「抓字幕」「YouTube 字幕」「extract subtitles」 |
+| `teach-animation.md` | 教學動畫生成（Revideo）：概念解說、時間線、流程圖動畫 | 「教學動畫」「做動畫」「概念動畫」「animate」 |
 
 ---
 
@@ -232,5 +233,5 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-17（Skill Creator 升級：6 步驟 + 跨平台檢核 + Anthropic Skills 封包）*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-18（新增 teach-animation 教學動畫技能）*
 

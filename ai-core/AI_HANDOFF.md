@@ -126,6 +126,7 @@ aliases:
 | 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
 | 「下載字幕」「抓字幕」「YouTube 字幕」「提取字幕」「extract subtitles」 | `ai-core/skills/yt-subtitle.md` |
+| 「教學動畫」「做動畫」「概念動畫」「解說動畫」「概念視覺化」「animate」 | `ai-core/skills/teach-animation.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 
@@ -221,5 +222,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-17（Skill Creator 升級：新增技能必含 Anthropic 封包 + 跨平台檢核）*
+*最後更新：2026-03-18（新增 teach-animation 教學動畫技能）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
