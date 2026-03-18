@@ -8,7 +8,7 @@
 
 english_session:
   class: class-9c
-  last_updated: 2026-03-16
+  last_updated: 2026-03-18
 
   current_position:
     block: 二
@@ -28,15 +28,20 @@ english_session:
 
   confirmed_decisions:
     - "學期範圍：下學期，10 週，40 節課"
-    - "每週節奏：2 節小說研讀（The House on Mango Street）+ 2 節語言工坊"
+    - "每週節奏（3/18 調整）：星期一 2 節語言技能（片語、文法、會考）+ 星期三 2 節小說/文本（Mango Street）；兩天均含閱讀與口說練習"
+    - "原大綱節奏為：1-2 節小說 + 3-4 節語言工坊，現對調為先語言後文本，實際教學更順"
     - "語言工坊內容骨幹：108 課綱三維度（2,000 字彙 + 46 溝通功能 + 文法句構）"
     - "語言工坊工具：文法教材 + 會考題本 + 教室雙電腦站點旋轉（具體名稱不列入大綱）"
     - "文學產出：個人短篇素描（vignette），模仿 Cisneros 風格"
     - "評量分配（定案）：小說討論 20% + 創意寫作 20% + 詞彙溝通 25% + 文法閱讀 25% + 學習歷程 10%"
 
   next_action:
-    description: "設計 week5-2 課堂流程（第五週第二節），或依教師指示跳至其他單元"
-    input_needed_from_teacher: "確認 week5-2 主題與素材方向"
+    description: >
+      進入第六週（week 6）備課（週四校對確認）：
+      1. 英文片語：準備考試範圍並出考題，融入學習單設計
+      2. Mango Street：準備 week 6 內容，延續「找出篇章怎麼工作」的複習與深化
+      3. 重點：學習單差異化活動需再細化——低成就缺動力（D類）、高成就缺動機（C類），兩端都要有更具體的設計
+    input_needed_from_teacher: "片語考試範圍（講義頁數）；Mango Street week 6 選用篇章"
 
   output_files:
     syllabus_versions:
