@@ -44,6 +44,7 @@ aliases:
 | 「發 PR」「合併申請」「送回主系統」 | `pull-request` | `ai-core/skills/pull-request.md` |
 | 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `video-setup` | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `sync-agents` | `ai-core/skills/sync-agents.md` |
+| 「詩歌研究」「poetry research」「找詩」「備課研究」「主題研究」 | `poetry-research` | `ai-core/skills/poetry-research.md` |
 
 ---
 
@@ -78,4 +79,4 @@ aliases:
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-17（Skill Creator 升級：7 項必做清單）*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-18（新增 poetry-research 技能）*
