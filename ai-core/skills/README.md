@@ -46,7 +46,7 @@ aliases:
 | `sync-agents.md` | 多 AI agent 系統一致性檢查 | 「同步檢查」「sync agents」「系統一致性」 |
 | `yt-subtitle.md` | YouTube 字幕擷取與教學素材轉換 | 「下載字幕」「抓字幕」「YouTube 字幕」「extract subtitles」 |
 | `teach-animation.md` | 教學動畫生成（Revideo）：概念解說、時間線、流程圖動畫 | 「教學動畫」「做動畫」「概念動畫」「animate」 |
-| `poetry-research.md` | 英文備課素材研究：主題 → 詩歌 + 詞彙 + 語意場 + 書單 | 「詩歌研究」「poetry research」「找詩」「備課研究」 |
+| `poetry-research.md` | 英文備課素材研究：主題 → 詩歌 + 詞彙 + 語意場 + 書單 | 「詩歌研究」「英文詩歌研究」「英文詩歌備課」 |
 
 ---
 

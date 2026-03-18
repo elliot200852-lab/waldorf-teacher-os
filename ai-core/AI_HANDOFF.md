@@ -127,7 +127,7 @@ aliases:
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
 | 「下載字幕」「抓字幕」「YouTube 字幕」「提取字幕」「extract subtitles」 | `ai-core/skills/yt-subtitle.md` |
 | 「教學動畫」「做動畫」「概念動畫」「解說動畫」「概念視覺化」「animate」 | `ai-core/skills/teach-animation.md` |
-| 「詩歌研究」「poetry research」「找詩」「備課研究」「主題研究」 | `ai-core/skills/poetry-research.md` |
+| 「詩歌研究」「英文詩歌研究」「英文詩歌備課」「poetry research」 | `ai-core/skills/poetry-research.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 

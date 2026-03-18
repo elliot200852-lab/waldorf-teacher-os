@@ -3,12 +3,9 @@ name: poetry-research
 description: 英文備課素材研究工具。輸入主題，自動串接五個免費 API（PoetryDB、Datamuse、Free Dictionary、Gutendex、Open Library），產出詩歌、詞彙卡、語意場、練習單與書單。
 triggers:
   - 詩歌研究
+  - 英文詩歌研究
+  - 英文詩歌備課
   - poetry research
-  - 找詩
-  - 研究素材
-  - 主題研究
-  - topic research
-  - 備課研究
   - find poems
 requires_args: true
 ---
