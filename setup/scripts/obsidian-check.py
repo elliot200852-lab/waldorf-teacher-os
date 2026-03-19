@@ -29,6 +29,10 @@ EXCLUDED_DIRS = {".obsidian", ".claude/worktrees", "__pycache__", "node_modules"
 # 這些目錄的 .md 檔使用 name: 而非 aliases:，跳過 aliases 檢查
 SKIP_ALIAS_DIRS = {"ai-core/skills"}
 
+# 被 .gitignore 排除但仍需 Obsidian 標籤檢查的路徑模式
+# 這些目錄含教師本機使用的檔案（如學生紀錄），不上傳 git 但需要 Obsidian 能搜到
+GITIGNORED_BUT_OBSIDIAN_RELEVANT = ["**/student-notes/"]
+
 # HOME.md 自身不需要被收錄檢查
 SKIP_HOME_CHECK = {"Good-notes/HOME.md", "HOME.md"}
 
@@ -68,6 +72,29 @@ def get_tracked_files():
     if result.returncode != 0:
         return []
     return [decode_git_path(f) for f in result.stdout.strip().split("\n") if f.strip()]
+
+
+def get_gitignored_obsidian_files():
+    """掃描被 .gitignore 排除但仍需 Obsidian 標籤檢查的檔案。
+    依 GITIGNORED_BUT_OBSIDIAN_RELEVANT 中的 glob 模式，
+    用 os.walk 在 Repo 中尋找符合的目錄，回傳其中的 .md / .yaml 檔案。"""
+    import fnmatch
+    files = []
+    for pattern in GITIGNORED_BUT_OBSIDIAN_RELEVANT:
+        # 從 pattern 取出目錄名（例如 **/student-notes/ → student-notes）
+        dir_name = pattern.replace("**/", "").rstrip("/")
+        for root, dirs, filenames in os.walk(REPO_ROOT):
+            # 排除 .git 等目錄
+            rel_root = os.path.relpath(root, REPO_ROOT)
+            if any(excl in rel_root.split(os.sep) for excl in [".git", ".obsidian", "node_modules", "__pycache__"]):
+                continue
+            if os.path.basename(root) == dir_name:
+                for fname in filenames:
+                    ext = os.path.splitext(fname)[1].lower()
+                    if ext in (".md", ".yaml", ".yml"):
+                        rel_path = os.path.relpath(os.path.join(root, fname), REPO_ROOT)
+                        files.append(rel_path)
+    return files
 
 
 def get_staged_new_files():
@@ -174,8 +201,8 @@ def run_self_test():
 | [[setup/teacher-guide.md|teacher-guide.md]] | 教師指南 |
 | [[setup/teacher-guide-v2.1.html|teacher-guide-v2.1.html]] | 指南 HTML |
 | [[wrap-up]] | 收工 |
-| [[Good-notes/9C 班工作全貌\|9C 班工作全貌]] | 導師筆記 |
-| [[workspaces/Working_Member/Teacher_郭耀新/manual\|郭耀新操作手冊]] | 操作手冊 |
+| [[Good-notes/9C 班工作全貌\\|9C 班工作全貌]] | 導師筆記 |
+| [[workspaces/Working_Member/Teacher_郭耀新/manual\\|郭耀新操作手冊]] | 操作手冊 |
 """
     tests = [
         # (filepath, expected, 說明)
@@ -235,6 +262,12 @@ def main():
         files = get_staged_new_files()
     else:
         files = get_tracked_files()
+        # 加入被 gitignore 但仍需 Obsidian 檢查的檔案（如 student-notes/）
+        gitignored_files = get_gitignored_obsidian_files()
+        existing = set(files)
+        for f in gitignored_files:
+            if f not in existing:
+                files.append(f)
 
     # 讀取 HOME.md（優先從根目錄讀取，兼容舊路徑 Good-notes/）
     home_path = os.path.join(REPO_ROOT, "HOME.md")

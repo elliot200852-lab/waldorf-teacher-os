@@ -1,0 +1,350 @@
+meta:
+  topic: light and darkness
+  grade: 9
+  grade_profile: 九年級 (B1)
+  subject: english
+  generated_at: '2026-03-18T10:26:23.254093'
+  pipeline_version: '2.0'
+  apis_used:
+  - poetrydb
+  - datamuse
+  - dictionary
+  - gutendex
+  - openlibrary
+  filters_applied:
+    poem_max_lines: 32
+    vocab_freq_threshold: 3.0
+    vocab_max_count: 12
+poems:
+- title: But Men Loved Darkness rather than Light
+  author: Richard Crashaw
+  linecount: 4
+  match_keyword: light
+  usability_note: 短詩，適合課堂精讀與朗誦
+- title: Daylight and Moonlight
+  author: Henry Wadsworth Longfellow
+  linecount: 20
+  match_keyword: light
+  usability_note: 中等長度，適合引導式閱讀
+- title: LIFE IS THE BODY'S LIGHT
+  author: Robert Herrick
+  linecount: 6
+  match_keyword: light
+  usability_note: 短詩，適合課堂精讀與朗誦
+- title: '''Tis moonlight, summer moonlight'
+  author: Emily Bronte
+  linecount: 12
+  match_keyword: light
+  usability_note: 短詩，適合課堂精讀與朗誦
+- title: Moonlight, summer moonlight
+  author: Emily Bronte
+  linecount: 12
+  match_keyword: light
+  usability_note: 短詩，適合課堂精讀與朗誦
+- title: 'Memoriam A. H. H.: 67. When on my bed the moonlight fall'
+  author: Lord Alfred Tennyson
+  linecount: 16
+  match_keyword: light
+  usability_note: 中等長度，適合引導式閱讀
+- title: The Clouds That Are so Light
+  author: Edward Thomas
+  linecount: 16
+  match_keyword: light
+  usability_note: 中等長度，適合引導式閱讀
+- title: Epitaph. on Two Lovers Struck Dead by Lightning.
+  author: Alexander Pope
+  linecount: 24
+  match_keyword: light
+  usability_note: 中長詩，建議節選重點段落
+- title: Oh! Think Not My Spirits Are Always As Light
+  author: Thomas Moore
+  linecount: 24
+  match_keyword: light
+  usability_note: 中長詩，建議節選重點段落
+- title: While Gazing on the Moon's Light
+  author: Thomas Moore
+  linecount: 28
+  match_keyword: light
+  usability_note: 中長詩，建議節選重點段落
+semantic_field:
+  related_words:
+  - word: shade
+    score: 32667
+    freq: 9.6
+  - word: dark
+    score: 30667
+    freq: 68.87
+  - word: dusk
+    score: 30667
+    freq: 3.35
+  - word: shades
+    score: 30667
+    freq: 4.53
+  - word: black
+    score: 30267
+    freq: 158.78
+  - word: daylight
+    score: 30267
+    freq: 5.84
+  - word: gloom
+    score: 29867
+    freq: 3.22
+  - word: positive
+    score: 29867
+    freq: 82.39
+  - word: shadow
+    score: 29867
+    freq: 18.05
+  - word: twilight
+    score: 29867
+    freq: 3.44
+  - word: opaque
+    score: 29576
+    freq: 3.31
+  - word: sol
+    score: 29576
+    freq: 3.42
+  - word: clear
+    score: 13467
+    freq: 135.45
+  - word: cleared
+    score: 13467
+    freq: 10.96
+  - word: colour
+    score: 13467
+    freq: 21.76
+  - word: dim
+    score: 13467
+    freq: 6.62
+  - word: night
+    score: 13467
+    freq: 145.77
+  - word: obscure
+    score: 13467
+    freq: 9.0
+  - word: blind
+    score: 13176
+    freq: 21.15
+  - word: color
+    score: 13176
+    freq: 58.38
+  rhymes: []
+  triggers: []
+  synonyms: []
+  adjectives: []
+vocabulary:
+- word: light
+  phonetic: /lʌɪt/
+  primary_definition: Visible electromagnetic radiation. The human eye can typically
+    detect radiation (light) in the wavelength range of about 400 to 750 nanometers.
+    Nearby shorter and longer wavelength ranges, although not visible, are commonly
+    called ultraviolet and infrared light.
+  part_of_speech: noun
+- word: darkness
+  phonetic: /ˈdɑːknəs/
+  primary_definition: The state of being dark; lack of light.
+  part_of_speech: noun
+- word: shade
+  phonetic: /ʃeɪd/
+  primary_definition: Darkness where light, particularly sunlight, is blocked.
+  part_of_speech: noun
+- word: dark
+  phonetic: /dɑːk/
+  primary_definition: Having an absolute or (more often) relative lack of light.
+  part_of_speech: adjective
+- word: dusk
+  phonetic: /dʌsk/
+  primary_definition: A period of time at the end of day when the sun is below the
+    horizon but before the full onset of night, especially the darker part of twilight.
+  part_of_speech: noun
+- word: shades
+  phonetic: /ʃeɪdz/
+  primary_definition: Darkness where light, particularly sunlight, is blocked.
+  part_of_speech: noun
+- word: black
+  phonetic: /blak/
+  primary_definition: The colour/color perceived in the absence of light, but also
+    when no light is reflected, but rather absorbed.
+  part_of_speech: noun
+- word: daylight
+  phonetic: /ˈdeɪlaɪt/
+  primary_definition: The light from the Sun, as opposed to that from any other source.
+  part_of_speech: noun
+- word: gloom
+  phonetic: /ɡlum/
+  primary_definition: Darkness, dimness or obscurity.
+  part_of_speech: noun
+- word: positive
+  phonetic: /ˈpɒzɪ̈tɪv/
+  primary_definition: A thing capable of being affirmed; something real or actual.
+  part_of_speech: noun
+- word: shadow
+  phonetic: ''
+  primary_definition: A dark image projected onto a surface where light (or other
+    radiation) is blocked by the shade of an object.
+  part_of_speech: noun
+- word: twilight
+  phonetic: /ˈtwaɪlaɪt/
+  primary_definition: The soft light in the sky seen before the rising and (especially)
+    after the setting of the sun, occasioned by the illumination of the earth’s atmosphere
+    by the direct rays of the sun and their reflection on the earth.
+  part_of_speech: noun
+literature:
+  gutenberg:
+  - id: 19871
+    title: 'Serbia in Light and Darkness: With Preface by the Archbishop of Canterbury,
+      (1916)'
+    authors:
+    - Velimirović, Nikolaj
+    subjects:
+    - Proverbs, Serbian
+    - Serbia
+    - Serbian poetry -- Translations into English
+    download_count: 571
+    text_url: https://www.gutenberg.org/ebooks/19871.txt.utf-8
+  - id: 18040
+    title: '"Thirty Years In Hell" Or, "From Darkness to Light"'
+    authors:
+    - Fresenborg, Bernard
+    subjects:
+    - Anti-Catholicism
+    - Catholic Church -- Controversial literature
+    - Catholic ex-priests
+    download_count: 524
+    text_url: https://www.gutenberg.org/ebooks/18040.html.images
+  - id: 17820
+    title: From the Darkness Cometh the Light, or Struggles for Freedom
+    authors:
+    - Delaney, Lucy A. (Lucy Ann)
+    subjects:
+    - African American women -- Biography
+    - Delaney, Lucy A. (Lucy Ann), 1828?-
+    - Delaney, Lucy A. (Lucy Ann), 1828?- -- Trials, litigation, etc.
+    - Enslaved persons -- Legal status, laws, etc. -- United States
+    - Enslaved persons -- Missouri -- Saint Louis -- Biography
+    download_count: 455
+    text_url: https://www.gutenberg.org/ebooks/17820.html.images
+  - id: 26666
+    title: The Light Shines in Darkness
+    authors:
+    - Tolstoy, Leo, graf
+    subjects:
+    - Russian drama -- Translations into English
+    download_count: 422
+    text_url: https://www.gutenberg.org/ebooks/26666.html.images
+  - id: 4721
+    title: 'Darkness and Daylight: A Novel'
+    authors:
+    - Holmes, Mary Jane
+    subjects:
+    - Blind -- Fiction
+    - Guardian and ward -- Fiction
+    - Love stories
+    - Marriage -- Fiction
+    - Mental illness -- Fiction
+    download_count: 406
+    text_url: https://www.gutenberg.org/ebooks/4721.html.images
+  openlibrary:
+  - title: Northern Lights
+    authors:
+    - Philip Pullman
+    - Philip Pulman
+    year: 1995
+    subjects:
+    - Political theology
+    - Polar bears
+    - Kidnapping
+    - Adventure stories
+    - Children and adults
+    url: https://openlibrary.org/works/OL28988W
+    cover_url: https://covers.openlibrary.org/b/id/8747028-M.jpg
+  - title: Heart of Darkness
+    authors:
+    - Joseph Conrad
+    year: 1899
+    subjects:
+    - Fiction
+    - Romance
+    - Degeneration
+    - Literature
+    - Description and travel
+    url: https://openlibrary.org/works/OL38663W
+    cover_url: https://covers.openlibrary.org/b/id/12307847-M.jpg
+  - title: The Subtle Knife
+    authors:
+    - Philip Pullman
+    year: 1997
+    subjects:
+    - Fantasy
+    - Juvenile literature
+    - English Fantasy fiction
+    - Fantasy fiction
+    - Juvenile fiction
+    url: https://openlibrary.org/works/OL28993W
+    cover_url: https://covers.openlibrary.org/b/id/12614549-M.jpg
+  - title: A Study in Scarlet
+    authors:
+    - Arthur Conan Doyle
+    year: 1887
+    subjects:
+    - Action & Adventure Fiction
+    - aortic aneurysm
+    - Battle of Maiwand
+    - Blessing and cursing
+    - British and irish fiction (fictional works by one author)
+    url: https://openlibrary.org/works/OL262496W
+    cover_url: https://covers.openlibrary.org/b/id/13405534-M.jpg
+  - title: The Hound of the Baskervilles
+    authors:
+    - Arthur Conan Doyle
+    year: 1900
+    subjects:
+    - crime novel
+    - English Civil War
+    - mires
+    - tors
+    - tombs
+    url: https://openlibrary.org/works/OL262454W
+    cover_url: https://covers.openlibrary.org/b/id/8063264-M.jpg
+  - title: Adventures of Huckleberry Finn
+    authors:
+    - Mark Twain
+    year: 1876
+    subjects:
+    - adventure and adventurers
+    - Adventure stories
+    - American fiction (fictional works by one author)
+    - American literature
+    - Boys
+    url: https://openlibrary.org/works/OL53908W
+    cover_url: https://covers.openlibrary.org/b/id/8157718-M.jpg
+  - title: The dark is rising
+    authors:
+    - Susan Cooper
+    year: 1972
+    subjects:
+    - Fiction
+    - Fantasy
+    - Good and evil
+    - Juvenile fiction
+    - Will Stanton (Fictitious character)
+    url: https://openlibrary.org/works/OL894245W
+    cover_url: https://covers.openlibrary.org/b/id/9363540-M.jpg
+  - title: Les Misérables
+    authors:
+    - Victor Hugo
+    year: 1862
+    subjects:
+    - Poor
+    - Fiction
+    - Readers
+    - Fiction, historical
+    - France, fiction
+    url: https://openlibrary.org/works/OL1063588W
+    cover_url: https://covers.openlibrary.org/b/id/12721865-M.jpg
+teaching_suggestions:
+  recommended_poem: But Men Loved Darkness rather than Light
+  core_vocabulary_count: 12
+  semantic_richness: 20
+  available_public_domain_texts: 5
+quality_warnings: []

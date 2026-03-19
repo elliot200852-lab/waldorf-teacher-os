@@ -1,0 +1,289 @@
+meta:
+  topic: the road
+  grade: 8
+  grade_profile: 八年級 (A2+)
+  subject: english
+  generated_at: '2026-03-18T10:26:26.185209'
+  pipeline_version: '2.0'
+  apis_used:
+  - poetrydb
+  - datamuse
+  - dictionary
+  - gutendex
+  - openlibrary
+  filters_applied:
+    poem_max_lines: 24
+    vocab_freq_threshold: 5.0
+    vocab_max_count: 10
+poems:
+- title: The Green Roads
+  author: Edward Thomas
+  linecount: 19
+  match_keyword: road
+  usability_note: 中等長度，適合引導式閱讀
+- title: A Song of the Road
+  author: James Whitcomb Riley
+  linecount: 20
+  match_keyword: road
+  usability_note: 中等長度，適合引導式閱讀
+- title: The Road was lit with Moon and star --
+  author: Emily Dickinson
+  linecount: 8
+  match_keyword: road
+  usability_note: 短詩，適合課堂精讀與朗誦
+- title: Upon the road of my life
+  author: Stephen Crane
+  linecount: 19
+  match_keyword: road
+  usability_note: 中等長度，適合引導式閱讀
+- title: Stanzas Written on the Road between Florence and Pisa
+  author: George Gordon, Lord Byron
+  linecount: 16
+  match_keyword: road
+  usability_note: 中等長度，適合引導式閱讀
+- title: Home Thoughts, From Abroad
+  author: Robert Browning
+  linecount: 20
+  match_keyword: road
+  usability_note: 中等長度，適合引導式閱讀
+- title: The Path
+  author: Edward Thomas
+  linecount: 22
+  match_keyword: road
+  usability_note: 中長詩，建議節選重點段落
+- title: Romance
+  author: Robert Louis Stevenson
+  linecount: 12
+  match_keyword: road
+  usability_note: 短詩，適合課堂精讀與朗誦
+- title: Aspens
+  author: Edward Thomas
+  linecount: 24
+  match_keyword: road
+  usability_note: 中長詩，建議節選重點段落
+- title: Death
+  author: James Henry Leigh Hunt
+  linecount: 13
+  match_keyword: road
+  usability_note: 中等長度，適合引導式閱讀
+semantic_field:
+  related_words:
+  - word: route
+    score: 40036067
+    freq: 28.29
+  - word: moving
+    score: 39984161
+    freq: 53.83
+  - word: traveling
+    score: 39926518
+    freq: 9.54
+  - word: highway
+    score: 30049676
+    freq: 13.6
+  - word: via
+    score: 30049576
+    freq: 31.91
+  - word: traffic
+    score: 30049126
+    freq: 26.42
+  - word: transportation
+    score: 30048987
+    freq: 22.13
+  - word: lane
+    score: 30048934
+    freq: 11.9
+  - word: vehicle
+    score: 30048552
+    freq: 19.41
+  - word: freight
+    score: 30048275
+    freq: 6.12
+  - word: driving
+    score: 30047799
+    freq: 22.15
+  - word: bus
+    score: 30047590
+    freq: 19.56
+  - word: avenue
+    score: 30047522
+    freq: 13.99
+  - word: street
+    score: 30047473
+    freq: 81.19
+  - word: driver
+    score: 30047441
+    freq: 16.14
+  - word: automobile
+    score: 30046822
+    freq: 9.15
+  rhymes:
+  - goad
+  - abode
+  - load
+  - bestowed
+  - mode
+  - ode
+  - erode
+  - corrode
+  - forebode
+  - explode
+  triggers:
+  - roundabout
+  - motorway
+  - connects
+  - intersection
+  - turnpike
+  - interchange
+  - racer
+  - cyclist
+  - curves
+  - highway
+  synonyms:
+  - moving
+  - route
+  - traveling
+  - touring
+  - itinerant
+  adjectives:
+  - main
+  - high
+  - old
+  - long
+  - narrow
+  - paved
+  - dusty
+  - open
+  - right
+  - only
+vocabulary:
+- word: road
+  phonetic: /ɹəʊd/
+  primary_definition: 'A way used for travelling between places, originally one wide
+    enough to allow foot passengers and horses to travel, now (US) usually one surfaced
+    with asphalt or concrete and designed to accommodate many vehicles travelling
+    in both directions. In the UK both senses are heard: a country road is the same
+    as a country lane.'
+  part_of_speech: noun
+- word: route
+  phonetic: /ɹʉːt/
+  primary_definition: A course or way which is traveled or passed.
+  part_of_speech: noun
+- word: moving
+  phonetic: /ˈmuːvɪŋ/
+  primary_definition: To change place or posture; to go, in any manner, from one place
+    or position to another.
+  part_of_speech: verb
+- word: traveling
+  phonetic: /ˈtɹæv.l̩iŋ/
+  primary_definition: To be on a journey, often for pleasure or business and with
+    luggage; to go from one place to another.
+  part_of_speech: verb
+- word: highway
+  phonetic: /ˈhaɪweɪ/
+  primary_definition: A motor vehicle for transporting large numbers of people along
+    roads.
+  part_of_speech: noun
+- word: via
+  phonetic: /ˈvaɪə/
+  primary_definition: A main road or highway, especially in ancient Rome. (Mainly
+    used in set phrases, below.)
+  part_of_speech: noun
+- word: traffic
+  phonetic: /ˈtɹæfɪk/
+  primary_definition: Pedestrians or vehicles on roads, or the flux or passage thereof.
+  part_of_speech: noun
+- word: transportation
+  phonetic: /tɹænspɔːˈteɪʃən/
+  primary_definition: The act of transporting, or the state of being transported;
+    conveyance, often of people, goods etc.
+  part_of_speech: noun
+- word: lane
+  phonetic: /leɪn/
+  primary_definition: (used in street names) A road, street, or similar thoroughfare.
+  part_of_speech: noun
+- word: vehicle
+  phonetic: /ˈvɪː(ə).kəl/
+  primary_definition: A conveyance; a device for carrying or transporting substances,
+    objects or individuals.
+  part_of_speech: noun
+literature:
+  gutenberg: []
+  openlibrary:
+  - title: On The Road
+    authors:
+    - Jack Kerouac
+    year: 1957
+    subjects:
+    - Beat generation
+    - Fiction
+    - Autobiographical fiction
+    - Beat generation in literature
+    - History and criticism
+    url: https://openlibrary.org/works/OL65906W
+    cover_url: https://covers.openlibrary.org/b/id/34655-M.jpg
+  - title: The Road to Oz
+    authors:
+    - L. Frank Baum
+    year: 1909
+    subjects:
+    - Fairy tales
+    - Juvenile Fiction
+    - Fiction
+    - Oz (Imaginary place)
+    - Fantasy
+    url: https://openlibrary.org/works/OL262390W
+    cover_url: https://covers.openlibrary.org/b/id/8243922-M.jpg
+  - title: The Wind in the Willows
+    authors:
+    - Kenneth Grahame
+    year: 1908
+    subjects:
+    - Children's fiction
+    - Animals, fiction
+    - Friendship, fiction
+    - England, fiction
+    - Fiction
+    url: https://openlibrary.org/works/OL28570037W
+    cover_url: https://covers.openlibrary.org/b/id/13335427-M.jpg
+  - title: The Two Towers
+    authors:
+    - J.R.R. Tolkien
+    year: 1954
+    subjects:
+    - Ents
+    - Orcs
+    - hobbits
+    - magic
+    - Ficción fantástica inglesa
+    url: https://openlibrary.org/works/OL27479W
+    cover_url: https://covers.openlibrary.org/b/id/14627564-M.jpg
+  - title: The Road
+    authors:
+    - Cormac McCarthy
+    year: 2006
+    subjects:
+    - Fiction
+    - Dystopia
+    - Adventure
+    - post-apocalyptic fiction
+    - extinction event
+    url: https://openlibrary.org/works/OL40873W
+    cover_url: https://covers.openlibrary.org/b/id/198120-M.jpg
+  - title: The Jungle Book
+    authors:
+    - Rudyard Kipling
+    year: 1893
+    subjects:
+    - Jungles
+    - Fiction
+    - Juvenile fiction
+    - Animals
+    - Romans, nouvelles, etc. pour la jeunesse
+    url: https://openlibrary.org/works/OL19870W
+    cover_url: https://covers.openlibrary.org/b/id/3344204-M.jpg
+teaching_suggestions:
+  recommended_poem: The Green Roads
+  core_vocabulary_count: 10
+  semantic_richness: 16
+  available_public_domain_texts: 0
+quality_warnings: []

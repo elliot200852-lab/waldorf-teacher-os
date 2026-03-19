@@ -48,6 +48,9 @@ AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從
 
 ```markdown
 ---
+aliases:
+  - "陳彥妤 學習紀錄"
+  - "9C-05 陳彥妤"
 name: 陳彥妤
 id: 9C-05
 class: 9C
@@ -87,6 +90,7 @@ class: 9C
 3. 找到對應的紀錄檔：`{workspace}/projects/class-{code}/student-notes/{ID}-{姓名}.md`
 
 若紀錄檔不存在，自動建立（從 roster.yaml 取得 name、id、class，含 notes 欄位則一併帶入 frontmatter）。
+frontmatter 必須包含 `aliases` 欄位，格式為 `["{name} 學習紀錄", "{id} {name}"]`，確保 Obsidian 快速搜尋能找到。
 
 若 `student-notes/` 資料夾不存在，先建立資料夾，再建立檔案。
 
