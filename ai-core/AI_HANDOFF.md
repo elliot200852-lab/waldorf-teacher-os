@@ -129,6 +129,7 @@ aliases:
 | 「教學動畫」「做動畫」「概念動畫」「解說動畫」「概念視覺化」「animate」 | `ai-core/skills/teach-animation.md` |
 | 「詩歌研究」「英文詩歌研究」「英文詩歌備課」「poetry research」 | `ai-core/skills/poetry-research.md` |
 | 「博物館素材」「找藝術品」「拉幾張畫」「做素材展示」「art search」「Met API」「Europeana」 | `ai-core/skills/art-in-teaching.md` |
+| 「美化」「做漂亮版」「HTML 輸出」「精美版」「beautify」「套模板」 | `ai-core/skills/beautify.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 
@@ -224,5 +225,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-19（新增 art-in-teaching 藝術作品融入教學素材管線技能）*
+*最後更新：2026-03-19（新增 beautify 華德福美化文件輸出技能）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

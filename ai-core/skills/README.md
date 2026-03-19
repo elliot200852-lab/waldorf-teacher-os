@@ -48,6 +48,7 @@ aliases:
 | `teach-animation.md` | 教學動畫生成（Revideo）：概念解說、時間線、流程圖動畫 | 「教學動畫」「做動畫」「概念動畫」「animate」 |
 | `poetry-research.md` | 英文備課素材研究：主題 → 詩歌 + 詞彙 + 語意場 + 書單 | 「詩歌研究」「英文詩歌研究」「英文詩歌備課」 |
 | `art-in-teaching.md` | 藝術作品融入教學：Met Museum + Europeana API → 畫廊 + AI 加工 | 「博物館素材」「找藝術品」「拉幾張畫」「art search」 |
+| `beautify.md` | 華德福美化文件輸出：Markdown → 精美 HTML（四季視覺切換） | 「美化」「做漂亮版」「HTML 輸出」「beautify」「套模板」 |
 
 ---
 

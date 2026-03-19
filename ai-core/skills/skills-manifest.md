@@ -46,6 +46,7 @@ aliases:
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `sync-agents` | `ai-core/skills/sync-agents.md` |
 | 「詩歌研究」「英文詩歌研究」「英文詩歌備課」「poetry research」 | `poetry-research` | `ai-core/skills/poetry-research.md` |
 | 「博物館素材」「找藝術品」「拉幾張畫」「做素材展示」「art search」「Met API」「Europeana」 | `art-in-teaching` | `ai-core/skills/art-in-teaching.md` |
+| 「美化」「做漂亮版」「HTML 輸出」「精美版」「beautify」「套模板」「美化輸出」 | `beautify` | `ai-core/skills/beautify.md` |
 
 ---
 
@@ -80,4 +81,4 @@ aliases:
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-19（新增 art-in-teaching 藝術作品融入教學素材管線技能）*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-19（新增 beautify 華德福美化文件輸出技能）*
