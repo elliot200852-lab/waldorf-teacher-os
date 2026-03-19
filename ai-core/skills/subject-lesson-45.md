@@ -2,11 +2,11 @@
 name: subject-lesson-45
 description: 華德福專科課程 45 分鐘教學設計通用引擎。適用於所有科目（英文、歷史、人文社會等）與所有年級（7-9）。教師說「備課」「設計一堂課」「45分鐘」等觸發。本技能定義方法論——5 階段工作流（研究→設計→稽核→產出→轉檔列印），必須搭配科目覆蓋層使用。
 triggers:
-  - 設計一堂課
   - 備一堂課
   - 45分鐘課堂設計
   - 專科課設計
   - subject lesson design
+  # 注意：「設計一堂課」和「45分鐘」由 lesson.md 統一入口分流，不在此重複
 requires_args: true
 args_format: "[班級代碼] [科目] [主題或素材] (例: 9c english The Road Not Taken)"
 overlay_required: true

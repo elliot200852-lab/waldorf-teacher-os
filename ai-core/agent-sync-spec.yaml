@@ -1,8 +1,8 @@
 # TeacherOS Agent Sync Spec
 # 定義系統預期狀態，供 sync_check.py 驗證一致性
-# 維護者：David | 最後更新：2026-03-05
+# 維護者：David | 最後更新：2026-03-19
 
-version: "1.0"
+version: "1.1"
 
 # --- 核心系統檔案（必須存在） ---
 system_files:
@@ -10,7 +10,7 @@ system_files:
   - ai-core/teacheros.yaml
   - ai-core/teacheros-foundation.yaml
   - ai-core/acl.yaml
-  - ai-core/skills-manifest.md
+  - ai-core/skills/skills-manifest.md
   - ai-core/skills/README.md
   - projects/_di-framework/project.yaml
 
@@ -24,22 +24,46 @@ skills:
     - description
     - triggers
   expected_skills:
+    # A. 系統營運
     - opening
     - load
     - status
+    - wrap-up
+    - obsidian-sync
+    # B. 教學核心
     - syllabus
     - lesson
-    - session-end
+    - subject-lesson-45
+    - english-45          # 覆蓋層（非獨立技能，由 subject-lesson-45 引擎載入）
+    - rhythm
+    - block-end
     - di-check
     - ref
+    # C. 備課素材
+    - poetry-research
+    - art-in-teaching
+    - beautify
+    - yt-subtitle
+    - teach-animation
+    - video
+    # D. 導師與學生
     - homeroom
-    - block-end
-    - rhythm
     - student-note
+    - teaching-log
     - parent-letter
-    - sync-cowork
+    # E. 外部服務
+    - send-email
+    - drive
+    - calendar
+    - sheets
+    - docs-edit
+    - gws-setup
+    # F. 系統工程
+    - add-teacher
     - pull-request
-    - save
+    - sync-agents
+    - sync-cowork
+    - git-history
 
 # --- Reference 知識模組 ---
 reference_modules:

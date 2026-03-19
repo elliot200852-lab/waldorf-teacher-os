@@ -6,6 +6,7 @@ TeacherOS Agent Sync Check
 Usage:
     python3 ai-core/sync_check.py              # 僅檢查，輸出報告
     python3 ai-core/sync_check.py --auto-fix   # 檢查並自動修正問題
+    python3 ai-core/sync_check.py --pre-commit # Pre-commit 精簡模式（只檢查 FAIL，靜默通過）
 """
 
 import argparse
@@ -287,7 +288,7 @@ def check_manifest_consistency(repo_root, spec):
     results = []
     results.append(header("6. Skills Manifest 一致性"))
 
-    manifest_path = repo_root / "ai-core" / "skills-manifest.md"
+    manifest_path = repo_root / "ai-core" / "skills" / "skills-manifest.md"
     if not manifest_path.exists():
         results.append(fail("skills-manifest.md 不存在"))
         return results, 0, 1, 0
@@ -309,8 +310,9 @@ def check_manifest_consistency(repo_root, spec):
     fails = 0
     warnings = 0
 
-    # manifest 有但檔案不存在
-    missing_files = manifest_skills - actual_skills
+    # manifest 有但檔案不存在（排除非技能的 .md）
+    non_skill_names = {"README", "skills-manifest"}
+    missing_files = manifest_skills - actual_skills - non_skill_names
     for s in sorted(missing_files):
         results.append(fail(f"{s} — manifest 列出但檔案不存在"))
         fails += 1
@@ -328,6 +330,76 @@ def check_manifest_consistency(repo_root, spec):
 
     if consistent:
         results.append(ok(f"{len(consistent)} 個 skills 與 manifest 一致"))
+
+    return results, passes, fails, warnings
+
+
+def check_trigger_conflicts(repo_root, spec):
+    """檢查 7: 技能觸發詞衝突檢測"""
+    results = []
+    results.append(header("7. 觸發詞衝突檢測"))
+
+    skills_conf = spec.get("skills", {})
+    canonical = repo_root / skills_conf.get("canonical_path", "ai-core/skills")
+    expected_skills = skills_conf.get("expected_skills", [])
+
+    # 蒐集所有技能的觸發詞
+    trigger_map = {}  # trigger_word -> [skill_name, ...]
+    for skill_name in expected_skills:
+        skill_file = canonical / f"{skill_name}.md"
+        if not skill_file.exists():
+            continue
+        fm = parse_frontmatter(skill_file)
+        if fm is None or "triggers" not in fm:
+            continue
+        triggers = fm["triggers"]
+        if not isinstance(triggers, list):
+            continue
+        for t in triggers:
+            t_normalized = str(t).strip().lower()
+            if t_normalized not in trigger_map:
+                trigger_map[t_normalized] = []
+            trigger_map[t_normalized].append(skill_name)
+
+    passes = 0
+    fails = 0
+    warnings = 0
+
+    # 找出有衝突的觸發詞（同一個詞觸發多個技能）
+    conflicts = {
+        t: skills for t, skills in trigger_map.items() if len(skills) > 1
+    }
+
+    if conflicts:
+        for trigger, skills in sorted(conflicts.items()):
+            # 覆蓋層（type: subject-overlay）與其引擎衝突是預期的，降為 WARN
+            overlay_conflict = False
+            for s in skills:
+                sf = canonical / f"{s}.md"
+                sfm = parse_frontmatter(sf)
+                if sfm and sfm.get("type") == "subject-overlay":
+                    overlay_conflict = True
+                    break
+
+            skill_list = ", ".join(skills)
+            if overlay_conflict:
+                results.append(
+                    warn(f"「{trigger}」→ [{skill_list}]（覆蓋層與引擎重疊，預期行為）")
+                )
+                warnings += 1
+            else:
+                results.append(
+                    fail(f"「{trigger}」→ [{skill_list}]（觸發詞衝突）")
+                )
+                fails += 1
+    else:
+        results.append(ok("所有觸發詞無衝突"))
+        passes += 1
+
+    # 統計
+    unique_triggers = len(trigger_map)
+    results.append(ok(f"共掃描 {unique_triggers} 個觸發詞，{len(expected_skills)} 個技能"))
+    passes += 1
 
     return results, passes, fails, warnings
 
@@ -381,16 +453,172 @@ def write_changelog(repo_root, entries):
     return changelog_path
 
 
+def get_staged_files():
+    """取得 git 暫存區的檔案列表"""
+    import subprocess
+    try:
+        result = subprocess.run(
+            ["git", "diff", "--cached", "--name-only"],
+            capture_output=True, text=True, timeout=5
+        )
+        return [f for f in result.stdout.strip().split("\n") if f.strip()]
+    except Exception:
+        return []
+
+
+def run_pre_commit(repo_root, spec):
+    """Pre-commit 精簡模式：只檢查 FAIL，靜默通過，與暫存區相關的項目優先"""
+    staged = get_staged_files()
+    fails = []
+
+    # 永遠跑：核心系統檔案存在性（極快）
+    for filepath in spec.get("system_files", []):
+        if not (repo_root / filepath).exists():
+            fails.append(f"核心檔案不存在：{filepath}")
+
+    # 永遠跑：Reference 模組存在性（極快）
+    ref_conf = spec.get("reference_modules", {})
+    ref_path = repo_root / ref_conf.get("path", "ai-core/reference")
+    for filename in ref_conf.get("expected_files", []):
+        if not (ref_path / filename).exists():
+            fails.append(f"Reference 模組不存在：{filename}")
+
+    # 判斷是否涉及技能系統檔案
+    skill_related_patterns = [
+        "ai-core/skills/", ".claude/commands/",
+        "ai-core/skills-manifest.md", "ai-core/AI_HANDOFF.md",
+        "ai-core/agent-sync-spec.yaml"
+    ]
+    touches_skills = any(
+        any(f.startswith(pat) or f == pat for pat in skill_related_patterns)
+        for f in staged
+    )
+
+    if touches_skills:
+        skills_conf = spec.get("skills", {})
+        canonical = repo_root / skills_conf.get("canonical_path", "ai-core/skills")
+        commands_path = repo_root / skills_conf.get(
+            "claude_commands_path", ".claude/commands"
+        )
+        expected_skills = skills_conf.get("expected_skills", [])
+        required_fields = skills_conf.get("required_frontmatter", [])
+
+        # Check 2: 被暫存的 skill .md 的 frontmatter
+        for skill_name in expected_skills:
+            skill_file = canonical / f"{skill_name}.md"
+            if not skill_file.exists():
+                fails.append(f"技能檔案不存在：ai-core/skills/{skill_name}.md")
+                continue
+            # 只對有被暫存的檔案做 frontmatter 檢查
+            rel_path = f"ai-core/skills/{skill_name}.md"
+            if rel_path in staged:
+                fm = parse_frontmatter(skill_file)
+                if fm is None:
+                    fails.append(f"{skill_name}.md 沒有 YAML frontmatter")
+                else:
+                    missing = [f for f in required_fields if f not in fm]
+                    if missing:
+                        fails.append(
+                            f"{skill_name}.md 缺少必要欄位：{', '.join(missing)}"
+                        )
+
+        # Check 3: expected skills 是否都有對應的 command
+        if commands_path.exists():
+            actual_commands = {p.stem for p in commands_path.glob("*.md")}
+            missing_cmds = set(expected_skills) - actual_commands
+            for cmd in sorted(missing_cmds):
+                # 只在對應的 skill 檔案存在時才報 FAIL
+                if (canonical / f"{cmd}.md").exists():
+                    fails.append(
+                        f"技能 {cmd} 缺少 Claude command 入口"
+                    )
+
+        # Check 6: manifest 列出但檔案不存在（嚴重不一致）
+        manifest_path = repo_root / "ai-core" / "skills" / "skills-manifest.md"
+        if manifest_path.exists():
+            content = manifest_path.read_text(encoding="utf-8")
+            manifest_skills = set(
+                re.findall(r"ai-core/skills/(\w[\w-]*)\.md", content)
+            )
+            actual_skills = {
+                p.stem for p in canonical.glob("*.md") if p.stem != "README"
+            }
+            # 排除非技能的 .md（README、manifest 本身）
+            non_skill_names = {"README", "skills-manifest"}
+            ghost_skills = manifest_skills - actual_skills - non_skill_names
+            for s in sorted(ghost_skills):
+                fails.append(f"manifest 列出 {s} 但檔案不存在（幽靈條目）")
+
+        # Check 7: 觸發衝突（被暫存的 skill 有新觸發詞時檢查）
+        trigger_map = {}
+        for skill_name in expected_skills:
+            skill_file = canonical / f"{skill_name}.md"
+            if not skill_file.exists():
+                continue
+            fm = parse_frontmatter(skill_file)
+            if fm is None or "triggers" not in fm:
+                continue
+            triggers = fm.get("triggers", [])
+            if not isinstance(triggers, list):
+                continue
+            for t in triggers:
+                t_norm = str(t).strip().lower()
+                if t_norm not in trigger_map:
+                    trigger_map[t_norm] = []
+                trigger_map[t_norm].append(skill_name)
+
+        for trigger, skills in sorted(trigger_map.items()):
+            if len(skills) > 1:
+                # 覆蓋層衝突是預期的，不攔截
+                is_overlay = False
+                for s in skills:
+                    sfm = parse_frontmatter(canonical / f"{s}.md")
+                    if sfm and sfm.get("type") == "subject-overlay":
+                        is_overlay = True
+                        break
+                if not is_overlay:
+                    skill_list = ", ".join(skills)
+                    fails.append(
+                        f"觸發詞衝突「{trigger}」→ [{skill_list}]"
+                    )
+
+    # 輸出
+    if fails:
+        print()
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print("  [sync-check] 系統一致性檢查未通過")
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        print()
+        for item in fails:
+            print(f"  {RED}FAIL{RESET}  {item}")
+        print()
+        print("請修正以上問題後再 commit。")
+        print("緊急繞過：git commit --no-verify")
+        print()
+        return 1
+    # 全部通過：靜默
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(description="TeacherOS Agent Sync Check")
     parser.add_argument(
         "--auto-fix", action="store_true", help="自動修正可修正的問題"
+    )
+    parser.add_argument(
+        "--pre-commit", action="store_true",
+        help="Pre-commit 精簡模式（只檢查 FAIL，靜默通過）"
     )
     args = parser.parse_args()
 
     repo_root = find_repo_root()
     spec = load_spec(repo_root)
 
+    # Pre-commit 模式：精簡快速
+    if args.pre_commit:
+        sys.exit(run_pre_commit(repo_root, spec))
+
+    # 正常模式：完整報告
     print(f"\n{BOLD}TeacherOS Agent Sync Check{RESET}")
     print(f"Repo: {repo_root}")
     print(f"Spec: ai-core/agent-sync-spec.yaml v{spec.get('version', '?')}")
@@ -436,6 +664,13 @@ def main():
 
     # 6. Manifest consistency
     results, p, f, w = check_manifest_consistency(repo_root, spec)
+    all_results.extend(results)
+    total_pass += p
+    total_fail += f
+    total_warn += w
+
+    # 7. Trigger conflicts
+    results, p, f, w = check_trigger_conflicts(repo_root, spec)
     all_results.extend(results)
     total_pass += p
     total_fail += f

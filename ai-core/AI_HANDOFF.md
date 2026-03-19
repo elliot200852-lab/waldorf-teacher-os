@@ -92,44 +92,68 @@ aliases:
 2. 依照檔案中的步驟一步一步執行
 3. 技能完成後自然回到對話
 
+**A. 系統營運**
+
 | 偵測到這些詞語 | 立即讀取並執行 |
 |-------------|--------------|
 | 「開工」「開始」「新對話」「早安」「我來了」「準備好了」「start」 | `ai-core/skills/opening.md` |
 | 「載入」「讀一下」+ 班級名 + 科目 | `ai-core/skills/load.md` |
 | 「現在在哪」「做到哪了」 | `ai-core/skills/status.md` |
+| 「收工」「收尾」「存檔」「儲存」「更新進度」「結束今天」「commit」「備份」 | `ai-core/skills/wrap-up.md` |
+| 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `ai-core/skills/obsidian-sync.md` |
+
+**B. 教學核心**
+
+| 偵測到這些詞語 | 立即讀取並執行 |
+|-------------|--------------|
 | 「開始大綱」「學季規劃」 | `ai-core/skills/syllabus.md` |
 | 「進入備課」「做 Block」「開始設計」 | `ai-core/skills/lesson.md` |
-| 「收工」「收尾」「存檔」「儲存」「更新進度」「結束今天」「commit」「備份」 | `ai-core/skills/wrap-up.md` |
+| 「設計一堂課」「45 分鐘」「lesson design」 | `ai-core/skills/subject-lesson-45.md`（引擎自動載入科目覆蓋層） |
+| 「設計節奏」「規劃這週」「吸氣呼氣」 | `ai-core/skills/rhythm.md` |
+| 「區塊結束」「做反思」「block 完成」 | `ai-core/skills/block-end.md` |
 | 「查 DI」「確認差異化」 | `ai-core/skills/di-check.md` |
 | 「載入教學哲學」「看背景」「ref」 | `ai-core/skills/ref.md` |
-| 「導師業務」「班級事件」「個案討論」 | `ai-core/skills/homeroom.md` |
-| 「區塊結束」「做反思」「block 完成」 | `ai-core/skills/block-end.md` |
-| 「設計節奏」「規劃這週」「吸氣呼氣」 | `ai-core/skills/rhythm.md` |
-| 「記錄學生」「觀察記錄」「記一下誰」「學生紀錄」 | `ai-core/skills/student-note.md` |
-| 「教學紀錄」「教學回顧」「今天上課」「教學反思」 | `ai-core/skills/teaching-log.md` |
-| 「寫家長信」「學期評語」「家長通知」 | `ai-core/skills/parent-letter.md` |
-| 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `ai-core/skills/obsidian-sync.md` |
-| 「發 PR」「合併申請」「送回主系統」 | `ai-core/skills/pull-request.md` |
-| 「同步 Cowork」「更新 Cowork」「編譯 instructions」 | `ai-core/skills/sync-cowork.md` |
-| 「加入新老師」「新增老師」「新增教師」「add teacher」 | `ai-core/skills/add-teacher.md` |
-| 「上傳到雲端」「同步 Drive」「傳到 Drive」 | `ai-core/skills/drive.md` |
-| 「查行事曆」「排課表」「加行事曆」 | `ai-core/skills/calendar.md` |
-| 「寄信」「寄 Email」「發郵件」「寄給」 | `ai-core/skills/send-email.md` |
-| 「開試算表」「寫入 Sheets」「讀 Sheets」 | `ai-core/skills/sheets.md` |
-| 「編輯文件」「寫入 Docs」「開 Google Docs」 | `ai-core/skills/docs-edit.md` |
-| 「設定 gws」「安裝 gws」「gws setup」 | `ai-core/skills/gws-setup.md` |
-| 「生成新檔案」「建立新文件」「新增文件」「產出新文件」 | `ai-core/skills/new-doc.md` |
-| 「設計一堂課」「45 分鐘」「lesson design」 | `ai-core/skills/subject-lesson-45.md` |
-| 「英文課設計」「English lesson」 | `ai-core/skills/english-45.md` |
-| 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `ai-core/skills/git-history.md` |
-| 「做影片」「製作影片」「影片」「video」「渲染影片」 | `ai-core/skills/video.md` |
-| 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `ai-core/skills/video-setup.md` |
-| 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
-| 「下載字幕」「抓字幕」「YouTube 字幕」「提取字幕」「extract subtitles」 | `ai-core/skills/yt-subtitle.md` |
-| 「教學動畫」「做動畫」「概念動畫」「解說動畫」「概念視覺化」「animate」 | `ai-core/skills/teach-animation.md` |
+
+**C. 備課素材**
+
+| 偵測到這些詞語 | 立即讀取並執行 |
+|-------------|--------------|
 | 「詩歌研究」「英文詩歌研究」「英文詩歌備課」「poetry research」 | `ai-core/skills/poetry-research.md` |
 | 「博物館素材」「找藝術品」「拉幾張畫」「做素材展示」「art search」「Met API」「Europeana」 | `ai-core/skills/art-in-teaching.md` |
 | 「美化」「做漂亮版」「HTML 輸出」「精美版」「beautify」「套模板」 | `ai-core/skills/beautify.md` |
+| 「下載字幕」「抓字幕」「YouTube 字幕」「提取字幕」「extract subtitles」 | `ai-core/skills/yt-subtitle.md` |
+| 「教學動畫」「做動畫」「概念動畫」「解說動畫」「概念視覺化」「animate」 | `ai-core/skills/teach-animation.md` |
+| 「做影片」「製作影片」「影片」「video」「渲染影片」「建立影片專案」「video setup」 | `ai-core/skills/video.md` |
+
+**D. 導師與學生**
+
+| 偵測到這些詞語 | 立即讀取並執行 |
+|-------------|--------------|
+| 「導師業務」「班級事件」「個案討論」 | `ai-core/skills/homeroom.md` |
+| 「記錄學生」「觀察記錄」「記一下誰」「學生紀錄」 | `ai-core/skills/student-note.md` |
+| 「教學紀錄」「教學回顧」「今天上課」「教學反思」 | `ai-core/skills/teaching-log.md` |
+| 「寫家長信」「學期評語」「家長通知」 | `ai-core/skills/parent-letter.md` |
+
+**E. 外部服務**
+
+| 偵測到這些詞語 | 立即讀取並執行 |
+|-------------|--------------|
+| 「寄信」「寄 Email」「發郵件」「寄給」 | `ai-core/skills/send-email.md` |
+| 「上傳到雲端」「同步 Drive」「傳到 Drive」 | `ai-core/skills/drive.md` |
+| 「查行事曆」「排課表」「加行事曆」 | `ai-core/skills/calendar.md` |
+| 「開試算表」「寫入 Sheets」「讀 Sheets」 | `ai-core/skills/sheets.md` |
+| 「編輯文件」「寫入 Docs」「開 Google Docs」 | `ai-core/skills/docs-edit.md` |
+| 「設定 gws」「安裝 gws」「gws setup」 | `ai-core/skills/gws-setup.md` |
+
+**F. 系統工程（低頻維運）**
+
+| 偵測到這些詞語 | 立即讀取並執行 |
+|-------------|--------------|
+| 「加入新老師」「新增老師」「新增教師」「add teacher」 | `ai-core/skills/add-teacher.md` |
+| 「發 PR」「合併申請」「送回主系統」 | `ai-core/skills/pull-request.md` |
+| 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
+| 「同步 Cowork」「更新 Cowork」「編譯 instructions」 | `ai-core/skills/sync-cowork.md` |
+| 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `ai-core/skills/git-history.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 
@@ -225,5 +249,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-19（新增 beautify 華德福美化文件輸出技能）*
+*最後更新：2026-03-19（技能分類重構 A-F + 退役 video-setup / new-doc / english-45 獨立觸發）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

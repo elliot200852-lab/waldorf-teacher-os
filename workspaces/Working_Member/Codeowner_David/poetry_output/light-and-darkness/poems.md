@@ -1,3 +1,7 @@
+---
+aliases:
+  - "光與暗 詩歌集"
+---
 # Poems Collection
 
 > 10 poems found

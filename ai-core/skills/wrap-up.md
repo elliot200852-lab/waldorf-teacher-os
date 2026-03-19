@@ -140,6 +140,10 @@ session:
 - 有未收錄 HOME.md 的檔案 → 自動插入根目錄 `HOME.md` 對應區段
 - 標籤/索引修正完成後，將修改的檔案加入 git 暫存區
 - 全部正常 → 靜默通過（不輸出任何訊息）
+- **完成後更新 marker**（讓 session-guard hook 知道本 session 已執行）：
+  - macOS/Linux：`touch .claude/.last-obsidian-check`
+  - Windows：`python3 -c "from pathlib import Path; Path('.claude/.last-obsidian-check').touch()"`
+  - 或直接用 Python：`Path('.claude/.last-obsidian-check').touch()`（AI 在任何平台都可執行）
 
 詳細的標籤產生規則與 HOME.md 區段判斷邏輯，參見 `ai-core/skills/obsidian-sync.md`。
 

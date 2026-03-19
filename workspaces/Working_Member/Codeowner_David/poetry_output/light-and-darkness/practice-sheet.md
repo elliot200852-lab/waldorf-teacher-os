@@ -1,3 +1,7 @@
+---
+aliases:
+  - "光與暗 練習單"
+---
 # Practice Sheet
 
 **Topic:** light and darkness

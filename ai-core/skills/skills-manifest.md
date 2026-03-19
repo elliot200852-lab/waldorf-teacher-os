@@ -7,46 +7,87 @@ aliases:
 
 > **所有技能的完整執行規格位於：`ai-core/skills/`**
 > 本文件是輕量索引，列出技能名稱、觸發語與規格檔案路徑。
+> 技能按功能分為六類，協助 AI 在模糊語句時縮小搜尋範圍。
 
 ---
 
-## 技能觸發對照表
+## A. 系統營運（TeacherOS 自身的運作）
 
 | 教師說 | 技能 | 完整規格 |
 |--------|------|---------|
 | 「開工」「開始」「早安」「我來了」「start」 | `opening` | `ai-core/skills/opening.md` |
 | 「載入 9C」「讀一下狀態」 | `load` | `ai-core/skills/load.md` |
 | 「現在在哪？」「9C 做到哪了？」 | `status` | `ai-core/skills/status.md` |
+| 「收工」「存檔」「收尾」「結束今天」「儲存」 | `wrap-up` | `ai-core/skills/wrap-up.md` |
+| 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `obsidian-sync` | `ai-core/skills/obsidian-sync.md` |
+
+## B. 教學核心（直接影響課堂設計與執行）
+
+| 教師說 | 技能 | 完整規格 |
+|--------|------|---------|
 | 「開始大綱」「做學季規劃」 | `syllabus` | `ai-core/skills/syllabus.md` |
 | 「進入備課」「做 Block 2」 | `lesson` | `ai-core/skills/lesson.md` |
-| 「收工」「存檔」「收尾」「結束今天」「儲存」 | `wrap-up` | `ai-core/skills/wrap-up.md` |
+| 「設計一堂課」「45 分鐘」「lesson design」 | `subject-lesson-45` | `ai-core/skills/subject-lesson-45.md` + 科目覆蓋層 |
+| 「設計節奏」「規劃這週」「吸氣呼氣」 | `rhythm` | `ai-core/skills/rhythm.md` |
+| 「區塊結束」「做反思」「這個 block 完成了」 | `block-end` | `ai-core/skills/block-end.md` |
 | 「查 DI」「確認差異化」 | `di-check` | `ai-core/skills/di-check.md` |
 | 「載入教學哲學」「看英文背景」 | `ref` | `ai-core/skills/ref.md` |
+
+**覆蓋層（非獨立技能，由引擎自動載入）：**
+
+| 覆蓋層 | 依附引擎 | 路徑 |
+|--------|---------|------|
+| `english-45` | `subject-lesson-45` | `ai-core/skills/english-45.md` |
+
+## C. 備課素材（課堂之前的準備工作）
+
+| 教師說 | 技能 | 完整規格 |
+|--------|------|---------|
+| 「詩歌研究」「poetry research」「找詩」 | `poetry-research` | `ai-core/skills/poetry-research.md` |
+| 「博物館素材」「找藝術品」「拉幾張畫」「art search」 | `art-in-teaching` | `ai-core/skills/art-in-teaching.md` |
+| 「美化」「做漂亮版」「beautify」「套模板」 | `beautify` | `ai-core/skills/beautify.md` |
+| 「下載字幕」「抓字幕」「YouTube 字幕」 | `yt-subtitle` | `ai-core/skills/yt-subtitle.md` |
+| 「教學動畫」「做動畫」「概念視覺化」「animate」 | `teach-animation` | `ai-core/skills/teach-animation.md` |
+| 「做影片」「製作影片」「video」「渲染影片」「建立影片專案」「video setup」 | `video` | `ai-core/skills/video.md` |
+
+## D. 導師與學生（人的工作）
+
+| 教師說 | 技能 | 完整規格 |
+|--------|------|---------|
 | 「導師業務」「班級事件」「個案討論」 | `homeroom` | `ai-core/skills/homeroom.md` |
-| 「區塊結束」「做反思」「這個 block 完成了」 | `block-end` | `ai-core/skills/block-end.md` |
-| 「設計節奏」「規劃這週」「吸氣呼氣」 | `rhythm` | `ai-core/skills/rhythm.md` |
 | 「記錄學生」「個案觀察」「記一下誰」「學生紀錄」 | `student-note` | `ai-core/skills/student-note.md` |
 | 「教學紀錄」「教學回顧」「今天上課」「教學反思」 | `teaching-log` | `ai-core/skills/teaching-log.md` |
 | 「寫家長信」「學期評語」「家長通知」 | `parent-letter` | `ai-core/skills/parent-letter.md` |
-| 「同步 Cowork」「更新 Cowork」 | `sync-cowork` | `ai-core/skills/sync-cowork.md` |
+
+## E. 外部服務（Google / Email / 雲端）
+
+| 教師說 | 技能 | 完整規格 |
+|--------|------|---------|
 | 「寄信」「寄 Email」「發郵件」「寄給」 | `send-email` | `ai-core/skills/send-email.md` |
 | 「上傳到雲端」「同步 Drive」「傳到 Drive」 | `drive` | `ai-core/skills/drive.md` |
 | 「查行事曆」「排課表」「加行事曆」 | `calendar` | `ai-core/skills/calendar.md` |
 | 「開試算表」「寫入 Sheets」「讀 Sheets」 | `sheets` | `ai-core/skills/sheets.md` |
 | 「編輯文件」「寫入 Docs」「開 Google Docs」 | `docs-edit` | `ai-core/skills/docs-edit.md` |
-| 「設計一堂課」「45 分鐘」「lesson design」 | `subject-lesson-45` | `ai-core/skills/subject-lesson-45.md` + 科目覆蓋層 |
-| 「英文課設計」「English lesson」 | `english-45`（覆蓋層） | `ai-core/skills/english-45.md` |
-| 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `git-history` | `ai-core/skills/git-history.md` |
-| 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `obsidian-sync` | `ai-core/skills/obsidian-sync.md` |
-| 「加入新老師」「新增老師」「新增教師」「add teacher」 | `add-teacher` | `ai-core/skills/add-teacher.md` |
 | 「設定 gws」「安裝 gws」「gws setup」 | `gws-setup` | `ai-core/skills/gws-setup.md` |
-| 「生成新檔案」「建立新文件」「新增文件」「產出新文件」 | `new-doc` | `ai-core/skills/new-doc.md` |
+
+## F. 系統工程（低頻維運）
+
+| 教師說 | 技能 | 完整規格 |
+|--------|------|---------|
+| 「加入新老師」「新增老師」「add teacher」 | `add-teacher` | `ai-core/skills/add-teacher.md` |
 | 「發 PR」「合併申請」「送回主系統」 | `pull-request` | `ai-core/skills/pull-request.md` |
-| 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `video-setup` | `ai-core/skills/video-setup.md` |
-| 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `sync-agents` | `ai-core/skills/sync-agents.md` |
-| 「詩歌研究」「英文詩歌研究」「英文詩歌備課」「poetry research」 | `poetry-research` | `ai-core/skills/poetry-research.md` |
-| 「博物館素材」「找藝術品」「拉幾張畫」「做素材展示」「art search」「Met API」「Europeana」 | `art-in-teaching` | `ai-core/skills/art-in-teaching.md` |
-| 「美化」「做漂亮版」「HTML 輸出」「精美版」「beautify」「套模板」「美化輸出」 | `beautify` | `ai-core/skills/beautify.md` |
+| 「同步檢查」「sync agents」「系統一致性」 | `sync-agents` | `ai-core/skills/sync-agents.md` |
+| 「同步 Cowork」「更新 Cowork」「編譯 instructions」 | `sync-cowork` | `ai-core/skills/sync-cowork.md` |
+| 「填進去 Git history」「Git history 編寫」「更新週記」 | `git-history` | `ai-core/skills/git-history.md` |
+
+---
+
+## 退役紀錄
+
+| 技能 | 退役日期 | 處置 |
+|------|---------|------|
+| `video-setup` | 2026-03-19 | 合併進 `video`（Step 0） |
+| `new-doc` | 2026-03-19 | 功能過於單純，AI 常識可覆蓋 |
 
 ---
 
@@ -81,4 +122,4 @@ aliases:
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-19（新增 beautify 華德福美化文件輸出技能）*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-19（技能分類重構 + 退役 video-setup / new-doc）*

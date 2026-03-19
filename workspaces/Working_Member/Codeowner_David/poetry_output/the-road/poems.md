@@ -1,3 +1,7 @@
+---
+aliases:
+  - "道路 詩歌集"
+---
 # Poems Collection
 
 > 10 poems found

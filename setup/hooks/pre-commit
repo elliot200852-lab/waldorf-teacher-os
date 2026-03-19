@@ -10,4 +10,5 @@
 # Windows 上 Git 會用 Git Bash 執行 hooks，#!/bin/sh 是安全的。
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-python3 "$REPO_ROOT/setup/scripts/pre-commit-check.py"
+python3 "$REPO_ROOT/setup/scripts/pre-commit-check.py"   # ACL 身份 + 權限
+python3 "$REPO_ROOT/ai-core/sync_check.py" --pre-commit  # 系統一致性

@@ -1,3 +1,7 @@
+---
+aliases:
+  - "道路 詞彙卡"
+---
 # Vocabulary Cards
 
 > Grade 8 | Simple definitions + daily-life examples

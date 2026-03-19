@@ -10,6 +10,12 @@ triggers:
   - 影片
   - 渲染影片
   - render video
+  - 建立影片專案
+  - 設定 Remotion
+  - video setup
+  - 影片環境
+  - 安裝影片工具
+  - remotion setup
 requires_args: false
 ---
 
@@ -17,13 +23,98 @@ requires_args: false
 
 使用 Repo 內的 Remotion 專案（`video/`）製作影片。本技能定義從素材到成品的完整工作流程。
 
-> **前置條件：** `video/` 子專案已存在且可運作。若尚未建置，先執行 `video-setup` 技能。
+> **前置條件：** `video/` 子專案已存在且可運作。若尚未建置，先執行下方 Step 0。
 
 ## 根目錄
 
 以 Repo 根目錄為基準。AI 自動偵測：`git rev-parse --show-toplevel`。
 
 ## 執行步驟
+
+### Step 0 — 環境建置（首次使用，僅執行一次）
+
+> 原 `video-setup` 技能已合併至此。若 `video/` 目錄已存在且可運作，跳過此步驟。
+
+**判斷邏輯：** 檢查 `<REPO_ROOT>/video/package.json` 是否存在。存在 → 跳到 Step 1；不存在 → 執行以下子步驟。
+
+**設計原則：** Repo 內只放程式碼，素材與產出物都在 Repo 外部：
+
+```
+~/Videos/TeacherOS/           ← Repo 外部（不進 Git）
+├── assets/                   ← 素材（照片、音檔）
+│   └── photos/               ← 依用途分子目錄
+└── *.mp4                     ← 渲染輸出
+
+<REPO>/video/                 ← Repo 內（進 Git）
+└── src/                      ← 影片程式碼
+```
+
+**Step 0.1 — 確認 Node.js 版本**
+
+```bash
+node -v
+```
+
+確認版本 >= 20。若版本過低，提醒教師更新 Node.js。
+
+**Step 0.2 — 建立輸出與素材目錄**
+
+macOS / Linux：
+```bash
+mkdir -p ~/Videos/TeacherOS/assets
+```
+
+Windows（PowerShell）：
+```powershell
+New-Item -ItemType Directory -Force -Path "$HOME\Videos\TeacherOS\assets"
+```
+
+**Step 0.3 — 建立 Remotion 子專案**
+
+```bash
+cd <REPO_ROOT>
+npx create-video@latest video
+```
+
+互動式選項建議：Template: Blank、TailwindCSS: Yes、Install dependencies: Yes。
+若互動提示無法繞過，請教師在終端機手動完成此步驟。
+
+**Step 0.4 — 設定跨平台路徑**
+
+編輯 `video/remotion.config.ts`，使用 `os.homedir()` + `path.join()`（跨平台安全）：
+
+```typescript
+import path from "path";
+import os from "os";
+import { Config } from "@remotion/cli/config";
+
+const baseDir = path.join(os.homedir(), "Videos", "TeacherOS");
+
+Config.setOutputLocation(baseDir);
+Config.setPublicDir(path.join(baseDir, "assets"));
+```
+
+**Step 0.5 — 更新 .gitignore**
+
+Repo 根目錄 `.gitignore` 新增：
+
+```gitignore
+# Remotion 影片專案
+video/node_modules/
+video/out/
+video/dist/
+video/.remotion/
+```
+
+**Step 0.6 — 驗證安裝**
+
+```bash
+cd <REPO_ROOT>/video && npm run dev
+```
+
+若 Remotion Studio 成功啟動，表示安裝完成。按 `Ctrl+C` 關閉。
+
+---
 
 ### Step 1 — 素材準備
 

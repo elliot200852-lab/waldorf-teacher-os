@@ -1,3 +1,7 @@
+---
+aliases:
+  - "光與暗 詞彙卡"
+---
 # Vocabulary Cards
 
 > Grade 9 | Simple definitions + daily-life examples
