@@ -44,7 +44,9 @@ gws auth login
 ## 📂 Common Commands
 
 ### Google Drive
+*   **Current Snapshot (Markdown):** [google_drive_root.md](./projects/自動化結案報告測試/google_drive_root.md)
 *   **List files:** `gws drive files list`
+*   **List root folder only:** `gws drive files list --params '{"q": "'root' in parents"}' --format table`
 *   **List top 5 files:** `gws drive files list --params '{"pageSize": 5}'`
 *   **Upload a file:** `gws drive +upload .\report.pdf --name "Project Report"`
 *   **Create a folder:** `gws drive files create --json '{"name": "New Folder", "mimeType": "application/vnd.google-apps.folder"}'`
@@ -85,6 +87,7 @@ Commands starting with `+` are simplified versions of complex API calls:
 
 ## 📝 Windows Tips
 *   **Path Formatting:** Use backslashes (`.\path\to\file`) for local files.
-*   **JSON quoting in PowerShell:** If passing complex JSON via `--json`, use single quotes for the parameter and escape double quotes inside if necessary, or use a here-string.
+*   **JSON quoting in PowerShell:** If passing complex JSON via `--json` or `--params`, use single quotes for the outer parameter and escape properly. 
+    *   **Tip for Drive Queries:** To use single quotes inside the query (like `'root'`), PowerShell often accepts them directly if the whole string is in single quotes: `--params '{"q": "'root' in parents"}'`.
     *   Example: `gws drive files create --json '{"name": "Test"}'`
 *   **Shell Escaping:** When using range strings with `!` (e.g., `Sheet1!A1`), PowerShell generally handles this fine, but if you have issues, wrap the whole string in single quotes.
