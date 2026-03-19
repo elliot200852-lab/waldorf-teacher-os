@@ -845,6 +845,8 @@ def main():
                         help="Generate HTML gallery")
     parser.add_argument("--public-domain", action="store_true",
                         help="Met: only return public domain items")
+    parser.add_argument("--from-yaml", type=str, default="",
+                        help="Regenerate gallery from an existing enriched YAML file (skip API search)")
     args = parser.parse_args()
 
     # Resolve Europeana key
@@ -854,6 +856,41 @@ def main():
         print("  Provide via --europeana-key or set EUROPEANA_API_KEY env var.")
         print("  Get a free key at: https://pro.europeana.eu/pages/get-api")
         sys.exit(1)
+
+    # ── Regenerate mode: skip API, read existing YAML ──
+    if args.from_yaml:
+        from_yaml_path = Path(args.from_yaml)
+        if not from_yaml_path.exists():
+            print(f"ERROR: YAML file not found: {from_yaml_path}")
+            sys.exit(1)
+        with open(from_yaml_path, "r", encoding="utf-8") as f:
+            yaml_data = yaml.safe_load(f)
+        all_items = yaml_data.get("items", [])
+        query = yaml_data.get("query", args.query)
+        output_dir = from_yaml_path.parent
+        timestamp = yaml_data.get("timestamp", datetime.now().strftime("%Y%m%d-%H%M%S"))
+
+        print(f"\nTeacherOS Museum Resource Pipeline — Regenerate Mode")
+        print(f"{'='*40}")
+        print(f"Source YAML: {from_yaml_path}")
+        print(f"Items:       {len(all_items)}")
+
+        if not all_items:
+            print("\n! No items in YAML.")
+            sys.exit(0)
+
+        # Generate gallery
+        print(f"\nRegenerating gallery...")
+        gallery_html = generate_gallery_html(all_items, query, timestamp)
+        gallery_path = output_dir / "gallery.html"
+        with open(gallery_path, "w", encoding="utf-8") as f:
+            f.write(gallery_html)
+        print(f"  Gallery: {gallery_path}")
+
+        print(f"\n{'='*40}")
+        print(f"DONE: gallery regenerated with {len(all_items)} items")
+        print(f"Gallery: {gallery_path}")
+        return str(output_dir)
 
     # Resolve output directory
     repo_root = find_repo_root()

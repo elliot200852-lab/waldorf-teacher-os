@@ -8,7 +8,7 @@
 
 english_session:
   class: class-9c
-  last_updated: 2026-03-18
+  last_updated: 2026-03-19
 
   current_position:
     block: 二
@@ -83,6 +83,18 @@ english_session:
           動詞片語測驗: class-9c/english/content/9C-week5-phrasal-verb-quiz.md
         skill_used: subject-lesson-45 + phrase-quiz
         notes: "配對複習+快閃暖身 8min → 攻防戰 10min → 正式測驗 20min → 片語印象牆 5min。Follow-up 連結《The House on Mango Street》（Task A 找片語 / Task B 寫場景）"
-    extensions_completed: []
+    extensions_completed:
+      - type: 藝術作品教學指南
+        date: 20260319
+        theme: "The House on Mango Street — 青春、愛情與女性自主"
+        artworks:
+          - "Springtime (Pierre-Auguste Cot, 1873) — 青春/愛情"
+          - "Self-Portrait with Two Pupils (Adélaïde Labille-Guiard, 1785) — 女性自主"
+        status: Stage 3 完成，含 ABCD 差異化教學建議
+        files:
+          enriched_yaml: temp/museum_street_scene_20260319/museum-materials-enriched.yaml
+          teaching_guide_html: "Google Drive: teaching-guides-HTML/The House on Mango Street — 青春、愛情與女性自主.html"
+        skill_used: art-in-teaching
+        notes: "首次完整走完 Stage 1→1.5→2→3→5 流程。同步建立 Apps Script HTML 瀏覽器（teaching-guides-HTML 資料夾）"
 
   open_questions: []

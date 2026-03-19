@@ -118,35 +118,62 @@ python setup/scripts/museum_resource_pipeline.py "<keyword>" --source both --eur
 - 作品數量：N 件
 - 來源：Met Museum / Europeana / 雙來源
 [若有 WARNINGS，列出]
-
-要生成畫廊嗎？或直接進入 AI 教學加工？
 ```
+
+**Stage 1 完成後，AI 立即進入 Stage 1.5（不詢問教師）。**
+
+---
+
+### Stage 1.5 — AI 中文翻譯（自動，不需教師指示）
+
+Stage 1 產出的 YAML 中，每件作品的 `title_zh` 和 `desc_zh` 為空字串。
+AI 必須在生成畫廊之前填入中文，確保教師打開畫廊就有中文可讀。
+
+**執行步驟：**
+
+1. 讀取 `temp/museum_<keyword>_<date>/museum-materials.yaml`
+2. 對每件作品填入：
+   - `title_zh`：作品名稱中文翻譯（簡潔，不超過 20 字）
+   - `desc_zh`：50-80 字中文作品說明（適合課堂口述：時代背景、畫面重點、與教學主題的可能連結）
+3. 將更新後的內容寫回同一份 `museum-materials.yaml`
+
+**翻譯原則：**
+
+- 翻譯風格：課堂口語，教師可以直接唸給學生聽
+- 若作品名稱有約定俗成的中文譯名（如《星夜》《吶喊》），使用通用譯名
+- `desc_zh` 不是百科說明，是教學導讀——重點在「這張畫讓學生看到什麼、感受什麼」
+- 若作品與當前備課主題有明顯連結，在 `desc_zh` 中點出
 
 ---
 
 ### Stage 2 — 畫廊（Gallery）
 
-生成課堂投影用 HTML 畫廊，並自動開啟瀏覽器預覽。
+從已翻譯的 YAML 生成課堂投影用 HTML 畫廊，並自動開啟瀏覽器預覽。
+
+**重要：必須使用 `--from-yaml` 從 Stage 1.5 更新後的 YAML 生成，確保畫廊包含中文。**
 
 ```bash
 # macOS / Linux
-python3 setup/scripts/museum_resource_pipeline.py "<keyword>" --source <source> --count <N> --gallery
+python3 setup/scripts/museum_resource_pipeline.py "<keyword>" --from-yaml temp/museum_<keyword>_<date>/museum-materials.yaml
 # 開啟瀏覽器
 open temp/museum_<keyword>_<date>/gallery.html
 ```
 
 ```powershell
 # Windows（PowerShell）
-python setup/scripts/museum_resource_pipeline.py "<keyword>" --source <source> --count <N> --gallery
+python setup/scripts/museum_resource_pipeline.py "<keyword>" --from-yaml "temp\museum_<keyword>_<date>\museum-materials.yaml"
 # 開啟瀏覽器
 Start-Process "temp\museum_<keyword>_<date>\gallery.html"
 ```
+
+> **備註：** 若教師急需快速預覽（不等翻譯），可在 Stage 1 直接加 `--gallery` 生成英文版畫廊。
+> 但標準流程是 Stage 1 → 1.5 → 2，確保畫廊一開就有中文。
 
 產出檔案：
 
 | 檔案 | 內容 |
 |------|------|
-| `gallery.html` | 課堂投影用 HTML 畫廊（含圖片、標題、藝術家、年代） |
+| `gallery.html` | 課堂投影用 HTML 畫廊（含中文標題、中文說明、圖片、藝術家、年代） |
 
 ---
 
@@ -228,20 +255,21 @@ gws drive files create --name "<keyword>-gallery.html" `
 
 | 教師說 | 執行 |
 |--------|------|
-| 「找幾張梵谷的畫」 | Stage 1（Met，keyword: van gogh） |
-| 「做素材展示」 | Stage 1 + 2（搜尋 + 畫廊） |
-| 「拉幾張畫來備課」 | Stage 1 + 2 + 3（搜尋 + 畫廊 + AI 加工） |
-| 「用 Europeana 找中世紀素材」 | Stage 1（Europeana，keyword: medieval） |
-| 「兩個來源都搜」 | Stage 1（both） |
+| 「找幾張梵谷的畫」 | Stage 1 → 1.5 → 2（搜尋 + 翻譯 + 畫廊） |
+| 「做素材展示」 | Stage 1 → 1.5 → 2（搜尋 + 翻譯 + 畫廊） |
+| 「拉幾張畫來備課」 | Stage 1 → 1.5 → 2 → 3（搜尋 + 翻譯 + 畫廊 + AI 教學加工） |
+| 「用 Europeana 找中世紀素材」 | Stage 1 → 1.5 → 2（Europeana，keyword: medieval） |
+| 「兩個來源都搜」 | Stage 1 → 1.5 → 2（both） |
 | 「上傳到 Drive」 | Stage 5 |
 
 ## 產出檔案總覽
 
 | 階段 | 檔案 | 內容 |
 |------|------|------|
-| Stage 1 | `museum-materials.yaml` | 統一格式藝術作品 metadata |
-| Stage 2 | `gallery.html` | 課堂投影 HTML 畫廊 |
-| Stage 3 | `museum-materials-enriched.yaml` | AI 加工後的教學素材（含中文、討論題、DI 建議） |
+| Stage 1 | `museum-materials.yaml` | 統一格式藝術作品 metadata（英文，title_zh / desc_zh 為空） |
+| Stage 1.5 | `museum-materials.yaml`（同檔更新） | AI 填入中文標題與說明後回寫 |
+| Stage 2 | `gallery.html` | 課堂投影 HTML 畫廊（含中文標題與說明） |
+| Stage 3 | `museum-materials-enriched.yaml` | AI 深度加工後的教學素材（討論題、DI 建議） |
 
 所有產出位於 `temp/museum_<keyword>_<date>/`。
 
@@ -256,7 +284,7 @@ gws drive files create --name "<keyword>-gallery.html" `
 - Europeana 的圖片授權各異，AI 會標註每件作品的 `rights` 欄位
 - Stage 3 的 AI 加工在對話中完成，不需額外腳本
 - 年級參數影響 Stage 3 討論問題的深度與詞彙難度
-- Stage 2 畫廊生成後，AI 自動翻譯所有作品的中文標題與簡短描述，回寫 YAML 並重新生成畫廊。教師打開就有中文
+- 中文翻譯在 Stage 1.5 自動完成（AI 填入 title_zh / desc_zh 後回寫 YAML），Stage 2 用 `--from-yaml` 從翻譯後的 YAML 重新生成畫廊。教師打開畫廊就有中文標題與說明
 
 ## Repo 零膨脹原則
 
