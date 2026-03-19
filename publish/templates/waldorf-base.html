@@ -223,6 +223,36 @@ body {
 </style>
 </head>
 
+<!--
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  定案字級與間距規格（2026-03-19 David 確認）
+  AI 生成 HTML 時必須遵守以下數值，不可自行放大或縮小。
+
+  【字級】
+  - 正文段落（drop-cap / body）：  18px, leading 1.6
+  - 章節標題 h3：                  text-xl（Tailwind）
+  - 小標題 h4：                    18px
+  - 列表子項：                     17px, leading 1.55
+  - 重點框內文：                   18px, leading 1.5
+  - 重點框標題：                   18px
+  - 結語：                         text-lg
+  - 頁尾機構名：                   text-lg
+  - 標籤/副標題：                  text-sm
+
+  【間距（緊湊版，適合 A4 列印）】
+  - main：                         max-w-[900px], px-8, py-6
+  - hero section mb：              mb-6
+  - hero header padding：          p-5, mb-3
+  - 分隔線：                       gap-3, py-3, icon text-sm
+  - 重點框：                       px-5 py-3, my-4
+  - 議程段落 mb：                  mb-6
+  - 議程標題 mb：                  mb-3
+  - 議程項目間距：                 space-y-3
+  - 結語：                         mb-4, py-3
+  - 頁尾：                         mt-4, pb-6, gap-3
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-->
+
 <body class="font-body text-[var(--on-surface)] selection:bg-[var(--secondary)]/20">
 
 <!-- 植物浮水印 -->
@@ -240,72 +270,76 @@ body {
 </header>
 
 <!-- ━━━━━━━━━━ 主內容區 ━━━━━━━━━━ -->
-<main class="max-w-[720px] mx-auto px-6 py-12 relative overflow-hidden">
+<main class="max-w-[900px] mx-auto px-8 py-6 relative overflow-hidden">
 
   <!-- 季節裝飾角落 -->
-  <div class="absolute -top-10 -right-10 opacity-10 rotate-12">
+  <div class="absolute -top-10 -right-10 opacity-[0.07] rotate-12">
     <span class="material-symbols-outlined text-[12rem] text-[var(--primary)]">{{SEASON_ICON}}</span>
   </div>
 
   <!-- ===== HERO 區塊 ===== -->
-  <section class="mb-16 text-center">
-    <div class="watercolor-wash-header p-10 mb-8 inline-block w-full">
+  <section class="mb-6 text-center">
+    <div class="watercolor-wash-header p-5 mb-3 inline-block w-full">
       <h2 class="font-headline text-4xl md:text-5xl text-on-primary leading-tight font-bold italic mb-2">{{HERO_TITLE}}</h2>
       <p class="text-on-primary/90 font-label tracking-[0.2em] uppercase text-sm">{{HERO_SUBTITLE}}</p>
     </div>
     <!-- HERO 正文（首段，帶首字母大寫） -->
-    <div class="space-y-6 text-left">
+    <div class="space-y-2 text-left mt-3">
       {{HERO_BODY}}
+      <!-- 正文段落用 class="drop-cap text-[18px] leading-[1.6]" -->
     </div>
   </section>
 
   <!-- ===== 分隔線 ===== -->
-  <div class="flex justify-center gap-4 py-8 opacity-40">
-    <span class="material-symbols-outlined text-[var(--secondary)]">{{DIVIDER_ICON}}</span>
-    <span class="material-symbols-outlined text-[var(--secondary)]">{{DIVIDER_ICON}}</span>
-    <span class="material-symbols-outlined text-[var(--secondary)]">{{DIVIDER_ICON}}</span>
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">{{DIVIDER_ICON}}</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">{{DIVIDER_ICON}}</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">{{DIVIDER_ICON}}</span>
   </div>
 
   <!-- ===== 引用區塊（Pull Quote） ===== -->
   <!--
-  <section class="my-16">
-    <div class="bg-[var(--bg-wash-3)] p-8 border-l-[6px] border-[var(--secondary)]/60 rounded-r-xl relative">
+  <section class="my-6">
+    <div class="bg-[var(--bg-wash-3)] p-5 border-l-[6px] border-[var(--secondary)]/60 rounded-r-xl relative">
       <span class="absolute -top-4 -left-4 material-symbols-outlined text-[var(--secondary)]/30 text-5xl">format_quote</span>
-      <blockquote class="font-headline italic text-2xl text-[var(--primary)] leading-relaxed">
+      <blockquote class="font-headline italic text-xl text-[var(--primary)] leading-relaxed">
         {{PULL_QUOTE}}
       </blockquote>
-      <cite class="block mt-4 text-sm font-label tracking-widest uppercase text-[var(--secondary)]">{{QUOTE_AUTHOR}}</cite>
+      <cite class="block mt-3 text-sm font-label tracking-widest uppercase text-[var(--secondary)]">{{QUOTE_AUTHOR}}</cite>
     </div>
   </section>
   -->
 
   <!-- ===== 主敘事區 ===== -->
   <!--
-  <section class="mb-20">
-    <h3 class="font-headline text-3xl text-[var(--primary)] mb-8 border-b border-[var(--outline-variant)]/20 pb-4">{{SECTION_TITLE}}</h3>
-    <div class="space-y-12">
+  <section class="mb-6">
+    <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">{{SECTION_TITLE}}</h3>
+    <div class="space-y-3">
       {{NARRATIVE_CONTENT}}
     </div>
   </section>
   -->
+  <!-- 敘事段落用 class="text-[18px] leading-[1.6]" -->
+  <!-- 小標題 h4 用 class="font-headline text-[18px] mb-1" -->
+  <!-- 列表子項用 class="text-[17px] leading-[1.55]" -->
 
   <!-- ===== 重點框（Highlight Box） ===== -->
   <!--
-  <div class="hand-drawn-border bg-[var(--bg-wash-2)]/40 p-10 my-10 relative">
-    <h4 class="font-headline text-2xl text-[var(--accent)] mb-6 italic">{{HIGHLIGHT_TITLE}}</h4>
-    <ul class="space-y-6">
+  <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-5 py-3 my-4 relative">
+    <h4 class="font-headline text-[18px] text-[var(--accent)] mb-1.5 italic">{{HIGHLIGHT_TITLE}}</h4>
+    <div class="space-y-1 text-[18px] leading-[1.5]">
       {{HIGHLIGHT_ITEMS}}
-    </ul>
+    </div>
   </div>
   -->
 
   <!-- ===== 結語 ===== -->
   <!--
-  <section class="mb-12 text-center py-12 border-t border-[var(--outline-variant)]/10">
-    <p class="font-headline text-2xl text-[var(--primary)] italic mb-6">{{CLOSING_QUOTE}}</p>
+  <section class="mb-4 text-center py-3">
+    <p class="font-headline text-lg text-[var(--primary)] italic mb-3">{{CLOSING_QUOTE}}</p>
     <div class="inline-flex flex-col items-center">
       <div class="w-16 h-[2px] bg-[var(--primary)]/30 mb-4"></div>
-      <span class="font-label tracking-[0.3em] uppercase text-xs text-[var(--secondary)]">{{CLOSING_SIGNATURE}}</span>
+      <span class="font-label text-base text-[var(--on-surface)]">{{CLOSING_SIGNATURE}}</span>
     </div>
   </section>
   -->
@@ -313,14 +347,14 @@ body {
 </main>
 
 <!-- ━━━━━━━━━━ 頁尾 ━━━━━━━━━━ -->
-<footer class="bg-[var(--bg-wash-1)] w-full border-t-0 mt-20 pb-12">
-  <div class="max-w-4xl mx-auto flex flex-col items-center gap-8 px-6 text-center">
-    <div class="w-full h-16 opacity-15 flex justify-center items-center gap-2">
+<footer class="bg-[var(--bg-wash-1)] w-full border-t-0 mt-4 pb-6">
+  <div class="max-w-4xl mx-auto flex flex-col items-center gap-3 px-6 text-center">
+    <div class="w-full opacity-15 flex justify-center items-center gap-2 py-2">
       <span class="material-symbols-outlined text-[var(--secondary)]">{{SEASON_ICON}}</span>
       <span class="material-symbols-outlined text-[var(--secondary)]">{{SEASON_ICON}}</span>
       <span class="material-symbols-outlined text-[var(--secondary)]">{{SEASON_ICON}}</span>
     </div>
-    <div class="space-y-4">
+    <div class="space-y-2">
       <p class="text-[var(--primary)] font-headline italic text-lg">{{FOOTER_ORG}}</p>
     </div>
     <div class="text-[var(--secondary)] font-body text-xs tracking-widest uppercase opacity-60">
