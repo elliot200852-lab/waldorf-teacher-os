@@ -1,3 +1,8 @@
+---
+aliases:
+  - "Stitch 範例 Prompt"
+---
+
 # Stitch 測試用完整 Prompt — 家長信範例
 
 > 將以下整段文字複製貼入 Google Stitch 的文字輸入框即可生成頁面。

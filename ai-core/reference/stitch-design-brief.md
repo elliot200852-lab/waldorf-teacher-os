@@ -1,3 +1,9 @@
+---
+aliases:
+  - "Stitch 設計規範"
+  - "華德福視覺框架"
+---
+
 # Stitch Design Brief — WaldorfTeacherOS 通用視覺框架
 
 > 用途：將 Markdown 內容貼入 Google Stitch 時，搭配本文件的 Prompt 模板，產出符合華德福美學的網頁。
