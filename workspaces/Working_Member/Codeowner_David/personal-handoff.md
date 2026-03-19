@@ -17,6 +17,7 @@ aliases:
 | 「寫文章」「寫貼文」「FB 文」「部落格」「演講稿」「品牌文」 | `david-voice` | `{workspace}/skills/david-voice.md` |
 | 「pua」「進入除錯模式」「不要放棄」「換路徑查到底」「再試一次」 | `pua-debugging` | `{workspace}/skills/pua-debugging.md` |
 | 「片語測驗」「片語考試」「phrase quiz」「動詞片語測驗」 | `phrase-quiz` | `{workspace}/skills/phrase-quiz.md` |
+| 「發送家長Line 訊息」「傳 LINE 給家長」「傳 LINE 給班代」「Line 通知家長」 | `send-line-message` | `{workspace}/skills/send-line-message.md` |
 
 ---
 
