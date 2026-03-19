@@ -33,6 +33,7 @@ aliases:
 | 「上傳到雲端」「傳到 Drive」「同步 Drive」 | drive | `ai-core/skills/drive.md` |
 | 「查行事曆」「排課表」「加行事曆」 | calendar | `ai-core/skills/calendar.md` |
 | 「寄信」「寄 Email」「發郵件」「寄給」 | send-email | `ai-core/skills/send-email.md` |
+| 「博物館素材」「找藝術品」「拉幾張畫」「做素材展示」「art search」「Met API」「Europeana」 | art-in-teaching | `ai-core/skills/art-in-teaching.md` |
 | 「開試算表」「寫入 Sheets」「讀 Sheets」 | sheets | `ai-core/skills/sheets.md` |
 | 「編輯文件」「寫入 Docs」「開 Google Docs」 | docs-edit | `ai-core/skills/docs-edit.md` |
 | 「設計一堂課」「45 分鐘」「lesson design」 | subject-lesson-45 | `ai-core/skills/subject-lesson-45.md` |
@@ -53,4 +54,4 @@ aliases:
 
 ---
 
-*最後更新：2026-03-18*
+*最後更新：2026-03-19（新增 art-in-teaching 藝術作品融入教學素材管線技能）*

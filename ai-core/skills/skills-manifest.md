@@ -45,6 +45,7 @@ aliases:
 | 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `video-setup` | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `sync-agents` | `ai-core/skills/sync-agents.md` |
 | 「詩歌研究」「英文詩歌研究」「英文詩歌備課」「poetry research」 | `poetry-research` | `ai-core/skills/poetry-research.md` |
+| 「博物館素材」「找藝術品」「拉幾張畫」「做素材展示」「art search」「Met API」「Europeana」 | `art-in-teaching` | `ai-core/skills/art-in-teaching.md` |
 
 ---
 
@@ -79,4 +80,4 @@ aliases:
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-18（新增 poetry-research 技能）*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-19（新增 art-in-teaching 藝術作品融入教學素材管線技能）*

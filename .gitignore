@@ -62,6 +62,14 @@ video/out/
 video/dist/
 video/.remotion/
 
+# 藝術素材管線暫存產出（不上傳）
+temp/
+**/museum_output/
+
+# Python 快取
+__pycache__/
+*.pyc
+
 # Tool Download — 使用者本地環境（不上傳）
 .env
 venv/

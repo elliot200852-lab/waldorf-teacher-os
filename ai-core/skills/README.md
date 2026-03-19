@@ -47,6 +47,7 @@ aliases:
 | `yt-subtitle.md` | YouTube 字幕擷取與教學素材轉換 | 「下載字幕」「抓字幕」「YouTube 字幕」「extract subtitles」 |
 | `teach-animation.md` | 教學動畫生成（Revideo）：概念解說、時間線、流程圖動畫 | 「教學動畫」「做動畫」「概念動畫」「animate」 |
 | `poetry-research.md` | 英文備課素材研究：主題 → 詩歌 + 詞彙 + 語意場 + 書單 | 「詩歌研究」「英文詩歌研究」「英文詩歌備課」 |
+| `art-in-teaching.md` | 藝術作品融入教學：Met Museum + Europeana API → 畫廊 + AI 加工 | 「博物館素材」「找藝術品」「拉幾張畫」「art search」 |
 
 ---
 
@@ -234,5 +235,5 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-18（新增 poetry-research 英文備課素材研究技能）*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-19（新增 art-in-teaching 藝術作品融入教學素材管線技能）*
 
