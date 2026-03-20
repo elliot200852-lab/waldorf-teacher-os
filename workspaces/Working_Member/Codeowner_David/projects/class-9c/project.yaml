@@ -45,13 +45,21 @@ subjects:
     di_profile: ml-undecided/di-profile.yaml
     assessment: ml-undecided/assessment.yaml
     content_output: ml-undecided/content/
+  walking_reading_taiwan:
+    type: 跨領域主題課程
+    topic: 走讀臺灣（文學 × 歷史 × 走讀）
+    schedule: 每週五・專一+專二（90 分鐘）× 4 週
+    linked_to: 服務學習之旅（2026/6/8-6/12）
+    session_anchor: walking-reading-taiwan/session.yaml
+    content_output: walking-reading-taiwan/content/
 
 current_semester: 2025-2026
-current_focus: 英文 Block 2（第 1–2 週課堂設計）；導師 Block 3（春季班親會準備）
+current_focus: 英文 Block 2（week 6 備課）；導師 Block 3（3/21 班親會）；走讀臺灣（臺中篇已上，待回饋）
 
 next_steps:
-  - 英文：Block 2 — 設計第 1–2 週 45 分鐘課堂流程（小說研讀 + 語言工坊）
-  - 導師：Block 3 — 確認春季班親會細節（2026-03-21）
+  - 英文：Block 2 — week 6 備課（片語考試 + Mango Street）
+  - 導師：Block 3 — 3/21 班親會流程；園遊會 3/28 準備
+  - 走讀臺灣：臺中篇試跑後回饋 → 臺南篇設計
   - 主課程：建立 main-lesson-di-template.md 後啟動 Block 1
 
 # ── 班內橫向連結備忘（AI 開工前可快速掃描）──────────────────
@@ -61,6 +69,8 @@ next_steps:
 cross_module_notes:
   active:
     - "2026-03-01 導師→英文 春季班親會 2026-03-21 在第 3 週，規劃課堂進度時留意該週節奏可能調整"
+    - "2026-03-20 走讀臺灣→導師 走讀臺灣課程與服務學習之旅（6/8-6/12）直接連結，走讀路線=旅行路線"
+    - "2026-03-20 走讀臺灣→英文 走讀臺灣（臺灣文學社區走讀）與英文 Mango Street（社區文學）形成中英對照"
   resolved: []
   # 說明：
   #   active  — 目前仍需要跨線注意的事項

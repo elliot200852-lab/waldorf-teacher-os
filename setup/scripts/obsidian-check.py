@@ -97,6 +97,18 @@ def get_gitignored_obsidian_files():
     return files
 
 
+def get_untracked_files():
+    """取得 git 未追蹤的新檔案（尚未 git add 的檔案）。
+    這些檔案最需要被加入 HOME.md，因為它們通常是剛建立的。"""
+    result = subprocess.run(
+        ["git", "ls-files", "--others", "--exclude-standard"],
+        capture_output=True, text=True, cwd=REPO_ROOT
+    )
+    if result.returncode != 0:
+        return []
+    return [decode_git_path(f) for f in result.stdout.strip().split("\n") if f.strip()]
+
+
 def get_staged_new_files():
     """取得 git 暫存區中新增的檔案"""
     result = subprocess.run(
@@ -262,10 +274,14 @@ def main():
         files = get_staged_new_files()
     else:
         files = get_tracked_files()
-        # 加入被 gitignore 但仍需 Obsidian 檢查的檔案（如 student-notes/）
-        gitignored_files = get_gitignored_obsidian_files()
         existing = set(files)
-        for f in gitignored_files:
+        # 加入 untracked 新檔案（剛建立、尚未 git add 的檔案）
+        for f in get_untracked_files():
+            if f not in existing:
+                files.append(f)
+                existing.add(f)
+        # 加入被 gitignore 但仍需 Obsidian 檢查的檔案（如 student-notes/）
+        for f in get_gitignored_obsidian_files():
             if f not in existing:
                 files.append(f)
 

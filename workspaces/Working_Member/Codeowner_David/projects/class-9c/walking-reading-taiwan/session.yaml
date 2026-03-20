@@ -1,0 +1,71 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：九年級 C 班・走讀臺灣進度錨點
+# 路徑：projects/class-9c/walking-reading-taiwan/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+walking_reading_taiwan_session:
+  class: class-9c
+  last_updated: 2026-03-20
+
+  overview:
+    name: 走讀臺灣
+    type: 跨領域主題課程（文學 × 歷史 × 走讀）
+    schedule: 每週五・專一+專二（90 分鐘）
+    total_weeks: 4
+    total_sessions: 8（每週 2 節 × 4 週）
+    linked_to: 服務學習之旅（2026/6/8-6/12，臺中→臺南→高雄）
+    core_question: 書寫到底能做什麼？
+    three_city_arc:
+      taichung: 書寫的代價——一個人敢不敢說話
+      tainan: 記憶的形式——一座城市怎麼記得自己
+      kaohsiung: 行動的選擇——我可以為我住的地方做什麼
+
+  current_position:
+    block: 一
+    step: 1
+    city: 臺中
+    current_week: 1    # week 1 of 4
+
+  confirmed_decisions:
+    - "課程結構：臺中 1 週 + 臺南 2 週 + 高雄 1 週 = 4 週 8 節"
+    - "臺中篇文本：楊逵〈和平宣言〉+ 楊双子〈大麵羹〉（主）+ 楊双子〈豐仁冰〉（課後閱讀）"
+    - "教學順序反轉：先大麵羹（具體、感官）→ 再和平宣言（抽象、歷史）"
+    - "課堂學習單（上課用）+ 課後學習單（功課，四選一差異化任務）"
+    - "豐仁冰不進課堂，作為自主閱讀，下週或導師課收尾"
+
+  next_action:
+    description: >
+      臺中篇已上完（3/20），等待試跑回饋。
+      下一步：
+      1. 收課後學習單（下週五前）
+      2. 豐仁冰收尾（下週五開頭 5 分鐘 or 導師課）
+      3. 啟動臺南篇設計（選文、路線、核心問題）
+    input_needed_from_teacher: "臺中篇試跑回饋；臺南篇文本方向（葉石濤？許丙丁？其他？）"
+
+  output_files:
+    - type: 教學流程
+      file: content/9C-walk-read-week1-教學流程.md
+      date: 20260320
+    - type: 課堂學習單
+      file: content/9C-walk-read-week1-課堂學習單.md
+      date: 20260320
+    - type: 課後學習單
+      file: content/9C-walk-read-week1-課後學習單.md
+      date: 20260320
+    - type: 教案分析
+      file: content/9C-walk-read-week1-教案分析.md
+      date: 20260320
+
+  source_materials:
+    - name: 走讀臺中教案 v2
+      path: ~/Downloads/台中走讀文學歷史-教案v2.md
+      note: David 的原始教學構想，臺中篇教學流程以此為基礎調整
+    - name: 走讀台中-閱讀文獻
+      path: Google Doc (1oSNF4FTx4nUWeuyE-sbiiWzmiW0jLooJGB4Q5SHuswI)
+      note: 三篇閱讀文本（和平宣言、大麵羹、豐仁冰）
+
+  open_questions:
+    - "臺南篇文本選擇：葉石濤、許丙丁、或其他方向？"
+    - "高雄篇文本選擇：陳芳明、打狗文學、或其他方向？"
+    - "走讀任務的繳交與評分方式"
