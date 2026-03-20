@@ -87,28 +87,28 @@ Choose the best answer to fill in the blank.
 
 ### 基礎版答案
 
-| 題號 | 答案 | 片語 | 解析 |
-|:-----|:-----|:-----|:-----|
-| 1 | (B) | think up | 想出新點子。think over 是仔細考慮已有的事，talk over 是討論。 |
-| 2 | (B) | try on | 試穿。try out 是試用或甄選，wear out 是用壞。 |
-| 3 | (C) | watch out | 小心注意。warm up 是暖身，wake up 是醒來。 |
-| 4 | (A) | talk into | 說服某人去做。talk over 是討論，split into 是分成。 |
-| 5 | (A) | talk over | 討論商量。talk into 是說服，think up 是想出。 |
-| 6 | (B) | stay up | 熬夜。stayed out 是待在外面，woke up 是醒來。 |
-| 7 | (C) | wash up | 洗手洗臉。warm up 是暖身，tidy up 是整理房間。 |
-| 8 | (B) | split into | 分成幾組。split up 是分手/分開行動，switch off 是關掉。 |
-| 9 | (B) | switch on | 打開。switch off 是關掉，throw away 是丟掉。 |
-| 10 | (B) | think over | 仔細考慮。think up 是想出新點子，talk into 是說服。 |
-| 11 | (B) | throw away | 丟掉。use up 是用光，tidy up 是整理。 |
-| 12 | (C) | speak up | 大聲說。speak for 是代表發言，slow down 是慢下來。 |
-| 13 | (A) | wake up | 叫醒。warm up 是暖身，wash up 是洗手洗臉。 |
-| 14 | (C) | use up | 用光。wore out 是用壞（磨損），threw away 是丟掉。 |
-| 15 | (B) | tidy up | 整理。throw away 是丟掉，try on 是試穿。 |
-| 16 | (A) | slow down | 慢下來。stay out 是待在外面，switch off 是關掉。 |
-| 17 | (B) | stick with | 持續支持。stick to 是堅持計畫/規則，split up 是分手。 |
-| 18 | (C) | worn out | 用壞磨損。used up 是用光（消耗品），thrown away 是丟掉。 |
-| 19 | (B) | switch off | 關掉。switch on 是打開，throw away 是丟掉。 |
-| 20 | (A) | warm up | 暖身。wake up 是醒來，wash up 是洗手洗臉。 |
+| 題號  | 答案  | 片語         | 解析                                        |
+| :-- | :-- | :--------- | :---------------------------------------- |
+| 1   | (B) | think up   | 想出新點子。think over 是仔細考慮已有的事，talk over 是討論。 |
+| 2   | (B) | try on     | 試穿。try out 是試用或甄選，wear out 是用壞。           |
+| 3   | (C) | watch out  | 小心注意。warm up 是暖身，wake up 是醒來。             |
+| 4   | (A) | talk into  | 說服某人去做。talk over 是討論，split into 是分成。      |
+| 5   | (A) | talk over  | 討論商量。talk into 是說服，think up 是想出。          |
+| 6   | (B) | stay up    | 熬夜。stayed out 是待在外面，woke up 是醒來。          |
+| 7   | (C) | wash up    | 洗手洗臉。warm up 是暖身，tidy up 是整理房間。           |
+| 8   | (B) | split into | 分成幾組。split up 是分手/分開行動，switch off 是關掉。    |
+| 9   | (B) | switch on  | 打開。switch off 是關掉，throw away 是丟掉。         |
+| 10  | (B) | think over | 仔細考慮。think up 是想出新點子，talk into 是說服。       |
+| 11  | (B) | throw away | 丟掉。use up 是用光，tidy up 是整理。                |
+| 12  | (C) | speak up   | 大聲說。speak for 是代表發言，slow down 是慢下來。       |
+| 13  | (A) | wake up    | 叫醒。warm up 是暖身，wash up 是洗手洗臉。             |
+| 14  | (C) | use up     | 用光。wore out 是用壞（磨損），threw away 是丟掉。       |
+| 15  | (B) | tidy up    | 整理。throw away 是丟掉，try on 是試穿。             |
+| 16  | (A) | slow down  | 慢下來。stay out 是待在外面，switch off 是關掉。        |
+| 17  | (B) | stick with | 持續支持。stick to 是堅持計畫/規則，split up 是分手。      |
+| 18  | (C) | worn out   | 用壞磨損。used up 是用光（消耗品），thrown away 是丟掉。    |
+| 19  | (B) | switch off | 關掉。switch on 是打開，throw away 是丟掉。          |
+| 20  | (A) | warm up    | 暖身。wake up 是醒來，wash up 是洗手洗臉。             |
 
 ---
 
