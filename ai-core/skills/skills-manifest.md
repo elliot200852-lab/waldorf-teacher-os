@@ -79,6 +79,7 @@ aliases:
 | 「同步檢查」「sync agents」「系統一致性」 | `sync-agents` | `ai-core/skills/sync-agents.md` |
 | 「同步 Cowork」「更新 Cowork」「編譯 instructions」 | `sync-cowork` | `ai-core/skills/sync-cowork.md` |
 | 「填進去 Git history」「Git history 編寫」「更新週記」 | `git-history` | `ai-core/skills/git-history.md` |
+| 「跨平台檢查」「check compat」「平台檢查」「相容性檢查」 | `check-compat` | `ai-core/skills/check-compat.md` |
 
 ---
 

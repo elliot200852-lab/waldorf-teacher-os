@@ -25,10 +25,11 @@ from pathlib import Path
 
 # ── ANSI 顏色 ─────────────────────────────────────────
 
-RED = "\033[0;31m"
-YELLOW = "\033[1;33m"
-GREEN = "\033[0;32m"
-NC = "\033[0m"
+_NO_COLOR = os.environ.get("NO_COLOR") or (sys.platform == "win32" and not os.environ.get("WT_SESSION"))
+RED = "" if _NO_COLOR else "\033[0;31m"
+YELLOW = "" if _NO_COLOR else "\033[1;33m"
+GREEN = "" if _NO_COLOR else "\033[0;32m"
+NC = "" if _NO_COLOR else "\033[0m"
 
 
 # ── 工具函式 ──────────────────────────────────────────

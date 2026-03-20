@@ -6,21 +6,44 @@ TeacherOS — 批次轉換所有 .md 為 .docx，放入 Google Drive DocReviewBa
 """
 
 import os
+import platform as _platform
+import shutil
 import subprocess
 import csv
 import sys
 import re
+import tempfile
 from pathlib import Path
 from urllib.parse import quote
 
 # ── 設定 ──────────────────────────────────────────────────
 REPO_ROOT = Path(__file__).resolve().parent.parent
-PANDOC = "/opt/homebrew/bin/pandoc"
+PANDOC = shutil.which("pandoc") or "pandoc"
 GDRIVE_EMAIL = "elliot200852@gmail.com"
 GDRIVE_FOLDER = "00-01-TeacherOS-專案三層記憶"
 GITHUB_BASE = "https://github.com/elliot200852-lab/waldorf-teacher-os/blob/main"
 
-GDRIVE_ROOT = Path.home() / "Library/CloudStorage" / f"GoogleDrive-{GDRIVE_EMAIL}" / "我的雲端硬碟" / GDRIVE_FOLDER
+
+def _detect_gdrive_root(email: str, folder: str) -> Path:
+    """跨平台偵測 Google Drive Desktop 同步根目錄"""
+    home = Path.home()
+    candidates = [
+        # macOS
+        home / "Library/CloudStorage" / f"GoogleDrive-{email}" / "我的雲端硬碟" / folder,
+        home / "Library/CloudStorage" / f"GoogleDrive-{email}" / "My Drive" / folder,
+        # Windows
+        home / "Google Drive" / folder,
+        Path("G:/My Drive") / folder,
+        Path("G:/我的雲端硬碟") / folder,
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+    # fallback：使用 macOS 預設路徑（腳本原始行為）
+    return home / "Library/CloudStorage" / f"GoogleDrive-{email}" / "我的雲端硬碟" / folder
+
+
+GDRIVE_ROOT = _detect_gdrive_root(GDRIVE_EMAIL, GDRIVE_FOLDER)
 BACKUP_DIR = GDRIVE_ROOT / "DocReviewBackup"
 
 EXCLUDE_DIRS = {".git", "node_modules", ".claude", "publish"}
@@ -214,12 +237,11 @@ def main():
     md_files.sort(key=lambda x: x[0])
     print(f"找到 {len(md_files)} 個 .md 檔案")
 
-    if not os.path.exists(PANDOC):
-        print(f"錯誤：找不到 Pandoc: {PANDOC}")
+    if not shutil.which("pandoc"):
+        print(f"錯誤：找不到 Pandoc，請確認已安裝並加入 PATH")
         sys.exit(1)
 
     # ── 清除舊的 DocReviewBackup 內容 ─────────────────────
-    import shutil
     if BACKUP_DIR.exists():
         for item in BACKUP_DIR.iterdir():
             if item.is_dir():
@@ -244,7 +266,7 @@ def main():
         docx_subdir.mkdir(parents=True, exist_ok=True)
 
         # Pandoc 轉換
-        tmp_path = Path("/tmp") / f"teacheros-batch-{cn_docx_name}"
+        tmp_path = Path(tempfile.gettempdir()) / f"teacheros-batch-{cn_docx_name}"
         try:
             subprocess.run(
                 [PANDOC, str(full_path), "--from", "markdown", "--to", "docx", "-o", str(tmp_path)],
@@ -252,7 +274,7 @@ def main():
             )
             if docx_path.exists():
                 docx_path.unlink()
-            subprocess.run(["cp", str(tmp_path), str(docx_path)], check=True)
+            shutil.copy2(str(tmp_path), str(docx_path))
             tmp_path.unlink(missing_ok=True)
             success += 1
             status = "完成"

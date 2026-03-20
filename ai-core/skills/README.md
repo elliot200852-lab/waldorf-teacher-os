@@ -49,6 +49,7 @@ aliases:
 | `poetry-research.md` | 英文備課素材研究：主題 → 詩歌 + 詞彙 + 語意場 + 書單 | 「詩歌研究」「英文詩歌研究」「英文詩歌備課」 |
 | `art-in-teaching.md` | 藝術作品融入教學：Met Museum + Europeana API → 畫廊 + AI 加工 | 「博物館素材」「找藝術品」「拉幾張畫」「art search」 |
 | `beautify.md` | 華德福美化文件輸出：Markdown → 精美 HTML（四季視覺切換） | 「美化」「做漂亮版」「HTML 輸出」「beautify」「套模板」 |
+| `check-compat.md` | 跨平台相容性檢查：全 Repo 掃描 6 條規則 + 嚴重度分級報告 | 「跨平台檢查」「check compat」「平台檢查」「相容性檢查」 |
 
 ---
 
@@ -114,6 +115,7 @@ aliases:
 | Shell 腳本 | `bash xxx.sh` | N/A | 改用 Python 腳本，shell 只留薄層入口 |
 
 若技能中有終端機指令，必須同時提供 bash 與 PowerShell 兩種寫法，或使用 Python 統一入口。
+新技能若含 Python 腳本，請遵循 `cross-platform.yaml` 的 `python_patterns` 標準。
 完整跨平台公約見 `ai-core/reference/cross-platform.yaml`。
 
 ### Step 3 — 更新三份索引文件（必做）

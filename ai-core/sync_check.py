@@ -19,12 +19,13 @@ from pathlib import Path
 import yaml
 
 # --- 顏色輸出 ---
-GREEN = "\033[92m"
-RED = "\033[91m"
-YELLOW = "\033[93m"
-CYAN = "\033[96m"
-BOLD = "\033[1m"
-RESET = "\033[0m"
+_NO_COLOR = os.environ.get("NO_COLOR") or (sys.platform == "win32" and not os.environ.get("WT_SESSION"))
+GREEN = "" if _NO_COLOR else "\033[92m"
+RED = "" if _NO_COLOR else "\033[91m"
+YELLOW = "" if _NO_COLOR else "\033[93m"
+CYAN = "" if _NO_COLOR else "\033[96m"
+BOLD = "" if _NO_COLOR else "\033[1m"
+RESET = "" if _NO_COLOR else "\033[0m"
 
 
 def ok(msg):

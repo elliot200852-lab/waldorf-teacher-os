@@ -18,6 +18,7 @@
 #      python3 skill-platform-check.py
 
 import argparse
+import os
 import re
 import subprocess
 import sys
@@ -25,9 +26,10 @@ from pathlib import Path
 
 # ── ANSI 顏色 ─────────────────────────────────────────
 
-YELLOW = "\033[1;33m"
-DIM = "\033[0;90m"
-NC = "\033[0m"
+_NO_COLOR = os.environ.get("NO_COLOR") or (sys.platform == "win32" and not os.environ.get("WT_SESSION"))
+YELLOW = "" if _NO_COLOR else "\033[1;33m"
+DIM = "" if _NO_COLOR else "\033[0;90m"
+NC = "" if _NO_COLOR else "\033[0m"
 
 # ── 平台專屬指令偵測規則 ──────────────────────────────
 # 來源：ai-core/reference/cross-platform.yaml skill_writing_rules

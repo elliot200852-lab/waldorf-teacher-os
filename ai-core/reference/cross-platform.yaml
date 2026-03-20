@@ -81,7 +81,25 @@ migration_status:
   setup/save.sh:             { status: active, note: "wrap-up skill 已涵蓋此功能，低優先" }
   setup/start.sh:            { status: shell-only, note: "macOS/Linux 啟動器 → quick-start.py" }
   setup/start.ps1:           { status: shell-only, note: "Windows 啟動器 → quick-start.py" }
-  publish/build.sh:          { status: active, note: "Pandoc 發佈腳本，待遷移" }
+  publish/build.sh:          { status: completed, python: publish/build.py }
+
+# Python 跨平台標準做法（2026-03-20 新增）
+# Repo 所有 Python 檔案已遵循的 stdlib 標準，不需額外包裝模組。
+python_patterns:
+  paths: "pathlib.Path() — 不使用 os.path.join"
+  temp_dir: "tempfile.mkdtemp() / tempfile.gettempdir() — 不使用 /tmp/"
+  command_check: "shutil.which() — 不使用 command -v"
+  home_dir: "Path.home() — 不使用 ~ 或 $HOME 字面量"
+  subprocess: "subprocess.run([...], text=True) — 不使用 os.system()"
+  repo_root: "git rev-parse --show-toplevel — 不使用硬編碼路徑"
+  file_copy: "shutil.copy2() — 不使用 cp 指令"
+
+# 定期維護（2026-03-20 新增）
+maintenance:
+  tool: "/check-compat（ai-core/skills/check-compat.md）"
+  script: "setup/scripts/check-compat.py"
+  frequency: "每月一次，或分享架構前"
+  last_run: "2026-03-20"
 
 hook_convention:
   description: "Git hooks 使用 shell 薄層呼叫 Python"
