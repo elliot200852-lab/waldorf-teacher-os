@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="spring" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phrasal Verb Quiz — Basic</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        "headline": ["Playfair Display", "Noto Serif TC", "Georgia", "serif"],
+        "body": ["Plus Jakarta Sans", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "sans-serif"],
+        "label": ["Plus Jakarta Sans", "Noto Sans TC", "sans-serif"],
+      },
+    },
+  },
+}
+</script>
+<style>
+html.spring {
+  --primary: #6B7F5E;
+  --secondary: #9B7BB0;
+  --accent: #D4A574;
+  --bg-wash-1: #F0F5EB;
+  --bg-wash-2: #E8F0D8;
+  --bg-wash-3: #F2E8F5;
+  --on-surface: #2A3325;
+  --on-surface-variant: #4A5544;
+  --outline-variant: #C4D1B8;
+  --gradient-body: radial-gradient(circle at top left, #F0F5EB 0%, #E8F0D8 40%, #F2E8F5 100%);
+  --gradient-header: linear-gradient(135deg, #6B7F5E 0%, #9B7BB0 100%);
+}
+body { background: var(--gradient-body); min-height: 100vh; }
+.watercolor-wash-header {
+  background: var(--gradient-header);
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  mask-size: 100% 100%; -webkit-mask-size: 100% 100%;
+}
+.hand-drawn-border {
+  border: 2px solid var(--primary);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.question { margin-bottom: 1.25rem; break-inside: avoid; }
+.question p.stem { font-size: 17px; line-height: 1.55; margin-bottom: 0.25rem; }
+.question .options { font-size: 16px; line-height: 1.5; padding-left: 1rem; color: var(--on-surface-variant); }
+.info-line { border-bottom: 1.5px solid var(--on-surface); display: inline-block; min-width: 8rem; }
+@media print {
+  body { background: white !important; }
+  .watercolor-wash-header { background: var(--primary) !important; mask-image: none !important; -webkit-mask-image: none !important; }
+  main { max-width: 100% !important; padding: 0 1.5rem !important; }
+  .question { break-inside: avoid; }
+}
+</style>
+</head>
+<body class="font-body text-[var(--on-surface)]">
+
+<main class="max-w-[900px] mx-auto px-8 py-6">
+
+  <!-- HERO -->
+  <section class="mb-5 text-center">
+    <div class="watercolor-wash-header p-5 mb-3 inline-block w-full">
+      <h1 class="font-headline text-3xl md:text-4xl text-white leading-tight font-bold italic mb-1">Phrasal Verb Quiz</h1>
+      <p class="text-white/90 font-label tracking-[0.15em] text-sm">Basic Version — Three Choices</p>
+    </div>
+  </section>
+
+  <!-- 學生資訊欄 -->
+  <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-5 py-3 mb-6 flex flex-wrap gap-6 text-[17px]">
+    <span>班級：<span class="info-line">&nbsp;</span></span>
+    <span>座號：<span class="info-line">&nbsp;</span></span>
+    <span>姓名：<span class="info-line">&nbsp;</span></span>
+  </div>
+
+  <!-- 說明 -->
+  <p class="text-[17px] leading-[1.55] mb-5 text-[var(--on-surface-variant)]">
+    <strong>範圍：</strong>講義 #175–#200&emsp;|&emsp;<strong>題數：</strong>20 題&emsp;|&emsp;Choose the best answer to fill in the blank.
+  </p>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-2 opacity-40 mb-4">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+  </div>
+
+  <!-- 題目 -->
+  <div class="question"><p class="stem"><strong>1.</strong> We need to ______ a plan for the school trip. Any ideas?</p><p class="options">(A) think over&emsp;(B) think up&emsp;(C) talk over</p></div>
+  <div class="question"><p class="stem"><strong>2.</strong> Please ______ the jacket before you buy it. The size might be wrong.</p><p class="options">(A) try out&emsp;(B) try on&emsp;(C) wear out</p></div>
+  <div class="question"><p class="stem"><strong>3.</strong> ______ for the wet floor — someone just mopped it.</p><p class="options">(A) Warm up&emsp;(B) Wake up&emsp;(C) Watch out</p></div>
+  <div class="question"><p class="stem"><strong>4.</strong> He ______ me ______ going to the concert, even though I had homework.</p><p class="options">(A) talked ... into&emsp;(B) talked ... over&emsp;(C) split ... into</p></div>
+  <div class="question"><p class="stem"><strong>5.</strong> Can we ______ the project details before the meeting tomorrow?</p><p class="options">(A) talk over&emsp;(B) talk into&emsp;(C) think up</p></div>
+  <div class="question"><p class="stem"><strong>6.</strong> I ______ all night to finish my report. Now I can't stop yawning.</p><p class="options">(A) stayed out&emsp;(B) stayed up&emsp;(C) woke up</p></div>
+  <div class="question"><p class="stem"><strong>7.</strong> Mom said, "______ before dinner — your hands are dirty!"</p><p class="options">(A) Warm up&emsp;(B) Tidy up&emsp;(C) Wash up</p></div>
+  <div class="question"><p class="stem"><strong>8.</strong> The class will ______ three groups for the science experiment.</p><p class="options">(A) split up&emsp;(B) split into&emsp;(C) switch off</p></div>
+  <div class="question"><p class="stem"><strong>9.</strong> Please ______ the light. It's too dark in here.</p><p class="options">(A) switch off&emsp;(B) switch on&emsp;(C) throw away</p></div>
+  <div class="question"><p class="stem"><strong>10.</strong> Let me ______ it ______ for a few days before I give you an answer.</p><p class="options">(A) think ... up&emsp;(B) think ... over&emsp;(C) talk ... into</p></div>
+  <div class="question"><p class="stem"><strong>11.</strong> Don't ______ these old books — we can donate them.</p><p class="options">(A) use up&emsp;(B) throw away&emsp;(C) tidy up</p></div>
+  <div class="question"><p class="stem"><strong>12.</strong> If you have a question, please ______ so the teacher can hear you.</p><p class="options">(A) speak for&emsp;(B) slow down&emsp;(C) speak up</p></div>
+  <div class="question"><p class="stem"><strong>13.</strong> ______ me ______ at six tomorrow. I have an early bus.</p><p class="options">(A) Wake ... up&emsp;(B) Warm ... up&emsp;(C) Wash ... up</p></div>
+  <div class="question"><p class="stem"><strong>14.</strong> We ______ all the paper. Can someone bring more from the office?</p><p class="options">(A) wore out&emsp;(B) threw away&emsp;(C) used up</p></div>
+  <div class="question"><p class="stem"><strong>15.</strong> ______ your room before your grandma comes, please.</p><p class="options">(A) Throw away&emsp;(B) Tidy up&emsp;(C) Try on</p></div>
+  <div class="question"><p class="stem"><strong>16.</strong> ______, you're driving too fast! The speed limit is 50.</p><p class="options">(A) Slow down&emsp;(B) Stay out&emsp;(C) Switch off</p></div>
+  <div class="question"><p class="stem"><strong>17.</strong> No matter what happens, I'll ______ you. That's what friends do.</p><p class="options">(A) stick to&emsp;(B) stick with&emsp;(C) split up</p></div>
+  <div class="question"><p class="stem"><strong>18.</strong> I ran so much that my new shoes are already ______.</p><p class="options">(A) used up&emsp;(B) thrown away&emsp;(C) worn out</p></div>
+  <div class="question"><p class="stem"><strong>19.</strong> Please ______ your phones during class. No distractions.</p><p class="options">(A) switch on&emsp;(B) switch off&emsp;(C) throw away</p></div>
+  <div class="question"><p class="stem"><strong>20.</strong> Let's do some stretches and ______ before the race starts.</p><p class="options">(A) warm up&emsp;(B) wake up&emsp;(C) wash up</p></div>
+
+</main>
+
+<footer class="bg-[var(--bg-wash-1)] w-full mt-4 pb-4">
+  <div class="max-w-4xl mx-auto flex flex-col items-center gap-2 px-6 text-center">
+    <div class="w-full opacity-15 flex justify-center items-center gap-2 py-1">
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+    </div>
+    <p class="text-[var(--secondary)] font-body text-xs tracking-widest uppercase opacity-60">9C English — Week 6 — Phrasal Verb Quiz (Basic)</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -13,11 +13,13 @@
 // 選項：
 //   --fit-page       自動調整間距，讓內容剛好填滿指定頁數
 //   --pages=N        目標頁數（預設 1）；搭配 --fit-page 使用
+//   --auto           自動模式：先自然渲染偵測頁數，再調整間距填滿（等同 --fit-page --pages=自然頁數）
 //   --dry-run        不輸出 PDF，僅輸出 JSON 量測結果（供 AI 判斷）
 //
 // 範例：
 //   node publish/scripts/html-to-pdf.js temp/beautify-學習單.html temp/學習單.pdf --fit-page
 //   node publish/scripts/html-to-pdf.js temp/beautify-學習單.html --fit-page --pages=2
+//   node publish/scripts/html-to-pdf.js temp/beautify-學習單.html --auto
 //   node publish/scripts/html-to-pdf.js temp/beautify-學習單.html --fit-page --dry-run
 //
 // 版面規格（David 確認，2026-03-20）：
@@ -34,6 +36,11 @@
 //   4. 若頁數不符目標，二分搜尋微調 scale
 //   5. 單頁模式：只調間距，字級不動
 //   6. 多頁模式：間距 + 字級同步放大，舒適閱讀
+//
+// --auto 邏輯：
+//   1. 先以原始 CSS 自然渲染，取得 PDF 自然頁數 N
+//   2. 以 --fit-page --pages=N 填滿 N 頁
+//   3. 自動完成，不需 AI 手動判斷
 //
 // --dry-run 輸出格式（JSON，供 AI 解析）：
 //   {
@@ -107,27 +114,14 @@ function buildFitPageCSS(spacingScale, fontScale = 1.0) {
   return `
     /* ── fit-page spacing=${s.toFixed(3)} font=${f.toFixed(3)} ── */
 
+    /* ── 學習單類型（answer-line, worksheet-header）── */
     .answer-line      { min-height: calc(2.4em * ${s}) !important; }
     .answer-line-tall { min-height: calc(4.2em * ${s}) !important; }
-
-    section            { margin-bottom: calc(12px * ${s}) !important; }
-    section p          { margin-bottom: calc(8px * ${s}) !important; }
-
-    main {
-      padding-top:    calc(16px * ${s}) !important;
-      padding-bottom: calc(16px * ${s}) !important;
-      ${f !== 1.0 ? `font-size: calc(1em * ${f}) !important;` : ''}
-    }
 
     .worksheet-header {
       padding-top:    calc(12px * ${s}) !important;
       padding-bottom: calc(12px * ${s}) !important;
       margin-bottom:  calc(8px * ${s}) !important;
-    }
-
-    .flex.justify-center {
-      padding-top:    calc(4px * ${s}) !important;
-      padding-bottom: calc(4px * ${s}) !important;
     }
 
     .task-card {
@@ -139,6 +133,46 @@ function buildFitPageCSS(spacingScale, fontScale = 1.0) {
     .preview-table td, .preview-table th {
       padding-top:    calc(3px * ${s}) !important;
       padding-bottom: calc(3px * ${s}) !important;
+    }
+
+    /* ── 考卷/測驗類型（question, stem, options, explanation）── */
+    .question {
+      margin-bottom: calc(12px * ${s}) !important;
+    }
+    .question p.stem {
+      margin-bottom: calc(3px * ${s}) !important;
+      ${f !== 1.0 ? `font-size: calc(1em * ${f}) !important;` : ''}
+    }
+    .question .options {
+      ${f !== 1.0 ? `font-size: calc(0.94em * ${f}) !important;` : ''}
+    }
+    .question .explanation {
+      margin-top: calc(2px * ${s}) !important;
+      ${f !== 1.0 ? `font-size: calc(0.88em * ${f}) !important;` : ''}
+    }
+
+    /* ── 通用結構 ── */
+    section            { margin-bottom: calc(12px * ${s}) !important; }
+    section p          { margin-bottom: calc(8px * ${s}) !important; }
+
+    main {
+      padding-top:    calc(16px * ${s}) !important;
+      padding-bottom: calc(16px * ${s}) !important;
+      ${f !== 1.0 ? `font-size: calc(1em * ${f}) !important;` : ''}
+    }
+
+    .section-label {
+      margin-bottom: calc(10px * ${s}) !important;
+    }
+
+    .watercolor-wash-header {
+      padding: calc(16px * ${s}) !important;
+      margin-bottom: calc(8px * ${s}) !important;
+    }
+
+    .flex.justify-center {
+      padding-top:    calc(4px * ${s}) !important;
+      padding-bottom: calc(4px * ${s}) !important;
     }
 
     .hand-drawn-border {
@@ -176,7 +210,7 @@ function buildFitPageCSS(spacingScale, fontScale = 1.0) {
 
 // ── 主函式 ───────────────────────────────────────────
 async function htmlToPdf(inputPath, outputPath, options = {}) {
-  const { fitPage = false, targetPages = 1, dryRun = false } = options;
+  const { fitPage = false, targetPages = 1, dryRun = false, auto = false } = options;
 
   const absoluteInput = path.resolve(inputPath);
   const absoluteOutput = path.resolve(outputPath);
@@ -231,16 +265,48 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
       return main ? main.scrollHeight : document.body.scrollHeight;
     });
 
+    // 計算 PDF 頁數：必須寫入暫存檔再讀取
+    // （Puppeteer buffer 模式與 file 模式的 PDF 結構不同，buffer 會漏頁）
+    const probePath = absoluteOutput + '.probe.pdf';
     const getPdfPageCount = async () => {
-      const buf = await page.pdf({ ...PDF_OPTIONS });
+      await page.pdf({ path: probePath, ...PDF_OPTIONS });
+      const buf = fs.readFileSync(probePath);
       const pdfStr = buf.toString('binary');
-      const match = pdfStr.match(/\/Count\s+(\d+)/);
-      return match ? parseInt(match[1], 10) : 1;
+      const matches = pdfStr.matchAll(/\/Count\s+(\d+)/g);
+      let maxCount = 1;
+      for (const m of matches) {
+        const n = parseInt(m[1], 10);
+        if (n > maxCount) maxCount = n;
+      }
+      try { fs.unlinkSync(probePath); } catch (_) {}
+      return maxCount;
     };
 
+    // ── --auto：自動偵測自然頁數再填滿 ────────────────
+    let effectiveFitPage = fitPage;
+    let effectiveTargetPages = targetPages;
+
+    if (auto) {
+      // 自然渲染：生成完整 PDF 到暫存檔，用檔案大小與頁數驗證
+      const tmpPath = absoluteOutput + '.auto-probe.pdf';
+      await page.pdf({ path: tmpPath, ...PDF_OPTIONS });
+      const tmpBuf = fs.readFileSync(tmpPath);
+      const tmpStr = tmpBuf.toString('binary');
+      const countMatches = tmpStr.matchAll(/\/Count\s+(\d+)/g);
+      let naturalPages = 1;
+      for (const m of countMatches) {
+        const n = parseInt(m[1], 10);
+        if (n > naturalPages) naturalPages = n;
+      }
+      fs.unlinkSync(tmpPath);
+      console.log(`[auto] Natural render: ${naturalPages} page(s) (probe file: ${tmpBuf.length} bytes)`);
+      effectiveFitPage = true;
+      effectiveTargetPages = naturalPages;
+    }
+
     // ── --fit-page：自動適配 ─────────────────────────
-    if (fitPage) {
-      const targetHeight = A4_USABLE_HEIGHT_PX * targetPages;
+    if (effectiveFitPage) {
+      const targetHeight = A4_USABLE_HEIGHT_PX * effectiveTargetPages;
 
       // ── 階段一：兩點校準（快速逼近）──────────────
       // 校準點 1：scale = 1.0（原始）
@@ -256,7 +322,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
       const H_fixed = H1 - H_variable;     // 固定部分（文字、邊框）
 
       console.log(`[fit-page] H_fixed=${Math.round(H_fixed)}px, H_variable=${Math.round(H_variable)}px`);
-      console.log(`[fit-page] H@1.0=${H1}px, H@0.5=${H05}px, Target=${targetHeight}px (${targetPages} page(s))`);
+      console.log(`[fit-page] H@1.0=${H1}px, H@0.5=${H05}px, Target=${targetHeight}px (${effectiveTargetPages} page(s))`);
 
       let initialScale;
       if (H_variable > 0) {
@@ -267,7 +333,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
 
       // 多頁模式：同步放大字級
       let fontScale = 1.0;
-      if (targetPages >= 2 && initialScale > 1.0) {
+      if (effectiveTargetPages >= 2 && initialScale > 1.0) {
         // 字級放大比例 = 間距放大的 30%（避免過度膨脹）
         fontScale = 1.0 + (initialScale - 1.0) * 0.3;
         fontScale = Math.min(fontScale, 1.25);  // 字級最大放大 25%
@@ -291,14 +357,14 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
       let actualPages = await getPdfPageCount();
       let finalScale = clampedScale;
 
-      console.log(`[fit-page] After calibration: scale=${finalScale.toFixed(3)}, pages=${actualPages}, target=${targetPages}`);
+      console.log(`[fit-page] After calibration: scale=${finalScale.toFixed(3)}, pages=${actualPages}, target=${effectiveTargetPages}`);
 
-      if (actualPages !== targetPages) {
+      if (actualPages !== effectiveTargetPages) {
         console.log(`[fit-page] Page count mismatch. Starting binary search...`);
 
         // 二分搜尋：找到剛好符合目標頁數的 scale
         let lo, hi;
-        if (actualPages > targetPages) {
+        if (actualPages > effectiveTargetPages) {
           // 頁數太多 → 需要更小的 scale（壓縮）
           lo = MIN_SCALE;
           hi = finalScale;
@@ -312,7 +378,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
         for (let i = 0; i < 8; i++) {
           const mid = (lo + hi) / 2;
           let fScale = fontScale;
-          if (targetPages >= 2 && mid > 1.0) {
+          if (effectiveTargetPages >= 2 && mid > 1.0) {
             fScale = 1.0 + (mid - 1.0) * 0.3;
             fScale = Math.min(fScale, 1.25);
           }
@@ -323,7 +389,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
 
           console.log(`[fit-page] Binary search #${i + 1}: scale=${mid.toFixed(3)}, pages=${midPages}`);
 
-          if (midPages <= targetPages) {
+          if (midPages <= effectiveTargetPages) {
             // 頁數符合或偏少 → 可以試著放大
             lo = mid;
             finalScale = mid;
@@ -345,7 +411,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
 
       // ── 階段三：如果剛好符合目標頁數，嘗試填滿空間 ──
       // 在不超出頁數的前提下，盡量放大 scale 以填滿空間
-      if (actualPages === targetPages && finalScale < MAX_SCALE) {
+      if (actualPages === effectiveTargetPages && finalScale < MAX_SCALE) {
         // 從目前的 scale 開始，每次嘗試加一點
         let testScale = finalScale;
         const step = 0.02;  // 每次加 2%
@@ -355,7 +421,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
           if (candidate > MAX_SCALE) break;
 
           let fScale = fontScale;
-          if (targetPages >= 2 && candidate > 1.0) {
+          if (effectiveTargetPages >= 2 && candidate > 1.0) {
             fScale = 1.0 + (candidate - 1.0) * 0.3;
             fScale = Math.min(fScale, 1.25);
           }
@@ -364,7 +430,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
           await reflow();
           const testPages = await getPdfPageCount();
 
-          if (testPages <= targetPages) {
+          if (testPages <= effectiveTargetPages) {
             testScale = candidate;
             fontScale = fScale;
             console.log(`[fit-page] Fill-up: scale=${candidate.toFixed(3)} still fits (${testPages} page(s))`);
@@ -382,7 +448,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
 
       // ── 最終結果 ─────────────────────────────────
       const finalHeight = await getHeight();
-      const pageUsableHeight = A4_USABLE_HEIGHT_PX * targetPages;
+      const pageUsableHeight = A4_USABLE_HEIGHT_PX * effectiveTargetPages;
       const fillPercent = Math.round((finalHeight / pageUsableHeight) * 100);
 
       // 擠壓等級判定（僅在壓縮模式有意義）
@@ -399,7 +465,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
       }
 
       // 如果目標是多頁，squeeze 一定是 comfortable
-      if (targetPages >= 2 && finalScale >= 1.0) {
+      if (effectiveTargetPages >= 2 && finalScale >= 1.0) {
         squeezeLevel = 'comfortable';
         recommendation = 'ok';
       }
@@ -417,7 +483,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
           scale: parseFloat(finalScale.toFixed(3)),
           font_scale: parseFloat(fontScale.toFixed(3)),
           direction: finalDirection,
-          target_pages: targetPages,
+          target_pages: effectiveTargetPages,
           actual_pages: actualPages,
           fill_percent: fillPercent,
           squeeze_level: squeezeLevel,
@@ -427,7 +493,7 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
         return result;
       }
 
-      if (clampedScale < SQUEEZE_TIGHT && targetPages === 1) {
+      if (clampedScale < SQUEEZE_TIGHT && effectiveTargetPages === 1) {
         console.log(`[fit-page] WARNING: Content is very tight at scale=${finalScale.toFixed(3)}. Consider --pages=2 for better readability.`);
       }
     }
@@ -452,6 +518,7 @@ const args = process.argv.slice(2);
 // 解析選項
 const fitPage = args.includes('--fit-page');
 const dryRun = args.includes('--dry-run');
+const auto = args.includes('--auto');
 
 let targetPages = 1;
 const pagesArg = args.find(a => a.startsWith('--pages='));
@@ -463,9 +530,15 @@ if (pagesArg) {
   }
 }
 
-// --dry-run 必須搭配 --fit-page
-if (dryRun && !fitPage) {
-  console.error('Error: --dry-run requires --fit-page');
+// --dry-run 必須搭配 --fit-page 或 --auto
+if (dryRun && !fitPage && !auto) {
+  console.error('Error: --dry-run requires --fit-page or --auto');
+  process.exit(1);
+}
+
+// --auto 與 --fit-page 互斥（auto 已內含 fit-page 邏輯）
+if (auto && fitPage) {
+  console.error('Error: --auto and --fit-page are mutually exclusive (--auto includes fit-page)');
   process.exit(1);
 }
 
@@ -480,7 +553,8 @@ if (!input) {
   console.error('  output.pdf       Output PDF file path (default: same name with .pdf)');
   console.error('  --fit-page       Auto-adjust spacing to fill target page count');
   console.error('  --pages=N        Target page count (default: 1), used with --fit-page');
-  console.error('  --dry-run        Output metrics JSON only, no PDF (used with --fit-page)');
+  console.error('  --auto           Auto-detect natural page count, then fit content to fill evenly');
+  console.error('  --dry-run        Output metrics JSON only, no PDF (used with --fit-page or --auto)');
   console.error('');
   console.error('Examples:');
   console.error('  node html-to-pdf.js input.html output.pdf --fit-page');
@@ -496,7 +570,7 @@ if (outputFile === input) {
   outputFile = input + '.pdf';
 }
 
-htmlToPdf(input, outputFile, { fitPage, targetPages, dryRun }).catch(err => {
+htmlToPdf(input, outputFile, { fitPage, targetPages, dryRun, auto }).catch(err => {
   console.error('PDF generation failed:', err.message);
   process.exit(1);
 });

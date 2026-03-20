@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="spring" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Phrasal Verb Quiz — Advanced</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        "headline": ["Playfair Display", "Noto Serif TC", "Georgia", "serif"],
+        "body": ["Plus Jakarta Sans", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "sans-serif"],
+        "label": ["Plus Jakarta Sans", "Noto Sans TC", "sans-serif"],
+      },
+    },
+  },
+}
+</script>
+<style>
+html.spring {
+  --primary: #6B7F5E;
+  --secondary: #9B7BB0;
+  --accent: #D4A574;
+  --bg-wash-1: #F0F5EB;
+  --bg-wash-2: #E8F0D8;
+  --bg-wash-3: #F2E8F5;
+  --on-surface: #2A3325;
+  --on-surface-variant: #4A5544;
+  --outline-variant: #C4D1B8;
+  --gradient-body: radial-gradient(circle at top left, #F0F5EB 0%, #E8F0D8 40%, #F2E8F5 100%);
+  --gradient-header: linear-gradient(135deg, #6B7F5E 0%, #9B7BB0 100%);
+}
+body { background: var(--gradient-body); min-height: 100vh; }
+.watercolor-wash-header {
+  background: var(--gradient-header);
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  mask-size: 100% 100%; -webkit-mask-size: 100% 100%;
+}
+.hand-drawn-border {
+  border: 2px solid var(--primary);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.question { margin-bottom: 1.25rem; break-inside: avoid; }
+.question p.stem { font-size: 17px; line-height: 1.55; margin-bottom: 0.25rem; }
+.question .options { font-size: 16px; line-height: 1.5; padding-left: 1rem; color: var(--on-surface-variant); }
+.info-line { border-bottom: 1.5px solid var(--on-surface); display: inline-block; min-width: 8rem; }
+@media print {
+  body { background: white !important; }
+  .watercolor-wash-header { background: var(--primary) !important; mask-image: none !important; -webkit-mask-image: none !important; }
+  main { max-width: 100% !important; padding: 0 1.5rem !important; }
+  .question { break-inside: avoid; }
+}
+</style>
+</head>
+<body class="font-body text-[var(--on-surface)]">
+
+<main class="max-w-[900px] mx-auto px-8 py-6">
+
+  <section class="mb-5 text-center">
+    <div class="watercolor-wash-header p-5 mb-3 inline-block w-full">
+      <h1 class="font-headline text-3xl md:text-4xl text-white leading-tight font-bold italic mb-1">Phrasal Verb Quiz</h1>
+      <p class="text-white/90 font-label tracking-[0.15em] text-sm">Advanced Version — Four Choices</p>
+    </div>
+  </section>
+
+  <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-5 py-3 mb-6 flex flex-wrap gap-6 text-[17px]">
+    <span>班級：<span class="info-line">&nbsp;</span></span>
+    <span>座號：<span class="info-line">&nbsp;</span></span>
+    <span>姓名：<span class="info-line">&nbsp;</span></span>
+  </div>
+
+  <p class="text-[17px] leading-[1.55] mb-5 text-[var(--on-surface-variant)]">
+    <strong>範圍：</strong>講義 #175–#200&emsp;|&emsp;<strong>題數：</strong>20 題&emsp;|&emsp;Choose the best answer to fill in the blank.
+  </p>
+
+  <div class="flex justify-center gap-3 py-2 opacity-40 mb-4">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+  </div>
+
+  <div class="question"><p class="stem"><strong>1.</strong> We had a long discussion, but in the end she ______ me ______ changing my topic.</p><p class="options">(A) talked ... over&emsp;(B) talked ... into&emsp;(C) thought ... over&emsp;(D) split ... into</p></div>
+  <div class="question"><p class="stem"><strong>2.</strong> The coach told us to ______ three teams and practice in different areas.</p><p class="options">(A) split up&emsp;(B) stick with&emsp;(C) split into&emsp;(D) switch off</p></div>
+  <div class="question"><p class="stem"><strong>3.</strong> "Don't panic — just ______ and tell me exactly what happened."</p><p class="options">(A) speak for&emsp;(B) slow down&emsp;(C) stay out&emsp;(D) switch off</p></div>
+  <div class="question"><p class="stem"><strong>4.</strong> I want to ______ this new recipe before the cooking contest next week.</p><p class="options">(A) try on&emsp;(B) try out&emsp;(C) tidy up&emsp;(D) think up</p></div>
+  <div class="question"><p class="stem"><strong>5.</strong> He was so sick this morning that he ______ right after breakfast.</p><p class="options">(A) wore out&emsp;(B) used up&emsp;(C) threw up&emsp;(D) woke up</p></div>
+  <div class="question"><p class="stem"><strong>6.</strong> The teacher said, "If you don't agree, ______ and share your opinion."</p><p class="options">(A) speak for&emsp;(B) speak up&emsp;(C) slow down&emsp;(D) stay out</p></div>
+  <div class="question"><p class="stem"><strong>7.</strong> We ______ all the glue sticks during art class. There's nothing left.</p><p class="options">(A) threw away&emsp;(B) wore out&emsp;(C) tidied up&emsp;(D) used up</p></div>
+  <div class="question"><p class="stem"><strong>8.</strong> You really need to ______ your plan. Don't keep changing it every day.</p><p class="options">(A) stick to&emsp;(B) stick with&emsp;(C) split up&emsp;(D) switch on</p></div>
+  <div class="question"><p class="stem"><strong>9.</strong> It's midnight — why are you still ______? You have school tomorrow!</p><p class="options">(A) staying out&emsp;(B) staying up&emsp;(C) waking up&emsp;(D) watching out</p></div>
+  <div class="question"><p class="stem"><strong>10.</strong> Let's ______ the advantages and disadvantages before we make a final decision.</p><p class="options">(A) think up&emsp;(B) talk into&emsp;(C) talk over&emsp;(D) throw away</p></div>
+  <div class="question"><p class="stem"><strong>11.</strong> ______! Someone left a skateboard on the stairs.</p><p class="options">(A) Wake up&emsp;(B) Warm up&emsp;(C) Slow down&emsp;(D) Watch out</p></div>
+  <div class="question"><p class="stem"><strong>12.</strong> My alarm didn't go off, so nobody ______ me ______ this morning.</p><p class="options">(A) woke ... up&emsp;(B) warmed ... up&emsp;(C) washed ... up&emsp;(D) wore ... out</p></div>
+  <div class="question"><p class="stem"><strong>13.</strong> I don't ______ the whole class — this is just my personal view.</p><p class="options">(A) speak up&emsp;(B) speak for&emsp;(C) talk over&emsp;(D) talk into</p></div>
+  <div class="question"><p class="stem"><strong>14.</strong> ______ the TV when you leave. Don't waste electricity.</p><p class="options">(A) Switch on&emsp;(B) Throw away&emsp;(C) Switch off&emsp;(D) Slow down</p></div>
+  <div class="question"><p class="stem"><strong>15.</strong> Who ______ the idea of having a movie night every Friday?</p><p class="options">(A) thought over&emsp;(B) thought up&emsp;(C) talked over&emsp;(D) tried out</p></div>
+  <div class="question"><p class="stem"><strong>16.</strong> These batteries are completely ______. We need to buy new ones.</p><p class="options">(A) thrown away&emsp;(B) used up&emsp;(C) worn out&emsp;(D) tidied up</p></div>
+  <div class="question"><p class="stem"><strong>17.</strong> This is between me and her — please ______ it.</p><p class="options">(A) stick to&emsp;(B) stay up&emsp;(C) stay out of&emsp;(D) speak for</p></div>
+  <div class="question"><p class="stem"><strong>18.</strong> Don't ______ that plastic bag. We can use it again.</p><p class="options">(A) tidy up&emsp;(B) throw away&emsp;(C) use up&emsp;(D) try out</p></div>
+  <div class="question"><p class="stem"><strong>19.</strong> Go ______ — dinner is almost ready. Just wash your hands.</p><p class="options">(A) tidy up&emsp;(B) warm up&emsp;(C) wash up&emsp;(D) wake up</p></div>
+  <div class="question"><p class="stem"><strong>20.</strong> Three hours of hiking in the sun completely ______ the children ______. They all fell asleep in the car.</p><p class="options">(A) used ... up&emsp;(B) threw ... away&emsp;(C) wore ... out&emsp;(D) woke ... up</p></div>
+
+</main>
+
+<footer class="bg-[var(--bg-wash-1)] w-full mt-4 pb-4">
+  <div class="max-w-4xl mx-auto flex flex-col items-center gap-2 px-6 text-center">
+    <div class="w-full opacity-15 flex justify-center items-center gap-2 py-1">
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+    </div>
+    <p class="text-[var(--secondary)] font-body text-xs tracking-widest uppercase opacity-60">9C English — Week 6 — Phrasal Verb Quiz (Advanced)</p>
+  </div>
+</footer>
+
+</body>
+</html>
