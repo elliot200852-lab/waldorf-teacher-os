@@ -177,21 +177,57 @@ Start-Process "temp\beautify-{filename}.html"
 
 5. 若教師要求調整，修改 HTML 後重新存檔並刷新預覽。
 
-### Step 6 — 輸出
+### Step 6 — 格式選擇與輸出
 
-教師確認後：
+教師確認預覽滿意後：
 
-1. **存入正式位置**：將 HTML 存入對應的 content/ 資料夾
+1. **詢問輸出格式**：「要輸出哪種格式？」
+   - (1) 僅 HTML
+   - (2) 僅 PDF
+   - (3) 兩者都要
+
+2. **依選擇執行：**
+
+   **HTML 輸出：**
+   - 存入對應的 content/ 資料夾
    - 命名規則：`{原始檔名}-美化版.html`
 
-2. **詢問上傳**：「要上傳到 Google Drive 嗎？」
-   - 若要：使用 GWS CLI 上傳 HTML 檔案到對應的 Drive 資料夾
+   **PDF 輸出（自動化，不再手動 Cmd+P）：**
+   - 確認暫存 HTML 存在（Step 5 產生的 temp/ 檔案）
+   - **預設以自然版面生成 PDF**（不加 `--fit-page`），讓內容以最舒適的視覺呈現：
+     ```bash
+     node publish/scripts/html-to-pdf.js <html-path> <pdf-path>
+     ```
+   - PDF 命名規則：`{原始檔名}-美化版.pdf`
+   - 生成後開啟 PDF 讓教師預覽
+   - **最後詢問**：「PDF 已生成。如果需要壓縮到特定頁數（例如一頁），告訴我，我會個案處理。」
+   - 若教師要求壓縮：
+     - 壓成一頁 → `node publish/scripts/html-to-pdf.js <html-path> <pdf-path> --fit-page`
+     - 填滿兩頁 → `node publish/scripts/html-to-pdf.js <html-path> <pdf-path> --fit-page --pages=2`
+     - 可先用 `--dry-run` 量測再決定策略
 
-3. **PDF 輸出**（若教師需要）：
-   - 提示教師在瀏覽器中按 `Cmd+P`（Mac）或 `Ctrl+P`（Windows）
-   - 選擇「另存為 PDF」
-   - 邊界選「無」或「最小」
-   - **務必勾選「背景圖形」**以保留裝飾色塊
+   **兩者都要：**
+   - 先存 HTML，再從該 HTML 生成 PDF（同上流程）
+
+3. **詢問上傳**：「要上傳到 Google Drive 嗎？」
+   - 若要：使用 GWS CLI 上傳所選格式的檔案到對應的 Drive 資料夾
+
+### fit-page 參數說明
+
+| 參數 | 說明 |
+|------|------|
+| `--fit-page` | 自動調整間距，讓內容填滿目標頁數 |
+| `--pages=N` | 目標頁數（預設 1），搭配 `--fit-page` |
+| `--dry-run` | 僅量測，輸出 JSON 不生成 PDF |
+
+### dry-run JSON 欄位
+
+| 欄位 | 說明 |
+|------|------|
+| `scale` | 間距縮放倍率（< 1 壓縮，> 1 放大） |
+| `font_scale` | 字級縮放倍率（僅多頁模式 > 1） |
+| `squeeze_level` | `comfortable`（>= 0.80）/ `tight`（>= 0.65）/ `very_tight`（< 0.65） |
+| `recommendation` | `ok` 或 `suggest_2_pages` |
 
 ## 注意事項
 
@@ -200,4 +236,7 @@ Start-Process "temp\beautify-{filename}.html"
 - 圖片：若 .md 中無圖片引用，不要自行插入圖片，用 Material Icons 作為裝飾替代
 - 中文字體 fallback 鏈已內建：Noto Sans TC → PingFang TC → Microsoft JhengHei → sans-serif
 - @media print 樣式已內建在模板中，PDF 列印時自動套用（白底、隱藏導航、避免切斷內容）
-- 此技能適用於所有 AI 平台（Claude Code、Gemini、ChatGPT）——無終端機的 AI 可跳過 Step 5 的瀏覽器開啟，改為直接輸出 HTML 內容
+- PDF 生成依賴 Puppeteer（首次使用需 `npm install puppeteer`）
+- PDF 版面規格固定於 `publish/scripts/html-to-pdf.js`，修改需經 David 確認
+- 若 Puppeteer 未安裝，AI 應提示安裝指令並在安裝後重試
+- 此技能適用於所有 AI 平台（Claude Code、Gemini、ChatGPT）——無終端機的 AI 可跳過 Step 5 的瀏覽器開啟與 PDF 自動生成，改為直接輸出 HTML 內容
