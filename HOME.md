@@ -409,52 +409,52 @@ aliases:
 
 ### 系統技能正本（ai-core/skills/）
 
-| 技能                    | 觸發語                       | 說明                                    |
-| --------------------- | ------------------------- | ------------------------------------- |
-| [[opening]]           | 「開工」「早安」                  | 新對話開場                                 |
-| [[load]]              | 「載入 9C english」           | 載入班級與科目脈絡                             |
-| [[status]]            | 「現在在哪」                    | 快速查詢進度                                |
-| [[syllabus]]          | 「開始大綱」                    | 學季教學大綱規劃                              |
-| [[lesson]]            | 「進入備課」                    | 課堂教學設計                                |
-| [[wrap-up]]           | 「收工」「存檔」「收尾」              | 進度同步 + Obsidian 修正 + Git 存檔推送         |
-| [[di-check]]          | 「查 DI」                    | 差異化合規核對                               |
-| [[ref]]               | 「載入教學哲學」                  | 按需載入 Reference                        |
-| [[homeroom]]          | 「導師業務」                    | 班級經營與個案討論                             |
-| [[block-end]]         | 「區塊結束」                    | 主課程區塊反思                               |
-| [[rhythm]]            | 「設計節奏」                    | 課堂節奏設計                                |
-| [[student-note]]      | 「記錄學生」                    | 學生觀察記錄                                |
-| [[teaching-log]]      | 「教學紀錄」                    | 教師教學回顧與觀察                             |
-| [[parent-letter]]     | 「寫家長信」                    | 家長信草稿                                 |
-| [[pull-request]]      | 「發 PR」                    | 合併申請                                  |
-| [[sync-cowork]]       | 「同步 Cowork」               | 編譯 instructions                       |
-| [[drive]]             | 「上傳到雲端」                   | Google Drive 同步                       |
-| [[calendar]]          | 「查行事曆」                    | Google Calendar 操作                    |
-| [[send-email]]        | 「寄信」                      | Gmail 寄送                              |
-| [[sheets]]            | 「開試算表」                    | Google Sheets 操作                      |
-| [[docs-edit]]         | 「編輯文件」                    | Google Docs 編輯                        |
-| [[subject-lesson-45]] | 「設計一堂課」                   | 45 分鐘單堂課設計引擎                          |
-| [[english-45]]        | 「英文課設計」                   | 英文科覆蓋層                                |
-| [[git-history]]       | 「更新週記」                    | Git History 週記管理                      |
-| [[sync-agents]]       | 「同步 Agent」                | 多 AI Agent 同步                         |
-| [[obsidian-sync]]     | 「補標籤」「更新索引」               | Obsidian 標籤與索引同步                      |
-| [[add-teacher]]       | 「加入新老師」                   | 管理員專用：建立新教師 Workspace                 |
-| [[gws-setup]]         | 「設定 gws」                  | Google Workspace CLI 安裝與設定            |
-| [[video-setup]]       | 「建立影片專案」「video setup」     | Remotion 影片專案環境建立                     |
-| [[video]]             | 「做影片」「製作影片」「渲染影片」         | Remotion 影片製作（預覽→修改→渲染）               |
-| [[new-doc]]           | 「生成新檔案」「建立新文件」            | 新建 Markdown 文件路徑與檔名確認                 |
-| [[yt-subtitle]]       | 「下載字幕」「YouTube 字幕」        | YouTube 字幕擷取                          |
-| [[teach-animation]]   | 「教學動畫」「做動畫」「animate」      | 教學動畫生成（Revideo，概念解說與時間線動畫）            |
-| [[poetry-research]]   | 「詩歌研究」「英文詩歌備課」            | 英文主題 → 詩歌 + 詞彙 + 語意場 + 書單             |
-| [[art-in-teaching]]   | 「博物館素材」「找藝術品」「art search」 | Met Museum + Europeana → 畫廊 + AI 教學加工 |
-| [[beautify]]          | 「美化」「做漂亮版」「beautify」       | Markdown → 精美華德福 HTML（四季視覺切換）       |
-| [[check-compat]]      | 「跨平台檢查」「check compat」      | 技能與腳本跨平台相容性檢查                        |
-| [[story-planner]]     | 「今天的故事」「選題」「story plan」    | 臺灣的故事・每日選題                            |
-| [[story-research]]    | 「搜尋素材」「查史料」「story research」 | 臺灣的故事・素材搜尋（API + AI 研究）              |
+| 技能                    | 觸發語                         | 說明                                    |
+| --------------------- | --------------------------- | ------------------------------------- |
+| [[opening]]           | 「開工」「早安」                    | 新對話開場                                 |
+| [[load]]              | 「載入 9C english」             | 載入班級與科目脈絡                             |
+| [[status]]            | 「現在在哪」                      | 快速查詢進度                                |
+| [[syllabus]]          | 「開始大綱」                      | 學季教學大綱規劃                              |
+| [[lesson]]            | 「進入備課」                      | 課堂教學設計                                |
+| [[wrap-up]]           | 「收工」「存檔」「收尾」                | 進度同步 + Obsidian 修正 + Git 存檔推送         |
+| [[di-check]]          | 「查 DI」                      | 差異化合規核對                               |
+| [[ref]]               | 「載入教學哲學」                    | 按需載入 Reference                        |
+| [[homeroom]]          | 「導師業務」                      | 班級經營與個案討論                             |
+| [[block-end]]         | 「區塊結束」                      | 主課程區塊反思                               |
+| [[rhythm]]            | 「設計節奏」                      | 課堂節奏設計                                |
+| [[student-note]]      | 「記錄學生」                      | 學生觀察記錄                                |
+| [[teaching-log]]      | 「教學紀錄」                      | 教師教學回顧與觀察                             |
+| [[parent-letter]]     | 「寫家長信」                      | 家長信草稿                                 |
+| [[pull-request]]      | 「發 PR」                      | 合併申請                                  |
+| [[sync-cowork]]       | 「同步 Cowork」                 | 編譯 instructions                       |
+| [[drive]]             | 「上傳到雲端」                     | Google Drive 同步                       |
+| [[calendar]]          | 「查行事曆」                      | Google Calendar 操作                    |
+| [[send-email]]        | 「寄信」                        | Gmail 寄送                              |
+| [[sheets]]            | 「開試算表」                      | Google Sheets 操作                      |
+| [[docs-edit]]         | 「編輯文件」                      | Google Docs 編輯                        |
+| [[subject-lesson-45]] | 「設計一堂課」                     | 45 分鐘單堂課設計引擎                          |
+| [[english-45]]        | 「英文課設計」                     | 英文科覆蓋層                                |
+| [[git-history]]       | 「更新週記」                      | Git History 週記管理                      |
+| [[sync-agents]]       | 「同步 Agent」                  | 多 AI Agent 同步                         |
+| [[obsidian-sync]]     | 「補標籤」「更新索引」                 | Obsidian 標籤與索引同步                      |
+| [[add-teacher]]       | 「加入新老師」                     | 管理員專用：建立新教師 Workspace                 |
+| [[gws-setup]]         | 「設定 gws」                    | Google Workspace CLI 安裝與設定            |
+| [[video-setup]]       | 「建立影片專案」「video setup」       | Remotion 影片專案環境建立                     |
+| [[video]]             | 「做影片」「製作影片」「渲染影片」           | Remotion 影片製作（預覽→修改→渲染）               |
+| [[new-doc]]           | 「生成新檔案」「建立新文件」              | 新建 Markdown 文件路徑與檔名確認                 |
+| [[yt-subtitle]]       | 「下載字幕」「YouTube 字幕」          | YouTube 字幕擷取                          |
+| [[teach-animation]]   | 「教學動畫」「做動畫」「animate」        | 教學動畫生成（Revideo，概念解說與時間線動畫）            |
+| [[poetry-research]]   | 「詩歌研究」「英文詩歌備課」              | 英文主題 → 詩歌 + 詞彙 + 語意場 + 書單             |
+| [[art-in-teaching]]   | 「博物館素材」「找藝術品」「art search」   | Met Museum + Europeana → 畫廊 + AI 教學加工 |
+| [[beautify]]          | 「美化」「做漂亮版」「beautify」        | Markdown → 精美華德福 HTML（四季視覺切換）         |
+| [[check-compat]]      | 「跨平台檢查」「check compat」       | 技能與腳本跨平台相容性檢查                         |
+| [[story-planner]]     | 「今天的故事」「選題」「story plan」     | 臺灣的故事・每日選題                            |
+| [[story-research]]    | 「搜尋素材」「查史料」「story research」 | 臺灣的故事・素材搜尋（API + AI 研究）               |
 | [[story-writer]]      | 「寫故事」「產出故事」「story write」    | 臺灣的故事・三件套撰寫                           |
 | [[story-verify]]      | 「檢查故事」「品質確認」「story verify」  | 臺灣的故事・品質檢查                            |
-| [[story-archive]]     | 「歸檔故事」「story archive」         | 臺灣的故事・歸檔與索引                           |
-| [[gws-bridge]] | （自動收錄） |
-| [[story-daily]] | （自動收錄） |
+| [[story-archive]]     | 「歸檔故事」「story archive」       | 臺灣的故事・歸檔與索引                           |
+| [[gws-bridge]]        | （自動收錄）                      |                                       |
+| [[story-daily]]       | （自動收錄）                      |                                       |
 
 ---
 
@@ -582,6 +582,8 @@ aliases:
 | [[publish/images/di_steps.png\|di_steps.png]] | 圖片：差異化步驟 |
 | [[publish/images/workflow.png\|workflow.png]] | 圖片：工作流程 |
 | [[assemble-story]] | （自動收錄） |
+| [[beautify-A002-完整版.html]] | A002 水的雕刻刀 完整版 HTML |
+| [[beautify-A003-完整版.html]] | A003 火的禮物 完整版 HTML |
 
 ---
 

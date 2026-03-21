@@ -1,3 +1,14 @@
+---
+aliases:
+  - "A002 水的雕刻刀 黑板畫"
+aliases:
+  - "A002 水的雕刻刀 黑板畫"
+aliases:
+  - "A002 水的雕刻刀 黑板畫"
+aliases:
+  - "A002 水的雕刻刀 黑板畫"
+---
+
 # 黑板畫 Prompt：A002 水的雕刻刀——立霧溪與太魯閣
 
 ## English Prompt（Gemini 製圖用）
