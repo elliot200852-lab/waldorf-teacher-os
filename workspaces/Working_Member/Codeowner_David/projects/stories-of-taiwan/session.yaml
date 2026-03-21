@@ -6,7 +6,7 @@
 
 stories_of_taiwan_session:
   project: stories-of-taiwan
-  last_updated: 2026-03-21
+  last_updated: 2026-03-22
 
   overview:
     name: 臺灣的故事
@@ -18,7 +18,7 @@ stories_of_taiwan_session:
       每篇附教師說書稿、投影圖像清單、黑板畫 prompt。
       年度目標 90-120 篇，依七大區塊時序推進。
     annual_target: 90-120
-    skill_pipeline: story-daily（編排器）→ planner → research → writer → verify → archive
+    skill_pipeline: story-daily v2.0.0（編排器，8 步驟）→ planner → research → writer → verify → gemini → assemble → archive
 
   current_position:
     block: A-origins
@@ -28,7 +28,7 @@ stories_of_taiwan_session:
     last_completed_story: A003
     last_completed_title: 火的禮物——大屯火山與泥火山
     next_story_id: A004
-    status: 島嶼誕生三部曲完成，A002/A003 黑板畫已生成並組裝 HTML
+    status: 島嶼誕生三部曲完成，全部已組裝 HTML/PDF 並上傳 Google Drive
 
   block_progress:
     A-origins: 3    # 目標 15-20
@@ -48,6 +48,14 @@ stories_of_taiwan_session:
     - "五年級語言定位：具體、感官、有人物視角，不說教不灌輸"
     - "故事字數：實際產出約 650-1000 字，規格 300-500 字偏保守，待教師確認是否調整上限"
     - "方案 B 定案：原 A002 水火合篇拆為 A002 水 + A003 火"
+    - "story-daily v2.0.0：新增 8 步驟 Checkpoint 矩陣（FAIL/WARN 分級），每步轉換點強制驗證"
+    - "排程模式 fallback：Chrome/osascript/GWS 不可用時降級策略，pipeline-status.yaml 中斷恢復"
+    - "5 個子技能各加入「入口驗證」前置條件，與 Checkpoint 矩陣對齊"
+    - "assemble-story.js v2.0.0：4 個解析函式重寫 + Google Drive upsert 上傳（先刪舊再傳新）"
+    - "Google Drive 清理：每篇故事只保留最新版 HTML+PDF 各一份"
+    - "授權模型寫入 story-daily.md：除 Step 1 選題外全部預授權，排程模式全自動"
+    - "散落檔案清理：根目錄 3 個 .skill 刪除、git-history PDF 歸位、temp 舊版清除"
+    - "Obsidian sync：17 個故事 .md 加上中文 aliases，2 個 HTML 收錄 HOME.md"
 
   next_action:
     description: "進入「最早的足跡」子主題（A004 起），需教師先覆核 A001-A003"
@@ -58,16 +66,28 @@ stories_of_taiwan_session:
       - "故事正文字數上限是否調整為 500-800"
 
   pipeline_outputs:
+    A001:
+      html: temp/beautify-A001-完整版.html
+      pdf: temp/A001-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A001-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-21
     A002:
       html: temp/beautify-A002-完整版.html
-      chalkboard: AssemblyStory-A002-chalkboard.png
-      assembled: 2026-03-21
+      pdf: temp/A002-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A002-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
     A003:
       html: temp/beautify-A003-完整版.html
-      chalkboard: AssemblyStory-A003-chalkboard.png
-      assembled: 2026-03-21
+      pdf: temp/A003-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A003-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
 
   open_questions:
-    - "story-archive 技能尚未正式執行過"
-    - "scheduled-task 自動排程尚未設定"
-    - "assemble-story.js prompt 解析需調整：目前 chalkboard-prompt.md 格式與腳本 regex 不完全匹配（section 分隔符、prompt 標題）"
+    - "story-archive 技能尚未正式執行過（A001-A003 手動歸檔至 index.yaml）"
+    - "scheduled-task stories-of-taiwan-daily 已建立（Mon-Fri 10:30），但 Step 5 Gemini 瀏覽器在排程中可用性待驗證"
+    - "assemble-story.js v2.0.0 解析函式已重寫修復，但尚未在 A004+ 驗證新流程"
+    - "故事正文字數上限是否調整為 500-800（待教師確認）"
+    - "TCMB API Key 待教師提供"
