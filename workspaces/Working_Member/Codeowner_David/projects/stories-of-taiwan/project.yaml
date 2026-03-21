@@ -1,0 +1,83 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：臺灣的故事・專案進度錨點
+# 路徑：projects/stories-of-taiwan/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+stories_of_taiwan:
+  project_type: 獨立工作線（第三條線）
+  target_grades: [5, 6, 7, 8, 9]
+  current_focus: 五年級臺灣史地
+  last_updated: 2026-03-21
+
+  current_position:
+    phase: 建置期
+    step: 0
+    description: "專案結構已建立，Skills 建置中"
+
+  theme_skeleton:
+    status: draft
+    file: themes/theme-skeleton.yaml
+
+  data_sources:
+    tcmb:
+      status: 待 API Key
+      api_available: true
+      note: "David 已申請，等 Key 下來"
+    datagov:
+      status: 可用
+      api_available: true
+      needs_key: false
+    boch:
+      status: 待確認
+      api_available: unknown
+      note: "API 端點可能已遷移，需瀏覽器確認"
+    archives:
+      status: 可瀏覽
+      api_available: false
+      note: "無公開 API，AI 輔助研究"
+    nhrm:
+      status: 可瀏覽
+      api_available: false
+      note: "記憶庫子站需確認現況"
+    tm:
+      status: 可瀏覽
+      api_available: false
+      note: "臺灣記憶，搜尋連結產生"
+    openmuseum:
+      status: 可瀏覽
+      api_available: false
+      note: "開放博物館，搜尋連結產生"
+
+  story_count:
+    total: 1
+    by_block:
+      A-origins: 1
+      B-encounter: 0
+      C-dutch-spanish: 0
+      D-koxinga: 0
+      E-qing: 0
+      F-japanese: 0
+      G-modern: 0
+
+  skills_status:
+    story-planner: pending
+    story-research: pending
+    story-writer: pending
+    story-verify: pending
+    story-archive: pending
+    scheduled-task: pending
+
+  next_action:
+    description: "完成 Skills 建置 + theme-skeleton，然後用區塊 A 第一篇做管線試跑"
+    input_needed_from_teacher:
+      - "TCMB API Key（到手後提供）"
+      - "五年級臺灣史地的實際上課週次"
+      - "說書稿語氣樣本"
+      - "圖像授權底線（CC only 或含待確認）"
+
+  output_files:
+    - type: 計畫書
+      file: project-plan-v0.1.md
+      date: 20260321
+      version: v0.1

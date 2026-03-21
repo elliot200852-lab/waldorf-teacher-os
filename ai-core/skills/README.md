@@ -50,6 +50,11 @@ aliases:
 | `art-in-teaching.md` | 藝術作品融入教學：Met Museum + Europeana API → 畫廊 + AI 加工 | 「博物館素材」「找藝術品」「拉幾張畫」「art search」 |
 | `beautify.md` | 華德福美化文件輸出：Markdown → 精美 HTML（四季視覺切換） | 「美化」「做漂亮版」「HTML 輸出」「beautify」「套模板」 |
 | `check-compat.md` | 跨平台相容性檢查：全 Repo 掃描 6 條規則 + 嚴重度分級報告 | 「跨平台檢查」「check compat」「平台檢查」「相容性檢查」 |
+| `story-planner.md` | 臺灣的故事・每日選題：根據主題骨架與索引自動選定今日故事 | 「今天的故事」「選題」「下一篇」「story plan」 |
+| `story-research.md` | 臺灣的故事・素材搜尋：API + AI 研究蒐集有憑有據的原始素材 | 「搜尋素材」「找資料」「查史料」「story research」 |
+| `story-writer.md` | 臺灣的故事・三件套撰寫：內容 + 說書稿 + 圖像清單 | 「寫故事」「產出故事」「生成三件套」「story write」 |
+| `story-verify.md` | 臺灣的故事・品質檢查：事實查核 + 敘事品質 + 格式合規 | 「檢查故事」「品質確認」「story verify」 |
+| `story-archive.md` | 臺灣的故事・歸檔與索引：正式歸入故事庫並更新進度 | 「歸檔故事」「更新故事索引」「story archive」 |
 
 ---
 
@@ -238,5 +243,5 @@ AI 應自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或
 
 ---
 
-*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-19（新增 art-in-teaching 藝術作品融入教學素材管線技能）*
+*維護者：TeacherOS CreatorHub Admin。最後更新：2026-03-21（新增臺灣的故事管線 5 技能）*
 

@@ -49,6 +49,12 @@ aliases:
 | 「下載字幕」「抓字幕」「YouTube 字幕」 | `yt-subtitle` | `ai-core/skills/yt-subtitle.md` |
 | 「教學動畫」「做動畫」「概念視覺化」「animate」 | `teach-animation` | `ai-core/skills/teach-animation.md` |
 | 「做影片」「製作影片」「video」「渲染影片」「建立影片專案」「video setup」 | `video` | `ai-core/skills/video.md` |
+| 「臺灣的故事」「每日臺灣的故事」「寫一篇臺灣的故事」「Daily Story of Taiwan」「daily story」「stories of taiwan」 | `story-daily` | `ai-core/skills/story-daily.md`（編排器，依序呼叫下列 5 子技能 + assemble-story.js） |
+| 「今天的故事」「選題」「story plan」「臺灣故事選題」「故事選題」 | `story-planner` | `ai-core/skills/story-planner.md` |
+| 「搜尋素材」「找資料」「查史料」「story research」 | `story-research` | `ai-core/skills/story-research.md` |
+| 「產出故事」「生成三件套」「story write」「撰寫故事」 | `story-writer` | `ai-core/skills/story-writer.md` |
+| 「檢查故事」「品質確認」「story verify」 | `story-verify` | `ai-core/skills/story-verify.md` |
+| 「歸檔故事」「更新故事索引」「story archive」 | `story-archive` | `ai-core/skills/story-archive.md` |
 
 ## D. 導師與學生（人的工作）
 
@@ -123,4 +129,4 @@ aliases:
 
 ---
 
-*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-19（技能分類重構 + 退役 video-setup / new-doc）*
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-21（新增 story-daily 編排器 + 臺灣的故事管線 5 子技能）*

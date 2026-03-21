@@ -124,6 +124,12 @@ aliases:
 | 「下載字幕」「抓字幕」「YouTube 字幕」「提取字幕」「extract subtitles」 | `ai-core/skills/yt-subtitle.md` |
 | 「教學動畫」「做動畫」「概念動畫」「解說動畫」「概念視覺化」「animate」 | `ai-core/skills/teach-animation.md` |
 | 「做影片」「製作影片」「影片」「video」「渲染影片」「建立影片專案」「video setup」 | `ai-core/skills/video.md` |
+| 「臺灣的故事」「每日臺灣的故事」「寫一篇臺灣的故事」「Daily Story of Taiwan」「daily story」「stories of taiwan」 | `ai-core/skills/story-daily.md`（全流程編排器） |
+| 「今天的故事」「選題」「story plan」「臺灣故事選題」「故事選題」 | `ai-core/skills/story-planner.md` |
+| 「搜尋素材」「找資料」「查史料」「story research」「搜集故事素材」 | `ai-core/skills/story-research.md` |
+| 「寫故事」「產出故事」「生成三件套」「story write」「撰寫故事」 | `ai-core/skills/story-writer.md` |
+| 「檢查故事」「品質確認」「story verify」「驗證故事」 | `ai-core/skills/story-verify.md` |
+| 「歸檔故事」「更新故事索引」「story archive」「存入故事庫」 | `ai-core/skills/story-archive.md` |
 
 **D. 導師與學生**
 
@@ -250,5 +256,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-19（技能分類重構 A-F + 退役 video-setup / new-doc / english-45 獨立觸發）*
+*最後更新：2026-03-21（新增臺灣的故事管線 5 技能：story-planner/research/writer/verify/archive）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

@@ -1,0 +1,41 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 「臺灣的故事」故事總索引
+# 由 story-archive skill 自動維護
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+last_updated: 2026-03-21
+total_stories: 1
+
+stories:
+  - id: A001
+    title: 從海底升起的島——臺灣的誕生
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前（約 500–600 萬年前至今）
+    location: 菲律賓海板塊與歐亞板塊交界處
+    date_created: 2026-03-21
+    files:
+      content: stories/A-origins/A001-content.md
+      narration: stories/A-origins/A001-narration.md
+      images: stories/A-origins/A001-images.md
+      raw_materials: stories/A-origins/A001-raw-materials.md
+    sources: [tvo, ncdr, ysnp, scimonth, pansci, wikipedia]
+    quality_check: pending_review
+    tags: [地質, 板塊運動, 蓬萊造山運動, 玉山, 中央山脈]
+
+# 索引結構說明：
+# stories:
+#   - id: A001
+#     title: 故事標題
+#     block: A-origins
+#     sub_theme: 島嶼誕生
+#     era: 史前
+#     location: 臺東卑南
+#     date_created: 2026-04-01
+#     files:
+#       content: stories/A-origins/A001-content.md
+#       narration: stories/A-origins/A001-narration.md
+#       images: stories/A-origins/A001-images.md
+#     sources: [tcmb, boch]
+#     quality_check: passed
+#     tags: [考古, 遺址, 卑南, 史前文化]

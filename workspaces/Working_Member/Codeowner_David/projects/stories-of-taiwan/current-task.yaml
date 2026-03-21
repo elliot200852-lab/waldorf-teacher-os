@@ -1,0 +1,23 @@
+# 今日故事任務 — 由排程自動產生
+# Generated: 2026-03-21
+
+today_story:
+  date: 2026-03-21
+  block: A-origins
+  sub_theme: 島嶼誕生
+  suggested_title: "從海底升起的島——臺灣的誕生"
+  story_id: A001
+  search_keywords:
+    - 臺灣 地質 形成
+    - 臺灣 板塊運動 菲律賓海板塊
+    - 臺灣島 誕生 造山運動
+    - 臺灣 中央山脈 地質年代
+    - 蓬萊造山運動
+  data_sources_priority:
+    - tcmb
+    - boch
+    - tm
+    - openmuseum
+    - datagov
+  connection_to_previous: "首篇故事，系列起點——從這座島嶼本身的誕生開始說起"
+  selection_rationale: "專案首次執行（total_stories: 0），依規則從 Block A 子主題「島嶼誕生」開始。地質形成是認識臺灣的第一步，為後續史前人類與原住民主題奠基。"
