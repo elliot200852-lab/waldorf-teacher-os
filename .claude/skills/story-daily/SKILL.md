@@ -1,6 +1,6 @@
 ---
 name: story-daily
-description: "臺灣的故事每日全流程管線。一鍵觸發從選題、素材搜尋、撰寫三件套、品質檢查、組裝HTML/PDF到上傳Google Drive的完整7步驟自動化管線。觸發語：'臺灣的故事'、'每日臺灣的故事'、'寫一篇臺灣的故事'、'Daily Story of Taiwan'、'daily story'、'stories of taiwan'。適用於所有提到臺灣故事管線、每日故事產製、故事自動化流程的情境。"
+description: "臺灣的故事每日全流程管線 v2.0.0。一鍵觸發從選題、素材搜尋、撰寫三件套、品質檢查、Gemini黑板畫生成、組裝HTML/PDF到上傳Google Drive的完整8步驟自動化管線。含強制 Checkpoint 矩陣與排程模式 fallback。觸發語：'臺灣的故事'、'每日臺灣的故事'、'寫一篇臺灣的故事'、'Daily Story of Taiwan'、'daily story'、'stories of taiwan'。"
 ---
 
 # 臺灣的故事・每日全流程管線
@@ -14,16 +14,18 @@ description: "臺灣的故事每日全流程管線。一鍵觸發從選題、素
 
 1. `ai-core/skills/story-daily.md`
 
-## 子技能依賴（由 story-daily 依序呼叫）
+## 子技能依賴（由 story-daily 依序呼叫，共 8 步驟）
 
-| 順序 | 子技能 | 正本路徑 |
+| Step | 子技能 | 正本路徑 |
 |------|--------|---------|
-| 1 | story-planner | `ai-core/skills/story-planner.md` |
+| 0-1 | story-planner | `ai-core/skills/story-planner.md` |
 | 2 | story-research | `ai-core/skills/story-research.md` |
 | 3 | story-writer | `ai-core/skills/story-writer.md` |
 | 4 | story-verify | `ai-core/skills/story-verify.md` |
-| 5 | assemble-story.js | `publish/scripts/assemble-story.js` |
-| 6 | story-archive | `ai-core/skills/story-archive.md` |
+| 5 | Gemini 黑板畫生成 | 瀏覽器操作（定義於 story-daily.md Step 5） |
+| 6 | assemble-story.js | `publish/scripts/assemble-story.js` |
+| 7 | story-archive | `ai-core/skills/story-archive.md` |
+| 8 | 完成報告 | 定義於 story-daily.md Step 8 |
 
 ## 注意事項
 

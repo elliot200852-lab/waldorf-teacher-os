@@ -33,6 +33,15 @@ David（管理員）。
 4. `{workspace}/projects/stories-of-taiwan/stories/[區塊]/[ID]/raw-materials.md` — 對照素材包
 5. `{workspace}/projects/stories-of-taiwan/index.yaml` — 前後篇脈絡
 
+## 入口驗證（由 story-daily pipeline 強制執行）
+
+啟動本技能前，必須確認以下條件全部滿足，否則回報 FAIL 並停止：
+
+1. `stories/[區塊]/[ID]/content.md` 存在且字數 > 300
+2. `stories/[區塊]/[ID]/narration.md` 存在
+3. `stories/[區塊]/[ID]/images.md` 存在且至少包含 1 張主圖（含「來源」欄位）
+4. `stories/[區塊]/[ID]/chalkboard-prompt.md` 存在且含 `## English Prompt` 段落
+
 ## 執行步驟
 
 ### Step 1 — 事實查核（Fact Check）

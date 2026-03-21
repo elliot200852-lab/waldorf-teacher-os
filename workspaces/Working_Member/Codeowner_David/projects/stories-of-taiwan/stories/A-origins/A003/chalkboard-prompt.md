@@ -16,4 +16,4 @@ A Waldorf-style chalkboard drawing on a pure black background, rendered in soft 
 
 ## 下載檔案名
 
-（Gemini 產圖後手動填入）
+下載檔名：AssemblyStory-A003-chalkboard.png

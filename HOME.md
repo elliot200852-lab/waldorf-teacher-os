@@ -953,6 +953,7 @@ aliases:
 | [[root_files.txt\|root_files.txt]] | 根目錄檔案清單 |
 | [[download]] | （自動收錄） |
 | [[story-daily]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/current-task\|current task]] | 設定檔 |
 
 ---
 

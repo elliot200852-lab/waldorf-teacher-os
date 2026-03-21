@@ -28,7 +28,7 @@ stories_of_taiwan_session:
     last_completed_story: A003
     last_completed_title: 火的禮物——大屯火山與泥火山
     next_story_id: A004
-    status: 島嶼誕生三部曲完成，品質待覆核
+    status: 島嶼誕生三部曲完成，A002/A003 黑板畫已生成並組裝 HTML
 
   block_progress:
     A-origins: 3    # 目標 15-20
@@ -57,6 +57,17 @@ stories_of_taiwan_session:
       - "說書稿語氣是否需要調整"
       - "故事正文字數上限是否調整為 500-800"
 
+  pipeline_outputs:
+    A002:
+      html: temp/beautify-A002-完整版.html
+      chalkboard: AssemblyStory-A002-chalkboard.png
+      assembled: 2026-03-21
+    A003:
+      html: temp/beautify-A003-完整版.html
+      chalkboard: AssemblyStory-A003-chalkboard.png
+      assembled: 2026-03-21
+
   open_questions:
     - "story-archive 技能尚未正式執行過"
     - "scheduled-task 自動排程尚未設定"
+    - "assemble-story.js prompt 解析需調整：目前 chalkboard-prompt.md 格式與腳本 regex 不完全匹配（section 分隔符、prompt 標題）"

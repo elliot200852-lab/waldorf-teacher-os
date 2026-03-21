@@ -14,14 +14,162 @@ triggers:
   - stories of taiwan
 platforms: [cowork, claude-code, gemini]
 requires_args: false
-version: 1.0.0
+version: 2.0.0
 created: 2026-03-21
+updated: 2026-03-22
 ---
 
 # skill: story-daily — 臺灣的故事・每日全流程管線
 
 一鍵觸發完整的故事產製流程，從選題到上傳 Google Drive 全部自動化。
 本技能是編排器（orchestrator），依序呼叫 5 個子技能 + 1 個 Node.js 腳本。
+
+---
+
+## 授權模型（AUTHORIZATION MODEL）
+
+**本技能啟動後，以下操作已獲得完整預授權，AI 不得在執行中逐一詢問使用者確認：**
+
+- 瀏覽器操作（開啟 Gemini、輸入 prompt、下載圖片）
+- osascript 橋接（Mac 檔案重命名、Node.js 腳本執行、GWS CLI 上傳）
+- Google Drive 上傳（目標資料夾：「台灣的故事」）
+- Repo 內所有檔案的讀取與寫入
+
+**唯一需要使用者確認的節點：Step 1（選題）互動模式下的主題確認。**
+
+AI 在執行過程中若因工具層面的權限對話框而中斷，應自行重試，不得停下來詢問教師。
+
+---
+
+## 強制完成規則（MANDATORY COMPLETION RULES）
+
+**此技能觸發後，AI 必須完成所有 8 個步驟，不得中途停止。**
+
+每個步驟完成後，AI 必須檢查該步驟的「完成條件」。若條件未滿足，回報 FAIL 並說明原因——但不得跳過後續步驟嘗試。
+
+**pipeline 完成定義：** Step 7 的完成報告中，所有步驟狀態為 PASS，HTML + PDF 已上傳 Google Drive。
+
+若 AI 在任何步驟因 context window 耗盡而需要開新 session，必須：
+1. 將當前進度寫入 `pipeline-status.yaml`
+2. 明確告知教師「pipeline 未完成，需在新 session 中繼續」
+3. 新 session 啟動後，讀取 `pipeline-status.yaml`，從中斷處繼續
+
+---
+
+## 資料流總覽（DATA FLOW MAP）
+
+```
+Step 0-1: plan
+  輸入：index.yaml, theme-skeleton.yaml
+  輸出：current-task.yaml
+  存放：projects/stories-of-taiwan/
+
+Step 2: research
+  輸入：current-task.yaml
+  輸出：raw-materials.md
+  存放：stories/[block]/[ID]/
+
+Step 3: write
+  輸入：raw-materials.md
+  輸出：content.md, narration.md, images.md, chalkboard-prompt.md
+  存放：stories/[block]/[ID]/
+
+Step 4: verify
+  輸入：content.md, narration.md, images.md, raw-materials.md
+  輸出：reviews/[ID]-quality.md
+  存放：projects/stories-of-taiwan/reviews/
+
+Step 5: gemini（瀏覽器操作）
+  輸入：chalkboard-prompt.md 中的 English Prompt
+  操作：開啟 Gemini → 貼入 prompt → 等待生成 → 下載圖片 → 重命名
+  輸出：AssemblyStory-[ID]-chalkboard.png
+  存放：~/Downloads/（不進 Repo）
+
+Step 6: assemble
+  輸入（5 項）：
+    1. stories/[block]/[ID]/content.md
+    2. stories/[block]/[ID]/narration.md
+    3. stories/[block]/[ID]/images.md
+    4. stories/[block]/[ID]/chalkboard-prompt.md（含下載檔名指向 ~/Downloads/）
+    5. ~/Downloads/AssemblyStory-[ID]-chalkboard.png
+  額外輸入：stories/[block]/[ID]/raw-materials.md（URL 超連結來源）
+  設計規範：ai-core/reference/stitch-design-brief.md + publish/templates/waldorf-base.html
+  執行指令（強制帶旗標）：
+    node publish/scripts/assemble-story.js stories/[block]/[ID] --pdf --upload
+  輸出：
+    1. temp/beautify-[ID]-完整版.html
+    2. temp/[ID]-完整版.pdf
+    3. Google Drive「台灣的故事」資料夾（HTML + PDF）
+
+Step 7: archive
+  輸入：content.md（提取 metadata）
+  輸出：更新 index.yaml, project.yaml
+  清理：刪除 current-task.yaml
+```
+
+**關鍵規則：**
+- 黑板畫圖檔只存 ~/Downloads/，不複製到 Repo
+- assemble-story.js 必須帶 `--pdf --upload` 旗標，不可省略
+- 事實出處表必須有可點擊的超連結（來自 raw-materials.md 的 URL）
+- 投影圖像清單必須完整呈現（標題、描述、來源、URL、授權、展示時機）
+- chalkboard-prompt.md 中的「下載檔名」欄位必須在 Step 5 完成後立即填入
+
+---
+
+## 步驟間 Checkpoint 矩陣（MANDATORY CHECKPOINT MATRIX）
+
+**每個步驟啟動前，AI 必須驗證前一步驟的產出。驗證未通過 → 立即回報 FAIL 並停止 pipeline（除非標記 WARN）。**
+
+| 轉換點 | 驗證項目 | 失敗等級 |
+|--------|---------|---------|
+| Step 0→1 | `index.yaml` 存在且可解析；`theme-skeleton.yaml` 存在 | FAIL → 停止 |
+| Step 1→2 | `current-task.yaml` 存在 + `story_id`、`title`、`sub_theme`、`search_keywords` 欄位非空 | FAIL → 停止 |
+| Step 2→3 | `raw-materials.md` 存在 + 字數 > 500 + 「資料來源」段落至少 3 筆含 URL 的來源 | FAIL → 停止 |
+| Step 3→4 | `content.md` 存在且字數 > 300；`narration.md` 存在；`images.md` 存在且至少 1 張主圖；`chalkboard-prompt.md` 存在且含 `## English Prompt` 段落 | FAIL → 停止 |
+| Step 4→5 | `reviews/[ID]-quality.md` 存在 + 總評狀態為 PASSED 或 NEEDS_REVISION（FAILED → 停止） | FAIL → 停止 |
+| Step 5→6 | `~/Downloads/AssemblyStory-[ID]-chalkboard.png` 存在 + 檔案大小 > 50KB；`chalkboard-prompt.md` 下載檔名欄位已填入 | WARN → 跳過圖片繼續組裝，標記「待補圖」 |
+| Step 6→7 | `temp/beautify-[ID]-完整版.html` 存在；`temp/[ID]-完整版.pdf` 存在；HTML 中 source URLs > 0；HTML 中 Images > 0；Drive 上傳成功回傳 file ID | FAIL → 停止 |
+| Step 7→8 | `index.yaml` 中已存在該 story_id 的條目；`current-task.yaml` 已刪除 | WARN → 繼續但在報告中標記 |
+
+**Checkpoint 執行方式：**
+- AI 在進入每個新步驟前，逐項檢查上表對應的驗證項目
+- 檢查結果以 `[CHECKPOINT Step X→Y] PASS / FAIL / WARN: 原因` 格式輸出
+- FAIL 等級：立即停止 pipeline，寫入 `pipeline-status.yaml`，回報教師
+- WARN 等級：記錄問題，繼續執行，在 Step 8 完成報告中標記
+
+---
+
+## 排程模式 fallback（SCHEDULED MODE FALLBACK）
+
+排程任務（Cowork Scheduled Task）在無人值守的環境下執行，可能遇到以下工具不可用的情況：
+
+| 情境 | fallback 行為 |
+|------|-------------|
+| Claude in Chrome 不可用（Step 5） | 跳過 Step 5，將 `pipeline-status.yaml` 標記 `chalkboard: pending`；Step 6 組裝時使用純文字替代方案（無黑板畫嵌入），HTML/PDF 照常產出並上傳 |
+| osascript 橋接不可用 | 跳過所有需要 osascript 的操作（圖片讀取、Mac 端檔案操作）；改用 VM 內可用的 Node.js 直接執行組裝 |
+| GWS CLI 不可用 | 跳過 Drive 上傳，HTML/PDF 存入 `temp/`，在 `pipeline-status.yaml` 標記 `drive_upload: pending` |
+| 任何步驟 FAIL | 寫入 `pipeline-status.yaml`（含 FAIL 步驟、原因、已完成步驟列表），下次手動 session 啟動時提示教師 |
+
+**`pipeline-status.yaml` 格式：**
+```yaml
+story_id: A004
+pipeline_version: 2.0.0
+started_at: 2026-03-22T10:30:00
+mode: scheduled
+steps:
+  step_0_1: { status: PASS }
+  step_2:   { status: PASS }
+  step_3:   { status: PASS }
+  step_4:   { status: PASS }
+  step_5:   { status: SKIP, reason: "Claude in Chrome unavailable" }
+  step_6:   { status: PASS, note: "No chalkboard image embedded" }
+  step_7:   { status: PASS }
+pending_actions:
+  - "chalkboard: 需手動執行 Step 5 並重新組裝"
+  - "drive_upload: 需確認 HTML/PDF 已上傳"
+```
+
+---
 
 ## 適用對象
 
@@ -31,8 +179,8 @@ David（管理員）。其他教師 clone Repo 後亦可使用。
 
 | 平台 | 排程方式 | 備註 |
 |------|---------|------|
-| Cowork | Scheduled Task（`stories-of-taiwan-daily`，Mon-Fri 10:30） | 全自動，需預先授權 osascript |
-| Claude Code | 手動觸發（說「臺灣的故事」或 `/story-daily`） | Mac/Windows 均可直接執行 |
+| Cowork | Scheduled Task（`stories-of-taiwan-daily`，Mon-Fri 10:30） | 全自動 |
+| Claude Code | 手動觸發（說「臺灣的故事」或 `/story-daily`） | Mac/Windows |
 | 其他 AI | 手動觸發 + 讀取本檔案 | 需有檔案讀寫與網路搜尋能力 |
 | 無 AI 環境 | 手動撰寫 5 份 .md → `node assemble-story.js` | 只需 Node.js |
 
@@ -137,30 +285,56 @@ David（管理員）。其他教師 clone Repo 後亦可使用。
 - **NEEDS_REVISION** → 自動修正後重新檢查（最多重試 2 次），仍未通過則暫停等待教師
 - **FAILED** → 暫停流程，通知教師
 
-### Step 5 — 組裝 HTML/PDF 並上傳 Google Drive
+### Step 5 — 黑板畫生成（Gemini 瀏覽器操作）
+
+**此步驟已預授權，AI 直接操作，不詢問教師。**
+
+操作流程：
+1. 讀取 `chalkboard-prompt.md` 中的 English Prompt
+2. 開啟 Gemini 瀏覽器分頁（或使用已開啟的分頁）
+3. 點擊輸入框 → 貼入 English Prompt → 送出
+4. 等待圖片生成（通常 10-20 秒）
+5. 點擊圖片放大 → 點擊下載按鈕
+6. 透過 osascript 在 ~/Downloads/ 中找到最新的 Gemini 圖檔，重命名為 `AssemblyStory-[ID]-chalkboard.png`
+7. 更新 `chalkboard-prompt.md` 的「下載檔名」欄位
+
+**完成條件：** ~/Downloads/ 中存在 `AssemblyStory-[ID]-chalkboard.png`，且 `chalkboard-prompt.md` 的下載檔名欄位已填入。
+
+**圖檔存放規則：** 只存在 ~/Downloads/，不複製到 Repo。assemble-story.js 直接從 ~/Downloads/ 讀取。
+
+### Step 6 — 組裝 HTML/PDF 並上傳 Google Drive
 
 執行 `assemble-story.js`，將 5 份 .md 檔 + 黑板畫圖片組裝成美化 HTML + PDF。
 
-**指令：**
+**渲染規範：** 遵循 `ai-core/skills/beautify.md` 的設計規範（四季視覺系統、字級間距、季節裝飾）。組裝腳本直接套用 `publish/templates/waldorf-base.html` 模板。
+
+**指令（旗標為強制，不可省略）：**
 
 ```bash
-# macOS / Linux
+# macOS / Linux（從 Repo 根目錄執行）
 node publish/scripts/assemble-story.js stories/[區塊]/[ID] --pdf --upload
 
-# Windows（PowerShell）
-node publish\scripts\assemble-story.js stories\[區塊]\[ID] --pdf --upload
+# Cowork VM（透過 osascript 橋接 Mac 執行）
+osascript: cd [repo-path] && node publish/scripts/assemble-story.js [story-dir] --pdf --upload
 ```
 
-**腳本的 5 項強制檢查清單：**
-1. `content.md` — 故事正文 + 事實出處表
-2. `narration.md` — 教師說書稿
-3. `images.md` — 投影圖像清單
-4. `chalkboard-prompt.md` — Gemini 中英文 prompt
-5. `~/Downloads/{filename}` — 黑板畫圖檔（從 chalkboard-prompt.md 讀取檔名）
+**腳本的 6 項強制檢查清單：**
+1. `content.md` — 故事正文 + 事實出處表（表中來源須有可點擊的 URL 超連結）
+2. `narration.md` — 教師說書稿（含節奏表、段落指引）
+3. `images.md` — 投影圖像清單（每張圖須有標題、描述、來源、URL、授權、展示時機）
+4. `chalkboard-prompt.md` — Gemini 中英文 prompt + 下載檔名
+5. `~/Downloads/AssemblyStory-[ID]-chalkboard.png` — 黑板畫圖檔（Step 5 已下載）
+6. `raw-materials.md` — 提供 URL 超連結來源（選用但強烈建議）
 
-如果第 5 項（黑板畫圖檔）不存在：
-- **自動模式**：產出 HTML/PDF 但不含黑板畫圖片，在報告中標記「待補圖」
-- **互動模式**：提示教師先用 Gemini 產圖並下載
+**完成條件（全部必須滿足，否則回報 FAIL）：**
+- HTML 輸出：`temp/beautify-[ID]-完整版.html` 存在
+- PDF 輸出：`temp/[ID]-完整版.pdf` 存在
+- 黑板畫：HTML 中 Drawing 狀態為 `embedded`
+- 事實出處：HTML 中 source URLs 數量 > 0
+- 投影圖像：HTML 中 Images 數量 > 0
+- Google Drive：HTML + PDF 已上傳至「台灣的故事」資料夾
+
+**上傳策略（upsert）：** 上傳前先搜尋 Drive 資料夾中同 storyId 的所有舊檔並刪除，再上傳新版。確保資料夾內每篇故事永遠只有最新的 HTML + PDF 各一份。此邏輯已內建於 assemble-story.js v2.0.0 的 `--upload` 流程中。
 
 **上傳目標：** Google Drive 資料夾「台灣的故事」（ID: `1TBD6Xs-wVgqqlX3_13boy4xbBnjQ9LdY`）。
 
@@ -168,7 +342,7 @@ node publish\scripts\assemble-story.js stories\[區塊]\[ID] --pdf --upload
 - Cowork：透過 osascript 橋接 Mac 執行
 - Claude Code / 其他：直接在終端機執行 `gws drive +upload`
 
-### Step 6 — 歸檔索引（story-archive）
+### Step 7 — 歸檔索引（story-archive）
 
 讀取並執行 `ai-core/skills/story-archive.md`。
 
@@ -180,29 +354,47 @@ files:
   images: stories/A-origins/A001/images.md
 ```
 
-### Step 7 — 完成報告
+### Step 8 — 完成報告
 
-產出完成摘要：
+產出完成摘要（必須包含每一步的 PASS/FAIL 狀態）：
 
 ```
 === 臺灣的故事・每日管線完成 ===
 故事編號：[ID]
 標題：[title]
 區塊：[block] — [block_title]
-品質：[PASSED/NEEDS_REVISION]
-Google Drive：已上傳 ✓ / 未上傳（原因）
-檔案：
+
+Pipeline 狀態：
+  Step 0-1 選題：    [PASS/FAIL]
+  Step 2   素材搜尋：[PASS/FAIL]
+  Step 3   撰寫：    [PASS/FAIL]
+  Step 4   品質檢查：[PASS/FAIL]
+  Step 5   黑板畫：  [PASS/FAIL] — ~/Downloads/AssemblyStory-[ID]-chalkboard.png
+  Step 6   組裝：    [PASS/FAIL]
+    HTML：     [temp/beautify-[ID]-完整版.html]
+    PDF：      [temp/[ID]-完整版.pdf]
+    黑板畫嵌入：[embedded / not found]
+    事實超連結：[N 個 URL]
+    投影圖像：  [N 張]
+    Google Drive：[已上傳 / 未上傳（原因）]
+  Step 7   歸檔：    [PASS/FAIL]
+
+檔案清單：
   - stories/[block]/[ID]/content.md
   - stories/[block]/[ID]/narration.md
   - stories/[block]/[ID]/images.md
   - stories/[block]/[ID]/chalkboard-prompt.md
   - stories/[block]/[ID]/raw-materials.md
-  - temp/[ID]-full.html
-  - temp/[ID]-full.pdf
+  - temp/beautify-[ID]-完整版.html
+  - temp/[ID]-完整版.pdf
+  - ~/Downloads/AssemblyStory-[ID]-chalkboard.png
+
 區塊進度：[M] / [N] 篇
 全專案進度：[total] / [annual_target] 篇
 ===
 ```
+
+**若任何步驟為 FAIL，AI 必須在報告中明確標示失敗原因，不得隱藏。**
 
 ---
 

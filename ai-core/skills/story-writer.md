@@ -31,6 +31,15 @@ David（管理員）。
 3. `{workspace}/projects/stories-of-taiwan/index.yaml` — 索引（確認前後篇連結）
 4. `{workspace}/projects/stories-of-taiwan/themes/theme-skeleton.yaml` — 區塊脈絡
 
+## 入口驗證（由 story-daily pipeline 強制執行）
+
+啟動本技能前，必須確認以下條件全部滿足，否則回報 FAIL 並停止：
+
+1. `stories/[區塊]/[ID]/raw-materials.md` 存在
+2. `raw-materials.md` 字數 > 500
+3. `raw-materials.md` 的「資料來源」段落至少包含 3 筆含 URL 的來源
+4. `projects/stories-of-taiwan/current-task.yaml` 存在且 `story_id` 非空
+
 ## 執行步驟
 
 ### Step 1 — 產出故事內容（content）

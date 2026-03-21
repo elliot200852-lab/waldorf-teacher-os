@@ -46,7 +46,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-const SCRIPT_VERSION = '1.1.0';
+const SCRIPT_VERSION = '2.0.0';
 const SCRIPT_PATH = 'publish/scripts/assemble-story.js';
 
 // Google Drive 上傳設定
@@ -126,22 +126,56 @@ function mdParagraphsToHtml(text, cssClass = 'text-[18px] leading-[1.6]') {
 // ── 解析 raw-materials.md 的來源 URL ────────────────
 function parseSourceUrls(rawMaterialsMd) {
   // 建立 {來源名稱: URL} 的對照表
+  // 支援兩種格式：
+  //   格式 A（舊）：1. **名稱**\n- URL: https://...
+  //   格式 B（現行）：1. 名稱 — https://url — 可信度：高
   const urls = {};
   const lines = rawMaterialsMd.split('\n');
   let currentName = '';
   for (const line of lines) {
-    // 匹配 "1. **名稱**" 或 "- **名稱**"
+    // 格式 B：「1. 名稱「描述」 — URL — 可信度」或「1. 名稱 — URL — 可信度」
+    const formatB = line.match(/^\d+\.\s+(.+?)\s+—\s+(https?:\/\/\S+)/);
+    if (formatB) {
+      // 從名稱中提取簡短關鍵字（去掉「」內容和「官網」等後綴）
+      const rawName = formatB[1].trim();
+      const url = formatB[2].trim();
+      // 保留完整名稱作為 key
+      urls[rawName] = url;
+      // 同時建立簡稱 key（例如「太魯閣國家公園管理處官網「太魯閣峽谷的前世今生」」→「太魯閣」）
+      const shortNames = extractShortNames(rawName);
+      for (const sn of shortNames) {
+        if (!urls[sn]) urls[sn] = url;
+      }
+      continue;
+    }
+    // 格式 A（舊）：「1. **名稱**」或「- **名稱**」
     const nameMatch = line.match(/(?:\d+\.\s+|\-\s+)\*\*(.+?)\*\*/);
     if (nameMatch) {
       currentName = nameMatch[1].trim();
     }
-    // 匹配 "- URL: https://..."
-    const urlMatch = line.match(/URL:\s*(https?:\/\/\S+)/);
+    // 格式 A（舊）：「- URL: https://...」或「URL: https://...」
+    const urlMatch = line.match(/URL[：:]\s*(https?:\/\/\S+)/);
     if (urlMatch && currentName) {
       urls[currentName] = urlMatch[1].trim();
     }
   }
   return urls;
+}
+
+// 從來源全名提取可能的簡稱（用於模糊匹配事實表）
+function extractShortNames(fullName) {
+  const shorts = [];
+  // 去掉「」引號內容，取機構名
+  const orgName = fullName.replace(/[「」《》（）()].+?[」》）)]/g, '').trim();
+  shorts.push(orgName);
+  // 提取關鍵地名/機構名（如「太魯閣」「大屯」「維基百科」）
+  const keywords = orgName.match(/[\u4e00-\u9fff]{2,}/g) || [];
+  for (const kw of keywords) {
+    if (kw.length >= 2 && !['官網', '管理處', '國家', '公園', '管理', '資料'].includes(kw)) {
+      shorts.push(kw);
+    }
+  }
+  return shorts;
 }
 
 // ── 解析 content.md 的事實出處表 ─────────────────────
@@ -165,24 +199,34 @@ function parseFactTable(contentMd, sourceUrls) {
       if (cells.length >= 2) {
         const fact = cells[0];
         const sourcesRaw = cells[1];
-        // 嘗試為每個來源名稱匹配 URL
+        // 嘗試為每個來源名稱匹配 URL（通用模糊匹配）
         const linkedSources = sourcesRaw.split(/[；;]/).map(s => {
           const name = s.trim();
-          // 在 sourceUrls 中找匹配（部分匹配即可）
           let url = '';
-          for (const [key, value] of Object.entries(sourceUrls)) {
-            if (key.includes(name) || name.includes(key) ||
-                // 簡稱匹配
-                (name.includes('大屯') && key.includes('大屯')) ||
-                (name.includes('災害防救') && key.includes('災害防救')) ||
-                (name.includes('科學月刊') && key.includes('科學月刊')) ||
-                (name.includes('泛科學') && key.includes('泛科學')) ||
-                (name.includes('玉山') && key.includes('玉山')) ||
-                (name.includes('氣象署') && key.includes('氣象署')) ||
-                (name.includes('觀光局') && key.includes('觀光局')) ||
-                (name.includes('維基') && key.includes('維基'))) {
-              url = value;
-              break;
+          // 1. 精確匹配
+          if (sourceUrls[name]) {
+            url = sourceUrls[name];
+          } else {
+            // 2. 雙向子字串匹配
+            for (const [key, value] of Object.entries(sourceUrls)) {
+              if (key.includes(name) || name.includes(key)) {
+                url = value;
+                break;
+              }
+            }
+            // 3. 若仍無匹配，提取中文詞彙做 token 交叉比對
+            if (!url) {
+              const nameTokens = (name.match(/[\u4e00-\u9fff]{2,}/g) || []).filter(t =>
+                !['管理處', '國家', '公園', '官網', '資料', '出處'].includes(t)
+              );
+              for (const [key, value] of Object.entries(sourceUrls)) {
+                const keyTokens = (key.match(/[\u4e00-\u9fff]{2,}/g) || []);
+                const overlap = nameTokens.filter(t => keyTokens.some(kt => kt.includes(t) || t.includes(kt)));
+                if (overlap.length > 0) {
+                  url = value;
+                  break;
+                }
+              }
             }
           }
           return { name, url };
@@ -206,27 +250,51 @@ function parseChalkboardPrompt(promptMd) {
     iterations: [],
   };
 
-  // 提取下載檔名
-  const fnMatch = promptMd.match(/下載檔名[：:]\s*(.+)/);
+  // 提取下載檔名（支援「下載檔名：」和「下載檔案名：」兩種寫法）
+  const fnMatch = promptMd.match(/下載檔[案]?名[：:]\s*(.+)/);
   if (fnMatch) result.downloadFilename = fnMatch[1].trim();
 
-  // 提取英文 prompt（## English Prompt 到下一個 --- 之間）
-  const enMatch = promptMd.match(/## English Prompt.*?\n\n([\s\S]+?)(?=\n---)/);
-  if (enMatch) result.englishPrompt = enMatch[1].trim();
+  // 將 md 按 ## 標題分割成區塊
+  const sections = {};
+  const sectionRegex = /^## (.+)$/gm;
+  let match;
+  const sectionStarts = [];
+  while ((match = sectionRegex.exec(promptMd)) !== null) {
+    sectionStarts.push({ title: match[1].trim(), index: match.index + match[0].length });
+  }
+  for (let i = 0; i < sectionStarts.length; i++) {
+    const start = sectionStarts[i].index;
+    const end = i + 1 < sectionStarts.length ? sectionStarts[i + 1].index - sectionStarts[i + 1].title.length - 3 : promptMd.length;
+    sections[sectionStarts[i].title] = promptMd.slice(start, end).trim();
+  }
 
-  // 提取中文 prompt
-  const zhMatch = promptMd.match(/## 中文 Prompt.*?\n\n([\s\S]+?)(?=\n---)/);
-  if (zhMatch) result.chinesePrompt = zhMatch[1].trim();
+  // 提取英文 prompt（匹配含「English」或「英文」的標題）
+  for (const [title, content] of Object.entries(sections)) {
+    if (/english|英文.*prompt|gemini.*製圖/i.test(title)) {
+      result.englishPrompt = content.replace(/^\n+/, '').trim();
+      break;
+    }
+  }
 
-  // 提取迭代表格
-  const iterMatch = promptMd.match(/## Prompt 迭代紀錄[\s\S]+?\n\n([\s\S]+?)$/);
-  if (iterMatch) {
-    const rows = iterMatch[1].split('\n').filter(l => l.startsWith('|') && !l.match(/^\|[\s\-|]+\|$/));
-    for (const row of rows) {
-      const cells = row.split('|').map(c => c.trim()).filter(Boolean);
-      if (cells.length >= 3 && cells[0] !== '版本') {
-        result.iterations.push({ version: cells[0], issue: cells[1], fix: cells[2] });
+  // 提取中文 prompt（匹配含「中文」或「翻譯」的標題）
+  for (const [title, content] of Object.entries(sections)) {
+    if (/中文|翻譯/.test(title)) {
+      result.chinesePrompt = content.replace(/^\n+/, '').trim();
+      break;
+    }
+  }
+
+  // 提取迭代表格（匹配含「迭代」或「紀錄」的標題）
+  for (const [title, content] of Object.entries(sections)) {
+    if (/迭代|iteration/i.test(title)) {
+      const rows = content.split('\n').filter(l => l.startsWith('|') && !l.match(/^\|[\s\-|]+\|$/));
+      for (const row of rows) {
+        const cells = row.split('|').map(c => c.trim()).filter(Boolean);
+        if (cells.length >= 3 && cells[0] !== '版本') {
+          result.iterations.push({ version: cells[0], issue: cells[1], fix: cells[2] });
+        }
       }
+      break;
     }
   }
 
@@ -244,20 +312,64 @@ function parseImages(imagesMd) {
     const title = lines[0].replace(/^#+\s*/, '').replace(/^\d+\.\s*/, '').trim();
     const content = lines.slice(1).join('\n').trim();
 
-    // 提取 URL（處理 **URL**: 或 URL: 兩種格式）
-    const urlMatch = content.match(/\*{0,2}URL\*{0,2}[：:]\s*(https?:\/\/\S+)/);
-    const url = urlMatch ? urlMatch[1].trim() : '';
+    // 提取 URL — 支援多種格式：
+    //   格式 A（舊）：**URL**：https://...  或  URL: https://...
+    //   格式 B（現行）：- 來源：名稱（https://url）  或  - 來源：名稱 https://url
+    let url = '';
+    const urlFormatA = content.match(/\*{0,2}URL\*{0,2}[：:]\s*(https?:\/\/\S+)/);
+    if (urlFormatA) {
+      url = urlFormatA[1].trim();
+    } else {
+      // 格式 B：從「來源」行提取括號或裸 URL
+      const sourceLineMatch = content.match(/來源[：:]\s*(.+)/);
+      if (sourceLineMatch) {
+        const sourceLine = sourceLineMatch[1];
+        // 嘗試匹配全形括號 （URL） 或半形括號 (URL)
+        const parenUrl = sourceLine.match(/[（(](https?:\/\/[^\s）)]+)[）)]/);
+        if (parenUrl) {
+          url = parenUrl[1].trim();
+        } else {
+          // 嘗試匹配裸 URL
+          const bareUrl = sourceLine.match(/(https?:\/\/\S+)/);
+          if (bareUrl) url = bareUrl[1].trim();
+        }
+      }
+    }
 
-    // 提取用途（處理 **用途**： 或 用途： 兩種格式）
-    const useMatch = content.match(/\*{0,2}用途\*{0,2}[：:]\s*(.+)/);
-    const usage = useMatch ? useMatch[1].trim() : '';
+    // 提取用途 — 支援多種欄位名：
+    //   格式 A（舊）：**用途**：...  或  用途：...
+    //   格式 B（現行）：- 在故事中的角色：...
+    let usage = '';
+    const useFormatA = content.match(/\*{0,2}用途\*{0,2}[：:]\s*(.+)/);
+    if (useFormatA) {
+      usage = useFormatA[1].trim();
+    } else {
+      const roleMatch = content.match(/在故事中的角色[：:]\s*(.+)/);
+      if (roleMatch) usage = roleMatch[1].trim();
+    }
 
     // 提取授權
+    let license = '';
     const licMatch = content.match(/\*{0,2}授權\*{0,2}[：:]\s*(.+)/);
-    const license = licMatch ? licMatch[1].trim() : '';
+    if (licMatch) license = licMatch[1].trim();
 
-    if (title && (url || usage)) {
-      sections.push({ title, url, usage, license });
+    // 提取描述（現行格式特有）
+    let description = '';
+    const descMatch = content.match(/描述[：:]\s*(.+)/);
+    if (descMatch) description = descMatch[1].trim();
+
+    // 提取展示時機（現行格式特有）
+    let timing = '';
+    const timingMatch = content.match(/展示時機[：:]\s*(.+)/);
+    if (timingMatch) timing = timingMatch[1].trim();
+
+    // 提取來源名稱（不含 URL）
+    let sourceName = '';
+    const sourceNameMatch = content.match(/來源[：:]\s*([^（(]+)/);
+    if (sourceNameMatch) sourceName = sourceNameMatch[1].trim();
+
+    if (title && (url || usage || description)) {
+      sections.push({ title, url, usage, license, description, timing, sourceName });
     }
   }
 
@@ -409,7 +521,10 @@ function assembleHtml({
         <div>
           <p class="text-[17px] leading-[1.55]">
             <span class="font-medium text-[var(--primary)]">${img.title}</span>
-            ${img.usage ? ` — ${img.usage}` : ''}
+            ${img.description ? `<br/><span class="text-[15px] text-[var(--on-surface-variant)]">${img.description}</span>` : ''}
+            ${img.usage ? `<br/><span class="text-[15px]">${img.usage}</span>` : ''}
+            ${img.timing ? `<br/><span class="text-[14px] text-[var(--on-surface-variant)] italic">展示時機：${img.timing}</span>` : ''}
+            ${img.sourceName ? `<br/><span class="text-sm text-[var(--on-surface-variant)]">來源：${img.sourceName}</span>` : ''}
             ${img.url ? `<br/><a href="${img.url}" target="_blank" class="text-[var(--secondary)] underline decoration-dotted text-sm">${img.url}</a>` : ''}
             ${img.license ? `<span class="text-sm text-[var(--on-surface-variant)] ml-2">[${img.license}]</span>` : ''}
           </p>
@@ -860,12 +975,47 @@ function main() {
   }
 
   // ── 上傳到 Google Drive（選用）──────────────────
+  // 策略：先刪除同 storyId 的舊檔，再上傳新版（upsert）
   const uploadResults = {};
   if (doUpload) {
     const { execSync } = require('child_process');
     const folderId = driveFolderArg ? driveFolderArg.split('=')[1] : DRIVE_FOLDER_ID;
 
-    // 用 content.md 的標題建立 Drive 友善檔名
+    // Step 1: 搜尋並刪除同 storyId 的舊檔
+    console.log(`[upload] Cleaning old files for ${storyId}...`);
+    try {
+      const searchParams = JSON.stringify({
+        q: `'${folderId}' in parents and trashed = false and name contains '${storyId}'`,
+        fields: 'files(id,name)',
+      });
+      const searchResult = execSync(
+        `cd /tmp && "${GWS_BIN}" drive files list --params '${searchParams}' --format json`,
+        { encoding: 'utf-8', timeout: 30000 }
+      );
+      const searchParsed = JSON.parse(searchResult.trim());
+      const oldFiles = (searchParsed.files || []);
+      if (oldFiles.length > 0) {
+        console.log(`[upload] Found ${oldFiles.length} old file(s) to remove:`);
+        for (const old of oldFiles) {
+          console.log(`[upload]   Deleting: ${old.name} (${old.id})`);
+          try {
+            execSync(
+              `cd /tmp && "${GWS_BIN}" drive files delete --params '{"fileId": "${old.id}"}'`,
+              { encoding: 'utf-8', timeout: 30000 }
+            );
+          } catch (delErr) {
+            console.error(`[upload]   Delete failed: ${old.name} — ${delErr.message}`);
+          }
+        }
+        console.log(`[upload] Cleanup done.`);
+      } else {
+        console.log(`[upload] No old files found. Clean upload.`);
+      }
+    } catch (searchErr) {
+      console.error(`[upload] Search/cleanup failed (non-fatal): ${searchErr.message}`);
+    }
+
+    // Step 2: 上傳新版
     const driveBaseName = `${storyId}-${title.replace(/\s+/g, '')}`;
 
     const filesToUpload = [

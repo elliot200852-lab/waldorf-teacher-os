@@ -30,6 +30,14 @@ David（管理員）。未來可擴展至其他教師。
 2. `{workspace}/projects/stories-of-taiwan/themes/theme-skeleton.yaml` — 主題骨架
 3. `{workspace}/projects/stories-of-taiwan/index.yaml` — 已完成故事索引
 
+## 入口驗證（由 story-daily pipeline 強制執行）
+
+啟動本技能前，必須確認以下條件全部滿足，否則回報 FAIL 並停止：
+
+1. `projects/stories-of-taiwan/index.yaml` 存在且可被 YAML 解析
+2. `projects/stories-of-taiwan/themes/theme-skeleton.yaml` 存在
+3. `projects/stories-of-taiwan/project.yaml` 存在
+
 ## 執行步驟
 
 ### Step 1 — 定位當前區塊

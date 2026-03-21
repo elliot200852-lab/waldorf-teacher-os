@@ -37,6 +37,15 @@ David（管理員）。
 
 story-verify 已產出品質報告，且狀態為 PASSED 或教師手動確認歸檔。
 
+## 入口驗證（由 story-daily pipeline 強制執行）
+
+啟動本技能前，必須確認以下條件全部滿足，否則回報 FAIL 並停止：
+
+1. `projects/stories-of-taiwan/reviews/[ID]-quality.md` 存在
+2. 品質報告總評狀態為 PASSED 或 NEEDS_REVISION（FAILED → 拒絕歸檔）
+3. `projects/stories-of-taiwan/current-task.yaml` 存在
+4. `projects/stories-of-taiwan/index.yaml` 存在且可被 YAML 解析
+
 ## 執行步驟
 
 ### Step 1 — 確認歸檔資格
