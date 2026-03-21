@@ -8,7 +8,7 @@
 
 homeroom_session:
   class: class-9c
-  last_updated: 2026-03-17
+  last_updated: 2026-03-21
 
   # HM Block 1 會在此處確認後寫入
   current_season:
@@ -24,6 +24,10 @@ homeroom_session:
   confirmed_decisions:
     - "春季班親會：2026-03-21（六）09:00–11:00，9C 教室，已排入 calendar.md 並寫入 Google Calendar"
     - "班親會通知：v1 已確認，存入 homeroom/content/comms/，輸出至 Google Drive"
+    - "班親會 3/21 完成：議程及會議紀錄已合併建檔（homeroom-agenda-minutes-20260321.md）"
+    - "謝師活動決議：不參加四班聯合謝師宴，9C 自行辦理（家長準備小物+導師營造氛圍）"
+    - "服務學習之旅零用錢決議：每生 3,000 元統一，個案彈性額度至多 1,000 元"
+    - "財務決議：不再增收班費，剩餘款項捐校舍基金"
     - "gcal-write.py 首次授權完成，token.json 已儲存，往後寫入免重新授權"
     - "服務學習之旅：2026/6/8-6/12，5天4夜，宜蘭出發，台中→台南→高雄，全程大眾運輸"
     - "春季節慶：2026-03-28（六），全天活動"
@@ -87,7 +91,7 @@ homeroom_session:
         - "園遊會計畫與籌備（3/16 已啟動，本週需產出草案方向）"
         - "服務學習之旅籌備啟動"
         - "三方面訪第一梯次：3/17（宇泰、甯云、妤芃、若妍）"
-        - "3/21（六）班親會 09:00-11:00（流程明天再定）"
+        - "3/21（六）班親會 09:00-11:00 已完成"
     week_6:
       dates: 3/23-3/27
       items:
@@ -157,10 +161,16 @@ homeroom_session:
     - type: 服務學習之旅行程規劃
       file: content/service-learning-trip/行程總覽與規劃建議.md
       date: 20260308
+    - type: 班親會議程及會議紀錄
+      file: content/comms/homeroom-agenda-minutes-20260321.md
+      date: 20260321
+    - type: 班親會家長簽到表
+      file: content/comms/homeroom-sign-in-20260321.md
+      date: 20260321
 
   next_action:
-    description: "本週：園遊會草案方向 + 服務學習之旅籌備啟動；3/21 班親會（流程待定）；中期：week8 各組工作追蹤確認聯絡"
-    input_needed_from_teacher: "班親會流程（明天提供）；3/25 試吃後園遊會最終定案"
+    description: "本週：園遊會最終準備（3/25 試吃定案）+ 三方面訪第二梯次（3/24）；中期：week8 各組工作追蹤確認聯絡"
+    input_needed_from_teacher: "3/25 試吃後園遊會最終定案；志願選填後續確認"
 
   open_questions:
     - "台中服務機構三選一：弘道/1919食物銀行/荒野——之後再決定"
