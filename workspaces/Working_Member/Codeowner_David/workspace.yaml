@@ -28,6 +28,17 @@ classes:
     status: active
     blocks_completed: []
 
+# ── 獨立專案 ────────────────────────────────────────
+projects:
+  - project_code: stories-of-taiwan
+    name: 臺灣的故事
+    type: 每日故事管線（跨年級共用素材庫）
+    target_grades: [5, 6, 7, 8, 9]
+    status: active
+    current_phase: 試跑期
+    story_count: 3
+    session_path: projects/stories-of-taiwan/session.yaml
+
 # ── 備註 ──────────────────────────────────────────────
 notes: >
   此 workspace 從 projects/class-9c/ 和 projects/class-9d/ 搬遷而來。

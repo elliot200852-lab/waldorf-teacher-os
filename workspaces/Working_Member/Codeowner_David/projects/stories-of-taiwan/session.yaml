@@ -58,5 +58,5 @@ stories_of_taiwan_session:
       - "故事正文字數上限是否調整為 500-800"
 
   open_questions:
-    - "assemble-story.js 尚未建立"
-    - "GWS CLI 上傳流程尚未測試"
+    - "story-archive 技能尚未正式執行過"
+    - "scheduled-task 自動排程尚未設定"

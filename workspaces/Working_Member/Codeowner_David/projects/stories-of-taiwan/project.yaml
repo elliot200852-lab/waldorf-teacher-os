@@ -61,12 +61,13 @@ stories_of_taiwan:
       G-modern: 0
 
   skills_status:
-    story-planner: pending
-    story-research: pending
-    story-writer: pending
-    story-verify: pending
-    story-archive: pending
-    scheduled-task: pending
+    story-daily: active        # 全流程編排器，已試跑
+    story-planner: active      # 每日選題，已試跑
+    story-research: active     # 素材搜尋，已試跑
+    story-writer: active       # 三件套撰寫，已試跑
+    story-verify: active       # 品質檢查，已試跑
+    story-archive: pending     # 歸檔與索引，尚未正式執行
+    scheduled-task: pending    # 排程自動化，尚未設定
 
   next_action:
     description: "島嶼誕生子主題 3/3 完成。下一步：進入「最早的足跡」子主題（A004 起）"
