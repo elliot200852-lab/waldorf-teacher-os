@@ -1,0 +1,62 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：臺灣的故事・每日故事管線
+# 路徑：projects/stories-of-taiwan/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+stories_of_taiwan_session:
+  project: stories-of-taiwan
+  last_updated: 2026-03-21
+
+  overview:
+    name: 臺灣的故事
+    type: 每日故事管線（跨年級共用素材庫）
+    target_grades: [5, 6, 7, 8, 9]
+    current_focus: 五年級臺灣史地
+    description: >
+      以有憑有據的短篇故事（300-500 字）帶五年級學生認識臺灣，
+      每篇附教師說書稿、投影圖像清單、黑板畫 prompt。
+      年度目標 90-120 篇，依七大區塊時序推進。
+    annual_target: 90-120
+    skill_pipeline: story-daily（編排器）→ planner → research → writer → verify → archive
+
+  current_position:
+    block: A-origins
+    block_title: 島嶼的誕生與最初的人
+    sub_theme_completed: 島嶼誕生（3/3）
+    next_sub_theme: 最早的足跡
+    last_completed_story: A003
+    last_completed_title: 火的禮物——大屯火山與泥火山
+    next_story_id: A004
+    status: 島嶼誕生三部曲完成，品質待覆核
+
+  block_progress:
+    A-origins: 3    # 目標 15-20
+    B-encounter: 0  # 目標 8-12
+    C-dutch-spanish: 0  # 目標 12-15
+    D-koxinga: 0    # 目標 10-12
+    E-qing: 0       # 目標 20-25
+    F-japanese: 0   # 目標 15-20
+    G-modern: 0     # 目標 10-15
+
+  confirmed_decisions:
+    - "專案結構已建立：project.yaml、theme-skeleton.yaml、index.yaml"
+    - "A001-A003 島嶼誕生三部曲完成（A001 板塊、A002 水、A003 火）"
+    - "子資料夾結構統一：stories/[區塊]/[ID]/（content.md、narration.md、images.md、chalkboard-prompt.md、raw-materials.md）"
+    - "index.yaml 路徑已統一為子資料夾格式（A001/content.md）"
+    - "品質檢查流程：story-verify 多維度檢核（事實查核、敘事品質、說書稿、圖像清單）"
+    - "五年級語言定位：具體、感官、有人物視角，不說教不灌輸"
+    - "故事字數：實際產出約 650-1000 字，規格 300-500 字偏保守，待教師確認是否調整上限"
+    - "方案 B 定案：原 A002 水火合篇拆為 A002 水 + A003 火"
+
+  next_action:
+    description: "進入「最早的足跡」子主題（A004 起），需教師先覆核 A001-A003"
+    input_needed_from_teacher:
+      - "A001-A003 品質覆核（通過/修訂）"
+      - "TCMB API Key（到手後提供）"
+      - "說書稿語氣是否需要調整"
+      - "故事正文字數上限是否調整為 500-800"
+
+  open_questions:
+    - "assemble-story.js 尚未建立"
+    - "GWS CLI 上傳流程尚未測試"

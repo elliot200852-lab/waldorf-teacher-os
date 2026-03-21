@@ -11,9 +11,9 @@ stories_of_taiwan:
   last_updated: 2026-03-21
 
   current_position:
-    phase: 建置期
-    step: 0
-    description: "專案結構已建立，Skills 建置中"
+    phase: 試跑期
+    step: 1
+    description: "島嶼誕生三部曲完成（A001-A003），管線試跑中"
 
   theme_skeleton:
     status: draft
@@ -50,9 +50,9 @@ stories_of_taiwan:
       note: "開放博物館，搜尋連結產生"
 
   story_count:
-    total: 1
+    total: 3
     by_block:
-      A-origins: 1
+      A-origins: 3
       B-encounter: 0
       C-dutch-spanish: 0
       D-koxinga: 0
@@ -69,12 +69,12 @@ stories_of_taiwan:
     scheduled-task: pending
 
   next_action:
-    description: "完成 Skills 建置 + theme-skeleton，然後用區塊 A 第一篇做管線試跑"
+    description: "島嶼誕生子主題 3/3 完成。下一步：進入「最早的足跡」子主題（A004 起）"
     input_needed_from_teacher:
+      - "A001-A003 品質覆核（通過/修訂）"
       - "TCMB API Key（到手後提供）"
-      - "五年級臺灣史地的實際上課週次"
-      - "說書稿語氣樣本"
-      - "圖像授權底線（CC only 或含待確認）"
+      - "說書稿語氣是否需要調整"
+      - "故事正文字數上限是否調整為 500-800（實際產出約 650-1000 字）"
 
   output_files:
     - type: 計畫書

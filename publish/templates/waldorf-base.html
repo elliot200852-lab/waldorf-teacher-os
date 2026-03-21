@@ -258,8 +258,8 @@ body {
 <!-- 植物浮水印 -->
 <div class="botanical-overlay"></div>
 
-<!-- ━━━━━━━━━━ 頁首導航 ━━━━━━━━━━ -->
-<header class="sticky top-0 z-40 bg-[var(--bg-wash-1)]/80 backdrop-blur-xl print:hidden">
+<!-- ━━━━━━━━━━ 頁首導航（scroll 後淡出） ━━━━━━━━━━ -->
+<header id="site-header" class="sticky top-0 z-40 bg-[var(--bg-wash-1)]/80 backdrop-blur-xl print:hidden transition-opacity duration-300">
   <div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-xl mx-auto">
     <div class="flex items-center gap-3">
       <span class="material-symbols-outlined text-[var(--primary)]" style="font-size: 2rem;">{{SEASON_ICON}}</span>
@@ -268,6 +268,25 @@ body {
   </div>
   <div class="bg-gradient-to-b from-[var(--outline-variant)] to-transparent h-4 opacity-20"></div>
 </header>
+<script>
+(function(){
+  var header = document.getElementById('site-header');
+  if (!header) return;
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if (!ticking) {
+      requestAnimationFrame(function(){
+        var hidden = window.scrollY > 10;
+        header.style.opacity = hidden ? '0' : '1';
+        header.style.pointerEvents = hidden ? 'none' : 'auto';
+        header.style.visibility = hidden ? 'hidden' : 'visible';
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+</script>
 
 <!-- ━━━━━━━━━━ 主內容區 ━━━━━━━━━━ -->
 <main class="max-w-[900px] mx-auto px-8 py-6 relative overflow-hidden">

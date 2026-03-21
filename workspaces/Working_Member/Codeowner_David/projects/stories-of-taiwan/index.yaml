@@ -4,24 +4,56 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 last_updated: 2026-03-21
-total_stories: 1
+total_stories: 3
 
 stories:
   - id: A001
     title: 從海底升起的島——臺灣的誕生
     block: A-origins
     sub_theme: 島嶼誕生
-    era: 史前（約 500–600 萬年前至今）
+    era: 史前（約 500-600 萬年前至今）
     location: 菲律賓海板塊與歐亞板塊交界處
     date_created: 2026-03-21
     files:
-      content: stories/A-origins/A001-content.md
-      narration: stories/A-origins/A001-narration.md
-      images: stories/A-origins/A001-images.md
-      raw_materials: stories/A-origins/A001-raw-materials.md
+      content: stories/A-origins/A001/content.md
+      narration: stories/A-origins/A001/narration.md
+      images: stories/A-origins/A001/images.md
+      raw_materials: stories/A-origins/A001/raw-materials.md
     sources: [tvo, ncdr, ysnp, scimonth, pansci, wikipedia]
     quality_check: pending_review
     tags: [地質, 板塊運動, 蓬萊造山運動, 玉山, 中央山脈]
+
+  - id: A002
+    title: 水的雕刻刀——立霧溪與太魯閣
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前（約 230 萬年前至今）
+    location: 花蓮縣秀林鄉（太魯閣峽谷）
+    date_created: 2026-03-21
+    files:
+      content: stories/A-origins/A002/content.md
+      narration: stories/A-origins/A002/narration.md
+      images: stories/A-origins/A002/images.md
+      raw_materials: stories/A-origins/A002/raw-materials.md
+    sources: [taroko, boch_whp, wikipedia, ntu_hydro]
+    quality_check: pending_review
+    tags: [地質, 河流侵蝕, 太魯閣, 大理岩, 立霧溪, 嘉南平原]
+
+  - id: A003
+    title: 火的禮物——大屯火山與泥火山
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前（約 280 萬年前至今）
+    location: 臺北北投（大屯火山群）、高雄燕巢（烏山頂泥火山）
+    date_created: 2026-03-21
+    files:
+      content: stories/A-origins/A003/content.md
+      narration: stories/A-origins/A003/narration.md
+      images: stories/A-origins/A003/images.md
+      raw_materials: stories/A-origins/A003/raw-materials.md
+    sources: [tvo, ymsnp, forest_bureau, kcg_agri, wikipedia]
+    quality_check: pending_review
+    tags: [地質, 火山, 大屯火山群, 溫泉, 泥火山, 硫磺]
 
 # 索引結構說明：
 # stories:
