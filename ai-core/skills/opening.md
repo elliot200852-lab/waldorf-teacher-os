@@ -112,28 +112,34 @@ python3 setup/scripts/skill-platform-check.py --range "$OLD_HEAD..HEAD"
 4. `{workspace}/teacheros-personal.yaml`
 5. `projects/_di-framework/project.yaml`
 
-### Step 2.5 — GWS 連線檢查（AI 自動，靜默）
+### Step 2.5 — GWS 連線檢查（AI 自動，靜默，絕不阻擋開工）
 
-若教師的 `{workspace}/teacheros-personal.yaml` 包含 `google_accounts` 區塊，且本機有 gws CLI：
+**前置判斷（先檢查再呼叫，避免無謂等待）：**
+
+1. 若 `{workspace}/teacheros-personal.yaml` 無 `google_accounts` 區塊 → **完全跳過**，不顯示任何 GWS 相關訊息，直接進 Step 3
+2. 先執行 `command -v gws`（macOS/Linux）或 `where gws`（Windows），確認 gws 是否存在
+   - 不存在 → 在 Step 4 摘要顯示「GWS 未安裝」，**直接進 Step 3**，不嘗試 npx
+3. gws 存在 → 執行連線測試（見下方指令），**超時上限 5 秒**
 
 ```bash
 # macOS / Linux
-gws gmail users getProfile --params '{"userId":"me"}' 2>/dev/null
+command -v gws >/dev/null 2>&1 && gws gmail users getProfile --params '{"userId":"me"}' 2>/dev/null
 ```
 
 ```powershell
 # Windows（PowerShell）
-gws gmail users getProfile --params '{"userId":"me"}' 2>$null
+if (Get-Command gws -ErrorAction SilentlyContinue) { gws gmail users getProfile --params '{"userId":"me"}' 2>$null }
 ```
 
 | 結果 | 處理 |
 |------|------|
-| 成功（回傳 emailAddress） | 不報告，靜默通過。在 Step 4 的摘要中顯示「GWS 已連線」 |
-| 401 / 失敗 | 在 Step 4 的摘要中顯示「GWS 未連線——需要時請說『設定 gws』」 |
-| gws 未安裝（command not found） | 在 Step 4 的摘要中顯示「GWS 未安裝——需要時請說『設定 gws』」 |
+| 成功（回傳 emailAddress） | 靜默通過。Step 4 摘要顯示「GWS 已連線（email）」 |
+| 401 / 失敗 | Step 4 摘要顯示「GWS 未連線——需要時請說『設定 gws』」 |
+| gws 未安裝（command not found） | Step 4 摘要顯示「GWS 未安裝——需要時請說『設定 gws』」 |
+| 超時（> 5 秒無回應） | Step 4 摘要顯示「GWS 檢查逾時——需要時請說『設定 gws』」 |
 | teacheros-personal.yaml 無 `google_accounts` | 完全跳過，不顯示任何 GWS 相關訊息 |
 
-> 此步驟不阻擋開工流程。GWS 是選配功能，未設定的教師照常使用所有非 Google Workspace 的功能。
+> **此步驟絕對不阻擋開工流程。** 任何結果（包含錯誤、超時、未安裝）都只記錄到 Step 4 摘要，不中斷載入。GWS 是選配功能，未設定的教師照常使用所有非 Google Workspace 的功能。AI 在此步驟遇到任何異常，一律靜默跳過繼續。
 
 ### Step 3 — 載入個人技能
 
