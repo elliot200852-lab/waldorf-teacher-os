@@ -82,16 +82,7 @@ const GWS_BIN = (() => {
     if (found) console.warn(`[gws] Found ${found} but health check failed (401), trying npx fallback...`);
   } catch {}
 
-  // 2. npx @googleworkspace/cli fallback（v0.18+，使用 keyring 認證）
-  const npxBin = 'npx @googleworkspace/cli';
-  try {
-    if (gwsHealthCheck(npxBin)) {
-      console.log(`[gws] Using: ${npxBin} (health check passed)`);
-      return npxBin;
-    }
-  } catch {}
-
-  // 3. Scan nvm versions (macOS)
+  // 2. Scan nvm versions (macOS) — 只檢查檔案存在，不觸發 npx 下載
   const nvmBase = path.join(os.homedir(), '.nvm/versions/node');
   try {
     if (fs.existsSync(nvmBase)) {
@@ -103,9 +94,23 @@ const GWS_BIN = (() => {
     }
   } catch {}
 
-  // 4. Fallback: assume in PATH（不保證能用）
-  console.warn('[gws] No healthy gws found. Upload may fail.');
-  return 'gws';
+  // 3. npx fallback — 僅在 npx 已有快取時嘗試（避免觸發長時間下載）
+  try {
+    const { execSync: es } = require('child_process');
+    // npx --no-install: 只用本地快取，不觸發下載
+    es('npx --no-install @googleworkspace/cli --version', {
+      encoding: 'utf-8', timeout: 5000, stdio: ['pipe', 'pipe', 'pipe']
+    });
+    const npxBin = 'npx @googleworkspace/cli';
+    if (gwsHealthCheck(npxBin)) {
+      console.log(`[gws] Using: ${npxBin} (health check passed)`);
+      return npxBin;
+    }
+  } catch {}
+
+  // 4. 未找到可用的 gws — 返回 null，上傳步驟會跳過
+  console.warn('[gws] No healthy gws found. Upload will be skipped.');
+  return null;
 })();
 
 // ── 季節偵測 ─────────────────────────────────────────
@@ -1188,7 +1193,11 @@ function main() {
   // ── 上傳到 Google Drive（選用）──────────────────
   // 策略：無版本號時先刪除舊檔再上傳（upsert）；有版本號時保留舊版直接上傳
   const uploadResults = {};
-  if (doUpload) {
+  if (doUpload && !GWS_BIN) {
+    console.warn('[upload] Skipped — no GWS CLI available. HTML/PDF saved locally.');
+    console.warn('[upload] Install gws (npm install -g @googleworkspace/cli) and run gws auth login to enable upload.');
+  }
+  if (doUpload && GWS_BIN) {
     const { execSync } = require('child_process');
     const folderId = driveFolderArg ? driveFolderArg.split('=')[1] : DRIVE_FOLDER_ID;
 
