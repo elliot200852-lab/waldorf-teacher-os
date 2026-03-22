@@ -49,6 +49,7 @@ args_format: "[選填：班級代碼 科目] (例: 9c english)"
 **1a. 讀取現有狀態**
 
 讀取：`{workspace}/projects/class-[班級]/[科目]/session.yaml`
+或：`{workspace}/projects/[專案名]/session.yaml`（獨立專案，如 stories-of-taiwan）
 
 ```
 # {workspace} 路徑解析：

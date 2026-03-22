@@ -72,6 +72,12 @@ aliases:
 每個科目資料夾（english/、homeroom/、ml-taiwan-literature/ 等）內都有自己的 `session.yaml`。
 掃描規則：`class-*/*/session.yaml`（一層子資料夾內找 session.yaml）。
 
+**獨立專案工作線：**
+部分工作線不隸屬於特定班級，而是獨立專案（如「臺灣的故事」）。
+這些專案的 session.yaml 位於 `{workspace}/projects/{project-name}/session.yaml`。
+掃描規則追加：`{workspace}/projects/*/session.yaml`（排除 `_di-framework`）。
+開機摘要中與班級工作線一併報告。
+
 ---
 
 ## 第二步：載入後主動報告（語音模式優先）

@@ -155,7 +155,7 @@ gws gmail users getProfile --params '{"userId":"me"}' 2>/dev/null
 **GWS** [已連線（email）/ 未連線 / 未設定]（僅在教師有設定 google_accounts 時顯示）
 
 **上次工作紀錄**
-（掃描 `{workspace}/projects/class-*/*/session.yaml`，列出最近有更新的班級與科目，顯示 `last_updated` 與 `next_action.description`）
+（掃描 `{workspace}/projects/class-*/*/session.yaml` + `{workspace}/projects/*/session.yaml`（排除 `_di-framework`），列出最近有更新的班級科目與獨立專案，顯示 `last_updated` 與 `next_action.description`）
 
 ---
 
