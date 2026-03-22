@@ -40,9 +40,32 @@ args_format: "[選填：班級代碼 科目] (例: 9c english)"
 
 以 Repo 根目錄為基準。AI 自動偵測：`git rev-parse --show-toplevel`，或從當前工作目錄推斷。
 
+## 執行架構（平行化）
+
+收工流程分為四個 Phase，Phase A 內的兩個步驟可平行執行以節省時間：
+
+```
+Phase A（平行）：Step 1 進度同步（subagent）+ Step 3 Obsidian（subagent）
+Phase B（序列）：Step 2 Cowork 同步（依賴 Step 1 的 session.yaml）
+Phase C（序列）：Step 4 Git 存檔推送（依賴 Phase A + B 的所有檔案變更）
+Phase D（純輸出）：Step 5 摘要 + Step 6 開機提醒 + Step 7 Session 邊界
+```
+
+**AI 執行指引（Claude Code 限定）：**
+
+Phase A 時，主 agent 同時啟動兩個 subagent：
+1. **Subagent A**（進度同步）：傳入本次對話的工作摘要（涉及的班級/科目/專案、確認的決策、下一步）+ session.yaml 路徑。Subagent 讀取 → 提取變動 → 寫入 → 回報變動欄位清單。
+2. **Subagent B**（Obsidian）：傳入 `python3 setup/scripts/obsidian-check.py` 指令。Subagent 執行腳本 → 補 aliases → 更新 marker → 回報修正數量。
+
+兩個 subagent 完成後，主 agent 繼續 Phase B → C → D。
+
+**非 Claude Code 平台（Gemini、ChatGPT）：** 無 subagent 能力，按 Step 1 → 2 → 3 → 4 → 5 → 6 → 7 序列執行。
+
+---
+
 ## 執行步驟
 
-### Step 1 — 進度同步
+### Step 1 — 進度同步（Phase A，可平行）
 
 讀取相關的 session.yaml，從本次對話中提取變動並寫入。
 
@@ -114,7 +137,7 @@ session:
 - 若涉及多個班級/科目，逐一處理
 - 若本次對話無任何可提取的變動，輸出「session.yaml 維持不變」
 
-### Step 2 — Cowork 同步
+### Step 2 — Cowork 同步（Phase B，依賴 Step 1）
 
 自動執行 `ai-core/skills/sync-cowork.md` 的快速模式（只更新區塊三）。
 
@@ -132,7 +155,7 @@ session:
 - `last_compiled` 超過 3 天且 Step 1 無變動 → 仍執行一次區塊三同步
 - INSTRUCTIONS.md 不存在 → 提示先執行一次「同步 Cowork」
 
-### Step 3 — Obsidian 標籤與索引
+### Step 3 — Obsidian 標籤與索引（Phase A，可平行）
 
 執行 `python3 setup/scripts/obsidian-check.py`（完整掃描，不加 flag）。
 
@@ -148,7 +171,7 @@ session:
 
 詳細的標籤產生規則與 HOME.md 區段判斷邏輯，參見 `ai-core/skills/obsidian-sync.md`。
 
-### Step 4 — Git 存檔與推送
+### Step 4 — Git 存檔與推送（Phase C，依賴 Step 1+2+3）
 
 **4a. 檢查變更**
 
@@ -181,7 +204,7 @@ git push
 記錄 commit hash，供 Step 5 摘要使用。
 不需要顯示原始 git 輸出，用中文摘要即可。
 
-### Step 5 — 本次工作摘要
+### Step 5 — 本次工作摘要（Phase D，純輸出）
 
 每次收工必輸出。表格格式：
 
@@ -198,7 +221,7 @@ git push
 
 若某項目為空（例如無 YAML 變動），從表格中省略該行。
 
-### Step 6 — 跨平台開機提醒
+### Step 6 — 跨平台開機提醒（Phase D，純輸出）
 
 每次收工必輸出，固定內容：
 
@@ -215,7 +238,7 @@ git push
 
 此提醒在所有 AI 平台（Claude Code、Gemini、ChatGPT 等）皆適用。
 
-### Step 7 — Session 邊界判斷
+### Step 7 — Session 邊界判斷（Phase D，純輸出）
 
 收工完成後，檢視本次 session 的工作量。若符合以下任一條件：
 - 涉及 2 個以上不同工作線（如英文 + 導師 + 系統工程）
