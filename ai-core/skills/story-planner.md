@@ -32,6 +32,8 @@ David（管理員）。未來可擴展至其他教師。
 
 ## 入口驗證（由 story-daily pipeline 強制執行）
 
+**權威來源：** `story-daily.md` Checkpoint 矩陣 Step 0→1 列。以下為快速參照，若有衝突以 checkpoint 矩陣為準。
+
 啟動本技能前，必須確認以下條件全部滿足，否則回報 FAIL 並停止：
 
 1. `projects/stories-of-taiwan/index.yaml` 存在且可被 YAML 解析

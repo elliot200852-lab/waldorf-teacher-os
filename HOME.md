@@ -243,62 +243,58 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/taiwan_history_api.py\|台灣史料 API 腳本]] | 多資料源搜尋 Python 腳本 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/themes/theme-skeleton.yaml\|年度主題骨架]] | 七大區塊時序規劃 |
 
-**A-origins：島嶼的誕生與最初的人**
+**A-origins：島嶼的誕生與最初的人** — [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/quality-log.md\|品質彙總紀錄]]
+
+**A001 從海底升起的島**
 
 | 檔案 | 說明 |
 |------|------|
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001/content\|A001 從海底升起的島]] | 故事正文 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001/narration\|A001 說書稿]] | 教師說書稿 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001/images\|A001 圖像清單]] | 投影圖像清單 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001/chalkboard-prompt\|A001 黑板畫]] | 黑板畫 prompt |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001/raw-materials\|A001 原始素材]] | 研究素材包 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002/content\|A002 水的雕刻刀]] | 故事正文 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002/narration\|A002 說書稿]] | 教師說書稿 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002/images\|A002 圖像清單]] | 投影圖像清單 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002/chalkboard-prompt\|A002 黑板畫]] | 黑板畫 prompt |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002/raw-materials\|A002 原始素材]] | 研究素材包 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/content\|A003 火的禮物]] | 故事正文 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/narration\|A003 說書稿]] | 教師說書稿 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/images\|A003 圖像清單]] | 投影圖像清單 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/chalkboard-prompt\|A003 黑板畫]] | 黑板畫 prompt |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/raw-materials\|A003 原始素材]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001/content\|content]] | 故事正文 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001/narration\|narration]] | 教師說書稿 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001/images\|images]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001/raw-materials\|raw-materials]] | 研究素材包 |
 
-**A002-v2 / A003-v2（校準修訂版）**
+**A002 水的雕刻刀**
 
 | 檔案 | 說明 |
 |------|------|
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/content\|A002-v2 水的雕刻刀（修訂）]] | 校準規範後修訂版 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/content\|A003-v2 火的禮物（修訂）]] | 校準規範後修訂版 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002/content\|content]] | 故事正文（原版） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002/narration\|narration]] | 教師說書稿 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002/images\|images]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002/raw-materials\|raw-materials]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/content\|v2 content]] | 校準規範後修訂版 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A002-quality\|品質報告]] | 品質審核紀錄 |
 
-**A004：石頭裡的秘密——卑南遺址**
-
-| 檔案 | 說明 |
-|------|------|
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/content\|A004 石頭裡的秘密]] | 故事正文（怪手視角） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/narration\|A004 說書稿]] | 教師說書稿 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/images\|A004 圖像清單]] | 投影圖像清單 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/chalkboard-prompt\|A004 黑板畫]] | 黑板畫 prompt |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/raw-materials\|A004 原始素材]] | 研究素材包 |
-
-**A004-v2：石頭裡的秘密——卑南遺址（從玉出發）**
+**A003 火的禮物**
 
 | 檔案 | 說明 |
 |------|------|
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/content\|A004-v2 從玉出發]] | 故事正文（全新敘事角度） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/narration\|A004-v2 說書稿]] | 教師說書稿 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/images\|A004-v2 圖像清單]] | 投影圖像清單 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/chalkboard-prompt\|A004-v2 黑板畫]] | 黑板畫 prompt |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/raw-materials\|A004-v2 原始素材]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/content\|content]] | 故事正文（原版） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/narration\|narration]] | 教師說書稿 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/images\|images]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/raw-materials\|raw-materials]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/content\|v2 content]] | 校準規範後修訂版 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A003-v2-quality\|品質報告]] | 品質審核紀錄 |
 
-**品質審核**
+**A004 石頭裡的秘密——卑南遺址**
 
 | 檔案 | 說明 |
 |------|------|
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/quality-log\|品質彙總紀錄]] | quality-log.yaml |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A002-quality\|A002 品質檢查]] | 品質審核紀錄 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A003-v2-quality\|A003-v2 品質檢查]] | 品質審核紀錄 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-quality\|A004 品質檢查]] | 品質審核紀錄 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-v2-quality\|A004-v2 品質檢查]] | 品質審核紀錄 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/content\|content]] | 故事正文（怪手視角） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/narration\|narration]] | 教師說書稿 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/images\|images]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/raw-materials\|raw-materials]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/content\|v2 content]] | 從玉出發（全新敘事角度） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/narration\|v2 narration]] | v2 說書稿 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/images\|v2 images]] | v2 圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/chalkboard-prompt\|v2 chalkboard]] | v2 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/raw-materials\|v2 raw-materials]] | v2 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-quality\|品質報告]] | 原版品質審核 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-v2-quality\|v2 品質報告]] | v2 品質審核 |
 
 ### Good-notes 建造日誌
 

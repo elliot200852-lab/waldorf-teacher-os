@@ -62,6 +62,18 @@ updated: 2026-03-22
 
 **AI 判斷邏輯：** 指令中出現「第二版」「v2」「v3」「新版」「重跑但保留原版」等詞彙 → 版本模式。未出現 → 覆蓋模式。
 
+**版本標記統一規範（三方必須一致）：**
+
+所有版本記錄使用「嵌套模式」——版本資訊嵌入原始 ID 條目下，不建立獨立條目：
+
+| 儲存位置 | 格式 | 範例 |
+|---------|------|------|
+| `index.yaml` | 原 ID 條目下嵌套 `v2:` 物件，根層加 `latest_version: v2` | `A004:` 下嵌 `v2: { files: ... }` |
+| `session.yaml` `pipeline_outputs` | 原 ID 條目下嵌套 `v2:` 物件（不用 `A004-v2` 獨立鍵） | `A004:` 下嵌 `v2: { html: ... }` |
+| `quality-log.yaml` | 原 ID 條目下嵌套 `v2:` 物件（不用 `A004-v2` 獨立鍵） | `A004:` 下嵌 `v2: { result: ... }` |
+
+**禁止**：不同儲存位置使用不同的版本追蹤格式（如 index 用嵌套但 session 用分列式）。
+
 ---
 
 ## 強制完成規則（MANDATORY COMPLETION RULES）
@@ -155,7 +167,7 @@ Step 7: archive
 | Step 4→5 | `reviews/[ID]-quality.md` 存在 + 總評狀態為 PASSED 或 NEEDS_REVISION（FAILED → 停止） | FAIL → 停止 |
 | Step 5→6 | `~/Downloads/AssemblyStory-[ID]-chalkboard.png` 存在 + 檔案大小 > 50KB；`chalkboard-prompt.md` 下載檔名欄位已填入 | FAIL → 重試 Step 5（最多 3 次：重新掃描 ~/Downloads/ + 重新從 Gemini 下載），仍失敗則停止 pipeline。**排程模式例外**：若 Claude in Chrome 不可用，依排程 fallback 表處理（SKIP + 待補圖） |
 | Step 6→7 | `temp/beautify-[ID]-完整版.html` 存在；`temp/[ID]-完整版.pdf` 存在；HTML 中 source URLs > 0；HTML 中 Images > 0；Drive 上傳成功回傳 file ID | FAIL → 停止 |
-| Step 7→8 | `index.yaml` 中已存在該 story_id 的條目；`current-task.yaml` 已刪除 | WARN → 繼續但在報告中標記 |
+| Step 7→8 | `index.yaml` 中已存在該 story_id 的條目；`current-task.yaml` 已刪除；AI 已在記憶體中保留報告所需 metadata（story_id、title、block） | WARN → 繼續但在報告中標記 |
 
 **Checkpoint 執行方式：**
 - AI 在進入每個新步驟前，逐項檢查上表對應的驗證項目
@@ -230,6 +242,16 @@ David（管理員）。其他教師 clone Repo 後亦可使用。
 
 ## 執行步驟
 
+### 前置檢查 — Pipeline 恢復偵測
+
+啟動時，AI 先檢查 `projects/stories-of-taiwan/pipeline-status.yaml` 是否存在：
+
+- **存在** → 讀取內容，向教師報告：「上次 pipeline 未完成（[story_id]，中斷於 Step [X]，原因：[reason]）。要從中斷處繼續嗎？」
+  - 教師確認「繼續」→ 跳至 `pipeline-status.yaml` 記錄的下一個待執行步驟
+  - 教師確認「重跑」→ 刪除 `pipeline-status.yaml`，從 Step 0 重新開始
+  - 教師確認「放棄」→ 刪除 `pipeline-status.yaml`，結束
+- **不存在** → 正常從 Step 0 開始
+
 ### Step 0 — 自動編號
 
 讀取 `index.yaml`，找出最新的 story ID，自動遞增：
@@ -253,8 +275,11 @@ David（管理員）。其他教師 clone Repo 後亦可使用。
 
 產出：`projects/stories-of-taiwan/current-task.yaml`（暫存選題結果）。
 
-**自動模式**（排程觸發）：跳過教師確認，直接進入 Step 2。
-**互動模式**（手動觸發）：向教師報告選題結果，等待確認。
+**模式判斷：**
+- **自動模式**：當 pipeline 由排程任務（Scheduled Task）觸發時 → 跳過教師確認，直接進入 Step 2
+- **互動模式**：當教師手動說出觸發語時 → 向教師報告選題結果，等待確認
+
+**判斷信號：** AI 檢查自身啟動來源。若為排程任務回呼（如 CronCreate 觸發或 Scheduled Task 派發），判定為自動模式；否則為互動模式。story-planner.md 不需要接收模式參數——模式判斷由 story-daily 編排器負責，planner 只負責選題邏輯。
 
 ### Step 2 — 素材搜尋（story-research）
 
@@ -320,10 +345,24 @@ David（管理員）。其他教師 clone Repo 後亦可使用。
 - 主 agent 保留瀏覽器操作能力（Claude in Chrome 工具只有主 agent 可用）
 - 執行下方的 Step 5 完整操作流程
 
-**兩者都完成後：**
-- Step 4 結果為 PASSED → 繼續 Step 6
-- Step 4 結果為 NEEDS_REVISION → 主 agent 修正後重新檢查（最多重試 2 次）
-- Step 4 結果為 FAILED → 暫停流程，通知教師
+**同步匯合（MANDATORY SYNCHRONIZATION）：**
+
+主 agent 必須等待兩個平行任務都完成後，才能進入 Step 6。匯合邏輯：
+
+1. **等待**：主 agent 完成 Step 5 後，檢查 subagent（Step 4）是否已回傳結果。若未完成，等待 subagent 完成。
+2. **Subagent 回傳格式**：
+   ```
+   {
+     "status": "PASSED" | "NEEDS_REVISION" | "FAILED",
+     "quality_report_path": "projects/stories-of-taiwan/reviews/[ID]-quality.md",
+     "issues": ["issue1", "issue2"]  // 僅 NEEDS_REVISION/FAILED 時
+   }
+   ```
+3. **匯合後判斷**：
+   - Step 4 = PASSED 且 Step 5 = PASS → 繼續 Step 6
+   - Step 4 = NEEDS_REVISION → 主 agent 根據 issues 修正對應檔案，重新提交給 subagent 驗證（最多 2 次）
+   - Step 4 = FAILED → 暫停流程，通知教師
+   - Step 5 = FAIL → 依 Checkpoint Step 5→6 重試邏輯處理
 
 ### Step 5 — 黑板畫生成（Gemini 瀏覽器操作）
 
@@ -377,7 +416,14 @@ David（管理員）。其他教師 clone Repo 後亦可使用。
 node publish/scripts/assemble-story.js stories/[區塊]/[ID] --pdf --upload
 
 # 版本模式（不覆蓋原版，加版本號到檔名）
-node publish/scripts/assemble-story.js stories/[區塊]/[ID]-v2 --pdf --upload --version=v2
+# 注意：傳入的是版本子資料夾 [ID]-v2，腳本會從目錄名自動解析 storyId。
+# --version 旗標只在目錄名不含版本號時才需要，避免 storyId 與 version 雙重疊加。
+# 正確用法（二擇一）：
+node publish/scripts/assemble-story.js stories/[區塊]/[ID]-v2 --pdf --upload
+# 或：
+node publish/scripts/assemble-story.js stories/[區塊]/[ID] --pdf --upload --version=v2
+# 錯誤用法（會產生 -v2-v2- 雙重版本號）：
+# node publish/scripts/assemble-story.js stories/[區塊]/[ID]-v2 --pdf --upload --version=v2  ← 禁止
 
 # Cowork VM（透過 osascript 橋接 Mac 執行）
 osascript: cd [repo-path] && node publish/scripts/assemble-story.js [story-dir] --pdf --upload
@@ -435,6 +481,8 @@ files:
 ```
 
 ### Step 8 — 完成報告
+
+**注意：** Step 7 (archive) 會刪除 `current-task.yaml`。Step 8 的報告資料（story_id、title、block 等）必須使用 AI 在 pipeline 執行過程中已暫存在記憶體中的資訊，或從 Step 7 回傳的歸檔結果取得。不依賴 `current-task.yaml`。
 
 產出完成摘要（必須包含每一步的 PASS/FAIL 狀態）：
 

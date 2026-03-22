@@ -40,7 +40,7 @@ David（管理員）。
 
 ## 入口驗證（由 story-daily pipeline 強制執行）
 
-啟動本技能前，必須確認以下條件全部滿足，否則回報 FAIL 並停止：
+**權威來源：** `story-daily.md` Checkpoint 矩陣 Step 1→2 列。以下為快速參照，若有衝突以 checkpoint 矩陣為準。
 
 1. `projects/stories-of-taiwan/current-task.yaml` 存在
 2. `current-task.yaml` 中 `story_id`、`title`、`sub_theme`、`search_keywords` 欄位非空
