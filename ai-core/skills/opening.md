@@ -117,7 +117,13 @@ python3 setup/scripts/skill-platform-check.py --range "$OLD_HEAD..HEAD"
 若教師的 `{workspace}/teacheros-personal.yaml` 包含 `google_accounts` 區塊，且本機有 gws CLI：
 
 ```bash
+# macOS / Linux
 gws gmail users getProfile --params '{"userId":"me"}' 2>/dev/null
+```
+
+```powershell
+# Windows（PowerShell）
+gws gmail users getProfile --params '{"userId":"me"}' 2>$null
 ```
 
 | 結果 | 處理 |

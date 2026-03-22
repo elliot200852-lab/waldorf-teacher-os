@@ -57,9 +57,14 @@ const GWS_BIN = (() => {
   const { execSync } = require('child_process');
 
   // 健康檢查：實際呼叫 API 確認 credential 有效
+  // stdio: ['pipe','pipe','pipe'] 跨平台取代 2>/dev/null
+  // JSON params 用跳脫雙引號，相容 Windows cmd 與 macOS sh
   function gwsHealthCheck(bin) {
     try {
-      execSync(`${bin} drive about get --params '{"fields":"user"}' 2>/dev/null`, {
+      const params = process.platform === 'win32'
+        ? '--params "{\\"fields\\":\\"user\\"}"'
+        : '--params \'{"fields":"user"}\'';
+      execSync(`${bin} drive about get ${params}`, {
         encoding: 'utf-8', timeout: 10000, stdio: ['pipe', 'pipe', 'pipe']
       });
       return true;
@@ -70,7 +75,7 @@ const GWS_BIN = (() => {
   try {
     const cmd = process.platform === 'win32' ? 'where gws' : 'which gws';
     const found = execSync(cmd, { encoding: 'utf-8', timeout: 5000 }).trim().split('\n')[0];
-    if (found && gwsHealthCheck(`"${found}"`)) {
+    if (found && gwsHealthCheck(found)) {
       console.log(`[gws] Using: ${found} (health check passed)`);
       return found;
     }
@@ -93,7 +98,7 @@ const GWS_BIN = (() => {
       const versions = fs.readdirSync(nvmBase).sort().reverse();
       for (const v of versions) {
         const gwsPath = path.join(nvmBase, v, 'bin/gws');
-        if (fs.existsSync(gwsPath) && gwsHealthCheck(`"${gwsPath}"`)) return gwsPath;
+        if (fs.existsSync(gwsPath) && gwsHealthCheck(gwsPath)) return gwsPath;
       }
     }
   } catch {}
@@ -1197,8 +1202,11 @@ function main() {
         q: `'${folderId}' in parents and trashed = false and name contains '${storyId}'`,
         fields: 'files(id,name)',
       });
+      const quotedSearch = process.platform === 'win32'
+        ? `--params "${searchParams.replace(/"/g, '\\"')}"`
+        : `--params '${searchParams}'`;
       const searchResult = execSync(
-        `${GWS_BIN} drive files list --params '${searchParams}' --format json`,
+        `${GWS_BIN} drive files list ${quotedSearch} --format json`,
         { encoding: 'utf-8', timeout: 30000 }
       );
       const searchParsed = JSON.parse(searchResult.trim());
@@ -1208,8 +1216,11 @@ function main() {
         for (const old of oldFiles) {
           console.log(`[upload]   Deleting: ${old.name} (${old.id})`);
           try {
+            const delParams = process.platform === 'win32'
+              ? `--params "{\\"fileId\\": \\"${old.id}\\"}"`
+              : `--params '{"fileId": "${old.id}"}'`;
             execSync(
-              `${GWS_BIN} drive files delete --params '{"fileId": "${old.id}"}'`,
+              `${GWS_BIN} drive files delete ${delParams}`,
               { encoding: 'utf-8', timeout: 30000 }
             );
           } catch (delErr) {
