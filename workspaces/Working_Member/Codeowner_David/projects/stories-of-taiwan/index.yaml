@@ -69,7 +69,16 @@ stories:
       raw_materials: stories/A-origins/A004/raw-materials.md
     sources: [nmp, nrch, openmuseum, nhsrc, wikipedia, scitechvista]
     quality_check: passed_v2
+    latest_version: v2
     tags: [考古, 遺址, 卑南文化, 石板棺, 人獸形玉玦, 月形石柱, 臺灣玉]
+    v2:
+      date_created: 2026-03-22
+      narrative_angle: 從「玉」出發的全新敘事視角（v1 以怪手挖掘為開場）
+      files:
+        content: stories/A-origins/A004-v2/content.md
+        narration: stories/A-origins/A004-v2/narration.md
+        images: stories/A-origins/A004-v2/images.md
+        raw_materials: stories/A-origins/A004-v2/raw-materials.md
 
 # 索引結構說明：
 # stories:

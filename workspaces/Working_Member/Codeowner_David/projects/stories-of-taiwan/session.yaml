@@ -6,7 +6,7 @@
 
 stories_of_taiwan_session:
   project: stories-of-taiwan
-  last_updated: 2026-03-22  # A004 v2 pipeline + 5 項 bug 修復
+  last_updated: 2026-03-22  # A004-v2 完成全管線（新敘事角度：從玉出發）
 
   overview:
     name: 臺灣的故事
@@ -68,11 +68,12 @@ stories_of_taiwan_session:
     - "assemble-story.js v2.2.0：--version 旗標（版本模式跳過 cleanup）、移除 cd /tmp、GWS_BIN 健康檢查"
 
   next_action:
-    description: "v2.2.0 修復完成。下一步 A005（最早的足跡第二篇，建議十三行或大坌坑），需教師覆核 A001-A004。Homebrew gws 有認證 bug，已 fallback 到 npx @googleworkspace/cli"
+    description: "A004-v2 完成（新角度：從玉出發）。下一步 A005（最早的足跡第二篇，建議十三行或大坌坑）。GWS 未認證，A004-v2 HTML/PDF 待手動上傳。"
     input_needed_from_teacher:
       - "A001-A004 品質覆核（通過/修訂）"
+      - "A004-v2 vs A004 比較回饋（玉的視角 vs 怪手視角）"
       - "TCMB API Key（到手後提供）"
-      - "A002-v2 vs A002、A003-v2 vs A003 比較回饋"
+      - "GWS 重新認證（gws auth login）"
 
   pipeline_outputs:
     A001:
@@ -91,6 +92,18 @@ stories_of_taiwan_session:
       html: temp/beautify-A003-完整版.html
       pdf: temp/A003-完整版.pdf
       chalkboard: ~/Downloads/AssemblyStory-A003-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
+    A004:
+      html: temp/beautify-A004-完整版.html
+      pdf: temp/A004-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A004-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
+    A004-v2:
+      html: temp/beautify-A004-v2-v2-完整版.html
+      pdf: temp/A004-v2-v2-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A004-v2-chalkboard.png
       google_drive: uploaded
       assembled: 2026-03-22
 
