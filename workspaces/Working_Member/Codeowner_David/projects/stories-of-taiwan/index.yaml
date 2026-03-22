@@ -3,8 +3,8 @@
 # 由 story-archive skill 自動維護
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-last_updated: 2026-03-21
-total_stories: 3
+last_updated: 2026-03-22
+total_stories: 4
 
 stories:
   - id: A001
@@ -54,6 +54,22 @@ stories:
     sources: [tvo, ymsnp, forest_bureau, kcg_agri, wikipedia]
     quality_check: pending_review
     tags: [地質, 火山, 大屯火山群, 溫泉, 泥火山, 硫磺]
+
+  - id: A004
+    title: 石頭裡的秘密——卑南遺址
+    block: A-origins
+    sub_theme: 最早的足跡
+    era: 史前（約 5,300-2,300 年前）
+    location: 臺東縣臺東市南王里（卑南遺址）
+    date_created: 2026-03-22
+    files:
+      content: stories/A-origins/A004/content.md
+      narration: stories/A-origins/A004/narration.md
+      images: stories/A-origins/A004/images.md
+      raw_materials: stories/A-origins/A004/raw-materials.md
+    sources: [nmp, nrch, openmuseum, nhsrc, wikipedia, scitechvista]
+    quality_check: passed
+    tags: [考古, 遺址, 卑南文化, 石板棺, 人獸形玉玦, 月形石柱, 臺灣玉]
 
 # 索引結構說明：
 # stories:

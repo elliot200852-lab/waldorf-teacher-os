@@ -39,19 +39,40 @@
 // 額外：
 //   raw-materials.md     — 解析 URL 注入事實出處表超連結
 //
-// 版本：1.0.0 (2026-03-21)
+// 版本：2.1.0 (2026-03-22) — 加嚴格輸出驗證 + 擴充圖檔搜尋 + 動態 GWS 路徑
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-const SCRIPT_VERSION = '2.0.0';
+const SCRIPT_VERSION = '2.1.0';
 const SCRIPT_PATH = 'publish/scripts/assemble-story.js';
 
 // Google Drive 上傳設定
 const DRIVE_FOLDER_ID = '1TBD6Xs-wVgqqlX3_13boy4xbBnjQ9LdY'; // 「台灣的故事」資料夾
-const GWS_BIN = '/Users/Dave/.nvm/versions/node/v24.13.0/bin/gws';
+const GWS_BIN = (() => {
+  const { execSync } = require('child_process');
+  // 1. Try which (macOS/Linux) or where (Windows)
+  try {
+    const cmd = process.platform === 'win32' ? 'where gws' : 'which gws';
+    const found = execSync(cmd, { encoding: 'utf-8', timeout: 5000 }).trim().split('\n')[0];
+    if (found) return found;
+  } catch {}
+  // 2. Scan nvm versions (macOS)
+  const nvmBase = path.join(os.homedir(), '.nvm/versions/node');
+  try {
+    if (fs.existsSync(nvmBase)) {
+      const versions = fs.readdirSync(nvmBase).sort().reverse();
+      for (const v of versions) {
+        const gwsPath = path.join(nvmBase, v, 'bin/gws');
+        if (fs.existsSync(gwsPath)) return gwsPath;
+      }
+    }
+  } catch {}
+  // 3. Fallback: assume in PATH
+  return 'gws';
+})();
 
 // ── 季節偵測 ─────────────────────────────────────────
 function detectSeason(date = new Date()) {
@@ -105,6 +126,53 @@ function extractTitle(md) {
   if (!m) return '臺灣的故事';
   // 去掉 story ID 前綴（如 "A001 "）
   return m[1].trim().replace(/^[A-G]\d{3}\s+/, '');
+}
+
+// ── 動態提取核心意象（pullQuote）────────────────────
+function extractPullQuote(contentMd, contentSections) {
+  // 策略 1：找 ## 核心意象 段落
+  const coreMatch = contentMd.match(/##\s*核心意象\s*\n+(.+)/);
+  if (coreMatch) return coreMatch[1].trim();
+
+  // 策略 2：從故事本文（第一個 section，包含 ## 故事本文）取最後一個有力句子
+  // contentSections[0] 通常是故事正文，contentSections[1+] 是地理標記、延伸線索等
+  const storySection = contentSections.length > 0 ? contentSections[0] : '';
+  if (storySection) {
+    const lines = storySection.split('\n').map(l => l.trim()).filter(l =>
+      l && !l.startsWith('#') && !l.startsWith('>') && !l.startsWith('|') && !l.startsWith('-') && !l.startsWith('*')
+    );
+    if (lines.length > 0) {
+      // 取倒數第一或第二個段落（最後一段通常是收尾的有力句子）
+      const lastLine = lines[lines.length - 1];
+      // 取最後一個句號或句尾
+      const sentences = lastLine.split(/(?<=[。！？])/);
+      const candidate = sentences[sentences.length - 1].trim() || lastLine;
+      if (candidate.length > 5) return candidate;
+      // 如果太短（可能是殘句），往上找
+      if (lines.length > 1) return lines[lines.length - 2];
+    }
+  }
+
+  // fallback
+  return '臺灣的故事——每一頁都藏著一座島嶼的記憶。';
+}
+
+// ── 動態提取下篇預告 ─────────────────────────────
+function extractNextPreview(contentMd) {
+  // 從 ## 延伸線索 中找 **後一篇** 或 **後續連結**
+  const nextMatch = contentMd.match(/\*\*後一篇[^*]*\*\*[：:]\s*(.+)/);
+  if (nextMatch) {
+    let preview = nextMatch[1].trim();
+    // 去掉可能的前後篇標題（如「A003 火的禮物」→ 只留描述）
+    preview = preview.replace(/^[A-G]\d{3}\s+[^—]+——\s*/, '');
+    if (!preview.endsWith('……')) preview += '……';
+    return `下一篇預告：${preview}`;
+  }
+
+  // 從 narration.md 的 nextStoryLink 欄位（已在 parseNarration 中解析）
+  // 這個 fallback 在 assembleHtml 中處理
+
+  return ''; // 空值表示無預告，由 assembleHtml 決定 fallback
 }
 
 function mdParagraphsToHtml(text, cssClass = 'text-[18px] leading-[1.6]') {
@@ -450,7 +518,7 @@ function assembleHtml({
   contentSections, factTable,
   narration, images, chalkboardPrompt,
   chalkboardImageBase64, chalkboardImageMime,
-  templatePath, date,
+  templatePath, date, contentMd,
 }) {
   const icon = SEASON_ICONS[season];
   const dividerIcon = SEASON_DIVIDER_ICONS[season];
@@ -590,8 +658,8 @@ function assembleHtml({
       <span class="material-symbols-outlined text-[var(--secondary)] text-sm">${dividerIcon}</span>
     </div>`;
 
-  // 核心意象引用
-  const pullQuote = '這座島嶼是活的——就像你們一樣，每年都在長高。';
+  // 核心意象引用（動態提取）
+  const pullQuote = extractPullQuote(contentMd || '', contentSections);
 
   // 組裝完整 HTML
   const html = `<!DOCTYPE html>
@@ -738,10 +806,13 @@ ${headContent}
 
   <!-- ===== 下篇預告 ===== -->
   <section class="mb-4 text-center py-3">
-    <p class="font-headline text-lg text-[var(--primary)] italic mb-3">下一篇預告：島嶼站起來之後，等了很久很久，直到第一個腳印出現……</p>
+    <p class="font-headline text-lg text-[var(--primary)] italic mb-3">${(() => {
+      const preview = extractNextPreview(contentMd || '');
+      return preview || '臺灣的故事 — 敬請期待';
+    })()}</p>
     <div class="inline-flex flex-col items-center">
       <div class="w-16 h-[2px] bg-[var(--primary)]/30 mb-4"></div>
-      <span class="font-label text-base text-[var(--on-surface)]">臺灣的故事 — 敬請期待</span>
+      <span class="font-label text-base text-[var(--on-surface)]">臺灣的故事</span>
     </div>
   </section>
 
@@ -859,6 +930,7 @@ function main() {
   let chalkboardImageBase64 = '';
   let chalkboardImageMime = 'image/png';
 
+  // 策略 1：精確匹配 chalkboard-prompt.md 中的下載檔名
   if (chalkboardPrompt.downloadFilename) {
     const candidatePath = path.join(downloadsDir, chalkboardPrompt.downloadFilename);
     if (fs.existsSync(candidatePath)) {
@@ -866,29 +938,74 @@ function main() {
       checklist['chalkboard-image'] = true;
       console.log(`[assemble] [OK] chalkboard-image: ${chalkboardPrompt.downloadFilename}`);
     } else {
-      console.log(`[assemble] [MISSING] chalkboard-image: ${candidatePath}`);
-      // 嘗試模糊搜尋
-      const pattern = new RegExp(storyId.toLowerCase() + '.*chalkboard', 'i');
-      try {
-        const files = fs.readdirSync(downloadsDir);
-        const match = files.find(f => pattern.test(f) || f === chalkboardPrompt.downloadFilename);
-        if (match) {
-          chalkboardImagePath = path.join(downloadsDir, match);
-          checklist['chalkboard-image'] = true;
-          console.log(`[assemble] [OK] chalkboard-image (fuzzy): ${match}`);
-        }
-      } catch (e) {
-        console.log(`[assemble] [WARN] Cannot read downloads dir: ${downloadsDir}`);
-      }
+      console.log(`[assemble] [MISSING] chalkboard-image (exact): ${candidatePath}`);
     }
   }
 
+  // 策略 2：storyId + chalkboard 模糊匹配
+  if (!chalkboardImagePath) {
+    const pattern = new RegExp(storyId.toLowerCase() + '.*chalkboard', 'i');
+    try {
+      const files = fs.readdirSync(downloadsDir);
+      const match = files.find(f => pattern.test(f) && /\.(png|jpg|jpeg|webp)$/i.test(f));
+      if (match) {
+        chalkboardImagePath = path.join(downloadsDir, match);
+        checklist['chalkboard-image'] = true;
+        console.log(`[assemble] [OK] chalkboard-image (fuzzy): ${match}`);
+      }
+    } catch (e) {
+      console.log(`[assemble] [WARN] Cannot read downloads dir: ${downloadsDir}`);
+    }
+  }
+
+  // 策略 3：Gemini 預設檔名（取 30 分鐘內最新的）
+  if (!chalkboardImagePath) {
+    try {
+      const files = fs.readdirSync(downloadsDir)
+        .filter(f => /^Gemini_Generated_Image/i.test(f) && /\.(png|jpg|jpeg|webp)$/i.test(f))
+        .map(f => ({ name: f, mtime: fs.statSync(path.join(downloadsDir, f)).mtime }))
+        .sort((a, b) => b.mtime - a.mtime);
+      const thirtyMinAgo = Date.now() - 30 * 60 * 1000;
+      const recent = files.find(f => f.mtime.getTime() > thirtyMinAgo);
+      if (recent) {
+        chalkboardImagePath = path.join(downloadsDir, recent.name);
+        checklist['chalkboard-image'] = true;
+        console.log(`[assemble] [OK] chalkboard-image (gemini-recent): ${recent.name}`);
+      }
+    } catch (e) { /* ignore */ }
+  }
+
+  // 策略 4：任何含 storyId 的圖檔
+  if (!chalkboardImagePath) {
+    try {
+      const files = fs.readdirSync(downloadsDir)
+        .filter(f => f.toLowerCase().includes(storyId.toLowerCase()) && /\.(png|jpg|jpeg|webp)$/i.test(f));
+      if (files.length > 0) {
+        chalkboardImagePath = path.join(downloadsDir, files[0]);
+        checklist['chalkboard-image'] = true;
+        console.log(`[assemble] [OK] chalkboard-image (id-match): ${files[0]}`);
+      }
+    } catch (e) { /* ignore */ }
+  }
+
+  if (!chalkboardImagePath) {
+    console.error(`[assemble] [FAIL] chalkboard-image: 4 strategies exhausted, no image found in ${downloadsDir}`);
+  }
+
+  // 讀取圖檔並驗證大小
   if (chalkboardImagePath) {
     const ext = path.extname(chalkboardImagePath).toLowerCase();
     chalkboardImageMime = ext === '.jpg' || ext === '.jpeg' ? 'image/jpeg'
       : ext === '.webp' ? 'image/webp' : 'image/png';
     chalkboardImageBase64 = fs.readFileSync(chalkboardImagePath).toString('base64');
-    console.log(`[assemble] Image size: ${(chalkboardImageBase64.length * 0.75 / 1024 / 1024).toFixed(1)} MB`);
+    const sizeKB = chalkboardImageBase64.length * 0.75 / 1024;
+    console.log(`[assemble] Image size: ${(sizeKB / 1024).toFixed(1)} MB`);
+    if (sizeKB < 50) {
+      console.error(`[assemble] [FAIL] Chalkboard image too small: ${sizeKB.toFixed(0)} KB (min 50KB)`);
+      chalkboardImageBase64 = '';
+      chalkboardImagePath = '';
+      checklist['chalkboard-image'] = false;
+    }
   }
 
   // ── 檢查結果 ─────────────────────────────────────
@@ -942,8 +1059,41 @@ function main() {
     contentSections, factTable,
     narration, images, chalkboardPrompt,
     chalkboardImageBase64, chalkboardImageMime,
-    templatePath, date,
+    templatePath, date, contentMd,
   });
+
+  // ── 嚴格輸出驗證（全部通過才寫入）──────────────────
+  const validationErrors = [];
+
+  if (contentSections.length === 0) {
+    validationErrors.push('content.md produced 0 story paragraphs');
+  }
+  if (factTable.length === 0) {
+    validationErrors.push('Fact table has 0 entries');
+  } else {
+    const factsWithUrls = factTable.filter(f => f.sources && f.sources.some(s => s.url));
+    if (factsWithUrls.length === 0) {
+      validationErrors.push('Fact table has entries but 0 clickable source URLs');
+    }
+  }
+  if (images.length === 0) {
+    validationErrors.push('images.md produced 0 image references');
+  }
+  if (!chalkboardImageBase64) {
+    validationErrors.push('Chalkboard image not embedded (missing or too small)');
+  }
+  if (narration.overallRhythm.length === 0) {
+    validationErrors.push('narration.md produced 0 rhythm table entries');
+  }
+
+  if (validationErrors.length > 0) {
+    console.error('\n[assemble] VALIDATION FAILED — refusing to output:');
+    for (const err of validationErrors) {
+      console.error(`  - ${err}`);
+    }
+    process.exit(2); // exit code 2 = validation failure
+  }
+  console.log('[assemble] [OK] Output validation passed (all 5 checks)');
 
   // 確保輸出目錄存在
   if (!fs.existsSync(outputDir)) {

@@ -6,7 +6,7 @@
 
 stories_of_taiwan_session:
   project: stories-of-taiwan
-  last_updated: 2026-03-22
+  last_updated: 2026-03-22  # A004 pipeline completed
 
   overview:
     name: 臺灣的故事
@@ -24,14 +24,14 @@ stories_of_taiwan_session:
     block: A-origins
     block_title: 島嶼的誕生與最初的人
     sub_theme_completed: 島嶼誕生（3/3）
-    next_sub_theme: 最早的足跡
-    last_completed_story: A003
-    last_completed_title: 火的禮物——大屯火山與泥火山
-    next_story_id: A004
-    status: 島嶼誕生三部曲完成，全部已組裝 HTML/PDF 並上傳 Google Drive
+    current_sub_theme: 最早的足跡（1/4）
+    last_completed_story: A004
+    last_completed_title: 石頭裡的秘密——卑南遺址
+    next_story_id: A005
+    status: 「最早的足跡」子主題啟動，A004 卑南遺址已完成全管線
 
   block_progress:
-    A-origins: 3    # 目標 15-20
+    A-origins: 4    # 目標 15-20
     B-encounter: 0  # 目標 8-12
     C-dutch-spanish: 0  # 目標 12-15
     D-koxinga: 0    # 目標 10-12
@@ -56,14 +56,21 @@ stories_of_taiwan_session:
     - "授權模型寫入 story-daily.md：除 Step 1 選題外全部預授權，排程模式全自動"
     - "散落檔案清理：根目錄 3 個 .skill 刪除、git-history PDF 歸位、temp 舊版清除"
     - "Obsidian sync：17 個故事 .md 加上中文 aliases，2 個 HTML 收錄 HOME.md"
+    - "story-daily v2.1.0：嚴格輸出驗證（5 項全過才輸出）、黑板畫搜尋 4 策略、GWS 動態路徑"
+    - "Step 5 Gemini 操作改寫：工具選單→建立圖像→中文前綴「請你生成一張圖片」"
+    - "Step 5→6 checkpoint 升級 WARN→FAIL（互動模式必須嵌入黑板畫）"
+    - "Step 4+5 平行化：subagent 做品質檢查 + 主 agent 做 Gemini（同時執行）"
+    - "pullQuote 與下篇預告動態化：從 content.md 提取，不再硬編碼"
+    - "story-writer.md 加入五年級寫作校準（6 條從 A002 兩版比較提取）"
+    - "故事正文字數不設硬性上限，以自然篇幅為準"
+    - "A002-v2、A003-v2 驗收版完成（校準規範 + 新 pipeline 驗證）"
 
   next_action:
-    description: "進入「最早的足跡」子主題（A004 起），需教師先覆核 A001-A003"
+    description: "Pipeline v2.1.0 debug 完成並驗收通過。下一步 A005（最早的足跡第二篇，建議十三行或大坌坑），需教師覆核 A001-A004"
     input_needed_from_teacher:
-      - "A001-A003 品質覆核（通過/修訂）"
+      - "A001-A004 品質覆核（通過/修訂）"
       - "TCMB API Key（到手後提供）"
-      - "說書稿語氣是否需要調整"
-      - "故事正文字數上限是否調整為 500-800"
+      - "A002-v2 vs A002、A003-v2 vs A003 比較回饋"
 
   pipeline_outputs:
     A001:
