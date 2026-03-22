@@ -6,7 +6,7 @@
 
 stories_of_taiwan_session:
   project: stories-of-taiwan
-  last_updated: 2026-03-22  # A005 完成全管線（海的搖籃——黑潮與臺灣）
+  last_updated: 2026-03-22  # A006 完成全管線（獨木舟上的民族——南島語族與臺灣）
 
   overview:
     name: 臺灣的故事
@@ -23,15 +23,15 @@ stories_of_taiwan_session:
   current_position:
     block: A-origins
     block_title: 島嶼的誕生與最初的人
-    sub_theme_completed: 島嶼誕生（4/3，含海洋延伸篇）
-    current_sub_theme: 最早的足跡（1/4）
-    last_completed_story: A005
-    last_completed_title: 海的搖籃——黑潮與臺灣
-    next_story_id: A006
-    status: A005 海洋篇完成，島嶼誕生子主題延伸至 4 篇（含海洋）
+    sub_theme_completed: 島嶼誕生（4/3，含海洋延伸篇）+ 南島的孩子（1/3）
+    current_sub_theme: 南島的孩子（1/3）
+    last_completed_story: A006
+    last_completed_title: 獨木舟上的民族——南島語族與臺灣
+    next_story_id: A007
+    status: A006 南島語族篇完成，「南島的孩子」子主題啟動
 
   block_progress:
-    A-origins: 5    # 目標 15-20
+    A-origins: 6    # 目標 15-20
     B-encounter: 0  # 目標 8-12
     C-dutch-spanish: 0  # 目標 12-15
     D-koxinga: 0    # 目標 10-12
@@ -73,7 +73,7 @@ stories_of_taiwan_session:
     - "opening.md GWS 檢查防呆：先驗 command 存在、5 秒超時、任何異常靜默跳過不阻擋開工"
 
   next_action:
-    description: "A005 完成（海的搖籃——黑潮與臺灣）。下一步 A006（建議進入「南島的孩子」子主題，或「最早的足跡」第二篇如十三行）。"
+    description: "A006 完成（獨木舟上的民族——南島語族與臺灣）。下一步 A007（建議「各族的土地故事」子主題——泰雅族獵場，或「南島的孩子」第二篇）。"
     input_needed_from_teacher:
       - "A001-A004 品質覆核（通過/修訂）"
       - "A004-v2 vs A004 比較回饋（玉的視角 vs 怪手視角）"
@@ -114,6 +114,12 @@ stories_of_taiwan_session:
       html: temp/beautify-A005-完整版.html
       pdf: temp/A005-完整版.pdf
       chalkboard: ~/Downloads/AssemblyStory-A005-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
+    A006:
+      html: temp/beautify-A006-完整版.html
+      pdf: temp/A006-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A006-chalkboard.png
       google_drive: uploaded
       assembled: 2026-03-22
 

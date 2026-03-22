@@ -4,7 +4,7 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 last_updated: 2026-03-22
-total_stories: 5
+total_stories: 6
 
 stories:
   - id: A001
@@ -95,6 +95,22 @@ stories:
     sources: [wikipedia, nrch, scitechvista, ntnu, e-info, oca, moa, fishdb, marine_gov]
     quality_check: passed
     tags: [海洋, 黑潮, 黑水溝, 臺灣海峽, 珊瑚礁, 洋流, 海洋生態]
+
+  - id: A006
+    title: 獨木舟上的民族——南島語族與臺灣
+    block: A-origins
+    sub_theme: 南島的孩子
+    era: 約六千年前至今
+    location: 臺灣（南島語族原鄉）、蘭嶼（達悟族）、太平洋與印度洋諸島
+    date_created: 2026-03-22
+    files:
+      content: stories/A-origins/A006/content.md
+      narration: stories/A-origins/A006/narration.md
+      images: stories/A-origins/A006/images.md
+      raw_materials: stories/A-origins/A006/raw-materials.md
+    sources: [wikipedia, matataiwan, taiwaninsight, pansci, nchdb, smiletaiwan, openmuseum, tm, sinica]
+    quality_check: passed
+    tags: [南島語族, 原住民, 達悟族, 拼板舟, 蘭嶼, 太平洋, 遷徙, 航海]
 
 # 索引結構說明：
 # stories:
