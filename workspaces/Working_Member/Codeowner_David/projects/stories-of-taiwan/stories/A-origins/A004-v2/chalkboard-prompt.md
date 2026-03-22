@@ -1,3 +1,8 @@
+---
+aliases:
+  - "A004-v2 卑南遺址 黑板畫 Prompt"
+---
+
 # 黑板畫 Prompt：A004-v2 石頭裡的秘密——卑南遺址
 
 ## English Prompt（Gemini 製圖用）

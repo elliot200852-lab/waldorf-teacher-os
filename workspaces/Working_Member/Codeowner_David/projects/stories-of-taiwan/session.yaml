@@ -66,14 +66,18 @@ stories_of_taiwan_session:
     - "A002-v2、A003-v2 驗收版完成（校準規範 + 新 pipeline 驗證）"
     - "story-daily v2.2.0：5 項 bug 修復——gws 健康檢查+npx fallback、版本管理規則、Gemini 5.1-5.11 子步驟帶截圖驗證、Checkpoint 前置檢查、瀏覽器權限補齊"
     - "assemble-story.js v2.2.0：--version 旗標（版本模式跳過 cleanup）、移除 cd /tmp、GWS_BIN 健康檢查"
+    - "A004-v2 完成：從「玉」出發的全新敘事視角，28 段正文，Drive 已上傳"
+    - "assemble-story.js 正文解析修正：stripFrontmatter + 精確提取 ## 故事本文（解決 YAML frontmatter 吃掉正文的 bug）"
+    - "assemble-story.js 跨平台修正：GWS_BIN 引號移除、JSON params 分平台處理、GWS_BIN=null 時跳過上傳"
+    - "gws 全域升級 0.4.4→0.18.1：解決 Homebrew symlink 指向舊版、token 格式不相容的認證問題"
+    - "opening.md GWS 檢查防呆：先驗 command 存在、5 秒超時、任何異常靜默跳過不阻擋開工"
 
   next_action:
-    description: "A004-v2 完成（新角度：從玉出發）。下一步 A005（最早的足跡第二篇，建議十三行或大坌坑）。GWS 未認證，A004-v2 HTML/PDF 待手動上傳。"
+    description: "A004-v2 完成 + 系統修正（assemble 正文解析 + GWS 跨平台 + 開機防呆）。下一步 A005（最早的足跡第二篇，建議十三行或大坌坑）。"
     input_needed_from_teacher:
       - "A001-A004 品質覆核（通過/修訂）"
       - "A004-v2 vs A004 比較回饋（玉的視角 vs 怪手視角）"
       - "TCMB API Key（到手後提供）"
-      - "GWS 重新認證（gws auth login）"
 
   pipeline_outputs:
     A001:
@@ -110,6 +114,5 @@ stories_of_taiwan_session:
   open_questions:
     - "story-archive 技能尚未正式執行過（A001-A003 手動歸檔至 index.yaml）"
     - "scheduled-task stories-of-taiwan-daily 已建立（Mon-Fri 10:30），但 Step 5 Gemini 瀏覽器在排程中可用性待驗證"
-    - "assemble-story.js v2.0.0 解析函式已重寫修復，但尚未在 A004+ 驗證新流程"
     - "故事正文字數上限是否調整為 500-800（待教師確認）"
     - "TCMB API Key 待教師提供"
