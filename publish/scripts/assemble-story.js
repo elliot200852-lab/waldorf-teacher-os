@@ -1220,7 +1220,7 @@ function main() {
       console.log(`[upload] Uploading ${file.driveName}...`);
       try {
         const result = execSync(
-          `"${GWS_BIN}" drive +upload "${path.resolve(file.local)}" --parent ${folderId} --name "${file.driveName}"`,
+          `${GWS_BIN} drive +upload "${path.resolve(file.local)}" --parent ${folderId} --name "${file.driveName}"`,
           { encoding: 'utf-8', timeout: 120000 }
         );
         const parsed = JSON.parse(result.trim());
