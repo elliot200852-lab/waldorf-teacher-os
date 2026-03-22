@@ -973,25 +973,31 @@ aliases:
 
 ## 根目錄散檔
 
-| 檔案 | 說明 |
-|------|------|
-| [[CLAUDE.md\|專案級 Claude Code 指引]] | 所有 clone 此 repo 的 Claude Code 使用者自動生效的鐵打層指引 |
-| [[INSTRUCTIONS.md\|INSTRUCTIONS]] | Cowork 用 Instructions（編譯產出） |
-| [[INSTRUCTIONS.template.md\|INSTRUCTIONS 模板]] | Instructions 模板源檔 |
-| [[draft-overlay-contribution-guide]] | 覆蓋層貢獻指引草稿 |
-| [[git-history.skill]] | Git History Skill 定義檔 |
-| [[subject-lesson-45.skill]] | 45 分鐘課堂設計 Skill 定義檔 |
-| [[git-history_2026-03-15_v1.pdf\|Git History 週記 PDF（第三週）]] | 2026-03-15 Git History 週記 PDF 歸檔 |
-| [[workspaces/README.md\|Workspaces README]] | Workspace 目錄說明 |
-| [[Obsidian 快速上手指南]] | Obsidian 怎麼用 |
-| [[help_list.txt\|help_list.txt]] | 指令說明清單 |
-| [[root_files.txt\|root_files.txt]] | 根目錄檔案清單 |
-| [[download]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿v2_畢麒麟在福爾摩沙\|三天課程文稿v2 畢麒麟在福爾摩沙]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/pickering-in-formosa_畢麒麟在福爾摩沙_說書人文稿v2\|畢麒麟在福爾摩沙 三節說書人課程文稿 v2]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/deep-review-2026-03-22\|deep review 2026 03 22]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/quality-log\|quality log]] | 設定檔 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A005-quality\|A005 quality]] | （自動收錄） |
+| 檔案                                                                                                                                    | 說明                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| [[CLAUDE.md\|專案級 Claude Code 指引]]                                                                                                     | 所有 clone 此 repo 的 Claude Code 使用者自動生效的鐵打層指引 |
+| [[INSTRUCTIONS.md\|INSTRUCTIONS]]                                                                                                     | Cowork 用 Instructions（編譯產出）                 |
+| [[INSTRUCTIONS.template.md\|INSTRUCTIONS 模板]]                                                                                         | Instructions 模板源檔                           |
+| [[draft-overlay-contribution-guide]]                                                                                                  | 覆蓋層貢獻指引草稿                                   |
+| [[git-history.skill]]                                                                                                                 | Git History Skill 定義檔                       |
+| [[subject-lesson-45.skill]]                                                                                                           | 45 分鐘課堂設計 Skill 定義檔                         |
+| [[git-history_2026-03-15_v1.pdf\|Git History 週記 PDF（第三週）]]                                                                            | 2026-03-15 Git History 週記 PDF 歸檔            |
+| [[workspaces/README.md\|Workspaces README]]                                                                                           | Workspace 目錄說明                              |
+| [[Obsidian 快速上手指南]]                                                                                                                   | Obsidian 怎麼用                                |
+| [[help_list.txt\|help_list.txt]]                                                                                                      | 指令說明清單                                      |
+| [[root_files.txt\|root_files.txt]]                                                                                                    | 根目錄檔案清單                                     |
+| [[download]]                                                                                                                          | （自動收錄）                                      |
+| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿v2_畢麒麟在福爾摩沙\|三天課程文稿v2 畢麒麟在福爾摩沙]]                         | （自動收錄）                                      |
+| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/pickering-in-formosa_畢麒麟在福爾摩沙_說書人文稿v2\|畢麒麟在福爾摩沙 三節說書人課程文稿 v2]] | （自動收錄）                                      |
+| [[workspaces/Working_Member/Codeowner_David/projects/deep-review-2026-03-22\|deep review 2026 03 22]]                                 | （自動收錄）                                      |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/quality-log\|quality log]]                             | 設定檔                                         |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A005-quality\|A005 quality]]                           | （自動收錄）                                      |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/current-task\|current task]] | 設定檔 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A006-quality\|A006 quality]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/gallery\|gallery]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿_畢麒麟的世界\|三天課程文稿 畢麒麟的世界]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿_美化版\|三天課程文稿 美化版]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/說書人文稿v2_美化版\|說書人文稿v2 美化版]] | （自動收錄） |
 
 ---
 
