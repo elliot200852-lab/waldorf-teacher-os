@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>畢麒麟的世界 — 史料藝廊 | The World of W.A. Pickering</title>
+<style>
+  :root {
+    --parchment: #f5f0e8;
+    --ink: #2c1810;
+    --sepia: #8b6914;
+    --ocean: #1a3a5c;
+    --ocean-light: #2d5a8c;
+    --gold: #c9a84c;
+    --red-seal: #8b2500;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Serif TC", "Source Han Serif TC", Georgia, serif;
+    background: var(--ink);
+    color: var(--parchment);
+    line-height: 1.8;
+  }
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(180deg, #0a1628 0%, var(--ocean) 40%, var(--ocean-light) 100%);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(0deg, var(--ink) 0%, transparent 100%);
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  }
+  .hero .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--parchment);
+    opacity: 0.85;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3em;
+  }
+  .hero .eng {
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.7;
+    letter-spacing: 0.1em;
+  }
+  .hero .meta {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    line-height: 2;
+  }
+
+  /* Section */
+  .day-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
+  .day-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+  .day-header .day-label {
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .day-header h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--parchment);
+    letter-spacing: 0.1em;
+  }
+  .day-header .day-desc {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    color: rgba(245,240,232,0.7);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Card grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .card {
+    background: rgba(245,240,232,0.06);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    border-color: rgba(201,168,76,0.4);
+  }
+  .card-img-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 66%;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+  .card-img-wrap img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .card:hover .card-img-wrap img {
+    transform: scale(1.05);
+  }
+  .card-img-wrap .source-badge {
+    position: absolute;
+    top: 8px; right: 8px;
+    background: rgba(0,0,0,0.7);
+    color: var(--gold);
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+  .card-body {
+    padding: 1.2rem 1.4rem 1.4rem;
+  }
+  .card-body h3 {
+    font-size: 1.05rem;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+  }
+  .card-body .card-meta {
+    font-size: 0.78rem;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 0.6rem;
+  }
+  .card-body .card-desc {
+    font-size: 0.9rem;
+    color: rgba(245,240,232,0.8);
+    line-height: 1.8;
+  }
+  .card-body .card-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.78rem;
+    color: var(--gold);
+    opacity: 0.6;
+    text-decoration: none;
+  }
+  .card-body .card-link:hover { opacity: 1; }
+
+  /* Wide card for important items */
+  .card.wide {
+    grid-column: 1 / -1;
+  }
+  .card.wide .card-img-wrap {
+    padding-top: 45%;
+  }
+
+  /* Narrative block */
+  .narrative {
+    max-width: 800px;
+    margin: 2rem auto 3rem;
+    padding: 2rem 2.5rem;
+    background: rgba(201,168,76,0.05);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    font-size: 1rem;
+    color: rgba(245,240,232,0.85);
+    line-height: 2;
+  }
+  .narrative .speaker {
+    font-size: 0.8rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Divider */
+  .divider {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--gold);
+    opacity: 0.3;
+    font-size: 1.5rem;
+    letter-spacing: 1em;
+  }
+
+  /* Footer */
+  .gallery-footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: rgba(245,240,232,0.4);
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 2;
+  }
+
+  /* Fullscreen lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    cursor: zoom-out;
+    justify-content: center;
+    align-items: center;
+  }
+  .lightbox.active { display: flex; }
+  .lightbox img {
+    max-width: 92vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 600px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .narrative { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="subtitle">史 料 藝 廊</div>
+  <h1>畢麒麟的世界</h1>
+  <div class="eng">The World of William Alexander Pickering</div>
+  <div class="eng" style="margin-top:0.3rem;">Formosa &middot; Singapore &middot; 1840-1907</div>
+  <div class="meta">
+    六年級課程投影 | 三天說書人敘事<br>
+    TeacherOS &middot; 慈心華德福
+  </div>
+</section>
+
+<!-- ==================== DAY 1 ==================== -->
+<section class="day-section">
+  <div class="day-header">
+    <div class="day-label">第 一 天</div>
+    <h2>少年水手與他的大時代</h2>
+    <div class="day-desc">1840-1863 | 英格蘭 → 大海 → 中國沿海 → 福爾摩沙</div>
+  </div>
+
+  <div class="narrative">
+    <div class="speaker">說書人開場</div>
+    一百八十年前，在英格蘭中部諾丁罕郡的一個小鎮，有一個男孩叫威廉。他是家裡唯一的兒子，上面有五個姐姐，下面還有兩個妹妹。在他十六歲那年，他做了一個讓全家人都嚇壞的決定——他要去當水手。
+  </div>
+
+  <div class="card-grid">
+    <!-- Card 1: Clipper ship -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/dp/web-large/DP-39000-001.jpg" alt="快帆船「颶風號」" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>快帆船「颶風號」</h3>
+        <div class="card-meta">Frances Flora Bond Palmer, 1852 | 手工上色石版畫</div>
+        <div class="card-desc">十九世紀中葉的快帆船（Clipper Ship），是當時世界上最快的帆船。畢麒麟十六歲時就是搭上這樣的帆船，從英格蘭出發駛向東方。這些船主要載運茶葉、絲綢和樟腦等貴重商品。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/765684" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 2: Flying Cloud -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/dp/web-large/DP-39472-001.jpg" alt="快帆船「飛雲號」" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>快帆船「飛雲號」</h3>
+        <div class="card-meta">James E. Buttersworth, 1852 | 手工上色石版畫</div>
+        <div class="card-desc">「飛雲號」是十九世紀最著名的快帆船之一，曾創下紐約到舊金山 89 天的航行紀錄。畢麒麟搭乘的東印度公司商船雖不如飛雲號快，但航路相似——繞過好望角，穿越印度洋，駛向遠東。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/769236" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 3: Ship John W. Brewer by Chinese painter -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/ad/web-large/ap41.14.jpg" alt="中國畫師繪製的「約翰·布魯爾號」" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>中國畫師筆下的西方商船</h3>
+        <div class="card-meta">中國畫師, 約 1845 | 油畫</div>
+        <div class="card-desc">這幅畫是中國口岸的畫師為外國船長繪製的船像——東西方貿易的有趣證據。畢麒麟抵達中國福州後，就在這樣的口岸城市學習中文，開始他與東方世界的深度連結。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/13003" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 4: Nightingale clipper -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/dp/web-large/DP-39002-001.jpg" alt="快帆船「夜鶯號」啟航" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>快帆船「夜鶯號」啟航</h3>
+        <div class="card-meta">James E. Buttersworth, 1854 | 手工上色石版畫</div>
+        <div class="card-desc">帆船離港的壯觀場面。想像十六歲的畢麒麟第一次站在甲板上，看著英格蘭的海岸線越來越遠——他不知道自己將成為臺灣歷史的一部分。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/765267" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 5: Red Jacket in ice -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/dp/web-large/DP-39003-001.jpg" alt="快帆船「紅夾克號」在好望角的浮冰中" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>快帆船「紅夾克號」——好望角的浮冰</h3>
+        <div class="card-meta">Charles Parsons, 1855 | 手工上色石版畫</div>
+        <div class="card-desc">航向東方的帆船必須繞過非洲最南端的好望角，那裡有巨大的浮冰和狂風巨浪。這是水手們最恐懼的航段，也是少年畢麒麟第一次面對真正的生死考驗。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/371973" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 6: China trade porcelain - tea dish -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/es/web-large/DP-35812-001.jpg" alt="中國外銷瓷器" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>中國外銷青花瓷壺</h3>
+        <div class="card-meta">景德鎮窯, 約 1520-1540 | 青花瓷</div>
+        <div class="card-desc">繪有葡萄牙紋章的中國瓷壺——這是東西方貿易的實物證據。幾百年來，歐洲人瘋狂追求中國的瓷器、茶葉和絲綢。畢麒麟所處的時代，正是這股貿易浪潮的高峰。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/202581" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 7: Taku Forts photo -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/ph/web-large/DP137206.jpg" alt="大沽砲台攻陷後" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>大沽砲台攻陷後（1860 年實景照片）</h3>
+        <div class="card-meta">Felice Beato, 1860 | 蛋白銀版照片</div>
+        <div class="card-desc">這是英法聯軍攻陷中國大沽砲台後的真實照片，拍攝於第二次鴉片戰爭期間。畢麒麟來到中國的 1862 年，正是鴉片戰爭剛結束不久，條約口岸被迫開放的年代。臺灣也在這股浪潮中被迫開港。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/283169" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 8: Le Gendre Formosa Map (Wikimedia) -->
+    <div class="card wide">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Formosa_Island_and_the_Pescadores_Le_Gendre_1870.jpg/800px-Formosa_Island_and_the_Pescadores_Le_Gendre_1870.jpg" alt="1870 年李仙得繪製的福爾摩沙地圖" loading="lazy">
+        <span class="source-badge">Wikimedia 公共領域</span>
+      </div>
+      <div class="card-body">
+        <h3>1870 年福爾摩沙地圖（李仙得繪製）</h3>
+        <div class="card-meta">Charles W. Le Gendre, 1870 | 地圖</div>
+        <div class="card-desc">這是美國駐廈門領事李仙得（Le Gendre）因「羅妹號事件」繪製的福爾摩沙全圖，是當時最詳細的臺灣地圖。畢麒麟正是在羅妹號事件中擔任翻譯，協助李仙得與排灣族頭目卓杞篤談判締約。這張地圖，就是畢麒麟的冒險舞台。</div>
+        <a class="card-link" href="https://commons.wikimedia.org/wiki/File:Formosa_Island_and_the_Pescadores_Le_Gendre_1870.jpg" target="_blank">Wikimedia 原始頁面 &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">~ ~ ~</div>
+
+<!-- ==================== DAY 2 ==================== -->
+<section class="day-section">
+  <div class="day-header">
+    <div class="day-label">第 二 天</div>
+    <h2>福爾摩沙的冒險者</h2>
+    <div class="day-desc">1863-1870 | 打狗（高雄）→ 安平 → 原住民部落 → 樟腦戰爭</div>
+  </div>
+
+  <div class="narrative">
+    <div class="speaker">說書人</div>
+    二十三歲的畢麒麟踏上了福爾摩沙的土地。這座島嶼被中國人叫做「臺灣」，被西方人叫做「Formosa」——美麗之島。但美麗的表面之下，是一個充滿危險與未知的邊境世界：海岸邊有劫掠沉船的盜匪，山裡住著會獵人頭的部落，清朝官員腐敗無能，各國商人為了茶葉和樟腦爾虞我詐。
+  </div>
+
+  <div class="card-grid">
+    <!-- Card 9: Pioneering in Formosa book cover/frontispiece -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Pioneering_in_Formosa_%281898%29_cover.jpg/440px-Pioneering_in_Formosa_%281898%29_cover.jpg" alt="《福爾摩沙的先驅》書封" loading="lazy">
+        <span class="source-badge">Internet Archive 公共領域</span>
+      </div>
+      <div class="card-body">
+        <h3>《福爾摩沙的先驅》原版書封</h3>
+        <div class="card-meta">W.A. Pickering 著, 1898 | 書籍封面</div>
+        <div class="card-desc">畢麒麟晚年寫下的回憶錄，全名《福爾摩沙的先驅：在官員、盜匪與獵頭族群中的冒險回憶》（Pioneering in Formosa: Recollections of Adventures Among Mandarins, Wreckers, & Head-Hunting Savages）。書中附有 23 幅版畫插圖和一幅地圖。</div>
+        <a class="card-link" href="https://archive.org/details/pioneeringinform00pickrich" target="_blank">Internet Archive 全文 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 10: John Thomson - Fort Zeelandia -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Fort_Zeelandia%2C_Formosa_%286830769768%29.jpg/800px-Fort_Zeelandia%2C_Formosa_%286830769768%29.jpg" alt="安平古堡（熱蘭遮城），1871" loading="lazy">
+        <span class="source-badge">Wellcome Collection CC BY 4.0</span>
+      </div>
+      <div class="card-body">
+        <h3>安平古堡（熱蘭遮城），1871 年實景</h3>
+        <div class="card-meta">John Thomson 攝影, 1871 | 蛋白銀版照片</div>
+        <div class="card-desc">蘇格蘭攝影師 John Thomson 在 1871 年拍下的安平古堡廢墟。這座荷蘭人在 1620 年代建造的堡壘，就在畢麒麟管理海關的安平港旁。1868 年的「樟腦戰爭」中，英國軍艦正是在這裡開砲。</div>
+        <a class="card-link" href="https://commons.wikimedia.org/wiki/File:Fort_Zeelandia,_Formosa_(6830769768).jpg" target="_blank">Wikimedia 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 11: John Thomson - Takow harbour -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Takow_harbour_entrance%2C_Formosa_%286830761550%29.jpg/800px-Takow_harbour_entrance%2C_Formosa_%286830761550%29.jpg" alt="打狗港入口（高雄港），1871" loading="lazy">
+        <span class="source-badge">Wellcome Collection CC BY 4.0</span>
+      </div>
+      <div class="card-body">
+        <h3>打狗港入口（今高雄港），1871 年實景</h3>
+        <div class="card-meta">John Thomson 攝影, 1871 | 蛋白銀版照片</div>
+        <div class="card-desc">畢麒麟 1863 年第一次踏上臺灣，就是從打狗港（今高雄港）上岸。這張照片拍攝於他離開臺灣一年後，忠實記錄了他生活過的港口風景。</div>
+        <a class="card-link" href="https://commons.wikimedia.org/wiki/File:Takow_harbour_entrance,_Formosa_(6830761550).jpg" target="_blank">Wikimedia 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 12: John Thomson - Lalung (Plains indigenous) -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Lalung%2C_Formosa_%286830775090%29.jpg/800px-Lalung%2C_Formosa_%286830775090%29.jpg" alt="臺灣平埔族人（拉魯），1871" loading="lazy">
+        <span class="source-badge">Wellcome Collection CC BY 4.0</span>
+      </div>
+      <div class="card-body">
+        <h3>臺灣平埔族（拉魯族群），1871 年實景</h3>
+        <div class="card-meta">John Thomson 攝影, 1871 | 蛋白銀版照片</div>
+        <div class="card-desc">畢麒麟在書中記錄了他深入部落的經歷。他發現平埔族長老對白人訪客表現出親切與好奇，甚至向他講述祖先與外來者交往的故事。這張照片是同時代臺灣原住民最珍貴的影像紀錄之一。</div>
+        <a class="card-link" href="https://commons.wikimedia.org/wiki/File:Lalung,_Formosa_(6830775090).jpg" target="_blank">Wikimedia 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 13: John Thomson - Baksa -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Baksa%2C_Formosa_%286830741322%29.jpg/800px-Baksa%2C_Formosa_%286830741322%29.jpg" alt="臺灣內陸（木柵），1871" loading="lazy">
+        <span class="source-badge">Wellcome Collection CC BY 4.0</span>
+      </div>
+      <div class="card-body">
+        <h3>臺灣內陸（木柵），1871 年實景</h3>
+        <div class="card-meta">John Thomson 攝影, 1871 | 蛋白銀版照片</div>
+        <div class="card-desc">這是十九世紀臺灣內陸的真實樣貌。畢麒麟就是帶著柯爾特左輪手槍、雙管獵槍和史賓塞連發步槍，深入這樣的叢林山地，拜訪被清朝稱為「生番」的山地部落。</div>
+        <a class="card-link" href="https://commons.wikimedia.org/wiki/File:Baksa,_Formosa_(6830741322).jpg" target="_blank">Wikimedia 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 14: Paiwan people -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Paiwan_House%2C_Taiwan_1900.jpg/800px-Paiwan_House%2C_Taiwan_1900.jpg" alt="排灣族家屋，約 1900" loading="lazy">
+        <span class="source-badge">Wikimedia 公共領域</span>
+      </div>
+      <div class="card-body">
+        <h3>排灣族家屋，約 1900 年</h3>
+        <div class="card-meta">佚名攝影, 約 1900 | 照片</div>
+        <div class="card-desc">排灣族是臺灣南部最強大的原住民族群。1867 年「羅妹號事件」中，排灣族的龜仔甪社（Koalut）殺害了美國船長杭特及其妻子等十四人。畢麒麟後來協助美國領事李仙得與排灣族十八社大頭目卓杞篤（Tauketok）簽訂了「南岬之盟」。</div>
+        <a class="card-link" href="https://commons.wikimedia.org/wiki/Category:Paiwan_people" target="_blank">Wikimedia 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 15: 1874 Taiwan Expedition -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Shimen_during_the_Subjugation_of_Mudan.jpg/800px-Shimen_during_the_Subjugation_of_Mudan.jpg" alt="石門之役（牡丹社事件），1874" loading="lazy">
+        <span class="source-badge">Wikimedia 公共領域</span>
+      </div>
+      <div class="card-body">
+        <h3>石門之役版畫（牡丹社事件），1874 年</h3>
+        <div class="card-meta">日本版畫, 1874 | 木版畫</div>
+        <div class="card-desc">畢麒麟離開臺灣四年後，日本以「牡丹社事件」為由出兵攻打臺灣南部原住民。這場戰役的導火線——外國船員遭原住民殺害——正是畢麒麟在「羅妹號事件」中親身經歷過的同類衝突。他的故事是這段歷史的前傳。</div>
+        <a class="card-link" href="https://commons.wikimedia.org/wiki/Category:Taiwan_Expedition_of_1874" target="_blank">Wikimedia 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 16: Comet clipper in hurricane -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/dp/web-large/DP-44866-001.jpg" alt="快帆船「彗星號」在颶風中" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>快帆船「彗星號」在颶風中</h3>
+        <div class="card-meta">Charles Parsons, 1855 | 手工上色石版畫</div>
+        <div class="card-desc">臺灣海峽的風暴導致無數船隻沉沒。海岸邊的居民會劫掠沉船物資，船員若游上岸則可能遭到殺害。畢麒麟書中稱這些人為「wreckers」（盜匪）。羅妹號的悲劇就發生在這樣的背景下。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/761306" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 17: Punch bowl - trade -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/es/web-large/DP167222.jpg" alt="中國外銷瓷碗" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>中國外銷瓷碗（銀鍍金鑲嵌）</h3>
+        <div class="card-meta">約 1585 | 硬質瓷器 + 鍍金銀</div>
+        <div class="card-desc">歐洲人對中國瓷器的狂熱，是推動東西方貿易的關鍵動力之一。瓷器、茶葉、絲綢——歐洲人用什麼去交換？答案之一是鴉片。這個不平等的貿易結構，正是畢麒麟所處時代的大背景。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/199406" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">~ ~ ~</div>
+
+<!-- ==================== DAY 3 ==================== -->
+<section class="day-section">
+  <div class="day-header">
+    <div class="day-label">第 三 天</div>
+    <h2>華民護衛司——從冒險家到守護者</h2>
+    <div class="day-desc">1872-1907 | 新加坡 → 唐人街 → 秘密會社 → 風笛與斧頭</div>
+  </div>
+
+  <div class="narrative">
+    <div class="speaker">說書人</div>
+    離開臺灣的畢麒麟回到英國休養。兩年後，他來到另一個完全不同的世界——新加坡。在這座英國殖民地的港口城市裡，成千上萬的中國移民擠在狹窄的唐人街，被秘密會社控制、被工頭剝削。而英國政府裡，竟然沒有一個官員會說中文。只有一個人例外——畢麒麟。他會說閩南語、官話、廣東話、客家話、福州話、潮州話——六種中國方言。於是他被任命為史上第一位「華民護衛司」。
+  </div>
+
+  <div class="card-grid">
+    <!-- Card 18: Pickering portrait -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/William_Alexander_Pickering.jpg/440px-William_Alexander_Pickering.jpg" alt="畢麒麟肖像" loading="lazy">
+        <span class="source-badge">Wikimedia 公共領域</span>
+      </div>
+      <div class="card-body">
+        <h3>畢麒麟肖像</h3>
+        <div class="card-meta">約 1877-1887 | 照片</div>
+        <div class="card-desc">這就是畢麒麟——史上第一位華民護衛司（Protector of Chinese）。他是當時新加坡唯一會說中文的歐洲官員。這張照片攝於他擔任華民護衛司期間，距離他被斧頭砍傷不遠。</div>
+        <a class="card-link" href="https://en.wikipedia.org/wiki/William_A._Pickering" target="_blank">Wikipedia 頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 19: Singapore Chinatown historical -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/View_of_Singapore_from_Government_Hill_1865.jpg/800px-View_of_Singapore_from_Government_Hill_1865.jpg" alt="1865 年從政府山俯瞰新加坡" loading="lazy">
+        <span class="source-badge">Wikimedia 公共領域</span>
+      </div>
+      <div class="card-body">
+        <h3>從政府山俯瞰新加坡，1865 年</h3>
+        <div class="card-meta">佚名攝影, 1865 | 照片</div>
+        <div class="card-desc">畢麒麟 1872 年抵達時的新加坡風貌。這座英國殖民地已是東南亞最重要的貿易港口，華人移民人口龐大，但生活在秘密會社的控制與苦力制度的剝削之下。</div>
+        <a class="card-link" href="https://commons.wikimedia.org/wiki/Category:19th-century_photographs_of_Singapore" target="_blank">Wikimedia 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 20: Coolies -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Chinese_coolies_in_a_British_colony.jpg/800px-Chinese_coolies_in_a_British_colony.jpg" alt="英國殖民地的華工" loading="lazy">
+        <span class="source-badge">Wikimedia 公共領域</span>
+      </div>
+      <div class="card-body">
+        <h3>英國殖民地的華工（苦力）</h3>
+        <div class="card-meta">19 世紀 | 歷史照片</div>
+        <div class="card-desc">成千上萬的中國人被騙或被迫離開家鄉，到南洋當苦力（coolie）。他們在錫礦、碼頭、種植園從事苦工，被工頭剝削、被秘密會社控制。畢麒麟的工作，就是站在他們與剝削者之間。他會親自到碼頭，用苦力們的母語詢問每一個新到的移民。</div>
+        <a class="card-link" href="https://commons.wikimedia.org/wiki/Category:Coolies" target="_blank">Wikimedia 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 21: Singapore street by G.R. Lambert -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/View_of_Boat_Quay%2C_Singapore%2C_from_an_album_of_photographs_relating_to_the_Straits_Settlements_and_Malay_States_-_NARA_-_45370903.jpg/800px-View_of_Boat_Quay%2C_Singapore%2C_from_an_album_of_photographs_relating_to_the_Straits_Settlements_and_Malay_States_-_NARA_-_45370903.jpg" alt="新加坡駁船碼頭" loading="lazy">
+        <span class="source-badge">NARA 公共領域</span>
+      </div>
+      <div class="card-body">
+        <h3>新加坡駁船碼頭（Boat Quay）</h3>
+        <div class="card-meta">海峽殖民地攝影集, 19 世紀末 | 照片</div>
+        <div class="card-desc">新加坡河畔的駁船碼頭，華商與苦力日夜忙碌的地方。畢麒麟的辦公室就在附近。今天新加坡牛車水（Chinatown）還有一條「畢麒麟街」（Pickering Street），紀念這位為華人權益奮鬥的英國人。</div>
+        <a class="card-link" href="https://commons.wikimedia.org/wiki/Category:19th-century_photographs_of_Singapore" target="_blank">Wikimedia 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 22: Donald McKay daguerreotype (shipbuilder) -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/ph/web-large/DT227270.jpg" alt="造船大師唐納德·麥凱" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>造船大師唐納德·麥凱（銀版照片）</h3>
+        <div class="card-meta">Southworth and Hawes, 約 1850-55 | 銀版照片（達蓋爾法）</div>
+        <div class="card-desc">麥凱是十九世紀最偉大的快帆船設計師，打造了「飛雲號」「海洋霸主號」等傳奇船隻。這張真正的銀版照片（daguerreotype）讓我們看到畢麒麟時代的人物真實面貌——十九世紀的照片，保存了那個時代的光與影。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/268306" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 23: Great Republic -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/dp/web-large/DP-39473-001.jpg" alt="快帆船「大共和號」" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>快帆船「大共和號」</h3>
+        <div class="card-meta">James E. Buttersworth, 1853 | 手工上色石版畫</div>
+        <div class="card-desc">「大共和號」是人類歷史上建造過最大的快帆船。這些船載著茶葉從中國和臺灣返回歐洲與美國。畢麒麟在臺灣經手的正是這條貿易路線上最搶手的商品——茶葉與樟腦。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/765755" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 24: Sovereign of the Seas -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/dp/web-large/DP-39008-001.jpg" alt="快帆船「海洋霸主號」" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>快帆船「海洋霸主號」</h3>
+        <div class="card-meta">Eliphalet M. Brown Jr., 1852 | 手工上色石版畫</div>
+        <div class="card-desc">麥凱建造的「海洋霸主號」是快帆船時代的巔峰之作。在蒸汽輪船取代帆船之前，這些優美的帆船是全球化貿易的動脈。畢麒麟的一生，正好橫跨了帆船時代的最後榮光。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/764915" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Card 25: Burghley House mounted dish -->
+    <div class="card">
+      <div class="card-img-wrap" onclick="openLightbox(this)">
+        <img src="https://images.metmuseum.org/CRDImages/es/web-large/DP268878.jpg" alt="外銷瓷盤（鍍金銀鑲嵌）" loading="lazy">
+        <span class="source-badge">Met Museum CC0</span>
+      </div>
+      <div class="card-body">
+        <h3>中國外銷瓷盤——東西方的交匯</h3>
+        <div class="card-meta">中國瓷器 1573-1585, 英國銀鑲嵌約 1585 | 硬質瓷器 + 鍍金銀</div>
+        <div class="card-desc">中國製造的瓷盤被英國銀匠加上華麗的鍍金銀框——東方的工藝與西方的品味在這件物品上融合。這正是畢麒麟一生所處的世界：東方與西方的碰撞、融合與衝突。</div>
+        <a class="card-link" href="https://www.metmuseum.org/art/collection/search/199403" target="_blank">Met Museum 原始頁面 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="narrative">
+    <div class="speaker">說書人結語</div>
+    1887 年 7 月 18 日，一個潮州木匠假裝遞交請願書，突然對畢麒麟的額頭砍了一斧。兇手是義興會社派來的殺手。畢麒麟大難不死，但傷勢嚴重，再也無法完全康復。這次暗殺事件直接導致新加坡禁止了所有秘密會社。<br><br>
+    畢麒麟在 1889 年退休，回到歐洲。1898 年，他寫下了《福爾摩沙的先驅》。1907 年，他在義大利的聖雷莫去世，享年六十六歲。<br><br>
+    今天，新加坡牛車水有一條畢麒麟街；臺灣公視拍攝的電視劇《斯卡羅》裡，有一個角色就是年輕的畢麒麟。他的故事告訴我們：一個十六歲離家的英國男孩，如何在帆船時代的最後時光裡，成為連結東方與西方、漢人與原住民、統治者與被壓迫者之間的橋樑。
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="gallery-footer">
+  <p>畢麒麟的世界 — 史料藝廊</p>
+  <p>圖片來源：Metropolitan Museum of Art (CC0)、Wikimedia Commons (Public Domain)、Wellcome Collection (CC BY 4.0)、Internet Archive、National Archives Singapore (NARA)</p>
+  <p>所有圖片為公共領域或開放授權，可自由用於教育用途</p>
+  <p style="margin-top:1rem;">TeacherOS | 慈心華德福 | 2026-03-22 製作</p>
+</footer>
+
+<script>
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  if (!img) return;
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  // Use original quality image
+  lbImg.src = img.src.replace('web-large','original').replace('/440px-','/1024px-').replace('/800px-','/1280px-');
+  lbImg.alt = img.alt;
+  lb.classList.add('active');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+});
+</script>
+
+</body>
+</html>

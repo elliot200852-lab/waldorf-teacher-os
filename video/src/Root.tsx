@@ -3,6 +3,7 @@ import { Composition } from "remotion";
 import { MyComposition } from "./Composition";
 import { FarmInternship } from "./FarmInternship";
 import { ContextEngineering } from "./ContextEngineering";
+import { OceanCradle } from "./OceanCradle";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -27,6 +28,14 @@ export const RemotionRoot: React.FC = () => {
         id="ContextEngineering"
         component={ContextEngineering}
         durationInFrames={3600}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="OceanCradle"
+        component={OceanCradle}
+        durationInFrames={3450}
         fps={30}
         width={1920}
         height={1080}

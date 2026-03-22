@@ -998,6 +998,17 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿_畢麒麟的世界\|三天課程文稿 畢麒麟的世界]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿_美化版\|三天課程文稿 美化版]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/說書人文稿v2_美化版\|說書人文稿v2 美化版]] | （自動收錄） |
+| [[git-history_2026-03-22_v1]] | （自動收錄） |
+| [[OceanCradle]] | （自動收錄） |
+| [[video/public/photos/A005/chalkboard\|chalkboard]] | （自動收錄） |
+| [[video/public/photos/A005/coral\|coral]] | （自動收錄） |
+| [[video/public/photos/A005/deep-ocean\|deep ocean]] | （自動收錄） |
+| [[video/public/photos/A005/fish-school\|fish school]] | （自動收錄） |
+| [[video/public/photos/A005/kuroshio-temp\|kuroshio temp]] | （自動收錄） |
+| [[video/public/photos/A005/ocean-gyres\|ocean gyres]] | （自動收錄） |
+| [[video/public/photos/A005/taiwan-strait-detail\|taiwan strait detail]] | （自動收錄） |
+| [[video/public/photos/A005/taiwan-strait-satellite\|taiwan strait satellite]] | （自動收錄） |
+| [[Gemini-AI-對系統架構師歷程的觀察與建議]] | （自動收錄） |
 
 ---
 
