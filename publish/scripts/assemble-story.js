@@ -39,38 +39,67 @@
 // 額外：
 //   raw-materials.md     — 解析 URL 注入事實出處表超連結
 //
-// 版本：2.1.0 (2026-03-22) — 加嚴格輸出驗證 + 擴充圖檔搜尋 + 動態 GWS 路徑
+// 版本：2.2.0 (2026-03-22) — gws 健康檢查 + npx fallback + 版本旗標 + 移除 cd /tmp
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
-const SCRIPT_VERSION = '2.1.0';
+const SCRIPT_VERSION = '2.2.0';
 const SCRIPT_PATH = 'publish/scripts/assemble-story.js';
 
 // Google Drive 上傳設定
 const DRIVE_FOLDER_ID = '1TBD6Xs-wVgqqlX3_13boy4xbBnjQ9LdY'; // 「台灣的故事」資料夾
+
+// GWS CLI 解析：找到可用的 gws 指令，優先驗證能實際連線
 const GWS_BIN = (() => {
   const { execSync } = require('child_process');
-  // 1. Try which (macOS/Linux) or where (Windows)
+
+  // 健康檢查：實際呼叫 API 確認 credential 有效
+  function gwsHealthCheck(bin) {
+    try {
+      execSync(`${bin} drive about get --params '{"fields":"user"}' 2>/dev/null`, {
+        encoding: 'utf-8', timeout: 10000, stdio: ['pipe', 'pipe', 'pipe']
+      });
+      return true;
+    } catch { return false; }
+  }
+
+  // 1. Try which/where 找到的 gws，但必須通過健康檢查
   try {
     const cmd = process.platform === 'win32' ? 'where gws' : 'which gws';
     const found = execSync(cmd, { encoding: 'utf-8', timeout: 5000 }).trim().split('\n')[0];
-    if (found) return found;
+    if (found && gwsHealthCheck(`"${found}"`)) {
+      console.log(`[gws] Using: ${found} (health check passed)`);
+      return found;
+    }
+    if (found) console.warn(`[gws] Found ${found} but health check failed (401), trying npx fallback...`);
   } catch {}
-  // 2. Scan nvm versions (macOS)
+
+  // 2. npx @googleworkspace/cli fallback（v0.18+，使用 keyring 認證）
+  const npxBin = 'npx @googleworkspace/cli';
+  try {
+    if (gwsHealthCheck(npxBin)) {
+      console.log(`[gws] Using: ${npxBin} (health check passed)`);
+      return npxBin;
+    }
+  } catch {}
+
+  // 3. Scan nvm versions (macOS)
   const nvmBase = path.join(os.homedir(), '.nvm/versions/node');
   try {
     if (fs.existsSync(nvmBase)) {
       const versions = fs.readdirSync(nvmBase).sort().reverse();
       for (const v of versions) {
         const gwsPath = path.join(nvmBase, v, 'bin/gws');
-        if (fs.existsSync(gwsPath)) return gwsPath;
+        if (fs.existsSync(gwsPath) && gwsHealthCheck(`"${gwsPath}"`)) return gwsPath;
       }
     }
   } catch {}
-  // 3. Fallback: assume in PATH
+
+  // 4. Fallback: assume in PATH（不保證能用）
+  console.warn('[gws] No healthy gws found. Upload may fail.');
   return 'gws';
 })();
 
@@ -853,6 +882,8 @@ function main() {
   const downloadsArg = args.find(a => a.startsWith('--downloads='));
   const outputArg = args.find(a => a.startsWith('--output='));
   const driveFolderArg = args.find(a => a.startsWith('--drive-folder='));
+  const versionArg = args.find(a => a.startsWith('--version='));
+  const storyVersion = versionArg ? versionArg.split('=')[1] : null; // e.g. "v2"
   const doPdf = args.includes('--pdf');
   const doUpload = args.includes('--upload');
   const dryRun = args.includes('--dry-run');
@@ -871,6 +902,7 @@ function main() {
     console.error('  --upload           Upload HTML+PDF to Google Drive');
     console.error('  --drive-folder=ID  Drive folder ID (default: 台灣的故事)');
     console.error('  --dry-run          Check files only, no output');
+    console.error('  --version=v2       Version label (skips Drive cleanup, adds suffix to filenames)');
     process.exit(1);
   }
 
@@ -1100,14 +1132,15 @@ function main() {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  const htmlFilename = `beautify-${storyId}-完整版.html`;
+  const versionSuffix = storyVersion ? `-${storyVersion}` : '';
+  const htmlFilename = `beautify-${storyId}${versionSuffix}-完整版.html`;
   const htmlPath = path.join(outputDir, htmlFilename);
   fs.writeFileSync(htmlPath, html, 'utf-8');
   console.log(`\n[assemble] HTML written: ${htmlPath}`);
 
   // ── 生成 PDF（選用）──────────────────────────────
   if (doPdf) {
-    const pdfFilename = `${storyId}-完整版.pdf`;
+    const pdfFilename = `${storyId}${versionSuffix}-完整版.pdf`;
     const pdfPath = path.join(outputDir, pdfFilename);
     const pdfScript = path.resolve('publish/scripts/html-to-pdf.js');
     console.log(`[assemble] Generating PDF: ${pdfPath}`);
@@ -1125,21 +1158,24 @@ function main() {
   }
 
   // ── 上傳到 Google Drive（選用）──────────────────
-  // 策略：先刪除同 storyId 的舊檔，再上傳新版（upsert）
+  // 策略：無版本號時先刪除舊檔再上傳（upsert）；有版本號時保留舊版直接上傳
   const uploadResults = {};
   if (doUpload) {
     const { execSync } = require('child_process');
     const folderId = driveFolderArg ? driveFolderArg.split('=')[1] : DRIVE_FOLDER_ID;
 
-    // Step 1: 搜尋並刪除同 storyId 的舊檔
-    console.log(`[upload] Cleaning old files for ${storyId}...`);
+    // Step 1: 搜尋並刪除同 storyId 的舊檔（僅在無版本號時執行）
+    if (storyVersion) {
+      console.log(`[upload] Version mode (${storyVersion}): skipping cleanup, preserving old files.`);
+    } else {
+      console.log(`[upload] Cleaning old files for ${storyId}...`);
     try {
       const searchParams = JSON.stringify({
         q: `'${folderId}' in parents and trashed = false and name contains '${storyId}'`,
         fields: 'files(id,name)',
       });
       const searchResult = execSync(
-        `cd /tmp && "${GWS_BIN}" drive files list --params '${searchParams}' --format json`,
+        `${GWS_BIN} drive files list --params '${searchParams}' --format json`,
         { encoding: 'utf-8', timeout: 30000 }
       );
       const searchParsed = JSON.parse(searchResult.trim());
@@ -1150,7 +1186,7 @@ function main() {
           console.log(`[upload]   Deleting: ${old.name} (${old.id})`);
           try {
             execSync(
-              `cd /tmp && "${GWS_BIN}" drive files delete --params '{"fileId": "${old.id}"}'`,
+              `${GWS_BIN} drive files delete --params '{"fileId": "${old.id}"}'`,
               { encoding: 'utf-8', timeout: 30000 }
             );
           } catch (delErr) {
@@ -1164,9 +1200,11 @@ function main() {
     } catch (searchErr) {
       console.error(`[upload] Search/cleanup failed (non-fatal): ${searchErr.message}`);
     }
+    } // end of !storyVersion cleanup block
 
     // Step 2: 上傳新版
-    const driveBaseName = `${storyId}-${title.replace(/\s+/g, '')}`;
+    const versionLabel = storyVersion ? `-${storyVersion}` : '';
+    const driveBaseName = `${storyId}${versionLabel}-${title.replace(/\s+/g, '')}`;
 
     const filesToUpload = [
       { local: htmlPath, driveName: `${driveBaseName}.html` },

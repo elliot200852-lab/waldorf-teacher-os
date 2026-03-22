@@ -958,6 +958,8 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/current-task\|current task]] | 設定檔 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-quality\|A004 quality]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A003-v2-quality\|A003 v2 quality]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/quality-log\|quality log]] | 設定檔 |
+| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿v2_畢麒麟在福爾摩沙\|三天課程文稿v2 畢麒麟在福爾摩沙]] | （自動收錄） |
 
 ---
 

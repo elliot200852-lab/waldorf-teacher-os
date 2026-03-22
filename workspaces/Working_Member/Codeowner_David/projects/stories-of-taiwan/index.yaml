@@ -68,7 +68,7 @@ stories:
       images: stories/A-origins/A004/images.md
       raw_materials: stories/A-origins/A004/raw-materials.md
     sources: [nmp, nrch, openmuseum, nhsrc, wikipedia, scitechvista]
-    quality_check: passed
+    quality_check: passed_v2
     tags: [考古, 遺址, 卑南文化, 石板棺, 人獸形玉玦, 月形石柱, 臺灣玉]
 
 # 索引結構說明：

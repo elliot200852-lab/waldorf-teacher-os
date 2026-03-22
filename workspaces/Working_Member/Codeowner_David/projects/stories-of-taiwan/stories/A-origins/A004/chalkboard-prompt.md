@@ -1,23 +1,25 @@
 ---
 aliases:
-  - "A004 卑南遺址 黑板畫"
+  - "A004 卑南遺址 黑板畫 Prompt"
 ---
 
 # 黑板畫 Prompt：A004 石頭裡的秘密——卑南遺址
 
 ## English Prompt（Gemini 製圖用）
 
-A Waldorf-style chalkboard drawing on a solid black background, drawn with chalk pastels. In the center-left stands a tall, narrow stone pillar made of slate, reaching upward. At its top, a crescent-shaped opening glows faintly with pale white and silver chalk strokes, like a sliver of moon. At the base of the pillar, on dark brown earth, several small jade-green dots are scattered — ancient jade beads catching starlight. The background is deep blue-black with a few faint stars. The overall mood is quiet, ancient, reverent — a sentinel standing watch over three thousand years. No text, no labels. Soft blending, visible chalk texture, warm earthy tones at the bottom transitioning to cool celestial tones above.
+請你生成一張圖片
+
+A Waldorf-style chalkboard drawing on a pure black background, drawn with soft chalk pastels. At the center of the composition, a luminous crescent-shaped stone pillar stands tall, rendered in pale grey and silver chalk with subtle texture suggesting ancient slate. The pillar rises from dark earth, and around its base, faintly visible stone slabs are arranged in a rectangular formation, hinting at a burial coffin beneath the ground. In the foreground, resting on one of the stone slabs, a small jade ornament glows in translucent deep green — two tiny human figures standing side by side with an animal crouching on their heads, the iconic ren-shou-xing jade earring. Delicate lines of green jade beads trail from the ornament. The background sky is deep indigo with scattered chalk-dust stars. A faint golden line traces a path across the sea from Taiwan to the Philippines, suggesting the ancient jade trade route. The overall mood is one of quiet reverence and ancient mystery, as if the earth has just opened to reveal its secrets.
 
 ## 中文翻譯
 
-華德福風格黑板畫，純黑色背景，以粉筆蠟筆繪製。畫面中央偏左矗立一根高瘦的板岩石柱，向上延伸。石柱頂端有一個新月形的開口，以淡白色與銀色粉筆筆觸微微發光，如一彎月牙。石柱底部的深褐色大地上，散落數顆翠綠色小點——古老的玉珠在星光中閃爍。背景是深藍黑色，點綴幾顆微弱的星星。整體氛圍安靜、古老、肅穆——一個守望者靜立了三千年。無文字、無標籤。柔和暈染，可見粉筆質感，底部暖褐色調漸變為上方冷冽的天空色調。
+華德福風格黑板畫，純黑色背景，以柔和粉筆繪製。畫面中央，一根月牙形石柱高高聳立，以淺灰色和銀色粉筆繪成，質感暗示著古老的板岩。石柱從深色泥土中升起，基部周圍可隱約看見石板排列成長方形，暗示地下的石板棺。前景中，一塊石板上擱著一件小小的玉飾，散發半透明的深綠色光澤——兩個小人並肩站立，頭頂蹲著一隻動物，正是標誌性的人獸形玉玦。細緻的綠色玉珠串從飾品延伸而出。背景天空為深靛藍色，散布著粉筆粉末般的星光。一條隱約的金色線條跨越海洋，從臺灣延伸至菲律賓，暗示古老的玉器貿易路線。整體氛圍是靜謐的崇敬與遠古的神秘感，彷彿大地剛剛敞開，露出了它的秘密。
 
 ## 迭代紀錄
 
 | 版本 | 調整重點 | 結果 |
 |------|---------|------|
-| v1 | 初版 | 待評估 |
+| v1 | 初版：月形石柱 + 玉玦 + 海上貿易線 | 待評估 |
 
 ## 下載檔名
 

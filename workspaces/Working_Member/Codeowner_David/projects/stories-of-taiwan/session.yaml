@@ -6,7 +6,7 @@
 
 stories_of_taiwan_session:
   project: stories-of-taiwan
-  last_updated: 2026-03-22  # A004 pipeline completed
+  last_updated: 2026-03-22  # A004 v2 pipeline + 5 項 bug 修復
 
   overview:
     name: 臺灣的故事
@@ -18,7 +18,7 @@ stories_of_taiwan_session:
       每篇附教師說書稿、投影圖像清單、黑板畫 prompt。
       年度目標 90-120 篇，依七大區塊時序推進。
     annual_target: 90-120
-    skill_pipeline: story-daily v2.0.0（編排器，8 步驟）→ planner → research → writer → verify → gemini → assemble → archive
+    skill_pipeline: story-daily v2.2.0（編排器，8 步驟）→ planner → research → writer → verify → gemini → assemble → archive
 
   current_position:
     block: A-origins
@@ -64,9 +64,11 @@ stories_of_taiwan_session:
     - "story-writer.md 加入五年級寫作校準（6 條從 A002 兩版比較提取）"
     - "故事正文字數不設硬性上限，以自然篇幅為準"
     - "A002-v2、A003-v2 驗收版完成（校準規範 + 新 pipeline 驗證）"
+    - "story-daily v2.2.0：5 項 bug 修復——gws 健康檢查+npx fallback、版本管理規則、Gemini 5.1-5.11 子步驟帶截圖驗證、Checkpoint 前置檢查、瀏覽器權限補齊"
+    - "assemble-story.js v2.2.0：--version 旗標（版本模式跳過 cleanup）、移除 cd /tmp、GWS_BIN 健康檢查"
 
   next_action:
-    description: "Pipeline v2.1.0 debug 完成並驗收通過。下一步 A005（最早的足跡第二篇，建議十三行或大坌坑），需教師覆核 A001-A004"
+    description: "v2.2.0 修復完成。下一步 A005（最早的足跡第二篇，建議十三行或大坌坑），需教師覆核 A001-A004。Homebrew gws 有認證 bug，已 fallback 到 npx @googleworkspace/cli"
     input_needed_from_teacher:
       - "A001-A004 品質覆核（通過/修訂）"
       - "TCMB API Key（到手後提供）"
