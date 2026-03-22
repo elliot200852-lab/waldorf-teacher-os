@@ -4,7 +4,7 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 last_updated: 2026-03-22
-total_stories: 4
+total_stories: 5
 
 stories:
   - id: A001
@@ -79,6 +79,22 @@ stories:
         narration: stories/A-origins/A004-v2/narration.md
         images: stories/A-origins/A004-v2/images.md
         raw_materials: stories/A-origins/A004-v2/raw-materials.md
+
+  - id: A005
+    title: 海的搖籃——黑潮與臺灣
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前至今
+    location: 臺灣東部海域（黑潮主流）、臺灣海峽（黑水溝）
+    date_created: 2026-03-22
+    files:
+      content: stories/A-origins/A005/content.md
+      narration: stories/A-origins/A005/narration.md
+      images: stories/A-origins/A005/images.md
+      raw_materials: stories/A-origins/A005/raw-materials.md
+    sources: [wikipedia, nrch, scitechvista, ntnu, e-info, oca, moa, fishdb, marine_gov]
+    quality_check: passed
+    tags: [海洋, 黑潮, 黑水溝, 臺灣海峽, 珊瑚礁, 洋流, 海洋生態]
 
 # 索引結構說明：
 # stories:

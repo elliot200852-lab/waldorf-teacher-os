@@ -990,6 +990,8 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿v2_畢麒麟在福爾摩沙\|三天課程文稿v2 畢麒麟在福爾摩沙]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/pickering-in-formosa_畢麒麟在福爾摩沙_說書人文稿v2\|畢麒麟在福爾摩沙 三節說書人課程文稿 v2]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/deep-review-2026-03-22\|deep review 2026 03 22]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/quality-log\|quality log]] | 設定檔 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A005-quality\|A005 quality]] | （自動收錄） |
 
 ---
 

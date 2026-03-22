@@ -6,7 +6,7 @@
 
 stories_of_taiwan_session:
   project: stories-of-taiwan
-  last_updated: 2026-03-22  # A004-v2 完成全管線（新敘事角度：從玉出發）
+  last_updated: 2026-03-22  # A005 完成全管線（海的搖籃——黑潮與臺灣）
 
   overview:
     name: 臺灣的故事
@@ -23,15 +23,15 @@ stories_of_taiwan_session:
   current_position:
     block: A-origins
     block_title: 島嶼的誕生與最初的人
-    sub_theme_completed: 島嶼誕生（3/3）
+    sub_theme_completed: 島嶼誕生（4/3，含海洋延伸篇）
     current_sub_theme: 最早的足跡（1/4）
-    last_completed_story: A004
-    last_completed_title: 石頭裡的秘密——卑南遺址
-    next_story_id: A005
-    status: 「最早的足跡」子主題啟動，A004 卑南遺址已完成全管線
+    last_completed_story: A005
+    last_completed_title: 海的搖籃——黑潮與臺灣
+    next_story_id: A006
+    status: A005 海洋篇完成，島嶼誕生子主題延伸至 4 篇（含海洋）
 
   block_progress:
-    A-origins: 4    # 目標 15-20
+    A-origins: 5    # 目標 15-20
     B-encounter: 0  # 目標 8-12
     C-dutch-spanish: 0  # 目標 12-15
     D-koxinga: 0    # 目標 10-12
@@ -73,7 +73,7 @@ stories_of_taiwan_session:
     - "opening.md GWS 檢查防呆：先驗 command 存在、5 秒超時、任何異常靜默跳過不阻擋開工"
 
   next_action:
-    description: "A004-v2 完成 + 系統修正（assemble 正文解析 + GWS 跨平台 + 開機防呆）。下一步 A005（最早的足跡第二篇，建議十三行或大坌坑）。"
+    description: "A005 完成（海的搖籃——黑潮與臺灣）。下一步 A006（建議進入「南島的孩子」子主題，或「最早的足跡」第二篇如十三行）。"
     input_needed_from_teacher:
       - "A001-A004 品質覆核（通過/修訂）"
       - "A004-v2 vs A004 比較回饋（玉的視角 vs 怪手視角）"
@@ -110,6 +110,12 @@ stories_of_taiwan_session:
         chalkboard: ~/Downloads/AssemblyStory-A004-v2-chalkboard.png
         google_drive: uploaded
         assembled: 2026-03-22
+    A005:
+      html: temp/beautify-A005-完整版.html
+      pdf: temp/A005-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A005-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
 
   open_questions:
     - "story-archive 技能尚未正式執行過（A001-A003 手動歸檔至 index.yaml）"
