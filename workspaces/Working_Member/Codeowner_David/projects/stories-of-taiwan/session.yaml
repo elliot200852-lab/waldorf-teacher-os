@@ -104,12 +104,12 @@ stories_of_taiwan_session:
       chalkboard: ~/Downloads/AssemblyStory-A004-chalkboard.png
       google_drive: uploaded
       assembled: 2026-03-22
-    A004-v2:
-      html: temp/beautify-A004-v2-v2-完整版.html
-      pdf: temp/A004-v2-v2-完整版.pdf
-      chalkboard: ~/Downloads/AssemblyStory-A004-v2-chalkboard.png
-      google_drive: uploaded
-      assembled: 2026-03-22
+      v2:
+        html: temp/beautify-A004-v2-完整版.html
+        pdf: temp/A004-v2-完整版.pdf
+        chalkboard: ~/Downloads/AssemblyStory-A004-v2-chalkboard.png
+        google_drive: uploaded
+        assembled: 2026-03-22
 
   open_questions:
     - "story-archive 技能尚未正式執行過（A001-A003 手動歸檔至 index.yaml）"

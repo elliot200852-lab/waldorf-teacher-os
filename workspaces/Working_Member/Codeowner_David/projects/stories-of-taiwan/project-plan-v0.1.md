@@ -1,17 +1,7 @@
 ---
 aliases:
   - "臺灣的故事 專案計畫"
-aliases:
-  - "臺灣的故事 專案計畫"
-aliases:
-  - "臺灣的故事 專案計畫"
-aliases:
-  - "臺灣的故事 專案計畫"
----
-
----
-aliases:
-  - "臺灣的故事 專案計畫"
+  - "stories-of-taiwan plan"
 ---
 
 # 「臺灣的故事」專案計畫書 v0.1
@@ -111,76 +101,27 @@ aliases:
 
 ## 四、單篇故事產出模板
 
-每篇故事固定產出三份文件：
+每篇故事固定產出五份文件，存入 `stories/[區塊]/[ID]/` 子資料夾：
 
-### 4.1 文字內容（story-content.md）
+### 4.1 故事正文（content.md）
 
-```
-# [編號] [故事標題]
-> 區塊：[A-G] | 主題：[子主題] | 年代：[西元/朝代]
+含 YAML frontmatter（id、title、block、sub_theme、era、date）+ 故事本文 + 史實錨點 + 地理標記 + 延伸線索。字數以自然篇幅為準（實際產出約 650-1000 字）。五年級語言定位：具體、感官、有人物視角，不說教不灌輸。
 
-## 故事本文
-（300-500 字，敘事體，有場景、有人物、有感官細節）
+### 4.2 教師說書稿（narration.md）
 
-## 史實錨點
-- 資料來源 1：[名稱]（[資料庫代碼]）[連結]
-- 資料來源 2：...
-- 圖像來源：[出處與授權]
+開場（1-2 分鐘）→ 說書本文（5-8 分鐘，含語氣標註、停頓標記、華德福吸氣-呼氣節奏）→ 圖像展示時機 → 收尾（1 分鐘，留懸念連結明天）→ 教師備註（學生提問預判、情感注意點、ABCD 差異化回應）。
 
-## 地理標記
-- 地點：[地名]
-- 經緯度：[座標]（如有）
-- 現今對應：[現在這個地方叫什麼/長什麼樣]
+### 4.3 投影圖像清單（images.md）
 
-## 延伸線索
-- 與前一篇的連結：...
-- 可延伸方向：...
-- 跨齡提示：（六年級可加深什麼、九年級可延伸什麼）
-```
+主圖 + 輔助圖（地圖/文物/建築），每張含檔案路徑、來源、授權、說明。附投影建議與無投影時的替代方案。
 
-### 4.2 教師說書稿（story-narration.md）
+### 4.4 黑板畫 prompt（chalkboard-prompt.md）
 
-```
-# [編號] 教師說書稿：[故事標題]
+供 Gemini 生成黑板畫風格圖像的中文 prompt。4 層搜尋策略：直接生成 → 風格調整 → 參考圖 → 手動描述。
 
-## 開場（1-2 分鐘）
-（口語化的引入，可包含提問或回顧前一天）
+### 4.5 原始素材包（raw-materials.md）
 
-## 說書本文（5-8 分鐘）
-（逐字稿，語氣標註，停頓標記，聲音變化提示）
-（適合朗讀節奏，含華德福說故事的「吸氣-呼氣」節奏）
-
-## 圖像展示時機
-- [時間點 1]：展示 [圖像 A 描述]
-- [時間點 2]：展示 [圖像 B 描述]
-
-## 收尾（1 分鐘）
-（留下懸念或連結明天的線索）
-
-## 教師備註
-- 可能的學生提問與回應方向
-- 情感注意點（哪些內容可能觸動學生）
-- 差異化提示（A/B/C/D 學生的不同回應方式）
-```
-
-### 4.3 投影圖像清單（story-images.md）
-
-```
-# [編號] 圖像參考：[故事標題]
-
-## 主圖
-- 檔案：[路徑或 URL]
-- 來源：[資料庫名稱]
-- 授權：[CC / 教育用途 / 需另行確認]
-- 說明：[這張圖在故事中的角色]
-
-## 輔助圖（地圖/文物/建築）
-- ...
-
-## 投影建議
-- 建議投影順序與時機（對應說書稿的時間點）
-- 若無法投影的替代方案（實體列印 A3）
-```
+story-research 步驟的完整產出，含多資料源搜尋結果、AI 補充研究、交叉比對紀錄，作為故事撰寫的原始依據保留。
 
 ---
 
@@ -221,87 +162,123 @@ aliases:
 
 ## 六、每日生產管線設計
 
-### 6.1 管線流程
+### 6.1 管線流程（story-daily v2.2.0，8 步驟 + Checkpoint 矩陣）
 
 ```
-[每日觸發] Scheduled Task
+[每日觸發] Scheduled Task（Mon-Fri 10:30）或手動「今天的故事」
     │
-    ├── Step 1: 選題（story-planner skill）
-    │   ├── 讀取年度主題骨架 → 確認今天在哪個區塊
-    │   ├── 讀取已完成故事索引 → 避免重複
+    ├── Step 1: 選題（story-planner skill）【需教師確認，排程模式預授權】
+    │   ├── 讀取 theme-skeleton.yaml → 確認當前區塊與子主題
+    │   ├── 讀取 index.yaml → 避免重複
     │   └── 產出：今日故事主題 + 搜尋關鍵字
+    │   └── ✓ Checkpoint 1：主題已確認、關鍵字已產出
     │
     ├── Step 2: 資料搜尋（story-research skill）
     │   ├── 呼叫 taiwan_history_api.py 搜尋多資料源
     │   ├── AI 補充研究（網路搜尋、交叉比對）
-    │   └── 產出：原始素材包（文字 + 圖像連結 + 來源標註）
+    │   └── 產出：raw-materials.md（文字 + 圖像連結 + 來源標註）
+    │   └── ✓ Checkpoint 2：素材包 ≥ 3 來源、含圖像連結
     │
     ├── Step 3: 故事撰寫（story-writer skill）
-    │   ├── 依模板產出三件套（內容 + 說書稿 + 圖像清單）
+    │   ├── 依模板產出五件套（content + narration + images + chalkboard-prompt + raw-materials）
     │   ├── 事實查核：每個史實錨點必須有來源
-    │   └── 產出：三份 .md 文件
+    │   └── 產出：五份 .md 文件，存入 stories/[區塊]/[ID]/
+    │   └── ✓ Checkpoint 3：五檔齊全、frontmatter 完整
     │
-    ├── Step 4: 品質檢查（story-verify skill）
-    │   ├── 確認史實錨點有效性
-    │   ├── 確認與前後篇的敘事連貫
-    │   ├── 確認差異化提示完整
-    │   └── 產出：通過 → 歸檔；未通過 → 標記待修
+    ├── Step 4: 品質檢查（story-verify skill）【可與 Step 5 平行】
+    │   ├── 多維度檢核：事實查核、敘事品質、說書稿、圖像清單
+    │   ├── FAIL / WARN 分級判定
+    │   └── 產出：品質報告（reviews/[ID]-quality.md）
+    │   └── ✓ Checkpoint 4：FAIL = 0
     │
-    └── Step 5: 歸檔與索引更新（story-archive skill）
-        ├── 存入對應區塊資料夾
-        ├── 更新故事索引（含標籤、地理、時間軸）
-        └── 產出：更新後的 index.yaml
+    ├── Step 5: Gemini 圖像生成【可與 Step 4 平行】
+    │   ├── 開啟 Google Gemini → 以中文前綴觸發生成
+    │   ├── 黑板畫 prompt → 生成黑板畫風格圖像
+    │   └── 產出：黑板畫 PNG（~/Downloads/）
+    │   └── ✓ Checkpoint 5（FAIL）：互動模式必須嵌入黑板畫
+    │
+    ├── Step 6: 組裝美化（assemble-story.js + beautify）
+    │   ├── Markdown → 精美 HTML（華德福四季視覺模板）
+    │   ├── HTML → PDF（Puppeteer，A4 固定版面）
+    │   ├── 嵌入黑板畫、pullQuote、下篇預告（動態提取）
+    │   └── 產出：HTML + PDF（temp/beautify-[ID]-完整版.*）
+    │   └── ✓ Checkpoint 6：HTML + PDF 輸出、檔案大小 > 0
+    │
+    ├── Step 7: 上傳 Google Drive（gws upsert）
+    │   ├── 先刪舊版再傳新版（每篇只保留最新 HTML+PDF）
+    │   └── 產出：Google Drive 連結
+    │   └── ✓ Checkpoint 7：上傳成功確認
+    │
+    └── Step 8: 歸檔與索引更新（story-archive skill）
+        ├── 更新 index.yaml（含標籤、地理、時間軸）
+        ├── 更新 session.yaml pipeline_outputs
+        └── 產出：更新後的 index.yaml + session.yaml
+        └── ✓ Checkpoint 8：索引已更新、session 已同步
 ```
 
-### 6.2 檔案結構
+**Checkpoint 矩陣規則**：每步轉換點強制驗證，FAIL 立即中止，WARN 允許繼續但記錄。排程模式除 Step 1 外全部預授權。
+
+### 6.2 檔案結構（實際運作中）
 
 ```
 projects/stories-of-taiwan/
 ├── project-plan-v0.1.md          ← 本文件
-├── project.yaml                  ← 進度錨點
-├── index.yaml                    ← 故事總索引
-├── taiwan_history_api.py         ← 資料搜尋引擎
+├── project.yaml                  ← Layer 3 專案進度錨點
+├── session.yaml                  ← Layer 3 工作線記憶（每次對話更新）
+├── index.yaml                    ← 故事總索引（含 metadata、版本紀錄）
 ├── themes/
-│   ├── theme-skeleton.yaml       ← 年度主題骨架
-│   └── block-A-origins.yaml      ← 各區塊的子主題規劃
-│   └── block-B-encounter.yaml
-│   └── ...
+│   └── theme-skeleton.yaml       ← 年度主題骨架（七大區塊）
 ├── stories/
-│   ├── A-origins/
-│   │   ├── A001-content.md
-│   │   ├── A001-narration.md
-│   │   ├── A001-images.md
-│   │   └── ...
+│   └── A-origins/                ← 區塊資料夾
+│       ├── A001/                 ← 每篇故事一個子資料夾
+│       │   ├── content.md        ← 故事正文（含 YAML frontmatter）
+│       │   ├── narration.md      ← 教師說書稿
+│       │   ├── images.md         ← 投影圖像清單
+│       │   ├── chalkboard-prompt.md  ← 黑板畫生成 prompt
+│       │   └── raw-materials.md  ← 原始素材包
+│       ├── A002/
+│       ├── A002-v2/              ← 版本修訂用子資料夾
+│       ├── A003/
+│       ├── A003-v2/
+│       ├── A004/
+│       └── A004-v2/
 │   ├── B-encounter/
 │   └── ...
-├── assets/
-│   ├── images/                   ← 下載的圖像（CC 授權）
-│   └── maps/                     ← 地圖素材
-└── reviews/
-    └── quality-log.yaml          ← 品質檢查紀錄
+├── reviews/
+│   ├── quality-log.yaml          ← 品質檢查彙總紀錄
+│   ├── A002-quality.md           ← 個別品質報告
+│   ├── A003-v2-quality.md
+│   ├── A004-quality.md
+│   └── A004-v2-quality.md
+└── （publish/scripts/assemble-story.js — 組裝腳本，位於 repo 根目錄 publish/ 下）
 ```
 
 ---
 
 ## 七、所需 Skills 規劃
 
-### 7.1 新建 Skills（4 個核心 + 1 個排程）
+### 7.1 技能清單（1 個編排器 + 5 個子技能 + 1 個組裝腳本）
 
-| Skill 名稱 | 觸發語 | 功能 |
-|------------|--------|------|
-| `story-planner` | 「今天的故事」「選題」「下一篇」 | 根據骨架選定今日主題，產出搜尋關鍵字 |
-| `story-research` | 「搜尋素材」「找資料」「查史料」 | 呼叫 API + AI 研究，產出原始素材包 |
-| `story-writer` | 「寫故事」「產出故事」「生成三件套」 | 將素材精煉為三份產出文件 |
-| `story-verify` | 「檢查故事」「品質確認」 | 事實查核 + 敘事連貫 + 格式合規 |
-| `story-archive` | 「歸檔」「更新索引」 | 存檔 + 索引更新 |
+| Skill 名稱 | 版本 | 觸發語 | 功能 |
+|------------|------|--------|------|
+| `story-daily` | v2.2.0 | 「今天的故事」「跑管線」 | **全流程編排器**，8 步驟 + Checkpoint 矩陣 + 排程 fallback |
+| `story-planner` | active | 「選題」「下一篇」 | 根據骨架選定今日主題，產出搜尋關鍵字 |
+| `story-research` | active | 「搜尋素材」「找資料」「查史料」 | 呼叫 API + AI 研究，產出 raw-materials.md |
+| `story-writer` | active | 「寫故事」「產出故事」 | 將素材精煉為五件套產出 |
+| `story-verify` | active | 「檢查故事」「品質確認」 | 多維度檢核（事實、敘事、說書稿、圖像）FAIL/WARN 分級 |
+| `story-archive` | active | 「歸檔」「更新索引」 | 存檔 + index.yaml + session.yaml 更新 |
+| `assemble-story.js` | v2.2.0 | Step 6 自動觸發 | Markdown → HTML+PDF 組裝，GWS upsert 上傳 |
+
+所有子技能已加入「入口驗證」前置條件，與 Checkpoint 矩陣對齊。
 
 ### 7.2 Scheduled Task
 
-一個每日排程任務，串接上述五個 Skill，自動執行 Step 1-5。
-David 可選擇：
-- **全自動模式**：每日自動跑完整管線，David 隔天審閱
-- **半自動模式**：排程只跑到 Step 2（選題 + 搜素材），David 確認後再手動觸發 Step 3-5
-- **手動模式**：David 說「今天的故事」，逐步執行
+排程任務 `stories-of-taiwan-daily`（Mon-Fri 10:30），由 story-daily 編排器驅動。
+
+三種執行模式：
+- **排程模式（全自動）**：除 Step 1 選題外全部預授權，Step 5 Gemini 需瀏覽器可用
+- **互動模式（半自動）**：教師說「今天的故事」，逐步確認
+- **手動模式**：直接呼叫個別子技能
 
 ### 7.3 既有 Skill 的關聯
 
@@ -334,18 +311,18 @@ David 可選擇：
 
 ## 九、建議的啟動順序
 
-| 步驟 | 工作 | 預估時間 |
-|------|------|----------|
-| 0 | David 審閱本計畫書，確認方向 | — |
-| 1 | 建立檔案結構 + 寫入 project.yaml | 1 session |
-| 2 | 完成年度主題骨架（theme-skeleton.yaml）| 1 session |
-| 3 | 建立 story-planner + story-research skill | 1-2 sessions |
-| 4 | 用區塊 A 第一篇故事做完整管線試跑 | 1 session |
-| 5 | David 審閱試跑產出，調整模板與語氣 | — |
-| 6 | 建立 story-writer + story-verify + story-archive skill | 2 sessions |
-| 7 | 設定 Scheduled Task，開始每日生產 | 1 session |
-| 8 | 跑一週（5-7 篇），做第一次品質回顧 | 1 week |
+| 步驟 | 工作 | 狀態 |
+|------|------|------|
+| 0 | David 審閱本計畫書，確認方向 | done |
+| 1 | 建立檔案結構 + 寫入 project.yaml | done |
+| 2 | 完成年度主題骨架（theme-skeleton.yaml）| done（draft） |
+| 3 | 建立 story-planner + story-research skill | done |
+| 4 | 用區塊 A 第一篇故事做完整管線試跑 | done（A001-A004） |
+| 5 | David 審閱試跑產出，調整模板與語氣 | **進行中**（A001-A004 品質覆核待確認） |
+| 6 | 建立 story-writer + story-verify + story-archive skill | done（story-archive 尚未正式執行） |
+| 7 | 設定 Scheduled Task + assemble-story.js + Gemini 生圖 | done（v2.2.0） |
+| 8 | 跑一週（5-7 篇），做第一次品質回顧 | 待啟動（等 Step 5 覆核通過） |
 
 ---
 
-*本計畫書為 v0.1 草稿，待 David 確認後進入執行。*
+*本計畫書 v0.1 已進入執行階段。A001-A004 試跑完成，管線 v2.2.0 工程強化完成。下一步：A005 起進入「最早的足跡」子主題，以 Checkpoint 矩陣驗證完整流程。*

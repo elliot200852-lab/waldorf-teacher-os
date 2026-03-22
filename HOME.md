@@ -262,7 +262,43 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/images\|A003 圖像清單]] | 投影圖像清單 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/chalkboard-prompt\|A003 黑板畫]] | 黑板畫 prompt |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003/raw-materials\|A003 原始素材]] | 研究素材包 |
+
+**A002-v2 / A003-v2（校準修訂版）**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/content\|A002-v2 水的雕刻刀（修訂）]] | 校準規範後修訂版 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/content\|A003-v2 火的禮物（修訂）]] | 校準規範後修訂版 |
+
+**A004：石頭裡的秘密——卑南遺址**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/content\|A004 石頭裡的秘密]] | 故事正文（怪手視角） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/narration\|A004 說書稿]] | 教師說書稿 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/images\|A004 圖像清單]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/chalkboard-prompt\|A004 黑板畫]] | 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004/raw-materials\|A004 原始素材]] | 研究素材包 |
+
+**A004-v2：石頭裡的秘密——卑南遺址（從玉出發）**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/content\|A004-v2 從玉出發]] | 故事正文（全新敘事角度） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/narration\|A004-v2 說書稿]] | 教師說書稿 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/images\|A004-v2 圖像清單]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/chalkboard-prompt\|A004-v2 黑板畫]] | 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2/raw-materials\|A004-v2 原始素材]] | 研究素材包 |
+
+**品質審核**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/quality-log\|品質彙總紀錄]] | quality-log.yaml |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A002-quality\|A002 品質檢查]] | 品質審核紀錄 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A003-v2-quality\|A003-v2 品質檢查]] | 品質審核紀錄 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-quality\|A004 品質檢查]] | 品質審核紀錄 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-v2-quality\|A004-v2 品質檢查]] | 品質審核紀錄 |
 
 ### Good-notes 建造日誌
 
@@ -450,11 +486,11 @@ aliases:
 | [[check-compat]]      | 「跨平台檢查」「check compat」       | 技能與腳本跨平台相容性檢查                         |
 | [[story-planner]]     | 「今天的故事」「選題」「story plan」     | 臺灣的故事・每日選題                            |
 | [[story-research]]    | 「搜尋素材」「查史料」「story research」 | 臺灣的故事・素材搜尋（API + AI 研究）               |
-| [[story-writer]]      | 「寫故事」「產出故事」「story write」    | 臺灣的故事・三件套撰寫                           |
-| [[story-verify]]      | 「檢查故事」「品質確認」「story verify」  | 臺灣的故事・品質檢查                            |
+| [[story-writer]]      | 「寫故事」「產出故事」「story write」    | 臺灣的故事・五件套撰寫                           |
+| [[story-verify]]      | 「檢查故事」「品質確認」「story verify」  | 臺灣的故事・品質檢查（FAIL/WARN 分級）              |
 | [[story-archive]]     | 「歸檔故事」「story archive」       | 臺灣的故事・歸檔與索引                           |
-| [[gws-bridge]]        | （自動收錄）                      |                                       |
-| [[story-daily]]       | （自動收錄）                      |                                       |
+| [[ai-core/skills/story-daily\|story-daily]] | 「今天的故事」「跑管線」 | 臺灣的故事・全流程編排器（v2.2.0，8 步驟 + Checkpoint） |
+| [[ai-core/skills/gws-bridge\|gws-bridge]] | 「gws bridge」「Cowork gws」 | Cowork VM ↔ 本機 GWS CLI 橋接（自動偵測環境） |
 
 ---
 
@@ -562,6 +598,7 @@ aliases:
 | [[session-log]] | 歷次 session 完成紀錄 |
 | [[architecture-review-2026-03-04]] | 架構回顧（2026-03-04） |
 | [[context-review-20260228]] | 脈絡回顧（2026-02-28） |
+| [[skill-deep-review-2026-03-22]] | （自動收錄） |
 
 ---
 
@@ -581,7 +618,7 @@ aliases:
 | [[publish/images/di_matrix.png\|di_matrix.png]] | 圖片：差異化矩陣 |
 | [[publish/images/di_steps.png\|di_steps.png]] | 圖片：差異化步驟 |
 | [[publish/images/workflow.png\|workflow.png]] | 圖片：工作流程 |
-| [[assemble-story]] | （自動收錄） |
+| [[publish/scripts/assemble-story.js\|assemble-story.js]] | 臺灣的故事組裝腳本（v2.2.0，Markdown → HTML+PDF + GWS upsert） |
 | [[beautify-A002-完整版.html]] | A002 水的雕刻刀 完整版 HTML |
 | [[beautify-A003-完整版.html]] | A003 火的禮物 完整版 HTML |
 
@@ -699,7 +736,7 @@ aliases:
 | [[.claude/commands/story-writer.md\|/story-writer]] | story-writer |
 | [[.claude/commands/story-verify.md\|/story-verify]] | story-verify |
 | [[.claude/commands/story-archive.md\|/story-archive]] | story-archive |
-| [[story-daily]] | （自動收錄） |
+| [[.claude/commands/story-daily.md\|/story-daily]] | story-daily（全流程編排器） |
 
 ---
 
@@ -954,14 +991,9 @@ aliases:
 | [[help_list.txt\|help_list.txt]] | 指令說明清單 |
 | [[root_files.txt\|root_files.txt]] | 根目錄檔案清單 |
 | [[download]] | （自動收錄） |
-| [[story-daily]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/current-task\|current task]] | 設定檔 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-quality\|A004 quality]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A003-v2-quality\|A003 v2 quality]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/quality-log\|quality log]] | 設定檔 |
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿v2_畢麒麟在福爾摩沙\|三天課程文稿v2 畢麒麟在福爾摩沙]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/pickering-in-formosa_畢麒麟在福爾摩沙_說書人文稿v2\|畢麒麟在福爾摩沙 三節說書人課程文稿 v2]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-v2-quality\|A004 v2 quality]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/deep-review-2026-03-22\|deep review 2026 03 22]] | （自動收錄） |
 
 ---
 
