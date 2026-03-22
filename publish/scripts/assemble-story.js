@@ -134,6 +134,13 @@ const SEASON_DIVIDER_ICONS = {
 };
 
 // ── Markdown 解析輔助 ────────────────────────────────
+
+// 剝除 YAML frontmatter（--- ... --- 區塊）
+function stripFrontmatter(md) {
+  const match = md.match(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/);
+  return match ? md.slice(match[0].length) : md;
+}
+
 function splitByHr(md) {
   // 以 --- 分割段落（至少三個 -，獨佔一行）
   return md.split(/\n---+\n/).map(s => s.trim()).filter(Boolean);
@@ -1053,10 +1060,10 @@ function main() {
     process.exit(0);
   }
 
-  // ── 讀取所有檔案 ─────────────────────────────────
-  const contentMd = fs.readFileSync(path.join(resolvedDir, 'content.md'), 'utf-8');
-  const narrationMd = fs.readFileSync(path.join(resolvedDir, 'narration.md'), 'utf-8');
-  const imagesMd = fs.readFileSync(path.join(resolvedDir, 'images.md'), 'utf-8');
+  // ── 讀取所有檔案（剝除 YAML frontmatter）──────────
+  const contentMd = stripFrontmatter(fs.readFileSync(path.join(resolvedDir, 'content.md'), 'utf-8'));
+  const narrationMd = stripFrontmatter(fs.readFileSync(path.join(resolvedDir, 'narration.md'), 'utf-8'));
+  const imagesMd = stripFrontmatter(fs.readFileSync(path.join(resolvedDir, 'images.md'), 'utf-8'));
   const rawMaterialsMd = checklist['raw-materials.md']
     ? fs.readFileSync(path.join(resolvedDir, 'raw-materials.md'), 'utf-8')
     : '';
@@ -1066,12 +1073,28 @@ function main() {
   const meta = extractFrontmatter(contentMd);
   const subtitle = meta['子主題'] || meta['區塊'] || '';
 
-  // 故事正文段落（以 --- 分割，排除最後的事實表）
-  const allSections = splitByHr(contentMd);
-  // 過濾掉 frontmatter（> 開頭）和事實表（## 事實出處）
-  const contentSections = allSections.filter(s =>
-    !s.startsWith('>') && !s.startsWith('## 事實出處') && !s.includes('| 事實 |')
-  );
+  // 故事正文段落：從 content.md 中精確提取「## 故事本文」段落
+  // 策略：按 ## 標題切段，只取「故事本文」區塊的內容
+  const contentSections = (() => {
+    // 按 ## 標題切分（保留標題行作為段落開頭）
+    const h2Parts = contentMd.split(/(?=^## )/m).map(s => s.trim()).filter(Boolean);
+    // 找「## 故事本文」段落
+    const storyPart = h2Parts.find(p => /^## 故事本文/.test(p));
+    if (storyPart) {
+      // 移除標題行本身，保留正文
+      const body = storyPart.replace(/^## 故事本文\s*\n+/, '').trim();
+      return body ? [body] : [];
+    }
+    // fallback：沒有「## 故事本文」標題時，用舊邏輯（splitByHr + 過濾）
+    const allSections = splitByHr(contentMd);
+    return allSections.filter(s =>
+      !s.startsWith('>') &&
+      !s.startsWith('## 事實出處') && !s.includes('| 事實 |') &&
+      !s.startsWith('## 地理標記') &&
+      !s.startsWith('## 延伸線索') &&
+      !s.startsWith('#')
+    );
+  })();
 
   const sourceUrls = rawMaterialsMd ? parseSourceUrls(rawMaterialsMd) : {};
   const factTable = parseFactTable(contentMd, sourceUrls);
