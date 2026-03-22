@@ -1,3 +1,8 @@
+---
+aliases:
+  - "A003-v2 火的禮物 黑板畫"
+---
+
 # 黑板畫 Prompt：A003 火的禮物——大屯火山與泥火山（第二版）
 
 ## English Prompt（Gemini 製圖用）
