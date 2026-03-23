@@ -85,22 +85,28 @@ aliases:
 
 9C 英文內容產出：
 
-| 檔案                                                                                                                             | 說明        |
-| ------------------------------------------------------------------------------------------------------------------------------ | --------- |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/english-syllabus-v1-20260228.md\|英文大綱 v1（科目路徑）]] | 學季大綱第一版   |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/english-syllabus-v2-20260301.md\|英文大綱 v2（科目路徑）]] | 學季大綱第二版   |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/content/english/english-syllabus-v1-20260228.md\|英文大綱 v1（班級路徑）]] | 班級視角副本    |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/content/english/english-syllabus-v2-20260301.md\|英文大綱 v2（班級路徑）]] | 班級視角副本    |
-| [[9C-week5-1-v1-教師教案]]                                                                                                         | 第五週第一節教案  |
-| [[9C-week5-1-v1-學習單]]                                                                                                          | 第五週第一節學習單 |
-| [[9C-week5-phrasal-verb-quiz]]                                                                                                 | 第五週動詞片語測驗（基礎版＋進階版） |
-| [[9C-week5-3-v1-教師教案]]                                                                                                         | 第五週第三節教案（動詞片語攻防戰） |
-| [[9C-week5-3-v1-學習單]]                                                                                                          | 第五週第三節學習單 |
+| 檔案                                                                                                                             | 說明                     |
+| ------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/english-syllabus-v1-20260228.md\|英文大綱 v1（科目路徑）]] | 學季大綱第一版                |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/english-syllabus-v2-20260301.md\|英文大綱 v2（科目路徑）]] | 學季大綱第二版                |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/content/english/english-syllabus-v1-20260228.md\|英文大綱 v1（班級路徑）]] | 班級視角副本                 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/content/english/english-syllabus-v2-20260301.md\|英文大綱 v2（班級路徑）]] | 班級視角副本                 |
+| [[9C-week5-1-v1-教師教案]]                                                                                                         | 第五週第一節教案               |
+| [[9C-week5-1-v1-學習單]]                                                                                                          | 第五週第一節學習單              |
+| [[9C-week5-phrasal-verb-quiz]]                                                                                                 | 第五週動詞片語測驗（基礎版＋進階版）     |
+| [[9C-week5-3-v1-教師教案]]                                                                                                         | 第五週第三節教案（動詞片語攻防戰）      |
+| [[9C-week5-3-v1-學習單]]                                                                                                          | 第五週第三節學習單              |
 | [[9C-week6-phrasal-verb-quiz]]                                                                                                 | 第六週動詞片語測驗（基礎版＋進階版＋教師版） |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/README.md\|英文 content README]]                   | 內容資料夾說明   |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-1-v1-學習單\|9C 英文第六週第一節學習單]] | 學習單 |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-1-v1-教師教案\|9C 英文第六週第一節教案]] | 教案 |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-1-v1-學習單-教師版\|9C 英文第六週第一節學習單（教師版）]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/README.md\|英文 content README]]                   | 內容資料夾說明                |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-1-v1-學習單\|9C 英文第六週第一節學習單]]              | 學習單                    |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-1-v1-教師教案\|9C 英文第六週第一節教案]]              | 教案                     |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-1-v1-學習單-教師版\|9C 英文第六週第一節學習單（教師版）]]     | （自動收錄）                 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-2-v1-學習單\|9C 英文第六週第二節學習單]] | 學習單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-2-v1-教師教案\|9C 英文第六週第二節教案]] | 教案 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week7-1-v1-學習單\|9C 英文第七週第一節學習單]] | 學習單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week7-1-v1-教師教案\|9C 英文第七週第一節教案]] | 教案 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week7-2-v1-學習單\|9C 英文第七週第二節學習單]] | 學習單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week7-2-v1-教師教案\|9C 英文第七週第二節教案]] | 教案 |
 
 9C 英文參考資料：
 
@@ -108,6 +114,8 @@ aliases:
 |------|------|
 | [[9C下學期英文差異化教學策略研究]] | DI 策略研究 |
 | [[The house on Mango Street 小說教學研究報告範本]] | 小說教學研究 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/reference/phrasal-verbs-200-八下九上\|phrasal verbs 200 八下九上]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/reference/conjunctions-國中範圍總整理\|conjunctions 國中範圍總整理]] | （自動收錄） |
 
 **9C 導師**
 

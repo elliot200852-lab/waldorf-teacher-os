@@ -52,6 +52,56 @@ week5:
     topic: 待設計
     status: pending
 
+# ── 第六週教學進度 ──
+week6:
+  session_2:
+    topic: "Words That Connect — 連接詞導入 + 動詞片語情境複習"
+    grammar_focus: "if, because（回顧）+ when, before, after, although"
+    status: finalized
+    content:
+      - content/9C-week6-2-v1-教師教案.md
+      - content/9C-week6-2-v1-學習單.md
+    pdf: "~/Desktop/完成檔案/9C英文_第六週第二節學習單.pdf"
+    pdf_note: "排版過擠，待重做"
+
+# ── 第七週教學進度 ──
+week7:
+  session_1:
+    topic: "The Full Picture — 連接詞全景與對等連接詞"
+    grammar_focus: "so, unless, until, even though + and, but, or"
+    status: draft  # 待 David 審閱
+    content:
+      - content/9C-week7-1-v1-教師教案.md
+      - content/9C-week7-1-v1-學習單.md
+  session_2:
+    topic: "Connect Your World — 連接詞整合應用與收尾"
+    grammar_focus: "全類別整合 + 配對連接詞認識"
+    status: draft  # 待 David 審閱
+    content:
+      - content/9C-week7-2-v1-教師教案.md
+      - content/9C-week7-2-v1-學習單.md
+
 next_steps:
-  - 設計 week5-2 課堂流程（第五週第二節：文學回應與創作）
-  - 設計 week5-4 語言工坊（二）
+  - Week 6-2 學習單 PDF 重新排版（需先確認刪減內容）
+  - Week 7-1、7-2 教案與學習單：David 審閱後修改定案
+  - Week 6 星期三：Mango Street 第二回篇章選擇
+
+# -- 參考資料索引 --
+
+reference_materials:
+  phrasal_verbs:
+    path: reference/phrasal-verbs-200-八下九上.md
+    description: "200 個最常用動詞片語（依核心動詞分組），含 A/B 對話情境"
+    source: "1200 字動詞整理表（時態生活情境：8 下 + 9 上）"
+    coverage:
+      - "#1-#142：八下已學"
+      - "#143-#174：Week 5 已測"
+      - "#175-#200：Week 6 已測"
+  conjunctions:
+    path: reference/conjunctions-國中範圍總整理.md
+    description: "國中英語連接詞完整參考（對等/從屬/配對/連接副詞），含適用程度標註"
+    source: "十二年國教英語文課綱（108 課綱）+ 教學現場整理"
+    teaching_sequence:
+      - "Week 6-2：if, because（回顧）+ when, before, after, although"
+      - "Week 7-1：so, unless, until, even though + 對等連接詞"
+      - "Week 7-2：整合應用 + 配對連接詞認識"
