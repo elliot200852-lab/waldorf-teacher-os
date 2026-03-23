@@ -1,16 +1,11 @@
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# Workspace 狀態追蹤
-# 路徑：workspaces/Working_Member/Teacher_林詩閔/workspace.yaml
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
 teacher_identity:
   name: 林詩閔
   teacher_id: lin-shi-min
-  role: 華德福教師
+  role: 華德福教師、四年級C班台語課教師
   email: main5405@gmail.com
+  location: 台灣
+  school_type: 華德福
 
-workspace_status: active
-created_date: 2026-03-10
-purpose: 林詩閔的個人 workspace
 
-classes: []
+classes: 
+  - class-4c

@@ -1,0 +1,38 @@
+class: 四年級C班
+students:
+  - name: "謝承儒"
+  - name: "張語若"
+  - name: "陳宇昊"
+  - name: "黃庭睫"
+  - name: "鄧媃云"
+  - name: "蘇校儀"
+  - name: "李婕熙"
+  - name: "黃偉勳"
+  - name: "方正宇"
+  - name: "張圓施"
+  - name: "李秉憲"
+  - name: "李青學"
+  - name: "蘇子涵"
+  - name: "范子奕"
+  - name: "李淳伊"
+  - name: "朱珉"
+  - name: "林沐嫻"
+  - name: "林熹珖"
+  - name: "謝於希"
+  - name: "黃小砵"
+  - name: "謝得瑜"
+  - name: "闕龠"
+  - name: "廖苡蓒"
+subject_contexts:
+  taiwanese:
+    ability_definition: >
+      高能力：能理解課堂指令與故事大意，能以正確發音唸誦歌曲/唸謠，並能在引導下使用簡單代名詞與句型進行對話。
+    motivation_definition: >
+      高動機：課堂參與度高，享受傳球遊戲、歌唱等活動，能大方且自信地嘗試開口，對學習素材展現強烈好奇。
+    di_distribution:
+      A: 15
+      B: 2
+      C: 3
+      D: 0
+      unknown: 5  # 尚未分析完畢的學生進度
+    last_updated: 2026-03-23
