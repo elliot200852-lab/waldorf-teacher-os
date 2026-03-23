@@ -8,14 +8,14 @@
 
 english_session:
   class: class-9c
-  last_updated: 2026-03-19
+  last_updated: 2026-03-23
 
   current_position:
     block: 二
-    step: 1         # Block 2 啟動——第五週第一單元教案與學習單已完成
+    step: 1         # Block 2 — week6 第一節備課完成（測驗＋學習單＋教案），第二節待設計
     sub_block: null
     unit_number: 1    # week 5-6 對應單元一（英文課第一個教學單元）
-    current_week: 5   # 第五週（學校行事曆週次）
+    current_week: 6   # 第六週（學校行事曆週次）
                       # 已完成：week5-1 教師教案 + 學生學習單（The Road Not Taken）
                       # AI 在 Block 2 工作時，若此欄為 0，應詢問教師當前週次後更新
                       # 週次換算參考（依 confirmed_decisions 的 10 週規劃）：
@@ -37,11 +37,10 @@ english_session:
 
   next_action:
     description: >
-      進入第六週（week 6）備課（週四校對確認）：
-      1. 英文片語：準備考試範圍並出考題，融入學習單設計
-      2. Mango Street：準備 week 6 內容，延續「找出篇章怎麼工作」的複習與深化
-      3. 重點：學習單差異化活動需再細化——低成就缺動力（D類）、高成就缺動機（C類），兩端都要有更具體的設計
-    input_needed_from_teacher: "片語考試範圍（講義頁數）；Mango Street week 6 選用篇章"
+      Week 6 第一節備課完成（測驗卷＋學習單＋教案）。接下來：
+      1. Week 6 第二節（星期一）語言技能——教師待決定方向（測驗檢討/片語深化/新文法/銜接 Mango Street）
+      2. Week 6 星期三：Mango Street 第二回（待選篇章）
+    input_needed_from_teacher: "week 6 星期一第二節方向；Mango Street week 6 選用篇章"
 
   output_files:
     syllabus_versions:
@@ -83,6 +82,29 @@ english_session:
           動詞片語測驗: class-9c/english/content/9C-week5-phrasal-verb-quiz.md
         skill_used: subject-lesson-45 + phrase-quiz
         notes: "配對複習+快閃暖身 8min → 攻防戰 10min → 正式測驗 20min → 片語印象牆 5min。Follow-up 連結《The House on Mango Street》（Task A 找片語 / Task B 寫場景）"
+      - unit: week6-quiz
+        date: 20260323
+        theme: "動詞片語測驗 Week 6 — 講義 #175-#200"
+        grammar_focus: "動詞片語辨析（講義 #175-#200，26 個片語）"
+        status: 測驗卷已完成（基礎版三選一＋進階版四選一＋教師版含解析）
+        files:
+          測驗卷_Markdown: class-9c/english/content/9C-week6-phrasal-verb-quiz.md
+          基礎版_HTML: temp/beautify-quiz-基礎版-學生版.html
+          進階版_HTML: temp/beautify-quiz-進階版-學生版.html
+          教師版_HTML: temp/beautify-quiz-教師版.html
+        skill_used: beautify
+        notes: "差異化設計：基礎版 20 題三選一（B/D 類）＋進階版 20 題四選一（A/C 類），題目不同但範圍相同。教師版含雙版解析。"
+      - unit: week6-1
+        date: 20260323
+        theme: "動詞片語測驗課 — 講義 #175-#200 語言技能第一節"
+        grammar_focus: "動詞片語辨析（講義 #175-#200）"
+        status: 教案與學習單已完成
+        files:
+          教師教案: class-9c/english/content/9C-week6-1-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week6-1-v1-學習單.md
+          測驗卷: class-9c/english/content/9C-week6-phrasal-verb-quiz.md
+        skill_used: null
+        notes: "Speed Sort 分類暖身 5min → 測驗 20min → 延伸任務二選一 15min → 收尾 5min。延伸任務差異化：Task A 對話創作（A/C 類）/ Task D 情境配對（B/D 類）。學習單含教師版（答案填入版）。"
     extensions_completed:
       - type: 藝術作品教學指南
         date: 20260319

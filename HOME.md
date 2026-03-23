@@ -98,6 +98,9 @@ aliases:
 | [[9C-week5-3-v1-學習單]]                                                                                                          | 第五週第三節學習單 |
 | [[9C-week6-phrasal-verb-quiz]]                                                                                                 | 第六週動詞片語測驗（基礎版＋進階版＋教師版） |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/README.md\|英文 content README]]                   | 內容資料夾說明   |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-1-v1-學習單\|9C 英文第六週第一節學習單]] | 學習單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-1-v1-教師教案\|9C 英文第六週第一節教案]] | 教案 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-1-v1-學習單-教師版\|9C 英文第六週第一節學習單（教師版）]] | （自動收錄） |
 
 9C 英文參考資料：
 
@@ -1018,3 +1021,9 @@ aliases:
 - `Cmd + O` — 快速開啟任何筆記
 - `Cmd + Shift + G` — 全域圖譜
 - `Cmd + P` → 輸入指令 — 命令面板
+
+9C 走讀臺灣內容產出
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/walking-reading-taiwan/content/9C-walk-read-week1-教學紀錄\|9C 走讀臺灣 臺中篇 week1 教學紀錄]] | （自動收錄） |

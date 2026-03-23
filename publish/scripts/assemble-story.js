@@ -719,6 +719,14 @@ function assembleHtml({
 -->
 <head>
 ${headContent}
+<style>
+/* story-daily PDF 分頁修正 — 確保內容從第一頁開始流動 */
+@media print {
+  body { min-height: auto !important; }
+  main { overflow: visible !important; }
+  .botanical-overlay { display: none !important; }
+}
+</style>
 </head>
 
 <body class="font-body text-[var(--on-surface)] selection:bg-[var(--secondary)]/20">
@@ -739,7 +747,7 @@ ${headContent}
 </header>
 
 <!-- 主內容區 -->
-<main class="max-w-[900px] mx-auto px-8 py-6 relative overflow-hidden">
+<main class="max-w-[900px] mx-auto px-8 py-6 relative">
 
   <!-- 季節裝飾角落 -->
   <div class="absolute -top-10 -right-10 opacity-[0.07] rotate-12">

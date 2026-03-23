@@ -246,6 +246,21 @@ async function htmlToPdf(inputPath, outputPath, options = {}) {
 
     await page.evaluate(() => document.fonts.ready);
 
+    // ── PDF 分頁修正 ──────────────────────────────────
+    // 問題：模板的 @media print 有 section { break-inside: avoid }，
+    // 對單頁學習單有效，但故事正文 section 跨多頁時會被整個推到下一頁，
+    // 導致第一頁只有標題。此處覆蓋為 break-inside: auto。
+    await page.evaluate(() => {
+      const fix = document.createElement('style');
+      fix.id = 'pdf-flow-fix';
+      fix.textContent = `
+        section { break-inside: auto !important; }
+        body { min-height: auto !important; }
+        main { overflow: visible !important; }
+      `;
+      document.head.appendChild(fix);
+    });
+
     // ── 輔助函式 ─────────────────────────────────────
     const applyScale = (spacingScale, fontScale = 1.0) => page.evaluate((css) => {
       const old = document.getElementById('fit-page-css');
