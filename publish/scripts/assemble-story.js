@@ -724,6 +724,7 @@ ${headContent}
 @media print {
   body { min-height: auto !important; }
   main { overflow: visible !important; }
+  section { break-inside: auto !important; }
   .botanical-overlay { display: none !important; }
 }
 </style>

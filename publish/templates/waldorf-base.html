@@ -191,6 +191,7 @@ body {
   body {
     background: white !important;
     color: #1C1C18 !important;
+    min-height: auto !important;
   }
   .botanical-overlay {
     display: none !important;
@@ -216,8 +217,8 @@ body {
     text-decoration: none !important;
     color: inherit !important;
   }
-  /* 確保分頁不切斷內容區塊 */
-  section, .hand-drawn-border, blockquote {
+  /* 小型區塊（引言、手繪框）避免被分頁切斷；大型 section 允許跨頁流動 */
+  .hand-drawn-border, blockquote {
     break-inside: avoid;
   }
 }
