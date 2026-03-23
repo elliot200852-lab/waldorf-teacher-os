@@ -670,6 +670,9 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
+| [[.pre-compact-state]] | （自動收錄） |
+| [[mcp-optimization-guide]] | （自動收錄） |
+| [[pre-compact-save]] | Python 腳本 |
 | [[.claude/settings.json\|settings.json]] | Claude Code 全域設定 |
 | [[.claude/settings.local.json\|settings.local.json]] | 本機設定（不上傳） |
 | [[.claude/launch.json\|launch.json]] | Dev server 啟動設定 |
@@ -745,6 +748,8 @@ aliases:
 | [[.claude/commands/story-verify.md\|/story-verify]] | story-verify |
 | [[.claude/commands/story-archive.md\|/story-archive]] | story-archive |
 | [[.claude/commands/story-daily.md\|/story-daily]] | story-daily（全流程編排器） |
+| [[pattern]] | （自動收錄） |
+| [[patterns]] | （自動收錄） |
 
 ---
 
@@ -1215,6 +1220,10 @@ aliases:
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/閩南語/三個作田人/三个作田人劇本(角色)\|三个作田人劇本(角色)]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/黑熊與雲豹故事\|黑熊與雲豹故事]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/skills/niamyio-personal\|niamyio personal]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/skills/pattern-capture\|教學 Pattern 提煉]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/skills/pattern-grammar-spread\|文法攤開教學]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/skills/pattern-homework-anchor\|課後任務門檻設計]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/skills/pattern-worksheet-layers\|學習單層次設計]] | （自動收錄） |
 
 ---
 

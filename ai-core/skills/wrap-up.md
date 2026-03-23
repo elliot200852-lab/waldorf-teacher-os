@@ -297,6 +297,11 @@ git push
 
 若某項目為空（例如無 YAML 變動），從表格中省略該行。
 
+**Pattern 提煉提醒：** 摘要輸出後，若本次 session 涉及備課或教學設計工作，追加一句：
+> 本次 session 有值得存成 pattern 的教學洞察嗎？說「存 pattern」我來提煉。
+
+此提醒只在涉及教學工作的 session 出現。純系統工程 session 不出現。
+
 ### Step 6 — 跨平台開機提醒（Phase D，純輸出）
 
 每次收工必輸出，固定內容：
