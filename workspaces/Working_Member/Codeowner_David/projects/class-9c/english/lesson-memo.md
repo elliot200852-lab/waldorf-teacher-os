@@ -12,8 +12,4 @@ subject: english
 
 ## Week 6 — 2026-03-23
 
-- [ ] **Week 6-3 開頭作業驗收**
-  - A 組：第一張學習單（Week 6-1）Task A 的對話 + 第二張學習單（Week 6-2）Task B 造句（用連接詞 when/although/before/after/because/if 搭配動詞片語 come down with / give up / find out / get back / break down / work out 各造一句）
-  - B 組：第二張學習單（Week 6-2）Task C 填空（8 題，從 connector bank if/because/when/before/after/although 中選填正確連接詞）
-- [ ] **although 補強**：多數學生對 although（雖然/對比）還不熟，Week 7 教學中需增加 although 的語境曝光，不能只出現一次
-- [ ] **Week 6-2 學習單 PDF 重做**：目前版本排版過擠（字級被壓小），需先問 David 要刪哪些內容再重新排版成舒適的兩頁
+- [ ] Week 6-3 開頭作業驗收（A 組：6-1 Task A 對話 + 6-2 Task B 造句 / B 組：6-2 Task C 填空）
