@@ -1009,6 +1009,7 @@ aliases:
 | [[video/public/photos/A005/taiwan-strait-detail\|taiwan strait detail]] | （自動收錄） |
 | [[video/public/photos/A005/taiwan-strait-satellite\|taiwan strait satellite]] | （自動收錄） |
 | [[Gemini-AI-對系統架構師歷程的觀察與建議]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A007-quality\|A007 quality]] | （自動收錄） |
 
 ---
 

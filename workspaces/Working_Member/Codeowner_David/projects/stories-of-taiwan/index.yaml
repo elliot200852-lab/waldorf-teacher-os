@@ -3,8 +3,8 @@
 # 由 story-archive skill 自動維護
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-last_updated: 2026-03-22
-total_stories: 6
+last_updated: 2026-03-23
+total_stories: 7
 
 stories:
   - id: A001
@@ -111,6 +111,22 @@ stories:
     sources: [wikipedia, matataiwan, taiwaninsight, pansci, nchdb, smiletaiwan, openmuseum, tm, sinica]
     quality_check: passed
     tags: [南島語族, 原住民, 達悟族, 拼板舟, 蘭嶼, 太平洋, 遷徙, 航海]
+
+  - id: A007
+    title: 山是我們的家——泰雅族與他們的獵場
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今
+    location: 臺灣中北部山區（南投仁愛、新竹尖石、宜蘭大同與南澳）
+    date_created: 2026-03-23
+    files:
+      content: stories/A-origins/A007/content.md
+      narration: stories/A-origins/A007/narration.md
+      images: stories/A-origins/A007/images.md
+      raw_materials: stories/A-origins/A007/raw-materials.md
+    sources: [cip, knowlegde_gov, tcmb, dmtip, alive, wikipedia, springer]
+    quality_check: passed
+    tags: [泰雅族, 獵場, gaga, 紋面, 傳統領域, 狩獵, 大霸尖山, 遷徙, 宜蘭]
 
 # 索引結構說明：
 # stories:
