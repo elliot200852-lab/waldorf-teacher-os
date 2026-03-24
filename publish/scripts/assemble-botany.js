@@ -201,16 +201,55 @@ function extractPullQuote(contentMd, contentSections) {
 }
 
 // ── 動態提取下篇預告 ─────────────────────────────
-function extractNextPreview(contentMd) {
+function extractNextPreview(contentMd, nextLessonTitle) {
+  // 策略 1：從 content.md 的 **後一篇** 標記提取
   const nextMatch = contentMd.match(/\*\*後一篇[^*]*\*\*[：:]\s*(.+)/);
   if (nextMatch) {
     let preview = nextMatch[1].trim();
     preview = preview.replace(/^B\d{3}\s+[^—]+——\s*/, '');
     if (!preview.endsWith('……')) preview += '……';
-    return `下一篇預告：${preview}`;
+    return `下一課預告：${preview}`;
   }
 
-  return ''; // 空值表示無預告，由 assembleHtml 決定 fallback
+  // 策略 2：使用 theme-skeleton.yaml 傳入的下一課標題
+  if (nextLessonTitle) {
+    return `下一課預告：${nextLessonTitle}`;
+  }
+
+  return ''; // 空值 = 最後一課，由 assembleHtml 決定 fallback
+}
+
+// ── 從 theme-skeleton.yaml 讀取下一課標題 ────────────
+function getNextLessonTitle(storyId) {
+  // 從 B0XX 提取課號
+  const lessonNum = parseInt(storyId.replace('B', ''), 10);
+  if (isNaN(lessonNum) || lessonNum >= 30) return ''; // 最後一課
+
+  const nextId = 'B' + String(lessonNum + 1).padStart(3, '0');
+
+  // 嘗試讀取 theme-skeleton.yaml（向上搜尋）
+  const skeletonPaths = [
+    path.resolve('workspaces/Working_Member/Codeowner_David/projects/botany-grade5/theme-skeleton.yaml'),
+    // 也支援從故事子資料夾往上找
+    path.resolve(path.dirname(path.dirname(process.argv[2] || '')), 'theme-skeleton.yaml'),
+  ];
+
+  for (const skPath of skeletonPaths) {
+    try {
+      if (!fs.existsSync(skPath)) continue;
+      const content = fs.readFileSync(skPath, 'utf-8');
+      // 簡易 YAML 解析：找 nextId: 後面的 title:
+      const idRegex = new RegExp(`^\\s+${nextId}:`, 'm');
+      const idMatch = idRegex.exec(content);
+      if (idMatch) {
+        const afterId = content.slice(idMatch.index);
+        const titleMatch = afterId.match(/title:\s*"?([^"\n]+)"?/);
+        if (titleMatch) return titleMatch[1].trim();
+      }
+    } catch (e) { /* continue */ }
+  }
+
+  return '';
 }
 
 function mdParagraphsToHtml(text, cssClass = 'text-[18px] leading-[1.6]') {
@@ -582,7 +621,7 @@ function assembleHtml({
   contentSections, factTable,
   kovacsTeaching, references, images, chalkboardPrompt,
   chalkboardImageBase64, chalkboardImageMime,
-  templatePath, date, contentMd,
+  templatePath, date, contentMd, nextLessonTitle,
 }) {
   const icon = SEASON_ICONS[season];
   const dividerIcon = SEASON_DIVIDER_ICONS[season];
@@ -893,8 +932,8 @@ ${headContent}
   <!-- ===== 下篇預告 ===== -->
   <section class="mb-4 text-center py-3">
     <p class="font-headline text-lg text-[var(--primary)] italic mb-3">${(() => {
-      const preview = extractNextPreview(contentMd || '');
-      return preview || '五年級植物學 — 下一課預告';
+      const preview = extractNextPreview(contentMd || '', nextLessonTitle || '');
+      return preview || '五年級植物學 — 全課程完結';
     })()}</p>
     <div class="inline-flex flex-col items-center">
       <div class="w-16 h-[2px] bg-[var(--primary)]/30 mb-4"></div>
@@ -1161,13 +1200,19 @@ function main() {
     process.exit(1);
   }
 
+  // ── 取得下一課標題（從 theme-skeleton.yaml）──────────
+  const nextLessonTitle = getNextLessonTitle(storyId);
+  if (nextLessonTitle) {
+    console.log(`[assemble] Next lesson: ${nextLessonTitle}`);
+  }
+
   // ── 組裝 HTML ─────────────────────────────────────
   const html = assembleHtml({
     storyId, season, title, subtitle,
     contentSections, factTable,
     kovacsTeaching, references, images, chalkboardPrompt,
     chalkboardImageBase64, chalkboardImageMime,
-    templatePath, date, contentMd,
+    templatePath, date, contentMd, nextLessonTitle,
   });
 
   // ── 嚴格輸出驗證（全部通過才寫入）──────────────────
