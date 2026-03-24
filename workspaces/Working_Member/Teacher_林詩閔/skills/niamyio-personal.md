@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "林詩閔 台語唸謠設計技能"
 name: niamyio-personal
 description: 林詩閔老師專屬——台語唸謠教學活動設計。強調聲韻之美、呼吸節奏與視覺意象結合。
 triggers:
