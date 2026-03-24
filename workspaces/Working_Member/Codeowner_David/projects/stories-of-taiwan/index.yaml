@@ -3,8 +3,8 @@
 # 由 story-archive skill 自動維護
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-last_updated: 2026-03-23
-total_stories: 7
+last_updated: 2026-03-24
+total_stories: 8
 
 stories:
   - id: A001
@@ -127,6 +127,23 @@ stories:
     sources: [cip, knowlegde_gov, tcmb, dmtip, alive, wikipedia, springer]
     quality_check: passed
     tags: [泰雅族, 獵場, gaga, 紋面, 傳統領域, 狩獵, 大霸尖山, 遷徙, 宜蘭]
+
+  - id: A008
+    title: 浪的節奏——阿美族的海與豐年祭
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今
+    location: 臺灣東部海岸（花蓮豐濱鄉、港口部落 Makota'ay、秀姑巒溪出海口、台東海岸）
+    date_created: 2026-03-24
+    files:
+      content: stories/A-origins/A008/content.md
+      narration: stories/A-origins/A008/narration.md
+      images: stories/A-origins/A008/images.md
+      raw_materials: stories/A-origins/A008/raw-materials.md
+    sources: [cip, knowlegde_gov, dmtip, tipp, boch, abda_hl, tcmb, culturalsurvival, wikipedia]
+    quality_check: passed
+    html_pdf_status: pending_chalkboard
+    tags: [阿美族, Pangcah, 豐年祭, Ilisin, 海祭, 捕魚祭, 港口部落, 年齡階級, 母系社會, 魚筌, 黑潮, 東海岸]
 
 # 索引結構說明：
 # stories:
