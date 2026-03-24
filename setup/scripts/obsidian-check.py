@@ -171,29 +171,54 @@ def yaml_needs_label(filepath):
 
 
 def file_in_home(filepath, home_content):
-    """檢查檔案是否被 HOME.md 引用（精確比對，避免子字串誤判）"""
+    """檢查檔案是否被 HOME.md 引用（精確比對，避免子字串誤判）。
+
+    匹配策略分兩層：
+    - 有路徑結構的檔案（含 /）→ 必須用完整路徑或至少「父目錄/檔名」匹配
+    - 根目錄散檔（無 /）→ 可用 basename 匹配
+    這樣 A001/content.md 和 A005/content.md 不會互相混淆。
+    """
     if filepath in SKIP_HOME_CHECK:
         return True
 
     basename = os.path.basename(filepath)
     name_no_ext = os.path.splitext(basename)[0]
     ext = os.path.splitext(basename)[1]  # e.g. '.md', '.sh', ''
+    has_path = "/" in filepath
 
-    # 1. wikilink 精確匹配：[[name]] [[name.ext]] [[path/name]] [[path/name.ext|alias]]
-    #    只匹配檔案自身的副檔名，不接受其他副檔名（避免 add-teacher 匹配 add-teacher.sh）
+    # 1. 完整路徑比對（最精確，優先）
+    #    嘗試完整路徑和去掉副檔名的版本
+    filepath_no_ext = os.path.splitext(filepath)[0]
+    if filepath in home_content or filepath_no_ext in home_content:
+        return True
+
     escaped_name = re.escape(name_no_ext)
     escaped_ext = re.escape(ext) if ext else ''
     ext_pattern = rf'(?:{escaped_ext})?' if escaped_ext else ''
-    wikilink_pattern = rf'\[\[(?:[^\]]*\/)?{escaped_name}{ext_pattern}(?:\\?\|[^\]]*)?]]'
-    if re.search(wikilink_pattern, home_content):
-        return True
 
-    # 2. 完整路徑比對（含副檔名，不會子字串誤判）
-    if filepath in home_content:
-        return True
+    if has_path:
+        # 2a. 含路徑的 wikilink 匹配：要求 wikilink 中出現「父目錄/檔名」
+        #     [[.../A005/content|...]] 匹配 A005/content.md，不匹配 A001/content.md
+        parent = os.path.basename(os.path.dirname(filepath))
+        escaped_parent = re.escape(parent)
+        path_wikilink = rf'\[\[[^\]]*{escaped_parent}/{escaped_name}{ext_pattern}(?:\\?\|[^\]]*)?]]'
+        if re.search(path_wikilink, home_content):
+            return True
 
-    # 3. 完整檔名比對（含副檔名，例如 add-teacher.md 不會匹配 add-teacher.sh）
-    if basename in home_content:
+        # 2b. 短名 wikilink 匹配：只匹配 wikilink 內「不含 /」的短名
+        #     [[lesson]] 可匹配 ai-core/skills/lesson.md
+        #     [[A001/content]] 不是短名（含 /），不會匹配 A005/content.md
+        short_wikilink = rf'\[\[{escaped_name}{ext_pattern}(?:\\?\|[^\]]*)?]]'
+        if re.search(short_wikilink, home_content):
+            return True
+    else:
+        # 根目錄散檔：用 basename 匹配任何 wikilink
+        wikilink_pattern = rf'\[\[(?:[^\]]*\/)?{escaped_name}{ext_pattern}(?:\\?\|[^\]]*)?]]'
+        if re.search(wikilink_pattern, home_content):
+            return True
+
+    # 3. 完整檔名比對（含副檔名，限無路徑結構的檔案）
+    if not has_path and basename in home_content:
         return True
 
     return False
@@ -482,11 +507,35 @@ def run_self_test():
         else:
             passed += 1
 
-    print(f"[self-test] file_in_home: {passed} passed, {failed} failed")
+    print(f"[self-test] file_in_home (basic): {passed} passed, {failed} failed")
     if failed > 0:
         sys.exit(1)
-    else:
-        print("[self-test] file_in_home: All edge cases verified.")
+
+    # ── 同名不同路徑測試（核心 bug 修復驗證）──
+    mock_home_stories = """
+| [[path/to/A001/content\\|content]] | 故事正文 |
+| [[path/to/A001/narration\\|narration]] | 說書稿 |
+| [[path/to/A002/content\\|content]] | 故事正文 |
+"""
+    story_tests = [
+        ("path/to/A001/content.md", True, "A001/content 已收錄"),
+        ("path/to/A005/content.md", False, "A005/content 不應被 A001/content 誤判"),
+        ("path/to/A005/narration.md", False, "A005/narration 不應被 A001/narration 誤判"),
+        ("path/to/A002/content.md", True, "A002/content 已收錄"),
+    ]
+    st_passed = 0
+    st_failed = 0
+    for filepath, expected, desc in story_tests:
+        result = file_in_home(filepath, mock_home_stories)
+        if result == expected:
+            st_passed += 1
+        else:
+            st_failed += 1
+            print(f"  FAIL: {filepath} → got {result}, expected {expected} ({desc})")
+
+    print(f"[self-test] file_in_home (same-name): {st_passed} passed, {st_failed} failed")
+    if st_failed > 0:
+        sys.exit(1)
 
     # ── suggest_home_section 測試 ──
     suggest_tests = [
