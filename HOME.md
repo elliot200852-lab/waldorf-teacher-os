@@ -1506,6 +1506,7 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/quality-report\|quality report]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/raw-materials\|raw materials]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/references\|references]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/current-task\|current task]] | （自動收錄） |
 
 ---
 

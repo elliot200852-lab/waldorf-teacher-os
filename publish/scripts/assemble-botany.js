@@ -1257,7 +1257,7 @@ function main() {
   }
 
   const versionSuffix = storyVersion ? `-${storyVersion}` : '';
-  const htmlFilename = `beautify-${storyId}${versionSuffix}-植物學完整版.html`;
+  const htmlFilename = `${storyId}${versionSuffix}-植物學完整版.html`;
   const htmlPath = path.join(outputDir, htmlFilename);
   fs.writeFileSync(htmlPath, html, 'utf-8');
   console.log(`\n[assemble] HTML written: ${htmlPath}`);
