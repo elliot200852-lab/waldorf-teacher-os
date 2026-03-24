@@ -421,21 +421,27 @@ function parseImages(imagesMd) {
     // 提取 URL — 支援多種格式：
     //   格式 A（舊）：**URL**：https://...  或  URL: https://...
     //   格式 B（現行）：- 來源：名稱（https://url）  或  - 來源：名稱 https://url
+    //   格式 C（植物學）：- 連結：https://url（獨立行）
     let url = '';
-    const urlFormatA = content.match(/\*{0,2}URL\*{0,2}[：:]\s*(https?:\/\/\S+)/);
-    if (urlFormatA) {
-      url = urlFormatA[1].trim();
-    } else {
-      // 格式 B：從「來源」行提取括號或裸 URL
+    // 格式 C：獨立的「連結」欄位（植物學格式）
+    const linkMatch = content.match(/連結[：:]\s*(https?:\/\/\S+)/);
+    if (linkMatch) {
+      url = linkMatch[1].trim();
+    }
+    // 格式 A：**URL**：或 URL:
+    if (!url) {
+      const urlFormatA = content.match(/\*{0,2}URL\*{0,2}[：:]\s*(https?:\/\/\S+)/);
+      if (urlFormatA) url = urlFormatA[1].trim();
+    }
+    // 格式 B：從「來源」行提取括號或裸 URL
+    if (!url) {
       const sourceLineMatch = content.match(/來源[：:]\s*(.+)/);
       if (sourceLineMatch) {
         const sourceLine = sourceLineMatch[1];
-        // 嘗試匹配全形括號 （URL） 或半形括號 (URL)
         const parenUrl = sourceLine.match(/[（(](https?:\/\/[^\s）)]+)[）)]/);
         if (parenUrl) {
           url = parenUrl[1].trim();
         } else {
-          // 嘗試匹配裸 URL
           const bareUrl = sourceLine.match(/(https?:\/\/\S+)/);
           if (bareUrl) url = bareUrl[1].trim();
         }
@@ -469,10 +475,13 @@ function parseImages(imagesMd) {
     const timingMatch = content.match(/展示時機[：:]\s*(.+)/);
     if (timingMatch) timing = timingMatch[1].trim();
 
-    // 提取來源名稱（不含 URL）
+    // 提取來源名稱（不含 URL，截斷到 — 或行尾）
     let sourceName = '';
-    const sourceNameMatch = content.match(/來源[：:]\s*([^（(]+)/);
-    if (sourceNameMatch) sourceName = sourceNameMatch[1].trim();
+    const sourceNameMatch = content.match(/來源[：:]\s*(.+)/);
+    if (sourceNameMatch) {
+      // 去掉 URL 和後續內容，只保留來源名稱
+      sourceName = sourceNameMatch[1].replace(/\s*(?:—|--)\s*(?:File:|https?:).*/i, '').trim();
+    }
 
     if (title && (url || usage || description)) {
       sections.push({ title, url, usage, license, description, timing, sourceName });
