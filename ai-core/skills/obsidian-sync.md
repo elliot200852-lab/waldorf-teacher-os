@@ -92,9 +92,30 @@ aliases:
 - `acl.yaml` / `system-status.yaml` → 系統設定
 - 其他 → 設定檔
 
+### Step 3.5 — 清理 HOME.md（先清再補）
+
+在新增任何條目之前，先處理偵測腳本回報的清理類別：
+
+**DEAD_LINK（死連結）：**
+- 從 HOME.md 中刪除該行（整行 wikilink 表格列）
+- 若刪除後表格變空，連同表頭一起刪除
+
+**EMPTY_FILE（空檔）：**
+- 提醒教師確認是否刪除該空檔
+- 教師同意 → 刪除檔案 + 從 HOME.md 移除對應條目
+- 教師拒絕 → 跳過，保留現狀
+
+**PRIVATE_IN_HOME（不該收錄的檔案）：**
+- 從 HOME.md 刪除該行
+- 這類檔案包含：private/ 路徑下的檔案、已搬走的圖片/音訊/影片
+
+清理完成後再執行 Step 4。
+
 ### Step 4 — 更新 HOME.md
 
 讀取根目錄的 `HOME.md`，將 `FILE:NOT_IN_HOME:` 清單中的檔案插入對應區段。
+
+**分類建議：** 偵測腳本的輸出格式已升級為 `FILE:NOT_IN_HOME:{path}:SUGGEST:{section}`。AI 應優先使用 `SUGGEST` 欄位決定插入位置，而非自行推斷。若 SUGGEST 的區段在 HOME.md 中不存在，依規則自動建立。
 
 **HOME.md H2 區段固定順序（AI 不可變更）：**
 
@@ -193,5 +214,7 @@ Obsidian 同步完成：
 - 此技能**只讀偵測腳本的結果**，不自行掃描檔案系統
 - aliases 產生需要理解檔案內容，因此必須由 AI 執行，不能純腳本處理
 - 不修改已有正確標籤的檔案
-- HOME.md 的修改採**附加邏輯**：只新增條目，不刪除或重排現有條目
+- HOME.md 的修改採**先清後補**邏輯：Step 3.5 清理死連結與殘留，Step 4 新增條目
+- **個人設定區段嚴格限定：** 只放 `teacheros-personal.yaml`、`workspace.yaml`、`env-preset.env`、`README.md`。其他所有檔案必須歸入對應子區段，不可堆入個人設定
+- **非文字檔不收錄 HOME.md：** `.png`、`.jpg`、`.mp3`、`.mp4` 等二進位檔案，若在 `private/` 或已被 gitignore，不應出現在 HOME.md 中
 - 若偵測腳本不存在，提示：「請先確認 `setup/scripts/obsidian-check.py` 存在。」
