@@ -801,6 +801,7 @@ aliases:
 | [[ai-core/skills/story-daily\|story-daily]] | 「今天的故事」「跑管線」 | 臺灣的故事・全流程編排器（v2.2.0，8 步驟 + Checkpoint） |
 | [[ai-core/skills/gws-bridge\|gws-bridge]] | 「gws bridge」「Cowork gws」 | Cowork VM ↔ 本機 GWS CLI 橋接（自動偵測環境） |
 | [[niamyio]] | （自動收錄） |
+| [[botany-daily]] | （自動收錄） |
 
 ---
 
@@ -947,6 +948,13 @@ aliases:
 | [[beautify-A003-完整版.html]] | A003 火的禮物 完整版 HTML |
 | [[backup-to-drive]] | Python 腳本 |
 | [[backup-reference]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
