@@ -16,6 +16,7 @@ jobs:
   check-binaries:
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       issues: write
 
     steps:
