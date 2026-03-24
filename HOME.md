@@ -318,6 +318,7 @@ aliases:
 | [[Good-notes/2026-03-12-yaml-and-markdown\|YAML 管結構 Markdown 管內容]] | TeacherOS 建造日誌 3/5 |
 | [[Good-notes/農場實習教學紀錄_9C信宏拷貝\|9C 農場實習教學紀錄（備份）]] | 農場實習教學歷程紀錄備份 |
 | [[Good-notes/2026-03-17-context-and-skill-engineering\|Context 與 Skill Engineering]] | 建造日誌：從 Prompt 到 Context Engineering |
+| [[2026-03-23-目前技能摘要]] | （自動收錄） |
 
 ---
 
@@ -374,6 +375,22 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-anchor-handout-v2\|12A 畢業專題 生命定錨練習單 v2]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-sharing-lesson-plan-v2\|12A 畢業專題 生命史教案 v2]] | 教案 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-story-ppt-script-v2\|12A 畢業專題 生命轉折 PPT 腳本 v2]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_01\|slide 01]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_02\|slide 02]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_03\|slide 03]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_04\|slide 04]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_05\|slide 05]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_06\|slide 06]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_07\|slide 07]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_08\|slide 08]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_09\|slide 09]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_10\|slide 10]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_11\|slide 11]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_12\|slide 12]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-speech-draft-v1\|教學生命成長與教師的創造性 演講稿 v1]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_陳佩珊/teacheros-personal.yaml\|陳佩珊個人身份層]] | 教學信念、工作偏好 |
 | [[workspaces/Working_Member/Teacher_陳佩珊/workspace.yaml\|陳佩珊 workspace 狀態]] | Workspace 狀態 |
 
