@@ -25,6 +25,9 @@ Desktop.ini
 # TeacherOS 個人環境設定（每位使用者各自設定，不上傳）
 setup/environment.env
 
+# Drive 備份 manifest（每位使用者的備份狀態，不上傳）
+publish/drive-backup-manifest.json
+
 # Google OAuth 憑證與 token（含個人授權，不上傳）
 setup/credentials.json
 setup/token.json

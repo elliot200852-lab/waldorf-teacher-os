@@ -10,6 +10,10 @@ triggers:
   - 下載檔案
   - 從 Drive 下載
   - 查 Drive
+  - 備份到雲端
+  - 備份專案
+  - backup to drive
+  - 同步備份
 requires_args: false
 args_format: "[選填：檔案路徑或操作描述]"
 ---
@@ -102,3 +106,37 @@ gws drive files delete --params '{"fileId":"FILE_ID"}'
 - 教學文件上傳（.md → .docx → Drive）優先走 `publish/build.sh`，該腳本已內建 gws CLI + Google Drive Desktop 雙軌切換
 - 刪除操作必須向教師確認後才執行
 - 檔名規則：輸出到 Google Drive 的檔案，檔名使用繁體中文（中文在前_英文原名）
+
+---
+
+## 備份整個 Repo 到 Google Drive
+
+將整個 WaldorfTeacherOS Repo 備份至 Drive，Markdown 自動轉為原生 Google Doc，目錄名稱轉為中文。
+
+### 觸發語句
+
+| 教師說 | 操作 |
+|--------|------|
+| 「備份到雲端」「備份專案」 | 執行備份腳本 |
+| 「backup to drive」「同步備份」 | 執行備份腳本 |
+
+### 指令
+
+
+
+### 選項
+
+| 參數 | 說明 |
+|------|------|
+| `--dry-run` | 預覽模式：列出會處理的檔案與目錄映射，不實際上傳 |
+| `--force` | 強制全部重新上傳，忽略增量比對 |
+| （無參數） | 自動增量備份：只處理新增與修改的檔案 |
+
+### 運作方式
+
+1. 掃描 Repo 全部檔案，排除 `.git/`、`.claude/`、`node_modules/` 等系統目錄
+2. `.md` 檔 → Pandoc 轉 `.docx`（使用 `publish/templates/backup-reference.docx` 範本）→ 上傳時指定 mimeType 轉為原生 Google Doc
+3. 非 `.md` 檔（`.yaml`、`.py`、`.sh` 等）→ 直接上傳原檔
+4. 目錄名稱依腳本內建 `FOLDER_CN_MAP` 字典轉為中文（例：`ai-core/skills/` → `AI 核心/技能/`）
+5. 增量備份：透過 `publish/drive-backup-manifest.json` 記錄已上傳檔案的 mtime、size、MD5，只處理有變動的檔案
+6. `setup/environment.env` 上傳前自動遮蔽含 `TOKEN`、`SECRET`、`KEY`、`PASSWORD` 的欄位值
