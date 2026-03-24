@@ -1,0 +1,163 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS — PR ACL 權限驗證（第二道防線）
+# 教師用 --no-verify 繞過本機 hook 時，這裡再攔一次
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+name: PR ACL Check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  acl-check:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check PR files against ACL
+        id: check
+        run: |
+          ACL_FILE="ai-core/acl.yaml"
+
+          # Get PR author's GitHub username
+          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
+          echo "PR author: $PR_AUTHOR"
+
+          # Get changed files in this PR
+          CHANGED_FILES=$(gh pr diff ${{ github.event.pull_request.number }} --name-only)
+          echo "Changed files:"
+          echo "$CHANGED_FILES"
+
+          # Run ACL check via Python (reuse pre-commit-check.py logic)
+          python3 << 'PYEOF'
+          import re, sys, os
+
+          acl_content = open("ai-core/acl.yaml", encoding="utf-8").read()
+          pr_author = "${{ github.event.pull_request.user.login }}"
+          changed_files_raw = """$CHANGED_FILES"""
+          changed_files = [f.strip() for f in changed_files_raw.strip().splitlines() if f.strip()]
+
+          if not changed_files:
+              print("No files changed, ACL check passed.")
+              sys.exit(0)
+
+          # Parse ACL — find user by github_username
+          # Admin check
+          admin_block = re.search(r"admin:\s*\n(.*?)(?=\n\S|\Z)", acl_content, re.DOTALL)
+          is_admin = False
+          if admin_block:
+              gh_users = re.findall(r"github_username:\s*([^\s#\n]+)", admin_block.group(0))
+              if pr_author in [u.strip() for u in gh_users]:
+                  is_admin = True
+
+          if is_admin:
+              print(f"✅ {pr_author} is admin, all paths allowed.")
+              sys.exit(0)
+
+          # Teacher check
+          user_entry = None
+          for m in re.finditer(
+              r"-\s+name:\s+(.+?)\n(?:.*?\n)*?\s+email:\s+([^\s#\n]+)"
+              r"(?:.*?\n)*?\s+github_username:\s+([^\s#\n]+)"
+              r"(?:.*?\n)*?\s+allowed_paths:\s*\n((?:\s+-[^\n]+\n)*)",
+              acl_content, re.DOTALL,
+          ):
+              if m.group(3).strip() == pr_author:
+                  name = m.group(1).strip()
+                  paths_raw = m.group(4)
+                  paths = [p.strip().strip("\"'") for p in re.findall(r"-\s+([^\n#]+)", paths_raw)]
+                  user_entry = {"name": name, "allowed_paths": paths}
+                  break
+
+          if not user_entry:
+              print(f"⚠️ {pr_author} not found in acl.yaml")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write("result=unknown_user\n")
+                  f.write(f"message=GitHub 使用者 `{pr_author}` 未登記於 acl.yaml。請聯絡 David。\n")
+              sys.exit(0)
+
+          # Parse protected_always
+          protected = []
+          pa_m = re.search(r"protected_always:\s*\n((?:\s+-[^\n]+\n)*)", acl_content)
+          if pa_m:
+              protected = [p.strip().strip("\"'") for p in re.findall(r"-\s+([^\n#]+)", pa_m.group(1))]
+
+          # Parse shared_writable
+          shared = []
+          sw_m = re.search(r"shared_writable:\s*\n((?:\s+-[^\n]+\n)*)", acl_content)
+          if sw_m:
+              shared = [p.strip().strip("\"'") for p in re.findall(r"-\s+([^\n#]+)", sw_m.group(1))]
+
+          # Check each file
+          import fnmatch
+          def matches(file_path, pattern):
+              if pattern == "*":
+                  return True
+              if pattern.endswith("/"):
+                  return file_path.startswith(pattern)
+              if "*" in pattern:
+                  return fnmatch.fnmatch(file_path, pattern)
+              return file_path == pattern or file_path.startswith(pattern.rstrip("/") + "/")
+
+          blocked = []
+          for f in changed_files:
+              is_protected = any(matches(f, p) for p in protected)
+              is_allowed = (
+                  any(matches(f, p) for p in user_entry["allowed_paths"])
+                  or any(matches(f, p) for p in shared)
+              )
+              if is_protected:
+                  blocked.append(("PROTECTED", f))
+              elif not is_allowed:
+                  blocked.append(("BLOCKED", f))
+
+          if not blocked:
+              print(f"✅ {user_entry['name']} ({pr_author}): all {len(changed_files)} files within allowed paths.")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write("result=pass\n")
+          else:
+              print(f"❌ {user_entry['name']} ({pr_author}): {len(blocked)} file(s) outside allowed paths:")
+              msg_lines = [f"### ❌ ACL 權限不足\n"]
+              msg_lines.append(f"**PR 作者：** {user_entry['name']}（`{pr_author}`）\n")
+              msg_lines.append(f"以下 {len(blocked)} 個檔案超出你的授權範圍：\n")
+              for btype, bfile in blocked:
+                  label = "受保護的核心路徑" if btype == "PROTECTED" else "無操作權限"
+                  msg_lines.append(f"- `{bfile}` — {label}")
+              msg_lines.append(f"\n授權範圍：`{', '.join(user_entry['allowed_paths'])}`")
+              msg_lines.append("\n請聯絡 David 確認是否需要擴充權限。")
+              message = "\n".join(msg_lines)
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write("result=blocked\n")
+                  # Multi-line output
+                  f.write(f"message<<EOFMSG\n{message}\nEOFMSG\n")
+              sys.exit(1)
+          PYEOF
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment on PR if blocked
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const message = `${{ steps.check.outputs.message }}`;
+            if (message) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: message
+              });
+            }

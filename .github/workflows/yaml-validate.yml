@@ -1,0 +1,153 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS — YAML 格式驗證
+# 教師修改 session.yaml / project.yaml 時自動檢查格式正確性
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+name: YAML Validate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.yaml'
+      - '**/*.yml'
+      - '!.github/workflows/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - '**/*.yaml'
+      - '**/*.yml'
+      - '!.github/workflows/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Validate changed YAML files
+        run: |
+          EXIT_CODE=0
+
+          # Get changed yaml files (push or PR)
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            FILES=$(gh pr diff ${{ github.event.pull_request.number }} --name-only | grep -E '\.ya?ml$' | grep -v '.github/workflows/' || true)
+          else
+            FILES=$(git diff --name-only HEAD~1 HEAD -- '*.yaml' '*.yml' | grep -v '.github/workflows/' || true)
+          fi
+
+          if [ -z "$FILES" ]; then
+            echo "No YAML files changed, skipping."
+            exit 0
+          fi
+
+          echo "Validating YAML files:"
+          echo "$FILES"
+          echo "---"
+
+          ERRORS=""
+
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            [ ! -f "$f" ] && continue
+
+            # Basic YAML syntax check
+            result=$(python3 -c "
+          import yaml, sys
+          try:
+              with open('$f', encoding='utf-8') as fh:
+                  content = fh.read()
+                  # Skip files with YAML frontmatter in .md-style (starts with ---)
+                  if content.startswith('---') and content.count('---') >= 2:
+                      # Could be frontmatter, try parsing between first two ---
+                      pass
+                  docs = list(yaml.safe_load_all(content))
+                  if not docs or all(d is None for d in docs):
+                      print('WARN: empty or null YAML')
+                  else:
+                      print('OK')
+          except yaml.YAMLError as e:
+              print(f'ERROR: {e}')
+              sys.exit(1)
+          " 2>&1) || true
+
+            if echo "$result" | grep -q "^ERROR"; then
+              echo "❌ $f"
+              echo "   $result"
+              ERRORS="${ERRORS}\n- \`$f\`: ${result}"
+              EXIT_CODE=1
+            elif echo "$result" | grep -q "^WARN"; then
+              echo "⚠️  $f — $result"
+            else
+              echo "✅ $f"
+            fi
+          done <<< "$FILES"
+
+          # Session.yaml structural check (required fields)
+          echo ""
+          echo "--- Structural checks (session.yaml) ---"
+
+          SESSION_FILES=$(echo "$FILES" | grep 'session\.yaml$' || true)
+          while IFS= read -r sf; do
+            [ -z "$sf" ] && continue
+            [ ! -f "$sf" ] && continue
+
+            result=$(python3 -c "
+          import yaml, sys
+          with open('$sf', encoding='utf-8') as fh:
+              data = yaml.safe_load(fh)
+          if not isinstance(data, dict):
+              print('ERROR: not a YAML mapping')
+              sys.exit(1)
+          # Find the main session key (xxx_session)
+          session_key = None
+          for k in data:
+              if k.endswith('_session') or k == 'session':
+                  session_key = k
+                  break
+          if not session_key:
+              print('WARN: no *_session root key found')
+              sys.exit(0)
+          s = data[session_key]
+          missing = []
+          if 'last_updated' not in s:
+              missing.append('last_updated')
+          if 'current_position' not in s:
+              missing.append('current_position')
+          if 'next_action' not in s:
+              missing.append('next_action')
+          if missing:
+              print(f'WARN: missing fields: {', '.join(missing)}')
+          else:
+              print('OK: required fields present')
+          " 2>&1) || true
+
+            if echo "$result" | grep -q "^ERROR"; then
+              echo "❌ $sf — $result"
+              ERRORS="${ERRORS}\n- \`$sf\`: ${result}"
+              EXIT_CODE=1
+            elif echo "$result" | grep -q "^WARN"; then
+              echo "⚠️  $sf — $result"
+            else
+              echo "✅ $sf — structure OK"
+            fi
+          done <<< "$SESSION_FILES"
+
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo ""
+            echo "::error::YAML validation failed for some files"
+          fi
+
+          exit $EXIT_CODE
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
