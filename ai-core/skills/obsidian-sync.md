@@ -96,6 +96,24 @@ aliases:
 
 讀取根目錄的 `HOME.md`，將 `FILE:NOT_IN_HOME:` 清單中的檔案插入對應區段。
 
+**HOME.md H2 區段固定順序（AI 不可變更）：**
+
+1. `## David 的工作空間`
+2. 各教師的工作空間（`## [教師名]老師的工作空間`），按加入順序排列
+3. `## 教師環境預填（env-preset.env）`
+4. `## 技能系統（Skills）`
+5. `## Good-notes 建造日誌`
+6. 其餘區段（差異化教學框架、母文件、系統核心、設定等）
+
+**新教師區段自動建立規則：**
+
+當 `workspaces/Working_Member/Teacher_{姓名}/**` 路徑的檔案出現在 NOT_IN_HOME 清單中，
+但 HOME.md 中尚無 `## {姓名}老師的工作空間` 區段時：
+
+1. 在最後一位老師的工作空間 `---` 分隔線之後、`## 教師環境預填` 之前，插入新區段
+2. 參照現有老師區段的格式（### 個人設定、### 個人技能、### 班級 等），按檔案路徑結構自動分組
+3. 不可將新教師的檔案堆入「根目錄散檔」
+
 **第一層：大區段判斷**
 
 | 路徑模式 | 插入區段 |
@@ -105,11 +123,12 @@ aliases:
 | `ai-core/reviews/*.md` | 系統回顧紀錄 |
 | `projects/_di-framework/**` | 差異化教學框架 |
 | `workspaces/Working_Member/Codeowner_David/**` | David 的工作空間（依班級/科目細分） |
-| `workspaces/Working_Member/Teacher_*/**` | 對應教師的工作空間 |
+| `workspaces/Working_Member/Teacher_*/**` | 對應教師的工作空間（若區段不存在則自動建立） |
+| `Good-notes/**` | Good-notes 建造日誌 |
 | `setup/**` | 環境設定與腳本 |
 | `publish/**` | 輸出與發佈 |
 | `.claude/**` | Claude Code 設定 |
-| 根目錄散檔 | 根目錄散檔 |
+| 根目錄散檔 | 根目錄散檔（僅限不屬於任何教師 workspace 的真正散檔） |
 
 **第二層：子架構感知（HOME.md 必須反映檔案系統的實際組織方式）**
 

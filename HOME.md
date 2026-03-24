@@ -308,18 +308,6 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-quality\|品質報告]] | 原版品質審核 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A004-v2-quality\|v2 品質報告]] | v2 品質審核 |
 
-### Good-notes 建造日誌
-
-| 檔案 | 說明 |
-|------|------|
-| [[Good-notes/9C 班工作全貌 — 導師與英文教學\|9C 班工作全貌]] | 導師 + 英文教學的完整工作脈絡與方向 |
-| [[Good-notes/2026-03-10-why-build-an-os\|為什麼一個華德福老師要蓋作業系統]] | TeacherOS 建造日誌 1/5 |
-| [[Good-notes/2026-03-11-meaning-architect\|意義架構師]] | TeacherOS 建造日誌 2/5 |
-| [[Good-notes/2026-03-12-yaml-and-markdown\|YAML 管結構 Markdown 管內容]] | TeacherOS 建造日誌 3/5 |
-| [[Good-notes/農場實習教學紀錄_9C信宏拷貝\|9C 農場實習教學紀錄（備份）]] | 農場實習教學歷程紀錄備份 |
-| [[Good-notes/2026-03-17-context-and-skill-engineering\|Context 與 Skill Engineering]] | 建造日誌：從 Prompt 到 Context Engineering |
-| [[2026-03-23-目前技能摘要]] | （自動收錄） |
-
 ---
 
 ## 郭耀新老師的工作空間
@@ -441,6 +429,240 @@ aliases:
 
 ---
 
+## 林詩閔老師的工作空間
+
+### 個人設定
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/teacheros-personal.yaml\|林詩閔個人身份層]] | 教學信念、工作偏好 |
+| [[workspaces/Working_Member/Teacher_林詩閔/workspace.yaml\|林詩閔 workspace 狀態]] | Workspace 狀態 |
+| [[workspaces/Working_Member/Teacher_林詩閔/README.md\|林詩閔 README]] | Workspace 說明 |
+
+### 個人技能
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/skills/niamyio-personal.md\|niamyio-personal]] | 台語唸謠設計技能 |
+| [[workspaces/Working_Member/Teacher_林詩閔/skills/EXAMPLE-recitation.md\|EXAMPLE-recitation]] | 個人技能範例 |
+| [[workspaces/Working_Member/Teacher_林詩閔/skills/README.md\|技能 README]] | 個人技能說明 |
+
+### 4C 班級（台語課）
+
+**班級設定**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/project.yaml\|4C 班級設定]] | 班級脈絡與科目清單 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/students.yaml\|4C 學生 DI 分析]] | 學生能力 x 動機矩陣 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/session.yaml\|台語課進度錨點]] | 目前 Block/Step |
+
+**教學內容（content/taiwanese/）**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-syllabus-v1-20260316.md\|台語課程大綱 v1]] | 114 學年台語課程大綱 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-unit-1-v1.md\|台語第一單元 v1]] | 單元一教案 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-unit-2-v1.md\|台語第二單元 v1]] | 單元二教案 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-unit-3-v1.md\|台語第三單元 v1]] | 單元三教案 |
+
+**教學內容副本（taiwanese/content/）**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-syllabus-v1-20260316.md\|課程大綱（科目路徑）]] | 科目路徑副本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-unit-1-v1.md\|第一單元（科目路徑）]] | 科目路徑副本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-unit-2-v1.md\|第二單元（科目路徑）]] | 科目路徑副本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-unit-3-v1.md\|第三單元（科目路徑）]] | 科目路徑副本 |
+
+**教學日誌**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/records/class-log.md\|台語課教學日誌]] | 課堂紀錄 |
+
+**學生紀錄**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/朱珉.md\|朱珉]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/李婕熙.md\|李婕熙]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/李淳伊.md\|李淳伊]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/李秉憲.md\|李秉憲]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/李青學.md\|李青學]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/林沐嫻.md\|林沐嫻]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/林熹珖.md\|林熹珖]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/范子奕.md\|范子奕]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/張圓施.md\|張圓施]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/張語若.md\|張語若]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/陳宇昊.md\|陳宇昊]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/黃小砵.md\|黃小砵]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/黃庭睫.md\|黃庭睫]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/黃偉勳.md\|黃偉勳]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/鄧媃云.md\|鄧媃云]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/蘇子涵.md\|蘇子涵]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/蘇校儀.md\|蘇校儀]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/謝承儒.md\|謝承儒]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/謝得瑜.md\|謝得瑜]] | 學生觀察紀錄 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/謝於希.md\|謝於希]] | 學生觀察紀錄 |
+
+### 工具腳本
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/extract_3c.py\|extract_3c.py]] | 3C 資料擷取腳本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/extract_docx.py\|extract_docx.py]] | docx 文字擷取腳本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/extract_to_file.py\|extract_to_file.py]] | 擷取輸出腳本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/seed_logs.py\|seed_logs.py]] | 學生紀錄初始化腳本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/tmp_extract.py\|tmp_extract.py]] | 暫存擷取腳本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/3C_assessment.docx\|3C 評量原始檔]] | 評量 docx |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/nian-yio-text.md\|唸謠文本]] | 台語唸謠素材 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/temp_rhymes.md\|暫存韻腳]] | 韻腳素材草稿 |
+
+### 113 學年台語參考資料
+
+參考素材數量龐大（約 150 個檔案），依子資料夾分組。完整清單見檔案系統 `workspaces/Working_Member/Teacher_林詩閔/reference/`。
+
+**學年教學紀錄**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/113三年級(3C)秋季台語教學紀錄(林詩閔)\|3C 秋季教學紀錄]] | 113 學年秋季 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/113三年級(3C)冬季台語教學紀錄(林詩閔)\|3C 冬季教學紀錄]] | 113 學年冬季 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/113三年級(3C)春季台語教學紀錄(林詩閔)\|3C 春季教學紀錄]] | 113 學年春季 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/113三年級(3C)夏季台語教學紀錄(林詩閔)\|3C 夏季教學紀錄]] | 113 學年夏季 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/113學年三年級台語課教學內容-詩閔 (修復)\|113 學年教學內容總整理]] | 年度教學內容 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/三年級台語課評量\|三年級台語課評量]] | 評量紀錄 |
+
+**秋季素材**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/113三年級台語課課程大綱林詩閔\|秋季課程大綱]] | 113 學年秋季大綱 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/113學年秋三年級台語課教學內容-詩閔\|秋季教學內容]] | 教學內容詳案 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/三年級台語課__秋季詳案\|秋季詳案]] | 完整詳案 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/三年級台語課第一週\|秋季第一週]] | 第一週教案 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/111 112學年度心田班台語的歌或是謠的整理\|111-112 學年歌謠整理]] | 歷年歌謠彙整 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/3C心田班姓名台語\|3C 心田班姓名台語]] | 學生姓名台語發音 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/月亮不見了故事內容\|月亮不見了故事]] | 故事素材 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/月娘月娘月光光\|月娘月娘月光光]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/狐狸神仙\|狐狸神仙]] | 故事素材 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/台語遊戲念謠\|台語遊戲念謠]] | 念謠素材 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/大風ㄧ咧吹\|大風一咧吹]] | 歌曲音檔 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/阿婆仔曲跤台語歌仔練動作\|阿婆仔曲跤]] | 台語動作歌 |
+
+**冬季素材**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/2024三年級台語課_冬季教案\|冬季教案]] | 2024 冬季完整教案 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/仲冬的故事─森林裏的公主1(1)\|森林裏的公主]] | 冬季故事 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/佮阿公踅菜市仔\|佮阿公踅菜市仔]] | 故事文本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/燈猴\|燈猴]] | 年獸傳說 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/燈猴2\|燈猴 2]] | 故事延伸 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/冬節公主\|冬節公主]] | 故事 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/冬至公主\|冬至公主]] | 故事 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/四海龍王賀新年\|四海龍王賀新年]] | 故事 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/有一ê國王真驚寒\|有一个國王真驚寒]] | 故事 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/春雷一咧霆\|春雷一咧霆]] | 歌譜/音檔 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/涼風吹吹\|涼風吹吹]] | 歌譜/影片 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/冬至日\|冬至日]] | 歌曲音檔 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/阿公逛菜市場\|阿公逛菜市場]] | 歌曲音檔 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/春天的花蕊\|春天的花蕊]] | 歌曲音檔 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/來到春天的花園\|來到春天的花園]] | 歌曲 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/感謝\|感謝]] | 歌曲 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/春天ê花\|春天的花]] | 歌曲 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/春天小仙女\|春天小仙女]] | 歌曲 |
+
+**春季素材**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/春季/樹仔頂的鳥仔teh_唱歌\|樹仔頂的鳥仔 teh 唱歌]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/春季/臆看覓_你敢知影我的名\|臆看覓 你敢知影我的名]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/春季/請問你的大名(蛇)\|請問你的大名（蛇）]] | 歌曲 |
+
+**夏季素材**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/9好朋友來tshit-thô-合唱\|好朋友來 tshit-tho 合唱]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/五月風\|五月風]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/烏的\|烏的]] | 故事 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/烏的烏的Ngauh\|烏的烏的 Ngauh]] | 故事朗讀 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/稻草人_DEGAB\|稻草人]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/透早就起床_DEGABD'E'\|透早就起床]] | 歌譜 |
+
+**射日傳說**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說故事\|射日傳說故事]] | 故事文本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本\|射日傳說劇本]] | 劇本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_樂譜\|射日傳說樂譜]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說A\|射日傳說 A]] | 音檔 A 段 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說B\|射日傳說 B]] | 音檔 B 段 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說C\|射日傳說 C]] | 音檔 C 段 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說D\|射日傳說 D]] | 音檔 D 段 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說E\|射日傳說 E]] | 音檔 E 段 |
+
+**台語課備課素材**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/芸亘113三年級台語課秋季\|芸亘 113 秋季台語課]] | 他校參考教案 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/Koh koh koh請問我會使入來無\|Koh koh koh 請問我會使入來無]] | 台語故事 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/三年級口語練習\|三年級口語練習]] | 口語練習素材 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/日本故事--貓和老鼠\|日本故事 貓和老鼠]] | 故事翻譯素材 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/共甲佮\|共甲佮]] | 詞彙練習 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/北半球的月相\|北半球月相]] | 教學圖片 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/快樂的森林-合唱\|快樂的森林合唱]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/叮噹叮叮噹\|叮噹叮叮噹]] | 歌曲 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/我愛日頭\|我愛日頭]] | 歌曲 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/頭殼肩胛頭\|頭殼肩胛頭]] | 歌曲 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/鳥鼠仔腹肚枵\|鳥鼠仔腹肚枵]] | 歌曲 |
+
+**歌曲和譜**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/17105813364270_天星來祝福你齊唱版\|天星來祝福你齊唱版]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/17105813911026_我是爸爸媽媽ê心肝仔囝齊唱版\|我是爸爸媽媽的心肝仔囝]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/一隻牛欲賣五千箍\|一隻牛欲賣五千箍]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/噶瑪蘭公主\|噶瑪蘭公主]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/涼涼的清風吹過來\|涼涼的清風吹過來]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/Siâm著夢想自由飛/siâm著夢想自由飛\|Siam 著夢想自由飛]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/台語好日子/日頭gâu早\|日頭 gau 早]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/快樂的森林/快樂的森林-合唱\|快樂的森林合唱]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/相辭/相辭\|相辭]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/貓抓老鼠\|貓抓老鼠]] | 歌曲音檔 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/風直直吹\|風直直吹]] | 歌曲音檔 |
+
+**其他參考素材**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/12生肖故事台語版本\|12 生肖故事台語版本]] | 故事素材 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/閩南語/三個作田人/三个作田人劇本(角色)\|三个作田人劇本]] | 閩南語劇本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/貓頭鳥揣伴\|貓頭鳥揣伴]] | 故事素材 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/黑熊與雲豹故事\|黑熊與雲豹故事]] | 故事文本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/烏熊與雲豹\|烏熊與雲豹]] | 故事 PDF |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/唸謠\|唸謠]] | 念謠素材 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/元宵節來臆燈猜\|元宵節來臆燈猜]] | 節慶素材 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/元宵節來臆燈猜 (A3)\|元宵節來臆燈猜 A3 版]] | 節慶素材大圖 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/冬節公主\|冬節公主]] | 故事 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/月光光照菜園\|月光光照菜園]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/眠床佇佗位_單弦律\|眠床佇佗位 單弦律]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/紅馬翩翩踏雲來\|紅馬翩翩踏雲來]] | 歌譜 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/小貝殼（台語歌）\|小貝殼]] | 台語歌 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/五月風\|五月風]] | 歌曲 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/五月風（台語歌曲）\|五月風（台語歌曲）]] | 歌曲 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/稻草人\|稻草人]] | 歌曲 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/透早就起床\|透早就起床]] | 歌曲 |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/3B幸運草台語故事\|3B 幸運草台語故事]] | 故事影片 |
+
+---
+
 ## 教師環境預填（env-preset.env）
 
 各教師 Workspace 內的環境變數預填檔，由 `add-teacher` 技能自動產生：
@@ -516,6 +738,20 @@ aliases:
 | [[story-archive]]     | 「歸檔故事」「story archive」       | 臺灣的故事・歸檔與索引                           |
 | [[ai-core/skills/story-daily\|story-daily]] | 「今天的故事」「跑管線」 | 臺灣的故事・全流程編排器（v2.2.0，8 步驟 + Checkpoint） |
 | [[ai-core/skills/gws-bridge\|gws-bridge]] | 「gws bridge」「Cowork gws」 | Cowork VM ↔ 本機 GWS CLI 橋接（自動偵測環境） |
+
+---
+
+## Good-notes 建造日誌
+
+| 檔案 | 說明 |
+|------|------|
+| [[Good-notes/9C 班工作全貌 — 導師與英文教學\|9C 班工作全貌]] | 導師 + 英文教學的完整工作脈絡與方向 |
+| [[Good-notes/2026-03-10-why-build-an-os\|為什麼一個華德福老師要蓋作業系統]] | TeacherOS 建造日誌 1/5 |
+| [[Good-notes/2026-03-11-meaning-architect\|意義架構師]] | TeacherOS 建造日誌 2/5 |
+| [[Good-notes/2026-03-12-yaml-and-markdown\|YAML 管結構 Markdown 管內容]] | TeacherOS 建造日誌 3/5 |
+| [[Good-notes/農場實習教學紀錄_9C信宏拷貝\|9C 農場實習教學紀錄（備份）]] | 農場實習教學歷程紀錄備份 |
+| [[Good-notes/2026-03-17-context-and-skill-engineering\|Context 與 Skill Engineering]] | 建造日誌：從 Prompt 到 Context Engineering |
+| [[2026-03-23-目前技能摘要]] | 技能摘要筆記 |
 
 ---
 
@@ -1050,193 +1286,6 @@ aliases:
 | [[extract_tmp]] | Python 腳本 |
 | [[extracted_names]] | （自動收錄） |
 | [[output]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/3C_assessment\|3C assessment]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/3C_assessment\|3C assessment]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-syllabus-v1-20260316\|taiwanese syllabus v1 20260316]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-unit-1-v1\|taiwanese unit 1 v1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-unit-2-v1\|taiwanese unit 2 v1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-unit-3-v1\|taiwanese unit 3 v1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/張圓施\|張圓施]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/張語若\|張語若]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/朱珉\|朱珉]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/李婕熙\|李婕熙]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/李淳伊\|李淳伊]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/李秉憲\|李秉憲]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/李青學\|李青學]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/林沐嫻\|林沐嫻]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/林熹珖\|林熹珖]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/范子奕\|范子奕]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/蘇子涵\|蘇子涵]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/蘇校儀\|蘇校儀]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/謝得瑜\|謝得瑜]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/謝承儒\|謝承儒]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/謝於希\|謝於希]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/鄧媃云\|鄧媃云]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/陳宇昊\|陳宇昊]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/黃偉勳\|黃偉勳]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/黃小砵\|黃小砵]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/黃庭睫\|黃庭睫]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-syllabus-v1-20260316\|taiwanese syllabus v1 20260316]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-unit-1-v1\|taiwanese unit 1 v1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-unit-2-v1\|taiwanese unit 2 v1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-unit-3-v1\|taiwanese unit 3 v1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/records/class-log\|class log]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/extract_3c\|extract 3c]] | Python 腳本 |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/extract_docx\|extract docx]] | Python 腳本 |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/extract_to_file\|extract to file]] | Python 腳本 |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/nian-yio-text\|nian yio text]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/seed_logs\|seed logs]] | Python 腳本 |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/temp_rhymes\|temp rhymes]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/tmp_extract\|tmp extract]] | Python 腳本 |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/113三年級(3C)冬季台語教學紀錄(林詩閔)\|113三年級(3C)冬季台語教學紀錄(林詩閔)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/113三年級(3C)夏季台語教學紀錄(林詩閔)\|113三年級(3C)夏季台語教學紀錄(林詩閔)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/113三年級(3C)春季台語教學紀錄(林詩閔)\|113三年級(3C)春季台語教學紀錄(林詩閔)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/113三年級(3C)秋季台語教學紀錄(林詩閔)\|113三年級(3C)秋季台語教學紀錄(林詩閔)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/113學年三年級台語課教學內容-詩閔 (修復)\|113學年三年級台語課教學內容 詩閔 (修復)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/3B幸運草台語故事\|3B幸運草台語故事]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/OneDrive_1_2025-2-12\|OneDrive 1 2025 2 12]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$3三年級(3C)秋季台語教學紀錄(林詩閔)\|~$3三年級(3C)秋季台語教學紀錄(林詩閔)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$3學年冬三年級台語課教學內容-詩閔\|~$3學年冬三年級台語課教學內容 詩閔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$的故事─森林裏的公主1(1)\|~$的故事─森林裏的公主1(1)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/三年級台語課評量\|三年級台語課評量]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/五月風\|五月風]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/五月風（台語歌曲）\|五月風（台語歌曲）]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/2024三年級台語課_冬季教案\|2024三年級台語課 冬季教案]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/仲冬的故事─森林裏的公主1(1)\|仲冬的故事─森林裏的公主1(1)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/佮阿公踅菜市仔\|佮阿公踅菜市仔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/來到春天的花園\|來到春天的花園]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/冬節公主\|冬節公主]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/冬至公主\|冬至公主]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/冬至日\|冬至日]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/四海龍王賀新年\|四海龍王賀新年]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/感謝\|感謝]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/春天ê花\|春天ê花]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/春天小仙女\|春天小仙女]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/春天的花蕊\|春天的花蕊]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/春雷一咧霆\|春雷一咧霆]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/春雷一咧霆\|春雷一咧霆]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/有一ê國王真驚寒\|有一ê國王真驚寒]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/涼風吹吹\|涼風吹吹]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/涼風吹吹\|涼風吹吹]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/燈猴\|燈猴]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/燈猴2\|燈猴2]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季/阿公逛菜市場\|阿公逛菜市場]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/Koh koh koh請問我會使入來無\|Koh koh koh請問我會使入來無]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/三年級口語練習\|三年級口語練習]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/共甲佮\|共甲佮]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/北半球的月相\|北半球的月相]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/叮噹叮叮噹\|叮噹叮叮噹]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/快樂的森林-合唱\|快樂的森林 合唱]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/我愛日頭\|我愛日頭]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/日本故事--貓和老鼠\|日本故事  貓和老鼠]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001\|歌曲 20240823T005746Z 001]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/叮噹叮叮噹\|叮噹叮叮噹]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/我愛日頭\|我愛日頭]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/我有一雙做工課的手\|我有一雙做工課的手]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/月娘月娘月光光 mp3\|月娘月娘月光光 mp3]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/菜市仔\|菜市仔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/菜市仔\|菜市仔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/跳索仔\|跳索仔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/頭殼肩胛頭\|頭殼肩胛頭]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/風吹飛去佗位\|風吹飛去佗位]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/鳥鼠仔腹肚枵\|鳥鼠仔腹肚枵]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/芸亘113三年級台語課秋季\|芸亘113三年級台語課秋季]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/頭殼肩胛頭\|頭殼肩胛頭]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/鳥鼠仔腹肚枵\|鳥鼠仔腹肚枵]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/9好朋友來tshit-thô-合唱\|9好朋友來tshit thô 合唱]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/五月風\|五月風]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/烏的\|烏的]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/烏的烏的Ngauh\|烏的烏的Ngauh]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/稻草人_DEGAB\|稻草人 DEGAB]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季/透早就起床_DEGABD'E'\|透早就起床 DEGABD'E']] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說A\|射日傳說A]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說B\|射日傳說B]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說C\|射日傳說C]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說D\|射日傳說D]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說E\|射日傳說E]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本\|射日傳說 劇本]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本\|射日傳說 劇本]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_1\|射日傳說 劇本 頁面 1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_2\|射日傳說 劇本 頁面 2]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_3\|射日傳說 劇本 頁面 3]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_4\|射日傳說 劇本 頁面 4]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_5\|射日傳說 劇本 頁面 5]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_6\|射日傳說 劇本 頁面 6]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_樂譜\|射日傳說 樂譜]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說故事\|射日傳說故事]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/小貝殼（台語歌）\|小貝殼（台語歌）]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/春季/樹仔頂的鳥仔teh_唱歌\|樹仔頂的鳥仔teh 唱歌]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/春季/臆看覓_你敢知影我的名\|臆看覓 你敢知影我的名]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/春季/請問你的大名(蛇)\|請問你的大名(蛇)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/111 112學年度心田班台語的歌或是謠的整理\|111 112學年度心田班台語的歌或是謠的整理]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/113三年級台語課課程大綱林詩閔\|113三年級台語課課程大綱林詩閔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/113學年秋三年級台語課教學內容-詩閔\|113學年秋三年級台語課教學內容 詩閔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/3C心田班姓名台語\|3C心田班姓名台語]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/3C秀真主課規劃\|3C秀真主課規劃]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/三年級台語課__秋季詳案\|三年級台語課  秋季詳案]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/三年級台語課第一週\|三年級台語課第一週]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/台語遊戲念謠\|台語遊戲念謠]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/大風ㄧ咧吹\|大風ㄧ咧吹]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/月亮不見了故事內容\|月亮不見了故事內容]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/月娘月娘月光光\|月娘月娘月光光]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/狐狸神仙\|狐狸神仙]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/狐狸神仙\|狐狸神仙]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/阿婆仔曲跤台語歌仔練動作\|阿婆仔曲跤台語歌仔練動作]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/稻草人\|稻草人]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/透早就起床\|透早就起床]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/12生肖故事台語版本\|12生肖故事台語版本]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/[Content_Types]\|[Content Types]]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/_rels/.rels\|.rels]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/app\|app]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/core\|core]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/thumbnail\|thumbnail]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/_rels/document.xml\|document.xml]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/document\|document]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/endnotes\|endnotes]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/fontTable\|fontTable]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/footnotes\|footnotes]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/settings\|settings]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/styles\|styles]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/theme/theme1\|theme1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/webSettings\|webSettings]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/[Content_Types]\|[Content Types]]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/_rels/.rels\|.rels]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/app\|app]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/core\|core]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/thumbnail\|thumbnail]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/_rels/document.xml\|document.xml]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/document\|document]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/endnotes\|endnotes]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/fontTable\|fontTable]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/footnotes\|footnotes]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/numbering\|numbering]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/settings\|settings]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/styles\|styles]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/theme/theme1\|theme1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/webSettings\|webSettings]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/元宵節來臆燈猜 (A3)\|元宵節來臆燈猜 (A3)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/元宵節來臆燈猜\|元宵節來臆燈猜]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/冬節公主\|冬節公主]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/唸謠\|唸謠]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/月光光照菜園\|月光光照菜園]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/17105813364270_天星來祝福你齊唱版\|17105813364270 天星來祝福你齊唱版]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/17105813911026_我是爸爸媽媽ê心肝仔囝齊唱版\|17105813911026 我是爸爸媽媽ê心肝仔囝齊唱版]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/Siâm著夢想自由飛/siâm著夢想自由飛\|siâm著夢想自由飛]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/一隻牛欲賣五千箍\|一隻牛欲賣五千箍]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/台語好日子/日頭gâu早\|日頭gâu早]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/噶瑪蘭公主\|噶瑪蘭公主]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/快樂的森林/快樂的森林-合唱\|快樂的森林 合唱]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/涼涼的清風吹過來\|涼涼的清風吹過來]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/相辭/相辭\|相辭]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/貓抓老鼠\|貓抓老鼠]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/風直直吹\|風直直吹]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/烏熊與雲豹\|烏熊與雲豹]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/眠床佇佗位_單弦律\|眠床佇佗位 單弦律]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/紅馬翩翩踏雲來\|紅馬翩翩踏雲來]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/貓頭鳥揣伴\|貓頭鳥揣伴]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/閩南語/三個作田人/三个作田人劇本(角色)\|三个作田人劇本(角色)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/黑熊與雲豹故事\|黑熊與雲豹故事]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/skills/niamyio-personal\|niamyio personal]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/skills/pattern-capture\|教學 Pattern 提煉]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/skills/pattern-grammar-spread\|文法攤開教學]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/skills/pattern-homework-anchor\|課後任務門檻設計]] | （自動收錄） |
