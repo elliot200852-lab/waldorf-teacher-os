@@ -738,6 +738,7 @@ aliases:
 | [[story-archive]]     | 「歸檔故事」「story archive」       | 臺灣的故事・歸檔與索引                           |
 | [[ai-core/skills/story-daily\|story-daily]] | 「今天的故事」「跑管線」 | 臺灣的故事・全流程編排器（v2.2.0，8 步驟 + Checkpoint） |
 | [[ai-core/skills/gws-bridge\|gws-bridge]] | 「gws bridge」「Cowork gws」 | Cowork VM ↔ 本機 GWS CLI 橋接（自動偵測環境） |
+| [[niamyio]] | （自動收錄） |
 
 ---
 
@@ -882,6 +883,8 @@ aliases:
 | [[publish/scripts/assemble-story.js\|assemble-story.js]] | 臺灣的故事組裝腳本（v2.2.0，Markdown → HTML+PDF + GWS upsert） |
 | [[beautify-A002-完整版.html]] | A002 水的雕刻刀 完整版 HTML |
 | [[beautify-A003-完整版.html]] | A003 火的禮物 完整版 HTML |
+| [[backup-to-drive]] | Python 腳本 |
+| [[backup-reference]] | （自動收錄） |
 
 ---
 
@@ -1290,6 +1293,58 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/skills/pattern-grammar-spread\|文法攤開教學]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/skills/pattern-homework-anchor\|課後任務門檻設計]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/skills/pattern-worksheet-layers\|學習單層次設計]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/pipeline-status\|pipeline status]] | 設定檔 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A008-quality\|A008 quality]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/3C_assessment\|3C assessment]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/nian-yio-text\|nian yio text]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/temp_rhymes\|temp rhymes]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/OneDrive_1_2025-2-12\|OneDrive 1 2025 2 12]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$3三年級(3C)秋季台語教學紀錄(林詩閔)\|~$3三年級(3C)秋季台語教學紀錄(林詩閔)]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$3學年冬三年級台語課教學內容-詩閔\|~$3學年冬三年級台語課教學內容 詩閔]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$的故事─森林裏的公主1(1)\|~$的故事─森林裏的公主1(1)]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001\|歌曲 20240823T005746Z 001]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/我有一雙做工課的手\|我有一雙做工課的手]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/月娘月娘月光光 mp3\|月娘月娘月光光 mp3]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/菜市仔\|菜市仔]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/菜市仔\|菜市仔]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/跳索仔\|跳索仔]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/風吹飛去佗位\|風吹飛去佗位]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_1\|射日傳說 劇本 頁面 1]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_2\|射日傳說 劇本 頁面 2]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_3\|射日傳說 劇本 頁面 3]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_4\|射日傳說 劇本 頁面 4]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_5\|射日傳說 劇本 頁面 5]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_6\|射日傳說 劇本 頁面 6]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/3C秀真主課規劃\|3C秀真主課規劃]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/[Content_Types]\|[Content Types]]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/_rels/.rels\|.rels]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/app\|app]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/core\|core]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/thumbnail\|thumbnail]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/_rels/document.xml\|document.xml]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/document\|document]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/endnotes\|endnotes]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/fontTable\|fontTable]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/footnotes\|footnotes]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/settings\|settings]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/styles\|styles]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/theme/theme1\|theme1]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/webSettings\|webSettings]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/[Content_Types]\|[Content Types]]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/_rels/.rels\|.rels]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/app\|app]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/core\|core]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/thumbnail\|thumbnail]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/_rels/document.xml\|document.xml]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/document\|document]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/endnotes\|endnotes]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/fontTable\|fontTable]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/footnotes\|footnotes]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/numbering\|numbering]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/settings\|settings]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/styles\|styles]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/theme/theme1\|theme1]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/webSettings\|webSettings]] | （自動收錄） |
 
 ---
 

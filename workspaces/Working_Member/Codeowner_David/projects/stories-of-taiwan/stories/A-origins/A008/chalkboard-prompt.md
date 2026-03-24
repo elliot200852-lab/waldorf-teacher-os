@@ -1,3 +1,8 @@
+---
+aliases:
+  - "A008 黑板畫 prompt"
+---
+
 # 黑板畫 Prompt：A008 浪的節奏——阿美族的海與豐年祭
 
 ## English Prompt（Gemini 製圖用）
