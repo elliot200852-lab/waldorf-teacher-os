@@ -129,6 +129,61 @@ def parse_acl(acl_path: Path):
 
 # ── 主流程 ────────────────────────────────────────────
 
+# ── 二進位檔案副檔名（大型檔案不適合 git）────────────
+
+BINARY_EXTENSIONS = {
+    # 文件
+    ".docx", ".doc", ".xlsx", ".xls", ".pptx", ".ppt",
+    # 音訊
+    ".mp3", ".m4a", ".wav", ".ogg", ".flac",
+    # 影片
+    ".mp4", ".mov", ".avi", ".mkv",
+    # 壓縮
+    ".zip", ".rar", ".7z", ".gz", ".tar",
+    # 圖片（大型）
+    ".tiff", ".tif", ".bmp", ".emf", ".psd",
+    # 執行檔
+    ".exe", ".dll",
+}
+
+BINARY_THRESHOLD = 10  # 超過此數量才顯示警告
+
+
+def check_workspace_binaries(workspace_path: str) -> int:
+    """
+    統計 workspace 中已被 git 追蹤的二進位檔案數量。
+    回傳二進位檔案數。
+    """
+    tracked = git("ls-files", "--", workspace_path)
+    if not tracked:
+        return 0
+    count = 0
+    for f in tracked.splitlines():
+        # git ls-files 對含非 ASCII 的路徑會加引號，去除後再比對
+        f = f.strip('"')
+        ext = os.path.splitext(f)[1].lower()
+        if ext in BINARY_EXTENSIONS:
+            count += 1
+    return count
+
+
+def warn_workspace_binaries(user_name: str, workspace_path: str, count: int):
+    """顯示二進位檔案過多的警告（不擋 commit）。"""
+    print()
+    print(f"{YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
+    print(f"{YELLOW}  [提醒] Workspace 中有 {count} 個二進位大檔{NC}")
+    print(f"{YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
+    print()
+    print("  Git Repo 適合存純文字檔（.md、.yaml），")
+    print("  大型檔案（Word、音檔、影片等）建議：")
+    print(f"    1. 移到 {workspace_path}private/ 資料夾（只留在本機）")
+    print("    2. 上傳到 Google Drive（方便共享）")
+    print("    3. PDF、Word 檔可以請 AI 直接幫你轉成 .md 檔儲存，不必煩惱怎麼操作")
+    print()
+    print("  詳情請聯絡 David。")
+    print()
+
+
 def main() -> int:
     repo_root = Path(git("rev-parse", "--show-toplevel"))
     env_file = repo_root / "setup" / "environment.env"
@@ -228,6 +283,18 @@ def main() -> int:
     if not blocked:
         name = user["name"]
         print(f"  {GREEN}身份確認：{name}，所有修改在授權範圍內，通過。{NC}")
+
+        # ── Step 5：二進位檔案數量警告（僅提醒，不擋）──
+        workspace_path = ""
+        for p in user["allowed_paths"]:
+            if p.startswith("workspaces/"):
+                workspace_path = p
+                break
+        if workspace_path:
+            bin_count = check_workspace_binaries(workspace_path)
+            if bin_count > BINARY_THRESHOLD:
+                warn_workspace_binaries(name, workspace_path, bin_count)
+
         print()
         return 0
 

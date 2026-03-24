@@ -24,6 +24,25 @@ stories:
       html: "15hjBYvQtugWZIVOjIzDvTSQDaure274u"
       pdf: "1feS0g6ptMvat6Vbvmm-rHZnNXTfCqpQp"
     tags: [植物與大地, 光與暗, 玉山, 垂直分布, 台灣俗諺]
+  - id: B002
+    title: 蒲公英
+    block: block-1-plant-and-earth
+    kovacs_chapter: "02_The_Dandelion"
+    taiwan_species: ["台灣蒲公英（Taraxacum formosanum）"]
+    date_created: 2026-03-24
+    files:
+      content: stories/B002/content.md
+      kovacs_teaching: stories/B002/kovacs-teaching.md
+      chalkboard_prompt: stories/B002/chalkboard-prompt.md
+      images: stories/B002/images.md
+      references: stories/B002/references.md
+      raw_materials: stories/B002/raw-materials.md
+      quality_report: stories/B002/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1uuW4n3pdiIDQ0gb5SC0v2lHgRB4ZxmEj"
+      pdf: "17l9y-lciceGNR4YVI361Ai1H1clBwB6y"
+    tags: [蒲公英, 台灣特有種, 四大元素, 飛翔種子, 台灣蒲公英]
 # 每筆格式：
 # - id: B001
 #   title: 植物在太陽與大地之間

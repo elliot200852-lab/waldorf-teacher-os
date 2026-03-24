@@ -449,7 +449,9 @@ function parseChalkboardPrompt(promptMd) {
 // ── 解析 images.md ───────────────────────────────────
 function parseImages(imagesMd) {
   const sections = [];
-  const blocks = imagesMd.split(/\n### /);
+  // 支援 ### N. 格式（B001 風格）與 ## 圖 N： 格式（AI 自動生成風格）
+  // 使用 lookahead 保留 ## 前綴，讓 title 提取的 /^#+\s*/ 統一處理
+  const blocks = imagesMd.split(/\n(?=#{2,} )/);
 
   for (const block of blocks) {
     if (!block.trim()) continue;
@@ -592,7 +594,7 @@ function parseReferences(referencesMd) {
   const refs = [];
   const lines = referencesMd.split('\n');
   for (const line of lines) {
-    // 格式：1. 來源名稱 —/-- URL —/-- 類型（支援 em dash 和 double dash）
+    // 格式 A：1. 名稱 —/-- URL —/-- 類型（支援 em dash 和 double dash）
     const match = line.match(/^\d+\.\s+(.+?)\s+(?:—|--)\s+(https?:\/\/\S+)(?:\s+(?:—|--)\s+(.+))?/);
     if (match) {
       refs.push({
@@ -602,12 +604,30 @@ function parseReferences(referencesMd) {
       });
       continue;
     }
-    // 格式 B：- 來源名稱（URL）
+    // 格式 B：- 名稱（URL）
     const matchB = line.match(/^[-*]\s+(.+?)[（(](https?:\/\/[^\s）)]+)[）)]/);
     if (matchB) {
       refs.push({
         name: matchB[1].trim(),
         url: matchB[2].trim(),
+        type: '網站',
+      });
+      continue;
+    }
+    // 格式 C：行中含「URL: https://」或「URL：https://」（AI 學術引用格式）
+    // 例：- **臺灣生命大百科**（n.d.）。條目。機構。URL: https://...
+    const matchC = line.match(/URL[：:]\s*(https?:\/\/[^\s）)]+)/);
+    if (matchC) {
+      const nameRaw = line
+        .replace(/\*{1,2}([^*]+)\*{1,2}/g, '$1')    // 展開 **bold**
+        .replace(/URL[：:]\s*https?:\/\/\S*/g, '')    // 移除 URL 及其後
+        .replace(/（[^）]*）。?/g, '')                 // 移除 （年份）
+        .replace(/^[-*\d.]\s+/, '')                   // 移除列表前綴
+        .replace(/[。\.]\s*$/, '')                    // 去尾部句號
+        .trim();
+      refs.push({
+        name: nameRaw || '參考來源',
+        url: matchC[1].replace(/[.)）]+$/, '').trim(),
         type: '網站',
       });
     }
@@ -1176,14 +1196,23 @@ function main() {
       const body = storyPart.replace(/^## 故事本文\s*\n+/, '').trim();
       return body ? [body] : [];
     }
-    // fallback：沒有「## 故事本文」標題時，用舊邏輯（splitByHr + 過濾）
+    // fallback 1：沒有「## 故事本文」時，收集所有非保留 ## 段落合併為故事正文
+    // 保留段落：事實出處、地理標記、延伸線索、注意事項、資料來源、下一課預告
+    const RESERVED = /^## ?(事實|地理標記|延伸線索|注意事項|資料來源|參考來源|下一課)/;
+    const storyParts = h2Parts
+      .filter(p => !RESERVED.test(p) && !/^# /.test(p))
+      .map(p => p.replace(/^##+ [^\n]+\n/, '').trim())
+      .filter(p => p.length > 0);
+    if (storyParts.length > 0) {
+      return [storyParts.join('\n\n')];
+    }
+    // fallback 2：最終保底，splitByHr 舊邏輯（去掉 !s.startsWith('#') 以避免過濾正文）
     const allSections = splitByHr(contentMd);
     return allSections.filter(s =>
       !s.startsWith('>') &&
       !s.startsWith('## 事實出處') && !s.includes('| 事實 |') &&
       !s.startsWith('## 地理標記') &&
-      !s.startsWith('## 延伸線索') &&
-      !s.startsWith('#')
+      !s.startsWith('## 延伸線索')
     );
   })();
 

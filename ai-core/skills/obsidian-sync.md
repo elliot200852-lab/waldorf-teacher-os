@@ -115,7 +115,24 @@ aliases:
 
 讀取根目錄的 `HOME.md`，將 `FILE:NOT_IN_HOME:` 清單中的檔案插入對應區段。
 
-**分類建議：** 偵測腳本的輸出格式已升級為 `FILE:NOT_IN_HOME:{path}:SUGGEST:{section}`。AI 應優先使用 `SUGGEST` 欄位決定插入位置，而非自行推斷。若 SUGGEST 的區段在 HOME.md 中不存在，依規則自動建立。
+**分類強制規則（SUGGEST 欄位）：** 偵測腳本輸出 `FILE:NOT_IN_HOME:{path}:SUGGEST:{section}`。
+
+**AI 必須嚴格依照 SUGGEST 欄位決定插入位置，禁止自行推斷或堆入根目錄散檔。** 具體流程：
+
+1. 解析 SUGGEST 欄位，判斷目標 H2 區段（如「David 的工作空間」）和 H3 子區段（如「botany-grade5」）
+2. 在 HOME.md 中搜尋對應的 H2/H3 區段
+3. **若 H3 區段已存在** → 插入該區段的表格末尾
+4. **若 H3 區段不存在但 H2 存在** → 在該 H2 區段末尾（`---` 分隔線之前）自動建立新 H3 區段，含表頭
+5. **若 H2 也不存在** → 依 H2 固定順序規則建立新 H2 區段後再建 H3
+6. **絕對不可**將任何 `workspaces/` 路徑下的檔案放入「根目錄散檔」
+
+**獨立專案自動建區規則（關鍵）：**
+
+教師 workspace 下 `projects/` 中非 `class-*` 的目錄（如 `botany-grade5`、`stories-of-taiwan`、`taiwanese-history`）為獨立專案。每個獨立專案必須有自己的 H3 區段：
+
+1. H3 標題格式：`### {專案顯示名}`（從 project.yaml 的 `project:` 欄位取得中文名；無 project.yaml 則用目錄名）
+2. 區段內按子目錄結構分組（專案設定 → 參考章節 → 各 story/lesson ID）
+3. 與 `stories-of-taiwan` 相同的子架構邏輯適用於所有故事型專案（有 `stories/` 子目錄的專案）：每個 ID 獨立標題 + 表格
 
 **HOME.md H2 區段固定順序（AI 不可變更）：**
 
@@ -159,23 +176,27 @@ aliases:
 
 | 路徑模式 | 分組方式 | HOME.md 呈現 |
 |----------|---------|-------------|
-| `stories-of-taiwan/stories/[區塊]/[ID]/` | 每個故事 ID 獨立為一組 | `**[ID] [標題]**` 標題 + 表格，五件套各一行 |
-| `stories-of-taiwan/stories/[區塊]/[ID]-v2/` | v2 歸入對應原版 ID 的表格 | 在原版表格末尾追加 `v2 content` 等行 |
-| `stories-of-taiwan/reviews/[ID]-quality.md` | 品質報告歸入對應故事 ID | 在對應故事表格末尾追加 `品質報告` 行 |
+| `{專案}/stories/[區塊或直接]/[ID]/` | 每個 ID 獨立為一組 | `**[ID] [標題]**` 標題 + 表格 |
+| `{專案}/stories/[區塊]/[ID]-v2/` | v2 歸入對應原版 ID 的表格 | 在原版表格末尾追加 `v2 content` 等行 |
+| `{專案}/reviews/[ID]-quality.md` | 品質報告歸入對應 ID | 在對應表格末尾追加 `品質報告` 行 |
+| `{專案}/kovacs-chapters/` 等參考章節目錄 | 整批歸為一個子表格 | `**[目錄顯示名]**` 標題 + 表格 |
 | `class-*/[科目]/` | 每個科目獨立為一組 | 沿用現有科目標題 |
 | `class-*/[科目]/content/` | 內容歸入對應科目 | 追加到科目表格末尾 |
 | `class-*/student-notes/` | 學生紀錄依座號排列 | 沿用現有學生紀錄區塊 |
 
-**具體操作（以 stories-of-taiwan 為例）：**
+**泛化原則：** 上述 `{專案}` 匹配所有獨立專案（stories-of-taiwan、botany-grade5、taiwanese-history 等）。新專案出現時，自動套用相同邏輯，無需修改此規則。
 
-1. 從新檔案路徑提取故事 ID（如 `A005`）和區塊（如 `A-origins`）
-2. 在 HOME.md 中找到對應區塊標題（如 `**A-origins：島嶼的誕生與最初的人**`）
-3. 檢查該 ID 是否已有標題（搜尋 `**A005`）
-4. 若無 → 在該區塊最後一個故事的表格之後，新建 `**A005 [標題]**` + 新表格
-5. 若有 → 將新檔案追加到該故事的現有表格中
-6. 故事標題從 content.md 的 frontmatter `title:` 欄位提取
-7. v2 版本不建獨立標題，追加到原版表格末尾，檔案欄用 `v2 content` / `v2 narration` 等前綴區分
-8. 品質報告追加到對應故事表格最後一行
+**具體操作（適用所有故事型專案）：**
+
+1. 從檔案路徑提取專案名、ID（如 `B002`）、子目錄結構
+2. 在 HOME.md 中找到該專案的 H3 區段（如 `### 五年級植物學`）
+3. 檢查該 ID 是否已有粗體標題（搜尋 `**B002`）
+4. 若無 → 在該專案區段最後一個 ID 的表格之後，新建 `**[ID] [標題]**` + 新表格
+5. 若有 → 將新檔案追加到該 ID 的現有表格中
+6. 標題從 content.md 的 frontmatter `title:` 欄位提取
+7. v2 版本不建獨立標題，追加到原版表格末尾
+8. 品質報告追加到對應 ID 表格最後一行
+9. **若整個 H3 區段不存在** → 自動建立（見上方「獨立專案自動建區規則」）
 
 **wikilink 格式規則：**
 

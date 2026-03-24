@@ -22,9 +22,9 @@ botany_grade5:
     theme_skeleton_yaml: theme-skeleton.yaml
 
   story_count:
-    total: 1
+    total: 2
     by_block:
-      block-1-plant-and-earth: 1    # 第 1-6 課
+      block-1-plant-and-earth: 2    # 第 1-6 課
       block-2-fern-to-tree: 0       # 第 7-14 課
       block-3-individual-plants: 0  # 第 15-22 課
       block-4-plants-and-people: 0  # 第 23-30 課

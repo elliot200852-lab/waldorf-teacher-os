@@ -1,0 +1,126 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS — Workspace 二進位檔案監控
+# 當 push 到 main 且 workspaces/ 有變動時，掃描各教師 workspace
+# 若任何 workspace 的二進位大檔超過 10 個，自動建立 Issue 通知管理員
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+name: Workspace Binary File Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'workspaces/Working_Member/**'
+
+jobs:
+  check-binaries:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scan workspaces for binary files
+        id: scan
+        run: |
+          THRESHOLD=10
+          BINARY_EXT="docx doc xlsx xls pptx ppt mp3 m4a mp4 mov wav ogg flac zip rar 7z gz tar tiff tif bmp emf psd exe dll"
+          ALERTS=""
+          ACL_FILE="ai-core/acl.yaml"
+
+          for ws_dir in workspaces/Working_Member/*/; do
+            [ -d "$ws_dir" ] || continue
+            ws_name=$(basename "$ws_dir")
+
+            # Skip template and reference
+            [ "$ws_name" = "_template" ] && continue
+            echo "$ws_name" | grep -q "工作範例參考" && continue
+
+            # Count binary files tracked by git
+            count=0
+            file_list=""
+            while IFS= read -r f; do
+              [ -z "$f" ] && continue
+              ext="${f##*.}"
+              ext_lower=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
+              for be in $BINARY_EXT; do
+                if [ "$ext_lower" = "$be" ]; then
+                  count=$((count + 1))
+                  file_list="$file_list- \`$f\`\n"
+                  break
+                fi
+              done
+            done < <(git ls-files -- "$ws_dir")
+
+            if [ "$count" -gt "$THRESHOLD" ]; then
+              ALERTS="${ALERTS}WORKSPACE=${ws_name} COUNT=${count}\n"
+
+              # Extract teacher name and email from ACL
+              # 依賴 acl.yaml 的欄位順序：name → email → ... → workspace
+              # 新增老師時只要按 add-teacher.py 的標準格式即可自動相容
+              teacher_name=$(grep -B5 "workspace:.*${ws_name}" "$ACL_FILE" | grep "name:" | head -1 | sed 's/.*name:\s*//' | xargs)
+              teacher_email=$(grep -B4 "workspace:.*${ws_name}" "$ACL_FILE" | grep "email:" | head -1 | sed 's/.*email:\s*//' | xargs)
+              # Fallback: 若抓不到則顯示 workspace 名稱
+              [ -z "$teacher_name" ] && teacher_name="$ws_name"
+              [ -z "$teacher_email" ] && teacher_email="（請查閱 acl.yaml）"
+
+              # Check for existing open issue
+              ISSUE_TITLE="[Workspace 監控] ${ws_name} 有 ${count} 個二進位大檔"
+              EXISTING=$(gh issue list --state open --search "Workspace 監控 ${ws_name}" --json number --jq 'length')
+
+              if [ "$EXISTING" = "0" ]; then
+                BODY="## Workspace 二進位檔案超過門檻
+
+**老師：** ${teacher_name}
+**Email：** ${teacher_email}
+**Workspace：** \`${ws_name}\`
+**二進位檔案數：** ${count}（門檻：${THRESHOLD}）
+
+### 檔案清單
+
+$(printf "$file_list")
+
+---
+
+### 可直接複製寄出的 Email
+
+> **收件人：** ${teacher_email}
+> **主旨：** TeacherOS Workspace 檔案整理提醒
+>
+> ${teacher_name}老師好，
+>
+> 系統偵測到你的 Workspace 裡目前有 ${count} 個大型檔案（Word、音檔、影片等）。
+> Git Repo 比較適合存純文字檔，大型檔案放進來會讓大家 pull 的時候越來越慢。
+>
+> 建議你選一個方式處理：
+>
+> 1. 移到你 Workspace 裡的 private/ 資料夾（只留在自己電腦，不會上傳）
+> 2. 上傳到 Google Drive（方便共享）
+> 3. PDF、Word 檔可以直接請 AI 幫你轉成 .md 檔儲存，不必煩惱怎麼操作
+>
+> 不急，有空的時候處理就好。有問題隨時找我。
+>
+> David
+
+---
+*此 Issue 由 GitHub Action 自動建立，處理完畢後請 close。*"
+
+                gh issue create \
+                  --title "$ISSUE_TITLE" \
+                  --body "$BODY" \
+                  --label "maintenance"
+              fi
+            fi
+          done
+
+          if [ -n "$ALERTS" ]; then
+            echo "has_alerts=true" >> "$GITHUB_OUTPUT"
+            printf "$ALERTS" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "has_alerts=false" >> "$GITHUB_OUTPUT"
+            echo "All workspaces within binary file threshold." >> "$GITHUB_STEP_SUMMARY"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

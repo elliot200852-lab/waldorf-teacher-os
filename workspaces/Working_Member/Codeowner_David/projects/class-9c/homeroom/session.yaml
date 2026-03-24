@@ -8,7 +8,7 @@
 
 homeroom_session:
   class: class-9c
-  last_updated: 2026-03-21
+  last_updated: 2026-03-24
 
   # HM Block 1 會在此處確認後寫入
   current_season:
@@ -36,7 +36,7 @@ homeroom_session:
   # 三方面訪排程
   parent_conference:
     name: 三方面訪
-    status: 進行中（通知+晤談表已發送 3/17）
+    status: 進行中（第一、二梯次已完成，第三梯次 3/31）
     schedule:
       - date: 2026-03-17
         students:
@@ -45,11 +45,12 @@ homeroom_session:
           - { time: "14:30-15:10", name: 妤芃 }
           - { time: "15:15-15:55", name: 若妍 }
       - date: 2026-03-24
+        status: 已完成
         students:
           - { time: "10:50-11:30", name: 芷安 }
           - { time: "11:35-12:15", name: 軒寧 }
           - { time: "14:30-15:10", name: 晨希 }
-          - { time: "15:15-15:55", name: 馨瑩 }
+          - { time: "15:15-15:55", name: 馨瑩, note: "家長取消面談，略過不補約" }
       - date: 2026-03-31
         students:
           - { time: "10:50-11:30", name: 品妡 }
@@ -72,10 +73,13 @@ homeroom_session:
     budget_per_student: 6500-9000 元（含交通、住宿、門票、餐費；教師公開費用由 22 生均攤）
     confirmed:
       - "交通：客運為主（宜蘭→台北→台中→台南均客運），僅台南→高雄搭台鐵"
+      - "Day 1 台中行程確定（3/24）：抵達後直接前往一中街午餐→下午活動探索→步行回車站附近住宿"
       - "台南服務：淨灘（台南社大海廢計畫或環保局）"
       - "Day 3：四草綠色隧道 → 安平 → 淨灘（沿海動線）"
       - "台中、高雄服務機構：保留，之後再決定"
     next_steps:
+      - 找保險（旅遊平安險，24 人團體）
+      - 確定第二位隨隊教師人選
       - 聯繫台南淨灘單位（台南社大海廢計畫，優先）
       - 預約博物館團體參觀（科博館、科工館需10日前）
       - 預約奇美博物館（線上預約制）
@@ -119,7 +123,7 @@ homeroom_session:
 
   # 園遊會專案追蹤（= 春季節慶，同一活動）
   school_fair:
-    status: 草案確定，3/25（二）食物驗收試吃後最終定案
+    status: 試吃已完成（3/25），最終準備中，3/28 正式活動
     date: 2026-03-28（六）
     booths:
       - name: 飯糰與水果茶
@@ -169,8 +173,8 @@ homeroom_session:
       date: 20260321
 
   next_action:
-    description: "本週：園遊會最終準備（3/25 試吃定案）+ 三方面訪第二梯次（3/24）；中期：week8 各組工作追蹤確認聯絡"
-    input_needed_from_teacher: "3/25 試吃後園遊會最終定案；志願選填後續確認"
+    description: "本週：3/28 春季節慶/園遊會 + 3/31 三方面訪第三梯次；中期：week8 各組工作追蹤確認聯絡"
+    input_needed_from_teacher: "園遊會當天分工確認；體育週時間確認"
 
   open_questions:
     - "台中服務機構三選一：弘道/1919食物銀行/荒野——之後再決定"

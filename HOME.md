@@ -126,19 +126,19 @@ aliases:
 
 9C 導師內容產出：
 
-| 檔案 | 說明 |
-|------|------|
-| [[親師晤談表-空白]] | 三方會談晤談表（家長篇+學生篇） |
-| [[行程總覽與規劃建議]] | 服務學習之旅規劃 |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/service-learning-trip/agent1-addresses-phones.md\|景點地址與電話]] | 服務學習之旅景點機構聯絡資訊 |
-| [[V1-可行性評估報告]] | 服務學習之旅 V1 可行性評估 |
-| [[homeroom-notice-v1-20260301]] | 導師通知 v1 |
-| [[homeroom-notice-v2-20260301]] | 導師通知 v2 |
-| [[homeroom-agenda-v2-20260321]] | 9C 春季班親會議程（第二版） |
-| [[homeroom-sign-in-20260321]] | 9C 春季班親會家長簽到表 |
-| [[homeroom-script-20260321]] | 9C 春季班親會主持逐字稿 |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/comms/農場實習返校三日歷程-家長版\|農場實習返校三日歷程 家長版]] | 農場實習返校三日歷程——親師溝通 Facebook 文章 |
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/comms/homeroom-agenda-minutes-20260321\|班親會議程及會議紀錄]] | （自動收錄） |
+| 檔案                                                                                                                                         | 說明                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| [[親師晤談表-空白]]                                                                                                                               | 三方會談晤談表（家長篇+學生篇）             |
+| [[行程總覽與規劃建議]]                                                                                                                              | 服務學習之旅規劃                     |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/service-learning-trip/agent1-addresses-phones.md\|景點地址與電話]] | 服務學習之旅景點機構聯絡資訊               |
+| [[V1-可行性評估報告]]                                                                                                                             | 服務學習之旅 V1 可行性評估              |
+| [[homeroom-notice-v1-20260301]]                                                                                                            | 導師通知 v1                      |
+| [[homeroom-notice-v2-20260301]]                                                                                                            | 導師通知 v2                      |
+| [[homeroom-agenda-v2-20260321]]                                                                                                            | 9C 春季班親會議程（第二版）              |
+| [[homeroom-sign-in-20260321]]                                                                                                              | 9C 春季班親會家長簽到表                |
+| [[homeroom-script-20260321]]                                                                                                               | 9C 春季班親會主持逐字稿                |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/comms/農場實習返校三日歷程-家長版\|農場實習返校三日歷程 家長版]]                      | 農場實習返校三日歷程——親師溝通 Facebook 文章 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/comms/homeroom-agenda-minutes-20260321\|班親會議程及會議紀錄]]        | （自動收錄）                       |
 
 9C 導師參考資料：
 
@@ -250,7 +250,6 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/project.yaml\|臺灣的故事 專案設定]] | 專案脈絡、進度、管線設定 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/session.yaml\|臺灣的故事 進度錨點]] | 當前區塊與下一步 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/index.yaml\|臺灣的故事 索引]] | 全部故事清單與 metadata |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/current-task.md\|當前任務]] | 進行中的工作項目 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/project-plan-v0.1.md\|專案計畫書 v0.1]] | 初版專案計畫 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/taiwan_history_api.py\|台灣史料 API 腳本]] | 多資料源搜尋 Python 腳本 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/themes/theme-skeleton.yaml\|年度主題骨架]] | 七大區塊時序規劃 |
@@ -352,6 +351,78 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A008/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A008/raw-materials\|raw-materials]] | 研究素材包 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A008-quality\|品質報告]] | 品質審核紀錄 |
+
+### 五年級植物學（botany-grade5）
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/project.yaml\|植物學專案設定]] | 專案脈絡、30 課架構 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/index.yaml\|植物學索引]] | 全部課程清單與 metadata |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/theme-skeleton.yaml\|主題骨架 YAML]] | 30 課主題時序規劃 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/theme-skeleton.md\|主題骨架 MD]] | 主題骨架可讀版 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/current-task.md\|當前任務]] | 進行中的工作項目 |
+
+**Kovacs 原著章節（30 章）**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/00_Foreword\|00 Foreword]] | 前言 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/00_Table_of_Contents\|00 Table of Contents]] | 目錄 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/01_The_Plant_Between_Sun_and_Earth\|01 植物在太陽與大地之間]] | Ch.1 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/02_The_Dandelion\|02 蒲公英]] | Ch.2 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/03_Fungi\|03 真菌]] | Ch.3 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/04_Algae\|04 藻類]] | Ch.4 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/05_Botany_in_Class_Five\|05 五年級植物學]] | Ch.5 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/05_Lichens\|05 地衣]] | Ch.5b |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/06_Moss\|06 苔蘚]] | Ch.6 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/07_Ferns\|07 蕨類]] | Ch.7 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/08_Conifers\|08 針葉樹]] | Ch.8 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/09_Trees_and_the_Earth\|09 樹木與大地]] | Ch.9 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/10_Flowering_Plants\|10 開花植物]] | Ch.10 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/11_Lower_and_Higher_Flowering_Plants\|11 低等與高等開花植物]] | Ch.11 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/12_The_Blossom\|12 花]] | Ch.12 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/13_Pollen\|13 花粉]] | Ch.13 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/14_Flowers_and_Butterflies\|14 花與蝴蝶]] | Ch.14 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/15_Caterpillars_and_Butterflies\|15 毛毛蟲與蝴蝶]] | Ch.15 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/16_The_Tulip\|16 鬱金香]] | Ch.16 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/17_Seeds_and_Cotyledons\|17 種子與子葉]] | Ch.17 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/18_The_Rose\|18 玫瑰]] | Ch.18 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/19_The_Rose_Family_\|19 玫瑰家族]] | Ch.19 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/20_The_Cabbage\|20 高麗菜]] | Ch.20 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/21_The_Nettle\|21 蕁麻]] | Ch.21 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/22_The_Oak\|22 橡樹]] | Ch.22 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/23_The_Birch\|23 白樺]] | Ch.23 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/24_The_Palm_Tree\|24 棕櫚]] | Ch.24 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/25_Tea__Sugar_and_Coffee\|25 茶、糖與咖啡]] | Ch.25 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/26_Grass_and_Cereals\|26 草與穀物]] | Ch.26 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/27_Leaves_and_Blossoms\|27 葉與花]] | Ch.27 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/28_Bees\|28 蜜蜂]] | Ch.28 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/29_The_Beehive\|29 蜂巢]] | Ch.29 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/30_The_Spirit_of_the_Bee\|30 蜜蜂的靈性]] | Ch.30 |
+
+**B001 植物在太陽與大地之間**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/content\|content]] | 故事正文 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/kovacs-teaching\|kovacs-teaching]] | Kovacs 教學提示 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/images\|images]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/raw-materials\|raw-materials]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/references\|references]] | 參考資料 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/quality-report\|品質報告]] | 品質審核紀錄 |
+
+**B002 蒲公英**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B002/content\|content]] | 故事正文 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B002/kovacs-teaching\|kovacs-teaching]] | Kovacs 教學提示 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B002/images\|images]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B002/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B002/raw-materials\|raw-materials]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B002/references\|references]] | 參考資料 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B002/quality-report\|品質報告]] | 品質審核紀錄 |
 
 ---
 
@@ -578,8 +649,6 @@ aliases:
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/seed_logs.py\|seed_logs.py]] | 學生紀錄初始化腳本 |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/tmp_extract.py\|tmp_extract.py]] | 暫存擷取腳本 |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/3C_assessment.docx\|3C 評量原始檔]] | 評量 docx |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/nian-yio-text.md\|唸謠文本]] | 台語唸謠素材 |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/temp_rhymes.md\|暫存韻腳]] | 韻腳素材草稿 |
 
 ### 113 學年台語參考資料
 
@@ -784,9 +853,7 @@ aliases:
 | [[obsidian-sync]]     | 「補標籤」「更新索引」                 | Obsidian 標籤與索引同步                      |
 | [[add-teacher]]       | 「加入新老師」                     | 管理員專用：建立新教師 Workspace                 |
 | [[gws-setup]]         | 「設定 gws」                    | Google Workspace CLI 安裝與設定            |
-| [[video-setup]]       | 「建立影片專案」「video setup」       | Remotion 影片專案環境建立                     |
 | [[video]]             | 「做影片」「製作影片」「渲染影片」           | Remotion 影片製作（預覽→修改→渲染）               |
-| [[new-doc]]           | 「生成新檔案」「建立新文件」              | 新建 Markdown 文件路徑與檔名確認                 |
 | [[yt-subtitle]]       | 「下載字幕」「YouTube 字幕」          | YouTube 字幕擷取                          |
 | [[teach-animation]]   | 「教學動畫」「做動畫」「animate」        | 教學動畫生成（Revideo，概念解說與時間線動畫）            |
 | [[poetry-research]]   | 「詩歌研究」「英文詩歌備課」              | 英文主題 → 詩歌 + 詞彙 + 語意場 + 書單             |
@@ -936,19 +1003,32 @@ aliases:
 | [[publish/templates/waldorf-base.html\|waldorf-base.html]] | 華德福美化模板（四季 CSS 變數系統，beautify 技能使用） |
 | [[publish/scripts/html-to-pdf.js\|html-to-pdf.js]] | HTML → PDF 轉換腳本（Puppeteer，A4 固定版面，fit-page 自動適配） |
 | [[publish/batch-docreview.py\|batch-docreview.py]] | 批次文件審閱工具 |
-| [[beautify-quiz-基礎版-學生版.html]] | 動詞片語測驗美化版（基礎版，學生用） |
-| [[beautify-quiz-進階版-學生版.html]] | 動詞片語測驗美化版（進階版，學生用） |
-| [[beautify-quiz-教師版.html]] | 動詞片語測驗美化版（教師用） |
 | [[publish/images/core_spirit.png\|core_spirit.png]] | 圖片：核心精神 |
 | [[publish/images/di_matrix.png\|di_matrix.png]] | 圖片：差異化矩陣 |
 | [[publish/images/di_steps.png\|di_steps.png]] | 圖片：差異化步驟 |
 | [[publish/images/workflow.png\|workflow.png]] | 圖片：工作流程 |
 | [[publish/scripts/assemble-story.js\|assemble-story.js]] | 臺灣的故事組裝腳本（v2.2.0，Markdown → HTML+PDF + GWS upsert） |
 | [[publish/scripts/assemble-botany.js\|assemble-botany.js]] | 五年級植物學組裝腳本 |
-| [[beautify-A002-完整版.html]] | A002 水的雕刻刀 完整版 HTML |
-| [[beautify-A003-完整版.html]] | A003 火的禮物 完整版 HTML |
-| [[backup-to-drive]] | Python 腳本 |
-| [[backup-reference]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
@@ -1032,7 +1112,6 @@ aliases:
 | [[.claude/skills/subject-lesson-45/SKILL.md\|subject-lesson-45 SKILL]] | 45 分鐘課堂設計（封包入口 → ai-core/skills/subject-lesson-45.md） |
 | [[.claude/skills/deploy/SKILL.md\|deploy SKILL]] | 部署 Skill |
 | [[.claude/skills/video/SKILL.md\|video SKILL]] | Remotion 影片製作（封包入口 → ai-core/skills/video.md） |
-| [[.claude/skills/video-setup/SKILL.md\|video-setup SKILL]] | Remotion 環境建置（封包入口 → ai-core/skills/video-setup.md） |
 | [[.claude/skills/teach-animation/SKILL.md\|teach-animation SKILL]] | 教學動畫生成（封包入口 → ai-core/skills/teach-animation.md） |
 | [[.claude/skills/poetry-research/SKILL.md\|poetry-research SKILL]] | 備課素材研究（封包入口 → ai-core/skills/poetry-research.md） |
 | [[.claude/skills/art-in-teaching/SKILL.md\|art-in-teaching SKILL]] | 藝術素材管線（封包入口 → ai-core/skills/art-in-teaching.md） |
@@ -1041,9 +1120,9 @@ aliases:
 | [[.claude/skills/story-writer/SKILL.md\|story-writer SKILL]] | 臺灣故事撰寫（封包入口 → ai-core/skills/story-writer.md） |
 | [[.claude/skills/story-verify/SKILL.md\|story-verify SKILL]] | 臺灣故事品質檢查（封包入口 → ai-core/skills/story-verify.md） |
 | [[.claude/skills/story-archive/SKILL.md\|story-archive SKILL]] | 臺灣故事歸檔（封包入口 → ai-core/skills/story-archive.md） |
-| [[.claude/skills/beautify/SKILL.md:SUGGEST:Claude Code 設定（.claude/）\|）]] | （自動收錄） |
-| [[.claude/skills/check-compat/SKILL.md:SUGGEST:Claude Code 設定（.claude/）\|）]] | （自動收錄） |
-| [[.claude/skills/story-daily/SKILL.md:SUGGEST:Claude Code 設定（.claude/）\|）]] | （自動收錄） |
+| [[.claude/skills/beautify/SKILL.md\|beautify SKILL]] | 華德福美化輸出（封包入口 → ai-core/skills/beautify.md） |
+| [[.claude/skills/check-compat/SKILL.md\|check-compat SKILL]] | 跨平台相容性檢查（封包入口 → ai-core/skills/check-compat.md） |
+| [[.claude/skills/story-daily/SKILL.md\|story-daily SKILL]] | 臺灣故事每日管線（封包入口 → ai-core/skills/story-daily.md） |
 
 ### Claude Code Commands（薄層入口 → ai-core/skills/）
 
@@ -1072,12 +1151,9 @@ aliases:
 | [[.claude/commands/git-history.md\|/git-history]]     | git-history   |
 | [[.claude/commands/obsidian-sync.md\|/obsidian-sync]] | obsidian-sync |
 | [[.claude/commands/add-teacher.md\|/add-teacher]]     | add-teacher   |
-| [[.claude/commands/david-voice.md\|/david-voice]]     | david-voice   |
 | [[.claude/commands/gws-setup.md\|/gws-setup]]       | gws-setup     |
-| [[.claude/commands/new-doc.md\|/new-doc]]           | new-doc       |
 | [[.claude/commands/yt-subtitle.md\|/yt-subtitle]]   | yt-subtitle   |
 | [[.claude/commands/video.md\|/video]]               | video         |
-| [[.claude/commands/video-setup.md\|/video-setup]]   | video-setup   |
 | [[.claude/commands/teach-animation.md\|/teach-animation]] | teach-animation |
 | [[.claude/commands/poetry-research.md\|/poetry-research]] | poetry-research |
 | [[.claude/commands/art-in-teaching.md\|/art-in-teaching]] | art-in-teaching |
@@ -1143,7 +1219,6 @@ aliases:
 | 檔案 | 說明 |
 |------|------|
 | [[setup/teacher-guide.md\|teacher-guide.md]] | 新教師環境設定指南 |
-| [[setup/teacher-guide-v2.1.html\|teacher-guide-v2.1.html]] | 設定指南 HTML v2.1 |
 | [[setup/teacher-guide-v2.2.html\|teacher-guide-v2.2.html]] | 設定指南 HTML v2.2 |
 | [[setup/teacher-guide-v2.3.html\|teacher-guide-v2.3.html]] | 設定指南 HTML v2.3 |
 | [[setup/quick-start.sh\|quick-start.sh]] | 快速安裝腳本（Shell 版） |
@@ -1332,12 +1407,10 @@ aliases:
 | 檔案                                                                                                                                    | 說明                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
 | [[CLAUDE.md\|專案級 Claude Code 指引]]                                                                                                     | 所有 clone 此 repo 的 Claude Code 使用者自動生效的鐵打層指引 |
-| [[INSTRUCTIONS.md\|INSTRUCTIONS]]                                                                                                     | Cowork 用 Instructions（編譯產出）                 |
 | [[INSTRUCTIONS.template.md\|INSTRUCTIONS 模板]]                                                                                         | Instructions 模板源檔                           |
 | [[draft-overlay-contribution-guide]]                                                                                                  | 覆蓋層貢獻指引草稿                                   |
 | [[git-history.skill]]                                                                                                                 | Git History Skill 定義檔                       |
 | [[subject-lesson-45.skill]]                                                                                                           | 45 分鐘課堂設計 Skill 定義檔                         |
-| [[git-history_2026-03-15_v1.pdf\|Git History 週記 PDF（第三週）]]                                                                            | 2026-03-15 Git History 週記 PDF 歸檔            |
 | [[workspaces/README.md\|Workspaces README]]                                                                                           | Workspace 目錄說明                              |
 | [[Obsidian 快速上手指南]]                                                                                                                   | Obsidian 怎麼用                                |
 | [[help_list.txt\|help_list.txt]]                                                                                                      | 指令說明清單                                      |
@@ -1348,13 +1421,11 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/deep-review-2026-03-22\|deep review 2026 03 22]]                                 | （自動收錄）                                      |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/quality-log\|quality log]]                             | 設定檔                                         |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A005-quality\|A005 quality]]                           | （自動收錄）                                      |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/current-task\|current task]] | 設定檔 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A006-quality\|A006 quality]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/gallery\|gallery]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿_畢麒麟的世界\|三天課程文稿 畢麒麟的世界]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿_美化版\|三天課程文稿 美化版]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/說書人文稿v2_美化版\|說書人文稿v2 美化版]] | （自動收錄） |
-| [[git-history_2026-03-22_v1]] | （自動收錄） |
 | [[OceanCradle]] | （自動收錄） |
 | [[video/public/photos/A005/chalkboard\|chalkboard]] | （自動收錄） |
 | [[video/public/photos/A005/coral\|coral]] | （自動收錄） |
@@ -1367,7 +1438,6 @@ aliases:
 | [[Gemini-AI-對系統架構師歷程的觀察與建議]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A007-quality\|A007 quality]] | （自動收錄） |
 | [[3c_records]] | （自動收錄） |
-| [[client_secret_211052561189-f0r9ifhic4885d8oitsn17or5n23puam.apps.googleusercontent.com]] | （自動收錄） |
 | [[extract_docs]] | Python 腳本 |
 | [[extract_tmp]] | Python 腳本 |
 | [[extracted_names]] | （自動收錄） |
@@ -1379,8 +1449,6 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/pipeline-status\|pipeline status]] | 設定檔 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A008-quality\|A008 quality]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/3C_assessment\|3C assessment]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/nian-yio-text\|nian yio text]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/temp_rhymes\|temp rhymes]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/OneDrive_1_2025-2-12\|OneDrive 1 2025 2 12]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$3三年級(3C)秋季台語教學紀錄(林詩閔)\|~$3三年級(3C)秋季台語教學紀錄(林詩閔)]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$3學年冬三年級台語課教學內容-詩閔\|~$3學年冬三年級台語課教學內容 詩閔]] | （自動收錄） |
@@ -1404,7 +1472,6 @@ aliases:
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/app\|app]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/core\|core]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/thumbnail\|thumbnail]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/_rels/document.xml\|document.xml]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/document\|document]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/endnotes\|endnotes]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/fontTable\|fontTable]] | （自動收錄） |
@@ -1418,7 +1485,6 @@ aliases:
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/app\|app]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/core\|core]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/thumbnail\|thumbnail]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/_rels/document.xml\|document.xml]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/document\|document]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/endnotes\|endnotes]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/fontTable\|fontTable]] | （自動收錄） |
@@ -1462,51 +1528,12 @@ aliases:
 | [[README]] | （自動收錄） |
 | [[teacheros-personal]] | （自動收錄） |
 | [[workspace]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/index\|index]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/00_Foreword\|00 Foreword]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/00_Table_of_Contents\|00 Table of Contents]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/01_The_Plant_Between_Sun_and_Earth\|01 The Plant Between Sun and Earth]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/02_The_Dandelion\|02 The Dandelion]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/03_Fungi\|03 Fungi]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/04_Algae\|04 Algae]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/05_Botany_in_Class_Five\|05 Botany in Class Five]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/05_Lichens\|05 Lichens]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/06_Moss\|06 Moss]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/07_Ferns\|07 Ferns]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/08_Conifers\|08 Conifers]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/09_Trees_and_the_Earth\|09 Trees and the Earth]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/10_Flowering_Plants\|10 Flowering Plants]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/11_Lower_and_Higher_Flowering_Plants\|11 Lower and Higher Flowering Plants]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/12_The_Blossom\|12 The Blossom]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/13_Pollen\|13 Pollen]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/14_Flowers_and_Butterflies\|14 Flowers and Butterflies]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/15_Caterpillars_and_Butterflies\|15 Caterpillars and Butterflies]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/16_The_Tulip\|16 The Tulip]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/17_Seeds_and_Cotyledons\|17 Seeds and Cotyledons]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/18_The_Rose\|18 The Rose]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/19_The_Rose_Family_\|19 The Rose Family ]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/20_The_Cabbage\|20 The Cabbage]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/21_The_Nettle\|21 The Nettle]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/22_The_Oak\|22 The Oak]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/23_The_Birch\|23 The Birch]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/24_The_Palm_Tree\|24 The Palm Tree]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/25_Tea__Sugar_and_Coffee\|25 Tea  Sugar and Coffee]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/26_Grass_and_Cereals\|26 Grass and Cereals]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/27_Leaves_and_Blossoms\|27 Leaves and Blossoms]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/28_Bees\|28 Bees]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/29_The_Beehive\|29 The Beehive]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters/30_The_Spirit_of_the_Bee\|30 The Spirit of the Bee]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/project\|project]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/theme-skeleton\|theme skeleton]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/theme-skeleton\|theme skeleton]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/kovacs-teaching\|kovacs teaching]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/chalkboard-prompt\|chalkboard prompt]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/content\|content]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/images\|images]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/quality-report\|quality report]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/raw-materials\|raw materials]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001/references\|references]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/current-task\|current task]] | （自動收錄） |
+| [[client_secret_211052561189-f0r9ifhic4885d8oitsn17or5n23puam.apps.googleusercontent.com]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/nian-yio-text.txt:SUGGEST:nian-yio-text\|nian yio text.txt:SUGGEST:nian yio text]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/temp_rhymes.txt:SUGGEST:temp_rhymes\|temp rhymes.txt:SUGGEST:temp rhymes]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/_rels/document.xml\|document.xml]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/_rels/document.xml\|document.xml]] | （自動收錄） |
+| [[workspace-binary-check]] | （自動收錄） |
 
 ---
 
