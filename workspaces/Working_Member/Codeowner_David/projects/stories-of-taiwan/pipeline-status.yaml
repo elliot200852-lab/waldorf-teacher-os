@@ -1,18 +1,17 @@
 story_id: A008
 pipeline_version: 2.2.0
 started_at: 2026-03-24T10:30:00
-completed_at: 2026-03-24T10:45:00
-mode: scheduled
+completed_at: 2026-03-24T09:51:00
+mode: completed
 steps:
   step_0_1: { status: PASS, note: "A008, 各族的土地故事, 阿美族" }
   step_2:   { status: PASS, note: "raw-materials.md 7851 bytes, 10 sources with URLs" }
   step_3:   { status: PASS, note: "content.md 7273b, narration.md 9120b, images.md 4725b, chalkboard-prompt.md 2019b" }
   step_4:   { status: PASS, note: "Quality check PASSED, reviews/A008-quality.md" }
-  step_5:   { status: SKIP, reason: "Claude in Chrome unavailable in scheduled mode" }
-  step_6:   { status: SKIP, reason: "Chalkboard image missing (Step 5 skipped); assemble-story.js would exit code 2. HTML/PDF pending manual run after Step 5." }
-  step_7:   { status: PASS, note: "Story archived in index.yaml, project.yaml updated, current-task.yaml deleted" }
-pending_actions:
-  - "chalkboard: 需手動執行 Step 5（interactive session 中說「臺灣的故事 A008 黑板畫」）並重新組裝"
-  - "assemble: 黑板畫完成後執行 node publish/scripts/assemble-story.js workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A008 --pdf --upload"
-  - "drive_upload: HTML+PDF 尚未上傳 Google Drive"
-story_content_status: COMPLETE
+  step_5:   { status: PASS, note: "Gemini 生成 AssemblyStory-A008-chalkboard.png (8.6MB)" }
+  step_6:   { status: PASS, note: "HTML 12MB, PDF 11MB (4 pages), Drive upload OK" }
+  step_7:   { status: PASS, note: "Story archived in index.yaml, project.yaml updated" }
+pending_actions: []
+drive_files:
+  html: "1rlv_b3mw2yYUPulPjF-9IOdbaZxEHCOT"
+  pdf:  "1ESbniJ3lxUVFL6FiEwvzZ-s29KaApLKr"

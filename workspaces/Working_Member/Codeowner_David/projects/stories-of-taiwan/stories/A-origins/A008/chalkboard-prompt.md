@@ -18,4 +18,4 @@ A Waldorf-style chalkboard illustration drawn with chalk on a dark slate backgro
 
 ## 下載檔案名
 
-（Gemini 產圖後填入，格式：AssemblyStory-A008-chalkboard.png）
+AssemblyStory-A008-chalkboard.png
