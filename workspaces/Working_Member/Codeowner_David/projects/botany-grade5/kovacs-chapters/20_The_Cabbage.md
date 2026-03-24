@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 20 高麗菜"
+---
 # 20. The Cabbage
 
 The difference between the apple plant and the rose plant is that the

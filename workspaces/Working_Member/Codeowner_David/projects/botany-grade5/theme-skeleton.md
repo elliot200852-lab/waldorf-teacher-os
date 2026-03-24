@@ -1,3 +1,7 @@
+---
+aliases:
+  - "五年級植物學 30 課骨架"
+---
 # 五年級植物學主課程｜台灣版 30 課骨架
 
 > **原型：** Charles Kovacs, *Botany* (Floris Books, 2005)

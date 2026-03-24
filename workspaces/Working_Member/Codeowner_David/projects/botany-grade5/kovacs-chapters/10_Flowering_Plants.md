@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 10 開花植物"
+---
 # 10. Flowering Plants
 
 Trees are really a kind

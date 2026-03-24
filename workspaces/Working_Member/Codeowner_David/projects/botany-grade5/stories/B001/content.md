@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "B001 植物在太陽與大地之間 故事正文"
 lesson_id: B001
 title: 植物在太陽與大地之間
 block: block-1-plant-and-earth

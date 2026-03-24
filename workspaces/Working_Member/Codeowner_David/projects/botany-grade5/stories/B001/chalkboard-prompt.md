@@ -1,3 +1,7 @@
+---
+aliases:
+  - "B001 黑板畫提示"
+---
 # B001 黑板畫 Prompt
 
 下載檔名：Botany-B001-chalkboard.png

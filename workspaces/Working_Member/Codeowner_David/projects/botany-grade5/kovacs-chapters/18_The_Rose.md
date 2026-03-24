@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 18 玫瑰"
+---
 # 18. The Rose
 
 There are so many types of flowers and blossom-bearing plants that we

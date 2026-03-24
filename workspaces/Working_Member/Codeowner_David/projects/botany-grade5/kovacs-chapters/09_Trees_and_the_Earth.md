@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 09 樹木與大地"
+---
 # 9. Trees and the Earth
 
 We have learned about children who are four years old, who still don't

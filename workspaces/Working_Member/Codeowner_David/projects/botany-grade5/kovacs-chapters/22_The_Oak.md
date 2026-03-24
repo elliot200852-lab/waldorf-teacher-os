@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 22 橡樹"
+---
 # 22. The Oak
 
 You have heard in geography how important trees are. In the Scandi-

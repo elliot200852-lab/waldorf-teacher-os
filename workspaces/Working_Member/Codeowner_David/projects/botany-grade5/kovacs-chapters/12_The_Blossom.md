@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 12 花朵"
+---
 # 12. The Blossom
 
 The plants that are like children before they go to school - mosses, ferns,

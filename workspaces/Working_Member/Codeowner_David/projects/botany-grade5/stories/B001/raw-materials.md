@@ -1,3 +1,7 @@
+---
+aliases:
+  - "B001 原始素材"
+---
 # B001 素材包
 
 ## Kovacs 原文核心段落（Ch.1: The Plant Between Sun and Earth）

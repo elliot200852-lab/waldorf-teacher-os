@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 26 草與穀物"
+---
 # 26. Grass and Cereals
 
 One can think of trees and flowers and shrubs and herbs as the

@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 11 低等與高等開花植物"
+---
 # 11. Lower and Higher Flowering Plants
 
 If you want to know what real attention is, then you can learn it from the

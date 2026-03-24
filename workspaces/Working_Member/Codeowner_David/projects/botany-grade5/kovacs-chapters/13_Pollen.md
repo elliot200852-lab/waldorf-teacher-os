@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 13 花粉"
+---
 # 13. Pollen
 
 In olden times a king on this throne carried in one hand his sceptre and

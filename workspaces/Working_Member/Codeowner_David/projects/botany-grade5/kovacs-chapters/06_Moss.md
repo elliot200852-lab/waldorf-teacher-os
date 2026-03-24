@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 06 苔蘚"
+---
 # 6. Moss
 
 The fungi were like very young babies, the algae like toddlers who are

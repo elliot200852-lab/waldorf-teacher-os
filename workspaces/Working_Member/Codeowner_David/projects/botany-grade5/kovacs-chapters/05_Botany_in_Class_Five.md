@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 05 五年級的植物學"
+---
 # 5. Botany in Class Five
 
 If we consider the stage of development at which the children of ten or

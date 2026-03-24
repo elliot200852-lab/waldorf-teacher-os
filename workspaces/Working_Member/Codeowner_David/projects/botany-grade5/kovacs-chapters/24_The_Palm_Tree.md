@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 24 棕櫚"
+---
 # 24. The Palm Tree
 
 The root of a plant belongs to the earth, and it loves the earth, it grows

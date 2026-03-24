@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 03 真菌"
+---
 # 3. Fungi
 
 Each of the four elements play a part in how the plant grows: water and

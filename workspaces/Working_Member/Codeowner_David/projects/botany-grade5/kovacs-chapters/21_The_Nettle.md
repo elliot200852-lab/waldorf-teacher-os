@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 21 蕁麻"
+---
 # 21. The Nettle
 
 You have heard of the flowers and plants that we grow in our

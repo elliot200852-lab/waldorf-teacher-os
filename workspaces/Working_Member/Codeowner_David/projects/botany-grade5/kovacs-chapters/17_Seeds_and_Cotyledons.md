@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 17 種子與子葉"
+---
 # 17. Seeds and Cotyledons
 
 We divided the flowering plants into two groups. The flowering plants

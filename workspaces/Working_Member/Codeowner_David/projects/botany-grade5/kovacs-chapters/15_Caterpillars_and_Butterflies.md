@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 15 毛毛蟲與蝴蝶"
+---
 # 15. Caterpillars and Butterflies
 
 Flowers and butterflies are both children of the light, they love the light.

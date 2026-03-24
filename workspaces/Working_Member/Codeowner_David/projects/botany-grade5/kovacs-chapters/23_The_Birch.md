@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 23 白樺"
+---
 # 23. The Birch
 
 You could call the oak tree the king of the woods, because it is the tree

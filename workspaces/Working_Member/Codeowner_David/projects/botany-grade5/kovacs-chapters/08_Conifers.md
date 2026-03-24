@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 08 針葉樹"
+---
 # 8. Conifers
 
 We compared the plants and growing children: from fungi, algae, lichen

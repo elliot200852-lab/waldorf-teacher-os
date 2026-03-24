@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 27 葉與花"
+---
 # 27. Leaves and Blossoms
 
 When you look at a plant, perhaps you like the flowers, or perhaps you

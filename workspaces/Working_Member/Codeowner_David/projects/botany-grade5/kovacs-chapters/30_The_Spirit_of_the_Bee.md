@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 30 蜜蜂的精神"
+---
 # 30. The Spirit of the Bee
 
 If you think of all the different work done in a beehive; if you think of the

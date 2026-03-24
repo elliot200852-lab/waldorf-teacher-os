@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 28 蜜蜂"
+---
 # 28. Bees
 
 It is easy to see why there is an attraction between bees and plants, be-

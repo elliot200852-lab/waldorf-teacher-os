@@ -1,3 +1,7 @@
+---
+aliases:
+  - "B001 Kovacs 教學指引"
+---
 # B001 Kovacs 教學精要與當代科學的對話
 
 ## Kovacs 的教學巧妙之處

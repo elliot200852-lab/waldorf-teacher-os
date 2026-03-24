@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 05 地衣"
+---
 # 5. Lichens
 
 We have looked at two plant families, the fungi and the algae. We com-

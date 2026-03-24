@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 植物學 目錄"
+---
 # Table of Contents
 
 Botany in Class Five

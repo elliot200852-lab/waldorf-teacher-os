@@ -944,10 +944,14 @@ aliases:
 | [[publish/images/di_steps.png\|di_steps.png]] | 圖片：差異化步驟 |
 | [[publish/images/workflow.png\|workflow.png]] | 圖片：工作流程 |
 | [[publish/scripts/assemble-story.js\|assemble-story.js]] | 臺灣的故事組裝腳本（v2.2.0，Markdown → HTML+PDF + GWS upsert） |
+| [[publish/scripts/assemble-botany.js\|assemble-botany.js]] | 五年級植物學組裝腳本 |
 | [[beautify-A002-完整版.html]] | A002 水的雕刻刀 完整版 HTML |
 | [[beautify-A003-完整版.html]] | A003 火的禮物 完整版 HTML |
 | [[backup-to-drive]] | Python 腳本 |
 | [[backup-reference]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |

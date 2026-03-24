@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 07 蕨類"
+---
 # 7. Ferns
 
 We have heard of the babies and the toddlers of the plant world. Before

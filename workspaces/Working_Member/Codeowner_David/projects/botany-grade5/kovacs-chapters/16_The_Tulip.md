@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 16 鬱金香"
+---
 # 16. The Tulip
 
 We saw that there are two kinds of flowering plants: one kind in which

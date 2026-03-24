@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 19 薔薇科"
+---
 # 19. The Rose Family.
 
 The rose is the plant that loves the earth as much as it loves the sun, and

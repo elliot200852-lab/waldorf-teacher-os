@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 04 藻類"
+---
 # 4. Algae
 
 As you know mushrooms or fungi are the babies of the plant world. They

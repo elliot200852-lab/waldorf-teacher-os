@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 02 蒲公英"
+---
 # 2. The Dandelion
 
 If you walk over a field in spring or summer you are quite likely to see a

@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 植物學 序言"
+---
 # 4. Foreword
 
 Charles Kovacs was a teacher at the Rudolf Steiner School in Edinburgh

@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 25 茶、糖與咖啡"
+---
 # 25. Tea, Sugar and Coffee
 
 Not only do we know the coconut tree from far away tropical lands, but

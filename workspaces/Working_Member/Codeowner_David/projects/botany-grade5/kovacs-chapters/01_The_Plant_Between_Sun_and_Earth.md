@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 01 植物在太陽與大地之間"
+---
 # 1. The Plant Between Sun and Earth
 
 In the winter when we have a particularly long spell of cold days, it is not

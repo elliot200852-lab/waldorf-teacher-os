@@ -1,3 +1,7 @@
+---
+aliases:
+  - "Kovacs 29 蜂巢"
+---
 # 29. The Beehive
 
 The queen bee lays her eggs in the regular, hexagonal cells, made by the
