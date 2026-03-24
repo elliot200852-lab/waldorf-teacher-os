@@ -1045,6 +1045,20 @@ aliases:
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
 
 ---
 
@@ -1534,6 +1548,9 @@ aliases:
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/_rels/document.xml\|document.xml]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/_rels/document.xml\|document.xml]] | （自動收錄） |
 | [[workspace-binary-check]] | （自動收錄） |
+| [[pr-acl-check]] | （自動收錄） |
+| [[repo-health-report]] | （自動收錄） |
+| [[yaml-validate]] | （自動收錄） |
 
 ---
 
