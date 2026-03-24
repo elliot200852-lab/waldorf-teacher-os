@@ -1,0 +1,43 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 五年級植物學・故事總索引
+# 路徑：projects/botany-grade5/index.yaml
+# 由 pipeline 自動維護，勿手動編輯
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+stories:
+  - id: B001
+    title: 植物在太陽與大地之間
+    block: block-1-plant-and-earth
+    kovacs_chapter: "01_The_Plant_Between_Sun_and_Earth"
+    taiwan_species: ["玉山植物帶垂直分布", "玉山圓柏"]
+    date_created: 2026-03-24
+    files:
+      content: stories/B001/content.md
+      kovacs_teaching: stories/B001/kovacs-teaching.md
+      chalkboard_prompt: stories/B001/chalkboard-prompt.md
+      images: stories/B001/images.md
+      references: stories/B001/references.md
+      raw_materials: stories/B001/raw-materials.md
+      quality_report: stories/B001/quality-report.md
+    quality_check: passed
+    drive:
+      html: "15hjBYvQtugWZIVOjIzDvTSQDaure274u"
+      pdf: "1feS0g6ptMvat6Vbvmm-rHZnNXTfCqpQp"
+    tags: [植物與大地, 光與暗, 玉山, 垂直分布, 台灣俗諺]
+# 每筆格式：
+# - id: B001
+#   title: 植物在太陽與大地之間
+#   block: block-1-plant-and-earth
+#   kovacs_chapter: "01_The_Plant_Between_Sun_and_Earth"
+#   taiwan_species: ["玉山植物帶"]
+#   date_created: 2026-03-25
+#   files:
+#     content: stories/B001/content.md
+#     kovacs_teaching: stories/B001/kovacs-teaching.md
+#     chalkboard_prompt: stories/B001/chalkboard-prompt.md
+#     images: stories/B001/images.md
+#     references: stories/B001/references.md
+#     raw_materials: stories/B001/raw-materials.md
+#     quality_report: stories/B001/quality-report.md
+#   quality_check: passed
+#   tags: []
