@@ -31,8 +31,8 @@ subject_contexts:
       高動機：課堂參與度高，享受傳球遊戲、歌唱等活動，能大方且自信地嘗試開口，對學習素材展現強烈好奇。
     di_distribution:
       A: 15
-      B: 2
+      B: 3
       C: 3
       D: 0
-      unknown: 5  # 尚未分析完畢的學生進度
-    last_updated: 2026-03-23
+      unknown: 4  # 尚未分析完畢的學生進度
+    last_updated: 2026-03-24

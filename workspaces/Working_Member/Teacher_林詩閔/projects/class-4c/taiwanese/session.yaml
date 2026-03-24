@@ -1,11 +1,11 @@
 subject: 台語
-last_updated: 2026-03-23
+last_updated: 2026-03-24
 current_position:
   block: 三 (評量與追蹤)
-  step: 1 (DI Profile 建立完成)
+  step: 2 (DI Profile 已更新詳細筆記與轉學生)
 next_action:
-  description: 測試「做唸謠」技能設計後續補充活動，或針對 C/D 類學生設計專屬教學策略。
-  input_needed_from_teacher: 對於尚未定義的 5 位學生的觀察補充
+  description: 針對 L1-L3《猴山仔》設計差異化教學 (DI) 活動細節與工作本黏貼單。
+  input_needed_from_teacher: 對於新同學 (11, 27, 28) 的初步觀察傾向
   tool_to_use: niamyio
 confirmed_decisions:
   - 已完成教師個人設定檔 (Teacher_林詩閔/teacheros-personal.yaml) 的 6 大區塊
@@ -14,7 +14,7 @@ confirmed_decisions:
   - 確立春季 8 節課結構：水果唸謠 (L1-L3)、天馬故事與烏馬烏 (L4-L7)、自我介紹 (L8)
   - 確立唸謠設計「平穩+亮點」與「意志力記憶」的教學原則
   - 完成系統技能「做唸謠 (niamyio)」的開發與註冊
-  - 完成 4C 班級 20 位學生的「台語科 DI 能力×動機分組」定義與資料整合
+  - 完成 4C 班級 21 位學生的「台語科 DI 能力×動機分組」定義與資料整合
 output_files:
   syllabus_versions:
     - version: v1
