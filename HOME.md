@@ -408,6 +408,7 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
+| [[README]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_陳佩珊/teacheros-personal.yaml\|陳佩珊個人身份層]] | 教學信念、工作偏好 |
 | [[workspaces/Working_Member/Teacher_陳佩珊/workspace.yaml\|陳佩珊 workspace 狀態]] | Workspace 狀態 |
 | [[workspaces/Working_Member/Teacher_陳佩珊/env-preset.env\|陳佩珊環境預填]] | 環境變數設定 |
@@ -473,6 +474,7 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
+| [[README]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_劉佳芳/teacheros-personal.yaml\|劉佳芳個人身份層]] | 教學信念、工作偏好 |
 | [[workspaces/Working_Member/Teacher_劉佳芳/workspace.yaml\|劉佳芳 workspace 狀態]] | Workspace 狀態 |
 | [[workspaces/Working_Member/Teacher_劉佳芳/GWS_CLI_Windows_Reference.md\|GWS CLI Windows 參考指南]] | Windows 環境 GWS CLI 操作指南 |
@@ -1021,6 +1023,9 @@ aliases:
 | [[.claude/skills/story-writer/SKILL.md\|story-writer SKILL]] | 臺灣故事撰寫（封包入口 → ai-core/skills/story-writer.md） |
 | [[.claude/skills/story-verify/SKILL.md\|story-verify SKILL]] | 臺灣故事品質檢查（封包入口 → ai-core/skills/story-verify.md） |
 | [[.claude/skills/story-archive/SKILL.md\|story-archive SKILL]] | 臺灣故事歸檔（封包入口 → ai-core/skills/story-archive.md） |
+| [[.claude/skills/beautify/SKILL.md:SUGGEST:Claude Code 設定（.claude/）\|）]] | （自動收錄） |
+| [[.claude/skills/check-compat/SKILL.md:SUGGEST:Claude Code 設定（.claude/）\|）]] | （自動收錄） |
+| [[.claude/skills/story-daily/SKILL.md:SUGGEST:Claude Code 設定（.claude/）\|）]] | （自動收錄） |
 
 ### Claude Code Commands（薄層入口 → ai-core/skills/）
 
@@ -1412,6 +1417,33 @@ aliases:
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/full_output\|full output]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/query_taigi\|query taigi]] | Python 腳本 |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/records/niamyio_audio_error_summary\|niamyio audio error summary]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/chalkboard-prompt\|chalkboard prompt]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/images\|images]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/narration\|narration]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/raw-materials\|raw materials]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/chalkboard-prompt\|chalkboard prompt]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/images\|images]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/narration\|narration]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/raw-materials\|raw materials]] | （自動收錄） |
+| [[README]] | （自動收錄） |
+| [[teacheros-personal]] | （自動收錄） |
+| [[workspace]] | （自動收錄） |
+| [[README]] | （自動收錄） |
+| [[teacheros-personal]] | （自動收錄） |
+| [[workspace]] | （自動收錄） |
+| [[README]] | （自動收錄） |
+| [[teacheros-personal]] | （自動收錄） |
+| [[workspace]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/叮噹叮叮噹\|叮噹叮叮噹]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/我愛日頭\|我愛日頭]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/頭殼肩胛頭\|頭殼肩胛頭]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/鳥鼠仔腹肚枵\|鳥鼠仔腹肚枵]] | （自動收錄） |
+| [[README]] | （自動收錄） |
+| [[teacheros-personal]] | （自動收錄） |
+| [[workspace]] | （自動收錄） |
+| [[README]] | （自動收錄） |
+| [[teacheros-personal]] | （自動收錄） |
+| [[workspace]] | （自動收錄） |
 
 ---
 
