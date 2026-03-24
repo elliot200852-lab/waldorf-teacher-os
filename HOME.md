@@ -363,48 +363,63 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-anchor-handout-v2\|12A 畢業專題 生命定錨練習單 v2]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-sharing-lesson-plan-v2\|12A 畢業專題 生命史教案 v2]] | 教案 |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-story-ppt-script-v2\|12A 畢業專題 生命轉折 PPT 腳本 v2]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_01\|slide 01]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_02\|slide 02]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_03\|slide 03]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_04\|slide 04]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_05\|slide 05]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_06\|slide 06]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_07\|slide 07]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_08\|slide 08]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_09\|slide 09]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_10\|slide 10]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_11\|slide 11]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/media/slide_12\|slide 12]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-speech-draft-v1\|教學生命成長與教師的創造性 演講稿 v1]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_陳佩珊/teacheros-personal.yaml\|陳佩珊個人身份層]] | 教學信念、工作偏好 |
 | [[workspaces/Working_Member/Teacher_陳佩珊/workspace.yaml\|陳佩珊 workspace 狀態]] | Workspace 狀態 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/env-preset.env\|陳佩珊環境預填]] | 環境變數設定 |
 
 ### 12A 班級（畢業專題）
+
+**班級設定**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/project.yaml\|12A 班級設定]] | 班級脈絡與科目清單 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/students.yaml\|12A 學生資料]] | 學生名冊 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/roster.yaml\|12A 班級名冊]] | 班級名冊 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/di-profile.yaml\|畢業專題 DI 設定]] | 差異化教學設定 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/working/session.yaml\|畢業專題進度錨點]] | 目前 Block/Step |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/marketing/working/session.yaml\|行銷科進度錨點]] | 目前 Block/Step |
+
+**畢業專題教學內容**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/senior-project-syllabus-draft-v1.md\|畢業專題書面報告鷹架]] | 兩萬字書面報告寫作鷹架課程草案 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-sharing-lesson-plan-v1.md\|生命史教案 v1]] | 第一堂課：意志、熱情與書寫的定錨 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-sharing-lesson-plan-v2.md\|生命史教案 v2]] | v2 修訂版 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-anchor-handout-v1.md\|生命定錨練習單 v1]] | 從老師生命史出發的定錨練習 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-anchor-handout-v2.md\|生命定錨練習單 v2]] | v2 修訂版 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-story-ppt-script-v1.md\|生命轉折 PPT 腳本 v1]] | 佩珊老師生命轉折簡報腳本設計 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-story-ppt-script-v2.md\|生命轉折 PPT 腳本 v2]] | v2 修訂版 |
+
+**其他**
 
 | 檔案 | 說明 |
 |------|------|
 | [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/content/teacheros-personal-test-v1-20260315.md\|個人設定測試檔]] | 行銷科測試用設定 |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/senior-project-syllabus-draft-v1.md\|畢業專題書面報告鷹架]] | 兩萬字書面報告寫作鷹架課程草案 |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-anchor-handout-v1.md\|生命定錨練習單]] | 畢業專題：從老師生命史出發的定錨練習 |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-sharing-lesson-plan-v1.md\|生命史教案]] | 畢業專題第一堂課：意志、熱情與書寫的定錨 |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content/life-story-ppt-script-v1.md\|生命轉折 PPT 腳本]] | 佩珊老師生命轉折簡報腳本設計 |
+
+### 教學創造性簡報
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/index.html\|教學創造性簡報 HTML]] | 簡報主頁（圖檔存於 private/） |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt/style.css\|教學創造性簡報 CSS]] | 簡報樣式 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-speech-draft-v1.md\|教學創造性演講稿 v1]] | 教學生命成長與教師的創造性 |
+
+> 簡報圖檔（slide_01-12.png）存於 `private/teaching-creativity-ppt/media/`，不進 git。
 
 ### 心抱抱 Podcast 筆記
 
-| 檔案                                                                                                               | 說明         |
-| ---------------------------------------------------------------------------------------------------------------- | ---------- |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP91找到你生命的軸心—王智弘老師邀你直面人智學.md\|心抱抱 EP91]]    | 人智學與生命軸心   |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP91找到你生命的軸心—王智弘老師邀你直面人智學.docx\|EP91 原稿]]   | docx 原始檔   |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP96邱奕叡老師帶你窺探慈心高中的實踐性課程.md\|心抱抱 EP96]]      | 高中實踐性課程    |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP96邱奕叡老師帶你窺探慈心高中的實踐性課程.docx\|EP96 原稿]]     | docx 原始檔   |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP97David 老師分享八年級專題與真實的內在姿態.md\|心抱抱 EP97]]  | 八年級專題與內在姿態 |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP97David 老師分享八年級專題與真實的內在姿態.docx\|EP97 原稿]] | docx 原始檔   |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP103如何形成華德福學校的圓.md\|心抱抱 EP103]]            | 華德福學校的圓    |
-| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP103如何形成華德福學校的圓.docx\|EP103 原稿]]           | docx 原始檔   |
-
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP91找到你生命的軸心—王智弘老師邀你直面人智學.md\|心抱抱 EP91]] | 人智學與生命軸心 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP91找到你生命的軸心—王智弘老師邀你直面人智學.docx\|EP91 原稿]] | docx 原始檔 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP96邱奕叡老師帶你窺探慈心高中的實踐性課程.md\|心抱抱 EP96]] | 高中實踐性課程 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP96邱奕叡老師帶你窺探慈心高中的實踐性課程.docx\|EP96 原稿]] | docx 原始檔 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP97David 老師分享八年級專題與真實的內在姿態.md\|心抱抱 EP97]] | 八年級專題與內在姿態 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP97David 老師分享八年級專題與真實的內在姿態.docx\|EP97 原稿]] | docx 原始檔 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP103如何形成華德福學校的圓.md\|心抱抱 EP103]] | 華德福學校的圓 |
+| [[workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao/EP103如何形成華德福學校的圓.docx\|EP103 原稿]] | docx 原始檔 |
 ---
 
 ## 劉佳芳老師的工作空間
@@ -1345,6 +1360,13 @@ aliases:
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/styles\|styles]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/theme/theme1\|theme1]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/webSettings\|webSettings]] | （自動收錄） |
+| [[niamyio_toy_guide_2026]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/方正宇\|方正宇 學習紀錄]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/create_dummy_audio\|create dummy audio]] | Python 腳本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/download_tts\|download tts]] | Python 腳本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/full_output\|full output]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/query_taigi\|query taigi]] | Python 腳本 |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/records/niamyio_audio_error_summary\|niamyio audio error summary]] | （自動收錄） |
 
 ---
 
