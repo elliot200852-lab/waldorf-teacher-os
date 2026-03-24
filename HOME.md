@@ -334,14 +334,13 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
-| [[stories/A-origins/A007/content\|content]] | 故事正文 |
-| [[stories/A-origins/A007/narration\|narration]] | 教師說書稿 |
-| [[stories/A-origins/A007/images\|images]] | 投影圖像清單 |
-| [[stories/A-origins/A007/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
-| [[stories/A-origins/A007/raw-materials\|raw-materials]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A007/content\|content]] | 故事正文 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A007/narration\|narration]] | 教師說書稿 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A007/images\|images]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A007/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A007/raw-materials\|raw-materials]] | 研究素材包 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A007-quality\|品質報告]] | 品質審核紀錄 |
 
-> A007 檔案位於根目錄 `stories/A-origins/A007/`（路徑異常，待搬移至 workspace）
 
 **A008 浪的節奏——阿美族的海與豐年祭**
 
