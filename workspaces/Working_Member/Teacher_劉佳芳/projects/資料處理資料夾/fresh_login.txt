@@ -1,0 +1,15 @@
+{
+  "error": {
+    "code": 400,
+    "message": "error: unexpected argument '--all' found\n\n  tip: a similar argument exists: '--full'\n\nUsage: auth login --full\n\nFor more information, try '--help'.\n",
+    "reason": "validationError"
+  }
+}
+error[validation]: error: unexpected argument '--all' found
+
+  tip: a similar argument exists: '--full'
+
+Usage: auth login --full
+
+For more information, try '--help'.
+

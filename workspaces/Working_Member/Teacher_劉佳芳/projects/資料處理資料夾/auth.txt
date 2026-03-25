@@ -1,0 +1,4 @@
+Open this URL in your browser to authenticate:
+
+  https://accounts.google.com/o/oauth2/auth?scope=drive%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile&access_type=offline&redirect_uri=http://localhost:11454&response_type=code&client_id=94701899932-upmftpiku48p2a95ocp5cfd4fsbhdn0d.apps.googleusercontent.com&prompt=select_account+consent
+

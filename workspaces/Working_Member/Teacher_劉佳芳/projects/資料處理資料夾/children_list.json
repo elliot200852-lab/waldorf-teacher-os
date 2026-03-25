@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "id": "10UrIo8pUXtB3PEgmKnxdbCySVuwzz5fc",
+      "kind": "drive#file",
+      "mimeType": "application/vnd.google-apps.folder",
+      "name": "英文領域-Susan老師線上研習及2026年3月研習"
+    },
+    {
+      "id": "1QYNPHghcdu5MWtDjTtEI0rzfYimhSNBs",
+      "kind": "drive#file",
+      "mimeType": "application/vnd.google-apps.folder",
+      "name": "山鹿老師戶外教育研習＿9/15、2026/1/26-28"
+    },
+    {
+      "id": "18YnR8vR4Nl4MEbobJu_WzDBH0iU2YVAQ",
+      "kind": "drive#file",
+      "mimeType": "application/vnd.google-apps.folder",
+      "name": "尤清1203研習"
+    }
+  ],
+  "incompleteSearch": false,
+  "kind": "drive#fileList"
+}

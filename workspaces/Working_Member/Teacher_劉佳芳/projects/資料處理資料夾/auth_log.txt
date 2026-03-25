@@ -1,0 +1,35 @@
+﻿node.exe : Open this URL in your browser to authenticate:
+位於 C:\Users\user\AppData\Roaming\npm\gws.ps1:24 字元:5
++     & "node$exe"  "$basedir/node_modules/@googleworkspace
+/cli/run-gws ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Open this URL 
+    i...o authenticate::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+  https://accounts.google.com/o/oauth2/auth?scope=https://w
+ww.googleapis.com/auth/drive%20https://www.googleapis.com/a
+uth/cloud-platform%20openid%20https://www.googleapis.com/au
+th/userinfo.email%20https://www.googleapis.com/auth/userinf
+o.profile&access_type=offline&redirect_uri=http://localhost
+:9712&response_type=code&client_id=94701899932-upmftpiku48p
+2a95ocp5cfd4fsbhdn0d.apps.googleusercontent.com&prompt=sele
+ct_account+consent
+
+Using keyring backend: keyring
+[?1049h[?1049h[1;1H[1m[38;5;6;49mSelect OAuth scopes[1;22H[22m[38;5;8;49m2/2 selected[3;1H[39;49m????????????????????????????????????????????????????????????[4;1H[7m[1m??[38;5;2;49m[x] [38;5;15;49mGoogle Drive[39;49m  [38;5;8;49mhttps://www.googleapis.com/auth/drive[39;49m   [5;3H[27m[22m[38;5;2;49m[x] [38;5;15;49mCloud Platform[5;23H[38;5;8;49mhttps://www.googleapis.com/auth/cloud-[9;1H[39;49m????????????????????????????????????????????????????????????[10;1H[38;5;3;49m ?? [39;49mNavigate[10;15H[38;5;3;49m Space [39;49mToggle[10;30H[38;5;3;49m a [39;49mAll[10;38H[38;5;2;49m Enter [39;49mConfirm[10;54H[38;5;1;49m Esc [39;49mCa[39m[49m[59m[0m[?25l[?1049l[?1049l[?25h{
+  "account": "rd@waldorf.ilc.edu.tw",
+  "credentials_file": "C:\\Users\\user\\.config\\gws\\credentials.enc",
+  "encryption": "AES-256-GCM (key in OS keyring or local `.encryption_key`; set GOOGLE_WORKSPACE_CLI_KEYRING_BACKEND=file for headless)",
+  "message": "Authentication successful. Encrypted credentials saved.",
+  "scopes": [
+    "https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/cloud-platform",
+    "openid",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/userinfo.profile"
+  ],
+  "status": "success"
+}
