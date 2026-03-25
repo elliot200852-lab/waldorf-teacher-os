@@ -72,45 +72,36 @@ jobs:
               EXISTING=$(gh issue list --state open --search "Workspace 監控 ${ws_name}" --json number --jq 'length')
 
               if [ "$EXISTING" = "0" ]; then
-                BODY="## Workspace 二進位檔案超過門檻
+                B="## Workspace 二進位檔案超過門檻"
+                B="${B}\n\n老師： ${teacher_name}"
+                B="${B}\nEmail： ${teacher_email}"
+                B="${B}\nWorkspace： ${ws_name}"
+                B="${B}\n二進位檔案數： ${count}（門檻：${THRESHOLD}）"
+                B="${B}\n\n### 檔案清單\n\n${file_list}"
+                B="${B}\n---\n\n### 可直接複製寄出的 Email"
+                B="${B}\n\n> 收件人： ${teacher_email}"
+                B="${B}\n> 主旨： TeacherOS Workspace 檔案整理提醒"
+                B="${B}\n>"
+                B="${B}\n> ${teacher_name}老師好，"
+                B="${B}\n>"
+                B="${B}\n> 系統偵測到你的 Workspace 裡目前有 ${count} 個大型檔案。"
+                B="${B}\n> Git Repo 比較適合存純文字檔，大型檔案放進來會讓大家 pull 越來越慢。"
+                B="${B}\n>"
+                B="${B}\n> 建議你選一個方式處理："
+                B="${B}\n> 1. 移到 private/ 資料夾（只留本機，不上傳）"
+                B="${B}\n> 2. 上傳到 Google Drive"
+                B="${B}\n> 3. 請 AI 幫你轉成 .md 檔"
+                B="${B}\n>"
+                B="${B}\n> 不急，有空處理就好。有問題隨時找我。"
+                B="${B}\n>"
+                B="${B}\n> David"
+                B="${B}\n\n---"
+                B="${B}\n此 Issue 由 GitHub Action 自動建立，處理完畢後請 close。"
 
-**老師：** ${teacher_name}
-**Email：** ${teacher_email}
-**Workspace：** \`${ws_name}\`
-**二進位檔案數：** ${count}（門檻：${THRESHOLD}）
-
-### 檔案清單
-
-$(printf "$file_list")
-
----
-
-### 可直接複製寄出的 Email
-
-> **收件人：** ${teacher_email}
-> **主旨：** TeacherOS Workspace 檔案整理提醒
->
-> ${teacher_name}老師好，
->
-> 系統偵測到你的 Workspace 裡目前有 ${count} 個大型檔案（Word、音檔、影片等）。
-> Git Repo 比較適合存純文字檔，大型檔案放進來會讓大家 pull 的時候越來越慢。
->
-> 建議你選一個方式處理：
->
-> 1. 移到你 Workspace 裡的 private/ 資料夾（只留在自己電腦，不會上傳）
-> 2. 上傳到 Google Drive（方便共享）
-> 3. PDF、Word 檔可以直接請 AI 幫你轉成 .md 檔儲存，不必煩惱怎麼操作
->
-> 不急，有空的時候處理就好。有問題隨時找我。
->
-> David
-
----
-*此 Issue 由 GitHub Action 自動建立，處理完畢後請 close。*"
-
+                printf '%b' "$B" > /tmp/issue_body.md
                 gh issue create \
                   --title "$ISSUE_TITLE" \
-                  --body "$BODY" \
+                  --body-file /tmp/issue_body.md \
                   --label "maintenance"
               fi
             fi
