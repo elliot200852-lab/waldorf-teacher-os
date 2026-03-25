@@ -91,8 +91,19 @@ mythology_topic: "..."
 block: block-X-...
 taiwan_connection: [...]
 search_keywords: [...]
+met_keywords: "..."   # 1-2 個英文關鍵字，供 Met/Europeana API 使用
 started_at: 2026-XX-XXTXX:XX:XX
 ```
+
+**`met_keywords` 推導規則**（從 mythology_topic 取英文神祇或文明名稱）：
+
+| Block | 推導邏輯 | 範例 |
+|-------|----------|------|
+| block-1-india | 神祇英文名（Brahma / Vishnu / Shiva / Rama / Krishna / Buddha） | `"Shiva"` |
+| block-2-persia | `"Persia ancient"` 或神祇名（Ahura Mazda → `"Zoroastrian"`) | `"Persia ancient"` |
+| block-3-babylon | `"Mesopotamia"` 或 `"Gilgamesh"` 或 `"Babylon"` | `"Mesopotamia"` |
+| block-4-egypt | 神祇英文名（Ra / Osiris / Isis / Horus / Sekhmet） | `"Osiris"` |
+| island-interludes | `"Taiwan"` — Met 結果通常極少，以 Europeana 為主 | `"Taiwan"` |
 
 ---
 
@@ -129,7 +140,7 @@ started_at: 2026-XX-XXTXX:XX:XX
 
 - 每筆來源標記 `[中]` 或 `[英]`，中文來源排在前面
 
-**合併產出**：`raw-materials.md`
+**合併產出**：`raw-materials.md`（Step 2.5 之前完成）
 - theme-skeleton 核心意象摘要
 - AI 知識補充的神話素材（明確標註來源為 AI 訓練知識）
 - 台灣文化對應資料（中文）
@@ -137,6 +148,46 @@ started_at: 2026-XX-XXTXX:XX:XX
 - 台灣文化呼應（1-2 段）
 
 **Checkpoint**：raw-materials.md > 500 字 + 至少 5 筆 URL（其中 ≥ 2 筆中文）→ 否則 FAIL
+
+---
+
+## Step 2.5 — Museum API 圖像搜尋
+
+**Step 2 完成後立即執行，不等 Step 3。**
+
+從 `current-task.yaml` 讀取 `met_keywords`，執行 Met Museum API：
+
+```bash
+python3 setup/scripts/museum_resource_pipeline.py \
+  "[met_keywords]" \
+  --source met \
+  --count 8
+```
+
+產出位置：`temp/museum_[met_keywords]_[日期]/museum-materials.yaml`
+
+執行完成後，將 YAML 複製到故事資料夾：
+
+```bash
+cp temp/museum_[met_keywords]_[日期]/museum-materials.yaml \
+   workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM0XX/museum-materials.yaml
+```
+
+**若有 Europeana Key**（環境變數 `EUROPEANA_KEY` 或 `current-task.yaml` 的 `europeana_key` 欄位）：
+
+```bash
+python3 setup/scripts/museum_resource_pipeline.py \
+  "[met_keywords]" \
+  --source europeana \
+  --europeana-key "$EUROPEANA_KEY" \
+  --count 5
+```
+
+將 Europeana YAML 的 `items` 追加到 `museum-materials.yaml` 的 `items` 列表中。
+
+**Fallback**：
+- API 失敗 / 回傳 0 件 / 連線逾時 → 跳過，`museum-materials.yaml` 不產出，Step 3 Agent E 改用純 WebSearch
+- 不重試、不中斷 pipeline
 
 ---
 
@@ -154,6 +205,7 @@ started_at: 2026-XX-XXTXX:XX:XX
 **Agent E（圖像與來源）**：
 - 產出：`images.md`（至少 3 張圖 + URL + 授權，圖片描述用中文）+ `references.md`（所有來源）
 - references.md 分兩區：`## 教師延伸閱讀（中文）` + `## 學術參考（英文）`，中文區在前
+- **圖像取材**：以故事內容與教學需求為主，找能幫孩子理解故事的圖。若 `museum-materials.yaml` 存在，從中挑選與課程相關的館藏圖（標注 `[Met Museum CC0]` 或 `[Europeana]`）作為備選之一，與 Wikimedia Commons 及 WebSearch 結果並列評估，取最合適的。不相關的館藏圖不納入。
 
 **主線程**：三者完成後，品質自檢 → `quality-report.md`
 
@@ -247,8 +299,9 @@ assemble-ancient-myths.js 的 `--upload` 旗標自動處理：
 | 轉換 | 驗證項 | 失敗等級 |
 |------|--------|----------|
 | 0→1 | project.yaml + theme-skeleton.yaml 存在 | FAIL |
-| 1→2 | current-task.yaml 非空 | FAIL |
-| 2→3 | raw-materials.md > 500 字 + 至少 5 筆 URL（其中 ≥ 2 筆中文） | FAIL |
+| 1→2 | current-task.yaml 非空（含 met_keywords） | FAIL |
+| 2→2.5 | raw-materials.md > 500 字 + 至少 5 筆 URL（其中 ≥ 2 筆中文） | FAIL |
+| 2.5→3 | museum-materials.yaml 存在（API 有結果）或標記 skip（API 失敗） | WARN（不阻擋） |
 | 3→4 | 6 檔全部存在 + chalkboard-prompt 含 `## English Prompt` | FAIL |
 | 4→5 | ~/Downloads/AncientMyths-[課號]-chalkboard.png > 50KB | FAIL（重試 3 次）|
 | 5→6 | HTML + PDF 存在 + 黑板畫 base64 嵌入 | FAIL |
