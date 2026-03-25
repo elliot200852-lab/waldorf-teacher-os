@@ -62,6 +62,20 @@ video/out/
 video/dist/
 video/.remotion/
 
+# Node.js 依賴（根目錄）
+node_modules/
+
+# Python 快取（全域）
+__pycache__/
+*.pyc
+
+# 臨時檔案
+temp/
+
+# Claude session 檔案
+.claude/.last-obsidian-check
+.claude/.session-marker
+
 # Tool Download — 使用者本地環境（不上傳）
 .env
 venv/

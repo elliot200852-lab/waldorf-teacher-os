@@ -124,6 +124,7 @@ aliases:
 | 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `ai-core/skills/git-history.md` |
 | 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
+| 「古文明神話故事」「每日古文明」「寫一篇古文明」「ancient myths daily」 | `ai-core/skills/ancient-myths-daily.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 

@@ -1,8 +1,8 @@
 # TeacherOS Agent Sync Spec
 # 定義系統預期狀態，供 sync_check.py 驗證一致性
-# 維護者：David | 最後更新：2026-03-05
+# 維護者：David | 最後更新：2026-03-25
 
-version: "1.0"
+version: "1.1"
 
 # --- 核心系統檔案（必須存在） ---
 system_files:
@@ -24,22 +24,62 @@ skills:
     - description
     - triggers
   expected_skills:
+    # 核心流程
     - opening
     - load
     - status
     - syllabus
     - lesson
-    - session-end
+    - wrap-up
+    - block-end
     - di-check
     - ref
-    - homeroom
-    - block-end
+    # 教學設計
+    - subject-lesson-45
+    - english-45
     - rhythm
+    - homeroom
+    # 學生與家長
     - student-note
     - parent-letter
+    - teaching-log
+    # 臺灣的故事管線
+    - story-daily
+    - story-planner
+    - story-research
+    - story-writer
+    - story-verify
+    - story-archive
+    # 素材研究
+    - poetry-research
+    - art-in-teaching
+    # 輸出與美化
+    - beautify
+    - new-doc
+    - video
+    - video-setup
+    - teach-animation
+    # Google Workspace
+    - calendar
+    - drive
+    - sheets
+    - docs-edit
+    - send-email
+    - gws-setup
+    - gws-bridge
+    # 系統維護
+    - obsidian-sync
     - sync-cowork
+    - sync-agents
     - pull-request
-    - save
+    - add-teacher
+    - check-compat
+    - yt-subtitle
+    - git-history
+    # 專案特定
+    - botany-daily
+    - niamyio
+    - ancient-myths-daily
 
 # --- Reference 知識模組 ---
 reference_modules:
