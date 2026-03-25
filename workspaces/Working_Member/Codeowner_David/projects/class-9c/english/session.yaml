@@ -8,15 +8,17 @@
 
 english_session:
   class: class-9c
-  last_updated: 2026-03-16
+  last_updated: 2026-03-25
 
   current_position:
     block: 二
-    step: 1         # Block 2 啟動——第五週第一單元教案與學習單已完成
+    step: 2         # Block 2 — Week 6-4 單字連接詞學習單 + A Rice Sandwich 教學參考已完成
     sub_block: null
     unit_number: 1    # week 5-6 對應單元一（英文課第一個教學單元）
-    current_week: 5   # 第五週（學校行事曆週次）
-                      # 已完成：week5-1 教師教案 + 學生學習單（The Road Not Taken）
+    current_week: 7   # 第七週（學校行事曆週次）
+                      # 已完成：week5-1, week5-3, week6-1, week6-2 教案＋學習單
+                      #         week6-3/4 A Rice Sandwich 教學參考＋學習單（含教師版）
+                      # 草稿待審：week7-1, week7-2 教案＋學習單
                       # AI 在 Block 2 工作時，若此欄為 0，應詢問教師當前週次後更新
                       # 週次換算參考（依 confirmed_decisions 的 10 週規劃）：
                       #   week 1-4  → 農場實習（無英文課）
@@ -35,8 +37,14 @@ english_session:
     - "評量分配（定案）：小說討論 20% + 創意寫作 20% + 詞彙溝通 25% + 文法閱讀 25% + 學習歷程 10%"
 
   next_action:
-    description: "設計 week5-2 課堂流程（第五週第二節），或依教師指示跳至其他單元"
-    input_needed_from_teacher: "確認 week5-2 主題與素材方向"
+    description: >
+      【Week 7 第三節起】進入 Week 7 語言技能課（連接詞 Part 2）。
+      行動清單：
+      1. David 審閱 Week 7 四份草稿（7-1 教案＋學習單、7-2 教案＋學習單）
+      2. Week 6-4 學習單（單字連接詞版）已完成，可直接用於課堂
+      3. Week 7-3/7-4 Mango Street 繼續選篇（接續 A Rice Sandwich 之後）
+      4. Week 6-2 PDF 排版若仍需重做，再安排處理
+    input_needed_from_teacher: "Week 7 草稿審閱意見；Week 7-3/4 Mango Street 選篇"
 
   output_files:
     syllabus_versions:
@@ -78,6 +86,103 @@ english_session:
           動詞片語測驗: class-9c/english/content/9C-week5-phrasal-verb-quiz.md
         skill_used: subject-lesson-45 + phrase-quiz
         notes: "配對複習+快閃暖身 8min → 攻防戰 10min → 正式測驗 20min → 片語印象牆 5min。Follow-up 連結《The House on Mango Street》（Task A 找片語 / Task B 寫場景）"
-    extensions_completed: []
+      - unit: week6-quiz
+        date: 20260323
+        theme: "動詞片語測驗 Week 6 — 講義 #175-#200"
+        grammar_focus: "動詞片語辨析（講義 #175-#200，26 個片語）"
+        status: 測驗卷已完成（基礎版三選一＋進階版四選一＋教師版含解析）
+        files:
+          測驗卷_Markdown: class-9c/english/content/9C-week6-phrasal-verb-quiz.md
+          基礎版_HTML: temp/beautify-quiz-基礎版-學生版.html
+          進階版_HTML: temp/beautify-quiz-進階版-學生版.html
+          教師版_HTML: temp/beautify-quiz-教師版.html
+        skill_used: beautify
+        notes: "差異化設計：基礎版 20 題三選一（B/D 類）＋進階版 20 題四選一（A/C 類），題目不同但範圍相同。教師版含雙版解析。"
+      - unit: week6-1
+        date: 20260323
+        theme: "動詞片語測驗課 — 講義 #175-#200 語言技能第一節"
+        grammar_focus: "動詞片語辨析（講義 #175-#200）"
+        status: 教案與學習單已完成
+        files:
+          教師教案: class-9c/english/content/9C-week6-1-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week6-1-v1-學習單.md
+          測驗卷: class-9c/english/content/9C-week6-phrasal-verb-quiz.md
+        skill_used: null
+        notes: "Speed Sort 分類暖身 5min → 測驗 20min → 延伸任務二選一 15min → 收尾 5min。延伸任務差異化：Task A 對話創作（A/C 類）/ Task D 情境配對（B/D 類）。學習單含教師版（答案填入版）。"
+      - unit: week6-2
+        date: 20260323
+        theme: "連接詞闖關 Part 1 — because / so / but / although"
+        grammar_focus: "副詞子句連接詞（因果＋轉折）+ 動詞片語複習"
+        status: 教案與學習單已定案（PDF 排版待重做）
+        files:
+          教師教案: class-9c/english/content/9C-week6-2-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week6-2-v1-學習單.md
+        skill_used: null
+        notes: "連接詞三節跨週設計第一節。雙主線：連接詞（主線）+ 動詞片語複習（副線）。學習單 D/C/B 三層，刪除原 Task A Free Writing。"
+      - unit: week6-3-4
+        date: 20260325
+        theme: "A Rice Sandwich — The House on Mango Street（閱讀課）"
+        text: "Sandra Cisneros, The House on Mango Street — A Rice Sandwich"
+        grammar_focus: "連接詞（because, when, before, after, although, even though, if, since, until, while, so...that）＋ 單字 16 個"
+        status: 教學參考、學習單（學生版＋教師版）已完成，PDF 已輸出至桌面「完成檔案」
+        files:
+          教學參考摘要: class-9c/english/reference/A_Rice_Sandwich.md
+          Mango_Street_教學參考: "class-9c/english/reference/mango-street-a-rice-sandwich-教學參考.md"
+          學生學習單_單字連接詞: "class-9c/english/content/9C-week6-4-v1-單字連接詞學習單.md"
+          教師版_單字連接詞: "class-9c/english/content/9C-week6-4-v1-單字連接詞學習單-教師版.md"
+          學生學習單_閱讀: "class-9c/english/content/9C-week6-4-v1-學習單.md"
+        skill_used: null
+        vocabulary:
+          count: 16
+          key_words: "canteen, principal, faint, skinny, nun, lunchroom, special, permission, embarrassed, ashamed, pale, belong, pretend, ordinary, notice, cafeteria"
+        conjunctions_taught: "because, when, before, after, although, even though, if, since, until, while, so...that"
+        worksheet_structure: "Part 1 單字配對（16 詞）＋ Part 2 連接詞填空（A Rice Sandwich 情境）"
+        notes: "週六第三、四節合堂設計。差異化保留。PDF 美化版四份已輸出至桌面「完成檔案」資料夾。"
+      - unit: week7-1
+        date: 20260323
+        theme: "連接詞闖關 Part 2 — when / before / after / if"
+        grammar_focus: "副詞子句連接詞（時間＋條件）+ 動詞片語複習"
+        status: 草稿待審閱
+        files:
+          教師教案: class-9c/english/content/9C-week7-1-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week7-1-v1-學習單.md
+        skill_used: null
+        notes: "連接詞三節跨週設計第二節。草稿，待 David 審閱。"
+      - unit: week7-2
+        date: 20260323
+        theme: "連接詞闖關 Part 3 — 八大連接詞綜合複習"
+        grammar_focus: "八大連接詞綜合運用 + 動詞片語複習"
+        status: 草稿待審閱
+        files:
+          教師教案: class-9c/english/content/9C-week7-2-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week7-2-v1-學習單.md
+        skill_used: null
+        notes: "連接詞三節跨週設計第三節（綜合）。草稿，待 David 審閱。"
+    reference_files:
+      - file: class-9c/english/reference/conjunctions-國中範圍總整理.md
+        date: 20260323
+        description: "國中範圍連接詞完整整理（對等 / 從屬 / 相關 / 連接副詞）"
+      - file: class-9c/english/reference/phrasal-verbs-200-八下九上.md
+        date: 20260323
+        description: "動詞片語 200 個總表（八下＋九上，講義 #1-#200）"
+      - file: class-9c/english/reference/A_Rice_Sandwich.md
+        date: 20260325
+        description: "A Rice Sandwich 原文摘錄與教學參考（The House on Mango Street）"
+      - file: "class-9c/english/reference/mango-street-a-rice-sandwich-教學參考.md"
+        date: 20260325
+        description: "Mango Street A Rice Sandwich 完整教學參考，含單字表、連接詞範例、差異化教學建議"
+    extensions_completed:
+      - type: 藝術作品教學指南
+        date: 20260319
+        theme: "The House on Mango Street — 青春、愛情與女性自主"
+        artworks:
+          - "Springtime (Pierre-Auguste Cot, 1873) — 青春/愛情"
+          - "Self-Portrait with Two Pupils (Adélaïde Labille-Guiard, 1785) — 女性自主"
+        status: Stage 3 完成，含 ABCD 差異化教學建議
+        files:
+          enriched_yaml: temp/museum_street_scene_20260319/museum-materials-enriched.yaml
+          teaching_guide_html: "Google Drive: teaching-guides-HTML/The House on Mango Street — 青春、愛情與女性自主.html"
+        skill_used: art-in-teaching
+        notes: "首次完整走完 Stage 1→1.5→2→3→5 流程。同步建立 Apps Script HTML 瀏覽器（teaching-guides-HTML 資料夾）"
 
   open_questions: []

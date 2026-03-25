@@ -109,6 +109,9 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week7-2-v1-學習單\|9C 英文第七週第二節學習單]] | 學習單 |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week7-2-v1-教師教案\|9C 英文第七週第二節教案]] | 教案 |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-2-v1-學習單-教師版\|9C week6 2 v1 學習單 教師版]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-4-v1-學習單\|9C week6 4 v1 學習單]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-4-v1-單字連接詞學習單-教師版\|9C week6 4 v1 單字連接詞學習單 教師版]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-4-v1-單字連接詞學習單\|9C week6 4 v1 單字連接詞學習單]] | （自動收錄） |
 
 9C 英文參考資料：
 
@@ -118,6 +121,8 @@ aliases:
 | [[The house on Mango Street 小說教學研究報告範本]] | 小說教學研究 |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/reference/phrasal-verbs-200-八下九上\|phrasal verbs 200 八下九上]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/reference/conjunctions-國中範圍總整理\|conjunctions 國中範圍總整理]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/reference/mango-street-a-rice-sandwich-教學參考\|mango street a rice sandwich 教學參考]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/reference/A_Rice_Sandwich\|A Rice Sandwich]] | （自動收錄） |
 
 **9C 導師**
 
@@ -1011,6 +1016,34 @@ aliases:
 | [[publish/images/workflow.png\|workflow.png]] | 圖片：工作流程 |
 | [[publish/scripts/assemble-story.js\|assemble-story.js]] | 臺灣的故事組裝腳本（v2.2.0，Markdown → HTML+PDF + GWS upsert） |
 | [[publish/scripts/assemble-botany.js\|assemble-botany.js]] | 五年級植物學組裝腳本 |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
