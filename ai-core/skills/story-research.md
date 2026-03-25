@@ -37,6 +37,7 @@ David（管理員）。
 1. `{workspace}/projects/stories-of-taiwan/current-task.yaml` — 今日選題
 2. `{workspace}/projects/stories-of-taiwan/taiwan_history_api.py` — 搜尋引擎
 3. `{workspace}/projects/stories-of-taiwan/project.yaml` — 資料源狀態（API Key 等）
+4. `ai-core/reference/corpus-taic.yaml` — 台灣主權語料庫（TAIC）查詢指引
 
 ## 入口驗證（由 story-daily pipeline 強制執行）
 
@@ -84,12 +85,23 @@ python taiwan_history_api.py "搜尋關鍵字" --sources tcmb boch tm --format m
 
 對每個 search_keyword 執行搜尋，合併結果。
 
+### Step 1.5 — TAIC 語料庫查詢
+
+API 搜尋後、AI 輔助研究前，查詢台灣主權 AI 訓練語料庫（TAIC）作為補充與交叉驗證：
+
+1. **載入查詢指引**：讀取 `ai-core/reference/corpus-taic.yaml`，確認與本次主題相關的資料分類
+2. **網頁搜尋**：用 WebSearch 搜尋 `site:taic.moda.gov.tw [搜尋關鍵字]`，或直接瀏覽 https://taic.moda.gov.tw 以關鍵字查詢
+3. **優先領域**：歷史文物、在地文化、原住民族三類與「臺灣的故事」最直接相關
+4. **記錄結果**：找到的 TAIC 資料集記錄在素材包的「資料來源」區塊，標記 `[來源：TAIC]`、`[授權：開放資料/待確認]`
+
+> **TAIC 與 taiwan_history_api 的關係：** 兩者互補而非取代。taiwan_history_api 提供即時精確查詢，TAIC 提供經品質篩選的統一格式語料與 taiwan_history_api 未涵蓋的來源（如原民會資料）。
+
 ### Step 2 — AI 輔助研究
 
-API 搜尋只是起點。AI 必須進一步：
+API 搜尋與 TAIC 查詢是起點。AI 必須進一步：
 
-1. **網路搜尋**：用 WebSearch 補充 API 無法覆蓋的資料（特別是 archives、nhrm、tm 這些無 API 的來源）
-2. **交叉比對**：同一事件至少找到兩個獨立來源
+1. **網路搜尋**：用 WebSearch 補充 API 與 TAIC 無法覆蓋的資料（特別是 archives、nhrm、tm 這些無 API 的來源）
+2. **交叉比對**：同一事件至少找到兩個獨立來源（TAIC 可作為其中之一）
 3. **圖像搜尋**：尋找 CC 授權或教育用途的歷史圖像、地圖
 4. **地理定位**：確認事件發生地的現代地名與座標
 

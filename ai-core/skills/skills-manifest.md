@@ -51,10 +51,16 @@ aliases:
 | 「做影片」「製作影片」「video」「渲染影片」「建立影片專案」「video setup」 | `video` | `ai-core/skills/video.md` |
 | 「臺灣的故事」「每日臺灣的故事」「寫一篇臺灣的故事」「Daily Story of Taiwan」「daily story」「stories of taiwan」 | `story-daily` | `ai-core/skills/story-daily.md`（編排器，依序呼叫下列 5 子技能 + assemble-story.js） |
 | 「今天的故事」「選題」「story plan」「臺灣故事選題」「故事選題」 | `story-planner` | `ai-core/skills/story-planner.md` |
-| 「搜尋素材」「找資料」「查史料」「story research」 | `story-research` | `ai-core/skills/story-research.md` |
+| 「搜尋素材」「找資料」「查史料」「story research」 | `story-research` | `ai-core/skills/story-research.md`（含 TAIC 查詢步驟） |
 | 「產出故事」「生成三件套」「story write」「撰寫故事」 | `story-writer` | `ai-core/skills/story-writer.md` |
 | 「檢查故事」「品質確認」「story verify」 | `story-verify` | `ai-core/skills/story-verify.md` |
 | 「歸檔故事」「更新故事索引」「story archive」 | `story-archive` | `ai-core/skills/story-archive.md` |
+
+**外部語料庫參考模組（非技能，供上列技能按需載入）：**
+
+| 模組 | 路徑 | 用途 |
+|------|------|------|
+| TAIC 主權語料庫指引 | `ai-core/reference/corpus-taic.yaml` | 數發部台灣主權AI訓練語料庫的存取方式、資料分類與教學對應。story-research（Step 1.5）、subject-lesson-45 等技能查詢台灣本土素材時載入。 |
 
 ## D. 導師與學生（人的工作）
 

@@ -108,6 +108,7 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week7-1-v1-教師教案\|9C 英文第七週第一節教案]] | 教案 |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week7-2-v1-學習單\|9C 英文第七週第二節學習單]] | 學習單 |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week7-2-v1-教師教案\|9C 英文第七週第二節教案]] | 教案 |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content/9C-week6-2-v1-學習單-教師版\|9C week6 2 v1 學習單 教師版]] | （自動收錄） |
 
 9C 英文參考資料：
 
@@ -972,6 +973,7 @@ aliases:
 | [[ai-core/reference/subject-history.yaml\|subject-history.yaml]]         | 歷史科教學哲學與設計原則         |
 | [[ai-core/reference/student-development.yaml\|student-development.yaml]] | 學生發展與班級經營框架          |
 | [[ai-core/reference/cross-platform.yaml\|cross-platform.yaml]]           | 跨平台指令公約（AI agent 參考） |
+| [[corpus-taic]] | （自動收錄） |
 
 ### Reference 操作文件
 
@@ -1009,6 +1011,38 @@ aliases:
 | [[publish/images/workflow.png\|workflow.png]] | 圖片：工作流程 |
 | [[publish/scripts/assemble-story.js\|assemble-story.js]] | 臺灣的故事組裝腳本（v2.2.0，Markdown → HTML+PDF + GWS upsert） |
 | [[publish/scripts/assemble-botany.js\|assemble-botany.js]] | 五年級植物學組裝腳本 |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
+| [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
@@ -1551,6 +1585,14 @@ aliases:
 | [[pr-acl-check]] | （自動收錄） |
 | [[repo-health-report]] | （自動收錄） |
 | [[yaml-validate]] | （自動收錄） |
+| [[塞掐SideChat-E398-主權AI摘要報告]] | （自動收錄） |
+| [[TAIC-與-TeacherOS-協作分析]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A009-quality\|A009 quality]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/chalkboard-prompt\|chalkboard prompt]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/content\|content]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/images\|images]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/narration\|narration]] | （自動收錄） |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/raw-materials\|raw materials]] | （自動收錄） |
 
 ---
 

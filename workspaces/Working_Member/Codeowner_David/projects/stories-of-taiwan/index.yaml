@@ -3,8 +3,8 @@
 # 由 story-archive skill 自動維護
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-last_updated: 2026-03-24
-total_stories: 8
+last_updated: 2026-03-25
+total_stories: 9
 
 stories:
   - id: A001
@@ -144,6 +144,22 @@ stories:
     quality_check: passed
     html_pdf_status: pending_chalkboard
     tags: [阿美族, Pangcah, 豐年祭, Ilisin, 海祭, 捕魚祭, 港口部落, 年齡階級, 母系社會, 魚筌, 黑潮, 東海岸]
+
+  - id: A009
+    title: 鐵砂與煙霧——十三行人的秘密
+    block: A-origins
+    sub_theme: 最早的足跡
+    era: 史前（距今約 1,800—500 年前）
+    location: 新北市八里區（淡水河出海口南岸）
+    date_created: 2026-03-25
+    files:
+      content: stories/A-origins/A009/content.md
+      narration: stories/A-origins/A009/narration.md
+      images: stories/A-origins/A009/images.md
+      raw_materials: stories/A-origins/A009/raw-materials.md
+    sources: [sshm_ntpc, openmuseum, wikipedia, sinica, taiwan_panorama, springer]
+    quality_check: passed
+    tags: [十三行文化, 冶鐵, 鐵砂, 史前遺址, 八里, 淡水河口, 凱達格蘭族, 人面陶罐, 考古, 鐵器時代]
 
 # 索引結構說明：
 # stories:

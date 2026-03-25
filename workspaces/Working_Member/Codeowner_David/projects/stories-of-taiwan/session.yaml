@@ -6,7 +6,7 @@
 
 stories_of_taiwan_session:
   project: stories-of-taiwan
-  last_updated: 2026-03-23  # A007 完成全管線（山是我們的家——泰雅族與他們的獵場）
+  last_updated: 2026-03-25  # A009 完成全管線（鐵砂與煙霧——十三行人的秘密）
 
   overview:
     name: 臺灣的故事
@@ -24,14 +24,14 @@ stories_of_taiwan_session:
     block: A-origins
     block_title: 島嶼的誕生與最初的人
     sub_theme_completed: 島嶼誕生（4/3，含海洋延伸篇）+ 南島的孩子（1/3）+ 各族的土地故事（1/5-8）
-    current_sub_theme: 各族的土地故事（1/5-8）
-    last_completed_story: A007
-    last_completed_title: 山是我們的家——泰雅族與他們的獵場
-    next_story_id: A008
-    status: A007 泰雅族獵場完成，「各族的土地故事」子主題啟動
+    current_sub_theme: 最早的足跡（2/4）
+    last_completed_story: A009
+    last_completed_title: 鐵砂與煙霧——十三行人的秘密
+    next_story_id: A010
+    status: A009 十三行遺址完成，「最早的足跡」子主題第二篇
 
   block_progress:
-    A-origins: 7    # 目標 15-20
+    A-origins: 9    # 目標 15-20
     B-encounter: 0  # 目標 8-12
     C-dutch-spanish: 0  # 目標 12-15
     D-koxinga: 0    # 目標 10-12
@@ -128,6 +128,15 @@ stories_of_taiwan_session:
       chalkboard: ~/Downloads/AssemblyStory-A007-chalkboard.png
       google_drive: uploaded
       assembled: 2026-03-23
+
+    A009:
+      html: temp/beautify-A009-完整版.html
+      pdf: temp/A009-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A009-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-25
+      drive_html: 16BDxaRuGYB5SzSpJxEjeI53-SJV6M1n8
+      drive_pdf: 1R34tQ2kbO3cz0I8XoLW58X4w2ea_24an
 
   open_questions:
     - "story-archive 技能尚未正式執行過（A001-A003 手動歸檔至 index.yaml）"
