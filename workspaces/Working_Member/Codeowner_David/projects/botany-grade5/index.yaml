@@ -43,6 +43,25 @@ stories:
       html: "1uuW4n3pdiIDQ0gb5SC0v2lHgRB4ZxmEj"
       pdf: "17l9y-lciceGNR4YVI361Ai1H1clBwB6y"
     tags: [蒲公英, 台灣特有種, 四大元素, 飛翔種子, 台灣蒲公英]
+  - id: B003
+    title: 真菌
+    block: block-1-plant-and-earth
+    kovacs_chapter: "03_Fungi"
+    taiwan_species: ["牛樟芝（Antrodia cinnamomea）", "段木香菇"]
+    date_created: 2026-03-25
+    files:
+      content: stories/B003/content.md
+      kovacs_teaching: stories/B003/kovacs-teaching.md
+      chalkboard_prompt: stories/B003/chalkboard-prompt.md
+      images: stories/B003/images.md
+      references: stories/B003/references.md
+      raw_materials: stories/B003/raw-materials.md
+      quality_report: stories/B003/quality-report.md
+    quality_check: passed
+    drive:
+      html: "16xw59s2cDD-94N356LLQiPULC6d-6_1t"
+      pdf: "1mrwYV23fKRJ43H6Z5t2Skt_iDXFfZYKD"
+    tags: [真菌, 牛樟芝, 台灣特有種, 分解者, 菌絲, 段木香菇, 嬰兒意象]
 # 每筆格式：
 # - id: B001
 #   title: 植物在太陽與大地之間
