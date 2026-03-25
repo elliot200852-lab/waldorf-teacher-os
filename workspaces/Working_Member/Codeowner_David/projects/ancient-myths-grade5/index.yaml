@@ -25,6 +25,27 @@ stories:
       pdf: "17O7xiEwg3snCkUlKrUOTXmL5TNY1Sxsg"
     tags: [梵天, 創世, 宇宙蛋, Hiranyagarbha, 古印度, 夢境意識]
 
+  - id: AM002
+    title: 創世與最初的人類（二）
+    block: block-1-india
+    story_ref: "Story 1-2"
+    mythology_topic: "印度教三位一體——梵天（創造）、毗濕奴（維護）、濕婆（毀滅與再生）"
+    date_created: 2026-03-25
+    files:
+      content: stories/AM002/content.md
+      waldorf_teaching: stories/AM002/waldorf-teaching.md
+      chalkboard_prompt: stories/AM002/chalkboard-prompt.md
+      images: stories/AM002/images.md
+      references: stories/AM002/references.md
+      raw_materials: stories/AM002/raw-materials.md
+      quality_report: stories/AM002/quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1OBoo-RGEQ-Fx7M3ZDyHifakBCdYc9vy7"
+      pdf: "1DNMDFPmLT19fMdYbQFAUpg_1YdPV0b4_"
+    tags: [Trimurti, 三相神, 梵天, 毗濕奴, 濕婆, 那塔羅加, 古印度, 宇宙呼吸, 布農族]
+
 # 每筆格式：
 # - id: AM001
 #   title: 創世——梵天的夢
