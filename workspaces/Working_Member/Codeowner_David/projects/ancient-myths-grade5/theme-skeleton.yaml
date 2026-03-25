@@ -1,0 +1,252 @@
+# 五年級古文明神話主課程骨架
+# 同步自 theme-skeleton.md v1.0（Downloads 版）
+ancient_myths_skeleton:
+  source: "Charles Kovacs, Ancient Mythologies: India, Persia, Babylon, Egypt (Wynstones Press, 184 pp, 21 stories)"
+  target_grade: 5
+  total_stories: 21
+  steiner_framework: "從亞特蘭提斯到金字塔——追蹤人類意識從夢境般的神話思維走向清醒的歷史思維"
+  status: "Theme Skeleton——基於公開資訊重建的主題弧線，章節劃分與故事細節待原書確認"
+
+  consciousness_arc:
+    india: { stage: "夢境意識", image: "向內（冥想）", child_parallel: "孩子剛離開童年的夢境，開始察覺自我" }
+    persia: { stage: "二元覺醒", image: "向下（耕地）", child_parallel: "孩子開始感受善惡、對錯的張力" }
+    babylon: { stage: "星辰智慧", image: "向上（觀星）", child_parallel: "孩子的思考力開始結構化，對規則感興趣" }
+    egypt: { stage: "死亡與永生", image: "向前（追問來世）", child_parallel: "孩子第一次真正意識到死亡，也第一次渴望永恆" }
+
+  blocks:
+    block-1-india:
+      name: "古印度"
+      story_range: "Story 1-7"
+      estimated_stories: "5-6（Story 7 佛陀為可選）"
+      core_theme: "人類最初的精神家園——物質世界是幻象，真正的實在是精神世界"
+
+    block-2-persia:
+      name: "古波斯"
+      story_range: "Story 8-11"
+      estimated_stories: "3-4（Story 11 東方智者為可選）"
+      core_theme: "從夢境中醒來面對大地——光明與黑暗的對抗，人從冥想者變成勞動者"
+
+    block-3-babylon:
+      name: "古巴比倫/美索不達米亞"
+      story_range: "Story 12-16"
+      estimated_stories: "4-5（Story 16 巴別塔為可選）"
+      core_theme: "仰望星空建造城市——觀測星辰、發明文字與法律、追問死亡"
+
+    block-4-egypt:
+      name: "古埃及"
+      story_range: "Story 17-21"
+      estimated_stories: "5-6"
+      core_theme: "面對死亡追求永恆——金字塔、木乃伊、死者之書"
+
+  # 故事清單——部分故事跨 2 課，ID 以 Story 編號為準
+  # 標註 (optional) 的故事可能不在 Kovacs 原書中，或可根據教學需要選擇
+  lessons:
+    AM001:
+      number: 1
+      title: "創世與最初的人類（一）"
+      story_ref: "Story 1-2"
+      block: block-1-india
+      core_image: "梵天的創造——從宇宙蛋或蓮花中誕生世界"
+      teaching_note: "[待確認] Kovacs 是否在此先講 Atlantis 作為序幕"
+      art_response: "濕水彩——暖色調金黃與紫紅，蓮花意象"
+
+    AM002:
+      number: 2
+      title: "創世與最初的人類（二）"
+      story_ref: "Story 1-2"
+      block: block-1-india
+      core_image: "印度教三位一體：梵天（創造）、毗濕奴（維護）、濕婆（毀滅）"
+      art_response: "濕水彩——三種色彩的交融與循環"
+
+    AM003:
+      number: 3
+      title: "摩奴與大洪水"
+      story_ref: "Story 3-4"
+      block: block-1-india
+      core_image: "摩奴的故事——洪水與人類的重新開始"
+      teaching_note: "不是為種姓制度辯護，而是讓孩子理解最早的社會秩序來自「每個人有自己的位置」這個原始直覺"
+      art_response: "濕水彩——洪水的藍色漫延與一艘小船"
+
+    AM004:
+      number: 4
+      title: "種姓制度與聖牛"
+      story_ref: "Story 3-4"
+      block: block-1-india
+      core_image: "摩奴的法典——婆羅門、剎帝利、吠舍、首陀羅；聖牛的神聖性"
+      art_response: "蠟塊畫——四種色彩代表四個種姓"
+
+    AM005:
+      number: 5
+      title: "摩訶婆羅多——般度五子"
+      story_ref: "Story 5"
+      block: block-1-india
+      core_image: "般度五兄弟的冒險——正義與不義的鬥爭，克里希納作為指引者"
+      art_response: "蠟塊畫——五兄弟的剪影"
+
+    AM006:
+      number: 6
+      title: "羅摩與悉多"
+      story_ref: "Story 6"
+      block: block-1-india
+      core_image: "羅摩營救被魔王拉瓦納劫走的妻子悉多——忠誠、勇氣、犧牲；猴神哈奴曼的協助"
+      teaching_note: "印度最核心的善戰勝惡敘事，排燈節的故事背景"
+      art_response: "蠟塊畫——森林中的羅摩與猴王哈奴曼"
+
+    AM007:
+      number: 7
+      title: "佛陀"
+      story_ref: "Story 7"
+      block: block-1-india
+      core_image: "悉達多太子離開宮殿，看見老、病、死——菩提樹下的覺悟"
+      teaching_note: "[待確認] 有些華德福教師將佛陀放在語文課而非歷史課"
+      optional: true
+      art_response: "濕水彩——從金色宮殿走向簡樸的林蔭"
+
+    AM008:
+      number: 8
+      title: "阿胡拉·馬茲達與阿里曼（一）"
+      story_ref: "Story 8-9"
+      block: block-2-persia
+      core_image: "光明之神與黑暗之神的永恆戰鬥——人類的責任是站在光明這一邊"
+      teaching_note: "人類歷史上最早的一神教之一，後來猶太教、基督教、伊斯蘭教的重要影響源頭"
+      art_response: "蠟塊畫——金色光焰與深紫黑暗的對峙"
+
+    AM009:
+      number: 9
+      title: "阿胡拉·馬茲達與阿里曼（二）"
+      story_ref: "Story 8-9"
+      block: block-2-persia
+      core_image: "善思善言善行——透過勤勞工作對抗黑暗"
+      art_response: "蠟塊畫——光明與黑暗的對比，火焰，農耕場景"
+
+    AM010:
+      number: 10
+      title: "瑣羅亞斯德"
+      story_ref: "Story 10"
+      block: block-2-persia
+      core_image: "先知在曠野中接受啟示——聖典《阿維斯陀》；從遊牧到農耕的轉型"
+      art_response: "蠟塊畫——荒野中的火焰與先知的剪影"
+
+    AM011:
+      number: 11
+      title: "波斯的智者"
+      story_ref: "Story 11"
+      block: block-2-persia
+      core_image: "東方三博士的原型——波斯新年 Nowruz，春天戰勝冬天"
+      optional: true
+      art_response: "濕水彩——夜空中的星星與三個行走的身影"
+
+    AM012:
+      number: 12
+      title: "馬爾杜克的創世"
+      story_ref: "Story 12"
+      block: block-3-babylon
+      core_image: "馬爾杜克斬殺混沌女神提亞瑪特，用她的身體創造天地——秩序從戰鬥中誕生"
+      teaching_note: "與印度的和平創世形成對比——巴比倫的世界是從戰鬥中誕生的"
+      art_response: "蠟塊畫——巨龍與英雄的搏鬥"
+
+    AM013:
+      number: 13
+      title: "吉爾伽美什（一）——英雄與野人"
+      story_ref: "Story 13-14"
+      block: block-3-babylon
+      core_image: "烏魯克國王吉爾伽美什與恩奇都的友誼——野人被文明化，殺死森林守護者洪巴巴"
+      art_response: "蠟塊畫——城牆內的王與荒野中的野人"
+
+    AM014:
+      number: 14
+      title: "吉爾伽美什（二）——追尋永生"
+      story_ref: "Story 13-14"
+      block: block-3-babylon
+      core_image: "恩奇都之死→渡過死亡之水→永生草被蛇偷走——人類終究無法逃避死亡"
+      teaching_note: "人類文學史上最古老的史詩。核心問題：「人為什麼會死？」"
+      art_response: "濕水彩——黑色的死亡之水與遠方的光"
+
+    AM015:
+      number: 15
+      title: "漢摩拉比法典"
+      story_ref: "Story 15"
+      block: block-3-babylon
+      core_image: "世界上最早的成文法律——以眼還眼，正義的原始形式；楔形文字的發明"
+      art_response: "黏土工作——楔形文字泥板實作"
+
+    AM016:
+      number: 16
+      title: "巴別塔與星辰"
+      story_ref: "Story 16"
+      block: block-3-babylon
+      core_image: "通天塔——人類試圖用建築觸碰天空；巴比倫天文學——六十進制、星座記錄"
+      optional: true
+      art_response: "黏土工作——通天塔模型 + 星座圖"
+
+    AM017:
+      number: 17
+      title: "埃及的創世——太陽神拉"
+      story_ref: "Story 17"
+      block: block-4-egypt
+      core_image: "努恩的混沌之水中太陽神拉升起——白天渡過天空，夜晚穿越地下世界"
+      art_response: "蠟塊畫 + 金色——太陽船在天空與地下世界的旅程"
+
+    AM018:
+      number: 18
+      title: "拉的秘密名字"
+      story_ref: "Story 18"
+      block: block-4-egypt
+      core_image: "伊西斯用蛇咬傷拉，迫使他說出秘密名字——知道名字就是掌握力量"
+      teaching_note: "語言與命名的魔法力量"
+      art_response: "蠟塊畫——蛇與太陽神的對峙"
+
+    AM019:
+      number: 19
+      title: "賽克邁特的恐怖"
+      story_ref: "Story 19"
+      block: block-4-egypt
+      core_image: "拉派獅頭女神賽克邁特懲罰人類——她殺紅了眼，眾神用紅色啤酒灌醉她才阻止屠殺"
+      teaching_note: "神的力量可以保護也可以毀滅"
+      art_response: "蠟塊畫——獅頭女神的金色與紅色"
+
+    AM020:
+      number: 20
+      title: "奧西里斯與伊西斯（一）"
+      story_ref: "Story 20-21"
+      block: block-4-egypt
+      core_image: "仁慈的國王奧西里斯被弟弟賽特殺害肢解——伊西斯走遍全埃及收集遺體"
+      art_response: "蠟塊畫——伊西斯展開翅膀的經典意象"
+
+    AM021:
+      number: 21
+      title: "奧西里斯與伊西斯（二）——荷魯斯復仇"
+      story_ref: "Story 20-21"
+      block: block-4-egypt
+      core_image: "奧西里斯復活成為冥界之王；鷹頭神荷魯斯為父復仇"
+      teaching_note: "死亡不是結束，而是另一種存在的開始——金字塔、木乃伊、死者之書存在的原因"
+      art_response: "蠟塊畫——荷魯斯之眼 + 金字塔"
+
+  # 台灣轉化方向（備課錨點）
+  taiwan_approach:
+    principle: >
+      神話不能替換。印度神話就是印度神話，不能用排灣族神話「取代」。
+      做的是對照與呼應，不是等同。
+    integration_method: >
+      建議在整個 Block 最後一週加入「台灣的古老故事」小區塊（3-5 天），
+      讓孩子帶著走過四大文明的視野，回頭看自己腳下這座島嶼上最古老的聲音。
+      不是附錄，是回家。
+    dont:
+      - "不要把台灣原住民神話等同於四大文明神話——規模和歷史脈絡完全不同"
+      - "不要在每個文明後面都硬塞一個台灣對照——選擇最自然的幾個切入點即可"
+      - "不要把施泰納的意識演化框架直接套在台灣原住民文化上——那是歐洲中心的發展觀"
+    cross_cultural_anchors:
+      - { kovacs: "摩奴與大洪水", taiwan: "布農族大洪水神話、阿美族海神傳說", angle: "全世界的古老民族都有洪水故事，台灣也有" }
+      - { kovacs: "印度種姓制度", taiwan: "排灣族的頭目/貴族/平民社會結構", angle: "不是比較優劣，而是看見人類最初如何組織社會" }
+      - { kovacs: "波斯的農耕轉型", taiwan: "布農族小米文化、原住民從狩獵到定居", angle: "人什麼時候開始種東西？" }
+      - { kovacs: "巴比倫天文觀測", taiwan: "布農族射日神話、排灣族星辰知識", angle: "仰望同一片天空的不同民族" }
+      - { kovacs: "吉爾伽美什的永生追尋", taiwan: "泰雅族彩虹橋——只有遵守 gaga 的人能通過", angle: "不同民族對死後的想像" }
+      - { kovacs: "埃及的木乃伊與來世", taiwan: "排灣族祖靈信仰、達悟族靈魂觀", angle: "人死了之後，靈魂去哪裡？" }
+      - { kovacs: "埃及尼羅河農業", taiwan: "嘉南大圳、八堡圳", angle: "水如何創造一個世界" }
+
+  # 藝術回應（按文明統整）
+  art_by_civilization:
+    india: { medium: "濕水彩", activities: "暖色調金黃與紫紅，蓮花意象，曼陀羅圖案" }
+    persia: { medium: "蠟塊畫", activities: "光明與黑暗的對比，火焰，農耕場景" }
+    babylon: { medium: "黏土工作", activities: "楔形文字泥板、通天塔模型、星座圖" }
+    egypt: { medium: "蠟塊畫 + 金色", activities: "金字塔、尼羅河、鷹頭荷魯斯、死者之書圖像" }

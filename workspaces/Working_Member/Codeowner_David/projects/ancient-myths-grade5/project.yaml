@@ -1,0 +1,59 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：五年級古文明神話・專案進度錨點
+# 路徑：projects/ancient-myths-grade5/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ancient_myths_grade5:
+  project_type: 獨立工作線
+  target_grades: [5]
+  current_focus: 五年級華德福古文明神話主課程
+  last_updated: 2026-03-25
+
+  current_position:
+    phase: 架構建立
+    step: 0
+    description: "Pipeline 架構已建立，theme-skeleton 已完成，待驗證章節後開始產出"
+
+  source_material:
+    kovacs_book: "Charles Kovacs, *Ancient Mythologies: India, Persia, Babylon, Egypt* (Wynstones Press, 184 pp, 21 stories)"
+    kovacs_chapters_path: null  # 目前無原文；取得後建立 kovacs-chapters/ 資料夾
+    theme_skeleton: theme-skeleton.md
+    theme_skeleton_yaml: theme-skeleton.yaml
+    transparency_note: >
+      Theme Skeleton 基於出版資訊、Waldorf 教師大綱與施泰納課程邏輯重建，
+      非基於 Kovacs 原文。21 個故事的精確章節待原文確認後校正。
+
+  story_count:
+    total: 0
+    by_block:
+      block-1-india: 0        # 第 1-6 課（古印度）
+      block-2-persia: 0       # 第 7-10 課（古波斯）
+      block-3-babylon: 0      # 第 11-16 課（古巴比倫）
+      block-4-egypt: 0        # 第 17-21 課（古埃及）
+
+  pipeline:
+    version: 1.0.0
+    assemble_script: publish/scripts/assemble-ancient-myths.js
+    drive_folder: "1lUTzAcmJ5UuI3njADbJ-a3HSLl3aUhpC"  # Google Drive「古文明神話五年級」
+    scheduled_task: ancient-myths-daily
+    schedule: "0 12 * * *"  # 每天中午 12:00（含週末）
+
+  output_per_lesson:
+    - content.md              # (a) 800 字說書人逐字稿
+    - waldorf-teaching.md     # (b) 300 字通用華德福教學指引（降級版：無 Kovacs 原文分析）
+    - chalkboard-prompt.md    # (c) 黑板畫 Prompt
+    - images.md               # (d) 投影圖畫清單
+    - references.md           # (e) 參考來源
+    - raw-materials.md        # (f) 素材包
+    - quality-report.md       # (g) 品質報告
+
+  upgrade_path:
+    trigger: "取得 Kovacs 原文後"
+    actions:
+      - "建立 kovacs-chapters/ 資料夾，逐章存入原文"
+      - "waldorf-teaching.md 升級為 kovacs-teaching.md（含原文教學分析）"
+      - "校正 theme-skeleton 的章節標題與順序"
+
+  next_action:
+    description: "Pipeline 架構完成，可開始試跑 AM001 或建立排程"

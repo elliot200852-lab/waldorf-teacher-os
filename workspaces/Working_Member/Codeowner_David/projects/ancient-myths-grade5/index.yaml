@@ -1,0 +1,24 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 五年級古文明神話・故事總索引
+# 路徑：projects/ancient-myths-grade5/index.yaml
+# 由 pipeline 自動維護，勿手動編輯
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+stories: []
+
+# 每筆格式：
+# - id: AM001
+#   title: 創世——梵天的夢
+#   block: block-1-india
+#   kovacs_chapter: null  # 無原文時為 null
+#   date_created: 2026-03-25
+#   files:
+#     content: stories/AM001/content.md
+#     waldorf_teaching: stories/AM001/waldorf-teaching.md
+#     chalkboard_prompt: stories/AM001/chalkboard-prompt.md
+#     images: stories/AM001/images.md
+#     references: stories/AM001/references.md
+#     raw_materials: stories/AM001/raw-materials.md
+#     quality_report: stories/AM001/quality-report.md
+#   quality_check: passed
+#   tags: []
