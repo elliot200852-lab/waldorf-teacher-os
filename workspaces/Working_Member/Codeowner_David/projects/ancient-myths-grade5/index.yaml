@@ -4,7 +4,26 @@
 # 由 pipeline 自動維護，勿手動編輯
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-stories: []
+stories:
+  - id: AM001
+    title: 創世與最初的人類（一）
+    block: block-1-india
+    story_ref: "Story 1-2"
+    mythology_topic: "梵天創世——宇宙蛋 Hiranyagarbha"
+    date_created: 2026-03-25
+    files:
+      content: stories/AM001/content.md
+      waldorf_teaching: stories/AM001/waldorf-teaching.md
+      chalkboard_prompt: stories/AM001/chalkboard-prompt.md
+      images: stories/AM001/images.md
+      references: stories/AM001/references.md
+      raw_materials: stories/AM001/raw-materials.md
+      quality_report: stories/AM001/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1B8bTko-G_zTWHJOUqtMVgrARA0BzT46u"
+      pdf: "17O7xiEwg3snCkUlKrUOTXmL5TNY1Sxsg"
+    tags: [梵天, 創世, 宇宙蛋, Hiranyagarbha, 古印度, 夢境意識]
 
 # 每筆格式：
 # - id: AM001

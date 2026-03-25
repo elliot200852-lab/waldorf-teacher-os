@@ -11,9 +11,9 @@ ancient_myths_grade5:
   last_updated: 2026-03-25
 
   current_position:
-    phase: 架構建立
-    step: 0
-    description: "Pipeline 架構已建立，theme-skeleton 已完成，待驗證章節後開始產出"
+    phase: 試跑完成
+    step: 1
+    description: "AM001 試跑成功，Pipeline v1.0.0 驗證通過"
 
   source_material:
     kovacs_book: "Charles Kovacs, *Ancient Mythologies: India, Persia, Babylon, Egypt* (Wynstones Press, 184 pp, 21 stories)"
@@ -25,12 +25,13 @@ ancient_myths_grade5:
       非基於 Kovacs 原文。21 個故事的精確章節待原文確認後校正。
 
   story_count:
-    total: 0
+    total: 1
     by_block:
-      block-1-india: 0        # 第 1-6 課（古印度）
+      block-1-india: 1        # 第 1-6 課（古印度）
       block-2-persia: 0       # 第 7-10 課（古波斯）
       block-3-babylon: 0      # 第 11-16 課（古巴比倫）
       block-4-egypt: 0        # 第 17-21 課（古埃及）
+      island-interludes: 0    # TW01-TW04（島嶼插曲）
 
   pipeline:
     version: 1.0.0
@@ -38,6 +39,15 @@ ancient_myths_grade5:
     drive_folder: "1lUTzAcmJ5UuI3njADbJ-a3HSLl3aUhpC"  # Google Drive「古文明神話五年級」
     scheduled_task: ancient-myths-daily
     schedule: "0 12 * * *"  # 每天中午 12:00（含週末）
+
+  island_interludes:
+    description: "4 篇台灣原住民故事，插在文明轉換點，與四大文明平等對話"
+    stories:
+      TW01: { after: AM007, title: "布農族的射日與創世", tribe: "布農族" }
+      TW02: { after: AM011, title: "泰雅族的彩虹橋", tribe: "泰雅族" }
+      TW03: { after: AM016, title: "排灣族的百步蛇與秩序", tribe: "排灣族" }
+      TW04: { after: AM021, title: "達悟族的海——靈魂往何處去", tribe: "達悟族" }
+    total_with_interludes: 25
 
   output_per_lesson:
     - content.md              # (a) 800 字說書人逐字稿
@@ -56,4 +66,4 @@ ancient_myths_grade5:
       - "校正 theme-skeleton 的章節標題與順序"
 
   next_action:
-    description: "Pipeline 架構完成，可開始試跑 AM001 或建立排程"
+    description: "AM001 完成，下一篇 AM002 創世與最初的人類（二）——三位一體"

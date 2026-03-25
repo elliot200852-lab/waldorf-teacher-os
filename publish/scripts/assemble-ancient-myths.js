@@ -172,7 +172,7 @@ function extractTitle(md) {
   const m = md.match(/^#\s+(.+)/m);
   if (!m) return '五年級古文明神話';
   // 去掉 lesson ID 前綴（如 "AM001 "）
-  return m[1].trim().replace(/^AM\d{3}\s+/, '');
+  return m[1].trim().replace(/^(AM\d{3}|TW\d{2})\s+/, '');
 }
 
 // ── 動態提取核心意象（pullQuote）────────────────────
@@ -206,7 +206,7 @@ function extractNextPreview(contentMd, nextLessonTitle) {
   const nextMatch = contentMd.match(/\*\*後一篇[^*]*\*\*[：:]\s*(.+)/);
   if (nextMatch) {
     let preview = nextMatch[1].trim();
-    preview = preview.replace(/^AM\d{3}\s+[^—]+——\s*/, '');
+    preview = preview.replace(/^(AM\d{3}|TW\d{2})\s+[^—]+——\s*/, '');
     if (!preview.endsWith('……')) preview += '……';
     return `下一課預告：${preview}`;
   }
@@ -221,9 +221,11 @@ function extractNextPreview(contentMd, nextLessonTitle) {
 
 // ── 從 theme-skeleton.yaml 讀取下一課標題 ────────────
 function getNextLessonTitle(storyId) {
+  // TW 島嶼插曲不需要 next lesson（由 skill 處理排序）
+  if (storyId.startsWith('TW')) return '';
   // 從 AM0XX 提取課號
   const lessonNum = parseInt(storyId.replace('AM', ''), 10);
-  if (isNaN(lessonNum) || lessonNum >= 21) return ''; // 最後一課
+  if (isNaN(lessonNum) || lessonNum >= 25) return ''; // 最後一課（含島嶼插曲共 25 篇）
 
   const nextId = 'AM' + String(lessonNum + 1).padStart(3, '0');
 
@@ -570,9 +572,9 @@ function parseWaldorfTeaching(waldorfTeachingMd) {
     result.teachingInsight = stripFrontmatter(waldorfTeachingMd).trim();
   }
 
-  // 台灣植物趣事（匹配含「台灣」或「趣事」或「俗諺」的標題）
+  // 台灣文化呼應（匹配含「台灣」或「呼應」或「趣事」或「俗諺」的標題）
   for (const [title, content] of Object.entries(sections)) {
-    if (/台灣|趣事|俗諺|諺語|fun/i.test(title)) {
+    if (/台灣|呼應|趣事|俗諺|諺語|fun/i.test(title)) {
       result.taiwanFunFact = content;
       break;
     }
@@ -653,7 +655,9 @@ function assembleHtml({
     15: 'BLOCK-3', 16: 'BLOCK-3', 17: 'BLOCK-3', 18: 'BLOCK-3', 19: 'BLOCK-3', 20: 'BLOCK-3', 21: 'BLOCK-3', 22: 'BLOCK-3',
     23: 'BLOCK-4', 24: 'BLOCK-4', 25: 'BLOCK-4', 26: 'BLOCK-4', 27: 'BLOCK-4', 28: 'BLOCK-4', 29: 'BLOCK-4', 30: 'BLOCK-4',
   };
-  const lessonNum = parseInt(storyId.replace('AM', ''), 10);
+  const lessonNum = storyId.startsWith('TW')
+    ? parseInt(storyId.replace('TW', ''), 10)
+    : parseInt(storyId.replace('AM', ''), 10);
   const blockLabel = blockMap[lessonNum] || '';
 
   // 讀取模板取得 <head> 中的 style 與 script
@@ -876,7 +880,7 @@ ${headContent}
     </div>
     ${taiwanFunFactHtml ? `
     <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-5 py-3 my-4">
-      <h4 class="font-headline text-[18px] text-[var(--accent)] mb-1.5 italic">台灣植物趣事</h4>
+      <h4 class="font-headline text-[18px] text-[var(--accent)] mb-1.5 italic">台灣文化呼應</h4>
       <div class="text-[18px] leading-[1.6]">${taiwanFunFactHtml}</div>
     </div>` : ''}
   </section>

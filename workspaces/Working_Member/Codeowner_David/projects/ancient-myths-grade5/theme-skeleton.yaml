@@ -3,7 +3,7 @@
 ancient_myths_skeleton:
   source: "Charles Kovacs, Ancient Mythologies: India, Persia, Babylon, Egypt (Wynstones Press, 184 pp, 21 stories)"
   target_grade: 5
-  total_stories: 21
+  total_stories: 25
   steiner_framework: "從亞特蘭提斯到金字塔——追蹤人類意識從夢境般的神話思維走向清醒的歷史思維"
   status: "Theme Skeleton——基於公開資訊重建的主題弧線，章節劃分與故事細節待原書確認"
 
@@ -37,6 +37,12 @@ ancient_myths_skeleton:
       story_range: "Story 17-21"
       estimated_stories: "5-6"
       core_theme: "面對死亡追求永恆——金字塔、木乃伊、死者之書"
+
+    island-interludes:
+      name: "島嶼插曲"
+      story_range: "TW01-TW04"
+      estimated_stories: "4（分散於文明轉換點）"
+      core_theme: "台灣這座島嶼上最古老的聲音——不是附錄，是回家"
 
   # 故事清單——部分故事跨 2 課，ID 以 Story 編號為準
   # 標註 (optional) 的故事可能不在 Kovacs 原書中，或可根據教學需要選擇
@@ -221,6 +227,42 @@ ancient_myths_skeleton:
       core_image: "奧西里斯復活成為冥界之王；鷹頭神荷魯斯為父復仇"
       teaching_note: "死亡不是結束，而是另一種存在的開始——金字塔、木乃伊、死者之書存在的原因"
       art_response: "蠟塊畫——荷魯斯之眼 + 金字塔"
+    # ── 島嶼插曲（台灣原住民神話，獨立故事） ──
+    TW01:
+      number: 8  # 排序位置：AM007 之後
+      title: "島嶼插曲：布農族的射日與創世"
+      story_ref: "台灣原住民——布農族"
+      block: island-interlude
+      core_image: "太古時代有兩個太陽，父子踏上漫長旅途射下其中一個，太陽變成月亮，從此有了晝夜"
+      teaching_note: "行動式創世——與印度冥想式創世形成自然對比，但不要強制比較"
+      art_response: "濕水彩——兩個太陽，一個被射中後墜落變暗"
+
+    TW02:
+      number: 13  # 排序位置：AM011 之後
+      title: "島嶼插曲：泰雅族的彩虹橋——善與惡的分界"
+      story_ref: "台灣原住民——泰雅族"
+      block: island-interlude
+      core_image: "只有遵守 gaga（規範）的人死後才能走過彩虹橋回到祖靈身邊；違反者墜落深淵"
+      teaching_note: "與波斯的光明/黑暗二元呼應——但泰雅族的善惡是透過行為準則而非宇宙神話來表達"
+      art_response: "濕水彩——山谷上方的彩虹橋，一端是祖靈的光"
+
+    TW03:
+      number: 19  # 排序位置：AM016 之後
+      title: "島嶼插曲：排灣族的百步蛇與秩序之誕生"
+      story_ref: "台灣原住民——排灣族"
+      block: island-interlude
+      core_image: "百步蛇是排灣族的守護者與祖先，頭目家族的紋飾來自蛇紋——社會階層從神話中誕生"
+      teaching_note: "與巴比倫的律法/秩序呼應——但排灣族的秩序來自與自然的盟約，不是征服"
+      art_response: "蠟塊畫——百步蛇的菱形紋飾，頭目家屋"
+
+    TW04:
+      number: 25  # 排序位置：AM021 之後（全課程最後一篇）
+      title: "島嶼插曲：達悟族的海——靈魂往何處去"
+      story_ref: "台灣原住民——達悟族（蘭嶼）"
+      block: island-interlude
+      core_image: "達悟族相信靈魂會渡海回到祖先來的地方——海既是生命之源也是死後歸途"
+      teaching_note: "與埃及的來世觀呼應——但達悟族的永恆不在金字塔裡，在海浪中"
+      art_response: "濕水彩——蘭嶼的海與拼板舟，夕陽中的靈魂之旅"
 
   # 台灣轉化方向（備課錨點）
   taiwan_approach:
