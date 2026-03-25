@@ -1,0 +1,18 @@
+# 臺灣的故事管線狀態追蹤
+story_id: A009
+pipeline_version: 2.2.0
+started_at: 2026-03-25T10:30:00
+completed_at: 2026-03-25T09:42:00
+mode: completed
+steps:
+  step_0_1: { status: PASS, note: "A009, 最早的足跡, 十三行遺址" }
+  step_2:   { status: PASS, note: "raw-materials.md 9680 bytes, 10 sources with URLs" }
+  step_3:   { status: PASS, note: "content.md 6985b, narration.md 8197b, images.md 4432b, chalkboard-prompt.md 2715b" }
+  step_4:   { status: PASS, note: "Quality check PASSED, reviews/A009-quality.md" }
+  step_5:   { status: PASS, note: "Gemini 生成 AssemblyStory-A009-chalkboard.png (8.3MB)" }
+  step_6:   { status: PASS, note: "HTML 11MB, PDF 10MB (6 pages), Drive upload OK" }
+  step_7:   { status: PASS, note: "Story archived in index.yaml, project.yaml updated" }
+pending_actions: []
+drive_files:
+  html: "16BDxaRuGYB5SzSpJxEjeI53-SJV6M1n8"
+  pdf:  "1R34tQ2kbO3cz0I8XoLW58X4w2ea_24an"

@@ -1,0 +1,179 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 「臺灣的故事」故事總索引
+# 由 story-archive skill 自動維護
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+last_updated: 2026-03-25
+total_stories: 9
+
+stories:
+  - id: A001
+    title: 從海底升起的島——臺灣的誕生
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前（約 500-600 萬年前至今）
+    location: 菲律賓海板塊與歐亞板塊交界處
+    date_created: 2026-03-21
+    files:
+      content: stories/A-origins/A001/content.md
+      narration: stories/A-origins/A001/narration.md
+      images: stories/A-origins/A001/images.md
+      raw_materials: stories/A-origins/A001/raw-materials.md
+    sources: [tvo, ncdr, ysnp, scimonth, pansci, wikipedia]
+    quality_check: pending_review
+    tags: [地質, 板塊運動, 蓬萊造山運動, 玉山, 中央山脈]
+
+  - id: A002
+    title: 水的雕刻刀——立霧溪與太魯閣
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前（約 230 萬年前至今）
+    location: 花蓮縣秀林鄉（太魯閣峽谷）
+    date_created: 2026-03-21
+    files:
+      content: stories/A-origins/A002/content.md
+      narration: stories/A-origins/A002/narration.md
+      images: stories/A-origins/A002/images.md
+      raw_materials: stories/A-origins/A002/raw-materials.md
+    sources: [taroko, boch_whp, wikipedia, ntu_hydro]
+    quality_check: pending_review
+    tags: [地質, 河流侵蝕, 太魯閣, 大理岩, 立霧溪, 嘉南平原]
+
+  - id: A003
+    title: 火的禮物——大屯火山與泥火山
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前（約 280 萬年前至今）
+    location: 臺北北投（大屯火山群）、高雄燕巢（烏山頂泥火山）
+    date_created: 2026-03-21
+    files:
+      content: stories/A-origins/A003/content.md
+      narration: stories/A-origins/A003/narration.md
+      images: stories/A-origins/A003/images.md
+      raw_materials: stories/A-origins/A003/raw-materials.md
+    sources: [tvo, ymsnp, forest_bureau, kcg_agri, wikipedia]
+    quality_check: pending_review
+    tags: [地質, 火山, 大屯火山群, 溫泉, 泥火山, 硫磺]
+
+  - id: A004
+    title: 石頭裡的秘密——卑南遺址
+    block: A-origins
+    sub_theme: 最早的足跡
+    era: 史前（約 5,300-2,300 年前）
+    location: 臺東縣臺東市南王里（卑南遺址）
+    date_created: 2026-03-22
+    files:
+      content: stories/A-origins/A004/content.md
+      narration: stories/A-origins/A004/narration.md
+      images: stories/A-origins/A004/images.md
+      raw_materials: stories/A-origins/A004/raw-materials.md
+    sources: [nmp, nrch, openmuseum, nhsrc, wikipedia, scitechvista]
+    quality_check: passed_v2
+    latest_version: v2
+    tags: [考古, 遺址, 卑南文化, 石板棺, 人獸形玉玦, 月形石柱, 臺灣玉]
+    v2:
+      date_created: 2026-03-22
+      narrative_angle: 從「玉」出發的全新敘事視角（v1 以怪手挖掘為開場）
+      files:
+        content: stories/A-origins/A004-v2/content.md
+        narration: stories/A-origins/A004-v2/narration.md
+        images: stories/A-origins/A004-v2/images.md
+        raw_materials: stories/A-origins/A004-v2/raw-materials.md
+
+  - id: A005
+    title: 海的搖籃——黑潮與臺灣
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前至今
+    location: 臺灣東部海域（黑潮主流）、臺灣海峽（黑水溝）
+    date_created: 2026-03-22
+    files:
+      content: stories/A-origins/A005/content.md
+      narration: stories/A-origins/A005/narration.md
+      images: stories/A-origins/A005/images.md
+      raw_materials: stories/A-origins/A005/raw-materials.md
+    sources: [wikipedia, nrch, scitechvista, ntnu, e-info, oca, moa, fishdb, marine_gov]
+    quality_check: passed
+    tags: [海洋, 黑潮, 黑水溝, 臺灣海峽, 珊瑚礁, 洋流, 海洋生態]
+
+  - id: A006
+    title: 獨木舟上的民族——南島語族與臺灣
+    block: A-origins
+    sub_theme: 南島的孩子
+    era: 約六千年前至今
+    location: 臺灣（南島語族原鄉）、蘭嶼（達悟族）、太平洋與印度洋諸島
+    date_created: 2026-03-22
+    files:
+      content: stories/A-origins/A006/content.md
+      narration: stories/A-origins/A006/narration.md
+      images: stories/A-origins/A006/images.md
+      raw_materials: stories/A-origins/A006/raw-materials.md
+    sources: [wikipedia, matataiwan, taiwaninsight, pansci, nchdb, smiletaiwan, openmuseum, tm, sinica]
+    quality_check: passed
+    tags: [南島語族, 原住民, 達悟族, 拼板舟, 蘭嶼, 太平洋, 遷徙, 航海]
+
+  - id: A007
+    title: 山是我們的家——泰雅族與他們的獵場
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今
+    location: 臺灣中北部山區（南投仁愛、新竹尖石、宜蘭大同與南澳）
+    date_created: 2026-03-23
+    files:
+      content: stories/A-origins/A007/content.md
+      narration: stories/A-origins/A007/narration.md
+      images: stories/A-origins/A007/images.md
+      raw_materials: stories/A-origins/A007/raw-materials.md
+    sources: [cip, knowlegde_gov, tcmb, dmtip, alive, wikipedia, springer]
+    quality_check: passed
+    tags: [泰雅族, 獵場, gaga, 紋面, 傳統領域, 狩獵, 大霸尖山, 遷徙, 宜蘭]
+
+  - id: A008
+    title: 浪的節奏——阿美族的海與豐年祭
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今
+    location: 臺灣東部海岸（花蓮豐濱鄉、港口部落 Makota'ay、秀姑巒溪出海口、台東海岸）
+    date_created: 2026-03-24
+    files:
+      content: stories/A-origins/A008/content.md
+      narration: stories/A-origins/A008/narration.md
+      images: stories/A-origins/A008/images.md
+      raw_materials: stories/A-origins/A008/raw-materials.md
+    sources: [cip, knowlegde_gov, dmtip, tipp, boch, abda_hl, tcmb, culturalsurvival, wikipedia]
+    quality_check: passed
+    html_pdf_status: pending_chalkboard
+    tags: [阿美族, Pangcah, 豐年祭, Ilisin, 海祭, 捕魚祭, 港口部落, 年齡階級, 母系社會, 魚筌, 黑潮, 東海岸]
+
+  - id: A009
+    title: 鐵砂與煙霧——十三行人的秘密
+    block: A-origins
+    sub_theme: 最早的足跡
+    era: 史前（距今約 1,800—500 年前）
+    location: 新北市八里區（淡水河出海口南岸）
+    date_created: 2026-03-25
+    files:
+      content: stories/A-origins/A009/content.md
+      narration: stories/A-origins/A009/narration.md
+      images: stories/A-origins/A009/images.md
+      raw_materials: stories/A-origins/A009/raw-materials.md
+    sources: [sshm_ntpc, openmuseum, wikipedia, sinica, taiwan_panorama, springer]
+    quality_check: passed
+    tags: [十三行文化, 冶鐵, 鐵砂, 史前遺址, 八里, 淡水河口, 凱達格蘭族, 人面陶罐, 考古, 鐵器時代]
+
+# 索引結構說明：
+# stories:
+#   - id: A001
+#     title: 故事標題
+#     block: A-origins
+#     sub_theme: 島嶼誕生
+#     era: 史前
+#     location: 臺東卑南
+#     date_created: 2026-04-01
+#     files:
+#       content: stories/A-origins/A001-content.md
+#       narration: stories/A-origins/A001-narration.md
+#       images: stories/A-origins/A001-images.md
+#     sources: [tcmb, boch]
+#     quality_check: passed
+#     tags: [考古, 遺址, 卑南, 史前文化]

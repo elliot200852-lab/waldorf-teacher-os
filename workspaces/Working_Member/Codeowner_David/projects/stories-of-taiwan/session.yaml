@@ -1,0 +1,145 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：臺灣的故事・每日故事管線
+# 路徑：projects/stories-of-taiwan/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+stories_of_taiwan_session:
+  project: stories-of-taiwan
+  last_updated: 2026-03-25  # A009 完成全管線（鐵砂與煙霧——十三行人的秘密）
+
+  overview:
+    name: 臺灣的故事
+    type: 每日故事管線（跨年級共用素材庫）
+    target_grades: [5, 6, 7, 8, 9]
+    current_focus: 五年級臺灣史地
+    description: >
+      以有憑有據的短篇故事（300-500 字）帶五年級學生認識臺灣，
+      每篇附教師說書稿、投影圖像清單、黑板畫 prompt。
+      年度目標 90-120 篇，依七大區塊時序推進。
+    annual_target: 90-120
+    skill_pipeline: story-daily v2.2.0（編排器，8 步驟）→ planner → research → writer → verify → gemini → assemble → archive
+
+  current_position:
+    block: A-origins
+    block_title: 島嶼的誕生與最初的人
+    sub_theme_completed: 島嶼誕生（4/3，含海洋延伸篇）+ 南島的孩子（1/3）+ 各族的土地故事（1/5-8）
+    current_sub_theme: 最早的足跡（2/4）
+    last_completed_story: A009
+    last_completed_title: 鐵砂與煙霧——十三行人的秘密
+    next_story_id: A010
+    status: A009 十三行遺址完成，「最早的足跡」子主題第二篇
+
+  block_progress:
+    A-origins: 9    # 目標 15-20
+    B-encounter: 0  # 目標 8-12
+    C-dutch-spanish: 0  # 目標 12-15
+    D-koxinga: 0    # 目標 10-12
+    E-qing: 0       # 目標 20-25
+    F-japanese: 0   # 目標 15-20
+    G-modern: 0     # 目標 10-15
+
+  confirmed_decisions:
+    - "專案結構已建立：project.yaml、theme-skeleton.yaml、index.yaml"
+    - "A001-A003 島嶼誕生三部曲完成（A001 板塊、A002 水、A003 火）"
+    - "子資料夾結構統一：stories/[區塊]/[ID]/（content.md、narration.md、images.md、chalkboard-prompt.md、raw-materials.md）"
+    - "index.yaml 路徑已統一為子資料夾格式（A001/content.md）"
+    - "品質檢查流程：story-verify 多維度檢核（事實查核、敘事品質、說書稿、圖像清單）"
+    - "五年級語言定位：具體、感官、有人物視角，不說教不灌輸"
+    - "故事字數：實際產出約 650-1000 字，規格 300-500 字偏保守，待教師確認是否調整上限"
+    - "方案 B 定案：原 A002 水火合篇拆為 A002 水 + A003 火"
+    - "story-daily v2.0.0：新增 8 步驟 Checkpoint 矩陣（FAIL/WARN 分級），每步轉換點強制驗證"
+    - "排程模式 fallback：Chrome/osascript/GWS 不可用時降級策略，pipeline-status.yaml 中斷恢復"
+    - "5 個子技能各加入「入口驗證」前置條件，與 Checkpoint 矩陣對齊"
+    - "assemble-story.js v2.0.0：4 個解析函式重寫 + Google Drive upsert 上傳（先刪舊再傳新）"
+    - "Google Drive 清理：每篇故事只保留最新版 HTML+PDF 各一份"
+    - "授權模型寫入 story-daily.md：除 Step 1 選題外全部預授權，排程模式全自動"
+    - "散落檔案清理：根目錄 3 個 .skill 刪除、git-history PDF 歸位、temp 舊版清除"
+    - "Obsidian sync：17 個故事 .md 加上中文 aliases，2 個 HTML 收錄 HOME.md"
+    - "story-daily v2.1.0：嚴格輸出驗證（5 項全過才輸出）、黑板畫搜尋 4 策略、GWS 動態路徑"
+    - "Step 5 Gemini 操作改寫：工具選單→建立圖像→中文前綴「請你生成一張圖片」"
+    - "Step 5→6 checkpoint 升級 WARN→FAIL（互動模式必須嵌入黑板畫）"
+    - "Step 4+5 平行化：subagent 做品質檢查 + 主 agent 做 Gemini（同時執行）"
+    - "pullQuote 與下篇預告動態化：從 content.md 提取，不再硬編碼"
+    - "story-writer.md 加入五年級寫作校準（6 條從 A002 兩版比較提取）"
+    - "故事正文字數不設硬性上限，以自然篇幅為準"
+    - "A002-v2、A003-v2 驗收版完成（校準規範 + 新 pipeline 驗證）"
+    - "story-daily v2.2.0：5 項 bug 修復——gws 健康檢查+npx fallback、版本管理規則、Gemini 5.1-5.11 子步驟帶截圖驗證、Checkpoint 前置檢查、瀏覽器權限補齊"
+    - "assemble-story.js v2.2.0：--version 旗標（版本模式跳過 cleanup）、移除 cd /tmp、GWS_BIN 健康檢查"
+    - "A004-v2 完成：從「玉」出發的全新敘事視角，28 段正文，Drive 已上傳"
+    - "assemble-story.js 正文解析修正：stripFrontmatter + 精確提取 ## 故事本文（解決 YAML frontmatter 吃掉正文的 bug）"
+    - "assemble-story.js 跨平台修正：GWS_BIN 引號移除、JSON params 分平台處理、GWS_BIN=null 時跳過上傳"
+    - "gws 全域升級 0.4.4→0.18.1：解決 Homebrew symlink 指向舊版、token 格式不相容的認證問題"
+    - "opening.md GWS 檢查防呆：先驗 command 存在、5 秒超時、任何異常靜默跳過不阻擋開工"
+
+  next_action:
+    description: "A007 完成（山是我們的家——泰雅族與他們的獵場）。下一步 A008（建議「各族的土地故事」第二篇——阿美族的海，或「最早的足跡」第二篇——十三行遺址）。"
+    input_needed_from_teacher:
+      - "A001-A004 品質覆核（通過/修訂）"
+      - "A004-v2 vs A004 比較回饋（玉的視角 vs 怪手視角）"
+      - "TCMB API Key（到手後提供）"
+
+  pipeline_outputs:
+    A001:
+      html: temp/beautify-A001-完整版.html
+      pdf: temp/A001-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A001-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-21
+    A002:
+      html: temp/beautify-A002-完整版.html
+      pdf: temp/A002-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A002-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
+    A003:
+      html: temp/beautify-A003-完整版.html
+      pdf: temp/A003-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A003-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
+    A004:
+      html: temp/beautify-A004-完整版.html
+      pdf: temp/A004-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A004-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
+      v2:
+        html: temp/beautify-A004-v2-完整版.html
+        pdf: temp/A004-v2-完整版.pdf
+        chalkboard: ~/Downloads/AssemblyStory-A004-v2-chalkboard.png
+        google_drive: uploaded
+        assembled: 2026-03-22
+    A005:
+      html: temp/beautify-A005-完整版.html
+      pdf: temp/A005-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A005-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
+    A006:
+      html: temp/beautify-A006-完整版.html
+      pdf: temp/A006-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A006-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-22
+    A007:
+      html: temp/beautify-A007-完整版.html
+      pdf: temp/A007-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A007-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-23
+
+    A009:
+      html: temp/beautify-A009-完整版.html
+      pdf: temp/A009-完整版.pdf
+      chalkboard: ~/Downloads/AssemblyStory-A009-chalkboard.png
+      google_drive: uploaded
+      assembled: 2026-03-25
+      drive_html: 16BDxaRuGYB5SzSpJxEjeI53-SJV6M1n8
+      drive_pdf: 1R34tQ2kbO3cz0I8XoLW58X4w2ea_24an
+
+  open_questions:
+    - "story-archive 技能尚未正式執行過（A001-A003 手動歸檔至 index.yaml）"
+    - "scheduled-task stories-of-taiwan-daily 已建立（Mon-Fri 10:30），但 Step 5 Gemini 瀏覽器在排程中可用性待驗證"
+    - "故事正文字數上限是否調整為 500-800（待教師確認）"
+    - "TCMB API Key 待教師提供"

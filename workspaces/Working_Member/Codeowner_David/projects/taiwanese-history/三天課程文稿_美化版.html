@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>畢麒麟的世界——三天說書人課程文稿</title>
+<style>
+  @page {
+    size: A4;
+    margin: 2.2cm 2cm 2.2cm 2cm;
+  }
+  :root {
+    --ink: #2c1810;
+    --sepia: #5a3e1b;
+    --parchment: #faf6f0;
+    --accent: #8b6914;
+    --ocean: #1a3a5c;
+    --border: #d4c5a9;
+    --light-bg: #f5f0e6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Serif TC", "Source Han Serif TC", Georgia, serif;
+    color: var(--ink);
+    background: #fff;
+    line-height: 1.9;
+    font-size: 14px;
+  }
+
+  /* Cover page */
+  .cover {
+    page-break-after: always;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(180deg, var(--parchment) 0%, #fff 100%);
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+  }
+  .cover .ornament { color: var(--accent); font-size: 1.8rem; letter-spacing: 1.5em; margin-bottom: 2rem; }
+  .cover h1 { font-size: 2.6rem; color: var(--ocean); letter-spacing: 0.15em; margin-bottom: 0.5rem; }
+  .cover .subtitle { font-size: 1.2rem; color: var(--sepia); letter-spacing: 0.3em; margin-bottom: 0.3rem; }
+  .cover .eng { font-size: 0.95rem; font-style: italic; color: var(--accent); opacity: 0.8; margin-bottom: 2.5rem; }
+  .cover .meta-block {
+    background: var(--light-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2rem 2rem;
+    text-align: left;
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--sepia);
+    line-height: 2.2;
+  }
+  .cover .meta-block strong { color: var(--ink); }
+  .cover .footer-line {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+  }
+
+  /* Day section */
+  .day-section { page-break-before: always; padding-top: 0.5rem; }
+  .day-header {
+    text-align: center;
+    padding: 1.5rem 0 1.2rem;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 1.8rem;
+  }
+  .day-header .day-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.5em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .day-header h2 { font-size: 1.7rem; color: var(--ocean); letter-spacing: 0.08em; }
+  .day-header .day-info {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--sepia);
+  }
+
+  /* Content */
+  h3 {
+    font-size: 1.15rem;
+    color: var(--ocean);
+    margin: 1.8rem 0 0.6rem;
+    padding-left: 0.8rem;
+    border-left: 3px solid var(--accent);
+  }
+  h4 {
+    font-size: 1rem;
+    color: var(--sepia);
+    margin: 1.4rem 0 0.5rem;
+    font-weight: 600;
+  }
+  p { margin-bottom: 0.8rem; text-align: justify; }
+
+  /* Projection cue */
+  .projection {
+    display: inline-block;
+    background: var(--light-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.82rem;
+    color: var(--accent);
+    margin: 0.6rem 0 0.4rem;
+    font-weight: 600;
+  }
+
+  /* Narrative block (teacher script) */
+  .script-block {
+    background: var(--parchment);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 1rem 1.4rem;
+    margin: 0.8rem 0;
+    font-size: 0.95rem;
+    line-height: 2;
+  }
+
+  /* Question list */
+  .questions {
+    background: #f0ebe0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.4rem;
+    margin: 1rem 0;
+  }
+  .questions p.q-title {
+    font-weight: 700;
+    color: var(--ocean);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  .questions ul { padding-left: 1.2rem; }
+  .questions li { margin-bottom: 0.4rem; font-size: 0.9rem; }
+
+  /* Preview box */
+  .preview {
+    background: var(--ocean);
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.6rem 1rem;
+    margin: 0.8rem 0;
+    font-size: 0.88rem;
+  }
+  .preview strong { color: #c9a84c; }
+
+  /* Appendix */
+  .appendix { page-break-before: always; padding-top: 0.5rem; }
+  .appendix h2 {
+    font-size: 1.4rem;
+    color: var(--ocean);
+    text-align: center;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .appendix h3 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+  .appendix ul { padding-left: 1.2rem; margin-bottom: 0.8rem; }
+  .appendix li { margin-bottom: 0.3rem; font-size: 0.88rem; }
+  .appendix ol { padding-left: 1.2rem; margin-bottom: 0.8rem; }
+  .appendix ol li { margin-bottom: 0.3rem; font-size: 0.88rem; }
+
+  /* Footer */
+  .page-footer {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--accent);
+  }
+
+  /* Print adjustments */
+  @media print {
+    body { background: #fff; }
+    .cover { border: none; min-height: auto; page-break-after: always; }
+    .day-section { page-break-before: always; }
+    .appendix { page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== COVER ==================== -->
+<div class="cover">
+  <div class="ornament">~ ~ ~</div>
+  <div class="subtitle">三 天 說 書 人 課 程 文 稿</div>
+  <h1>畢麒麟的世界</h1>
+  <div class="eng">The World of William Alexander Pickering</div>
+  <div class="eng">Formosa &middot; Singapore &middot; 1840-1907</div>
+  <div class="meta-block">
+    <strong>對象：</strong>六年級學生<br>
+    <strong>形式：</strong>說書人敘事 + 史料藝廊投影<br>
+    <strong>搭配：</strong>畢麒麟的世界_史料藝廊.html<br>
+    <strong>主題軸線：</strong>一個英國男孩如何成為連結東方與西方的橋樑<br>
+    <strong>史料來源：</strong>Met Museum (CC0) / Wikimedia / Wellcome Collection / Internet Archive / NAS Singapore
+  </div>
+  <div class="footer-line">慈心華德福 &middot; TeacherOS &middot; 2026-03-22</div>
+</div>
+
+<!-- ==================== DAY 1 ==================== -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-label">第 一 天</div>
+    <h2>少年水手與他的大時代</h2>
+    <div class="day-info">時間：約 40 分鐘 | 投影：Day 1 區段（共 8 張史料）| 1840-1863</div>
+  </div>
+
+  <h3>說書人文稿</h3>
+
+  <h4>開場（5 分鐘）——不投影，純口述</h4>
+  <div class="script-block">
+    <p>各位同學，今天我要跟你們講一個真實的故事。這個故事發生在差不多一百八十年前，主角是一個英國男孩。</p>
+    <p>他的名字叫威廉・亞歷山大・畢麒麟。「畢麒麟」是他後來到中國以後取的中文名字。</p>
+    <p>1840 年，他出生在英格蘭中部一個叫「伊斯特伍德」的小鎮。他是家裡唯一的男生——上面有五個姐姐，下面還有兩個妹妹。你們可以想像，家裡八個孩子中唯一的男孩，那是什麼樣的生活。</p>
+    <p>但是這個男孩從小就不安分。他不想留在小鎮上，他想去看看世界。</p>
+    <p>在他十六歲那年——也就是 1856 年——他做了一個讓全家人都嚇壞的決定：他要去當水手。</p>
+    <p>十六歲。跟你們現在差不了幾歲。</p>
+    <p>他加入了東印度公司的商船，離開了英格蘭。</p>
+  </div>
+
+  <h4>帆船時代（10 分鐘）——投影快帆船版畫</h4>
+
+  <div class="projection">投影：快帆船「颶風號」</div>
+  <div class="script-block">
+    <p>你們看到的這幅畫，是十九世紀的快帆船。「快帆船」英文叫 Clipper Ship。它們是那個時代最快的帆船，專門用來運送茶葉、絲綢和樟腦這些貴重的商品。</p>
+    <p>少年畢麒麟就是搭上這樣的帆船出海的。</p>
+  </div>
+
+  <div class="projection">投影：快帆船「夜鶯號」啟航</div>
+  <div class="script-block">
+    <p>想像你站在甲板上，看著英格蘭的海岸線越來越遠。你十六歲，你不知道自己什麼時候能再回來——也許是一年，也許是三年，也許永遠回不來了。</p>
+    <p>那個時代的水手，每一次出海都可能是最後一次。</p>
+  </div>
+
+  <div class="projection">投影：「紅夾克號」在好望角的浮冰中</div>
+  <div class="script-block">
+    <p>從英格蘭到中國，帆船要繞過整個非洲的最南端——好望角。那裡有狂風、巨浪、還有浮冰。你們看這幅畫：帆船在冰山之間穿行。很多船就是在這裡沉沒的。</p>
+    <p>少年畢麒麟第一次面對真正的生死考驗，就是在這段航程中。</p>
+  </div>
+
+  <h4>到達中國（8 分鐘）——投影貿易相關史料</h4>
+
+  <div class="projection">投影：中國畫師筆下的西方商船</div>
+  <div class="script-block">
+    <p>經過幾個月的航行，畢麒麟終於到達了中國。</p>
+    <p>你們看這幅畫——這不是歐洲畫家畫的，這是一位中國畫師畫的西方商船。在那個年代，中國口岸城市有很多畫師，專門為外國船長畫船像。這說明了一件事：東方和西方已經開始大量接觸了。</p>
+    <p>畢麒麟到了福州——就是今天福建的省會。他被分配到海關工作，同時開始學中文。</p>
+    <p>他有一個特別的天賦：語言。他很快就學會了閩南語，後來又學會了官話、廣東話、客家話、福州話、潮州話——總共六種中國的語言。</p>
+  </div>
+
+  <div class="projection">投影：中國外銷青花瓷壺</div>
+  <div class="script-block">
+    <p>這是一個中國景德鎮製造的瓷壺，上面畫著葡萄牙的國徽。幾百年來，歐洲人瘋狂追求中國的瓷器和茶葉。但問題來了：歐洲人拿什麼去交換呢？</p>
+    <p>答案之一，是鴉片。</p>
+    <p>英國人把印度種的鴉片賣到中國，換取中國的茶葉和瓷器。中國政府想禁止鴉片，英國就派軍艦來打仗。這就是「鴉片戰爭」。</p>
+  </div>
+
+  <div class="projection">投影：大沽砲台攻陷後的照片</div>
+  <div class="script-block">
+    <p>這是一張真實的照片，拍攝於 1860 年。英法聯軍攻陷了中國的大沽砲台。</p>
+    <p>畢麒麟到達中國的 1862 年，就是鴉片戰爭剛結束不久的時候。因為這場戰爭，中國被迫開放了很多港口讓外國人做生意——包括臺灣的打狗（今天的高雄）和安平（今天的臺南）。</p>
+  </div>
+
+  <h4>前往福爾摩沙（7 分鐘）——投影地圖</h4>
+
+  <div class="projection">投影：1870 年李仙得繪製的福爾摩沙地圖（寬幅）</div>
+  <div class="script-block">
+    <p>1863 年，二十三歲的畢麒麟接到一個任務：跟隨新任的臺灣海關長官，前往福爾摩沙。</p>
+    <p>「福爾摩沙」是葡萄牙語「美麗之島」的意思。這就是臺灣。</p>
+    <p>你們看這張地圖——這是當時最詳細的福爾摩沙地圖。畫這張地圖的人叫李仙得，是美國駐廈門的領事。他為什麼要畫這張地圖？因為後來發生了一件大事，我們明天再說。</p>
+    <p>你們先記住地圖上的兩個地方：南邊的「打狗」——就是今天的高雄；還有旁邊的「安平」——就是今天的臺南安平。</p>
+    <p>畢麒麟就是在這兩個地方開始了他在臺灣的冒險。</p>
+  </div>
+
+  <div class="questions">
+    <p class="q-title">收尾提問（5 分鐘）</p>
+    <ul>
+      <li>你們覺得，一個十六歲的男孩決定去當水手，需要什麼樣的勇氣？</li>
+      <li>如果是你，你願意離開家鄉去一個完全陌生的地方嗎？</li>
+      <li>為什麼歐洲人那麼想要中國的茶葉和瓷器？今天有沒有類似的東西，是大家都搶著要的？</li>
+    </ul>
+  </div>
+
+  <div class="preview">
+    <strong>預告：</strong>明天我們要講的，是畢麒麟在臺灣最驚險的冒險——他會遇到獵人頭的部落，也會遇到一場讓整個臺灣南端震動的海難事件。
+  </div>
+</div>
+
+<!-- ==================== DAY 2 ==================== -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-label">第 二 天</div>
+    <h2>福爾摩沙的冒險者</h2>
+    <div class="day-info">時間：約 45 分鐘 | 投影：Day 2 區段（共 9 張史料）| 1863-1870</div>
+  </div>
+
+  <h3>說書人文稿</h3>
+
+  <h4>回顧與開場（3 分鐘）</h4>
+
+  <div class="projection">投影：《福爾摩沙的先驅》原版書封</div>
+  <div class="script-block">
+    <p>昨天我們講到，二十三歲的畢麒麟到了臺灣。今天我們要進入他最精彩的冒險。</p>
+    <p>這本書，就是畢麒麟晚年寫下的回憶錄。書名翻譯成中文是：《福爾摩沙的先驅：在官員、盜匪與獵頭族群中的冒險回憶》。</p>
+    <p>「官員」指的是清朝的地方官，「盜匪」指的是沿海劫掠沉船的人，「獵頭族群」指的是臺灣山地原住民——他們有獵取敵人頭顱的傳統。</p>
+    <p>光看書名，你們就知道這本書有多精彩了。</p>
+  </div>
+
+  <h4>臺灣的真實面貌（10 分鐘）——投影 John Thomson 照片</h4>
+
+  <div class="projection">投影：打狗港入口，1871 年實景</div>
+  <div class="script-block">
+    <p>這張照片拍攝於 1871 年——畢麒麟離開臺灣一年之後。拍這張照片的人叫 John Thomson，是一位蘇格蘭攝影師。</p>
+    <p>你們看：這就是打狗港——畢麒麟第一次踏上臺灣的地方。今天它叫做高雄港，是臺灣最大的港口之一。但在一百五十多年前，它只是一個小小的漁港。</p>
+  </div>
+
+  <div class="projection">投影：安平古堡，1871 年實景</div>
+  <div class="script-block">
+    <p>這是安平古堡——荷蘭人在 1620 年代建造的熱蘭遮城的廢墟。畢麒麟在安平管理海關，每天都經過這座古老的堡壘。</p>
+    <p>後來，1868 年，英國軍艦就是在這個地方開了七砲。為什麼？等一下再說。</p>
+  </div>
+
+  <div class="projection">投影：臺灣平埔族，1871 年</div>
+  <div class="script-block">
+    <p>這是臺灣的平埔族——他們住在平原上，跟漢人混居。畢麒麟在書中記錄，他去拜訪一個叫「崗仔內」的部落時，部落的長老對他非常友善。長老甚至跟他說，他們的祖先也跟白人有過接觸。</p>
+  </div>
+
+  <div class="projection">投影：臺灣內陸（木柵），1871 年</div>
+  <div class="script-block">
+    <p>但要深入山區，就是完全不同的世界了。</p>
+    <p>畢麒麟帶著三把槍——一把柯爾特左輪手槍、一把雙管獵槍、和一把史賓塞七連發步槍——走進這樣的叢林山地。他是少數敢這樣做的西方人之一。</p>
+    <p>山裡住著被清朝稱為「生番」的部落。他們有獵取敵人頭顱的傳統——不是因為殘忍，而是因為在他們的文化中，獵取頭顱是證明勇氣的方式，也是一種保護部落的儀式。</p>
+  </div>
+
+  <h4>羅妹號事件（12 分鐘）——核心故事</h4>
+
+  <div class="projection">投影：排灣族家屋，約 1900 年</div>
+  <div class="script-block">
+    <p>1867 年 3 月 12 日，一艘美國商船「羅妹號」（Rover）在臺灣最南端的海岬附近觸礁沉沒。</p>
+    <p>船長杭特帶著妻子和十二名船員游上了岸。但他們上岸的地方，是排灣族龜仔甪社的領地。</p>
+    <p>排灣族是臺灣南部最強大的原住民族群。之前已經有外國人闖入他們的領地並殺害了族人，所以他們對外來者充滿敵意。</p>
+    <p>結果，十四個人全部被殺。包括船長杭特和他的妻子。</p>
+    <p>消息傳出後，美國海軍大怒。他們派了兩艘軍艦——哈特福號和懷俄明號——帶了一百八十一名士兵登陸。</p>
+    <p>但美國人在叢林中遭到排灣族的伏擊。副指揮官麥乾乃被射殺。美國軍隊狼狽撤退。</p>
+    <p>用軍事力量解決不了問題，美國領事李仙得決定用談判。</p>
+    <p>他需要一個翻譯——一個既懂英文、又懂中文、還敢進入原住民領地的人。</p>
+    <p>整個福爾摩沙，只有一個人符合條件：畢麒麟。</p>
+    <p>畢麒麟帶著李仙得，穿過危險的山區，來到排灣族十八社大頭目卓杞篤的面前。</p>
+    <p>經過漫長的談判，卓杞篤同意了一個條約：以後任何外國船員在這裡遇難上岸，排灣族不會殺害他們，而是讓他們安全離開。</p>
+    <p>這就是「南岬之盟」——歷史上第一個西方世界與臺灣原住民之間的條約。</p>
+  </div>
+
+  <h4>樟腦戰爭（8 分鐘）</h4>
+
+  <div class="projection">投影：快帆船「彗星號」在颶風中</div>
+  <div class="script-block">
+    <p>畢麒麟不只是冒險家，他也是商人。</p>
+    <p>當時臺灣有一種非常值錢的東西：樟腦。樟腦是從樟樹提煉出來的，可以用來做炸藥、做藥品、做賽璐珞（那個時代的塑膠）。美國人特別想要。</p>
+    <p>但清朝政府把樟腦列為專賣品——只有官方才能賣。</p>
+    <p>1868 年，畢麒麟接到老闆的命令，要他去搞到一批樟腦。他聯繫了一個叫蔡家的漢人家族，買了大約一萬五千公斤的樟腦結晶。然後他買通了一個漁民，打算從一個不合法的小港口把樟腦偷偷運出去。</p>
+    <p>但他被清朝官員抓到了。樟腦被沒收，畢麒麟被懸賞通緝。</p>
+    <p>這件事最後升級成了一場戰爭。英國軍艦開進了安平港，對著岸上開了七砲，殺死十一名清朝士兵，佔領了安平港兩個月。</p>
+    <p>結果：清朝被迫簽約，開放了臺灣的樟腦貿易。</p>
+  </div>
+
+  <div class="projection">投影：中國外銷瓷碗</div>
+  <div class="script-block">
+    <p>你們看這件瓷碗——中國的瓷器到了英國，被鑲上了華麗的金銀框。東方的工藝加上西方的品味。</p>
+    <p>但這件美麗的東西背後，是一個很不平等的故事：歐洲人想要中國的好東西，但中國不怎麼需要歐洲的東西。所以歐洲人用鴉片、用軍艦、用條約來強迫貿易。</p>
+    <p>畢麒麟的樟腦事件，就是這個大故事的一個小片段。</p>
+  </div>
+
+  <div class="projection">投影：石門之役版畫，1874 年</div>
+  <div class="script-block">
+    <p>畢麒麟在 1870 年因為生病離開了臺灣。但四年後，又一場跟原住民的衝突發生了——牡丹社事件。日本以保護琉球船員為由出兵攻打臺灣南部原住民。</p>
+    <p>這場衝突的根源——外國船員遭原住民殺害——正是畢麒麟在「羅妹號事件」中親身經歷過的。他的故事，就是這段歷史的前傳。</p>
+  </div>
+
+  <div class="questions">
+    <p class="q-title">收尾提問（5 分鐘）</p>
+    <ul>
+      <li>排灣族殺害羅妹號船員，你覺得是「對」還是「錯」？如果你是排灣族人，之前有外國人闖入你的家園殺害你的族人，你會怎麼做？</li>
+      <li>畢麒麟偷運樟腦是違法的，但後來英國用軍艦把清朝打敗了。「強者就是對的」嗎？</li>
+      <li>在南岬之盟的談判中，卓杞篤為什麼會同意簽約？他是被迫的，還是做了一個聰明的選擇？</li>
+    </ul>
+  </div>
+
+  <div class="preview">
+    <strong>預告：</strong>明天是最後一天。畢麒麟離開臺灣後去了新加坡，他從一個冒險家變成了一個保護者。但有人要殺他——用一把斧頭。
+  </div>
+</div>
+
+<!-- ==================== DAY 3 ==================== -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-label">第 三 天</div>
+    <h2>華民護衛司——從冒險家到守護者</h2>
+    <div class="day-info">時間：約 40 分鐘 | 投影：Day 3 區段（共 8 張史料）| 1872-1907</div>
+  </div>
+
+  <h3>說書人文稿</h3>
+
+  <h4>回顧與轉折（3 分鐘）</h4>
+  <div class="script-block">
+    <p>前兩天我們講了畢麒麟在大海上和臺灣的冒險。今天，我們要講他人生的下半場——一個完全不同的故事。</p>
+    <p>畢麒麟離開臺灣的原因很簡單：他病了。常年在熱帶叢林裡穿梭，他得了瘧疾和慢性痢疾。1870 年，他回到英國休養。</p>
+    <p>兩年後的 1872 年，他來到了新加坡。</p>
+  </div>
+
+  <h4>新加坡的華人世界（10 分鐘）</h4>
+
+  <div class="projection">投影：從政府山俯瞰新加坡，1865 年</div>
+  <div class="script-block">
+    <p>這是 1865 年的新加坡。它是英國在東南亞最重要的殖民地，位置就在馬來半島的最南端，扼守著麻六甲海峽——從印度洋到太平洋的必經之路。</p>
+    <p>這裡住著大量的中國移民。他們從福建、廣東、潮州來到南洋，在錫礦、碼頭、種植園工作。</p>
+  </div>
+
+  <div class="projection">投影：英國殖民地的華工</div>
+  <div class="script-block">
+    <p>這些華人移民被叫做「苦力」（coolie）。很多人是被騙來的——有人告訴他們南洋遍地黃金，到了才發現是當苦工。有些人甚至是被綁架來的。</p>
+    <p>他們被工頭剝削，被秘密會社控制。秘密會社就像黑幫——它們收保護費、開賭場、控制鴉片買賣、販賣婦女。如果你不聽話，可能就會消失。</p>
+    <p>而英國殖民政府呢？他們統治著這麼多華人，卻沒有一個官員會說中文。</p>
+    <p>想像一下：你是學校的校長，你的學校裡有一半的學生說的是你完全聽不懂的語言。你怎麼管理？你怎麼知道他們需要什麼？你怎麼知道他們遇到了什麼問題？</p>
+    <p>這就是新加坡的困境。</p>
+    <p>然後，畢麒麟來了。</p>
+  </div>
+
+  <div class="projection">投影：畢麒麟肖像</div>
+  <div class="script-block">
+    <p>他是整個海峽殖民地——包括新加坡、檳城和麻六甲——唯一一個會說中文的歐洲官員。而且他不只是會說「中文」：他會說閩南語、官話、廣東話、客家話、福州話、潮州話——六種方言。</p>
+    <p>1877 年 5 月 3 日，他被任命為史上第一位「華民護衛司」——Protector of Chinese。</p>
+    <p>這個官職的名稱本身就很特別：「護衛」——他的工作不是管理華人，而是保護他們。</p>
+  </div>
+
+  <h4>保護者的工作（10 分鐘）</h4>
+
+  <div class="projection">投影：新加坡駁船碼頭</div>
+  <div class="script-block">
+    <p>畢麒麟做了什麼？</p>
+    <p>第一，他親自到碼頭去。每一艘載著新移民的船靠岸，他都會去跟那些剛下船的苦力說話。用他們的方言。問他們：你從哪裡來？誰帶你來的？你知不知道你要去做什麼工作？有沒有人騙你？</p>
+    <p>很多苦力聽到一個洋人用他們的家鄉話問這些問題，都嚇了一跳。然後他們開始說出真相。</p>
+    <p>第二，他規定所有的苦力仲介和苦力收容所都要申請執照。不合格的就關掉。</p>
+    <p>第三，他建立了「保良局」——一個專門保護被販賣的婦女和女孩的機構。他從妓院裡救出被賣的女性，給她們提供安全的住所。</p>
+    <p>第四，他調解秘密會社之間的衝突。他會走進秘密會社的地盤，用他們的方言跟他們談判。</p>
+    <p>據說，有一次新加坡發生暴動，他拿著蘇格蘭風笛走到暴動的人群中間開始吹。所有人都愣住了——從來沒看過這種事。暴動就這樣平息了。</p>
+  </div>
+
+  <h4>斧頭（8 分鐘）——高潮</h4>
+
+  <div class="script-block">
+    <p>但畢麒麟的工作讓很多人恨他。特別是秘密會社——他的法規直接威脅了他們的利益。</p>
+    <p>1887 年 7 月 18 日。</p>
+  </div>
+
+  <div class="projection">投影：造船大師唐納德・麥凱——銀版照片</div>
+  <div class="script-block">
+    <p>在那個年代，照片還不普遍。你們看這張銀版照片——它拍攝於 1850 年代。照片上的人不是畢麒麟，而是同時代的造船師麥凱。但我要你們注意的是：這就是那個時代的「照片」的樣子。每一張照片都是獨一無二的，用銀版和水銀蒸汽在銅板上固定光影。</p>
+    <p>那天，一個叫蔡亞式的潮州木匠走進了畢麒麟的辦公室。他假裝要遞交一份請願書。</p>
+    <p>當畢麒麟伸手接過文件的時候，蔡亞式突然從背後抽出一把斧頭，對著畢麒麟的額頭砍了下去。</p>
+    <p>斧頭的背面——不是刀刃那一面——打中了畢麒麟的額頭。</p>
+    <p>他倒在血泊中，但他沒有死。</p>
+    <p>蔡亞式是義興會社派來的殺手。義興會社是當時新加坡最大的秘密會社之一。</p>
+    <p>這次暗殺事件震驚了整個殖民地。結果：英國政府下令禁止新加坡所有的秘密會社。</p>
+    <p>畢麒麟雖然活了下來，但傷勢嚴重，再也無法完全康復。他在 1889 年退休。</p>
+  </div>
+
+  <h4>尾聲與遺產（5 分鐘）</h4>
+
+  <div class="projection">投影：快帆船「大共和號」+ 快帆船「海洋霸主號」</div>
+  <div class="script-block">
+    <p>退休後的畢麒麟回到歐洲。1898 年，他坐下來寫了那本《福爾摩沙的先驅》。那時候他已經 58 歲了，距離他第一次踏上臺灣已經過了 35 年。</p>
+    <p>1907 年，他在義大利的聖雷莫去世，享年六十六歲。</p>
+  </div>
+
+  <div class="projection">投影：中國外銷瓷盤——東西方的交匯</div>
+  <div class="script-block">
+    <p>今天，新加坡的牛車水——也就是唐人街——有一條街叫「畢麒麟街」（Pickering Street）。</p>
+    <p>2021 年，臺灣公視拍了一部電視劇叫《斯卡羅》，裡面有一個角色就是年輕的畢麒麟。</p>
+    <p>你們看最後這件文物——中國的瓷盤被英國的銀匠鑲上了鍍金銀框。東方的工藝和西方的品味在同一件物品上融合。</p>
+    <p>畢麒麟的一生，就像這件瓷盤。他是英國人，但他說中文比大多數中國官員還流利。他在臺灣跟原住民部落交朋友，在新加坡保護華人移民的權益。他既是殖民體制的一部分，又在這個體制中做了一些真正保護弱者的事情。</p>
+    <p>歷史很少是簡單的黑白對錯。</p>
+  </div>
+
+  <div class="questions">
+    <p class="q-title">收尾提問（5 分鐘）</p>
+    <ul>
+      <li>畢麒麟是殖民體制的一部分，但他也保護了很多人。你怎麼看這件事？一個人可以同時是「體制的人」又是「好人」嗎？</li>
+      <li>他精通六種中國方言，這件事在他的一生中產生了什麼影響？語言為什麼那麼重要？</li>
+      <li>如果畢麒麟活到今天，他會是什麼樣的人？他的技能和性格，適合做什麼工作？</li>
+      <li>你們覺得，「勇敢」是什麼？十六歲離家當水手是勇敢，走進獵頭部落是勇敢，站在被壓迫者身邊也是勇敢——這些「勇敢」有什麼不同？</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== APPENDIX ==================== -->
+<div class="appendix">
+  <h2>附錄：教師備課筆記</h2>
+
+  <h3>史實準確度說明</h3>
+  <p>本文稿中的所有事件、人物、年份均基於以下史料：</p>
+  <ol>
+    <li><strong>Pickering, W.A. (1898).</strong> <em>Pioneering in Formosa: Recollections of Adventures Among Mandarins, Wreckers, &amp; Head-Hunting Savages.</em> London: Hurst and Blackett.（Internet Archive 有全文掃描）</li>
+    <li><strong>National Library Board Singapore</strong> — Pickering 傳記頁面與華民護衛司資料</li>
+    <li><strong>Wikimedia Commons</strong> — 19 世紀臺灣攝影（John Thomson, 1871）</li>
+    <li><strong>Metropolitan Museum of Art</strong> — 快帆船版畫、中國外銷瓷器、Felice Beato 戰地攝影（CC0）</li>
+  </ol>
+
+  <h3>六年級教學調適</h3>
+  <ul>
+    <li><strong>敘事節奏</strong>：以冒險故事為主軸，歷史背景融入敘事中自然帶出，不獨立講授</li>
+    <li><strong>道德複雜度</strong>：六年級學生開始能處理灰色地帶。提問設計引導思考而非給標準答案</li>
+    <li><strong>暴力內容處理</strong>：羅妹號事件中的殺害、獵頭傳統等，以事實陳述方式呈現，不渲染血腥。強調文化脈絡</li>
+    <li><strong>殖民批判</strong>：不迴避殖民體制的暴力本質，但也不簡化為「西方壞人」。畢麒麟本身就是殖民體制的矛盾體現</li>
+  </ul>
+
+  <h3>畫廊使用建議</h3>
+  <ul>
+    <li>每張史料投影時停留 1-2 分鐘，讓學生先觀察再聽講解</li>
+    <li>地圖類史料可以請學生上前指認地點</li>
+    <li>John Thomson 的照片特別珍貴——這些是臺灣最早的攝影紀錄之一，值得慢慢看</li>
+    <li>快帆船版畫可以請學生比較不同船隻的大小和速度</li>
+    <li>Lightbox 功能（點擊圖片放大）適合讓學生仔細觀察細節</li>
+  </ul>
+
+  <h3>延伸活動建議</h3>
+  <ol>
+    <li><strong>閱讀延伸</strong>：節選《福爾摩沙的先驅》章節（Internet Archive 全文公開）</li>
+    <li><strong>地圖活動</strong>：在世界地圖上標出畢麒麟的人生路線（英格蘭 → 好望角 → 福州 → 打狗 → 安平 → 新加坡 → 義大利）</li>
+    <li><strong>寫作活動</strong>：請學生從畢麒麟的視角寫一篇日記——選擇他人生中的任何一天</li>
+    <li><strong>討論延伸</strong>：比較畢麒麟與馬偕——兩個同時代在臺灣的外國人，動機與行為有何不同？</li>
+    <li><strong>影像延伸</strong>：觀看《斯卡羅》片段（畢麒麟角色出場段落）</li>
+  </ol>
+
+  <div class="page-footer">
+    <p>畢麒麟的世界——三天說書人課程文稿</p>
+    <p>慈心華德福 &middot; TeacherOS &middot; 2026-03-22</p>
+  </div>
+</div>
+
+</body>
+</html>

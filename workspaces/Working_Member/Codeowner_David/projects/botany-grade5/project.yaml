@@ -1,0 +1,49 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：五年級植物學・專案進度錨點
+# 路徑：projects/botany-grade5/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+botany_grade5:
+  project_type: 獨立工作線
+  target_grades: [5]
+  current_focus: 五年級華德福植物學主課程
+  last_updated: 2026-03-24
+
+  current_position:
+    phase: 試跑完成
+    step: 1
+    description: "B001 試跑成功，Pipeline v1.0.0 驗證通過，準備建立排程"
+
+  source_material:
+    kovacs_book: "Charles Kovacs, *Botany* (Floris Books, 2005)"
+    kovacs_chapters_path: kovacs-chapters/
+    theme_skeleton: theme-skeleton.md
+    theme_skeleton_yaml: theme-skeleton.yaml
+
+  story_count:
+    total: 2
+    by_block:
+      block-1-plant-and-earth: 2    # 第 1-6 課
+      block-2-fern-to-tree: 0       # 第 7-14 課
+      block-3-individual-plants: 0  # 第 15-22 課
+      block-4-plants-and-people: 0  # 第 23-30 課
+
+  pipeline:
+    version: 1.0.0
+    assemble_script: publish/scripts/assemble-botany.js
+    drive_folder: "1jjtNmAtzcpbzVmHY8Dz8Dqz4w2fMJbU4"  # Google Drive「植物學五年級」
+    scheduled_task: botany-daily
+    schedule: "0 12 * * *"  # 每天中午 12:00（含週末）
+
+  output_per_lesson:
+    - content.md           # (a) 800 字說書人逐字稿
+    - kovacs-teaching.md   # (b) 300 字教學精要
+    - chalkboard-prompt.md # (d) 黑板畫 Prompt
+    - images.md            # (e) 投影圖畫清單
+    - references.md        # (f) 參考來源
+    - raw-materials.md     # (g) 素材包
+    - quality-report.md    # (h) 品質報告
+
+  next_action:
+    description: "建立排程任務 botany-daily，B002 起由排程自動執行"

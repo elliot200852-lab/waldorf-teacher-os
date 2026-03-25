@@ -1,0 +1,86 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：臺灣的故事・專案進度錨點
+# 路徑：projects/stories-of-taiwan/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+stories_of_taiwan:
+  project_type: 獨立工作線（第三條線）
+  target_grades: [5, 6, 7, 8, 9]
+  current_focus: 五年級臺灣史地
+  last_updated: 2026-03-25
+
+  current_position:
+    phase: 試跑期
+    step: 1
+    description: "島嶼誕生三部曲完成（A001-A003），管線 v2.0.0 工程強化完成，全部已上傳 Google Drive"
+
+  theme_skeleton:
+    status: draft
+    file: themes/theme-skeleton.yaml
+
+  data_sources:
+    tcmb:
+      status: 待 API Key
+      api_available: true
+      note: "David 已申請，等 Key 下來"
+    datagov:
+      status: 可用
+      api_available: true
+      needs_key: false
+    boch:
+      status: 待確認
+      api_available: unknown
+      note: "API 端點可能已遷移，需瀏覽器確認"
+    archives:
+      status: 可瀏覽
+      api_available: false
+      note: "無公開 API，AI 輔助研究"
+    nhrm:
+      status: 可瀏覽
+      api_available: false
+      note: "記憶庫子站需確認現況"
+    tm:
+      status: 可瀏覽
+      api_available: false
+      note: "臺灣記憶，搜尋連結產生"
+    openmuseum:
+      status: 可瀏覽
+      api_available: false
+      note: "開放博物館，搜尋連結產生"
+
+  story_count:
+    total: 9
+    by_block:
+      A-origins: 9
+      B-encounter: 0
+      C-dutch-spanish: 0
+      D-koxinga: 0
+      E-qing: 0
+      F-japanese: 0
+      G-modern: 0
+
+  skills_status:
+    story-daily: active-v2.0.0  # 全流程編排器，8 步驟 + checkpoint 矩陣 + 排程 fallback
+    story-planner: active       # 每日選題，已加入口驗證
+    story-research: active      # 素材搜尋，已加入口驗證
+    story-writer: active        # 三件套撰寫，已加入口驗證
+    story-verify: active        # 品質檢查，已加入口驗證
+    story-archive: active       # 歸檔與索引，已加入口驗證（A001-A003 手動歸檔）
+    assemble-story-js: active-v2.0.0  # 組裝腳本，解析重寫 + upsert 上傳
+    scheduled-task: active      # stories-of-taiwan-daily，Mon-Fri 10:30
+
+  next_action:
+    description: "管線 v2.0.0 工程強化完成。下一步：進入「最早的足跡」子主題（A004 起），以 checkpoint 矩陣驗證新流程"
+    input_needed_from_teacher:
+      - "A001-A003 品質覆核（通過/修訂）"
+      - "TCMB API Key（到手後提供）"
+      - "說書稿語氣是否需要調整"
+      - "故事正文字數上限是否調整為 500-800（實際產出約 650-1000 字）"
+      - "排程 Step 5 Gemini 瀏覽器可用性確認（需確保排程執行時 Chrome 已開啟）"
+
+  output_files:
+    - type: 計畫書
+      file: project-plan-v0.1.md
+      date: 20260321
+      version: v0.1
