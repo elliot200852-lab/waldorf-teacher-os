@@ -386,6 +386,9 @@ def main():
     parser.add_argument(
         "--auto-fix", action="store_true", help="自動修正可修正的問題"
     )
+    parser.add_argument(
+        "--pre-commit", action="store_true", help="由 pre-commit hook 呼叫（僅檢查，不修正）"
+    )
     args = parser.parse_args()
 
     repo_root = find_repo_root()

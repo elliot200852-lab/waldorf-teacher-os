@@ -551,6 +551,54 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_114學年山鹿老師戶外教育研習＿校內用課程計畫1_26-28\|MountainDeer 114學年山鹿老師戶外教育研習＿校內用課程計畫1 26 28]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_114學年山鹿老師戶外教育研習＿校內用課程計畫9_15\|MountainDeer 114學年山鹿老師戶外教育研習＿校內用課程計畫9 15]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_9_15山鹿老師講座-回復家長的提問\|MountainDeer 9 15山鹿老師講座 回復家長的提問]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_山與海之間的呼喚——記山鹿老師在慈心的夜晚\|MountainDeer 山與海之間的呼喚——記山鹿老師在慈心的夜晚]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_山鹿教師研習教師簽到單\|MountainDeer 山鹿教師研習教師簽到單]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_山鹿老師家長場講座紀錄＿0915\|MountainDeer 山鹿老師家長場講座紀錄＿0915]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_山鹿老師研習文案-家長、教師\|MountainDeer 山鹿老師研習文案 家長、教師]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_活在當下，與自然重逢——山鹿老師在慈心的夜晚\|MountainDeer 活在當下，與自然重逢——山鹿老師在慈心的夜晚]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/Susan_114學年Susan研習2026年3月＿基金會用課程計畫\|Susan 114學年Susan研習2026年3月＿基金會用課程計畫]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/Susan_114學年Susan研習2026年3月＿校內用課程計畫\|Susan 114學年Susan研習2026年3月＿校內用課程計畫]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/Susan_114學年Susan線上研習＿校內用課程計畫\|Susan 114學年Susan線上研習＿校內用課程計畫]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/YuQing_114學年尤清老師研習＿校內用課程計畫\|YuQing 114學年尤清老師研習＿校內用課程計畫]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/YuQing_114學年尤清老師研習＿校內用課程計畫0107\|YuQing 114學年尤清老師研習＿校內用課程計畫0107]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/all_files\|all files]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/all_files_complete\|all files complete]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/all_folders\|all folders]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/all_研習_files\|all 研習 files]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/auth\|auth]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/auth_log\|auth log]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/auth_url\|auth url]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/children_list\|children list]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/create_doc\|create doc]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/create_final_doc\|create final doc]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/create_help\|create help]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/download_files\|download files]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/drive_files\|drive files]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/fetch_data\|fetch data]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/files_found\|files found]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/final_auth\|final auth]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/final_url\|final url]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/find_files\|find files]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/find_folder\|find folder]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/find_images\|find images]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/folder_found\|folder found]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/fresh_login\|fresh login]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/help\|help]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/list_children\|list children]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/list_研習_files\|list 研習 files]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/live_auth\|live auth]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/login_url\|login url]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/login_url_new\|login url new]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/print_files\|print files]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/report\|report]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/report\|report]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/upload_help\|upload help]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/upload_report\|upload report]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/url\|url]] | （自動收錄） |
+| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/verify_folder\|verify folder]] | （自動收錄） |
 | [[README]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_劉佳芳/teacheros-personal.yaml\|劉佳芳個人身份層]] | 教學信念、工作偏好 |
 | [[workspaces/Working_Member/Teacher_劉佳芳/workspace.yaml\|劉佳芳 workspace 狀態]] | Workspace 狀態 |
@@ -875,6 +923,8 @@ aliases:
 | [[ai-core/skills/gws-bridge\|gws-bridge]] | 「gws bridge」「Cowork gws」 | Cowork VM ↔ 本機 GWS CLI 橋接（自動偵測環境） |
 | [[niamyio]] | （自動收錄） |
 | [[botany-daily]] | （自動收錄） |
+| [[new-doc]] | （自動收錄） |
+| [[video-setup]] | （自動收錄） |
 
 ---
 
@@ -1134,6 +1184,8 @@ aliases:
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
 | [[）]] | （自動收錄） |
+| [[backup-to-drive]] | Python 腳本 |
+| [[backup-reference]] | （自動收錄） |
 
 ---
 
@@ -1254,6 +1306,7 @@ aliases:
 | [[.claude/commands/story-daily.md\|/story-daily]] | story-daily（全流程編排器） |
 | [[pattern]] | （自動收錄） |
 | [[patterns]] | （自動收錄） |
+| [[new-doc]] | （自動收錄） |
 
 ---
 
@@ -1634,6 +1687,7 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/images\|images]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/narration\|narration]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/raw-materials\|raw materials]] | （自動收錄） |
+| [[git-history_2026-03-15_v1]] | （自動收錄） |
 
 ---
 

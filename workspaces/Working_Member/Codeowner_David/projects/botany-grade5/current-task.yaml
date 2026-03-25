@@ -1,0 +1,15 @@
+lesson_id: B003
+title: 真菌
+kovacs_chapter: "03_Fungi"
+block: block-1-plant-and-earth
+core_image: "真菌沒有葉綠素，不能自己製造食物——像嬰兒完全依賴母親。真菌活在黑暗中，分解死去的東西，讓養分回歸大地。"
+taiwan_species:
+  - "牛樟芝（Antrodia cinnamomea）"
+  - "段木香菇"
+taiwan_connection: "牛樟芝——台灣特有真菌，只長在牛樟樹上，原住民傳統藥用；段木香菇——台灣中海拔山區的香菇栽培文化（埔里、新社）；故事線：「為什麼最珍貴的東西長在最黑暗的地方？」"
+art_response: "蠟塊畫——深褐色與暗紅色，從腐木中長出的菇"
+next_lesson_preview:
+  id: B004
+  title: 藻類
+  preview: "真菌是最沉睡的植物——那麼，什麼是最早學會自己製造食物的生命呢？下一課，我們來認識在水中生活的藻類。"
+created_at: 2026-03-25
