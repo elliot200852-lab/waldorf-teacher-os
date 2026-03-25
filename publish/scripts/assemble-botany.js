@@ -169,9 +169,15 @@ function extractFrontmatter(md) {
 }
 
 function extractTitle(md) {
+  // 優先讀 YAML frontmatter 的 title 欄位（如 title: 真菌）
+  const yamlMatch = md.match(/^---\n([\s\S]*?)\n---/);
+  if (yamlMatch) {
+    const titleLine = yamlMatch[1].match(/^title:\s*"?([^"\n]+)"?\s*$/m);
+    if (titleLine) return titleLine[1].trim();
+  }
+  // fallback：讀 H1，去掉 lesson ID 前綴（如 "B001 "）
   const m = md.match(/^#\s+(.+)/m);
   if (!m) return '五年級植物學';
-  // 去掉 lesson ID 前綴（如 "B001 "）
   return m[1].trim().replace(/^B\d{3}\s+/, '');
 }
 
