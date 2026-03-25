@@ -1,3 +1,9 @@
+---
+aliases:
+  - 塞掐SideChat E398 主權AI摘要報告
+  - 塞掐SideChat-E398-主權AI摘要報告
+---
+
 # 塞掐 Side Chat E398 摘要報告
 
 ## 買再多 NVIDIA 顯卡也沒用！主權 AI 到底需要什麼？

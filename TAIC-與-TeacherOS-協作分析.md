@@ -1,3 +1,9 @@
+---
+aliases:
+  - TAIC 與 TeacherOS 協作分析
+  - TAIC-與-TeacherOS-協作分析
+---
+
 # 台灣主權 AI 訓練語料庫（TAIC）與 TeacherOS 協作分析
 
 **日期：2026-03-25**

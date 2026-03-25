@@ -1,3 +1,9 @@
+---
+aliases:
+  - raw materials
+  - raw-materials
+---
+
 # 素材包：A009 鐵砂與煙霧——十三行人的秘密
 
 ## 核心事實
