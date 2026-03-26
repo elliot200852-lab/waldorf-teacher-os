@@ -46,6 +46,26 @@ stories:
       pdf: "1SLMIPX-4ud2heGDNjljrXXuYPp6OmLIk"
     tags: [摩奴, Manu, 摩蹉, Matsya, 毗濕奴, 大洪水, 古印度, 夢境意識, 洪水神話]
 
+  - id: AM004
+    title: 種姓制度與聖牛
+    block: block-1-india
+    story_ref: "Story 3-4"
+    mythology_topic: "普魯沙宇宙人神話——四個種姓從神的身體誕生；神牛卡瑪達努（Kamadhenu）的故事"
+    date_created: 2026-03-26
+    files:
+      content: stories/AM004/content.md
+      waldorf_teaching: stories/AM004/waldorf-teaching.md
+      chalkboard_prompt: stories/AM004/chalkboard-prompt.md
+      images: stories/AM004/images.md
+      references: stories/AM004/references.md
+      raw_materials: stories/AM004/raw-materials.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1q4h_R_35AfCEnXjq1lgDsQ86wVajPoBu"
+      pdf: "187-ZN1mB3DZAwFL5kRP06hoFwu8Kj6DT"
+    tags: [普魯沙, Purusha, 種姓制度, Varna, 卡瑪達努, Kamadhenu, 神牛, 摩奴法典, 古印度, 夢境意識]
+
   - id: AM002
     title: 創世與最初的人類（二）
     block: block-1-india

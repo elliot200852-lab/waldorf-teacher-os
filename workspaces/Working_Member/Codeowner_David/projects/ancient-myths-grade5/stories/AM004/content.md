@@ -78,10 +78,10 @@
 
 ## 事實出處
 
-| 故事元素 | 原始來源 | 說明 | URL |
-|----------|----------|------|-----|
-| 普魯沙神話（宇宙原人的身體分解為四個種姓） | 梨俱吠陀（Rigveda）X.90，普魯沙讚歌（Purusha Sukta） | 印度最古老的吠陀文獻，約西元前 1200–900 年成書；第十卷第九十頌以詩歌形式記載普魯沙的身體如何分解為婆羅門（口）、剎帝利（臂）、吠舍（腿）、首陀羅（足）。學者注意到種姓相關詩節可能為較晚期的插入，有為既存社會不平等賦予神聖化的作用。 | https://en.wikipedia.org/wiki/Purusha_Sukta |
-| 四個種姓（Varna）的功能分工 | Varna (Hinduism) — Britannica | 涵蓋四個瓦爾納的職責、義務（dharma）與《摩奴法典》如何將理論框架制度化的完整說明 | https://www.britannica.com/topic/varna-Hinduism |
-| 摩奴法典（Manu Smriti）——種姓義務的系統化 | Manu-smriti — Britannica | 古印度法律文獻，規定每個種姓的義務（dharma）與人生四個階段（ashrama）；被視為大洪水後摩奴恢復社會秩序的規範依據 | https://www.britannica.com/topic/Manu-smriti |
-| 神牛卡瑪達努（Kamadhenu）——婆私吒 vs 維士瓦密多羅 | Kamadhenu — Wikipedia | 涵蓋神牛的起源（宇宙乳海攪拌，Samudra Manthana）、婆私吒與戰士王維士瓦密多羅的衝突故事（出自《羅摩衍那》），以及神牛作為「精神力量 vs 武力」寓言的象徵意義 | https://en.wikipedia.org/wiki/Kamadhenu |
-| 種姓制度總覽（歷史演變與現代影響） | 印度種姓制度 — 中文維基百科（繁體） | 完整條目，含普魯沙神話、四種姓起源、歷史演變與現代印度的影響，適合中文讀者參考 | https://zh.wikipedia.org/zh-tw/%E5%8D%B0%E5%BA%A6%E7%A7%8D%E5%A7%93%E5%88%B6%E5%BA%A6 |
+| 事實 | 來源 |
+|------|------|
+| 普魯沙神話（Purusha Sukta）——宇宙原人被分解，口→婆羅門、臂→剎帝利、腿→吠舍、足→首陀羅（梨俱吠陀 X.90，約西元前 1200–900 年） | Wikipedia — Purusha Sukta |
+| 四個種姓（Varna）的功能分工與達摩（dharma）義務體系 | Britannica — Varna (Hinduism) |
+| 摩奴法典（Manu Smriti）——洪水後摩奴建立的社會秩序規範 | Britannica — Manu-smriti |
+| 神牛卡瑪達努（Kamadhenu）——婆私吒聖人的神牛抵擋維士瓦密多羅大軍（出自《羅摩衍那》） | Wikipedia — Kamadhenu |
+| 印度種姓制度歷史演變與四種姓神話起源總覽（中文） | 維基百科（繁體中文）— 印度種姓制度 |
