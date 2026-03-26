@@ -27,4 +27,48 @@ aliases:
 
 ---
 
-*維護者：David。最後更新：2026-03-16*
+## 待接續工作：Repo 架構地圖工程化
+
+**狀態：** 計畫已核准，尚未開始實作。
+**計畫檔：** `.claude/plans/zazzy-chasing-whistle.md`（完整 6 Phase 設計）
+
+### 背景
+
+HOME.md 的檔案歸位邏輯（obsidian-sync Step 4）原本是硬寫在技能 prompt 裡的 34 條 Markdown 表格，導致反覆出錯（檔案放錯位置、自動收錄等問題）。前一個 session 已完成緊急修復：
+- 清除 HOME.md 全部 28 條「自動收錄」殘留，逐一歸位到正確區段
+- 重寫 obsidian-sync Step 4 為 34 條精確路由規則
+- pre-commit hook 攔截「自動收錄」
+
+但這仍是 prompt-level 解法。David 決定做工程級升級。
+
+### 要做的事
+
+建立 `ai-core/reference/repo-structure-map.yaml` — Repo 自己的完整架構地圖，三個區段：
+1. **rules** — 路徑模式 → HOME.md 區段的路由規則（first-match-wins）
+2. **sections** — HOME.md 的完整區段樹（用於 forward validation）
+3. **tracked_directories** — 所有 git-tracked 目錄（用於 backward validation，自動生成）
+
+### 執行順序（6 Phase）
+
+1. **Phase 6：初始生成** — 寫 `setup/scripts/map-generate-initial.py`，從 HOME.md wikilink 反推生成地圖初版
+2. **Phase 1：建立地圖檔** — 審查初版，補完為完整 `repo-structure-map.yaml`
+3. **Phase 2：驗證腳本** — 寫 `setup/scripts/map-validate.py`（`--validate` / `--pre-commit` / `--rebuild-dirs` / `--rebuild-sections` / `--auto-fix`）
+4. **Phase 3：升級 obsidian-check.py** — 讀取地圖、`suggest_section()` 函數、輸出 `FILE:NOT_IN_HOME:path|section` 格式
+5. **Phase 4：精簡 obsidian-sync.md** — 移除嵌入表格，改讀腳本建議
+6. **Phase 5：pre-commit hook** — 偵測 HOME.md 標頭異動或新目錄 → 警告地圖可能需更新
+
+### 關鍵技術決策（已確認）
+
+- Python 3.14 + PyYAML 6.0.3（已安裝）
+- `PurePath.match()` 支援 `**`（Python 3.12+）
+- 地圖直接用 YAML（不需要 JSON 中間層）
+- 觸發機制是 pre-commit 警告（不阻擋 commit）
+- obsidian-check.py 若地圖不存在則 graceful 退化
+
+### 驗證清單（10 點，必須全過）
+
+見計畫檔「驗證方式（嚴格）」段落。
+
+---
+
+*維護者：David。最後更新：2026-03-26*
