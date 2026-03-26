@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="spring" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kovacs 植物學 30 課全覽｜五年級主課程</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "var(--primary)",
+        "secondary": "var(--secondary)",
+        "accent": "var(--accent)",
+        "on-primary": "#ffffff",
+        "on-surface": "var(--on-surface)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        "surface": "var(--bg-wash-1)",
+        "surface-container": "var(--bg-wash-2)",
+        "outline-variant": "var(--outline-variant)",
+      },
+      fontFamily: {
+        "headline": ["Playfair Display", "Noto Serif TC", "Georgia", "serif"],
+        "body": ["Plus Jakarta Sans", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "sans-serif"],
+        "label": ["Plus Jakarta Sans", "Noto Sans TC", "sans-serif"],
+      },
+    },
+  },
+}
+</script>
+<style>
+html.spring {
+  --primary: #6B7F5E;
+  --secondary: #9B7BB0;
+  --accent: #D4A574;
+  --bg-wash-1: #F0F5EB;
+  --bg-wash-2: #E8F0D8;
+  --bg-wash-3: #F2E8F5;
+  --on-surface: #2A3325;
+  --on-surface-variant: #4A5544;
+  --outline-variant: #C4D1B8;
+  --gradient-body: radial-gradient(circle at top left, #F0F5EB 0%, #E8F0D8 40%, #F2E8F5 100%);
+  --gradient-header: linear-gradient(135deg, #6B7F5E 0%, #9B7BB0 100%);
+}
+body { background: var(--gradient-body); min-height: 100vh; }
+.watercolor-wash-header {
+  background: var(--gradient-header);
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  mask-size: 100% 100%; -webkit-mask-size: 100% 100%;
+}
+.hand-drawn-border {
+  border: 2px solid var(--primary);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.botanical-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; opacity: 0.06; z-index: 50;
+}
+.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; }
+.drop-cap::first-letter {
+  font-size: 3.5rem; font-family: "Playfair Display", "Noto Serif TC", serif;
+  float: left; margin-right: 0.75rem; line-height: 1; color: var(--primary);
+}
+.block-card {
+  background: white; border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+}
+.block-card h4 { color: var(--primary); font-family: "Noto Serif TC", serif; font-size: 18px; font-weight: 700; margin-bottom: 0.5rem; }
+.block-card .core { color: var(--on-surface); font-size: 17px; line-height: 1.55; margin-bottom: 0.5rem; }
+.block-card .taiwan { color: var(--secondary); font-size: 16px; line-height: 1.5; }
+.block-card .taiwan strong { color: var(--accent); }
+.block-card .art { color: var(--on-surface-variant); font-size: 15px; font-style: italic; margin-top: 0.4rem; }
+.block-group { margin-bottom: 2rem; }
+.block-group-title {
+  font-family: "Playfair Display", "Noto Serif TC", serif;
+  font-size: 22px; font-weight: 700; color: white;
+  padding: 0.6rem 1.2rem; border-radius: 8px; margin-bottom: 1rem;
+  display: inline-block;
+}
+.bg-block1 { background: linear-gradient(135deg, #6B7F5E, #7A9B6A); }
+.bg-block2 { background: linear-gradient(135deg, #4A8B7A, #5BA08B); }
+.bg-block3 { background: linear-gradient(135deg, #B8963A, #C4A74E); }
+.bg-block4 { background: linear-gradient(135deg, #7B6BA0, #9B7BB0); }
+.evo-badge {
+  display: inline-block; font-size: 13px; font-weight: 600;
+  padding: 2px 10px; border-radius: 20px; margin-left: 8px;
+  background: var(--bg-wash-2); color: var(--primary);
+}
+.cross-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.cross-card {
+  background: var(--bg-wash-3); border-radius: 10px; padding: 1rem 1.2rem;
+  border-left: 4px solid var(--secondary);
+}
+.cross-card h4 { font-family: "Noto Serif TC", serif; font-size: 17px; color: var(--primary); margin-bottom: 0.5rem; }
+.cross-card li { font-size: 16px; line-height: 1.6; color: var(--on-surface); }
+@media print {
+  body { background: white !important; }
+  .botanical-overlay { display: none !important; }
+  .watercolor-wash-header { mask-image: none !important; -webkit-mask-image: none !important; }
+  header { display: none !important; }
+  main { max-width: 100% !important; padding: 0 2rem !important; }
+  .block-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body class="font-body text-[var(--on-surface)] selection:bg-[var(--secondary)]/20">
+<div class="botanical-overlay"></div>
+
+<header id="site-header" class="sticky top-0 z-40 bg-[var(--bg-wash-1)]/80 backdrop-blur-xl print:hidden transition-opacity duration-300">
+  <div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-xl mx-auto">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-[var(--primary)]" style="font-size: 2rem;">eco</span>
+      <h1 class="font-headline text-3xl tracking-wide leading-relaxed text-[var(--primary)]">慈心華德福</h1>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-[900px] mx-auto px-8 py-6 relative overflow-hidden">
+
+  <div class="absolute -top-10 -right-10 opacity-[0.07] rotate-12">
+    <span class="material-symbols-outlined text-[12rem] text-[var(--primary)]">eco</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="mb-6 text-center">
+    <div class="watercolor-wash-header p-5 mb-3 inline-block w-full">
+      <h2 class="font-headline text-4xl md:text-5xl text-on-primary leading-tight font-bold italic mb-2">Kovacs 植物學 30 課全覽</h2>
+      <p class="text-on-primary/90 font-label tracking-[0.2em] text-sm">五年級主課程｜台灣版 30 課骨架</p>
+    </div>
+    <div class="space-y-2 text-left mt-3">
+      <p class="drop-cap text-[18px] leading-[1.6]">植物學課程有一個貫穿的教學原理：用植物演化序列類比兒童自身的成長階段。孩子不需要知道「演化」這個詞，而是透過感受來理解——植物的成長歷程，就是你自己走過的路。台灣從海平面到近四千公尺的垂直壓縮，讓學生可以在一天的登山行程中「走過」整部植物演化史。</p>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+  </div>
+
+  <!-- 演化序列 -->
+  <section class="my-6">
+    <div class="bg-[var(--bg-wash-3)] p-5 border-l-[6px] border-[var(--secondary)]/60 rounded-r-xl relative">
+      <span class="absolute -top-4 -left-4 material-symbols-outlined text-[var(--secondary)]/30 text-5xl">psychiatry</span>
+      <blockquote class="font-headline italic text-xl text-[var(--primary)] leading-relaxed">
+        真菌（嬰兒）→ 藻類（學步兒）→ 苔蘚（幼童）→ 蕨類（童年）→ 開花植物（青春前期）→ 蜜蜂（合作巔峰）
+      </blockquote>
+      <cite class="block mt-3 text-sm font-label tracking-widest text-[var(--secondary)]">Charles Kovacs 演化序列 × 兒童發展類比</cite>
+    </div>
+  </section>
+
+  <!-- ==================== BLOCK 1 ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block1">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">park</span>
+      Block 1：植物與大地（第 1-6 課）
+    </div>
+
+    <div class="block-card">
+      <h4>第 1 課｜植物在太陽與大地之間</h4>
+      <div class="core">根向下探入黑暗，花朝上迎向光明。植物是連接天與地的橋樑。</div>
+      <div class="taiwan"><strong>台灣：</strong>玉山——從山腳到山頂的植物帶垂直分布，是太陽與大地之間的完整光譜</div>
+      <div class="art">藝術：濕水彩（黃色從上暈染，藍色從下上升，交會處是綠色）</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 2 課｜蒲公英</h4>
+      <div class="core">一朵花裡藏著植物的全部秘密——根、莖、葉、花、種子。</div>
+      <div class="taiwan"><strong>台灣：</strong>台灣蒲公英（特有種），校園觀察葉緣鋸齒可辨別原生或外來</div>
+      <div class="art">藝術：蠟塊畫——從根到飛散的種子</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 3 課｜真菌 <span class="evo-badge">演化起點</span></h4>
+      <div class="core">沒有葉綠素，活在黑暗中，像嬰兒完全依賴母親。分解死去的東西，讓養分回歸大地。</div>
+      <div class="taiwan"><strong>台灣：</strong>牛樟芝（台灣特有）・段木香菇（埔里、新社）——「為什麼最珍貴的東西長在最黑暗的地方？」</div>
+      <div class="art">藝術：蠟塊畫——深褐暗紅，腐木中長出的菇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 4 課｜藻類 <span class="evo-badge">水中第一步</span></h4>
+      <div class="core">植物界的學步兒——開始光合作用，但還離不開水。</div>
+      <div class="taiwan"><strong>台灣：</strong>海葡萄（綠島、小琉球）・紫菜（石門冬季採收）・溫泉藻（北投）——「大海是植物的第一個家」</div>
+      <div class="art">藝術：濕水彩——藍綠色在水中流動擴散</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 5 課｜地衣 <span class="evo-badge">共生先鋒</span></h4>
+      <div class="core">真菌與藻類的共生體——兩個不完整的生命攜手合作，一起活在最嚴酷的環境。最早登陸的先鋒。</div>
+      <div class="taiwan"><strong>台灣：</strong>合歡山高山地衣・校園老樹幹上的地衣（空氣品質指標）——「沒有人願意住的地方，地衣第一個搬進去」</div>
+      <div class="art">藝術：蠟塊畫——灰色岩石上的黃綠白斑塊</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 6 課｜苔蘚 <span class="evo-badge">貼地而行</span></h4>
+      <div class="core">植物界的幼童——離開水站上陸地，但只能貼地，矮矮軟軟，用整個身體吸水。</div>
+      <div class="taiwan"><strong>台灣：</strong>太平山檜木林苔蘚毯・中海拔雲霧帶（全球苔蘚多樣性最高之一）——「苔蘚是森林的毯子」</div>
+      <div class="art">藝術：濕水彩——各種深淺不同的綠，層層疊疊</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+  </div>
+
+  <!-- ==================== BLOCK 2 ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block2">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">forest</span>
+      Block 2：從蕨類到開花（第 7-14 課）
+    </div>
+
+    <div class="block-card">
+      <h4>第 7 課｜蕨類 <span class="evo-badge">童年</span></h4>
+      <div class="core">終於長出巨大葉片，但一輩子不開花。用孢子繁殖，像灑出億萬顆微塵。</div>
+      <div class="taiwan"><strong>台灣：</strong>蕨類王國（700+ 種，比整個歐洲還多）・筆筒樹（活著的侏羅紀遺跡）——「三億年前，蕨類是地球上最高大的植物」</div>
+      <div class="art">藝術：蠟塊畫——筆筒樹嫩芽（fiddle head）展開</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 8 課｜針葉樹 <span class="evo-badge">裸子植物</span></h4>
+      <div class="core">終於有了種子——但還沒有花，種子裸露在毬果裡。針葉是為了對抗寒冷而演化的堅韌之葉。</div>
+      <div class="taiwan"><strong>台灣：</strong>紅檜神木群（樹齡數千年）・台灣杉（以台灣命名的活化石）——「神木站在那裡的時候，人類還沒有文字」</div>
+      <div class="art">藝術：蠟塊畫——深綠針葉與褐色毬果</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 9 課｜樹與大地</h4>
+      <div class="core">植物界的「大人」——深根入地、高枝入天，一棵大樹就是一個小世界。</div>
+      <div class="taiwan"><strong>台灣：</strong>樟樹（清代樟腦佔世界七成）・榕樹（村莊的「公共客廳」）——「一棵老樟樹底下住了多少生命？」</div>
+      <div class="art">藝術：大幅蠟塊畫——大樹剖面，從根到冠層的所有生物</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 10 課｜開花植物 <span class="evo-badge">裸子 → 被子</span></h4>
+      <div class="core">開花是植物的「青春」——為了吸引傳粉者而展現色彩與香氣。生命第一次為了「他者」而打扮自己。</div>
+      <div class="taiwan"><strong>台灣：</strong>約 4000 種原生種，特有種比例極高</div>
+      <div class="art">藝術：濕水彩——從綠色中綻放各種花色</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 11 課｜單子葉與雙子葉</h4>
+      <div class="core">平行脈 vs. 網狀脈，花瓣三的倍數 vs. 四或五的倍數。</div>
+      <div class="taiwan"><strong>台灣：</strong>單子葉：稻・竹・檳榔　｜　雙子葉：茶・樟</div>
+      <div class="art">藝術：工作本——兩類葉脈的精確素描</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 12 課｜花的構造</h4>
+      <div class="core">花的四個同心圓——花萼（保護）、花瓣（美）、雄蕊（給予）、雌蕊（接受）。</div>
+      <div class="taiwan"><strong>台灣：</strong>台灣百合（特有種，海平面到 3000 公尺，近年復育成功）</div>
+      <div class="art">藝術：工作本——台灣百合花部解剖圖（實物觀察後繪製）</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 13 課｜花粉</h4>
+      <div class="core">植物的「信使」——每一粒都帶著一半的生命訊息，需要找到另一半才能完成。</div>
+      <div class="taiwan"><strong>台灣：</strong>蜜蜂與龍眼蜜——養蜂文化（南投、台南）</div>
+      <div class="art">藝術：顯微鏡觀察或放大圖——花粉的奇異形狀</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 14 課｜花與蝴蝶 <span class="evo-badge">花 → 蝶</span></h4>
+      <div class="core">花與蝴蝶的共同演化——花需要蝴蝶傳粉，蝴蝶需要花的蜜。美麗不是裝飾，是生存的語言。</div>
+      <div class="taiwan"><strong>台灣：</strong>蝴蝶王國（400 種）・紫斑蝶遷徙（秋冬南下茂林越冬，春天北返）</div>
+      <div class="art">藝術：濕水彩——蝴蝶與花的對稱構圖</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+  </div>
+
+  <!-- ==================== BLOCK 3 ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block3">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">spa</span>
+      Block 3：個別植物的性格（第 15-22 課）
+    </div>
+
+    <div class="block-card">
+      <h4>第 15 課｜毛蟲與蝴蝶</h4>
+      <div class="core">變態——毛蟲完全溶解自己，才能變成蝴蝶。自然界最激烈的「死亡與重生」。</div>
+      <div class="taiwan"><strong>台灣：</strong>校園飼養柑橘鳳蝶幼蟲，觀察完整變態過程</div>
+      <div class="art">藝術：連續畫——卵 → 幼蟲 → 蛹 → 成蝶</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 16 課｜鬱金香（鱗莖植物）</h4>
+      <div class="core">所有能量預先儲存在地下，像一顆沉睡的心臟等待春天的信號。</div>
+      <div class="taiwan"><strong>台灣：</strong>台灣百合（野生鱗莖）・薑（地下莖儲能）・芋（排灣族、達悟族主食）——「看不見的地方，儲存著最大的力量」</div>
+      <div class="art">藝術：工作本——鱗莖／塊莖剖面圖</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 17 課｜種子與子葉</h4>
+      <div class="core">種子是植物為未來打包的行李——胚芽（新生命）、子葉（第一份食物）、種皮（保護殼）。</div>
+      <div class="taiwan"><strong>台灣：</strong>泡綠豆觀察子葉展開・小米（布農族）、紅藜（排灣族）——「一顆小米種子裡，藏著一整個族群的記憶」</div>
+      <div class="art">藝術：工作本——綠豆發芽逐日觀察記錄</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 18 課｜玫瑰</h4>
+      <div class="core">花瓣層層包裹，香氣濃烈，但莖上有刺。美與保護並存。</div>
+      <div class="taiwan"><strong>台灣：</strong>山櫻花（薔薇科，台灣最早開的櫻花，深桃紅鐘形花）</div>
+      <div class="art">藝術：蠟塊畫——山櫻花的鐘形花與深色花瓣</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 19 課｜薔薇科家族 <span class="evo-badge">個體 → 家族</span></h4>
+      <div class="core">從認識一朵玫瑰，擴展到認識整個家族。</div>
+      <div class="taiwan"><strong>台灣：</strong>台灣野薔薇（低海拔山區常見，白色小花成簇）</div>
+      <div class="art">藝術：工作本——薔薇科共同特徵比較圖</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 20 課｜甘藍菜</h4>
+      <div class="core">十字花科，人類馴化的蔬菜——從野生芥菜演變出高麗菜、花椰菜、芥藍。</div>
+      <div class="taiwan"><strong>台灣：</strong>高麗菜（高山農業）</div>
+      <div class="art">藝術：工作本——十字花科花的構造</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 21 課｜蕁麻</h4>
+      <div class="core">會刺人，但同時是營養豐富的野菜和藥草。外表不友善的植物，內在可能是最慷慨的。</div>
+      <div class="taiwan"><strong>台灣：</strong>咬人貓・咬人狗・苧麻（蕁麻科，原住民織布纖維）——「會咬人的家族裡，也有給人穿衣服的成員」</div>
+      <div class="art">藝術：工作本——蕁麻科刺毛構造圖</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 22 課｜橡樹</h4>
+      <div class="core">力量與持久的象徵——生長緩慢但異常堅固，一棵橡樹可以活數百年。</div>
+      <div class="taiwan"><strong>台灣：</strong>青剛櫟、栓皮櫟（殼斗科）・泰雅族櫟實採集——「台灣的山上也有橡樹，我們叫它們青剛櫟」</div>
+      <div class="art">藝術：大幅蠟塊畫——青剛櫟從橡實到大樹的生命史</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+  </div>
+
+  <!-- ==================== BLOCK 4 ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block4">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">public</span>
+      Block 4：植物與人類文明（第 23-30 課）
+    </div>
+
+    <div class="block-card">
+      <h4>第 23 課｜樺樹</h4>
+      <div class="core">北方森林的先鋒樹種——最先在荒地上長出來，白色樹皮在暗森林裡閃閃發光。</div>
+      <div class="taiwan"><strong>台灣：</strong>台灣赤楊（崩塌地先鋒，根部有固氮菌共生）——「災難過後，第一個站出來的植物」</div>
+      <div class="art">藝術：蠟塊畫——崩塌地上孤立的赤楊</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 24 課｜棕櫚</h4>
+      <div class="core">熱帶的象徵——不分枝、一根主幹直直向上，像柱子撐起一把傘。</div>
+      <div class="taiwan"><strong>台灣：</strong>台東蘇鐵（活化石，兩億年）・檳榔（原住民文化 vs. 水土保持 vs. 口腔癌）——「直直往上長、絕不彎腰」</div>
+      <div class="art">藝術：蠟塊畫——棕櫚／蘇鐵的直立姿態</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 25 課｜茶、糖與咖啡</h4>
+      <div class="core">三種植物改變了人類歷史——讓人們跨越海洋去尋找、種植、交易。植物不只是食物，還是權力與文化的載體。</div>
+      <div class="taiwan"><strong>台灣（最強轉化點）：</strong>東方美人・凍頂烏龍・阿里山高山茶｜日治東亞最大糖產地・台糖鐵路｜日治引進咖啡，近年精品復興——「台灣這座小島上，三種植物都曾改變過命運」</div>
+      <div class="art">藝術：工作本——台灣茶／糖／咖啡歷史地圖（標示產區與貿易路線）</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 26 課｜草與穀物</h4>
+      <div class="core">草是地球上最成功的植物——被割還能長、被踩還能活。穀物是人類馴化的草——養活了全人類。</div>
+      <div class="taiwan"><strong>台灣：</strong>稻米文化（池上米、蓬萊米 vs. 在來米、水田地景）・布農族小米曆法——「你每天吃的那碗飯，是一棵草的種子」</div>
+      <div class="art">藝術：工作本——稻穗精確素描＋生命週期</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 27 課｜葉與花</h4>
+      <div class="core">葉是植物的「呼吸」器官，花是「表達」器官。葉向光展開吸收能量，花向世界綻放釋放美。</div>
+      <div class="taiwan"><strong>台灣：</strong>台灣欒樹的四色變化（綠葉 → 黃花 → 紅蒴果 → 褐色）——最佳的「葉與花」教學對象</div>
+      <div class="art">藝術：濕水彩——台灣欒樹四季色彩變化</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 28 課｜蜜蜂 <span class="evo-badge">花 → 蜂</span></h4>
+      <div class="core">植物的盟友——沒有蜜蜂，大多數開花植物無法結果。蜜蜂的社會是自然界最精密的合作系統。</div>
+      <div class="taiwan"><strong>台灣：</strong>東方蜂 vs. 西方蜂・龍眼蜜、荔枝蜜・近年蜜蜂消失危機</div>
+      <div class="art">藝術：工作本——蜜蜂身體構造＋蜂巢六角形幾何（連結數學）</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 29 課｜蜂巢</h4>
+      <div class="core">六角形是自然界最有效率的建築——用最少的蠟封住最大的空間。蜂群分工是「個體為整體服務」的極致。</div>
+      <div class="taiwan"><strong>台灣：</strong>養蜂人逐花而居（跟著龍眼花、荔枝花移動蜂箱）——「養蜂人是跟著花走的旅人」</div>
+      <div class="art">藝術：幾何作圖——圓規畫完美六角形蜂巢（結合數學）</div>
+    </div>
+
+    <div class="block-card">
+      <h4>第 30 課｜蜜蜂的精神（收束） <span class="evo-badge">收束</span></h4>
+      <div class="core">整個植物學區塊的收束——從最低等的真菌到蜜蜂與花的共舞，植物演化史就是生命從黑暗走向光明、從孤獨走向合作的旅程。</div>
+      <div class="taiwan"><strong>台灣：</strong>回到第一課的玉山意象——從山腳到山頂，走過植物的整部歷史——「我們能不能像蜜蜂一樣，在取用的同時也給予？」</div>
+      <div class="art">藝術：全班合作大型畫——從海底藻類到高山地衣的「台灣植物王國」全景</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+  </div>
+
+  <!-- ==================== 跨學科連結 ==================== -->
+  <section class="mb-6">
+    <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">跨學科連結</h3>
+    <div class="cross-grid">
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">translate</span>英文課</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>蜜蜂英文詩</li>
+          <li>茶葉貿易英文報導</li>
+          <li>台灣蕨類英文介紹</li>
+          <li>植物學名（拉丁文入門）</li>
+        </ul>
+      </div>
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">history_edu</span>歷史／社會</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>日治糖業與伐木史</li>
+          <li>布農族小米曆法</li>
+          <li>樟腦貿易與漢番關係</li>
+          <li>台灣生態保育運動</li>
+        </ul>
+      </div>
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">calculate</span>數學／幾何</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>蜂巢六角形作圖</li>
+          <li>年輪與樹齡計算</li>
+          <li>貿易數據圖表</li>
+          <li>水田面積計算</li>
+        </ul>
+      </div>
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">palette</span>藝術回應</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>濕水彩（光暗、色彩流動）</li>
+          <li>蠟塊畫（植物形態）</li>
+          <li>工作本精確素描</li>
+          <li>全班合作大型畫</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 結語 -->
+  <section class="mb-4 text-center py-3">
+    <p class="font-headline text-lg text-[var(--primary)] italic mb-3">原型：Charles Kovacs, <em>Botany</em> (Floris Books, 2005)<br/>保留演化序列與兒童發展類比法，將蘇格蘭物種替換為台灣在地植物</p>
+    <div class="inline-flex flex-col items-center">
+      <div class="w-16 h-[2px] bg-[var(--primary)]/30 mb-4"></div>
+      <span class="font-label text-base text-[var(--on-surface)]">骨架版 v1.0 — 2026.03.23</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-[var(--bg-wash-1)] w-full border-t-0 mt-4 pb-6">
+  <div class="max-w-4xl mx-auto flex flex-col items-center gap-3 px-6 text-center">
+    <div class="w-full opacity-15 flex justify-center items-center gap-2 py-2">
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+    </div>
+    <div class="space-y-2">
+      <p class="text-[var(--primary)] font-headline italic text-lg">慈心華德福學校</p>
+    </div>
+    <div class="text-[var(--secondary)] font-body text-xs tracking-widest uppercase opacity-60">
+      五年級植物學主課程・台灣版 30 課骨架
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
