@@ -3,8 +3,8 @@
 # 由 story-archive skill 自動維護
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-last_updated: 2026-03-25
-total_stories: 9
+last_updated: 2026-03-26
+total_stories: 10
 
 stories:
   - id: A001
@@ -160,6 +160,23 @@ stories:
     sources: [sshm_ntpc, openmuseum, wikipedia, sinica, taiwan_panorama, springer]
     quality_check: passed
     tags: [十三行文化, 冶鐵, 鐵砂, 史前遺址, 八里, 淡水河口, 凱達格蘭族, 人面陶罐, 考古, 鐵器時代]
+
+  - id: A010
+    title: 百步蛇的子民——排灣族與他們的石板屋
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今
+    location: 臺灣南部山區（屏東縣三地門、春日；臺東縣達仁、金峰）
+    date_created: 2026-03-26
+    files:
+      content: stories/A-origins/A010/content.md
+      narration: stories/A-origins/A010/narration.md
+      images: stories/A-origins/A010/images.md
+      raw_materials: stories/A-origins/A010/raw-materials.md
+    sources: [wikipedia, cip, boch, matataiwan, nmns, thenewslens, dmtip]
+    quality_check: passed
+    html_pdf_status: pending_chalkboard
+    tags: [排灣族, 石板屋, 百步蛇, 琉璃珠, 古陶壺, 頭目制度, 長嗣繼承, 老七佳, 大武山, 貴族制度, 紋樣, 各族的土地故事]
 
 # 索引結構說明：
 # stories:
