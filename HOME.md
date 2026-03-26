@@ -1309,6 +1309,7 @@ aliases:
 | [[ai-core/reference/subject-history.yaml\|subject-history.yaml]]         | 歷史科教學哲學與設計原則         |
 | [[ai-core/reference/student-development.yaml\|student-development.yaml]] | 學生發展與班級經營框架          |
 | [[ai-core/reference/cross-platform.yaml\|cross-platform.yaml]]           | 跨平台指令公約（AI agent 參考） |
+| [[corpus-taic]] | 設定檔 |
 
 ### Reference 操作文件
 
@@ -1720,6 +1721,10 @@ aliases:
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/download_tts\|download tts]] | Python 腳本 |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/query_taigi\|query taigi]] | Python 腳本 |
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/current-task\|current task]] | 設定檔 |
+| [[pr-acl-check]] | 設定檔 |
+| [[repo-health-report]] | 設定檔 |
+| [[workspace-binary-check]] | 設定檔 |
+| [[yaml-validate]] | 設定檔 |
 
 ---
 
