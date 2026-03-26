@@ -5,10 +5,11 @@ TeacherOS Obsidian Label Checker
 只做偵測與報告，不修改任何檔案。
 
 用法：
-    python3 obsidian-check.py                # 完整掃描（所有 git 追蹤檔案）
-    python3 obsidian-check.py --staged-only  # 只掃描 git 暫存區新增檔案
-    python3 obsidian-check.py --count-only   # 只輸出數字（供提醒用）
-    python3 obsidian-check.py --self-test    # 內建自測（驗證 file_in_home 比對邏輯）
+    python3 obsidian-check.py                    # 完整掃描（所有 git 追蹤檔案）
+    python3 obsidian-check.py --staged-only      # 只掃描 git 暫存區新增檔案
+    python3 obsidian-check.py --count-only       # 只輸出數字（供提醒用）
+    python3 obsidian-check.py --skip-home-check  # 跳過 HOME.md 收錄檢查（wrap-up 專用）
+    python3 obsidian-check.py --self-test        # 內建自測（驗證 file_in_home 比對邏輯）
 
 不依賴外部套件，只使用 Python 標準函式庫。
 """
@@ -270,6 +271,7 @@ def main():
 
     staged_only = "--staged-only" in sys.argv
     count_only = "--count-only" in sys.argv
+    skip_home_check = "--skip-home-check" in sys.argv
 
     # 取得檔案清單
     if staged_only:
@@ -278,15 +280,17 @@ def main():
         files = get_tracked_files()
 
     # 讀取 HOME.md（優先從根目錄讀取，兼容舊路徑 Good-notes/）
-    home_path = os.path.join(REPO_ROOT, "HOME.md")
-    if not os.path.exists(home_path):
-        home_path = os.path.join(REPO_ROOT, "Good-notes", "HOME.md")
+    # --skip-home-check 時完全跳過 HOME.md 檢查（wrap-up 使用此模式，避免 AI 自動收錄）
     home_content = ""
-    try:
-        with open(home_path, "r", encoding="utf-8") as f:
-            home_content = f.read()
-    except FileNotFoundError:
-        pass
+    if not skip_home_check:
+        home_path = os.path.join(REPO_ROOT, "HOME.md")
+        if not os.path.exists(home_path):
+            home_path = os.path.join(REPO_ROOT, "Good-notes", "HOME.md")
+        try:
+            with open(home_path, "r", encoding="utf-8") as f:
+                home_content = f.read()
+        except FileNotFoundError:
+            pass
 
     # 分類檢查
     unlabeled_md = []
@@ -302,13 +306,13 @@ def main():
         if ext == ".md":
             if md_needs_alias(filepath):
                 unlabeled_md.append(filepath)
-            if should_index_in_home(filepath) and not file_in_home(filepath, home_content):
+            if not skip_home_check and should_index_in_home(filepath) and not file_in_home(filepath, home_content):
                 not_in_home.append(filepath)
 
         elif ext == ".yaml" or ext == ".yml":
             if yaml_needs_label(filepath):
                 unlabeled_yaml.append(filepath)
-            if should_index_in_home(filepath) and not file_in_home(filepath, home_content):
+            if not skip_home_check and should_index_in_home(filepath) and not file_in_home(filepath, home_content):
                 not_in_home.append(filepath)
 
         # 其他類型檔案不再檢查 HOME.md 收錄（已在 is_excluded 或 INDEXABLE_EXTENSIONS 過濾）

@@ -131,17 +131,18 @@ session:
 - `last_compiled` 超過 3 天且 Step 1 無變動 → 仍執行一次區塊三同步
 - INSTRUCTIONS.md 不存在 → 提示先執行一次「同步 Cowork」
 
-### Step 3 — Obsidian 標籤與索引
+### Step 3 — Obsidian 標籤修正（不碰 HOME.md）
 
-執行 `python3 setup/scripts/obsidian-check.py`（完整掃描，不加 flag）。
+執行 `python3 setup/scripts/obsidian-check.py --skip-home-check`。
+
+**`--skip-home-check` 會完全跳過 HOME.md 收錄偵測**，wrap-up 只處理標籤：
 
 - 有未標籤的 .md → 自動加上 aliases frontmatter（根據路徑與內容前 30 行產生）
 - 有未標籤的 .yaml → 自動加上中文標頭註解
-- 有未收錄 HOME.md 的檔案 → **只報告，不自動寫入 HOME.md**（向教師列出清單，確認後才歸位）
 - 標籤修正完成後，將修改的檔案加入 git 暫存區
 - 全部正常 → 靜默通過（不輸出任何訊息）
 
-**重要：不再使用「自動收錄」機制。** 過去的自動收錄會把腳本、暫存檔、XML 碎片等不該索引的檔案塞進 HOME.md。現在 obsidian-check.py 已加入檔案類型白名單（只掃描 .md/.yaml/.yml），且 HOME.md 寫入需教師確認。
+**wrap-up 絕對不寫入 HOME.md。** HOME.md 的收錄管理只在教師主動說「sync Obsidian」或「整理首頁」時才觸發（走 obsidian-sync 技能，且需教師逐條確認）。
 
 詳細的標籤產生規則，參見 `ai-core/skills/obsidian-sync.md`。
 
