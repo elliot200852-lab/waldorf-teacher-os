@@ -1,3 +1,8 @@
+---
+aliases:
+  - "古文明神話 主題骨架"
+---
+
 # 五年級古文明神話主課程｜Theme Skeleton
 
 > **原型：** Charles Kovacs, *Ancient Mythologies: India, Persia, Babylon, Egypt* (Wynstones Press, 184 pp, 21 stories)

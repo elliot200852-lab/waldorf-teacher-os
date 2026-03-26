@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "B005 地衣 品質報告"
 lesson_id: B005
 title: 地衣——品質報告
 generated: 2026-03-26

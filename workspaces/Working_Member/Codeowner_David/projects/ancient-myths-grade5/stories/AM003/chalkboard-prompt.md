@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "AM003 摩奴與大洪水 黑板畫"
 id: AM003
 title: 摩奴與大洪水
 type: chalkboard-prompt

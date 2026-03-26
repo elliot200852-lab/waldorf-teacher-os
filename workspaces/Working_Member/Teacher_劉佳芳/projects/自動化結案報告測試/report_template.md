@@ -1,3 +1,8 @@
+---
+aliases:
+  - "結案報告 範本"
+---
+
 > [!AI-INSTRUCTION]
 > Markdown
 # Role

@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "A010 百步蛇的子民 說書稿"
 id: A010
 title: 百步蛇的子民——排灣族與他們的石板屋
 type: narration

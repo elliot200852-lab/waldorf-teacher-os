@@ -1,3 +1,8 @@
+---
+aliases:
+  - "A011 血脈的地圖 黑板畫"
+---
+
 # 黑板畫 Prompt：A011 血脈的地圖
 
 ## English Prompt

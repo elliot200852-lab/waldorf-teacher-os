@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "A009 鐵砂與煙霧 黑板畫"
 id: A009
 title: 鐵砂與煙霧——十三行人的秘密
 type: 黑板畫 Prompt

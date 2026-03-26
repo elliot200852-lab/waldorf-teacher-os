@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "AM003 摩奴與大洪水"
 id: AM003
 title: 摩奴與大洪水
 block: block-1-india

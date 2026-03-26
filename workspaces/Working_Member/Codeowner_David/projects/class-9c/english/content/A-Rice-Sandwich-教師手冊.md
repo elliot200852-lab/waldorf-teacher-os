@@ -1,3 +1,8 @@
+---
+aliases:
+  - "A Rice Sandwich 教師手冊"
+---
+
 # A Rice Sandwich — 教師手冊
 
 > Sandra Cisneros, *The House on Mango Street*, Chapter 17

@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "A011 血脈的地圖"
 id: A011
 title: 血脈的地圖——科學家如何找到南島語族的故鄉
 block: A-origins

@@ -1,3 +1,8 @@
+---
+aliases:
+  - "Google Drive 根目錄"
+---
+
 # Google Drive Root Folder Structure
 
 This file contains the listing of the root folder of your Google Drive as of 2026-03-17.

@@ -1,3 +1,8 @@
+---
+aliases:
+  - "A Rice Sandwich 原文"
+---
+
 # A Rice Sandwich
 
 The special kids, the ones who wear keys around their necks, get to eat in the canteen. The canteen! Even the name sounds important. And these kids at lunch time go there because their mothers aren't home or home is too far away to get to.

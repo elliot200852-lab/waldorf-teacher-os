@@ -1,4 +1,6 @@
 ---
+aliases:
+  - "B004 藻類 品質報告"
 lesson_id: B004
 checked_at: 2026-03-26
 ---

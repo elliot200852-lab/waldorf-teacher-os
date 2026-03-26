@@ -1,3 +1,8 @@
+---
+aliases:
+  - "GWS CLI Windows 參考"
+---
+
 # Google Workspace CLI (gws) Reference for Windows
 
 A concise guide for using the `gws` CLI tool on Windows.
