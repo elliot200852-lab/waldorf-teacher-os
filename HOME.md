@@ -820,7 +820,6 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
-| [[README]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_陳佩珊/teacheros-personal.yaml\|陳佩珊個人身份層]] | 教學信念、工作偏好 |
 | [[workspaces/Working_Member/Teacher_陳佩珊/workspace.yaml\|陳佩珊 workspace 狀態]] | Workspace 狀態 |
 | [[workspaces/Working_Member/Teacher_陳佩珊/env-preset.env\|陳佩珊環境預填]] | 環境變數設定 |
@@ -886,83 +885,6 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/114學年實驗教育計畫結案報告_劉佳芳_美化版\|114學年實驗教育計畫結案報告 劉佳芳 美化版]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/114學年實驗教育計畫結案報告_劉佳芳_美化版\|114學年實驗教育計畫結案報告 劉佳芳 美化版]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/all_children\|all children]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/all_children_v2\|all children v2]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/build_html\|build html]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/drive_scan\|drive scan]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/drive_scan_result\|drive scan result]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/drive_scan_utf8\|drive scan utf8]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/exported\|exported]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/feedback\|feedback]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/feedback_utf8\|feedback utf8]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/generate_html\|generate html]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/get_full_id\|get full id]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/get_parent\|get parent]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/out\|out]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/out_utf8\|out utf8]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/outdoor_sally_scan\|outdoor sally scan]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/plan\|plan]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/plan_content\|plan content]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/report_final\|report final]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/scan_all_children\|scan all children]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/scan_folder\|scan folder]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/scan_outdoor_sally\|scan outdoor sally]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/scan_subfolders\|scan subfolders]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/scan_subfolders_v2\|scan subfolders v2]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/susan_feedback\|susan feedback]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/susan_folder\|susan folder]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試/yeqing_review\|yeqing review]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_114學年山鹿老師戶外教育研習＿校內用課程計畫1_26-28\|MountainDeer 114學年山鹿老師戶外教育研習＿校內用課程計畫1 26 28]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_114學年山鹿老師戶外教育研習＿校內用課程計畫9_15\|MountainDeer 114學年山鹿老師戶外教育研習＿校內用課程計畫9 15]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_9_15山鹿老師講座-回復家長的提問\|MountainDeer 9 15山鹿老師講座 回復家長的提問]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_山與海之間的呼喚——記山鹿老師在慈心的夜晚\|MountainDeer 山與海之間的呼喚——記山鹿老師在慈心的夜晚]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_山鹿教師研習教師簽到單\|MountainDeer 山鹿教師研習教師簽到單]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_山鹿老師家長場講座紀錄＿0915\|MountainDeer 山鹿老師家長場講座紀錄＿0915]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_山鹿老師研習文案-家長、教師\|MountainDeer 山鹿老師研習文案 家長、教師]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/MountainDeer_活在當下，與自然重逢——山鹿老師在慈心的夜晚\|MountainDeer 活在當下，與自然重逢——山鹿老師在慈心的夜晚]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/Susan_114學年Susan研習2026年3月＿基金會用課程計畫\|Susan 114學年Susan研習2026年3月＿基金會用課程計畫]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/Susan_114學年Susan研習2026年3月＿校內用課程計畫\|Susan 114學年Susan研習2026年3月＿校內用課程計畫]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/Susan_114學年Susan線上研習＿校內用課程計畫\|Susan 114學年Susan線上研習＿校內用課程計畫]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/YuQing_114學年尤清老師研習＿校內用課程計畫\|YuQing 114學年尤清老師研習＿校內用課程計畫]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/YuQing_114學年尤清老師研習＿校內用課程計畫0107\|YuQing 114學年尤清老師研習＿校內用課程計畫0107]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/all_files\|all files]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/all_files_complete\|all files complete]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/all_folders\|all folders]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/all_研習_files\|all 研習 files]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/auth\|auth]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/auth_log\|auth log]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/auth_url\|auth url]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/children_list\|children list]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/create_doc\|create doc]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/create_final_doc\|create final doc]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/create_help\|create help]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/download_files\|download files]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/drive_files\|drive files]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/fetch_data\|fetch data]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/files_found\|files found]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/final_auth\|final auth]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/final_url\|final url]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/find_files\|find files]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/find_folder\|find folder]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/find_images\|find images]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/folder_found\|folder found]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/fresh_login\|fresh login]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/help\|help]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/list_children\|list children]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/list_研習_files\|list 研習 files]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/live_auth\|live auth]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/login_url\|login url]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/login_url_new\|login url new]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/print_files\|print files]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/report\|report]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/report\|report]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/upload_help\|upload help]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/upload_report\|upload report]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/url\|url]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾/verify_folder\|verify folder]] | （自動收錄） |
-| [[README]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_劉佳芳/teacheros-personal.yaml\|劉佳芳個人身份層]] | 教學信念、工作偏好 |
 | [[workspaces/Working_Member/Teacher_劉佳芳/workspace.yaml\|劉佳芳 workspace 狀態]] | Workspace 狀態 |
 | [[workspaces/Working_Member/Teacher_劉佳芳/GWS_CLI_Windows_Reference.md\|GWS CLI Windows 參考指南]] | Windows 環境 GWS CLI 操作指南 |
@@ -1284,11 +1206,6 @@ aliases:
 | [[story-archive]]     | 「歸檔故事」「story archive」       | 臺灣的故事・歸檔與索引                           |
 | [[ai-core/skills/story-daily\|story-daily]] | 「今天的故事」「跑管線」 | 臺灣的故事・全流程編排器（v2.2.0，8 步驟 + Checkpoint） |
 | [[ai-core/skills/gws-bridge\|gws-bridge]] | 「gws bridge」「Cowork gws」 | Cowork VM ↔ 本機 GWS CLI 橋接（自動偵測環境） |
-| [[niamyio]] | （自動收錄） |
-| [[botany-daily]] | （自動收錄） |
-| [[new-doc]] | （自動收錄） |
-| [[video-setup]] | （自動收錄） |
-| [[ancient-myths-daily]] | （自動收錄） |
 
 ---
 
@@ -1392,7 +1309,6 @@ aliases:
 | [[ai-core/reference/subject-history.yaml\|subject-history.yaml]]         | 歷史科教學哲學與設計原則         |
 | [[ai-core/reference/student-development.yaml\|student-development.yaml]] | 學生發展與班級經營框架          |
 | [[ai-core/reference/cross-platform.yaml\|cross-platform.yaml]]           | 跨平台指令公約（AI agent 參考） |
-| [[corpus-taic]] | （自動收錄） |
 
 ### Reference 操作文件
 
@@ -1411,7 +1327,6 @@ aliases:
 | [[session-log]] | 歷次 session 完成紀錄 |
 | [[architecture-review-2026-03-04]] | 架構回顧（2026-03-04） |
 | [[context-review-20260228]] | 脈絡回顧（2026-02-28） |
-| [[skill-deep-review-2026-03-22]] | （自動收錄） |
 
 ---
 
@@ -1430,128 +1345,7 @@ aliases:
 | [[publish/images/workflow.png\|workflow.png]] | 圖片：工作流程 |
 | [[publish/scripts/assemble-story.js\|assemble-story.js]] | 臺灣的故事組裝腳本（v2.2.0，Markdown → HTML+PDF + GWS upsert） |
 | [[publish/scripts/assemble-botany.js\|assemble-botany.js]] | 五年級植物學組裝腳本 |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
-| [[）]] | （自動收錄） |
 | [[backup-to-drive]] | Python 腳本 |
-| [[backup-reference]] | （自動收錄） |
-| [[drive-backup-manifest]] | （自動收錄） |
-| [[assemble-ancient-myths]] | （自動收錄） |
 
 ---
 
@@ -1593,8 +1387,6 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
-| [[.pre-compact-state]] | （自動收錄） |
-| [[mcp-optimization-guide]] | （自動收錄） |
 | [[pre-compact-save]] | Python 腳本 |
 | [[.claude/settings.json\|settings.json]] | Claude Code 全域設定 |
 | [[.claude/settings.local.json\|settings.local.json]] | 本機設定（不上傳） |
@@ -1630,11 +1422,6 @@ aliases:
 | [[.claude/skills/beautify/SKILL.md\|beautify SKILL]] | 華德福美化輸出（封包入口 → ai-core/skills/beautify.md） |
 | [[.claude/skills/check-compat/SKILL.md\|check-compat SKILL]] | 跨平台相容性檢查（封包入口 → ai-core/skills/check-compat.md） |
 | [[.claude/skills/story-daily/SKILL.md\|story-daily SKILL]] | 臺灣故事每日管線（封包入口 → ai-core/skills/story-daily.md） |
-| [[.claude/skills/json-canvas/references/EXAMPLES\|EXAMPLES]] | （自動收錄） |
-| [[.claude/skills/obsidian-bases/references/FUNCTIONS_REFERENCE\|FUNCTIONS REFERENCE]] | （自動收錄） |
-| [[.claude/skills/obsidian-markdown/references/CALLOUTS\|CALLOUTS]] | （自動收錄） |
-| [[.claude/skills/obsidian-markdown/references/EMBEDS\|EMBEDS]] | （自動收錄） |
-| [[.claude/skills/obsidian-markdown/references/PROPERTIES\|PROPERTIES]] | （自動收錄） |
 
 ### Claude Code Commands（薄層入口 → ai-core/skills/）
 
@@ -1675,9 +1462,6 @@ aliases:
 | [[.claude/commands/story-verify.md\|/story-verify]] | story-verify |
 | [[.claude/commands/story-archive.md\|/story-archive]] | story-archive |
 | [[.claude/commands/story-daily.md\|/story-daily]] | story-daily（全流程編排器） |
-| [[pattern]] | （自動收錄） |
-| [[patterns]] | （自動收錄） |
-| [[new-doc]] | （自動收錄） |
 
 ---
 
@@ -1928,134 +1712,14 @@ aliases:
 | [[Obsidian 快速上手指南]]                                                                                                                   | Obsidian 怎麼用                                |
 | [[help_list.txt\|help_list.txt]]                                                                                                      | 指令說明清單                                      |
 | [[root_files.txt\|root_files.txt]]                                                                                                    | 根目錄檔案清單                                     |
-| [[download]]                                                                                                                          | （自動收錄）                                      |
-| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿v2_畢麒麟在福爾摩沙\|三天課程文稿v2 畢麒麟在福爾摩沙]]                         | （自動收錄）                                      |
-| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/pickering-in-formosa_畢麒麟在福爾摩沙_說書人文稿v2\|畢麒麟在福爾摩沙 三節說書人課程文稿 v2]] | （自動收錄）                                      |
-| [[workspaces/Working_Member/Codeowner_David/projects/deep-review-2026-03-22\|deep review 2026 03 22]]                                 | （自動收錄）                                      |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/quality-log\|quality log]]                             | 設定檔                                         |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A005-quality\|A005 quality]]                           | （自動收錄）                                      |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A006-quality\|A006 quality]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/gallery\|gallery]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿_畢麒麟的世界\|三天課程文稿 畢麒麟的世界]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿_美化版\|三天課程文稿 美化版]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/說書人文稿v2_美化版\|說書人文稿v2 美化版]] | （自動收錄） |
-| [[OceanCradle]] | （自動收錄） |
-| [[video/public/photos/A005/chalkboard\|chalkboard]] | （自動收錄） |
-| [[video/public/photos/A005/coral\|coral]] | （自動收錄） |
-| [[video/public/photos/A005/deep-ocean\|deep ocean]] | （自動收錄） |
-| [[video/public/photos/A005/fish-school\|fish school]] | （自動收錄） |
-| [[video/public/photos/A005/kuroshio-temp\|kuroshio temp]] | （自動收錄） |
-| [[video/public/photos/A005/ocean-gyres\|ocean gyres]] | （自動收錄） |
-| [[video/public/photos/A005/taiwan-strait-detail\|taiwan strait detail]] | （自動收錄） |
-| [[video/public/photos/A005/taiwan-strait-satellite\|taiwan strait satellite]] | （自動收錄） |
-| [[Gemini-AI-對系統架構師歷程的觀察與建議]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A007-quality\|A007 quality]] | （自動收錄） |
-| [[3c_records]] | （自動收錄） |
 | [[extract_docs]] | Python 腳本 |
 | [[extract_tmp]] | Python 腳本 |
-| [[extracted_names]] | （自動收錄） |
-| [[output]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/skills/pattern-capture\|教學 Pattern 提煉]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/skills/pattern-grammar-spread\|文法攤開教學]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/skills/pattern-homework-anchor\|課後任務門檻設計]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/skills/pattern-worksheet-layers\|學習單層次設計]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/pipeline-status\|pipeline status]] | 設定檔 |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A008-quality\|A008 quality]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/3C_assessment\|3C assessment]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/OneDrive_1_2025-2-12\|OneDrive 1 2025 2 12]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$3三年級(3C)秋季台語教學紀錄(林詩閔)\|~$3三年級(3C)秋季台語教學紀錄(林詩閔)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$3學年冬三年級台語課教學內容-詩閔\|~$3學年冬三年級台語課教學內容 詩閔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/~$的故事─森林裏的公主1(1)\|~$的故事─森林裏的公主1(1)]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001\|歌曲 20240823T005746Z 001]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/我有一雙做工課的手\|我有一雙做工課的手]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/月娘月娘月光光 mp3\|月娘月娘月光光 mp3]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/菜市仔\|菜市仔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/菜市仔\|菜市仔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/跳索仔\|跳索仔]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/風吹飛去佗位\|風吹飛去佗位]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_1\|射日傳說 劇本 頁面 1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_2\|射日傳說 劇本 頁面 2]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_3\|射日傳說 劇本 頁面 3]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_4\|射日傳說 劇本 頁面 4]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_5\|射日傳說 劇本 頁面 5]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說/射日傳說_劇本_頁面_6\|射日傳說 劇本 頁面 6]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/3C秀真主課規劃\|3C秀真主課規劃]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/[Content_Types]\|[Content Types]]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/_rels/.rels\|.rels]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/app\|app]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/core\|core]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/docProps/thumbnail\|thumbnail]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/document\|document]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/endnotes\|endnotes]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/fontTable\|fontTable]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/footnotes\|footnotes]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/settings\|settings]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/styles\|styles]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/theme/theme1\|theme1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/webSettings\|webSettings]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/[Content_Types]\|[Content Types]]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/_rels/.rels\|.rels]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/app\|app]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/core\|core]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/docProps/thumbnail\|thumbnail]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/document\|document]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/endnotes\|endnotes]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/fontTable\|fontTable]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/footnotes\|footnotes]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/numbering\|numbering]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/settings\|settings]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/styles\|styles]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/theme/theme1\|theme1]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/webSettings\|webSettings]] | （自動收錄） |
-| [[niamyio_toy_guide_2026]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/方正宇\|方正宇 學習紀錄]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/create_dummy_audio\|create dummy audio]] | Python 腳本 |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/download_tts\|download tts]] | Python 腳本 |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/full_output\|full output]] | （自動收錄） |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/query_taigi\|query taigi]] | Python 腳本 |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/records/niamyio_audio_error_summary\|niamyio audio error summary]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/chalkboard-prompt\|chalkboard prompt]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/images\|images]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/narration\|narration]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2/raw-materials\|raw materials]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/chalkboard-prompt\|chalkboard prompt]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/images\|images]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/narration\|narration]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2/raw-materials\|raw materials]] | （自動收錄） |
-| [[README]] | （自動收錄） |
-| [[teacheros-personal]] | （自動收錄） |
-| [[workspace]] | （自動收錄） |
-| [[README]] | （自動收錄） |
-| [[teacheros-personal]] | （自動收錄） |
-| [[workspace]] | （自動收錄） |
-| [[README]] | （自動收錄） |
-| [[teacheros-personal]] | （自動收錄） |
-| [[workspace]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/叮噹叮叮噹\|叮噹叮叮噹]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/我愛日頭\|我愛日頭]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/頭殼肩胛頭\|頭殼肩胛頭]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲/鳥鼠仔腹肚枵\|鳥鼠仔腹肚枵]] | （自動收錄） |
-| [[README]] | （自動收錄） |
-| [[teacheros-personal]] | （自動收錄） |
-| [[workspace]] | （自動收錄） |
-| [[README]] | （自動收錄） |
-| [[teacheros-personal]] | （自動收錄） |
-| [[workspace]] | （自動收錄） |
-| [[client_secret_211052561189-f0r9ifhic4885d8oitsn17or5n23puam.apps.googleusercontent.com]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/nian-yio-text.txt:SUGGEST:nian-yio-text\|nian yio text.txt:SUGGEST:nian yio text]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/projects/temp_rhymes.txt:SUGGEST:temp_rhymes\|temp rhymes.txt:SUGGEST:temp rhymes]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp1/word/_rels/document.xml\|document.xml]] | （自動收錄） |
-| [[workspaces/Working_Member/Teacher_林詩閔/reference/temp2/word/_rels/document.xml\|document.xml]] | （自動收錄） |
-| [[workspace-binary-check]] | （自動收錄） |
-| [[pr-acl-check]] | （自動收錄） |
-| [[repo-health-report]] | （自動收錄） |
-| [[yaml-validate]] | （自動收錄） |
-| [[塞掐SideChat-E398-主權AI摘要報告]] | （自動收錄） |
-| [[TAIC-與-TeacherOS-協作分析]] | （自動收錄） |
-| [[git-history_2026-03-15_v1]] | （自動收錄） |
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/current-task\|current task]] | 設定檔 |
-| [[workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM001/waldorf-teaching\|AM001 華德福教學指引]] | （自動收錄） |
-| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/Botany-Overview\|Botany Overview]] | （自動收錄） |
 
 ---
 
@@ -2069,4 +1733,3 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
-| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/walking-reading-taiwan/content/9C-walk-read-week1-教學紀錄\|9C 走讀臺灣 臺中篇 week1 教學紀錄]] | （自動收錄） |
