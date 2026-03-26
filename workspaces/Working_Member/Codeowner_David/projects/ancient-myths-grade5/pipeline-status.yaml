@@ -2,7 +2,7 @@ last_run:
   date: 2026-03-26
   lesson_id: AM003
   title: "摩奴與大洪水"
-  status: completed_with_notice
+  status: completed
 
 steps:
   step0_confirm: PASS
@@ -10,14 +10,9 @@ steps:
   step2_research: PASS
   step25_museum: WARN  # Met API 搜尋 Vishnu 關鍵字，8 件結果皆不相關（非印度神話）
   step3_writing: PASS  # 7 件套全部到位（content/waldorf/chalkboard/images/references/raw-materials/quality-report）
-  step4_chalkboard: SKIP  # 排程模式：Claude in Chrome 無使用者授權，標記 pending
+  step4_chalkboard: PASS  # 補做完成：Quill insertAt + 瀏覽器下載按鈕，7.2MB PNG
   step5_assemble: PASS  # HTML + PDF 生成，7 頁
   step6_drive: PASS  # HTML + PDF 已上傳
   step7_archive: PASS  # index.yaml + project.yaml 已更新
 
-notices:
-  - type: chalkboard_pending
-    lesson_id: AM003
-    message: "黑板畫尚未生成（排程模式下無法取得 Claude in Chrome 授權）。請在下次開工時手動執行 Step 4，或執行 story-chalkboard AM003 技能。"
-    placeholder: "~/Downloads/AncientMyths-AM003-chalkboard.png（佔位圖，需替換為 Gemini 生成的實際圖）"
-    prompt_file: "stories/AM003/chalkboard-prompt.md"
+notices: []

@@ -40,10 +40,10 @@ stories:
       raw_materials: stories/AM003/raw-materials.md
       quality_report: stories/AM003/quality-report.md
     quality_check: passed
-    chalkboard: pending
+    chalkboard: embedded
     drive:
-      html: "1jKMGPpZ0algU3fhePRXUh2W15zi4bxS2"
-      pdf: "1z-rRUBH908geX3AF45VOdthLfmjRgWp5"
+      html: "1xuDpxgs6Rit7-fu_MnX7_BtITrNzw3EX"
+      pdf: "1SLMIPX-4ud2heGDNjljrXXuYPp6OmLIk"
     tags: [摩奴, Manu, 摩蹉, Matsya, 毗濕奴, 大洪水, 古印度, 夢境意識, 洪水神話]
 
   - id: AM002
