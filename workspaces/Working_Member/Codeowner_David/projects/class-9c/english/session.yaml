@@ -8,7 +8,7 @@
 
 english_session:
   class: class-9c
-  last_updated: 2026-03-25
+  last_updated: 2026-03-26
 
   current_position:
     block: 二
@@ -38,13 +38,15 @@ english_session:
 
   next_action:
     description: >
-      【Week 7 第三節起】進入 Week 7 語言技能課（連接詞 Part 2）。
+      【Week 7 第一節】A Rice Sandwich 閱讀收尾 + 驗收。
       行動清單：
-      1. David 審閱 Week 7 四份草稿（7-1 教案＋學習單、7-2 教案＋學習單）
-      2. Week 6-4 學習單（單字連接詞版）已完成，可直接用於課堂
-      3. Week 7-3/7-4 Mango Street 繼續選篇（接續 A Rice Sandwich 之後）
-      4. Week 6-2 PDF 排版若仍需重做，再安排處理
-    input_needed_from_teacher: "Week 7 草稿審閱意見；Week 7-3/4 Mango Street 選篇"
+      1. 驗收學習單第二頁（Task B + Task C）
+      2. 角色扮演驗收——四組四角色：媽媽、Esperanza、第一個修女、校長
+      3. A Rice Sandwich 收尾（課堂帶到第五段，第六段起學生自行閱讀，本篇結束）
+      【Week 7 第三節起】進入語言技能課（連接詞 Part 2）。
+      4. David 審閱 Week 7 四份草稿（7-1 教案＋學習單、7-2 教案＋學習單）
+      5. Week 7-3/7-4 Mango Street 繼續選篇（接續 A Rice Sandwich 之後）
+    input_needed_from_teacher: "Week 7-1 角色扮演分組名單確認；Week 7 草稿審閱意見；Week 7-3/4 Mango Street 選篇"
 
   output_files:
     syllabus_versions:
