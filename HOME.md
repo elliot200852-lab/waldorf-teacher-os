@@ -37,6 +37,10 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/skills/voice-samples/05-teacher-to-parents.md\|語氣範本：教師對家長]] | 語氣範本第五類——家長文與學習歷程報告 |
 | [[workspaces/Working_Member/Codeowner_David/skills/voice-samples/06-community-essay.md\|語氣範本：社群公開敘事]] | 語氣範本第六類——社群文章、部落格、混合受眾公開文 |
 | [[workspaces/Working_Member/Codeowner_David/skills/send-line-message.md\|send-line-message]] | LINE 訊息發送技能 |
+| [[workspaces/Working_Member/Codeowner_David/skills/pattern-capture\|pattern-capture]] | 教學 Pattern 提煉（從課堂觀察萃取可複用模式） |
+| [[workspaces/Working_Member/Codeowner_David/skills/pattern-grammar-spread\|pattern-grammar-spread]] | 文法攤開教學 Pattern |
+| [[workspaces/Working_Member/Codeowner_David/skills/pattern-homework-anchor\|pattern-homework-anchor]] | 課後任務門檻設計 Pattern |
+| [[workspaces/Working_Member/Codeowner_David/skills/pattern-worksheet-layers\|pattern-worksheet-layers]] | 學習單層次設計 Pattern |
 
 ### 個人腳本
 
@@ -234,6 +238,7 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/walking-reading-taiwan/content/9C-walk-read-week1-教案分析.md\|臺中篇教案分析]] | Week 1 — AI 教案分析與調整建議 |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/walking-reading-taiwan/content/9C-走讀臺灣-教學規劃-草稿.md\|走讀臺灣教學規劃草稿]] | 8 節課完整教學規劃（v0.1 草稿） |
 | [[workspaces/Working_Member/Codeowner_David/projects/class-9c/walking-reading-taiwan/content/9C-走讀臺灣-教學大綱-草稿.md\|走讀臺灣教學大綱草稿]] | 課程定位、目標、評量、文本清單（v0.1 草稿） |
+| [[workspaces/Working_Member/Codeowner_David/projects/class-9c/walking-reading-taiwan/content/9C-walk-read-week1-教學紀錄\|臺中篇 week1 教學紀錄]] | Week 1 — 課後教學紀錄與反思 |
 
 ### 9D 班級
 
@@ -463,6 +468,20 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A011/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A011/raw-materials\|raw-materials]] | 研究素材包 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A011-quality\|品質報告]] | 品質審核紀錄 |
+
+### 臺灣歷史課程文稿（taiwanese-history）
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/pickering-in-formosa_畢麒麟在福爾摩沙_說書人文稿v2\|畢麒麟在福爾摩沙 說書人文稿 v2]] | 三節說書人課程文稿 v2 |
+| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿_畢麒麟的世界\|畢麒麟的世界 三天課程文稿]] | 畢麒麟三天課程文稿 v1 |
+| [[workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/三天課程文稿v2_畢麒麟在福爾摩沙\|畢麒麟在福爾摩沙 三天課程文稿 v2]] | 畢麒麟三天課程文稿 v2 |
+
+### 系統深度審查
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/deep-review-2026-03-22\|三大技能深度審查 2026-03-22]] | story-daily / obsidian-sync / wrap-up 深度審查紀錄 |
 
 ### 五年級植物學（botany-grade5）
 
@@ -957,6 +976,7 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/方正宇\|方正宇]] | 學生觀察紀錄 |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/朱珉.md\|朱珉]] | 學生觀察紀錄 |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/李婕熙.md\|李婕熙]] | 學生觀察紀錄 |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs/李淳伊.md\|李淳伊]] | 學生觀察紀錄 |
@@ -988,6 +1008,7 @@ aliases:
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/seed_logs.py\|seed_logs.py]] | 學生紀錄初始化腳本 |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/tmp_extract.py\|tmp_extract.py]] | 暫存擷取腳本 |
 | [[workspaces/Working_Member/Teacher_林詩閔/projects/3C_assessment.docx\|3C 評量原始檔]] | 評量 docx |
+| [[workspaces/Working_Member/Teacher_林詩閔/projects/records/niamyio_audio_error_summary\|台語唸謠 TTS 除錯總結]] | 唸謠語音生成錯誤排查紀錄 |
 
 ### 113 學年台語參考資料
 
@@ -1206,6 +1227,11 @@ aliases:
 | [[story-archive]]     | 「歸檔故事」「story archive」       | 臺灣的故事・歸檔與索引                           |
 | [[ai-core/skills/story-daily\|story-daily]] | 「今天的故事」「跑管線」 | 臺灣的故事・全流程編排器（v2.2.0，8 步驟 + Checkpoint） |
 | [[ai-core/skills/gws-bridge\|gws-bridge]] | 「gws bridge」「Cowork gws」 | Cowork VM ↔ 本機 GWS CLI 橋接（自動偵測環境） |
+| [[ai-core/skills/ancient-myths-daily\|ancient-myths-daily]] | 「古文明神話故事」「每日古文明」 | 古文明神話每日全流程管線 |
+| [[ai-core/skills/botany-daily\|botany-daily]] | 「植物學故事」「每日植物」 | 植物學故事每日全流程管線 |
+| [[ai-core/skills/new-doc\|new-doc]] | 「新增文件」「建立新文件」 | 新建 Markdown 文件（路徑確認） |
+| [[ai-core/skills/niamyio\|niamyio]] | 「台語唸謠」 | 台語唸謠 TTS 語音生成 |
+| [[ai-core/skills/video-setup\|video-setup]] | 「影片環境」「video setup」 | Remotion 影片專案環境設定 |
 
 ---
 
@@ -1328,6 +1354,7 @@ aliases:
 | [[session-log]] | 歷次 session 完成紀錄 |
 | [[architecture-review-2026-03-04]] | 架構回顧（2026-03-04） |
 | [[context-review-20260228]] | 脈絡回顧（2026-02-28） |
+| [[ai-core/reviews/skill-deep-review-2026-03-22\|skill-deep-review-2026-03-22]] | 三大技能深度審查（2026-03-22） |
 
 ---
 
@@ -1388,6 +1415,8 @@ aliases:
 
 | 檔案 | 說明 |
 |------|------|
+| [[.claude/.pre-compact-state\|.pre-compact-state]] | Context 壓縮前狀態備份 |
+| [[.claude/mcp-optimization-guide\|mcp-optimization-guide]] | MCP 工具效能優化指引 |
 | [[pre-compact-save]] | Python 腳本 |
 | [[.claude/settings.json\|settings.json]] | Claude Code 全域設定 |
 | [[.claude/settings.local.json\|settings.local.json]] | 本機設定（不上傳） |
@@ -1423,6 +1452,11 @@ aliases:
 | [[.claude/skills/beautify/SKILL.md\|beautify SKILL]] | 華德福美化輸出（封包入口 → ai-core/skills/beautify.md） |
 | [[.claude/skills/check-compat/SKILL.md\|check-compat SKILL]] | 跨平台相容性檢查（封包入口 → ai-core/skills/check-compat.md） |
 | [[.claude/skills/story-daily/SKILL.md\|story-daily SKILL]] | 臺灣故事每日管線（封包入口 → ai-core/skills/story-daily.md） |
+| [[.claude/skills/json-canvas/references/EXAMPLES\|json-canvas EXAMPLES]] | JSON Canvas 範例參考 |
+| [[.claude/skills/obsidian-bases/references/FUNCTIONS_REFERENCE\|obsidian-bases FUNCTIONS]] | Obsidian Bases 函數參考 |
+| [[.claude/skills/obsidian-markdown/references/CALLOUTS\|obsidian-markdown CALLOUTS]] | Obsidian Markdown Callout 語法參考 |
+| [[.claude/skills/obsidian-markdown/references/EMBEDS\|obsidian-markdown EMBEDS]] | Obsidian Markdown 嵌入語法參考 |
+| [[.claude/skills/obsidian-markdown/references/PROPERTIES\|obsidian-markdown PROPERTIES]] | Obsidian Markdown Properties 語法參考 |
 
 ### Claude Code Commands（薄層入口 → ai-core/skills/）
 
@@ -1463,6 +1497,9 @@ aliases:
 | [[.claude/commands/story-verify.md\|/story-verify]] | story-verify |
 | [[.claude/commands/story-archive.md\|/story-archive]] | story-archive |
 | [[.claude/commands/story-daily.md\|/story-daily]] | story-daily（全流程編排器） |
+| [[.claude/commands/new-doc.md\|/new-doc]] | new-doc（新建文件） |
+| [[.claude/commands/pattern.md\|/pattern]] | pattern（提煉教學 pattern） |
+| [[.claude/commands/patterns.md\|/patterns]] | patterns（列出已有 pattern） |
 
 ---
 
@@ -1472,6 +1509,7 @@ aliases:
 |------|------|
 | [[Git History/git-history.md\|git-history 週記]] | Git 工作週記 |
 | [[Git History/_pdf-config.md\|PDF 輸出設定]] | 週記 PDF 設定 |
+| [[Git History/Gemini-AI-對系統架構師歷程的觀察與建議\|Gemini AI 系統架構師觀察]] | Gemini AI 對 TeacherOS 系統建構歷程的觀察與建議 |
 
 ---
 
