@@ -154,6 +154,61 @@ def _check_home_quality(staged_files: list[str], repo_root: Path) -> bool:
     return False
 
 
+# ── 大型二進位檔案攔截 ────────────────────────────────
+
+WARN_SIZE = 5 * 1024 * 1024    # 5 MB → 警告
+BLOCK_SIZE = 10 * 1024 * 1024  # 10 MB → 攔截
+
+# 這些副檔名視為文字檔，不受大小攔截（.md 教案可能很長）
+TEXT_EXTENSIONS = {
+    ".md", ".yaml", ".yml", ".json", ".txt", ".csv", ".tsv",
+    ".py", ".js", ".ts", ".tsx", ".sh", ".ps1", ".bat",
+    ".html", ".css", ".xml", ".env", ".gitignore",
+}
+
+
+def _check_large_files(staged_files: list[str], repo_root: Path) -> bool:
+    """檢查暫存區中的大型二進位檔案。
+    超過 5 MB 警告，超過 10 MB 攔截。
+    回傳 True 表示應阻擋 commit。"""
+    warnings = []
+    blocked = []
+
+    for f in staged_files:
+        filepath = repo_root / f
+        if not filepath.is_file():
+            continue  # 已刪除的檔案跳過
+
+        ext = filepath.suffix.lower()
+        if ext in TEXT_EXTENSIONS:
+            continue  # 文字檔不受限
+
+        size = filepath.stat().st_size
+        if size >= BLOCK_SIZE:
+            blocked.append((f, size))
+        elif size >= WARN_SIZE:
+            warnings.append((f, size))
+
+    if warnings:
+        print()
+        for f, size in warnings:
+            print(f"  {YELLOW}[警告] 大型檔案 ({size/1024/1024:.1f} MB): {f}{NC}")
+        print(f"  建議將大型二進位檔案放在 Google Drive，不進 git。")
+
+    if blocked:
+        print()
+        print(f"  {RED}[攔截] 以下檔案超過 10 MB，不允許 commit：{NC}")
+        for f, size in blocked:
+            print(f"  {RED}  {size/1024/1024:.1f} MB: {f}{NC}")
+        print()
+        print(f"  請將大型檔案移至 Google Drive 或教師的 private/ 資料夾。")
+        print(f"  如確認必要，可用 git commit --no-verify 繞過。")
+        print()
+        return True
+
+    return False
+
+
 # ── 地圖一致性警告 ────────────────────────────────────
 
 def _check_map_consistency(staged_files: list[str]) -> None:
@@ -295,13 +350,14 @@ def main() -> int:
 
     user = teachers[current_email]
 
-    # 管理員通過（仍需通過 HOME.md 品質護欄）
+    # 管理員通過（仍需通過品質護欄）
     if user["is_admin"]:
         print(f"  {GREEN}管理員身份確認，全域授權通過。{NC}")
 
-        # 管理員也受 HOME.md 品質護欄約束
-        home_block = _check_home_quality(staged_files, repo_root)
-        if home_block:
+        # 管理員也受品質護欄約束
+        if _check_home_quality(staged_files, repo_root):
+            return 1
+        if _check_large_files(staged_files, repo_root):
             return 1
 
         # 地圖一致性警告
@@ -329,9 +385,10 @@ def main() -> int:
         name = user["name"]
         print(f"  {GREEN}身份確認：{name}，所有修改在授權範圍內，通過。{NC}")
 
-        # ── HOME.md 品質護欄（阻擋 commit） ──────────
-        home_block = _check_home_quality(staged_files, repo_root)
-        if home_block:
+        # ── 品質護欄（阻擋 commit） ──────────────────
+        if _check_home_quality(staged_files, repo_root):
+            return 1
+        if _check_large_files(staged_files, repo_root):
             return 1
 
         # ── 地圖一致性警告（不阻擋 commit） ──────────
