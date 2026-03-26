@@ -19,18 +19,35 @@ requires_args: false
 
 ## 執行步驟
 
-### Step 1 — 執行偵測腳本
+### Step 0.5 — 地圖新鮮度檢查
+
+在掃描前先確認架構地圖是最新的：
 
 ```bash
-python3 setup/scripts/obsidian-check.py
+python3 setup/scripts/map-validate.py --validate
 ```
 
-解析輸出，取得三類檔案清單：
+- 若有 **errors**：警告教師「地圖包含錯誤，建議先修復再繼續」
+- 若有 **backward warnings**（目錄未覆蓋）：自動執行 `python3 setup/scripts/map-validate.py --rebuild-dirs`
+- 若 地圖檔不存在：跳過此步驟（graceful 退化，obsidian-check.py 會自動退化為無建議模式）
+
+### Step 1 — 執行偵測腳本（地圖驅動過濾模式）
+
+```bash
+python3 setup/scripts/obsidian-check.py --map-filter
+```
+
+解析輸出，取得分類清單：
 - `UNLABELED_MD` — 缺少 `aliases:` frontmatter 的 .md 檔
 - `UNLABELED_YAML` — 前 5 行無中文字元的 .yaml 檔
-- `NOT_IN_HOME` — 未被 HOME.md 引用的檔案
+- `ROUTED` — 未收錄 HOME.md，但地圖有匹配路由（AI 可自動歸類）
+- `UNROUTED` — 未收錄 HOME.md，且地圖無匹配路由（需教師決定）
 
-若三類皆為 0，回應：「所有檔案已標籤且收錄 HOME.md，不需要更新。」結束。
+輸出格式：
+- `FILE:NOT_IN_HOME:path|section` — 有路由（ROUTED）
+- `FILE:NOT_IN_HOME_UNROUTED:path` — 無路由（UNROUTED）
+
+若所有類別皆為 0，回應：「所有檔案已標籤且收錄 HOME.md，不需要更新。」結束。
 
 ### Step 2 — 為未標籤的 .md 檔加上 aliases
 
@@ -90,72 +107,34 @@ aliases:
 - `acl.yaml` / `system-status.yaml` → 系統設定
 - 其他 → 設定檔
 
-### Step 4 — 報告未收錄 HOME.md 的檔案（確認後才寫入）
+### Step 4 — 報告未收錄 HOME.md 的檔案（地圖驅動分流）
 
-讀取 `FILE:NOT_IN_HOME:` 清單，**向教師報告**哪些檔案不在 HOME.md 中。
-
-若 `NOT_IN_HOME` 為 0，不需要報告，跳到 Step 5。
+若 `ROUTED` 和 `UNROUTED` 皆為 0，不需要報告，跳到 Step 5。
 
 **嚴禁事項：**
 - **絕對不使用「（自動收錄）」作為說明文字** — pre-commit hook 會攔截
-- **不自動寫入** — 必須先報告、教師確認後才寫入
+- **UNROUTED 檔案絕對不自動寫入** — 必須報告、教師決定後才寫入
 - **不塞到「根目錄散檔」** — 那是最後手段，幾乎所有檔案都有更精確的歸屬
 
-**執行流程：**
+**執行流程（兩條路徑）：**
 
-1. 逐一比對下方「區段結構表」，找出每個檔案的精確歸屬區段
+#### A. ROUTED 檔案（有地圖路由）
+
+1. 讀取 `FILE:NOT_IN_HOME:path|section` 清單
 2. 向教師報告：列出每個檔案、建議區段、建議的中文說明
 3. 教師確認後寫入（可能調整區段或說明）
-4. 寫入時使用正確的中文說明，格式為 `| [[路徑\|顯示名]] | 中文說明 |`
+4. 寫入格式：`| [[路徑\|顯示名]] | 中文說明 |`
 
-**HOME.md 區段結構表（精確比對，依優先順序）：**
+#### B. UNROUTED 檔案（無地圖路由）
 
-AI 必須從上往下比對，找到**第一個符合的規則**就停。
+1. 讀取 `FILE:NOT_IN_HOME_UNROUTED:path` 清單
+2. 向教師報告：「以下檔案不在地圖路由範圍內，需要您決定歸屬：」
+3. **不提供建議、不自動寫入**
+4. 教師告知區段後，AI 再寫入 HOME.md
+5. 若教師決定某路徑模式今後應自動歸類，AI 同時在 `repo-structure-map.yaml` 中新增對應 rule
 
-| 路徑模式 | 歸入 HOME.md 區段 | 備註 |
-|----------|-------------------|------|
-| `workspaces/.../Codeowner_David/teacheros-personal.yaml` | `## David 的工作空間 > ### 個人設定` | |
-| `workspaces/.../Codeowner_David/skills/*.md` | `## David 的工作空間 > ### 個人技能` | |
-| `workspaces/.../Codeowner_David/scripts/*` | `## David 的工作空間 > ### 個人腳本` | |
-| `workspaces/.../Codeowner_David/poetry_output/**` | `## David 的工作空間 > ### 詩歌研究素材產出` | 依主題子區段 |
-| `workspaces/.../class-9c/project.yaml` | `## David 的工作空間 > ### 9C 班級`（班級設定表格） | |
-| `workspaces/.../class-9c/english/**` | `## David 的工作空間 > ### 9C 班級 > 9C 英文` | content/ 歸到「內容產出」 |
-| `workspaces/.../class-9c/homeroom/**` | `## David 的工作空間 > ### 9C 班級 > 9C 導師` | |
-| `workspaces/.../class-9c/farm-internship/**` | `## David 的工作空間 > ### 9C 班級 > 9C 農場實習` | |
-| `workspaces/.../class-9c/walking-reading-taiwan/**` | `## David 的工作空間 > ### 9C 班級 > 9C 走讀臺灣` | |
-| `workspaces/.../class-9d/**` | `## David 的工作空間 > ### 9D 班級` | 依科目細分 |
-| `workspaces/.../ancient-myths-grade5/**` | `## David 的工作空間 > ### 古文明神話（五年級）` | |
-| `workspaces/.../stories-of-taiwan/**` | `## David 的工作空間 > ### 臺灣的故事` | 依故事編號 |
-| `workspaces/.../taiwanese-history/**` | `## David 的工作空間 > ### 臺灣歷史課程文稿` | |
-| `workspaces/.../botany-grade5/**` | `## David 的工作空間 > ### 五年級植物學` | |
-| `workspaces/.../deep-review-*` | `## David 的工作空間 > ### 系統深度審查` | |
-| `workspaces/.../Codeowner_David/**`（其他） | `## David 的工作空間`（找最接近的子區段） | |
-| `workspaces/.../Teacher_郭耀新/**` | `## 郭耀新老師的工作空間`（依子區段） | |
-| `workspaces/.../Teacher_陳佩珊/**` | `## 陳佩珊老師的工作空間`（依子區段） | |
-| `workspaces/.../Teacher_林詩閔/**/student-logs/*` | `## 林詩閔老師 > ### 4C 班級 > 學生紀錄` | 按姓氏排序 |
-| `workspaces/.../Teacher_林詩閔/**` | `## 林詩閔老師的工作空間`（依子區段） | |
-| `workspaces/.../Teacher_*/**` | 對應教師的 `##` 區段（依子區段） | |
-| `ai-core/skills/*.md` | `## 技能系統 > ### 系統技能正本` | 三欄表格 |
-| `ai-core/reference/*.yaml` | `## 系統核心 > ### Reference 知識模組（YAML）` | |
-| `ai-core/reference/*.md` | `## 系統核心 > ### Reference 操作文件` | |
-| `ai-core/reviews/*` | `## 系統核心 > ### 系統回顧紀錄` | |
-| `ai-core/*.yaml` | `## 系統核心 > ### 系統設定（YAML）` | |
-| `ai-core/*.md` | `## 系統核心 > ### AI 入口與流程` | |
-| `projects/_di-framework/content/*` | `## 差異化教學框架 > ### 操作文件` 或 `### 英文差異化區塊設計` | |
-| `projects/_di-framework/reference/*` | `## 差異化教學框架 > ### 參考範例` | |
-| `projects/_di-framework/*` | `## 差異化教學框架 > ### 框架設定` | |
-| `.claude/skills/*/SKILL.md` | `## Claude Code 設定 > ### Claude Code Skills` | |
-| `.claude/skills/*/references/*` | `## Claude Code 設定 > ### Claude Code Skills` | 歸到對應 skill 旁 |
-| `.claude/commands/*.md` | `## Claude Code 設定 > ### Claude Code Commands` | |
-| `.claude/*` | `## Claude Code 設定 > ### 設定檔` | |
-| `Git History/*` | `## Git History 週記` | |
-| `setup/scripts/*` | `## 環境設定與腳本 > ### 工具腳本` | |
-| `setup/*` | `## 環境設定與腳本` | 依子區段 |
-| `publish/*` | `## 輸出與發佈` | |
-| `Good-notes/*` | `## Good-notes 建造日誌` | |
-| 根目錄 `.md` / `.yaml` | `## 根目錄散檔` | **最後手段** |
-
-**若沒有匹配的區段：** 向教師報告「找不到適合的 HOME.md 區段，建議位置是 [最接近的區段]」，由教師決定。
+> **路由規則存放位置：** `ai-core/reference/repo-structure-map.yaml`
+> 驗證工具：`python3 setup/scripts/map-validate.py --validate`
 
 ### Step 5 — 輸出摘要
 
@@ -171,9 +150,10 @@ Obsidian 同步完成：
 - 此技能**只讀偵測腳本的結果**，不自行掃描檔案系統
 - aliases 產生需要理解檔案內容，因此必須由 AI 執行，不能純腳本處理
 - 不修改已有正確標籤的檔案
-- **HOME.md 寫入的三條鐵規：**
-  1. 絕對不使用「（自動收錄）」— pre-commit hook 會攔截
+- **HOME.md 寫入的四條鐵規：**
+  1. 絕對不使用「（自動收錄）」— pre-commit hook 會攔截含此字樣的 HOME.md
   2. 必須比對區段結構表找到精確位置，不塞到「根目錄散檔」
-  3. 教師確認後才寫入，每個條目附正確的中文說明
+  3. ROUTED 檔案：向教師報告建議後寫入
+  4. UNROUTED 檔案：**絕對不自動寫入**，等教師明確指示
 - wrap-up 技能不觸發 HOME.md 收錄（使用 `--skip-home-check`），只有本技能處理 HOME.md
 - 若偵測腳本不存在，提示：「請先確認 `setup/scripts/obsidian-check.py` 存在。」

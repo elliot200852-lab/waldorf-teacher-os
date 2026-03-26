@@ -1,6 +1,0 @@
-{
-  "bytes": 3852,
-  "mimeType": "text/plain",
-  "saved_file": "download.txt",
-  "status": "success"
-}

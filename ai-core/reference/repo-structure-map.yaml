@@ -1,0 +1,634 @@
+# ════════════════════════════════════════════════════════════════════════
+# repo-structure-map.yaml — Repo 架構地圖
+# ════════════════════════════════════════════════════════════════════════
+#
+# 三大區段：
+#   rules            — 路徑模式 → HOME.md 區段（first-match-wins）
+#   sections         — HOME.md 完整區段樹（forward validation）
+#   tracked_directories — git-tracked 目錄（backward validation，自動重建）
+#
+# 匹配策略：從上往下比對 rules，命中第一條就停。
+# glob 語法：* 匹配單層、** 匹配多層（Python 3.12+ PurePath.match）
+#
+# 維護方式：
+#   - 新增路由：手動編輯 rules
+#   - 重建 tracked_directories：python3 setup/scripts/map-validate.py --rebuild-dirs
+#   - 驗證完整性：python3 setup/scripts/map-validate.py --validate
+# ════════════════════════════════════════════════════════════════════════
+
+_meta:
+  version: "1.0.0"
+  match_strategy: first-match-wins
+  description: "路徑 → HOME.md 區段的路由規則（取代 obsidian-sync Step 4 嵌入表格）"
+
+# ────────────────────────────────────────────────────────────────────────
+# rules — 路由規則（first-match-wins，從上往下比對）
+# ────────────────────────────────────────────────────────────────────────
+#
+# pattern 使用 glob 語法：
+#   *   — 匹配單層目錄下的檔案（不含子目錄）
+#   **  — 匹配任意深度的子目錄與檔案
+#
+# 注意：精確規則放前面，通配規則放後面。
+
+rules:
+
+  # ── David 的工作空間 ────────────────────────────────────────
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/teacheros-personal.yaml"
+    section: "David 的工作空間 > 個人設定"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/workspace.yaml"
+    section: "David 的工作空間 > 個人設定"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/teaching-log.md"
+    section: "David 的工作空間 > 個人設定"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/personal-handoff.md"
+    section: "David 的工作空間 > 個人設定"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/skills/**"
+    section: "David 的工作空間 > 個人技能"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/scripts/*"
+    section: "David 的工作空間 > 個人腳本"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/poetry_output/**"
+    section: "David 的工作空間 > 詩歌研究素材產出（poetry_output/）"
+    note: "依主題子區段（light-and-darkness、the-road 等）"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/class-9c/project.yaml"
+    section: "David 的工作空間 > 9C 班級"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/class-9c/roster.yaml"
+    section: "David 的工作空間 > 9C 班級"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/class-9c/students.yaml"
+    section: "David 的工作空間 > 9C 班級"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/class-9c/english/**"
+    section: "David 的工作空間 > 9C 班級"
+    note: "content/ 歸到「9C 英文內容產出」子表格"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/**"
+    section: "David 的工作空間 > 9C 班級"
+    note: "歸到「9C 導師」子表格"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/class-9c/farm-internship/**"
+    section: "David 的工作空間 > 9C 班級"
+    note: "歸到「9C 農場實習」子表格"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/class-9c/walking-reading-taiwan/**"
+    section: "David 的工作空間 > 9C 班級"
+    note: "歸到「9C 走讀臺灣」子表格"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/class-9c/**"
+    section: "David 的工作空間 > 9C 班級"
+    note: "9C 其他子目錄（ml-undecided、student-notes、reference 等）"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/class-9d/**"
+    section: "David 的工作空間 > 9D 班級"
+    note: "依科目細分"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/**"
+    section: "David 的工作空間 > 古文明神話（五年級）"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/**"
+    section: "David 的工作空間 > 臺灣的故事"
+    note: "依故事編號分子區段"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/taiwanese-history/**"
+    section: "David 的工作空間 > 臺灣歷史課程文稿（taiwanese-history）"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/botany-grade5/**"
+    section: "David 的工作空間 > 五年級植物學（botany-grade5）"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/deep-review-*"
+    section: "David 的工作空間 > 系統深度審查"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/projects/kovacs/**"
+    section: "David 的工作空間 > Kovacs 系列教材"
+
+  - pattern: "workspaces/Working_Member/Codeowner_David/**"
+    section: "David 的工作空間"
+    note: "catch-all — 找最接近的子區段"
+
+  # ── 其他教師工作空間 ──────────────────────────────────────
+
+  - pattern: "workspaces/Working_Member/Teacher_郭耀新/**"
+    section: "郭耀新老師的工作空間"
+    note: "依子區段細分"
+
+  - pattern: "workspaces/Working_Member/Teacher_陳佩珊/**"
+    section: "陳佩珊老師的工作空間"
+    note: "依子區段細分"
+
+  - pattern: "workspaces/Working_Member/Teacher_劉佳芳/**"
+    section: "劉佳芳老師的工作空間"
+    note: "依子區段細分"
+
+  - pattern: "workspaces/Working_Member/Teacher_林詩閔/**/student-logs/*"
+    section: "林詩閔老師的工作空間 > 4C 班級（台語課）"
+    note: "學生紀錄，按姓氏排序"
+
+  - pattern: "workspaces/Working_Member/Teacher_林詩閔/**"
+    section: "林詩閔老師的工作空間"
+    note: "依子區段細分"
+
+  - pattern: "workspaces/Working_Member/Teacher_*/**"
+    section: "(依教師名稱對應的 ## 區段)"
+    note: "新教師 catch-all — 向教師確認"
+
+  # ── 技能系統 ──────────────────────────────────────────────
+
+  - pattern: "ai-core/skills/README.md"
+    section: "技能系統（Skills） > 技能目錄與索引"
+    note: "精確匹配，必須在 *.md 通配之前"
+
+  - pattern: "ai-core/skills/*.md"
+    section: "技能系統（Skills） > 系統技能正本（ai-core/skills/）"
+    note: "三欄表格（技能名、觸發語、說明）"
+
+  # ── 系統核心（ai-core/） ─────────────────────────────────
+
+  - pattern: "ai-core/reference/*.yaml"
+    section: "系統核心（ai-core/） > Reference 知識模組（YAML）"
+
+  - pattern: "ai-core/reference/*.md"
+    section: "系統核心（ai-core/） > Reference 操作文件"
+
+  - pattern: "ai-core/reference/*.py"
+    section: "系統核心（ai-core/） > Reference 操作文件"
+
+  - pattern: "ai-core/reviews/*"
+    section: "系統核心（ai-core/） > 系統回顧紀錄"
+
+  - pattern: "ai-core/*.yaml"
+    section: "系統核心（ai-core/） > 系統設定（YAML）"
+
+  - pattern: "ai-core/*.md"
+    section: "系統核心（ai-core/） > AI 入口與流程"
+
+  - pattern: "ai-core/*.py"
+    section: "系統核心（ai-core/） > AI 入口與流程"
+
+  # ── 差異化教學框架 ────────────────────────────────────────
+
+  - pattern: "projects/_di-framework/content/english-*"
+    section: "差異化教學框架（_di-framework/） > 英文差異化區塊設計"
+
+  - pattern: "projects/_di-framework/content/*"
+    section: "差異化教學框架（_di-framework/） > 操作文件"
+
+  - pattern: "projects/_di-framework/reference/*"
+    section: "差異化教學框架（_di-framework/） > 參考範例"
+
+  - pattern: "projects/_di-framework/*"
+    section: "差異化教學框架（_di-framework/） > 框架設定"
+
+  # ── Claude Code 設定 ─────────────────────────────────────
+
+  - pattern: ".claude/skills/*/SKILL.md"
+    section: "Claude Code 設定（.claude/） > Claude Code Skills（Anthropic Skills 封包）"
+
+  - pattern: ".claude/skills/*/references/*"
+    section: "Claude Code 設定（.claude/） > Claude Code Skills（Anthropic Skills 封包）"
+    note: "歸到對應 skill 旁"
+
+  - pattern: ".claude/commands/*.md"
+    section: "Claude Code 設定（.claude/） > Claude Code Commands（薄層入口 → ai-core/skills/）"
+
+  - pattern: ".claude/*"
+    section: "Claude Code 設定（.claude/） > 設定檔"
+
+  # ── Git History 週記 ─────────────────────────────────────
+
+  - pattern: "Git History/*"
+    section: "Git History 週記"
+
+  # ── 環境設定與腳本 ────────────────────────────────────────
+
+  - pattern: "setup/scripts/*"
+    section: "環境設定與腳本（setup/） > 工具腳本"
+
+  - pattern: "setup/hooks/*"
+    section: "環境設定與腳本（setup/） > 教師管理"
+
+  - pattern: "setup/assets/*"
+    section: "環境設定與腳本（setup/） > 靜態資源"
+
+  - pattern: "setup/add-teacher.*"
+    section: "環境設定與腳本（setup/） > 教師管理"
+
+  - pattern: "setup/install-hooks.*"
+    section: "環境設定與腳本（setup/） > 教師管理"
+
+  - pattern: "setup/*"
+    section: "環境設定與腳本（setup/） > 安裝與設定"
+    note: "catch-all — 未分類的 setup 檔案"
+
+  # ── 輸出與發佈 ───────────────────────────────────────────
+
+  - pattern: "publish/**"
+    section: "輸出與發佈（publish/）"
+
+  # ── Good-notes ───────────────────────────────────────────
+
+  - pattern: "Good-notes/*"
+    section: "Good-notes 建造日誌"
+
+  # ── 母文件 ───────────────────────────────────────────────
+
+  - pattern: "ai-core/TeacherOS*"
+    section: "母文件（教育哲學根基）"
+
+  - pattern: "ai-core/AI 時代*"
+    section: "母文件（教育哲學根基）"
+
+  # ── 展示網站 ─────────────────────────────────────────────
+
+  - pattern: "site/**"
+    section: "展示網站 > site/（Firebase 主站）"
+
+  - pattern: "網站展示/**"
+    section: "展示網站 > 網站展示/（備用展示站）"
+
+  # ── 教師工具下載區 ───────────────────────────────────────
+
+  - pattern: "Tool Download/**"
+    section: "教師工具下載區（Tool Download/）"
+    note: "依子目錄分子區段"
+
+  # ── 影片專案 ─────────────────────────────────────────────
+
+  - pattern: "video/**"
+    section: "影片專案（video/）"
+
+  # ── David 個人品牌素材庫 ─────────────────────────────────
+
+  - pattern: "David-personal-asset-base/**"
+    section: "David 個人品牌素材庫（David-personal-asset-base/）"
+
+  # ── 工程與開發者文件 ─────────────────────────────────────
+
+  - pattern: "Engineer_Reference/**"
+    section: "工程與開發者文件 > Engineer_Reference/"
+
+  - pattern: ".github/**"
+    section: "工程與開發者文件 > .github/"
+
+  - pattern: ".gitignore"
+    section: "工程與開發者文件 > .gitignore / .gitattributes"
+
+  - pattern: ".gitattributes"
+    section: "工程與開發者文件 > .gitignore / .gitattributes"
+
+  # ── 模板 ─────────────────────────────────────────────────
+
+  - pattern: "workspaces/_template/**"
+    section: "模板與範例 > 新教師模板（workspaces/_template/）"
+
+  - pattern: "workspaces/工作範例參考/**"
+    section: "模板與範例 > 工作範例參考（Teacher Claude）"
+
+  # ── 班級共用（projects/g9/ 等） ──────────────────────────
+
+  - pattern: "projects/g9/**"
+    section: "David 的工作空間 > 9C 班級"
+    note: "G9 跨班共用教材"
+
+  # ── 根目錄散檔（最後手段） ────────────────────────────────
+
+  - pattern: "*.md"
+    section: "根目錄散檔"
+    note: "最後手段 — 幾乎所有檔案都有更精確的歸屬"
+
+  - pattern: "*.yaml"
+    section: "根目錄散檔"
+
+  - pattern: "*.yml"
+    section: "根目錄散檔"
+
+  - pattern: "*.skill"
+    section: "根目錄散檔"
+
+  - pattern: "*.txt"
+    section: "根目錄散檔"
+
+# ────────────────────────────────────────────────────────────────────────
+# sections — HOME.md 完整區段樹（用於 forward validation）
+# ────────────────────────────────────────────────────────────────────────
+#
+# 格式：扁平列表，">" 分隔層級。
+# obsidian-check.py 用此清單驗證 rules 中的 section 值是否合法。
+
+sections:
+  - "David 的工作空間"
+  - "David 的工作空間 > 個人設定"
+  - "David 的工作空間 > 個人技能"
+  - "David 的工作空間 > 個人腳本"
+  - "David 的工作空間 > 詩歌研究素材產出（poetry_output/）"
+  - "David 的工作空間 > 9C 班級"
+  - "David 的工作空間 > 9D 班級"
+  - "David 的工作空間 > 古文明神話（五年級）"
+  - "David 的工作空間 > 臺灣的故事"
+  - "David 的工作空間 > 臺灣歷史課程文稿（taiwanese-history）"
+  - "David 的工作空間 > 系統深度審查"
+  - "David 的工作空間 > 五年級植物學（botany-grade5）"
+  - "David 的工作空間 > Kovacs 系列教材"
+  - "郭耀新老師的工作空間"
+  - "郭耀新老師的工作空間 > 個人設定"
+  - "郭耀新老師的工作空間 > 教學筆記"
+  - "郭耀新老師的工作空間 > 個人技能"
+  - "郭耀新老師的工作空間 > 9A 班級（資訊科技）"
+  - "郭耀新老師的工作空間 > 9B 班級（資訊科技）"
+  - "陳佩珊老師的工作空間"
+  - "陳佩珊老師的工作空間 > 個人設定"
+  - "陳佩珊老師的工作空間 > 12A 班級（畢業專題）"
+  - "陳佩珊老師的工作空間 > 教學創造性簡報"
+  - "陳佩珊老師的工作空間 > 心抱抱 Podcast 筆記"
+  - "劉佳芳老師的工作空間"
+  - "劉佳芳老師的工作空間 > 個人設定"
+  - "劉佳芳老師的工作空間 > 自動化結案報告測試"
+  - "林詩閔老師的工作空間"
+  - "林詩閔老師的工作空間 > 個人設定"
+  - "林詩閔老師的工作空間 > 個人技能"
+  - "林詩閔老師的工作空間 > 4C 班級（台語課）"
+  - "林詩閔老師的工作空間 > 工具腳本"
+  - "林詩閔老師的工作空間 > 113 學年台語參考資料"
+  - "教師環境預填（env-preset.env）"
+  - "技能系統（Skills）"
+  - "技能系統（Skills） > 技能目錄與索引"
+  - "技能系統（Skills） > 系統技能正本（ai-core/skills/）"
+  - "Good-notes 建造日誌"
+  - "差異化教學框架（_di-framework/）"
+  - "差異化教學框架（_di-framework/） > 框架設定"
+  - "差異化教學框架（_di-framework/） > 操作文件"
+  - "差異化教學框架（_di-framework/） > 英文差異化區塊設計"
+  - "差異化教學框架（_di-framework/） > 參考範例"
+  - "母文件（教育哲學根基）"
+  - "平台指引（從這裡開始）"
+  - "系統核心（ai-core/）"
+  - "系統核心（ai-core/） > 系統設定（YAML）"
+  - "系統核心（ai-core/） > AI 入口與流程"
+  - "系統核心（ai-core/） > Reference 知識模組（YAML）"
+  - "系統核心（ai-core/） > Reference 操作文件"
+  - "系統核心（ai-core/） > 系統回顧紀錄"
+  - "輸出與發佈（publish/）"
+  - "David 個人品牌素材庫（David-personal-asset-base/）"
+  - "影片專案（video/）"
+  - "Claude Code 設定（.claude/）"
+  - "Claude Code 設定（.claude/） > 設定檔"
+  - "Claude Code 設定（.claude/） > Claude Code Skills（Anthropic Skills 封包）"
+  - "Claude Code 設定（.claude/） > Claude Code Commands（薄層入口 → ai-core/skills/）"
+  - "Git History 週記"
+  - "工程與開發者文件"
+  - "工程與開發者文件 > Engineer_Reference/"
+  - "工程與開發者文件 > .github/"
+  - "工程與開發者文件 > .gitignore / .gitattributes"
+  - "工程與開發者文件 > .claude/（Claude Code 設定）"
+  - "環境設定與腳本（setup/）"
+  - "環境設定與腳本（setup/） > 安裝與設定"
+  - "環境設定與腳本（setup/） > 教師管理"
+  - "環境設定與腳本（setup/） > 工具腳本"
+  - "環境設定與腳本（setup/） > 靜態資源"
+  - "教師工具下載區（Tool Download/）"
+  - "教師工具下載區（Tool Download/） > 總覽"
+  - "教師工具下載區（Tool Download/） > 英文寫作訂正系統"
+  - "教師工具下載區（Tool Download/） > 音檔轉逐字稿（macOS）"
+  - "展示網站"
+  - "展示網站 > site/（Firebase 主站）"
+  - "展示網站 > 網站展示/（備用展示站）"
+  - "模板與範例"
+  - "模板與範例 > 新教師模板（workspaces/_template/）"
+  - "模板與範例 > 工作範例參考（Teacher Claude）"
+  - "根目錄散檔"
+  - "快速導航"
+tracked_directories:
+  - ".claude"
+  - ".claude/commands"
+  - ".claude/scripts"
+  - ".claude/skills"
+  - ".claude/skills/art-in-teaching"
+  - ".claude/skills/beautify"
+  - ".claude/skills/check-compat"
+  - ".claude/skills/david-voice"
+  - ".claude/skills/defuddle"
+  - ".claude/skills/deploy"
+  - ".claude/skills/gws-setup"
+  - ".claude/skills/homeroom"
+  - ".claude/skills/json-canvas"
+  - ".claude/skills/json-canvas/references"
+  - ".claude/skills/lesson"
+  - ".claude/skills/load"
+  - ".claude/skills/obsidian-bases"
+  - ".claude/skills/obsidian-bases/references"
+  - ".claude/skills/obsidian-cli"
+  - ".claude/skills/obsidian-markdown"
+  - ".claude/skills/obsidian-markdown/references"
+  - ".claude/skills/opening"
+  - ".claude/skills/poetry-research"
+  - ".claude/skills/send-email"
+  - ".claude/skills/story-archive"
+  - ".claude/skills/story-daily"
+  - ".claude/skills/story-planner"
+  - ".claude/skills/story-research"
+  - ".claude/skills/story-verify"
+  - ".claude/skills/story-writer"
+  - ".claude/skills/subject-lesson-45"
+  - ".claude/skills/teach-animation"
+  - ".claude/skills/video"
+  - ".claude/skills/wrap-up"
+  - ".github"
+  - ".github/workflows"
+  - "David-personal-asset-base"
+  - "Engineer_Reference"
+  - "Git History"
+  - "Good-notes"
+  - "Tool Download"
+  - "Tool Download/英文寫作訂正系統"
+  - "Tool Download/音檔轉逐字稿-macOS"
+  - "__pycache__"
+  - "ai-core"
+  - "ai-core/reference"
+  - "ai-core/reviews"
+  - "ai-core/skills"
+  - "projects"
+  - "projects/_di-framework"
+  - "projects/_di-framework/content"
+  - "projects/_di-framework/reference"
+  - "projects/g9"
+  - "projects/g9/content"
+  - "publish"
+  - "publish/images"
+  - "publish/scripts"
+  - "publish/templates"
+  - "setup"
+  - "setup/assets"
+  - "setup/hooks"
+  - "setup/scripts"
+  - "setup/scripts/__pycache__"
+  - "site"
+  - "video"
+  - "video/src"
+  - "workspaces"
+  - "workspaces/Working_Member"
+  - "workspaces/Working_Member/Codeowner_David"
+  - "workspaces/Working_Member/Codeowner_David/Kovacs_Books"
+  - "workspaces/Working_Member/Codeowner_David/Kovacs_Books/ancient_greek"
+  - "workspaces/Working_Member/Codeowner_David/Kovacs_Books/ancient_rome"
+  - "workspaces/Working_Member/Codeowner_David/Kovacs_Books/muscles_and_bones"
+  - "workspaces/Working_Member/Codeowner_David/poetry_output"
+  - "workspaces/Working_Member/Codeowner_David/poetry_output/light-and-darkness"
+  - "workspaces/Working_Member/Codeowner_David/poetry_output/the-road"
+  - "workspaces/Working_Member/Codeowner_David/projects"
+  - "workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5"
+  - "workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories"
+  - "workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM001"
+  - "workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM002"
+  - "workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM003"
+  - "workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM004"
+  - "workspaces/Working_Member/Codeowner_David/projects/botany-grade5"
+  - "workspaces/Working_Member/Codeowner_David/projects/botany-grade5/kovacs-chapters"
+  - "workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories"
+  - "workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B001"
+  - "workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B002"
+  - "workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B003"
+  - "workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B004"
+  - "workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B005"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/content"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/content/english"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/english"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/english/content"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/english/reference"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/farm-internship"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/farm-internship/content"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/farm-internship/reference"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/comms"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/content/service-learning-trip"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom/reference"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/ml-undecided"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/ml-undecided/content"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/reference"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/walking-reading-taiwan"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9c/walking-reading-taiwan/content"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9d"
+  - "workspaces/Working_Member/Codeowner_David/projects/class-9d/ml-taiwan-literature"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A001"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A002-v2"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A003-v2"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A004-v2"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A005"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A006"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A007"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A008"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A010"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A011"
+  - "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/themes"
+  - "workspaces/Working_Member/Codeowner_David/projects/taiwanese-history"
+  - "workspaces/Working_Member/Codeowner_David/scripts"
+  - "workspaces/Working_Member/Codeowner_David/skills"
+  - "workspaces/Working_Member/Teacher_劉佳芳"
+  - "workspaces/Working_Member/Teacher_劉佳芳/projects"
+  - "workspaces/Working_Member/Teacher_劉佳芳/projects/自動化結案報告測試"
+  - "workspaces/Working_Member/Teacher_劉佳芳/projects/資料處理資料夾"
+  - "workspaces/Working_Member/Teacher_劉佳芳/skills"
+  - "workspaces/Working_Member/Teacher_張仁謙"
+  - "workspaces/Working_Member/Teacher_張仁謙/projects"
+  - "workspaces/Working_Member/Teacher_張仁謙/skills"
+  - "workspaces/Working_Member/Teacher_張銘分"
+  - "workspaces/Working_Member/Teacher_張銘分/projects"
+  - "workspaces/Working_Member/Teacher_張銘分/skills"
+  - "workspaces/Working_Member/Teacher_李佳盈"
+  - "workspaces/Working_Member/Teacher_李佳盈/projects"
+  - "workspaces/Working_Member/Teacher_李佳盈/skills"
+  - "workspaces/Working_Member/Teacher_林詩閔"
+  - "workspaces/Working_Member/Teacher_林詩閔/projects"
+  - "workspaces/Working_Member/Teacher_林詩閔/projects/class-4c"
+  - "workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content"
+  - "workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese"
+  - "workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records"
+  - "workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/records/student-logs"
+  - "workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese"
+  - "workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content"
+  - "workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/records"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/冬季"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/台語課備課/歌曲-20240823T005746Z-001/歌曲"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/夏季"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/射日傳說"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/春季"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/台語好日子"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/快樂的森林"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/歌曲和譜/相辭"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/閩南語"
+  - "workspaces/Working_Member/Teacher_林詩閔/reference/閩南語/三個作田人"
+  - "workspaces/Working_Member/Teacher_林詩閔/skills"
+  - "workspaces/Working_Member/Teacher_林雅婷"
+  - "workspaces/Working_Member/Teacher_林雅婷/projects"
+  - "workspaces/Working_Member/Teacher_林雅婷/skills"
+  - "workspaces/Working_Member/Teacher_莊宜瑾"
+  - "workspaces/Working_Member/Teacher_莊宜瑾/projects"
+  - "workspaces/Working_Member/Teacher_莊宜瑾/skills"
+  - "workspaces/Working_Member/Teacher_郭耀新"
+  - "workspaces/Working_Member/Teacher_郭耀新/notes"
+  - "workspaces/Working_Member/Teacher_郭耀新/projects"
+  - "workspaces/Working_Member/Teacher_郭耀新/projects/class-9a"
+  - "workspaces/Working_Member/Teacher_郭耀新/projects/class-9a/information_technology"
+  - "workspaces/Working_Member/Teacher_郭耀新/projects/class-9a/information_technology/content"
+  - "workspaces/Working_Member/Teacher_郭耀新/projects/class-9a/working"
+  - "workspaces/Working_Member/Teacher_郭耀新/projects/class-9b"
+  - "workspaces/Working_Member/Teacher_郭耀新/projects/class-9b/information_technology"
+  - "workspaces/Working_Member/Teacher_郭耀新/projects/class-9b/information_technology/content"
+  - "workspaces/Working_Member/Teacher_郭耀新/projects/class-9b/working"
+  - "workspaces/Working_Member/Teacher_郭耀新/skills"
+  - "workspaces/Working_Member/Teacher_陳佩珊"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/content"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/marketing"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/marketing/content"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/marketing/working"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/content"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/senior-project/working"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects/class-12a/xinbaobao"
+  - "workspaces/Working_Member/Teacher_陳佩珊/projects/teaching-creativity-ppt"
+  - "workspaces/Working_Member/Teacher_陳佩珊/skills"
+  - "workspaces/_template"
+  - "workspaces/_template/projects"
+  - "workspaces/_template/projects/_class-template"
+  - "workspaces/_template/projects/_class-template/english"
+  - "workspaces/_template/projects/_class-template/english/content"
+  - "workspaces/_template/projects/_class-template/working"
+  - "workspaces/_template/skills"
+  - "workspaces/工作範例參考"
+  - "workspaces/工作範例參考/projects"
+  - "workspaces/工作範例參考/projects/class-claude"
+  - "workspaces/工作範例參考/projects/class-claude/english"
+  - "workspaces/工作範例參考/projects/class-claude/english/content"
+  - "workspaces/工作範例參考/projects/class-claude/english/content/records"
+  - "workspaces/工作範例參考/projects/class-claude/english/content/records/student-logs"
+  - "workspaces/工作範例參考/projects/class-claude/homeroom"
+  - "workspaces/工作範例參考/projects/class-claude/homeroom/content"
+  - "workspaces/工作範例參考/projects/class-claude/homeroom/content/activities"
+  - "workspaces/工作範例參考/projects/class-claude/homeroom/content/comms"
+  - "workspaces/工作範例參考/projects/class-claude/working"
+  - "網站展示"
+  - "網站展示/public"

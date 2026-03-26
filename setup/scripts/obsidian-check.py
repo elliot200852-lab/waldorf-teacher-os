@@ -9,6 +9,7 @@ TeacherOS Obsidian Label Checker
     python3 obsidian-check.py --staged-only      # 只掃描 git 暫存區新增檔案
     python3 obsidian-check.py --count-only       # 只輸出數字（供提醒用）
     python3 obsidian-check.py --skip-home-check  # 跳過 HOME.md 收錄檢查（wrap-up 專用）
+    python3 obsidian-check.py --map-filter       # 地圖驅動過濾：無路由的檔案報告為 UNROUTED
     python3 obsidian-check.py --self-test        # 內建自測（驗證 file_in_home 比對邏輯）
 
 不依賴外部套件，只使用 Python 標準函式庫。
@@ -18,6 +19,7 @@ import os
 import re
 import subprocess
 import sys
+from pathlib import PurePosixPath
 
 # ── 路徑設定 ──────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -55,10 +57,63 @@ SKIP_HOME_INDEX_PATTERNS = [
     "/temp1/", "/temp2/",
     "歌曲-20240823T005746Z",
     "/射日傳說/",
+    # 常見 AI 工作殘留
+    "/private/",         # 每位教師的機密區（.gitignore 保護，但以防萬一）
+]
+
+# 檔名級排除（basename matching）— AI 工作過程中產生的暫存檔
+SKIP_HOME_INDEX_BASENAMES = {
+    "output.txt", "auth.txt", "help.txt",
+}
+
+# 檔名 glob 模式排除 — 比對 basename
+SKIP_HOME_INDEX_BASENAME_PATTERNS = [
+    "auth*.txt", "login*.txt", "*_url.txt",
+    "client_secret*.json",
+    "drive_files.*", "all_files.*", "all_folders.*",
+    "out.json", "out_utf8.json",
+    "structure.json", "children_list.json",
 ]
 
 # HOME.md 自身不需要被收錄檢查
 SKIP_HOME_CHECK = {"Good-notes/HOME.md", "HOME.md"}
+
+# ── 架構地圖（若存在則用於 suggest_section） ──────────────
+MAP_PATH = os.path.join(REPO_ROOT, "ai-core", "reference", "repo-structure-map.yaml")
+_map_rules = None  # lazy-loaded
+
+
+def _load_map_rules():
+    """嘗試載入地圖路由規則，失敗則回傳空 list（graceful 退化）。
+    PyYAML 為選用依賴：缺失時本腳本仍正常運作，只是 NOT_IN_HOME 不帶建議區段。"""
+    global _map_rules
+    if _map_rules is not None:
+        return _map_rules
+    _map_rules = []
+    if not os.path.exists(MAP_PATH):
+        return _map_rules
+    try:
+        import yaml
+        with open(MAP_PATH, "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+        _map_rules = data.get("rules", [])
+    except Exception:
+        _map_rules = []
+    return _map_rules
+
+
+def suggest_section(filepath):
+    """用架構地圖的 first-match-wins 規則建議 HOME.md 區段。
+    回傳 (section, pattern) 或 (None, None)。"""
+    rules = _load_map_rules()
+    for rule in rules:
+        pattern = rule.get("pattern", "")
+        try:
+            if PurePosixPath(filepath).match(pattern):
+                return rule.get("section", "?"), pattern
+        except (ValueError, TypeError):
+            continue
+    return None, None
 
 
 def is_excluded(filepath):
@@ -77,11 +132,22 @@ def is_excluded(filepath):
 
 def should_index_in_home(filepath):
     """判斷檔案是否應該被索引到 HOME.md（只有 .md/.yaml/.yml 且不在排除路徑中）"""
+    import fnmatch as _fnmatch
+
     ext = os.path.splitext(filepath)[1].lower()
     if ext not in INDEXABLE_EXTENSIONS:
         return False
+    # 路徑層級排除
     for pattern in SKIP_HOME_INDEX_PATTERNS:
         if pattern in filepath:
+            return False
+    # 檔名精確排除
+    basename = os.path.basename(filepath)
+    if basename in SKIP_HOME_INDEX_BASENAMES:
+        return False
+    # 檔名 glob 排除
+    for pat in SKIP_HOME_INDEX_BASENAME_PATTERNS:
+        if _fnmatch.fnmatch(basename, pat):
             return False
     return True
 
@@ -272,6 +338,7 @@ def main():
     staged_only = "--staged-only" in sys.argv
     count_only = "--count-only" in sys.argv
     skip_home_check = "--skip-home-check" in sys.argv
+    map_filter = "--map-filter" in sys.argv
 
     # 取得檔案清單
     if staged_only:
@@ -317,6 +384,23 @@ def main():
 
         # 其他類型檔案不再檢查 HOME.md 收錄（已在 is_excluded 或 INDEXABLE_EXTENSIONS 過濾）
 
+    # ── 地圖過濾：分流 ROUTED / UNROUTED ─────────────
+    routed = []       # 有地圖路由的（AI 可自動歸類）
+    unrouted = []     # 無路由的（需人工決定）
+
+    if map_filter and not_in_home:
+        for f in not_in_home:
+            section, _ = suggest_section(f)
+            if section:
+                routed.append((f, section))
+            else:
+                unrouted.append(f)
+    elif not_in_home:
+        # 無 --map-filter 時，全部走舊路徑
+        for f in not_in_home:
+            section, _ = suggest_section(f)
+            routed.append((f, section))  # section 可能為 None
+
     # 輸出
     total = len(unlabeled_md) + len(unlabeled_yaml) + len(not_in_home)
 
@@ -329,7 +413,11 @@ def main():
                 parts.append(f"{len(unlabeled_md)} 個 .md 未標籤")
             if unlabeled_yaml:
                 parts.append(f"{len(unlabeled_yaml)} 個 .yaml 未標籤")
-            if not_in_home:
+            if routed:
+                parts.append(f"{len(routed)} 個未收錄 HOME.md（有路由）")
+            if unrouted:
+                parts.append(f"{len(unrouted)} 個未收錄 HOME.md（無路由，需人工）")
+            if not map_filter and not_in_home:
                 parts.append(f"{len(not_in_home)} 個未收錄 HOME.md")
             print(f"[obsidian-check] {', '.join(parts)}")
         return
@@ -339,13 +427,23 @@ def main():
     print(f"UNLABELED_MD:{len(unlabeled_md)}")
     print(f"UNLABELED_YAML:{len(unlabeled_yaml)}")
     print(f"NOT_IN_HOME:{len(not_in_home)}")
+    if map_filter:
+        print(f"ROUTED:{len(routed)}")
+        print(f"UNROUTED:{len(unrouted)}")
 
     for f in unlabeled_md:
         print(f"FILE:NEW_MD:{f}")
     for f in unlabeled_yaml:
         print(f"FILE:NEW_YAML:{f}")
-    for f in not_in_home:
-        print(f"FILE:NOT_IN_HOME:{f}")
+
+    for f, section in routed:
+        if section:
+            print(f"FILE:NOT_IN_HOME:{f}|{section}")
+        else:
+            print(f"FILE:NOT_IN_HOME:{f}")
+
+    for f in unrouted:
+        print(f"FILE:NOT_IN_HOME_UNROUTED:{f}")
 
 
 if __name__ == "__main__":

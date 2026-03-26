@@ -126,6 +126,98 @@ def parse_acl(acl_path: Path):
     return teachers, protected, shared
 
 
+# ── HOME.md 品質護欄 ─────────────────────────────────
+
+def _check_home_quality(staged_files: list[str], repo_root: Path) -> bool:
+    """檢查 HOME.md 是否含有禁止字樣（如「自動收錄」）。
+    回傳 True 表示應阻擋 commit。"""
+    if "HOME.md" not in staged_files:
+        return False
+
+    home_path = repo_root / "HOME.md"
+    if not home_path.is_file():
+        return False
+
+    try:
+        content = home_path.read_text(encoding="utf-8")
+    except Exception:
+        return False
+
+    if "自動收錄" in content:
+        print()
+        print(f"  {RED}[攔截] HOME.md 含有「自動收錄」字樣{NC}")
+        print(f"  請移除所有含「自動收錄」的條目後再 commit。")
+        print(f"  obsidian-sync 技能不應產生此字樣；若出現表示有 bug。")
+        print()
+        return True
+
+    return False
+
+
+# ── 地圖一致性警告 ────────────────────────────────────
+
+def _check_map_consistency(staged_files: list[str]) -> None:
+    """偵測 HOME.md 標頭異動或新目錄出現，警告地圖可能需更新。
+    只是 advisory warning，不阻擋 commit。"""
+    repo_root = Path(git("rev-parse", "--show-toplevel"))
+    map_file = repo_root / "ai-core" / "reference" / "repo-structure-map.yaml"
+    if not map_file.is_file():
+        return  # 地圖不存在則跳過
+
+    warnings = []
+
+    # 1. HOME.md 的區段標題是否有異動
+    if "HOME.md" in staged_files:
+        try:
+            old = git("show", "HEAD:HOME.md")
+            new = (repo_root / "HOME.md").read_text(encoding="utf-8")
+            old_headings = set(re.findall(r'^#{2,3} .+', old, re.MULTILINE))
+            new_headings = set(re.findall(r'^#{2,3} .+', new, re.MULTILINE))
+            added = new_headings - old_headings
+            removed = old_headings - new_headings
+            if added or removed:
+                warnings.append("HOME.md 區段標題有異動，地圖的 sections 可能需更新")
+        except Exception:
+            pass
+
+    # 2. 是否有新目錄 → 自動重建 tracked_directories
+    # PyYAML 為選用依賴：缺失時跳過此檢查，不影響 ACL 驗證主流程
+    try:
+        import yaml
+        data = yaml.safe_load(map_file.read_text(encoding="utf-8"))
+        tracked = set(data.get("tracked_directories", []))
+        has_new_dir = False
+        for f in staged_files:
+            parent = os.path.dirname(f)
+            if parent and parent not in tracked:
+                has_new_dir = True
+                break
+        if has_new_dir:
+            # 自動重建 tracked_directories 並加入暫存區
+            validate_script = repo_root / "setup" / "scripts" / "map-validate.py"
+            if validate_script.is_file():
+                import subprocess as _sp
+                result = _sp.run(
+                    [sys.executable, str(validate_script), "--rebuild-dirs"],
+                    capture_output=True, text=True, cwd=str(repo_root)
+                )
+                if result.returncode == 0:
+                    _sp.run(
+                        ["git", "add", str(map_file)],
+                        capture_output=True, text=True, cwd=str(repo_root)
+                    )
+                    warnings.append("偵測到新目錄，已自動重建 tracked_directories 並加入暫存")
+                else:
+                    warnings.append(f"新目錄偵測到但重建失敗：{result.stderr.strip()}")
+    except Exception:
+        pass  # PyYAML 缺失或其他錯誤 → 跳過
+
+    if warnings:
+        print()
+        for w in warnings:
+            print(f"  {YELLOW}[地圖提醒] {w}{NC}")
+
+
 # ── 主流程 ────────────────────────────────────────────
 
 def main() -> int:
@@ -203,9 +295,18 @@ def main() -> int:
 
     user = teachers[current_email]
 
-    # 管理員通過
+    # 管理員通過（仍需通過 HOME.md 品質護欄）
     if user["is_admin"]:
         print(f"  {GREEN}管理員身份確認，全域授權通過。{NC}")
+
+        # 管理員也受 HOME.md 品質護欄約束
+        home_block = _check_home_quality(staged_files, repo_root)
+        if home_block:
+            return 1
+
+        # 地圖一致性警告
+        _check_map_consistency(staged_files)
+
         print()
         return 0
 
@@ -227,6 +328,15 @@ def main() -> int:
     if not blocked:
         name = user["name"]
         print(f"  {GREEN}身份確認：{name}，所有修改在授權範圍內，通過。{NC}")
+
+        # ── HOME.md 品質護欄（阻擋 commit） ──────────
+        home_block = _check_home_quality(staged_files, repo_root)
+        if home_block:
+            return 1
+
+        # ── 地圖一致性警告（不阻擋 commit） ──────────
+        _check_map_consistency(staged_files)
+
         print()
         return 0
 
