@@ -4,7 +4,7 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 last_updated: 2026-03-26
-total_stories: 10
+total_stories: 11
 
 stories:
   - id: A001
@@ -180,6 +180,26 @@ stories:
       html: 1Y_Rx4_NE7R0aqahXwNnPUggcoCeFY_5O
       pdf: 1MR5ZSSlLk5QbEoFOXw4fHlL3ITIBqdLX
     tags: [排灣族, 石板屋, 百步蛇, 琉璃珠, 古陶壺, 頭目制度, 長嗣繼承, 老七佳, 大武山, 貴族制度, 紋樣, 各族的土地故事]
+
+  - id: A011
+    title: 血脈的地圖——科學家如何找到南島語族的故鄉
+    block: A-origins
+    sub_theme: 南島的孩子
+    era: 史前至今（約 6,000 年前—現代）
+    location: 臺灣（南島語族原鄉）、太平洋（夏威夷、紐西蘭）、印度洋（馬達加斯加）
+    date_created: 2026-03-26
+    files:
+      content: stories/A-origins/A011/content.md
+      narration: stories/A-origins/A011/narration.md
+      images: stories/A-origins/A011/images.md
+      raw_materials: stories/A-origins/A011/raw-materials.md
+    sources: [sinica, pansci, wikipedia, matataiwan, taiwan_insight, pnas_2015, pnas_nexus_2023]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1Jvz7WaAx1eTonay3pQ0DDRURk6N9vvPT
+      pdf: 1kW5pMFPoajx_Oz5PSiCS8E4BR1t7Ji6g
+    tags: [南島語族, 語言學, 出臺灣說, 布拉斯特, 大坌坑文化, 構樹, DNA, 毛利人, 夏威夷, 馬達加斯加, lima, Hawaiki, 南島的孩子]
 
 # 索引結構說明：
 # stories:
