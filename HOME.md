@@ -537,18 +537,40 @@ aliases:
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B002/references\|references]] | 參考資料 |
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B002/quality-report\|品質報告]] | 品質審核紀錄 |
 
+**B003 真菌**
+
+| 檔案 | 說明 |
+|------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B003/content\|content]] | 故事正文 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B003/kovacs-teaching\|kovacs-teaching]] | Kovacs 教學提示 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B003/images\|images]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B003/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B003/raw-materials\|raw-materials]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B003/references\|references]] | 參考資料 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B003/quality-report\|品質報告]] | 品質審核紀錄 |
+
 **B004 藻類**
 
 | 檔案 | 說明 |
 |------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B004/content\|content]] | 故事正文 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B004/kovacs-teaching\|kovacs-teaching]] | Kovacs 教學提示 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B004/images\|images]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B004/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B004/raw-materials\|raw-materials]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B004/references\|references]] | 參考資料 |
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B004/quality-report\|品質報告]] | 品質審核紀錄 |
 
 **B005 地衣**
 
 | 檔案 | 說明 |
 |------|------|
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B005/content\|content]] | 故事正文 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B005/kovacs-teaching\|kovacs-teaching]] | Kovacs 教學提示 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B005/images\|images]] | 投影圖像清單 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B005/chalkboard-prompt\|chalkboard]] | 黑板畫 prompt |
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B005/raw-materials\|raw-materials]] | 研究素材包 |
+| [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B005/references\|references]] | 參考資料 |
 | [[workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/B005/quality-report\|品質報告]] | 品質審核紀錄 |
 
 
