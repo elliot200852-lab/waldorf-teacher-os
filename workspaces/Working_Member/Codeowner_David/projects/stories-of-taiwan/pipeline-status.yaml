@@ -3,18 +3,18 @@ story_id: A010
 title: 百步蛇的子民——排灣族與他們的石板屋
 pipeline_version: 2.2.0
 started_at: 2026-03-26T10:30:00
-mode: scheduled_partial
+completed_at: 2026-03-26T11:00:00
+mode: completed
 
 steps:
   step_0_1: { status: PASS, note: "A010, 各族的土地故事, 排灣族（完成率最低子主題）" }
   step_2:   { status: PASS, note: "raw-materials.md 10152 bytes, 12 sources, Format B" }
   step_3:   { status: PASS, note: "content.md 10412b, narration.md 7600b, images.md 4998b, chalkboard-prompt.md 2839b" }
   step_4:   { status: PASS, note: "Quality check PASSED, reviews/A010-quality.md (16 PASS / 2 WARN)" }
-  step_5:   { status: SKIP, reason: "排程模式：Claude in Chrome 不可用" }
-  step_6:   { status: FAIL, reason: "AssemblyStory-A010-chalkboard.png 不在 ~/Downloads/" }
-  step_7:   { status: PARTIAL, note: "A010 加入 index.yaml，html_pdf_status: pending_chalkboard" }
-
-pending_actions:
-  - "chalkboard: 手動執行 Step 5（Gemini），生成 AssemblyStory-A010-chalkboard.png，放入 ~/Downloads/"
-  - "assemble: 執行 node publish/scripts/assemble-story.js stories/A-origins/A010 --pdf --upload"
-  - "archive: assemble 完成後刪除 current-task.yaml，更新 project.yaml total: 10"
+  step_5:   { status: PASS, note: "Gemini 生成 AssemblyStory-A010-chalkboard.png (8.5MB)" }
+  step_6:   { status: PASS, note: "HTML 11.9MB, PDF 6 pages, Drive upload OK" }
+  step_7:   { status: PASS, note: "index.yaml html_pdf_status: completed, drive_files 記錄完成" }
+pending_actions: []
+drive_files:
+  html: 1Y_Rx4_NE7R0aqahXwNnPUggcoCeFY_5O
+  pdf: 1MR5ZSSlLk5QbEoFOXw4fHlL3ITIBqdLX
