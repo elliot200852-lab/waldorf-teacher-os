@@ -81,6 +81,25 @@ stories:
       html: "1OXCh6B4DGnsNMBzXal61pd5sEkfbG4Yk"
       pdf: "1_eUmsPUFAWs5eubVC6ncqRZt1IgTgutg"
     tags: [藻類, 海葡萄, 紫菜, 溫泉藻, 學步兒, 大海第一個家, 阿美族, 北海岸黑金, 陽明山]
+  - id: B005
+    title: 地衣
+    block: block-1-plant-and-earth
+    kovacs_chapter: "05_Lichens"
+    taiwan_species: ["合歡山、雪山的高山地衣", "校園老樹樹幹上的地衣"]
+    date_created: 2026-03-26
+    files:
+      content: stories/B005/content.md
+      kovacs_teaching: stories/B005/kovacs-teaching.md
+      chalkboard_prompt: stories/B005/chalkboard-prompt.md
+      images: stories/B005/images.md
+      references: stories/B005/references.md
+      raw_materials: stories/B005/raw-materials.md
+      quality_report: stories/B005/quality-report.md
+    quality_check: passed
+    drive:
+      html: "15vy_M_A7RHAI6_yHiBVbecogSlflauRW"
+      pdf: "1RN8JPe0FWecQ2Ih8VmTLHLwkfWYskb1k"
+    tags: [地衣, 共生, 合歡山, 高山地衣, 空氣品質指標, 先鋒物種, 校園生態, 地之子, 光之子]
 # 每筆格式：
 # - id: B001
 #   title: 植物在太陽與大地之間
