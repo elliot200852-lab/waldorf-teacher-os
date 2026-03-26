@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 40 38 God on Earth"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 38. God on Earth
 
 How different the two men were who had wanted to take the place of

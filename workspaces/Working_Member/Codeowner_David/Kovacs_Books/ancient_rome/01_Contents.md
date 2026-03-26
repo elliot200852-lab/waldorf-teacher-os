@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 01 Contents"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # Contents
 
 Title Page

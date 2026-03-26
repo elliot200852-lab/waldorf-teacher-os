@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 21 20 The Milk of a Goddess"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 20. The Milk of a Goddess
 
 Perseus and Andromeda became King and Queen of Argos. After they

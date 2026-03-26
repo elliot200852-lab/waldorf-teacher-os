@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 29 28 Cerberus, the Hound of Hell"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 28. Cerberus, the Hound of Hell
 
 The next task King Eurystheus gave to Heracles was to fetch the Golden

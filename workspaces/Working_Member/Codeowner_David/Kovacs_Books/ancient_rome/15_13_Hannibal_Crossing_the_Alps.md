@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 15 13 Hannibal Crossing the Alps"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 13. Hannibal Crossing the Alps
 
 them. As long as the Romans were farmers and herdsmen,

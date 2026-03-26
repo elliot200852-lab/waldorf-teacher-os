@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 46 44 The Iron Age"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 44. The Iron Age
 
 Let us see how the civilisations of India, Persia and so on, go together

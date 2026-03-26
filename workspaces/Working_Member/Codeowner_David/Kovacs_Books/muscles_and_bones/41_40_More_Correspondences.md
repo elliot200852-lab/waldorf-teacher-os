@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 41 40 More Correspondences"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 40. More Correspondences
 
 The left-right symmetry of the human body is very important for our bal-

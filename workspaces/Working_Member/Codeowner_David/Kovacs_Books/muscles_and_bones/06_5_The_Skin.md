@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 06 5 The Skin"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 5. The Skin
 
 We have seen that for the three different parts of the human body - the

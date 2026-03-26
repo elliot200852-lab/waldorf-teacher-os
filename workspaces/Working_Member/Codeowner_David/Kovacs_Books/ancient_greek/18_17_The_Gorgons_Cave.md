@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 18 17 The Gorgons Cave"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 17. The Gorgons' Cave
 
 Perseus had received two gifts: Pallas Athene's shield to use as a mirror

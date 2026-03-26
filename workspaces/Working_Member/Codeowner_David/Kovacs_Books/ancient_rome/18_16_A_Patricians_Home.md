@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 18 16 A Patricians Home"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 16. A Patrician's Home
 
 Once Carthage had been completely destroyed, there was no longer any

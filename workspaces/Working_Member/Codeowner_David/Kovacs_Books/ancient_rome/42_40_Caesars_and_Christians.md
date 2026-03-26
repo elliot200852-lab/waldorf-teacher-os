@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 42 40 Caesars and Christians"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 40. Caesars and Christians
 
 When Pompey conquered Palestine, the Jews, the people of Palestine,

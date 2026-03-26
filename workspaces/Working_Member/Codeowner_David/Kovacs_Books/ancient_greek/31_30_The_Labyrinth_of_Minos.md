@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 31 30 The Labyrinth of Minos"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 30. The Labyrinth of Minos
 
 Greece is a warm and sunny country. The winter is short and most of the

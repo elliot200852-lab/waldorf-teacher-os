@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 22 21 Digestion and the Intestines"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 21. Digestion and the Intestines
 
 If you slip and fall, before you have time to think, your hands come for-

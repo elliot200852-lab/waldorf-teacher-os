@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 55 53 The End of the Empire"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 53. The End of the Empire
 
 possessions to worry about, only a man who was willing to give his life

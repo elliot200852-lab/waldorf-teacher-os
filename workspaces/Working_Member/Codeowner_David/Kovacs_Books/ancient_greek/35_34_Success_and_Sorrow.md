@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 35 34 Success and Sorrow"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 34. Success and Sorrow
 
 The Greeks believed that with every happiness the gods always mixed a

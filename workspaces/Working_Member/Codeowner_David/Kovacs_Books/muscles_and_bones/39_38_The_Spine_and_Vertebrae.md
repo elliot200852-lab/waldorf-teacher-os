@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 39 38 The Spine and Vertebrae"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 38. The Spine and Vertebrae
 
 There is one group of bones we have not discussed: the bones of the

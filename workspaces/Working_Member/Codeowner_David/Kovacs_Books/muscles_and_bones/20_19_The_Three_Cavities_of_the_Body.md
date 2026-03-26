@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 20 19 The Three Cavities of the Body"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 19. The Three Cavities of the Body
 
 The body consists of hard parts like bones, and soft parts - the muscles

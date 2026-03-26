@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 18 17 Dr Harvey and Blood Circulation"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 17. Dr Harvey and Blood Circulation
 
 If you had lived in the sixteenth century, as a child you could have seen

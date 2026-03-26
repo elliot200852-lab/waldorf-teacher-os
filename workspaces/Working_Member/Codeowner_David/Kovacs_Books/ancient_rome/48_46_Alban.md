@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 48 46 Alban"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 46. Alban
 
 Verulanium was the fort where the treacherous General Catus had his

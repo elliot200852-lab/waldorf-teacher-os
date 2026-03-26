@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 37 35 The Ides of March"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 35. The Ides of March
 
 until he was king and that would be the end of all hopes that the Romans

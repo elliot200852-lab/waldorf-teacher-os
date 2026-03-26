@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 27 25 Marius Return"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 25. Marius' Return
 
 Marius had gone through hard times, but hard times did not make him

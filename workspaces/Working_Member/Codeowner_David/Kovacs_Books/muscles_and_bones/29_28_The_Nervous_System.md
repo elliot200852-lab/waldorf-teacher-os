@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 29 28 The Nervous System"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 28. The Nervous System
 
 Imagine a similar instrument which shows not the blood, but only the

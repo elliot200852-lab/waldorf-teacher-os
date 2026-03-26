@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 22 21 The Path of Virtue"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 21. The Path of Virtue
 
 was often alone with his sheep. On these occasions he used to wonder

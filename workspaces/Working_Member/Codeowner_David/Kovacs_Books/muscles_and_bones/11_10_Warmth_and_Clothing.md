@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 11 10 Warmth and Clothing"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 10. Warmth and Clothing
 
 We have seen how the skin protects the warmth body, how it ensures

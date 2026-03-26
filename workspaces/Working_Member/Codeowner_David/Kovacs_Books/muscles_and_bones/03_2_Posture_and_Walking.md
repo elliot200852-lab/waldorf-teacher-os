@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 03 2 Posture and Walking"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 2. Posture and Walking
 
 We saw how important the spine is for our upright walk. The spine has to

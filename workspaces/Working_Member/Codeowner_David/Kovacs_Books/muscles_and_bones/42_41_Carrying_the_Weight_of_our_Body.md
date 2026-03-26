@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 42 41 Carrying the Weight of our Body"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 41. Carrying the Weight of our Body
 
 When we look at the bones of a skeleton, we see something which, quite

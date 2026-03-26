@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 29 27 Spartacus"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 27. Spartacus
 
 The Romans of that time, whether patrician or plebeian, were like Marius, brave, courageous, resourceful, but without kindness or mercy, and

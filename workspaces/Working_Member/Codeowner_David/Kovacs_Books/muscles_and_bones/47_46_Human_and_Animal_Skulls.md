@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 47 46 Human and Animal Skulls"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 46. Human and Animal Skulls
 
 The muscles are elastic, contracting and expanding, and they have this in

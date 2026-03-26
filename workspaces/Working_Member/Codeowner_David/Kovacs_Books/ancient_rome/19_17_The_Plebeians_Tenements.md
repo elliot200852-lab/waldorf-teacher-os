@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 19 17 The Plebeians Tenements"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 17. The Plebeians' Tenements
 
 The great and beautiful house of the noble lady, Cornelia, stood on the

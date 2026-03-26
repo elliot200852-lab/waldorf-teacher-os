@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 43 42 Walking"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 42. Walking
 
 Walking is so complicated that if we had to learn it like we learn algebra,

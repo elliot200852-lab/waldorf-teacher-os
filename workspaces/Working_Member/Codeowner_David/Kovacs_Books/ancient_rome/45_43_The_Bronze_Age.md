@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 45 43 The Bronze Age"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 43. The Bronze Age
 
 Persia. Another change that came was the way people worked. During

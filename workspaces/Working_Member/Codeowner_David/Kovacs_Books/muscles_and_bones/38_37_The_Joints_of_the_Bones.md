@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 38 37 The Joints of the Bones"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 37. The Joints of the Bones
 
 The growth of a single bone such as the humerus of the upper arm is a

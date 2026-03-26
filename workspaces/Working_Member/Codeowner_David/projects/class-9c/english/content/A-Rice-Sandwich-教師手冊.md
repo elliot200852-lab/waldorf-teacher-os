@@ -1,6 +1,15 @@
 ---
 aliases:
-  - "A Rice Sandwich 教師手冊"
+  - A Rice Sandwich 教師手冊
+class: class-9c
+subject: english
+type: teacher-guide
+text: "Sandra Cisneros, A Rice Sandwich (The House on Mango Street, Ch.17)"
+tags:
+  - 小說教學
+  - Mango-Street
+  - 教師手冊
+description: "A Rice Sandwich 逐段教學指引（Mango Street Ch.17）"
 ---
 
 # A Rice Sandwich — 教師手冊

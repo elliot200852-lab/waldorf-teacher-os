@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 12 11 Return to Ithaca"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 11. Return to Ithaca
 
 Odysseus greatly enjoyed his stay on the island where Nausica and her

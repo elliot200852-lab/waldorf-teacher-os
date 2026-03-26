@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 17 16 Drugs Coffee and Alcohol"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 16. Drugs, Coffee and Alcohol
 
 We use plants for our food; they give starch, sugar, vitamins, fat, protein.

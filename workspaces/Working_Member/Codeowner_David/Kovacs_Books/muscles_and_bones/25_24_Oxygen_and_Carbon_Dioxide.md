@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 25 24 Oxygen and Carbon Dioxide"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 24. Oxygen and Carbon Dioxide
 
 We breathe in oxygen and we breathe out carbon dioxide. Oxygen is the

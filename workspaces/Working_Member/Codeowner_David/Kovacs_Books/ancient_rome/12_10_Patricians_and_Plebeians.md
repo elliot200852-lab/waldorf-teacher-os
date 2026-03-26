@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 12 10 Patricians and Plebeians"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 10. Patricians and Plebeians
 
 hills, was the Temple of the "father of the gods," Jupiter (Zeus in Greek).

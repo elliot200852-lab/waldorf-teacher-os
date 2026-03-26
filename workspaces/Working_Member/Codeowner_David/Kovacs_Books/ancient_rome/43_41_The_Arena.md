@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 43 41 The Arena"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 41. The Arena
 
 Think back to ancient India where the five sons of Pandu who gave up

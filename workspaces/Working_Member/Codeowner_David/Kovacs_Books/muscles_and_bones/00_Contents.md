@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 00 Contents"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # Muscles and Bones
 
 **Charles Kovacs**

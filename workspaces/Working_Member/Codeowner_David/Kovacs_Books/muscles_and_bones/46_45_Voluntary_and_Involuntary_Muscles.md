@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 46 45 Voluntary and Involuntary Muscles"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 45. Voluntary and Involuntary Muscles
 
 We saw that muscles can only work by contracting, in other words, mus-

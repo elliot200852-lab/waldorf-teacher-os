@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 57 55 The Bishop of Rome"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 55. The Bishop of Rome
 
 The whole of Europe was changed by the migration of the peoples, by

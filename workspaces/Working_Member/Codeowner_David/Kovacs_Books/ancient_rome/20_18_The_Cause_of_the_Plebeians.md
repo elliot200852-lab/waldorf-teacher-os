@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 20 18 The Cause of the Plebeians"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 18. The Cause of the Plebeians
 
 There was a time long before the wars with Carthage when the plebeians walked out of Rome and said they were going to build a city of

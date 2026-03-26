@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 36 34 Greetings O King"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 34. Greetings, O King
 
 Caesar had marched his troops across the Rubicon and into Italy. Then

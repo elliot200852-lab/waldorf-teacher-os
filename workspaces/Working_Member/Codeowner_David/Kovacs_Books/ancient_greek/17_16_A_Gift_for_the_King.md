@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 17 16 A Gift for the King"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 16. A Gift for the King.
 
 Seriphos is

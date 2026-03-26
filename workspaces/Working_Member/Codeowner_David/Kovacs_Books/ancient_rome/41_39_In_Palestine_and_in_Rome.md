@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 41 39 In Palestine and in Rome"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 39. In Palestine and in Rome
 
 Often, though not always, children have a likeness to their fathers or

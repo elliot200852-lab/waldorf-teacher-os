@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 38 36 At Philippi"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 36. At Philippi
 
 People who have been in danger of sudden death, for instance a mountaineer falling down a cliff, or a swimmer who was nearly drowned, but

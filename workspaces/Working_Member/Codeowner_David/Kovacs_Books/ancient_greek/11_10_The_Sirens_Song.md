@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 11 10 The Sirens Song"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 10. The Sirens' Song.
 
 Soon after leaving the entrance to the Underworld, Odysseus sailed towards an island where strange creatures called Sirens lived. Half-woman

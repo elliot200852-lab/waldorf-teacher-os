@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 16 14 Hannibal Ante Portas"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 14. Hannibal Ante Portas!
 
 them fight like lions. The Romans were surprised by the fighting fury of

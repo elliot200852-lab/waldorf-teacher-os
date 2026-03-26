@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 30 29 Heracles the Immortal"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 29. Heracles the Immortal
 
 The Greek people admired Heracles for his twelve labours and when he

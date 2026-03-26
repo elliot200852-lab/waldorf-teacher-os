@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 28 26 The Death of Marius"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 26. The Death of Marius
 
 It was very clever of Cinna, the plebeian Consul, to have called Marius to

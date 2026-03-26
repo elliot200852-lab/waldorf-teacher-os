@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 21 19 Marius"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 19. Marius
 
 Through Tiberius and Gaius Gracchus reforms were brought that the

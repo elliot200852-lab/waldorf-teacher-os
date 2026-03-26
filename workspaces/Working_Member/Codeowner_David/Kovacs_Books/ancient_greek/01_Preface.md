@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 01 Preface"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # Preface
 
 Charles Kovacs was a teacher at the Rudolf Steiner School in Edinburgh

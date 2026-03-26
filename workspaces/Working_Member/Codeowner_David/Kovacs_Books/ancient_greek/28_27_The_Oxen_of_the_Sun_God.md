@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 28 27 The Oxen of the Sun God"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 27. The Oxen of the Sun God
 
 "There are only three more tasks left," Eurystheus said, "but I must make

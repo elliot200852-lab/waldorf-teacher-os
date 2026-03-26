@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 05 4 Helens Abduction"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 4. Helen's Abduction
 
 Paris sailed to Sparta in a ship with many men aboard. King Menelaus

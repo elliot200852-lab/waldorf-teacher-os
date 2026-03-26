@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 02 1 Uprightness and the Spine"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 1. Uprightness and the Spine
 
 What started the Age of Discovery more than anything else was the

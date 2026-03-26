@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 09 8 The Changing Solid Body"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 8. The Changing Solid Body
 
 There are quite a number of situations in which you can see a rainbow.

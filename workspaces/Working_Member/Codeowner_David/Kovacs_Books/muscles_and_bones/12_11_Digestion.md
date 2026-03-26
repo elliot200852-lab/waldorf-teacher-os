@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 12 11 Digestion"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 11. Digestion
 
 Without the heat of the body we could not move, we could not use our

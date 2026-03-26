@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 26 25 Taming the Twelve Mares"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 25. Taming the Twelve Mares
 
 When Heracles got back to Mycenae, Eurystheus told him his next task

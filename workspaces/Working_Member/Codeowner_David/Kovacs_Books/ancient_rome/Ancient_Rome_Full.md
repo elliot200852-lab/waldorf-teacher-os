@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome Ancient Rome Full"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # Ancient Rome
 
 Contents

@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 32 31 Flight to Freedom"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 31. Flight to Freedom
 
 Daedalus had a plan to escape from the island of Crete with his son

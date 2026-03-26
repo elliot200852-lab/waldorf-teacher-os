@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 30 29 The Eye"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 29. The Eye
 
 We looked at our sense of sight and how the eye is trained by the soul to

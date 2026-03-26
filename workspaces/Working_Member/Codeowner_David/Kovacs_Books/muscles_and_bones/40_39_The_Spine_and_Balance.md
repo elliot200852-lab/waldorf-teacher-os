@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 40 39 The Spine and Balance"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 39. The Spine and Balance
 
 The spine has three groups of vertebrae: the hollow cervical at the top,

@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 15 14 Bread"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 14. Bread
 
 Everything we eat really comes from the plant kingdom; even if we eat

@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 04 3 Head Trunk and Limbs"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 3. Head, Trunk and Limbs
 
 We have heard about our upright walk, how important it is that we walk,

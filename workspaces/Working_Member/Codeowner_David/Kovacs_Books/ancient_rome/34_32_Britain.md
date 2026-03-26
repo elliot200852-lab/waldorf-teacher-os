@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 34 32 Britain"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 32. Britain
 
 Julius Caesar was a clever man. He knew that once an enemy was defeated, the

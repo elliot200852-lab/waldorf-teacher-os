@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 13 12 Jason, Heir to the Throne"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 12. Jason, Heir to the Throne
 
 The kingdom of Iolcos in Greece was ruled by King Aeson to whom a

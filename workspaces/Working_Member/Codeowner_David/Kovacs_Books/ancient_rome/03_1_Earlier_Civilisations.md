@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 03 1 Earlier Civilisations"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 1. Earlier Civilisations
 
 If we look at the time of ancient India, Persia, Babylonia, Egypt and

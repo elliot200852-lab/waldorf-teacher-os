@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 39 37 Antony and Cleopatra"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 37. Antony and Cleopatra
 
 For a time Mark Antony stayed in Rome with his young wife, Octavia, and

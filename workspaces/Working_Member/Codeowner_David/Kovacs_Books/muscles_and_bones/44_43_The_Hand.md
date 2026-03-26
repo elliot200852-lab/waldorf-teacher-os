@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 44 43 The Hand"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 43. The Hand
 
 Of all living creatures only we human beings have this complicated and

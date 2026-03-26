@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 05 3 The Latin People"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 3. The Latin People
 
 The Greeks had a great sense of beauty. Their temples and statues, even

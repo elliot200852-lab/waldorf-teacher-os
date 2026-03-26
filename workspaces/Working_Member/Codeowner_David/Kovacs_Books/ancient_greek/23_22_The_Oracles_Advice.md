@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 23 22 The Oracles Advice"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 22. The Oracle's Advice
 
 But Heracles did not only fight against wild beasts. A foreign king, called

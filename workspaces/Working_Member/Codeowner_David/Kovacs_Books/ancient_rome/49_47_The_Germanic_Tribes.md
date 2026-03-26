@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 49 47 The Germanic Tribes"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 47. The Germanic Tribes
 
 The last Roman Emperor we heard about was Nero, a man who was both

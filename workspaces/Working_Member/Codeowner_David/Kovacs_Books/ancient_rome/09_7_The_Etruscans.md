@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 09 7 The Etruscans"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 7. The Etruscans
 
 In these early days of Rome life was very simple. The men worked in the

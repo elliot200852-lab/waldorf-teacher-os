@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 35 33 The Rubicon"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 33. The Rubicon
 
 them ready to fight for Caesar. Neither the Senators nor Pompey could

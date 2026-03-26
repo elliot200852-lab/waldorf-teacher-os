@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 31 30 The Ear"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 30. The Ear
 
 The outside part of your ear is designed to catch as much sound as pos-

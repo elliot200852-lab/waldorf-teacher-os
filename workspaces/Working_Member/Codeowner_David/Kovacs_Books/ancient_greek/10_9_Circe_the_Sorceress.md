@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 10 9 Circe the Sorceress"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 9. Circe the Sorceress
 
 When Eurylochus, the leader of the party that Circe had changed into

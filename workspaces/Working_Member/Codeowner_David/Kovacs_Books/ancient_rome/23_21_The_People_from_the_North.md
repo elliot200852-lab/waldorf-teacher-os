@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 23 21 The People from the North"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 21. The People from the North
 
 made the same man Consul so often: Rome was in great danger from a

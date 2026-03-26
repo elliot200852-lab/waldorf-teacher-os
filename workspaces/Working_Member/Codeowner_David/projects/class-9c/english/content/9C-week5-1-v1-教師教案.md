@@ -1,6 +1,15 @@
 ---
 aliases:
   - "9C 英文第五週第一節教案"
+class: class-9c
+subject: english
+week: 5
+session: 1
+type: lesson-plan
+tags:
+  - 詩歌教學
+  - The-Road-Not-Taken
+description: "Robert Frost《The Road Not Taken》教師教案（45-60 分鐘）"
 ---
 
 # The Road Not Taken — 我們為選擇編織的故事

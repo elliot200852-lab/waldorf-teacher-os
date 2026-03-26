@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 26 24 Marius in Exile"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 24. Marius in Exile
 
 What was it that had brought Marius to such a state that his life was no

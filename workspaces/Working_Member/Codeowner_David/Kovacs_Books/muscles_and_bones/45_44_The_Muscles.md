@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 45 44 The Muscles"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 44. The Muscles
 
 We looked at the work of some of the three hundred muscles, from the

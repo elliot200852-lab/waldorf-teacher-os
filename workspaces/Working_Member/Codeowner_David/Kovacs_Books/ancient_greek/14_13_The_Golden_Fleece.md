@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 14 13 The Golden Fleece"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 13. The Golden Fleece
 
 Before we go on with Jason's adventures we shall hear the story of the

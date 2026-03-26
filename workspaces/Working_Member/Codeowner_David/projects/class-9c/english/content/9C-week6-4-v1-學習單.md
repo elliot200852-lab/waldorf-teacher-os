@@ -1,16 +1,17 @@
 ---
 aliases:
-  - "9C 英文第六週第四節學習單"
+  - 9C 英文第六週第四節學習單
 class: class-9c
 subject: english
 week: 6
 session: 4
 type: worksheet
-text: "Sandra Cisneros, A Rice Sandwich (The House on Mango Street, Ch.17)"
+text: Sandra Cisneros, A Rice Sandwich (The House on Mango Street, Ch.17)
 tags:
   - Mango Street
   - 連接詞自然重現
   - 閱讀理解
+  - 小說教學
 ---
 
 # A Rice Sandwich — Reading & Responding

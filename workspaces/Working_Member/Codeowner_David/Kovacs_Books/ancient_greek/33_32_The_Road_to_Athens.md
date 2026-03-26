@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 33 32 The Road to Athens"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 32. The Road to Athens
 
 Now before Aegeus had left Troezen he had buried his royal sword

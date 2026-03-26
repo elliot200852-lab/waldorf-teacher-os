@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 27 26 The Healing Power of Blood"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 26. The Healing Power of Blood
 
 The oxygen flows from the heart in the arteries, and the carbon dioxide

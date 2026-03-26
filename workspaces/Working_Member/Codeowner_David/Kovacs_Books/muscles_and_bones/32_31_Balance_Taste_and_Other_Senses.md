@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 32 31 Balance Taste and Other Senses"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 31. Balance, Taste and Other Senses
 
 Earlier we learnt that we can only see things in three dimensions be-

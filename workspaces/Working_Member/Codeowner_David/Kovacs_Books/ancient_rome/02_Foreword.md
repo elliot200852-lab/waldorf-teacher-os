@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 02 Foreword"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # Foreword
 
 Charles Kovacs was a teacher at the Rudolf Steiner School in Edinburgh

@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 08 7 The Four Elements and the Body"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 7. The Four Elements and the Body
 
 Going for a walk in the hills, you might come to a pond or a lake with a

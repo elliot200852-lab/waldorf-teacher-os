@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 58 56 Winfred"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 56. Winfred
 
 unarmed, these brave men travelled hundreds

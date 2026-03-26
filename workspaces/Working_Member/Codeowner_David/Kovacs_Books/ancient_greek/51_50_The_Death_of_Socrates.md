@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 51 50 The Death of Socrates"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 50. The Death of Socrates
 
 Socrates' pupil Plato, who also became a great philosopher, wrote an account of the last day of Socrates' life in prison in a book called Phaedo.

@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 51 49 The Vision of Constantine"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 49. The Vision of Constantine
 
 Diocletian, the Emperor who divided the Roman Empire in two parts, had

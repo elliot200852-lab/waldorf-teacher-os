@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 24 23 Breathing and the Blood"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 23. Breathing and the Blood
 
 Blood circulation and breathing are linked by the rhythm of four to one:

@@ -1,12 +1,12 @@
 ---
 aliases:
-  - "9C 英文第六週第四節單字連接詞學習單"
+  - 9C 英文第六週第三節單字連接詞學習單
 class: class-9c
 subject: english
 week: 6
 session: 4
 type: worksheet
-text: "Sandra Cisneros, A Rice Sandwich (The House on Mango Street, Ch.17)"
+text: Sandra Cisneros, A Rice Sandwich (The House on Mango Street, Ch.17)
 tags:
   - Mango Street
   - 單字

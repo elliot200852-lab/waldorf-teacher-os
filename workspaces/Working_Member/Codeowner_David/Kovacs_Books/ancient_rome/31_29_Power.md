@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 31 29 Power"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 29. Power
 
 In ancient India men did not crave for power. When the Indians thought

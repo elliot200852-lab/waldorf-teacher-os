@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 37 36 The Structure of Bones"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 36. The Structure of Bones
 
 Looking at the contrast between flowing, living blood and the solid, com-

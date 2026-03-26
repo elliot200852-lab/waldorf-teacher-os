@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 16 15 Sowing the Dragons Teeth"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 15. Sowing the Dragon's Teeth
 
 The day of the tests came and the King of Colchis invited Jason and all his

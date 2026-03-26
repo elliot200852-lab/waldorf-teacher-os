@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 27 26 Fearless Amazons"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 26. Fearless Amazons
 
 the

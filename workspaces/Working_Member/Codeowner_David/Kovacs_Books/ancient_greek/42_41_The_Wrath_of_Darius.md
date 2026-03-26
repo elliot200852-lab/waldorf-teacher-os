@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 42 41 The Wrath of Darius"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 41. The Wrath of Darius
 
 The sea on the east coast of Greece is called the Aegean, after King

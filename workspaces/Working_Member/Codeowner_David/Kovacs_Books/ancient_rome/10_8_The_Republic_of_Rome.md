@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 10 8 The Republic of Rome"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 8. The Republic of Rome
 
 We ourselves are children of heaven and earth, for our spirit that lives

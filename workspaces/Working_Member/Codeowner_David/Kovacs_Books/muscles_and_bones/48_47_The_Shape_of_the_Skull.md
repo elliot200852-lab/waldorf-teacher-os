@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 48 47 The Shape of the Skull"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 47. The Shape of the Skull
 
 Each bone of the human skeleton - the spine, the arms, the legs, the

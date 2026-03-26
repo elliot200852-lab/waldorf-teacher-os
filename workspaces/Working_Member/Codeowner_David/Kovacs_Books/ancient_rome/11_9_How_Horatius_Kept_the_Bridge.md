@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 11 9 How Horatius Kept the Bridge"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 9. How Horatius Kept the Bridge
 
 Rome was the city of seven hills, having grown from the one hill where

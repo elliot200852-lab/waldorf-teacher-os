@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 03 2 Pandoras Box"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 2. Pandora's Box
 
 Zeus called his two servants Cratos and Bia (which means Strength and

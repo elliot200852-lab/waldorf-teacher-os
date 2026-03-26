@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 17 15 The Destruction of Carthage"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 15. The Destruction of Carthage
 
 Hannibal's

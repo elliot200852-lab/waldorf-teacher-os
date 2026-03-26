@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 49 48 Human Beings and Animals"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 48. Human Beings and Animals
 
 The spine of the animal is parallel to the ground, lying horizontally. The

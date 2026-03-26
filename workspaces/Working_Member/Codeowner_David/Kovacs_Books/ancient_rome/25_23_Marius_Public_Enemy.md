@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 25 23 Marius Public Enemy"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 23. Marius: Public Enemy.
 
 When Marius had saved Rome from the Cimbri and the Teutons, the

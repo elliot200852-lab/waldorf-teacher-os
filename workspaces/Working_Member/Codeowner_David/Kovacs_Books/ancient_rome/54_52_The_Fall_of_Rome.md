@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 54 52 The Fall of Rome"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 52. The Fall of Rome
 
 The Huns, the Scourge of God, had disappeared, but their coming had

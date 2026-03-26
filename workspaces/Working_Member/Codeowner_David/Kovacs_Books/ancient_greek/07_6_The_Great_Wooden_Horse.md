@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 07 6 The Great Wooden Horse"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 6. The Great Wooden Horse
 
 dead and wounded that had fallen to his fearful strength. And when Hector saw Achilles' spear and sword stained with the blood of his victims,

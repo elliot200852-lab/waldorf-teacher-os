@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 15 14 The Voyage of the Argo"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 14. The Voyage of the Argo
 
 The good

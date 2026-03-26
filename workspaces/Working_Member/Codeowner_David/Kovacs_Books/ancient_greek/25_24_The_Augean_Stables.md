@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 25 24 The Augean Stables"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 24. The Augean Stables
 
 Heracles had accomplished his third task, the capture of the hind with

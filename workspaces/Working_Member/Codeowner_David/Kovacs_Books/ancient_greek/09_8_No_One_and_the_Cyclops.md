@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 09 8 No One and the Cyclops"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 8. No One and the Cyclops
 
 The one-eyed giant, the Cyclops, was

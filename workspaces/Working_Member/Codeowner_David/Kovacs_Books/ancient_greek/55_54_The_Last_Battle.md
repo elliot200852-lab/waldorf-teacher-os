@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 55 54 The Last Battle"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 54. The Last Battle
 
 Darius III, the man who had once been called the King of Kings, was in

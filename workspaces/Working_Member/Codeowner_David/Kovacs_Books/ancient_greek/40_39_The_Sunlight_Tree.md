@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 40 39 The Sunlight Tree"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 39. The Sunlight Tree
 
 The story of how Lycurgus dealt with the man who knocked out one of

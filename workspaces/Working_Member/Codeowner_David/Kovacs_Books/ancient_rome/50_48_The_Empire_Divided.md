@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 50 48 The Empire Divided"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 48. The Empire Divided
 
 These Germanic tribes used to live a nomadic life in the grasslands of

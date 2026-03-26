@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 30 28 Julius Caesar"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 28. Julius Caesar
 
 In ancient India the five sons of Pandu, Yudishtira and his brothers, after

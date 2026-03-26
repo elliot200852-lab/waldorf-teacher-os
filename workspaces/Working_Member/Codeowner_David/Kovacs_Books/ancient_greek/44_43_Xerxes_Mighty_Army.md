@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 44 43 Xerxes Mighty Army"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 43. Xerxes' Mighty Army.
 
 Darius had spent four years preparing an enormous army and fleet of

@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 06 4 Romulus and Remus"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 4. Romulus and Remus
 
 Before we go on with the story of the sons of Rhea, we shall look at life in

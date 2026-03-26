@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 08 7 Odysseus the Wanderer"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 7. Odysseus the Wanderer
 
 The Trojans believed the Greeks had sailed away for good. And if, as the

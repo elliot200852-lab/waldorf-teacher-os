@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 24 22 Rome is Saved"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 22. Rome is Saved
 
 Imagine how terrified the people in Rome were - they were only too

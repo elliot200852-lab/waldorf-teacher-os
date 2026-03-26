@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 47 45 Boadicea"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 45. Boadicea
 
 Caractacus was fortunate; he had found a Roman ruler who was - at least

@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 41 40 Hippias the Cruel Tyrant"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 40. Hippias the Cruel Tyrant
 
 When Solon became the lawmaker of Athens, there was a very good reason why the city needed someone to make new and just laws at that

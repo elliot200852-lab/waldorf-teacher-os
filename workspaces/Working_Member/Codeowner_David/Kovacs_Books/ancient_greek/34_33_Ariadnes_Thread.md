@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 34 33 Ariadnes Thread"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 33. Ariadne's Thread
 
 King Aegeus was very unhappy. His son had only just arrived

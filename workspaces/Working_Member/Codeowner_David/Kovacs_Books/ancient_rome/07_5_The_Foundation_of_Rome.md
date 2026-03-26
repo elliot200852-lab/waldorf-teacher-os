@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 07 5 The Foundation of Rome"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 5. The Foundation of Rome
 
 Romulus and Remus decided to build a city of their own. It should be

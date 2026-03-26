@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 08 6 The Sabine Women"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 6. The Sabine Women
 
 wisdom, Pallas Athene, competed for the honour of becoming protectors of Athens. Poseidon gave a horse and Pallas Athene gave the wonderful gift of the olive-tree. That is quite different from the story of Rome

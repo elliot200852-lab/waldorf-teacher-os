@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 02 1 The Red Flower of the Gods"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 1. The Red Flower of the Gods
 
 The Greeks lived in a country called Greece which is part of the continent

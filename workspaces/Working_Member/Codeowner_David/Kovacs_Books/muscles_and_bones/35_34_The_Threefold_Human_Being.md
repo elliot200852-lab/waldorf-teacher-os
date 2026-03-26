@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 35 34 The Threefold Human Being"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 34. The Threefold Human Being
 
 Our brain, our nervous system, is the least alive part of the human body

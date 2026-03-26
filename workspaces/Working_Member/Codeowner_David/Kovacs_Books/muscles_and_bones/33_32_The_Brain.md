@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 33 32 The Brain"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 32. The Brain
 
 At a very young age an illness left Helen Keller blind and deaf. Her whole

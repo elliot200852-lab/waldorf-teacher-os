@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 23 22 Breathing"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 22. Breathing
 
 From the moment we chew our food until the blood stream brings the

@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 14 12 Carthage"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 12. Carthage
 
 The sea around Italy is a great sea surrounded by land. The Romans

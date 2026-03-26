@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 20 19 A Fateful Throw of the Discus"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 19. A Fateful Throw of the Discus
 
 Perseus told his wife, Andromeda, and his mother, Danae, to wait in the

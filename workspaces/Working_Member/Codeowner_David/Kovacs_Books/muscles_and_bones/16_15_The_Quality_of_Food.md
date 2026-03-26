@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 16 15 The Quality of Food"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 15. The Quality of Food
 
 The example of white bread shows how - for the sake of better business

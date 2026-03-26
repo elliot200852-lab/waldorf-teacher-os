@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 21 20 Digestion and the Stomach"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 20. Digestion and the Stomach
 
 The three systems of the body - the nervous, the rhythmic and the

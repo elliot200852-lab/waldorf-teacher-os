@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 13 11 Roman Laws and Ways"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 11. Roman Laws and Ways
 
 The Romans had something which the Greeks did not have. What was it?

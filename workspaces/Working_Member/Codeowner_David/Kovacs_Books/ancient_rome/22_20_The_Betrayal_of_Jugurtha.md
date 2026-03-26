@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 22 20 The Betrayal of Jugurtha"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 20. The Betrayal of Jugurtha
 
 coast of Africa. The king of Numidia, Jugurtha, was an evil man: he had

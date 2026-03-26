@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 13 12 Teeth and Saliva"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 12. Teeth and Saliva
 
 Digestion is the wonderful process by which eggs, meat or apples are

@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 44 42 The Stone Ages"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 42. The Stone Ages
 
 The Roman times were about two thousand years ago. If you take about

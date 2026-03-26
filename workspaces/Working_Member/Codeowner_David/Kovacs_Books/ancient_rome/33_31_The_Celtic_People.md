@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 33 31 The Celtic People"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 31. The Celtic People
 
 The large country which we now call France, and which in Caesar's time

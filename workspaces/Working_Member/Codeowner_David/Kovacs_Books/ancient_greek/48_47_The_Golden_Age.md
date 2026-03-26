@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 48 47 The Golden Age"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 47. The Golden Age
 
 Miltiades, Leonidas and Themistocles were the Greek leaders who were

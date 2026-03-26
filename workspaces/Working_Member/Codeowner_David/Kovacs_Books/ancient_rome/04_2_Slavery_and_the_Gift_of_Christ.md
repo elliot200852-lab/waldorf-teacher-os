@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 04 2 Slavery and the Gift of Christ"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 2. Slavery and the Gift of Christ
 
 We have many things today which we owe to people who lived thousands of years ago. From the Persians came the plough, as well as fruittrees, garden-flowers, wheat and barley. From Babylon came bricks, the

@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 10 9 Regulating Warmth"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 9. Regulating Warmth
 
 Our body has a more or less constant temperature of 37°C (98.6°F). Birds

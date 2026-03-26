@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones Muscles and Bones Full"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 Contents
 Title Page
 Foreword

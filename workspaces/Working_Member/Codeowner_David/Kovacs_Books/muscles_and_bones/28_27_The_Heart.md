@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 28 27 The Heart"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 27. The Heart
 
 Blood, the great healer, is intimately linked with our breathing. Breath-

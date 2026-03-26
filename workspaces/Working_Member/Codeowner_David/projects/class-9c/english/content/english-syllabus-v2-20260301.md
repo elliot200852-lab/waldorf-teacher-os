@@ -3,6 +3,10 @@ aliases:
   - 英文春夏學季大綱 v2
 class: class-9c
 subject: english
+type: syllabus
+tags:
+  - 教學大綱
+description: "9C 英文春夏學季大綱第二版（定稿）"
 ---
 # 9C 英文課 114 學年度春夏學季教學大綱
 

@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 04 3 An Apple for Aphrodite"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 3. An Apple for Aphrodite
 
 In the olden days, story-tellers travelled from village to village singing

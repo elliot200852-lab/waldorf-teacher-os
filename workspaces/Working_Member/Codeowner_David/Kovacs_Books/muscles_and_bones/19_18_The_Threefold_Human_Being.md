@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 19 18 The Threefold Human Being"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 18. The Threefold Human Being
 
 The solid matter of which the table is made, remains the same as long as

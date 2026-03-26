@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 34 33 The Brain and the Spinal Cord"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 33. The Brain and the Spinal Cord
 
 While the skull which protects the brain consists of the hardest bones of

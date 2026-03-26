@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 07 6 Care of the Skin"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 6. Care of the Skin
 
 We looked

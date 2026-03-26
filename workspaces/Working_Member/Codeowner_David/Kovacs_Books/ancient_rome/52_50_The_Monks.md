@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Ancient Rome 52 50 The Monks"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古羅馬
+  - 歷史
+---
+
 # 50. The Monks
 
 lay down rules about what was right and what was wrong to believe, but

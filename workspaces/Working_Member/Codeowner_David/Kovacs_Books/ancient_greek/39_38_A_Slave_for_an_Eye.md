@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 39 38 A Slave for an Eye"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 38. A Slave for an Eye
 
 In Sparta it was Lycurgus who made the laws that produced tough,

@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 05 4 Sleep"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 4. Sleep
 
 Before we go on with the uprightness of the human body we must con-

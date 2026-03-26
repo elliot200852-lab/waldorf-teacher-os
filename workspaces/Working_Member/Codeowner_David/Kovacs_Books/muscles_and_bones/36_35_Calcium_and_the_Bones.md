@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 36 35 Calcium and the Bones"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 35. Calcium and the Bones
 
 The sea is the great reservoir of the water on which all living things de-

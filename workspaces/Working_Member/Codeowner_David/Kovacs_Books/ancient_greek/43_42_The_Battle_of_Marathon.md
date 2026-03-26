@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 43 42 The Battle of Marathon"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 42. The Battle of Marathon
 
 King Darius ordered his workmen to built a huge fleet to carry an army

@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 52 51 Taming Bucephalus"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 51. Taming Bucephalus
 
 The Greeks had built a number of cities on the coast across the Aegean

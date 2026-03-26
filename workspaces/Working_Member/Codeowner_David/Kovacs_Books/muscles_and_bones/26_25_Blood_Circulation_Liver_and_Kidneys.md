@@ -1,3 +1,13 @@
+---
+aliases:
+  - "Kovacs Muscles and Bones 26 25 Blood Circulation Liver and Kidneys"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 人體學
+  - 生理學
+---
+
 # 25. Blood Circulation, Liver and Kidneys
 
 A tree outside takes in carbon dioxide from and gives out oxygen to the

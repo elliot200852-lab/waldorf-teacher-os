@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 53 52 Dreams of Conquest"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 52. Dreams of Conquest
 
 When Alexander was still a young boy, he heard his father's courtiers

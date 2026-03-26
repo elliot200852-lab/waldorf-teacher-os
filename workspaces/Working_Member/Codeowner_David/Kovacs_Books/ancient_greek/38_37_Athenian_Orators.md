@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 38 37 Athenian Orators"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 37. Athenian Orators
 
 Sparta and Athens were as different as winter and summer. The Spartans

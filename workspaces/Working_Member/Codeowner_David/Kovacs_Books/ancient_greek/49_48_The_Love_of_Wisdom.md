@@ -1,3 +1,14 @@
+---
+aliases:
+  - "Kovacs Ancient Greek 49 48 The Love of Wisdom"
+tags:
+  - Kovacs
+  - 華德福教材
+  - 古希臘
+  - 歷史
+  - 神話
+---
+
 # 48. The Love of Wisdom
 
 Greece, then, became the country from which all other nations learned.
