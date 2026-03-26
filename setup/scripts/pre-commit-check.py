@@ -130,18 +130,19 @@ def parse_acl(acl_path: Path):
 
 def _check_home_quality(staged_files: list[str], repo_root: Path) -> bool:
     """檢查 HOME.md 是否含有禁止字樣（如「自動收錄」）。
+    讀取 git 暫存區的版本（非磁碟檔案），避免 untrack 後的誤判。
     回傳 True 表示應阻擋 commit。"""
     if "HOME.md" not in staged_files:
         return False
 
-    home_path = repo_root / "HOME.md"
-    if not home_path.is_file():
-        return False
-
+    # 讀暫存區版本（git show :HOME.md），若為刪除操作則無內容可查
     try:
-        content = home_path.read_text(encoding="utf-8")
+        content = git("show", ":HOME.md")
     except Exception:
         return False
+
+    if not content:
+        return False  # 檔案正在被刪除，無需檢查
 
     if "自動收錄" in content:
         print()
