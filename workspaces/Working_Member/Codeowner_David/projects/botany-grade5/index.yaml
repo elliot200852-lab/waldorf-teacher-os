@@ -62,6 +62,25 @@ stories:
       html: "16xw59s2cDD-94N356LLQiPULC6d-6_1t"
       pdf: "1mrwYV23fKRJ43H6Z5t2Skt_iDXFfZYKD"
     tags: [真菌, 牛樟芝, 台灣特有種, 分解者, 菌絲, 段木香菇, 嬰兒意象]
+  - id: B004
+    title: 藻類
+    block: block-1-plant-and-earth
+    kovacs_chapter: "04_Algae"
+    taiwan_species: ["海葡萄（長莖葡萄蕨藻）", "紫菜", "溫泉藻"]
+    date_created: 2026-03-26
+    files:
+      content: stories/B004/content.md
+      kovacs_teaching: stories/B004/kovacs-teaching.md
+      chalkboard_prompt: stories/B004/chalkboard-prompt.md
+      images: stories/B004/images.md
+      references: stories/B004/references.md
+      raw_materials: stories/B004/raw-materials.md
+      quality_report: stories/B004/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1OXCh6B4DGnsNMBzXal61pd5sEkfbG4Yk"
+      pdf: "1_eUmsPUFAWs5eubVC6ncqRZt1IgTgutg"
+    tags: [藻類, 海葡萄, 紫菜, 溫泉藻, 學步兒, 大海第一個家, 阿美族, 北海岸黑金, 陽明山]
 # 每筆格式：
 # - id: B001
 #   title: 植物在太陽與大地之間

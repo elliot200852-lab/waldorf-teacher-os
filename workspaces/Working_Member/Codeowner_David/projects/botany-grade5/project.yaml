@@ -22,9 +22,9 @@ botany_grade5:
     theme_skeleton_yaml: theme-skeleton.yaml
 
   story_count:
-    total: 3
+    total: 4
     by_block:
-      block-1-plant-and-earth: 3    # 第 1-6 課
+      block-1-plant-and-earth: 4    # 第 1-6 課
       block-2-fern-to-tree: 0       # 第 7-14 課
       block-3-individual-plants: 0  # 第 15-22 課
       block-4-plants-and-people: 0  # 第 23-30 課
@@ -46,4 +46,4 @@ botany_grade5:
     - quality-report.md    # (h) 品質報告
 
   next_action:
-    description: "B004 藻類——排程繼續執行"
+    description: "B005 地衣——排程繼續執行"
