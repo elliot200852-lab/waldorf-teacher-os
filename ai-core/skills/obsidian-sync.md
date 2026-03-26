@@ -90,32 +90,32 @@ aliases:
 - `acl.yaml` / `system-status.yaml` → 系統設定
 - 其他 → 設定檔
 
-### Step 4 — 更新 HOME.md
+### Step 4 — 報告未收錄 HOME.md 的檔案（不自動寫入）
 
-讀取根目錄的 `HOME.md`，將 `FILE:NOT_IN_HOME:` 清單中的檔案插入對應區段。
+讀取 `FILE:NOT_IN_HOME:` 清單，**向教師報告**哪些檔案不在 HOME.md 中。
 
-**區段判斷邏輯：**
+**重要：不自動將檔案寫入 HOME.md。**
 
-| 路徑模式 | 插入區段 |
+過去的「自動收錄」機制會把所有未索引的檔案（包括腳本、暫存檔、XML 碎片）不加判斷地塞進 HOME.md 並標為「自動收錄」，導致 HOME.md 嚴重臃腫。現改為報告模式：
+
+1. 列出未收錄的檔案清單
+2. 建議每個檔案應歸入哪個 HOME.md 區段
+3. 詢問教師：「要加入 HOME.md 嗎？」
+4. 教師確認後才寫入，且寫入時必須附上正確的中文說明（不使用「自動收錄」）
+
+**區段判斷參考（供 AI 建議用）：**
+
+| 路徑模式 | 建議區段 |
 |----------|---------|
 | `ai-core/skills/*.md` | 系統技能正本 |
-| `ai-core/reference/*.md` / `*.yaml` | Reference 知識模組 / 操作文件 |
-| `ai-core/reviews/*.md` | 系統回顧紀錄 |
+| `ai-core/reference/*.md` / `*.yaml` | Reference 知識模組 |
 | `projects/_di-framework/**` | 差異化教學框架 |
 | `workspaces/Working_Member/Codeowner_David/**` | David 的工作空間（依班級/科目細分） |
 | `workspaces/Working_Member/Teacher_*/**` | 對應教師的工作空間 |
 | `setup/**` | 環境設定與腳本 |
 | `publish/**` | 輸出與發佈 |
-| `.claude/**` | Claude Code 設定 |
-| 根目錄散檔 | 根目錄散檔 |
 
-**格式：** 使用 Obsidian wikilink 格式
-
-```markdown
-| [[路徑/檔名|中文名]] | 說明 |
-```
-
-若無法判斷區段，附加到最接近的現有區段末尾。
+若 `NOT_IN_HOME` 為 0，不需要報告。
 
 ### Step 5 — 輸出摘要
 
@@ -131,5 +131,5 @@ Obsidian 同步完成：
 - 此技能**只讀偵測腳本的結果**，不自行掃描檔案系統
 - aliases 產生需要理解檔案內容，因此必須由 AI 執行，不能純腳本處理
 - 不修改已有正確標籤的檔案
-- HOME.md 的修改採**附加邏輯**：只新增條目，不刪除或重排現有條目
+- HOME.md 的修改需教師確認後才執行，不再自動附加「自動收錄」條目
 - 若偵測腳本不存在，提示：「請先確認 `setup/scripts/obsidian-check.py` 存在。」

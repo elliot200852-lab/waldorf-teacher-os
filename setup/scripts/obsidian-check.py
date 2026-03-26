@@ -23,11 +23,38 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))  # setup/scripts/ → 上兩層
 
 # ── 排除規則 ──────────────────────────────────────────────
-EXCLUDED_FILES = {".DS_Store", ".gitkeep", "token.json", ".env"}
-EXCLUDED_DIRS = {".obsidian", ".claude/worktrees", "__pycache__", "node_modules", "venv"}
+EXCLUDED_FILES = {".DS_Store", ".gitkeep", "token.json", ".env", ".rels"}
+EXCLUDED_DIRS = {
+    ".obsidian", ".claude/worktrees", "__pycache__", "node_modules", "venv",
+    # docx 解壓殘留（word/、docProps/、_rels/、[Content_Types].xml）
+    "/word/", "/docProps/", "/_rels/",
+}
+
+# 只有這些副檔名的檔案會被檢查 HOME.md 收錄
+# 其他類型（.js, .py, .json, .txt, .docx, .pdf 等）不納入 NOT_IN_HOME 檢查
+INDEXABLE_EXTENSIONS = {".md", ".yaml", ".yml"}
+
+# 這些副檔名的檔案完全跳過，不做任何檢查
+SKIP_EXTENSIONS = {
+    ".js", ".py", ".json", ".txt", ".csv", ".tsv",
+    ".docx", ".doc", ".xlsx", ".pdf", ".html", ".css",
+    ".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".emf",
+    ".mp3", ".m4a", ".wav", ".mp4",
+    ".xml", ".sh", ".ps1", ".bat",
+    ".env", ".gitignore",
+}
 
 # 這些目錄的 .md 檔使用 name: 而非 aliases:，跳過 aliases 檢查
 SKIP_ALIAS_DIRS = {"ai-core/skills"}
+
+# 這些路徑模式下的檔案不該被索引到 HOME.md（工具腳本、暫存輸出等）
+SKIP_HOME_INDEX_PATTERNS = [
+    "自動化結案報告測試/",
+    "資料處理資料夾/",
+    "/temp1/", "/temp2/",
+    "歌曲-20240823T005746Z",
+    "/射日傳說/",
+]
 
 # HOME.md 自身不需要被收錄檢查
 SKIP_HOME_CHECK = {"Good-notes/HOME.md", "HOME.md"}
@@ -38,10 +65,24 @@ def is_excluded(filepath):
     basename = os.path.basename(filepath)
     if basename in EXCLUDED_FILES:
         return True
+    ext = os.path.splitext(basename)[1].lower()
+    if ext in SKIP_EXTENSIONS:
+        return True
     for excluded_dir in EXCLUDED_DIRS:
         if filepath.startswith(excluded_dir + "/") or ("/" + excluded_dir + "/") in filepath:
             return True
     return False
+
+
+def should_index_in_home(filepath):
+    """判斷檔案是否應該被索引到 HOME.md（只有 .md/.yaml/.yml 且不在排除路徑中）"""
+    ext = os.path.splitext(filepath)[1].lower()
+    if ext not in INDEXABLE_EXTENSIONS:
+        return False
+    for pattern in SKIP_HOME_INDEX_PATTERNS:
+        if pattern in filepath:
+            return False
+    return True
 
 
 def decode_git_path(path):
@@ -174,8 +215,8 @@ def run_self_test():
 | [[setup/teacher-guide.md|teacher-guide.md]] | 教師指南 |
 | [[setup/teacher-guide-v2.1.html|teacher-guide-v2.1.html]] | 指南 HTML |
 | [[wrap-up]] | 收工 |
-| [[Good-notes/9C 班工作全貌\|9C 班工作全貌]] | 導師筆記 |
-| [[workspaces/Working_Member/Teacher_郭耀新/manual\|郭耀新操作手冊]] | 操作手冊 |
+| [[Good-notes/9C 班工作全貌\\|9C 班工作全貌]] | 導師筆記 |
+| [[workspaces/Working_Member/Teacher_郭耀新/manual\\|郭耀新操作手冊]] | 操作手冊 |
 """
     tests = [
         # (filepath, expected, 說明)
@@ -261,19 +302,16 @@ def main():
         if ext == ".md":
             if md_needs_alias(filepath):
                 unlabeled_md.append(filepath)
-            if not file_in_home(filepath, home_content):
+            if should_index_in_home(filepath) and not file_in_home(filepath, home_content):
                 not_in_home.append(filepath)
 
         elif ext == ".yaml" or ext == ".yml":
             if yaml_needs_label(filepath):
                 unlabeled_yaml.append(filepath)
-            if not file_in_home(filepath, home_content):
+            if should_index_in_home(filepath) and not file_in_home(filepath, home_content):
                 not_in_home.append(filepath)
 
-        else:
-            # 其他類型檔案只檢查 HOME.md 收錄
-            if not file_in_home(filepath, home_content):
-                not_in_home.append(filepath)
+        # 其他類型檔案不再檢查 HOME.md 收錄（已在 is_excluded 或 INDEXABLE_EXTENSIONS 過濾）
 
     # 輸出
     total = len(unlabeled_md) + len(unlabeled_yaml) + len(not_in_home)

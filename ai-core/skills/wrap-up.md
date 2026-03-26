@@ -137,11 +137,13 @@ session:
 
 - 有未標籤的 .md → 自動加上 aliases frontmatter（根據路徑與內容前 30 行產生）
 - 有未標籤的 .yaml → 自動加上中文標頭註解
-- 有未收錄 HOME.md 的檔案 → 自動插入根目錄 `HOME.md` 對應區段
-- 標籤/索引修正完成後，將修改的檔案加入 git 暫存區
+- 有未收錄 HOME.md 的檔案 → **只報告，不自動寫入 HOME.md**（向教師列出清單，確認後才歸位）
+- 標籤修正完成後，將修改的檔案加入 git 暫存區
 - 全部正常 → 靜默通過（不輸出任何訊息）
 
-詳細的標籤產生規則與 HOME.md 區段判斷邏輯，參見 `ai-core/skills/obsidian-sync.md`。
+**重要：不再使用「自動收錄」機制。** 過去的自動收錄會把腳本、暫存檔、XML 碎片等不該索引的檔案塞進 HOME.md。現在 obsidian-check.py 已加入檔案類型白名單（只掃描 .md/.yaml/.yml），且 HOME.md 寫入需教師確認。
+
+詳細的標籤產生規則，參見 `ai-core/skills/obsidian-sync.md`。
 
 ### Step 4 — Git 存檔與推送
 
