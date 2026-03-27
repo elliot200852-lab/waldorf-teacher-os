@@ -8,12 +8,12 @@ ancient_myths_grade5:
   project_type: 獨立工作線
   target_grades: [5]
   current_focus: 五年級華德福古文明神話主課程
-  last_updated: 2026-03-26T12:30:00
+  last_updated: 2026-03-27T15:07:00
 
   current_position:
     phase: 進行中
     step: 2
-    description: "AM004 完成，下一篇 AM005 摩訶婆羅多——般度五子"
+    description: "AM005 完成，下一篇 AM006 羅摩與悉多"
 
   source_material:
     kovacs_book: "Charles Kovacs, *Ancient Mythologies: India, Persia, Babylon, Egypt* (Wynstones Press, 184 pp, 21 stories)"
@@ -25,9 +25,9 @@ ancient_myths_grade5:
       非基於 Kovacs 原文。21 個故事的精確章節待原文確認後校正。
 
   story_count:
-    total: 4
+    total: 5
     by_block:
-      block-1-india: 4        # 第 1-6 課（古印度）
+      block-1-india: 5        # 第 1-6 課（古印度）
       block-2-persia: 0       # 第 7-10 課（古波斯）
       block-3-babylon: 0      # 第 11-16 課（古巴比倫）
       block-4-egypt: 0        # 第 17-21 課（古埃及）
@@ -66,4 +66,4 @@ ancient_myths_grade5:
       - "校正 theme-skeleton 的章節標題與順序"
 
   next_action:
-    description: "AM004 完成，下一篇 AM005 摩訶婆羅多——般度五子"
+    description: "AM005 完成，下一篇 AM006 羅摩與悉多"

@@ -66,6 +66,26 @@ stories:
       pdf: "187-ZN1mB3DZAwFL5kRP06hoFwu8Kj6DT"
     tags: [普魯沙, Purusha, 種姓制度, Varna, 卡瑪達努, Kamadhenu, 神牛, 摩奴法典, 古印度, 夢境意識]
 
+  - id: AM005
+    title: 摩訶婆羅多——般度五子
+    block: block-1-india
+    story_ref: "Story 5"
+    mythology_topic: "般度五兄弟（堅戰、怖軍、阿周那、無種、偕天）的史詩冒險——俱盧之野大戰前夕，阿周那的猶豫與克里希納的薄伽梵歌教義"
+    date_created: 2026-03-27
+    files:
+      content: stories/AM005/content.md
+      waldorf_teaching: stories/AM005/waldorf-teaching.md
+      chalkboard_prompt: stories/AM005/chalkboard-prompt.md
+      images: stories/AM005/images.md
+      references: stories/AM005/references.md
+      raw_materials: stories/AM005/raw-materials.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1k7pmipzQUdV3Sd_VPXBIdUilRiaFvpXH"
+      pdf: "1Gd50NLQ34xSZr1J5wiIqBsQ458vddv91"
+    tags: [摩訶婆羅多, Mahabharata, 般度五子, Pandava, 阿周那, Arjuna, 克里希納, Krishna, 薄伽梵歌, Bhagavad Gita, 俱盧之野, Kurukshetra, 古印度, 夢境意識, 達磨, dharma]
+
   - id: AM002
     title: 創世與最初的人類（二）
     block: block-1-india
