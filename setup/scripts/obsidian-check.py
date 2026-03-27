@@ -2,7 +2,7 @@
 """
 TeacherOS Obsidian Label Checker
 掃描 Repo 中缺少中文標籤的 .md / .yaml 檔案，以及未收錄 HOME.md 的檔案。
-只做偵測與報告，不修改任何檔案。
+偵測模式只做報告；--auto-fix 模式會自動將有格式建議的條目寫入 HOME.md。
 
 用法：
     python3 obsidian-check.py                    # 完整掃描（所有 git 追蹤檔案）
@@ -10,6 +10,7 @@ TeacherOS Obsidian Label Checker
     python3 obsidian-check.py --count-only       # 只輸出數字（供提醒用）
     python3 obsidian-check.py --skip-home-check  # 跳過 HOME.md 收錄檢查（wrap-up 專用）
     python3 obsidian-check.py --map-filter       # 地圖驅動過濾：無路由的檔案報告為 UNROUTED
+    python3 obsidian-check.py --auto-fix         # 自動將有格式建議的條目寫入 HOME.md
     python3 obsidian-check.py --self-test        # 內建自測（驗證 file_in_home 比對邏輯）
 
 不依賴外部套件，只使用 Python 標準函式庫。
@@ -114,6 +115,218 @@ def suggest_section(filepath):
         except (ValueError, TypeError):
             continue
     return None, None
+
+
+def _find_sibling_id(filepath):
+    """從路徑中萃取 ID 前綴（例如 A012、AM005）和可替換的 ID 段落。
+    回傳 (id_str, parent_dir) 或 (None, None)。
+    支援兩種結構：
+      1. 目錄型：.../A012/content.md → ID 在目錄名
+      2. 檔名型：.../reviews/A012-quality.md → ID 在檔名前綴"""
+    parts = filepath.replace("\\", "/").split("/")
+    # 嘗試目錄名匹配
+    for i, part in enumerate(parts):
+        if re.match(r'^(A\d{3}|AM\d{3}|TW\d{2})(-v\d+)?$', part):
+            return part, "/".join(parts[:i])
+    # 嘗試檔名前綴匹配（如 A012-quality.md）
+    basename = os.path.splitext(os.path.basename(filepath))[0]
+    m = re.match(r'^(A\d{3}|AM\d{3}|TW\d{2})(-v\d+)?-', basename)
+    if m:
+        return m.group(1) + (m.group(2) or ""), "/".join(parts[:-1])
+    return None, None
+
+
+def suggest_home_entry(filepath, home_content):
+    """從 HOME.md 同區段已有的 sibling 條目複製格式，產出完整的建議條目。
+    回傳格式化的 HOME.md 條目字串，或 None（無法找到模板時）。"""
+    if not home_content:
+        return None
+
+    file_id, parent_dir = _find_sibling_id(filepath)
+    if not file_id:
+        return None
+
+    basename = os.path.basename(filepath)
+    name_no_ext = os.path.splitext(basename)[0]
+
+    id_pattern = r'(A\d{3}|AM\d{3}|TW\d{2})(-v\d+)?'
+
+    # 判斷是目錄型（A012/content）還是檔名型（A012-quality）
+    parts = filepath.replace("\\", "/").split("/")
+    is_dirname_id = any(re.match(rf'^{id_pattern}$', p) for p in parts)
+
+    # 計算路徑前綴（去掉 ID 和檔名部分），用於限制只匹配同專案的 sibling
+    # 例如 .../stories-of-taiwan/stories/A-origins/A012/content.md → .../stories-of-taiwan/
+    # 例如 .../ancient-myths-grade5/stories/AM005/content.md → .../ancient-myths-grade5/
+    path_prefix = None
+    for i, p in enumerate(parts):
+        if re.match(rf'^{id_pattern}$', p):
+            # 取 ID 目錄的上兩層作為專案前綴（如 .../ancient-myths-grade5/stories/）
+            path_prefix = "/".join(parts[:max(1, i-1)])
+            break
+    if not path_prefix and not is_dirname_id:
+        # 檔名型：取父目錄作為前綴
+        path_prefix = "/".join(parts[:-2]) if len(parts) > 2 else ""
+
+    if is_dirname_id:
+        escaped_basename = re.escape(name_no_ext)
+        line_pattern = rf'^\|.*\[\[.*/{id_pattern}/{escaped_basename}.*\]\].*\|.*\|'
+    else:
+        suffix_match = re.match(rf'^{id_pattern}(-.+)$', name_no_ext)
+        if not suffix_match:
+            return None
+        suffix = re.escape(suffix_match.group(3))
+        line_pattern = rf'^\|.*\[\[.*/{id_pattern}{suffix}.*\]\].*\|.*\|'
+
+    matches = []
+    for line in home_content.splitlines():
+        m = re.match(line_pattern, line)
+        if m:
+            # 限制同專案路徑：模板行必須包含相同的路徑前綴
+            if path_prefix and path_prefix not in line:
+                continue
+            matches.append(line)
+
+    if not matches:
+        return None
+
+    # 取最後一個匹配（最近的 sibling）
+    template_line = matches[-1]
+
+    # 替換 ID：將模板中的 sibling ID 換成新檔案的 ID
+    if is_dirname_id:
+        id_in_template = re.search(rf'/({id_pattern})/', template_line)
+        if not id_in_template:
+            return None
+        old_id = id_in_template.group(1)
+        suggested = template_line.replace(f"/{old_id}/", f"/{file_id}/")
+    else:
+        # 檔名型替換：A009-quality → A012-quality
+        id_in_template = re.search(rf'/({id_pattern})-', template_line)
+        if not id_in_template:
+            return None
+        old_id = id_in_template.group(1)
+        suggested = template_line.replace(f"/{old_id}-", f"/{file_id}-")
+
+    return suggested
+
+
+def _read_story_title(file_id):
+    """嘗試從 content.md 讀取故事標題。
+    搜尋順序：frontmatter title: → 第一個 # 標題（去掉 ID 前綴）。
+    回傳標題字串或 None。"""
+    import glob as _glob
+    pattern = os.path.join(REPO_ROOT, "**", file_id, "content.md")
+    candidates = _glob.glob(pattern, recursive=True)
+    for cpath in candidates:
+        try:
+            with open(cpath, "r", encoding="utf-8") as f:
+                text = f.read(2000)
+        except (FileNotFoundError, UnicodeDecodeError):
+            continue
+        # 嘗試 frontmatter title:
+        if text.startswith("---"):
+            end = text.find("---", 3)
+            if end > 0:
+                fm = text[3:end]
+                m = re.search(r'^title:\s*["\']?(.+?)["\']?\s*$', fm, re.MULTILINE)
+                if m:
+                    return m.group(1).strip()
+        # fallback：第一個 # 標題
+        heading = re.search(r'^#\s+(?:' + re.escape(file_id) + r'\s+)?(.+)$', text, re.MULTILINE)
+        if heading:
+            return heading.group(1).strip()
+    return None
+
+
+def _find_last_sibling_line(home_lines, file_id):
+    """在 HOME.md 的行列表中，找到 file_id 的前一個 sibling block 的最後一行行號。
+    回傳 (line_index, sibling_id) 或 (None, None)。
+    例如 file_id='A012' → 找 A011、A010、A009... 中最近的一個。"""
+    id_match = re.match(r'^(A|AM|TW)(\d+)$', file_id)
+    if not id_match:
+        return None, None
+    prefix = id_match.group(1)
+    num = int(id_match.group(2))
+    # 從前一個 ID 往回找
+    for n in range(num - 1, 0, -1):
+        if prefix == "TW":
+            sib_id = f"{prefix}{n:02d}"
+        else:
+            sib_id = f"{prefix}{n:03d}"
+        # 找這個 sibling 在 HOME.md 中的最後出現位置
+        last_idx = None
+        for i, line in enumerate(home_lines):
+            if f"/{sib_id}/" in line or f"/{sib_id}-" in line or f"/{sib_id}|" in line or f"/{sib_id}\\" in line:
+                last_idx = i
+        if last_idx is not None:
+            return last_idx, sib_id
+    return None, None
+
+
+def auto_fix_home(routed_files, home_content):
+    """自動將有格式建議的 ROUTED 檔案寫入 HOME.md。
+    routed_files: [(filepath, section, suggested_entry), ...]
+    回傳 (new_home_content, fixed_count, skipped_files)。"""
+    # 按 ID 分組
+    from collections import OrderedDict
+    groups = OrderedDict()  # id → [(filepath, suggested_entry), ...]
+    skipped = []
+
+    for filepath, section, suggested in routed_files:
+        if not suggested:
+            skipped.append(filepath)
+            continue
+        file_id, _ = _find_sibling_id(filepath)
+        if not file_id:
+            skipped.append(filepath)
+            continue
+        groups.setdefault(file_id, []).append((filepath, suggested))
+
+    if not groups:
+        return home_content, 0, skipped
+
+    home_lines = home_content.splitlines()
+    # 從後往前插入（避免行號偏移）
+    insertions = []  # [(line_index, block_text), ...]
+
+    for file_id, entries in groups.items():
+        insert_after, sib_id = _find_last_sibling_line(home_lines, file_id)
+        if insert_after is None:
+            for fp, _ in entries:
+                skipped.append(fp)
+            continue
+
+        # 讀取標題
+        title = _read_story_title(file_id)
+        header = f"**{file_id} {title}**" if title else f"**{file_id}**"
+
+        # 組裝 block
+        block_lines = [
+            "",
+            header,
+            "",
+            "| 檔案 | 說明 |",
+            "|------|------|",
+        ]
+        for _, entry in entries:
+            block_lines.append(entry)
+
+        insertions.append((insert_after, block_lines, len(entries)))
+
+    # 從後往前插入
+    insertions.sort(key=lambda x: x[0], reverse=True)
+    fixed_count = 0
+    for insert_after, block_lines, count in insertions:
+        for i, line in enumerate(block_lines):
+            home_lines.insert(insert_after + 1 + i, line)
+        fixed_count += count
+
+    new_content = "\n".join(home_lines)
+    # 確保檔案結尾有換行
+    if not new_content.endswith("\n"):
+        new_content += "\n"
+    return new_content, fixed_count, skipped
 
 
 def is_excluded(filepath):
@@ -323,8 +536,67 @@ def run_self_test():
         else:
             passed += 1
 
-    print(f"[self-test] {passed} passed, {failed} failed")
-    if failed > 0:
+    print(f"[self-test] file_in_home: {passed} passed, {failed} failed")
+
+    # ── suggest_home_entry 測試 ──────────────────────────
+    mock_home_suggest = (
+        "**A009 鐵砂與煙霧——十三行人的秘密**\n\n"
+        "| 檔案 | 說明 |\n|------|------|\n"
+        "| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/content\\|content]] | 故事正文 |\n"
+        "| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/narration\\|narration]] | 教師說書稿 |\n"
+        "| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/images\\|images]] | 投影圖像清單 |\n"
+        "| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/chalkboard-prompt\\|chalkboard]] | 黑板畫 prompt |\n"
+        "| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A009/raw-materials\\|raw-materials]] | 研究素材包 |\n"
+        "| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A009-quality\\|品質報告]] | 品質審核紀錄 |\n\n"
+        "**AM004 種姓制度與聖牛**\n\n"
+        "| 檔案 | 說明 |\n|------|------|\n"
+        "| [[workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM004/content\\|content]] | 故事正文 |\n"
+        "| [[workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM004/waldorf-teaching\\|waldorf-teaching]] | 華德福教學指引 |\n"
+        "| [[workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM004/museum-materials\\|museum-materials]] | 博物館藝術素材 |\n"
+    )
+
+    suggest_tests = [
+        # (filepath, expected_contains, 說明)
+        (
+            "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A012/content.md",
+            "/A012/content",
+            "A012 content 應從 A009 模板產出"
+        ),
+        (
+            "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A012/narration.md",
+            "/A012/narration",
+            "A012 narration 應從 A009 模板產出"
+        ),
+        (
+            "workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM005/museum-materials.yaml",
+            "/AM005/museum-materials",
+            "AM005 museum-materials 應從 AM004 模板產出"
+        ),
+        (
+            "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/A-origins/A012/some-new-file.md",
+            None,
+            "HOME 無同名 basename 時應回傳 None"
+        ),
+    ]
+
+    s_passed = 0
+    s_failed = 0
+    for filepath, expected, desc in suggest_tests:
+        result = suggest_home_entry(filepath, mock_home_suggest)
+        if expected is None:
+            ok = result is None
+        else:
+            ok = result is not None and expected in result
+        status = "PASS" if ok else "FAIL"
+        if not ok:
+            s_failed += 1
+            print(f"  {status}: suggest_home_entry({filepath}) → {result!r}, expected contains {expected!r} ({desc})")
+        else:
+            s_passed += 1
+
+    print(f"[self-test] suggest_home_entry: {s_passed} passed, {s_failed} failed")
+    total_failed = failed + s_failed
+    if total_failed > 0:
         sys.exit(1)
     else:
         print("[self-test] All edge cases verified.")
@@ -339,6 +611,7 @@ def main():
     count_only = "--count-only" in sys.argv
     skip_home_check = "--skip-home-check" in sys.argv
     map_filter = "--map-filter" in sys.argv
+    auto_fix = "--auto-fix" in sys.argv
 
     # 取得檔案清單
     if staged_only:
@@ -385,21 +658,46 @@ def main():
         # 其他類型檔案不再檢查 HOME.md 收錄（已在 is_excluded 或 INDEXABLE_EXTENSIONS 過濾）
 
     # ── 地圖過濾：分流 ROUTED / UNROUTED ─────────────
-    routed = []       # 有地圖路由的（AI 可自動歸類）
+    routed = []       # 有地圖路由的（AI 可自動歸類）— (filepath, section, suggested_entry)
     unrouted = []     # 無路由的（需人工決定）
 
     if map_filter and not_in_home:
         for f in not_in_home:
             section, _ = suggest_section(f)
             if section:
-                routed.append((f, section))
+                suggested = suggest_home_entry(f, home_content)
+                routed.append((f, section, suggested))
             else:
                 unrouted.append(f)
     elif not_in_home:
         # 無 --map-filter 時，全部走舊路徑
         for f in not_in_home:
             section, _ = suggest_section(f)
-            routed.append((f, section))  # section 可能為 None
+            suggested = suggest_home_entry(f, home_content)
+            routed.append((f, section, suggested))  # section 可能為 None
+
+    # ── auto-fix 模式：自動寫入 HOME.md ─────────────
+    if auto_fix and routed:
+        home_path = os.path.join(REPO_ROOT, "HOME.md")
+        if not os.path.exists(home_path):
+            home_path = os.path.join(REPO_ROOT, "Good-notes", "HOME.md")
+        new_content, fixed, fix_skipped = auto_fix_home(routed, home_content)
+        if fixed > 0:
+            with open(home_path, "w", encoding="utf-8") as f:
+                f.write(new_content)
+            print(f"[obsidian-check] AUTO-FIX: {fixed} 個條目已寫入 HOME.md")
+            # 重新載入 home_content，移除已修復的檔案
+            home_content = new_content
+            still_missing = []
+            for fp, sec, sug in routed:
+                if not file_in_home(fp, home_content):
+                    still_missing.append((fp, sec, sug))
+            routed = still_missing
+            not_in_home = [fp for fp, _, _ in routed] + unrouted
+        if fix_skipped:
+            print(f"[obsidian-check] AUTO-FIX: {len(fix_skipped)} 個無法自動修復（需人工）")
+            for fp in fix_skipped:
+                print(f"  SKIP: {fp}")
 
     # 輸出
     total = len(unlabeled_md) + len(unlabeled_yaml) + len(not_in_home)
@@ -414,7 +712,11 @@ def main():
             if unlabeled_yaml:
                 parts.append(f"{len(unlabeled_yaml)} 個 .yaml 未標籤")
             if routed:
-                parts.append(f"{len(routed)} 個未收錄 HOME.md（有路由）")
+                with_suggest = sum(1 for _, _, s in routed if s)
+                if with_suggest:
+                    parts.append(f"{len(routed)} 個未收錄 HOME.md（{with_suggest} 個有格式建議）")
+                else:
+                    parts.append(f"{len(routed)} 個未收錄 HOME.md（有路由）")
             if unrouted:
                 parts.append(f"{len(unrouted)} 個未收錄 HOME.md（無路由，需人工）")
             if not map_filter and not_in_home:
@@ -436,8 +738,10 @@ def main():
     for f in unlabeled_yaml:
         print(f"FILE:NEW_YAML:{f}")
 
-    for f, section in routed:
-        if section:
+    for f, section, suggested in routed:
+        if suggested:
+            print(f"FILE:NOT_IN_HOME:{f}|{section}|SUGGEST:{suggested}")
+        elif section:
             print(f"FILE:NOT_IN_HOME:{f}|{section}")
         else:
             print(f"FILE:NOT_IN_HOME:{f}")
