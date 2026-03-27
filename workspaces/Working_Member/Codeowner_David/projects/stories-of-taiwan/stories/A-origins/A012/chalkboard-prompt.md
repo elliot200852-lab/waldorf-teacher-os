@@ -1,3 +1,8 @@
+---
+aliases:
+  - "A012 飛魚的守護者黑板畫提示詞"
+---
+
 # 黑板畫 Prompt：A012 飛魚的守護者
 
 ## English Prompt

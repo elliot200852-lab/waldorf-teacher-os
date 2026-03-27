@@ -1,3 +1,8 @@
+---
+aliases:
+  - "Kovacs 革命時代全文"
+---
+
 # Age of Revolution
 
 # Contents

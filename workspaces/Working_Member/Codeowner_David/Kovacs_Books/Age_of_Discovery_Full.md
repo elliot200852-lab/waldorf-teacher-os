@@ -1,3 +1,8 @@
+---
+aliases:
+  - "Kovacs 大發現時代全文"
+---
+
 # The Age of Discovery
 
 # Contents
