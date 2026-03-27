@@ -100,6 +100,25 @@ stories:
       html: "15vy_M_A7RHAI6_yHiBVbecogSlflauRW"
       pdf: "1RN8JPe0FWecQ2Ih8VmTLHLwkfWYskb1k"
     tags: [地衣, 共生, 合歡山, 高山地衣, 空氣品質指標, 先鋒物種, 校園生態, 地之子, 光之子]
+  - id: B006
+    title: 苔蘚
+    block: block-1-plant-and-earth
+    kovacs_chapter: "06_Moss"
+    taiwan_species: ["太平山、棲蘭山的檜木林底層苔蘚毯", "台灣中海拔雲霧帶苔蘚", "阿里山步道的苔蘚包覆"]
+    date_created: 2026-03-27
+    files:
+      content: stories/B006/content.md
+      kovacs_teaching: stories/B006/kovacs-teaching.md
+      chalkboard_prompt: stories/B006/chalkboard-prompt.md
+      images: stories/B006/images.md
+      references: stories/B006/references.md
+      raw_materials: stories/B006/raw-materials.md
+      quality_report: stories/B006/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1uDvq1Wpy2hwamWx2caxYgECRsGp2ZqOA"
+      pdf: "1SoWZFw2ZdYAu0CVZqz0a6R4WM42J1s-a"
+    tags: [苔蘚, 幼童, 太平山, 翠峰湖, 阿里山, 雲霧帶, 保水, 慷慨給予, 假根, 泥炭苔]
 # 每筆格式：
 # - id: B001
 #   title: 植物在太陽與大地之間
