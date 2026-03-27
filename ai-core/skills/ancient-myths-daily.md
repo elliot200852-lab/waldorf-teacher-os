@@ -196,6 +196,38 @@ python3 setup/scripts/museum_resource_pipeline.py \
 **Agent C（撰寫主力）**：
 - 產出：`content.md`（800 字說書稿）+ `chalkboard-prompt.md`（黑板畫 Prompt）
 - content.md 必須含 `## 故事本文` 和 `## 事實出處` 表格
+- **content.md 格式模板（嚴格遵守，不可偏離）**：
+
+```markdown
+---
+aliases:
+  - "AM0XX [標題]"
+id: AM0XX
+title: [標題]
+block: block-X-[文明]
+lesson: [課號數字]
+age_group: 10-11
+consciousness: [該課的意識階段描述]
+---
+
+## 故事本文
+
+[800 字說書稿，以 --- 分隔段落]
+
+---
+
+## 事實出處
+
+| 事實 | 來源 |
+|------|------|
+| [完整事實描述，含括號標註文獻名稱與年代] | [來源名稱] — [具體頁面或條目] |
+```
+
+- **事實出處表規則**：
+  - 「事實」欄必須是完整句子，描述故事中引用的具體事實，括號標註原始文獻名與年代
+  - 「來源」欄格式：`來源網站名稱 — 具體條目名稱`（例：`Wikipedia — Matsya`、`Britannica — Manu`）
+  - 禁止只列關鍵字（如「五兄弟姓名、神聖父系」）——必須寫成完整描述
+  - 至少 5 筆事實出處
 
 **Agent D（教學精要）**：
 - 產出：`waldorf-teaching.md`（300 字）
@@ -205,6 +237,34 @@ python3 setup/scripts/museum_resource_pipeline.py \
 **Agent E（圖像與來源）**：
 - 產出：`images.md`（至少 3 張圖 + URL + 授權，圖片描述用中文）+ `references.md`（所有來源）
 - references.md 分兩區：`## 教師延伸閱讀（中文）` + `## 學術參考（英文）`，中文區在前
+- **references.md 格式模板（嚴格遵守，不可偏離）**：
+
+```markdown
+---
+aliases:
+  - "AM0XX [標題] 參考資料"
+---
+
+# AM0XX 參考來源：[標題]
+
+## 教師延伸閱讀（中文）
+
+1. 來源名稱 — 條目標題 — https://url — 類型
+2. 來源名稱 — 條目標題 — https://url — 類型
+
+## 學術參考（英文）
+
+3. Source Name — Entry Title — https://url — 類型
+4. Source Name — Entry Title — https://url — 類型
+```
+
+- **references.md 格式規則**：
+  - 每一筆為單行，格式固定：`序號. 來源名稱 — 條目標題 — URL — 類型標籤`
+  - 類型標籤限用：`百科`、`學術`、`教學`、`官方`
+  - 禁止多行描述、禁止 `URL:` 前綴格式、禁止 `**粗體**` 標題、禁止 `[已驗證]` 標記、禁止 `適用：` 描述段落
+  - 不設「圖像來源」「原住民族文化對照來源」「紙本書籍」「需要進一步驗證的來源」等額外區塊——所有來源一律歸入中文或英文兩區
+  - 組裝腳本 `assemble-ancient-myths.js` 的 `parseReferences()` 以格式 A 解析，偏離格式會導致來源丟失
+
 - **圖像取材**：以故事內容與教學需求為主，找能幫孩子理解故事的圖。若 `museum-materials.yaml` 存在，從中挑選與課程相關的館藏圖（標注 `[Met Museum CC0]` 或 `[Europeana]`）作為備選之一，與 Wikimedia Commons 及 WebSearch 結果並列評估，取最合適的。不相關的館藏圖不納入。
 
 **主線程**：三者完成後，品質自檢 → `quality-report.md`

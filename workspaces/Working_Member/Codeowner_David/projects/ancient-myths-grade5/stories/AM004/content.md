@@ -1,9 +1,13 @@
 ---
 aliases:
   - "AM004 種姓制度與聖牛"
+id: AM004
+title: 種姓制度與聖牛
+block: block-1-india
+lesson: 4
+age_group: 10-11
+consciousness: 夢境意識（向內，人與神直接對話）
 ---
-
-# AM004 種姓制度與聖牛
 
 ## 故事本文
 
