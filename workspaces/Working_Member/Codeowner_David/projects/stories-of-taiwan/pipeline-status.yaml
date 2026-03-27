@@ -1,20 +1,20 @@
 # 臺灣的故事管線狀態追蹤
-story_id: A011
-title: 血脈的地圖——科學家如何找到南島語族的故鄉
+story_id: A012
+title: 飛魚的守護者——達悟族與蘭嶼的海洋智慧
 pipeline_version: 2.2.0
-started_at: 2026-03-26T10:30:00
-completed_at: 2026-03-26T11:30:00
+started_at: 2026-03-27T10:30:00
+completed_at: 2026-03-27T13:46:00
 mode: completed
 
 steps:
-  step_0_1: { status: PASS, note: "A011, 南島的孩子, 完成率最低子主題 (1/3 = 33%)" }
-  step_2:   { status: PASS, note: "raw-materials.md 8744 bytes, 12 sources, Format B" }
-  step_3:   { status: PASS, note: "content.md 8472b, narration.md 7931b, images.md 4188b, chalkboard-prompt.md 2519b" }
-  step_4:   { status: PASS, note: "Quality check PASSED, reviews/A011-quality.md (4 dimensions all PASS)" }
-  step_5:   { status: PASS, note: "Gemini 生成 AssemblyStory-A011-chalkboard.png (7.2MB) via Claude in Chrome" }
-  step_6:   { status: PASS, note: "HTML 生成, PDF 6頁, Drive upload OK (HTML+PDF)" }
-  step_7:   { status: PASS, note: "index.yaml total_stories: 11, drive_files 記錄完成" }
+  step_0_1: { status: PASS, note: "A012, 飛魚的守護者, 各族的土地故事 (3/6.5=46%), 最低完成率子主題" }
+  step_2:   { status: PASS, note: "raw-materials.md 7363 bytes, 12 sources with URLs" }
+  step_3:   { status: PASS, note: "content.md 7920b, narration.md 7933b, images.md 3492b, chalkboard-prompt.md 2064b" }
+  step_4:   { status: PASS, note: "Quality check PASSED, reviews/A012-quality.md, 4 dimensions all PASS" }
+  step_5:   { status: PASS, note: "Gemini 生成 AssemblyStory-A012-chalkboard.png (8.1MB) via Claude in Chrome" }
+  step_6:   { status: PASS, note: "HTML 11MB, PDF 9.9MB 6頁, Drive upload OK (HTML+PDF)" }
+  step_7:   { status: PASS, note: "index.yaml total_stories: 12, drive_files 記錄完成" }
 pending_actions: []
 drive_files:
-  html: 1Jvz7WaAx1eTonay3pQ0DDRURk6N9vvPT
-  pdf: 1kW5pMFPoajx_Oz5PSiCS8E4BR1t7Ji6g
+  html: 1y0pJEXonmmbIzLD31ztVP4PkaC7u8pb4
+  pdf: 1QecIw5pLtV7Og0HOVREvZikDdIfjxM2W

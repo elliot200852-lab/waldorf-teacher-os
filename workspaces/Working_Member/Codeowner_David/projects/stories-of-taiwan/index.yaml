@@ -3,8 +3,8 @@
 # 由 story-archive skill 自動維護
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-last_updated: 2026-03-26
-total_stories: 11
+last_updated: 2026-03-27
+total_stories: 12
 
 stories:
   - id: A001
@@ -200,6 +200,26 @@ stories:
       html: 1Jvz7WaAx1eTonay3pQ0DDRURk6N9vvPT
       pdf: 1kW5pMFPoajx_Oz5PSiCS8E4BR1t7Ji6g
     tags: [南島語族, 語言學, 出臺灣說, 布拉斯特, 大坌坑文化, 構樹, DNA, 毛利人, 夏威夷, 馬達加斯加, lima, Hawaiki, 南島的孩子]
+
+  - id: A012
+    title: 飛魚的守護者——達悟族與蘭嶼的海洋智慧
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今（約 2,000 年前至今日）
+    location: 臺東縣蘭嶼鄉（Ponso no Tao，人之島）
+    date_created: 2026-03-27
+    files:
+      content: stories/A-origins/A012/content.md
+      narration: stories/A-origins/A012/narration.md
+      images: stories/A-origins/A012/images.md
+      raw_materials: stories/A-origins/A012/raw-materials.md
+    sources: [wikipedia, ihc_cip, pansci, matataiwan, openmuseum, nchdb_boch, zazawanzine, fae_moa, cip_apc]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1y0pJEXonmmbIzLD31ztVP4PkaC7u8pb4
+      pdf: 1QecIw5pLtV7Og0HOVREvZikDdIfjxM2W
+    tags: [達悟族, 雅美族, 蘭嶼, 拼板舟, 飛魚祭, 飛魚, 地下屋, 招魚祭, 黑翅傳說, 南島語族, 海洋文化, 各族的土地故事]
 
 # 索引結構說明：
 # stories:

@@ -8,7 +8,7 @@ stories_of_taiwan:
   project_type: 獨立工作線（第三條線）
   target_grades: [5, 6, 7, 8, 9]
   current_focus: 五年級臺灣史地
-  last_updated: 2026-03-26
+  last_updated: 2026-03-27
 
   current_position:
     phase: 試跑期
@@ -50,9 +50,9 @@ stories_of_taiwan:
       note: "開放博物館，搜尋連結產生"
 
   story_count:
-    total: 11
+    total: 12
     by_block:
-      A-origins: 11
+      A-origins: 12
       B-encounter: 0
       C-dutch-spanish: 0
       D-koxinga: 0
