@@ -70,7 +70,7 @@ CATEGORIES = {
 
 DB_DIR = Path.home() / ".cache" / "teacheros"
 DB_PATH = DB_DIR / "tcmb-local.db"
-PAGE_SIZE = 100
+API_PAGE_SIZE = 20   # API 固定每頁 20 筆，無法調整
 REQUEST_DELAY = 0.3  # 秒，避免過度請求
 
 
@@ -134,37 +134,53 @@ def strip_html(text: str) -> str:
 # ─────────────────────────────────────────────
 
 def download_category(session: requests.Session, subject_code: str) -> list[dict]:
-    """下載單一分類的全部資料（分頁）"""
+    """下載單一分類的全部資料（使用 page 參數分頁，每頁固定 20 筆）"""
     all_rows = []
-    offset = 0
+    seen_ids = set()  # 去重：API 偶有重複
 
     # 先查 total
-    resp = session.get(BASE_URL, params={"subject": subject_code, "limit": 1, "offset": 0}, timeout=30)
+    resp = session.get(BASE_URL, params={"subject": subject_code, "page": 1}, timeout=30)
     resp.raise_for_status()
-    total = resp.json().get("total", 0)
+    first_data = resp.json()
+    total = first_data.get("total", 0)
 
     if total == 0:
         logger.info(f"  {CATEGORIES.get(subject_code, subject_code)}：0 筆，跳過")
         return []
 
-    logger.info(f"  {CATEGORIES.get(subject_code, subject_code)}：共 {total:,} 筆，開始下載...")
+    total_pages = (total + API_PAGE_SIZE - 1) // API_PAGE_SIZE
+    logger.info(f"  {CATEGORIES.get(subject_code, subject_code)}：共 {total:,} 筆（{total_pages} 頁），開始下載...")
 
-    while offset < total:
-        params = {"subject": subject_code, "limit": PAGE_SIZE, "offset": offset}
+    # 處理第一頁
+    for row in first_data.get("rows", []):
+        rid = row.get("id")
+        if rid not in seen_ids:
+            seen_ids.add(rid)
+            all_rows.append(row)
+
+    page = 2
+    while page <= total_pages:
+        params = {"subject": subject_code, "page": page}
         resp = session.get(BASE_URL, params=params, timeout=30)
         resp.raise_for_status()
         data = resp.json()
         rows = data.get("rows", [])
         if not rows:
             break
-        all_rows.extend(rows)
-        offset += len(rows)
+
+        for row in rows:
+            rid = row.get("id")
+            if rid not in seen_ids:
+                seen_ids.add(rid)
+                all_rows.append(row)
 
         # 進度條
-        pct = min(100, offset * 100 // total)
-        sys.stdout.write(f"\r    進度：{offset:,}/{total:,} ({pct}%)")
+        fetched = len(all_rows)
+        pct = min(100, fetched * 100 // total)
+        sys.stdout.write(f"\r    進度：{fetched:,}/{total:,} ({pct}%) [頁 {page}/{total_pages}]")
         sys.stdout.flush()
 
+        page += 1
         time.sleep(REQUEST_DELAY)
 
     sys.stdout.write("\n")
@@ -200,27 +216,81 @@ def insert_rows(conn: sqlite3.Connection, rows: list[dict], category: str):
     conn.commit()
 
 
-def rebuild_fts(conn: sqlite3.Connection):
-    """重建 FTS5 索引"""
-    logger.info("重建全文索引...")
-    conn.execute("DELETE FROM tcmb_fts;")
+def rebuild_fts(db_path: Path):
+    """重建 FTS5 索引（關閉舊連線 → VACUUM → 全新連線建 FTS）"""
+    logger.info("關閉寫入連線，準備重建索引...")
+
+    # Step 1: 用全新連線做 VACUUM（將 WAL 合併回主檔）
+    conn = sqlite3.connect(str(db_path))
+    item_count = conn.execute("SELECT COUNT(*) FROM tcmb_items").fetchone()[0]
+    logger.info(f"資料表 tcmb_items：{item_count:,} 筆")
+
+    logger.info("執行 VACUUM（合併 WAL，重整資料庫）...")
+    conn.execute("VACUUM;")
+    conn.close()
+
+    # Step 2: VACUUM 後重開，integrity check
+    conn = sqlite3.connect(str(db_path))
+    result = conn.execute("PRAGMA integrity_check;").fetchone()
+    if result[0] != "ok":
+        logger.error(f"VACUUM 後仍有完整性問題：{result[0]}")
+        conn.close()
+        return
+    logger.info("資料庫完整性：ok")
+
+    # Step 3: 刪掉舊 FTS 表，從乾淨狀態建立
+    conn.execute("DROP TABLE IF EXISTS tcmb_fts;")
+    conn.execute("""
+        CREATE VIRTUAL TABLE tcmb_fts USING fts5(
+            title, description, keywords,
+            content='tcmb_items',
+            content_rowid='id'
+        );
+    """)
+
+    logger.info("寫入全文索引...")
     conn.execute("""
         INSERT INTO tcmb_fts(rowid, title, description, keywords)
         SELECT id, title, description, keywords FROM tcmb_items;
     """)
     conn.commit()
-    logger.info("全文索引建立完成。")
+
+    fts_count = conn.execute("SELECT COUNT(*) FROM tcmb_fts").fetchone()[0]
+    logger.info(f"全文索引建立完成：{fts_count:,} 筆。")
+    conn.close()
 
 
 # ─────────────────────────────────────────────
 # CLI 指令
 # ─────────────────────────────────────────────
 
+def _open_db() -> sqlite3.Connection:
+    """開啟 DB 連線（含 WAL mode 設定）"""
+    conn = sqlite3.connect(str(DB_PATH))
+    conn.execute("PRAGMA journal_mode=WAL;")
+    conn.execute("PRAGMA synchronous=NORMAL;")
+    return conn
+
+
 def cmd_build(args):
     """下載指定分類並建立索引"""
     DB_DIR.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(str(DB_PATH))
+
+    # --build 時刪除舊 DB，從乾淨狀態開始（避免累積 corruption）
+    if DB_PATH.exists():
+        logger.info(f"刪除舊索引：{DB_PATH}")
+        DB_PATH.unlink()
+        # 同時清理 WAL/SHM 殘留
+        for suffix in ("-wal", "-shm"):
+            p = DB_PATH.parent / (DB_PATH.name + suffix)
+            if p.exists():
+                p.unlink()
+
+    # 初始化 schema
+    conn = _open_db()
     init_db(conn)
+    conn.close()
+
     session = requests.Session()
     session.mount("https://tcmbdata.culture.tw", _TcmbSSLAdapter())
     session.headers["User-Agent"] = "TeacherOS-TCMB-Downloader/1.0"
@@ -245,6 +315,8 @@ def cmd_build(args):
         start = time.time()
         rows = download_category(session, code)
         if rows:
+            # 每個分類用獨立連線寫入，避免長時間單一連線導致 corruption
+            conn = _open_db()
             insert_rows(conn, rows, code)
             duration = time.time() - start
             conn.execute("""
@@ -252,14 +324,25 @@ def cmd_build(args):
                 VALUES (?, ?, ?, ?)
             """, (code, len(rows), datetime.now().isoformat(), duration))
             conn.commit()
+            conn.close()
             total_records += len(rows)
+            logger.info(f"  已寫入 {len(rows):,} 筆，連線已關閉")
 
-    rebuild_fts(conn)
+    # 驗證寫入結果
+    conn = _open_db()
+    actual = conn.execute("SELECT COUNT(*) FROM tcmb_items").fetchone()[0]
+    conn.close()
+    logger.info(f"\n下載完成，tcmb_items 實際筆數：{actual:,}")
+
+    if actual < total_records * 0.9:
+        logger.error(f"預期 {total_records:,} 筆但只有 {actual:,} 筆，資料可能損壞")
+        return
+
+    rebuild_fts(DB_PATH)
 
     total_duration = time.time() - total_start
-    logger.info(f"\n完成！共 {total_records:,} 筆，耗時 {total_duration:.0f} 秒")
+    logger.info(f"\n完成！共 {actual:,} 筆，耗時 {total_duration:.0f} 秒")
     logger.info(f"資料庫位置：{DB_PATH}")
-    conn.close()
 
 
 def cmd_update(args):
@@ -321,6 +404,14 @@ def cmd_status(args):
     logger.info(f"\nFTS5 索引：{fts_count:,} 筆")
 
     conn.close()
+
+
+def cmd_rebuild_fts(args):
+    """單獨重建 FTS 索引（不重新下載）"""
+    if not DB_PATH.exists():
+        logger.error(f"資料庫不存在：{DB_PATH}")
+        return
+    rebuild_fts(DB_PATH)
 
 
 def cmd_search(args):
@@ -392,6 +483,7 @@ def main():
     group.add_argument("--update", action="store_true", help="更新已下載的分類")
     group.add_argument("--status", action="store_true", help="顯示索引狀態")
     group.add_argument("--search", metavar="QUERY", help="本地全文搜尋")
+    group.add_argument("--rebuild-fts", action="store_true", help="單獨重建 FTS 索引（不重新下載）")
 
     parser.add_argument("--all", action="store_true", help="下載全部九大分類")
     parser.add_argument("--subjects", nargs="+", choices=list(CATEGORIES.keys()),
@@ -406,6 +498,8 @@ def main():
         cmd_update(args)
     elif args.status:
         cmd_status(args)
+    elif args.rebuild_fts:
+        cmd_rebuild_fts(args)
     elif args.search:
         args.query = args.search
         cmd_search(args)
