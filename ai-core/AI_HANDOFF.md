@@ -125,6 +125,7 @@ aliases:
 | 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
 | 「古文明神話故事」「每日古文明」「寫一篇古文明」「ancient myths daily」 | `ai-core/skills/ancient-myths-daily.md` |
+| 「查文化記憶庫」「TCMB」「找臺灣素材」「搜臺灣文化」「查臺灣歷史」「查臺灣圖片」 | `ai-core/skills/tcmb-search.md` |
 
 **語音模式注意：** 教師以語音輸入為主，措辭不精確。任何接近以上觸發語的表達（包含口語省略、方言轉換）都應觸發對應技能，不等待精確指令。
 
@@ -184,6 +185,7 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 | english | `ai-core/reference/subject-english.yaml` | 英文課深度設計、施泰納語言哲學完整論述 |
 | history | `ai-core/reference/subject-history.yaml` | 歷史課深度設計、台灣主體史觀完整論述 |
 | student | `ai-core/reference/student-development.yaml` | 班級經營深度分析、個案討論、修復式正義完整框架 |
+| **tcmb** | `ai-core/reference/tcmb-local-index.yaml` | **任何涉及臺灣歷史、文化、地方、族群、原住民、走讀、文學的工作。** AI 應主動查詢本地 TCMB 索引（53,000+ 筆臺史博素材，含圖像 URL 與授權），查詢指令見 reference 檔。不需網路、不消耗 API 額度。 |
 
 ---
 

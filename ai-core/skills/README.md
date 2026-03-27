@@ -44,6 +44,7 @@ aliases:
 | `obsidian-sync.md` | Obsidian 標籤與索引自動修正 | 「sync Obsidian」「更新索引」「補標籤」 |
 | `video-setup.md` | 建立 Remotion 影片專案環境 | 「建立影片專案」「設定 Remotion」「video setup」 |
 | `sync-agents.md` | 多 AI agent 系統一致性檢查 | 「同步檢查」「sync agents」「系統一致性」 |
+| `tcmb-search.md` | 國家文化記憶庫本地索引搜尋（53,000+ 筆臺灣素材） | 「查文化記憶庫」「TCMB」「找臺灣素材」「查臺灣歷史」 |
 
 ---
 

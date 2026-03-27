@@ -1,0 +1,96 @@
+# ──────────────────────────────────────────────────────────
+# 國家文化記憶庫（TCMB）本地索引 — AI 查詢指引
+# ──────────────────────────────────────────────────────────
+#
+# 本索引包含臺史博營運的國家文化記憶庫 2.0 全部 53,000+ 筆素材 metadata，
+# 涵蓋九大分類。資料來源為 TCMB Open Dataset API（免費公開端點）。
+# 索引以 SQLite FTS5 全文搜尋建立，查詢不需網路、不消耗 API 額度。
+#
+# 建立日期：2026-03-27
+# 授權：政府資料開放授權條款第1版（免費）
+
+index:
+  db_path: "~/.cache/teacheros/tcmb-local.db"
+  total_records: 53368
+  categories:
+    - code: ART_AND_HUMANITY
+      name: 藝術與人文
+      records: 7771
+    - code: CULTURE_AND_RELIGION
+      name: 民俗與宗教
+      records: 7840
+    - code: BIOGRAPHY_AND_ECOLOGY_AND_ENVIRONMENT
+      name: 生物、生態與環境
+      records: 3133
+    - code: ETHNIC_AND_LANGUAGE
+      name: 族群與語言
+      records: 2248
+    - code: SOCIAL_AND_POLITIC
+      name: 社會與政治
+      records: 9409
+    - code: PEOPLE_AND_GROUP
+      name: 人物與團體
+      records: 4160
+    - code: SPACE_AND_GEOGRAPHY
+      name: 空間、地域與遷徙
+      records: 8239
+    - code: INDUSTRY_AND_ECONOMIC
+      name: 產業與經濟
+      records: 6444
+    - code: OTHER
+      name: 其他
+      records: 4124
+
+# ──────────────────────────────────────────────────────────
+# AI 自動查詢規則
+# ──────────────────────────────────────────────────────────
+
+auto_query:
+  description: >
+    當對話涉及以下任何主題時，AI 應主動查詢 TCMB 本地索引，
+    提供真實的文化素材（圖像、文物、地方記錄）作為參考。
+    不需教師明確要求。
+
+  trigger_topics:
+    - 臺灣歷史（任何時期：史前、荷西、鄭氏、清領、日治、戰後、民主化）
+    - 臺灣原住民族（16 族及其文化、語言、儀式、傳說）
+    - 臺灣地方文化（廟宇、祭典、地方志、老街、聚落）
+    - 臺灣文學（作家、文學運動、時代背景）
+    - 臺灣自然生態（特有種、保育、環境變遷）
+    - 走讀臺灣（任何地點的歷史文化脈絡）
+    - 臺灣的故事（daily story pipeline）
+    - 古文明神話 TW 系列（布農、泰雅、排灣、達悟）
+    - 備課涉及臺灣元素的任何科目
+
+  how_to_query:
+    method_1_cli: |
+      cd workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
+      python3 tcmb_downloader.py --search "關鍵字"
+    method_2_api: |
+      cd workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
+      python3 taiwan_history_api.py "關鍵字" --sources tcmb --format markdown
+    method_3_direct_sql: |
+      sqlite3 ~/.cache/teacheros/tcmb-local.db \
+        "SELECT title, description, tcmb_url FROM tcmb_fts WHERE tcmb_fts MATCH '關鍵字' LIMIT 10;"
+
+  result_fields:
+    - title: 素材標題
+    - description: 內容描述
+    - tcmb_url: 國家文化記憶庫原始頁面連結
+    - images: 圖片 URL 清單（CC 授權）
+    - image_license: 圖像授權方式（OGDL/CC-BY/CC-BY-SA 等）
+    - keywords: 關鍵字標籤
+    - category: 所屬分類
+
+# ──────────────────────────────────────────────────────────
+# 維護
+# ──────────────────────────────────────────────────────────
+
+maintenance:
+  update_command: |
+    cd workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
+    python3 tcmb_downloader.py --update
+  status_command: |
+    cd workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
+    python3 tcmb_downloader.py --status
+  update_frequency: "建議每月執行一次 --update"

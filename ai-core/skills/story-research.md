@@ -35,9 +35,10 @@ David（管理員）。
 ## 讀取的檔案
 
 1. `{workspace}/projects/stories-of-taiwan/current-task.yaml` — 今日選題
-2. `{workspace}/projects/stories-of-taiwan/taiwan_history_api.py` — 搜尋引擎
-3. `{workspace}/projects/stories-of-taiwan/project.yaml` — 資料源狀態（API Key 等）
+2. `{workspace}/projects/stories-of-taiwan/taiwan_history_api.py` — 搜尋引擎（自動優先查詢 TCMB 本地索引）
+3. `{workspace}/projects/stories-of-taiwan/project.yaml` — 資料源狀態
 4. `ai-core/reference/corpus-taic.yaml` — 台灣主權語料庫（TAIC）查詢指引
+5. `ai-core/reference/tcmb-local-index.yaml` — TCMB 本地索引查詢指引（53,000+ 筆，免網路）
 
 ## 入口驗證（由 story-daily pipeline 強制執行）
 
@@ -69,10 +70,11 @@ pip install requests --break-system-packages
 
 ### Step 1 — API 自動搜尋
 
-從 current-task.yaml 讀取 search_keywords 和 data_sources_priority，逐一搜尋：
+從 current-task.yaml 讀取 search_keywords 和 data_sources_priority，逐一搜尋。
+**TCMB 本地優先：** taiwan_history_api.py 在指定 `--sources tcmb` 時會自動先查本地 SQLite 索引（`~/.cache/teacheros/tcmb-local.db`），有結果即不打 live API。若本地索引不存在，先執行 `python3 tcmb_downloader.py --build --all`。
 
 ```bash
-# macOS / Linux — 範例
+# macOS / Linux — 範例（TCMB API Key 已自動從 environment.env 讀取，不需手傳）
 cd "{workspace}/projects/stories-of-taiwan"
 python3 taiwan_history_api.py "搜尋關鍵字" --sources tcmb boch tm --format markdown --output /tmp/raw-materials.md
 ```

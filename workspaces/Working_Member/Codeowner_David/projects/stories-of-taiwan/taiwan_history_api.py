@@ -35,6 +35,8 @@ License: MIT
 
 import json
 import logging
+import os
+import sqlite3
 import time
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
@@ -102,6 +104,15 @@ class TCMBAdapter:
     SOURCE = "tcmb"
 
     def __init__(self, api_key: str = ""):
+        if not api_key:
+            api_key = os.environ.get("TCMB_API_KEY", "")
+        if not api_key:
+            env_file = Path(__file__).resolve().parents[4] / "setup" / "environment.env"
+            if env_file.exists():
+                for line in env_file.read_text(encoding="utf-8").splitlines():
+                    if line.startswith("TCMB_API_KEY="):
+                        api_key = line.split("=", 1)[1].strip()
+                        break
         self.api_key = api_key
         self.session = requests.Session()
         if api_key:
@@ -399,6 +410,56 @@ class TAICAdapter:
 
 
 # ─────────────────────────────────────────────
+# TCMB 本地索引搜尋
+# ─────────────────────────────────────────────
+
+class LocalIndexAdapter:
+    """
+    查詢 tcmb_downloader.py 建立的本地 SQLite FTS5 索引。
+    不需網路、不消耗 API 額度。
+    """
+    SOURCE = "tcmb-local"
+    DB_PATH = Path.home() / ".cache" / "teacheros" / "tcmb-local.db"
+
+    def available(self) -> bool:
+        return self.DB_PATH.exists()
+
+    def search(self, keyword: str, limit: int = 20) -> list:
+        if not self.available():
+            return []
+        try:
+            conn = sqlite3.connect(str(self.DB_PATH))
+            cursor = conn.execute("""
+                SELECT i.id, i.title, i.description, i.tcmb_url,
+                       i.image_license, i.images, i.category, i.keywords
+                FROM tcmb_fts f
+                JOIN tcmb_items i ON f.rowid = i.id
+                WHERE tcmb_fts MATCH ?
+                ORDER BY rank
+                LIMIT ?
+            """, (keyword, limit))
+            items = []
+            for row_id, title, desc, url, img_lic, images_json, cat, kw_json in cursor.fetchall():
+                images = json.loads(images_json) if images_json else []
+                image_url = images[0] if images else ""
+                items.append(HistoryItem(
+                    source=self.SOURCE,
+                    title=title,
+                    description=desc[:300] if desc else "",
+                    url=url or "",
+                    category=cat or "",
+                    license=img_lic or "",
+                    image_url=image_url,
+                    raw={"id": row_id, "keywords": json.loads(kw_json) if kw_json else []},
+                ))
+            conn.close()
+            return items
+        except Exception as e:
+            logger.error(f"本地索引搜尋失敗: {e}")
+            return []
+
+
+# ─────────────────────────────────────────────
 # 統一 API 入口
 # ─────────────────────────────────────────────
 
@@ -408,6 +469,7 @@ class TaiwanHistoryAPI:
     ALL_SOURCES = ["tcmb", "archives", "nhrm", "tm", "datagov", "boch", "openmuseum", "taic"]
 
     def __init__(self, tcmb_api_key: str = ""):
+        self._local_index = LocalIndexAdapter()
         self.adapters = {
             "tcmb": TCMBAdapter(api_key=tcmb_api_key),
             "archives": ArchivesAdapter(),
@@ -427,7 +489,19 @@ class TaiwanHistoryAPI:
     ) -> list[HistoryItem]:
         sources = sources or self.ALL_SOURCES
         all_items = []
+
+        # 優先查詢 TCMB 本地索引（不消耗 API 額度）
+        tcmb_from_local = False
+        if "tcmb" in sources and self._local_index.available():
+            local_results = self._local_index.search(keyword)
+            if local_results:
+                all_items.extend(local_results)
+                tcmb_from_local = True
+                logger.info(f"[tcmb-local] 本地索引找到 {len(local_results)} 筆「{keyword}」")
+
         for src in sources:
+            if src == "tcmb" and tcmb_from_local:
+                continue  # 已從本地索引取得，跳過 live API
             adapter = self.adapters.get(src)
             if not adapter:
                 logger.warning(f"未知來源: {src}")
@@ -479,6 +553,7 @@ class TaiwanHistoryAPI:
         for item in items:
             by_source.setdefault(item.source, []).append(item)
         source_names = {
+            "tcmb-local": "國家文化記憶庫（本地索引）",
             "tcmb": "國家文化記憶庫", "archives": "國家檔案",
             "nhrm": "國家人權博物館", "tm": "臺灣記憶",
             "datagov": "政府開放資料", "boch": "文化資產",

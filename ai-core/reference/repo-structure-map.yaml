@@ -436,6 +436,7 @@ tracked_directories:
   - ".claude/skills/story-verify"
   - ".claude/skills/story-writer"
   - ".claude/skills/subject-lesson-45"
+  - ".claude/skills/tcmb-search"
   - ".claude/skills/teach-animation"
   - ".claude/skills/video"
   - ".claude/skills/wrap-up"
