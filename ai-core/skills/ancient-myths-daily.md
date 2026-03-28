@@ -286,7 +286,8 @@ aliases:
 
 **4.2** 組合完整 prompt：第一行 `請你生成一張圖片`，空一行，接英文 prompt 全文
 
-**4.3** 使用 `mcp__Claude_in_Chrome__tabs_context_mcp` 取得 tab，再 `navigate` 到 `https://gemini.google.com`
+**4.3** 使用 `mcp__Claude_in_Chrome__tabs_context_mcp` 取得 tab（`createIfEmpty: true`），再 `navigate` 到 `https://gemini.google.com`。
+**注意：排程模式下 Gemini 通常已由使用者預先開好（在一般的 Chrome 視窗中），Claude in Chrome 的 tab group 是獨立的，需重新 navigate 進入 Gemini。**
 
 **4.4** 確認 Pro 模式：用 `find` 查找模型選擇器，確認顯示 "Pro"
 
@@ -309,7 +310,10 @@ editor.dispatchEvent(new InputEvent('input', { inputType: 'insertFromPaste', dat
 
 **4.8** 用 `javascript_tool` 點擊送出按鈕（搜尋 aria-label 含「傳送」或 type="submit" 的按鈕）
 
-**4.9** 等待圖片生成：每 10 秒用 `get_page_text` 檢查是否出現圖片相關文字，最多等 60 秒
+**4.9** 等待圖片生成：每 10 秒執行一次以下兩個動作：
+1. `javascript_tool`：`window.scrollTo(0, document.body.scrollHeight)` — **必須往下捲動**，確認生成進度（Gemini 的圖片在頁面底部生成，不捲動無法確認）
+2. 用 `get_page_text` 或 `javascript_tool` 檢查是否仍顯示 "Creating your image..." 或 "正在建立"
+最多等 60 秒（6 次）。每次都要捲動，不能只在原位盲等。
 
 **4.10** 圖片出現後 → 用 `find` 定位下載按鈕（aria-label 含「下載」）→ 用 `javascript_tool` 點擊 → 等 3 秒
 

@@ -86,6 +86,27 @@ stories:
       pdf: "1Gd50NLQ34xSZr1J5wiIqBsQ458vddv91"
     tags: [摩訶婆羅多, Mahabharata, 般度五子, Pandava, 阿周那, Arjuna, 克里希納, Krishna, 薄伽梵歌, Bhagavad Gita, 俱盧之野, Kurukshetra, 古印度, 夢境意識, 達磨, dharma]
 
+  - id: AM006
+    title: 羅摩與悉多
+    block: block-1-india
+    story_ref: "Story 6"
+    mythology_topic: "羅摩衍那（Ramayana）——羅摩流放森林、悉多遭魔王拉瓦納劫走、猴神哈奴曼越海尋人、楞伽之戰、排燈節的起源"
+    date_created: 2026-03-28
+    files:
+      content: stories/AM006/content.md
+      waldorf_teaching: stories/AM006/waldorf-teaching.md
+      chalkboard_prompt: stories/AM006/chalkboard-prompt.md
+      images: stories/AM006/images.md
+      references: stories/AM006/references.md
+      raw_materials: stories/AM006/raw-materials.md
+      quality_report: stories/AM006/quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "13DfE6Y6EcZhLaYnTCdsBs1vQNz6GuKy1"
+      pdf: "1TIpWjLr0E6Db9rauAfuktQOgju9XGreE"
+    tags: [羅摩衍那, Ramayana, 羅摩, Rama, 悉多, Sita, 哈奴曼, Hanuman, 拉瓦納, Ravana, 排燈節, Diwali, dharma, 古印度, 夢境意識, 忠誠, 奉獻]
+
   - id: AM002
     title: 創世與最初的人類（二）
     block: block-1-india

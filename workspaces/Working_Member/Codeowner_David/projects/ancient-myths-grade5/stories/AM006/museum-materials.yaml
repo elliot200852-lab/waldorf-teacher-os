@@ -1,0 +1,78 @@
+query: Rama Ramayana
+api_source: met
+grade: 9
+timestamp: 20260328-170120
+total_results: 5
+items:
+- id: met_38945
+  title: Hanuman Conversing
+  title_zh: ''
+  artist: ''
+  date: 11th century
+  period: Asian Art
+  medium: Copper alloy
+  image_url: https://images.metmuseum.org/CRDImages/as/original/DT5250.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/as/web-large/DT5250.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/38945
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_454344
+  title: '"Rama Receives Sugriva and Jambavat, the Monkey and Bear Kings", Folio from
+    a Ramayana'
+  title_zh: ''
+  artist: ''
+  date: ca. 1605
+  period: Islamic Art
+  medium: Ink, opaque watercolor, and gold on paper
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DP103079.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DP103079.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/454344
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_454359
+  title: '"The Death of King Dasharatha, the Father of Rama", Folio from a Ramayana'
+  title_zh: ''
+  artist: ''
+  date: ca. 1605
+  period: Islamic Art
+  medium: Opaque watercolor and gold on paper
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DP107193.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DP107193.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/454359
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_454357
+  title: '"The Awakening of Kumbhakarna in the Golden City of Lanka", Folio from a
+    Ramayana'
+  title_zh: ''
+  artist: ''
+  date: ca. 1605
+  period: Islamic Art
+  medium: Opaque watercolor and gold on paper
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DP107191.JPG
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DP107191.JPG
+  source_url: https://www.metmuseum.org/art/collection/search/454357
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_454358
+  title: '"The Court of Ravana", Folio from a Ramayana'
+  title_zh: ''
+  artist: ''
+  date: ca. 1605
+  period: Islamic Art
+  medium: Opaque watercolor and gold on paper
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DP107192.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DP107192.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/454358
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
