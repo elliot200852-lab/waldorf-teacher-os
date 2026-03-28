@@ -212,11 +212,19 @@ AM005 在 block-1-india 中承擔的教學主題是：**不公義真實存在，
 
 ### 延伸查核
 
-8. **Wikipedia — Mahabharata（英文）**
+8. **Wikipedia — Pandava**
+   URL: https://en.wikipedia.org/wiki/Pandava
+   [英] 般度五兄弟條目，含各兄弟的神聖父系、史詩角色與流亡敘事
+
+9. **Wikipedia — Shakuni**
+   URL: https://en.wikipedia.org/wiki/Shakuni
+   [英] 沙恭尼條目，確認其為難敵舅舅、以魔法骰子設局的史詩情節
+
+10. **Wikipedia — Mahabharata（英文）**
    URL: https://en.wikipedia.org/wiki/Mahabharata
 
-9. **Wikipedia — Pandava（英文）**
-   URL: https://en.wikipedia.org/wiki/Pandava
+10. **Wikipedia — Pandava（英文）**
+    URL: https://en.wikipedia.org/wiki/Pandava
 
 10. **Wikipedia — Krishna（英文）**
     URL: https://en.wikipedia.org/wiki/Krishna

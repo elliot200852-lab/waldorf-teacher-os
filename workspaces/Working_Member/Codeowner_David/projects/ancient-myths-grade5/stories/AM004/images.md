@@ -7,9 +7,10 @@ aliases:
 
 ---
 
-## 圖 1：普魯沙宇宙形——維施努千頭萬臂圖（約 1800–1820 年）
+### 圖 1：普魯沙宇宙形——維施努千頭萬臂圖（約 1800–1820 年）
 
 - **URL**：https://collections.vam.ac.uk/item/O154643/vishnu-as-vishvarupa-cosmic-or-painting-unknown/
+- 連結：https://collections.vam.ac.uk/item/O154643/vishnu-as-vishvarupa-cosmic-or-painting-unknown/
 - **授權**：博物館館藏，非商業教育使用（V&A Museum，倫敦）
 - **來源**：Victoria and Albert Museum，倫敦，館藏編號 IS.33-2006
 - **圖片直連（縮圖）**：https://collections.vam.ac.uk/item/O154643/ （需從 V&A Collections 頁面下載，768px 以下非商業免費使用）
@@ -18,9 +19,10 @@ aliases:
 
 ---
 
-## 圖 2：卡瑪達努——許願神牛（約 1825–1855 年，拉賈斯坦邦）
+### 圖 2：卡瑪達努——許願神牛（約 1825–1855 年，拉賈斯坦邦）
 
 - **URL**：https://philamuseum.org/collection/object/88274
+- 連結：https://philamuseum.org/collection/object/88274
 - **圖片直連**：https://cdn.sanity.io/images/r7hgx2l2/production/1994-148-401-pma.jpg
 - **授權**：Public Domain（費城藝術博物館館藏，教育用途共享）
 - **來源**：Philadelphia Museum of Art，館藏編號 1994-148-401
@@ -29,9 +31,10 @@ aliases:
 
 ---
 
-## 圖 3：卡瑪達努含眾神（20 世紀初集市版畫）
+### 圖 3：卡瑪達努含眾神（20 世紀初集市版畫）
 
 - **URL**：https://commons.wikimedia.org/wiki/Category:Kamadhenu
+- 連結：https://commons.wikimedia.org/wiki/Category:Kamadhenu
 - **授權**：Public Domain（Wikimedia Commons，印度傳統集市印刷品）
 - **來源**：Wikimedia Commons，分類 Category:Kamadhenu，檔名 "View of the kamadhenu cow containing all the deities (mid-1900's bazaar art).jpg"
 - **用途說明**：適合搭配圖 2 一起使用，展示「聖牛身體內藏眾神」的圖像傳統，幫助孩子理解為何印度教視牛為神聖——因為牛的身體象徵性地涵納了整個神聖宇宙，如同普魯沙的身體涵納了整個社會秩序。
@@ -39,9 +42,10 @@ aliases:
 
 ---
 
-## 圖 4：印度各種姓人物圖像——《印度七十二種姓圖集》（1837 年）
+### 圖 4：印度各種姓人物圖像——《印度七十二種姓圖集》（1837 年）
 
 - **URL**：https://commons.wikimedia.org/wiki/File:Seventy-two_Specimens_of_Castes_in_India.pdf
+- 連結：https://commons.wikimedia.org/wiki/File:Seventy-two_Specimens_of_Castes_in_India.pdf
 - **分類頁面**：https://commons.wikimedia.org/wiki/Category:Seventy-two_Specimens_of_Castes_in_India
 - **授權**：Public Domain（1837 年作品，著作財產權已消滅）
 - **來源**：Wikimedia Commons，原件現藏美國國會圖書館（Library of Congress）及耶魯大學拜內克稀有圖書館（Beinecke Library）

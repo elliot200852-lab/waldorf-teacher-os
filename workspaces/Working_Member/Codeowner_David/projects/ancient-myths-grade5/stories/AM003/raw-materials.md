@@ -157,17 +157,49 @@ aliases:
 
 ## 資料來源
 
-1. 中國社科院民族文學研究所 — 古印度摩奴洪水神話探析（劉潋） — http://iel.cass.cn/ztpd/shyj/wgsh/201709/t20170901_3626944.shtml — 可信度：高
-2. EYE SEE News — 原住民神話故事：布農族大洪水傳說 — https://eyeseenews.com/special-column/404-原住民-神話-布農族-洪水 — 可信度：中
-3. 原視界 Indigenous Sight — 洪水過後 美麗島嶼滅世重生 — https://insight.ipcf.org.tw/article/24 — 可信度：高
-4. 大紀元 — 台灣原住民大洪水的傳說 — https://www.epochtimes.com/b5/21/2/12/n12750019.htm — 可信度：中
-5. 維基百科（繁體中文）— 摩奴 — https://zh.wikipedia.org/zh-hans/%E6%91%A9%E5%A5%B4 — 可信度：中
-6. Wikipedia — Matsya — https://en.wikipedia.org/wiki/Matsya — 可信度：高
-7. EBSCO Research Starters — Matsya and the Great Flood — https://www.ebsco.com/research-starters/religion-and-philosophy/matsya-and-great-flood — 可信度：高
-8. Britannica — Manu, Hinduism, Vedas, Flood Myth — https://www.britannica.com/topic/Manu — 可信度：高
-9. Skipping Stones — Manu and Noah: Strikingly Different, Surprisingly Similar — https://www.skippingstones.org/wp/2024/03/11/manu-and-noah-strikingly-different-surprisingly-similar/ — 可信度：中
-10. Ancient Origins — Hindu Flood Legend of Manu and Biblical Noah — https://www.ancient-origins.net/human-origins-religions/startling-similarity-between-hindu-flood-legend-manu-and-biblical-020318 — 可信度：中
-11. Sacred Texts Archive — Shatapatha Brahmana 1.8.1 — https://sacred-texts.com/hin/sbr/sbe12/sbe1234.htm — 可信度：高
+1. **中國社科院民族文學研究所 — 古印度摩奴洪水神話探析**
+   URL: http://iel.cass.cn/ztpd/shyj/wgsh/201709/t20170901_3626944.shtml
+   [中] 學術論文（劉潋），探析古印度摩奴洪水神話的文獻演變與敘事結構，可信度高
+
+2. **EYE SEE News — 原住民神話故事：布農族大洪水傳說**
+   URL: https://eyeseenews.com/special-column/404-原住民-神話-布農族-洪水
+   [中] 台灣媒體整理的布農族大洪水傳說，含故事情節與文化意義說明
+
+3. **原視界 Indigenous Sight — 洪水過後 美麗島嶼滅世重生**
+   URL: https://insight.ipcf.org.tw/article/24
+   [中] 台灣原住民族電視台資料，介紹多族洪水神話與重生敘事，可信度高
+
+4. **大紀元 — 台灣原住民大洪水的傳說**
+   URL: https://www.epochtimes.com/b5/21/2/12/n12750019.htm
+   [中] 整理台灣各原住民族大洪水傳說的概覽文章
+
+5. **維基百科（繁體中文）— 摩奴**
+   URL: https://zh.wikipedia.org/zh-hans/%E6%91%A9%E5%A5%B4
+   [中] 摩奴條目，含各版本洪水神話的文獻對照與中文人名對照
+
+6. **Wikipedia — Matsya**
+   URL: https://en.wikipedia.org/wiki/Matsya
+   [英] 摩蹉（毗濕奴魚化身）條目，含各文獻版本的洪水敘事比較，可信度高
+
+7. **EBSCO Research Starters — Matsya and the Great Flood**
+   URL: https://www.ebsco.com/research-starters/religion-and-philosophy/matsya-and-great-flood
+   [英] 學術資料庫條目，摩蹉與大洪水的學術概述，可信度高
+
+8. **Britannica — Manu, Hinduism, Vedas, Flood Myth**
+   URL: https://www.britannica.com/topic/Manu
+   [英] 大英百科全書摩奴條目，含洪水神話、《百道梵書》版本說明，可信度高
+
+9. **Skipping Stones — Manu and Noah: Strikingly Different, Surprisingly Similar**
+   URL: https://www.skippingstones.org/wp/2024/03/11/manu-and-noah-strikingly-different-surprisingly-similar/
+   [英] 比較摩奴與諾亞洪水神話的文化教育文章
+
+10. **Ancient Origins — Hindu Flood Legend of Manu and Biblical Noah**
+    URL: https://www.ancient-origins.net/human-origins-religions/startling-similarity-between-hindu-flood-legend-manu-and-biblical-020318
+    [英] 探討印度洪水神話與希伯來聖經諾亞敘事的相似性
+
+11. **Sacred Texts Archive — Shatapatha Brahmana 1.8.1**
+    URL: https://sacred-texts.com/hin/sbr/sbe12/sbe1234.htm
+    [英] 《百道梵書》1.8.1 英譯原典，摩奴洪水神話最早完整版本，可信度高
 
 ---
 

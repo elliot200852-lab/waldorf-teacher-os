@@ -88,12 +88,29 @@ aliases:
 
 ## 六、資料來源
 
-1. 維基百科（繁體中文）— 印度種姓制度 — https://zh.wikipedia.org/zh-tw/%E5%8D%B0%E5%BA%A6%E7%A7%8D%E5%A7%93%E5%88%B6%E5%BA%A6 — 可信度：高
-2. 即食歷史 Cuphistory — 印度的種姓制度是什麼？ — https://cuphistory.net/caste/ — 可信度：中
-3. Wikipedia — Purusha Sukta — https://en.wikipedia.org/wiki/Purusha_Sukta — 可信度：高
-4. Britannica — Varna (Hinduism) — https://www.britannica.com/topic/varna-Hinduism — 可信度：高
-5. Wikipedia — Kamadhenu — https://en.wikipedia.org/wiki/Kamadhenu — 可信度：高
-6. Britannica — Manu-smriti — https://www.britannica.com/topic/Manu-smriti — 可信度：高
+1. **維基百科（繁體中文）— 印度種姓制度**
+   URL: https://zh.wikipedia.org/zh-tw/%E5%8D%B0%E5%BA%A6%E7%A7%8D%E5%A7%93%E5%88%B6%E5%BA%A6
+   [中] 印度種姓制度完整條目，含歷史演變、四個種姓的神話起源（Purusha Sukta）及現代處境，可信度高
+
+2. **即食歷史 Cuphistory — 印度的種姓制度是什麼？**
+   URL: https://cuphistory.net/caste/
+   [中] 台灣中文歷史科普文章，以淺顯語言介紹種姓制度的起源與運作
+
+3. **Wikipedia — Purusha Sukta**
+   URL: https://en.wikipedia.org/wiki/Purusha_Sukta
+   [英] 普魯沙讚歌條目，含梨俱吠陀 X.90 全文分析與學術爭議說明，可信度高
+
+4. **Britannica — Varna (Hinduism)**
+   URL: https://www.britannica.com/topic/varna-Hinduism
+   [英] 大英百科全書種姓（Varna）條目，說明四個種姓的功能分工與宗教意涵，可信度高
+
+5. **Wikipedia — Kamadhenu**
+   URL: https://en.wikipedia.org/wiki/Kamadhenu
+   [英] 神牛卡瑪達努條目，含起源神話（乳海攪拌）、聖人婆私吒故事及象徵意義，可信度高
+
+6. **Britannica — Manu-smriti**
+   URL: https://www.britannica.com/topic/Manu-smriti
+   [英] 大英百科全書摩奴法典條目，說明法典結構、種姓規範與歷史爭議，可信度高
 
 ---
 

@@ -2,8 +2,12 @@
 aliases:
   - "AM002 創世與最初的人類（二） 故事正文"
 lesson_id: AM002
+id: AM002
 title: 創世與最初的人類（二）
 block: block-1-india
+lesson: 2
+age_group: "10-11"
+consciousness: 夢境意識——印度教三位一體呈現宇宙呼吸的循環，創造、維持、毀滅是同一生命節律的三個面向
 story_ref: "Story 1-2"
 date: 2026-03-25
 ---
@@ -116,9 +120,9 @@ date: 2026-03-25
 
 | 事實 | 來源 |
 |------|------|
-| 印度教三相神（Trimurti）：梵天、毗濕奴、濕婆的職責分工與神學意涵 | [Britannica — Trimurti](https://www.britannica.com/topic/trimurti-Hinduism) |
-| 濕婆那塔羅加（Nataraja）宇宙舞蹈的圖像象徵與哲學詮釋 | [World History Encyclopedia — Nataraja](https://www.worldhistory.org/article/831/shiva-nataraja---lord-of-the-dance/) |
-| 毗濕奴十化身（Dashavatara）：龜化身（Kurma）支撐攪海之山的神話 | [Britannica — Dashavatara](https://www.britannica.com/topic/dashavatara) |
-| 那塔羅加青銅像的圖像結構：四臂姿勢與火圈的象徵意義 | [Met Museum — Nataraja](https://www.metmuseum.org/art/collection/search/39328) |
-| 三相神在印度教宇宙觀中的循環角色與民間信仰流傳 | [方格子 — 三相神](https://vocus.cc/article/64256fa7fd8978000127e55a) |
-| 布農族射日神話：射落的太陽轉化為月亮，毀滅即轉化的原型意象 | [玉山國家公園 — 布農族神話](https://www.ysnp.gov.tw/StaticPage/Myth) |
+| 印度教三相神（Trimurti）：梵天、毗濕奴、濕婆的職責分工與神學意涵 | Britannica — Trimurti |
+| 濕婆那塔羅加（Nataraja）宇宙舞蹈的圖像象徵與哲學詮釋 | World History Encyclopedia — Nataraja |
+| 毗濕奴十化身（Dashavatara）：龜化身（Kurma）支撐攪海之山的神話 | Britannica — Dashavatara |
+| 那塔羅加青銅像的圖像結構：四臂姿勢與火圈的象徵意義 | Met Museum — Nataraja |
+| 三相神在印度教宇宙觀中的循環角色與民間信仰流傳 | 方格子 — 三相神 |
+| 布農族射日神話：射落的太陽轉化為月亮，毀滅即轉化的原型意象 | 玉山國家公園 — 布農族神話 |

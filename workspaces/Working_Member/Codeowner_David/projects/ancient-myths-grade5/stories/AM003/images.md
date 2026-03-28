@@ -14,6 +14,7 @@ aliases:
 ### 圖 1：摩蹉牽引摩奴之船（大魚領航穿越洪水）
 - **URL**：https://en.wikipedia.org/wiki/Matsya#/media/File:Matsya_pulling_Manu%27s_boat.jpg
 - **Wikimedia Commons 直連**：https://commons.wikimedia.org/wiki/File:Matsya_pulling_Manu%27s_boat.jpg
+- 連結：https://commons.wikimedia.org/wiki/File:Matsya_pulling_Manu%27s_boat.jpg
 - **描述**：一條巨大金色魚（摩蹉）用繩索牽引著一艘木船穿越洪水，船上坐著摩奴與七位聖哲（Saptarshi）。大魚頭頂長角，繩索繫在角上。這是整個故事最核心的場景。
 - **授權**：Public Domain
 - **來源**：Wikimedia Commons（印度傳統畫作）
@@ -23,6 +24,7 @@ aliases:
 
 ### 圖 2：摩蹉化身——毗濕奴的魚形（拉賈・拉維・瓦爾瑪版）
 - **URL**：https://artsandculture.google.com/asset/matsya-avatar-raja-ravi-varma/QgGhAWSEUyY_nA
+- 連結：https://artsandculture.google.com/asset/matsya-avatar-raja-ravi-varma/QgGhAWSEUyY_nA
 - **描述**：19 世紀末印度著名畫家拉賈・拉維・瓦爾瑪（Raja Ravi Varma）所繪的摩蹉化身。畫面呈現毗濕奴以半人半魚的形象出現，手持法螺（shankha）與神輪（chakra），懷抱代表吠陀知識的嬰孩——象徵在洪水中守護知識的核心意象。
 - **授權**：Public Domain（作者卒年 1906 年，超過版權保護期）
 - **來源**：Google Arts & Culture / Ravi Varma Press
@@ -32,6 +34,7 @@ aliases:
 
 ### 圖 3：小魚在掌心（故事起點圖像）
 - **URL**：https://commons.wikimedia.org/wiki/File:Picture_of_Matsya_Avatar-_Fish_incarnation_of_Lord_Vishnu.jpg
+- 連結：https://commons.wikimedia.org/wiki/File:Picture_of_Matsya_Avatar-_Fish_incarnation_of_Lord_Vishnu.jpg
 - **描述**：一幅傳統印度圖畫，呈現摩蹉（魚）化身的整體意象。可作為故事開場的視覺錨點，搭配口述「一個小魚游進摩奴的掌心，開口說話……」引導孩子進入故事。
 - **授權**：Public Domain
 - **來源**：Wikimedia Commons
@@ -42,6 +45,7 @@ aliases:
 ### 圖 4：摩蹉化身石雕（Met Museum 館藏，約 1900–1915 年石版畫）
 - **URL**：https://www.metmuseum.org/art/collection/search/78267
 - **圖像直連**：https://images.metmuseum.org/CRDImages/as/original/DP251139.jpg
+- 連結：https://www.metmuseum.org/art/collection/search/78267
 - **描述**：大都會藝術博物館館藏，印度製作的摩蹉化身石版畫（lithograph），約 1900–1915 年。呈現毗濕奴以魚形化身的傳統圖像，是 19 世紀印度大眾宗教版畫的典型樣式。
 - **授權**：CC0（Met Museum 開放授權）
 - **來源**：The Metropolitan Museum of Art（館藏編號 78267）
@@ -51,6 +55,7 @@ aliases:
 
 ### 圖 5：摩蹉石雕（11 世紀，費城藝術博物館館藏）
 - **URL**：https://philamuseum.org/collection/object/56733
+- 連結：https://philamuseum.org/collection/object/56733
 - **描述**：11 世紀印度石雕，描繪摩蹉（魚）化身。以立體雕塑形式呈現半人半魚的毗濕奴形象，屬於中世紀印度廟宇藝術的典型作品。石雕質地賦予神像莊嚴、永恆的感覺。
 - **授權**：費城藝術博物館館藏圖像（教育用途）
 - **來源**：Philadelphia Museum of Art

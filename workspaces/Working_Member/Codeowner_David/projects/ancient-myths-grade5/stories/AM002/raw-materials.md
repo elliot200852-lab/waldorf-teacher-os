@@ -76,35 +76,34 @@ Trimurti（梵語：त्रिमूर्ति，意為「三相」）是印
 ### 英文來源 [英]
 
 1. **Britannica — Trimurti**
-   URL：https://www.britannica.com/topic/trimurti-Hinduism
-   摘要：三相神概念最早見於西元 4-5 世紀，目的是調和印度教內部各宗派，將三神連結至終極實在（梵，Brahman）。
+   URL: https://www.britannica.com/topic/trimurti-Hinduism
+   [英] 三相神概念最早見於西元 4-5 世紀，目的是調和印度教內部各宗派，將三神連結至終極實在（梵，Brahman）。
 
-2. **World History Encyclopedia — Shiva Nataraja, Lord of the Dance**
-   URL：https://www.worldhistory.org/article/831/shiva-nataraja---lord-of-the-dance/
-   摘要：那塔羅加四臂各有象徵（鼓/火/無畏/解脫），踩踏侏儒代表人類的幻覺與無知。
+2. **World History Encyclopedia — Nataraja**
+   URL: https://www.worldhistory.org/article/831/shiva-nataraja---lord-of-the-dance/
+   [英] 那塔羅加四臂各有象徵（鼓/火/無畏/解脫），踩踏侏儒代表人類的幻覺與無知。
 
 3. **Britannica — Dashavatara**
-   URL：https://www.britannica.com/topic/dashavatara
-   摘要：毗濕奴十大化身依序降臨以恢復宇宙秩序，從水生生物到未來的末日騎士。
+   URL: https://www.britannica.com/topic/dashavatara
+   [英] 毗濕奴十大化身依序降臨以恢復宇宙秩序，從水生生物到未來的末日騎士。
 
-4. **The Metropolitan Museum of Art — Shiva as Lord of Dance (Nataraja)**
-   URL：https://www.metmuseum.org/art/collection/search/39328
-   館藏圖片（Open Access）：https://collectionapi.metmuseum.org/api/collection/v1/iiif/39328/154124/main-image
-   摘要：朱羅時期（11 世紀末）銅合金那塔羅加雕像，融合創造者、保護者與毀滅者三重角色於單一圖像，具豐富教育資源。
+4. **Met Museum — Nataraja**
+   URL: https://www.metmuseum.org/art/collection/search/39328
+   [英] 朱羅時期（11 世紀末）銅合金那塔羅加雕像，融合創造者、保護者與毀滅者三重角色於單一圖像，具豐富教育資源。
 
 ### 中文來源 [中]
 
-5. **方格子 Vocus — 三相神：印度教的三位一體**
-   URL：https://vocus.cc/article/64256fa7fd8978000127e55a
-   摘要：繁體中文深入介紹三相神哲學，對應三種宇宙屬性（Gunas），追溯吠陀時代的原始三位一體。
+5. **方格子 — 三相神**
+   URL: https://vocus.cc/article/64256fa7fd8978000127e55a
+   [中] 繁體中文深入介紹三相神哲學，對應三種宇宙屬性（Gunas），追溯吠陀時代的原始三位一體。
 
 6. **玉山國家公園 — 布農族神話**
-   URL：https://www.ysnp.gov.tw/StaticPage/Myth
-   摘要：收錄射日傳說與取火傳說，以玉山為舞台，有強烈在地連結，適合台灣學生。
+   URL: https://www.ysnp.gov.tw/StaticPage/Myth
+   [中] 收錄射日傳說與取火傳說，以玉山為舞台，有強烈在地連結，適合台灣學生。
 
 7. **原視界 Indigenous Sight — 你所不知道的臺灣創世神話**
-   URL：https://insight.ipcf.org.tw/article/1
-   摘要：介紹布農族多版本人類起源神話，強調對自然的敬重，是比較神話學的珍貴材料。
+   URL: https://insight.ipcf.org.tw/article/1
+   [中] 介紹布農族多版本人類起源神話，強調對自然的敬重，是比較神話學的珍貴材料。
 
 ---
 

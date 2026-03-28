@@ -2,8 +2,12 @@
 aliases:
   - "AM001 創世與最初的人類（一） 故事正文"
 lesson_id: AM001
+id: AM001
 title: 創世與最初的人類（一）
 block: block-1-india
+lesson: 1
+age_group: "10-11"
+consciousness: 夢境意識——宇宙從沉睡中浮現，世界是被「想」出來的，精神先於物質
 story_ref: "Story 1-2"
 date: 2026-03-25
 ---
@@ -109,4 +113,4 @@ date: 2026-03-25
 | 梵天（Brahma）為印度教創造之神，有四張臉朝向四方（Chaturmukha），以心念（Sankalpa）而非物理動作創造世界 | Britannica — Brahma；Wikipedia — Brahma |
 | 梵天創造了七大仙人（Saptarishi）與第一個人類摩奴（Manu），並創造了時間本身（Kalpa 體系） | Britannica — Hinduism Cosmology；Wikipedia — Brahma |
 | 印度教三位一體（Trimurti）：梵天（創造）、毗濕奴（維護）、濕婆（毀滅與再生），概念見於《摩訶婆羅多》及各部《往世書》 | Wikipedia — Trimurti；Kovacs, *Ancient Mythologies* |
-| 施泰納認為古印度文明對應人類「夢境意識」階段——精神與物質界線模糊，世界被感知為夢境般的流動 | Kovacs, *Ancient Mythologies*；華德福五年級教學參考 |
+| 施泰納認為古印度文明對應人類「夢境意識」階段——精神與物質界線模糊，世界被感知為夢境般的流動 | Kovacs, *Ancient Mythologies* |

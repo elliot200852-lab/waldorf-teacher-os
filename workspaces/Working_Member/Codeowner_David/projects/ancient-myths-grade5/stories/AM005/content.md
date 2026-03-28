@@ -58,4 +58,4 @@ consciousness: 夢境意識（向內，人與神直接對話）
 | 俱盧之野大戰前夕，阿周那面對親族猶豫不決，克里希納以「無欲行動」（nishkama karma）教導——做你應做的事，不執著結果（《薄伽梵歌》） | 維基百科（繁體中文）— 薄伽梵歌 |
 | 克里希納在俱盧之野大戰中擔任阿周那的御者，不持武器，以智慧引導而非武力參戰 | Britannica — Bhagavad Gita |
 | 沙恭尼（Shakuni）為難敵的舅舅，精通骰子賭術，以作弊骰子設局騙取般度族的一切 | Wikipedia — Shakuni |
-| 堅戰在森林流亡期間遇智者問答——「什麼是世界最奇異的事？」答：「人人知道自己終有一死，卻沒有人真的相信」 | Laura Gibbs — Tiny Tales Mahabharata |
+| 堅戰在森林流亡期間遇智者問答——「什麼是世界最奇異的事？」答：「人人知道自己終有一死，卻沒有人真的相信」 | Laura Gibbs — Tiny Tales from the Mahabharata |
