@@ -3,8 +3,8 @@
 # 由 story-archive skill 自動維護
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-last_updated: 2026-03-27
-total_stories: 12
+last_updated: 2026-03-28
+total_stories: 13
 
 stories:
   - id: A001
@@ -220,6 +220,26 @@ stories:
       html: 1y0pJEXonmmbIzLD31ztVP4PkaC7u8pb4
       pdf: 1QecIw5pLtV7Og0HOVREvZikDdIfjxM2W
     tags: [達悟族, 雅美族, 蘭嶼, 拼板舟, 飛魚祭, 飛魚, 地下屋, 招魚祭, 黑翅傳說, 南島語族, 海洋文化, 各族的土地故事]
+
+  - id: A013
+    title: 星星告訴我們何時狩獵——布農族的月亮曆與山的智慧
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今
+    location: 臺灣中央山脈（南投縣信義鄉、花蓮縣卓溪鄉、臺東縣海端鄉）
+    date_created: 2026-03-28
+    files:
+      content: stories/A-origins/A013/content.md
+      narration: stories/A-origins/A013/narration.md
+      images: stories/A-origins/A013/images.md
+      raw_materials: stories/A-origins/A013/raw-materials.md
+    sources: [tcmb, ntm, ntua_anthro, cip, wikipedia, pansci]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1eLHP-W8ZZ_ZtGPzL0J8ZG0wHl2ALyMOf
+      pdf: 1xfEaBFc8Ry57y6a65nhLkgqFEwP_KT5A
+    tags: [布農族, Bunun, Islulusan, 獵曆, 射耳祭, Malahtangia, Pasibutbut, 八部合音, 月亮曆, 中央山脈, 加年端社, Mangdavan, 各族的土地故事]
 
 # 索引結構說明：
 # stories:
