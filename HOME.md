@@ -1286,6 +1286,7 @@ aliases:
 | [[publish/scripts/assemble-story.js\|assemble-story.js]] | 臺灣的故事組裝腳本（v2.2.0，Markdown → HTML+PDF + GWS upsert） |
 | [[publish/scripts/assemble-botany.js\|assemble-botany.js]] | 五年級植物學組裝腳本 |
 | [[backup-to-drive]] | Python 腳本 |
+| [[story-schema]] | 臺灣的故事欄位規範 |
 
 ---
 
@@ -1677,6 +1678,8 @@ aliases:
 | [[yaml-validate]] | 設定檔 |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/113三年級台語課課程大綱林詩閔\|113三年級台語課課程大綱]] | 三年級台語課課程大綱 |
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/113學年秋三年級台語課教學內容-詩閔\|113學年秋三年級台語課教學內容]] | 三年級台語課教學內容 |
+| [[workspaces/Working_Member/Codeowner_David/Kovacs_Books/Geology_and_Astronomy_Full\|Geology and Astronomy Full]] | Kovacs 地質學與天文學全文翻譯 |
+| [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A013-quality\|A013 quality]] | 品質審核紀錄 |
 
 ---
 
