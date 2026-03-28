@@ -119,6 +119,25 @@ stories:
       html: "1uDvq1Wpy2hwamWx2caxYgECRsGp2ZqOA"
       pdf: "1SoWZFw2ZdYAu0CVZqz0a6R4WM42J1s-a"
     tags: [苔蘚, 幼童, 太平山, 翠峰湖, 阿里山, 雲霧帶, 保水, 慷慨給予, 假根, 泥炭苔]
+  - id: B007
+    title: 蕨類
+    block: block-2-fern-to-tree
+    kovacs_chapter: "07_Ferns"
+    taiwan_species: ["筆筒樹（Cyathea lepifera）", "台灣桫欏"]
+    date_created: 2026-03-28
+    files:
+      content: stories/B007/content.md
+      kovacs_teaching: stories/B007/kovacs-teaching.md
+      chalkboard_prompt: stories/B007/chalkboard-prompt.md
+      images: stories/B007/images.md
+      references: stories/B007/references.md
+      raw_materials: stories/B007/raw-materials.md
+      quality_report: stories/B007/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1AqcJ3Wk1JuSWBvBV3I7cSdgqbK3flrBG"
+      pdf: "1z4n-5LQ2vSFfbmly_2wo1D9HCW-VLRxb"
+    tags: [蕨類, 第一次說我, 筆筒樹, 台灣桫欏, 蕨類王國, 侏羅紀活化石, 孢子, 問號嫩芽, 煤炭, 個體性覺醒]
 # 每筆格式：
 # - id: B001
 #   title: 植物在太陽與大地之間
