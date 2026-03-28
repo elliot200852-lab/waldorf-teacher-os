@@ -1,3 +1,8 @@
+---
+aliases:
+  - "A013 黑板畫 Prompt"
+---
+
 # 黑板畫 Prompt：A013 星星告訴我們何時狩獵
 
 ## English Prompt（Gemini 製圖用）
