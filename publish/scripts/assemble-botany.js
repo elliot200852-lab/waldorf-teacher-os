@@ -1373,7 +1373,9 @@ function main() {
 
     // Step 2: 上傳新版
     const versionLabel = storyVersion ? `-${storyVersion}` : '';
-    const driveBaseName = `${storyId}${versionLabel}-${title.replace(/\s+/g, '')}`;
+    // Drive 檔名只保留 storyId + 植物名稱，去掉「｜說書人逐字稿」等副標題
+    const driveTitle = title.split(/[｜|]/)[0].trim();
+    const driveBaseName = `${storyId}${versionLabel}-${driveTitle.replace(/\s+/g, '')}`;
 
     const filesToUpload = [
       { local: htmlPath, driveName: `${driveBaseName}.html` },
