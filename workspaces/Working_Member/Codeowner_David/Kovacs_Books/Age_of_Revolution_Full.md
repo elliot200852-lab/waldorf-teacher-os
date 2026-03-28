@@ -4,118 +4,175 @@ aliases:
 ---
 
 # Age of Revolution
+# 革命的時代
 
 # Contents
+# 目錄
 
 # Foreword
+# 前言
 
 Rebellions
+叛亂篇
 
 # 1. Spain and Holland
+# 1. 西班牙與荷蘭
 
 # 2. The Dutch Rebellion
+# 2. 荷蘭起義
 
 # 3. The Siege of Leyden
+# 3. Leyden 圍城戰
 
 # 4. The Divine Right of Kings
+# 4. 君權神授
 
 # 5. Charles I
+# 5. Charles 一世
 
 # 6. Cromwell and the Civil War
+# 6. Cromwell 與內戰
 
 # 7. The Execution of Charles
+# 7. Charles 的處決
 
 # 8. England and Scotland
+# 8. 英格蘭與蘇格蘭
 
 # 9. The Lord Protector
+# 9. 護國公
 
 # 10. The Restoration
+# 10. 王政復辟
 
 # 11. The Merry Monarch
+# 11. 歡樂君主
 
 # 12. The Plague and the Great Fire
+# 12. 瘟疫與大火
 
 # 13. The Glorious Revolution
+# 13. 光榮革命
 
 # 14. The Union of 1707
+# 14. 1707 年聯合法案
 
 # 15. The Jacobite Rebellion
+# 15. Jacobite 叛亂
 
 # 16. Past and Future: Russia and Germany.
+# 16. 過去與未來：俄羅斯與德國
 
 The French Revolution
+法國大革命篇
 
 # 17. The Huguenots
+# 17. Huguenot 新教徒
 
 # 18. Le Roi Soleil
+# 18. 太陽王
 
 # 19. Versailles
+# 19. Versailles 凡爾賽宮
 
 # 20. Banking
+# 20. 銀行業
 
 # 21. Louis XV and Frederick the Great
+# 21. Louis 十五與 Frederick 大帝
 
 # 22. The Count of Saint Germain
+# 22. Saint Germain 伯爵
 
 # 23. Rousseau, Voltaire and the Aristocrats
+# 23. Rousseau、Voltaire 與貴族階級
 
 # 24. The American War of Independence
+# 24. 美國獨立戰爭
 
 # 25. Louis XVI. The Three Estates
+# 25. Louis 十六與三級會議
 
 # 26. Liberty - Equality - Fraternity.
+# 26. 自由、平等、博愛
 
 # 27. The Tuileries
+# 27. Tuileries 宮
 
 # 28. Danton, Robespierre and Marat
+# 28. Danton、Robespierre 與 Marat
 
 # 29. The Reign of Terror
+# 29. 恐怖統治
 
+# 30. Napoleon
 # 30. Napoleon
 
 # 31. Egypt
+# 31. 埃及
 
 # 32. Emperor Napoleon and Trafalgar
+# 32. Napoleon 皇帝與 Trafalgar 海戰
 
 # 33. Austerlitz. Wellington. Russia 1812
+# 33. Austerlitz 戰役、Wellington、1812 年俄國遠征
 
 # 34. Elba. Waterloo
+# 34. Elba 島與 Waterloo 戰役
 
 The Nineteenth and Twentieth Centuries
+十九與二十世紀篇
 
 # 35. The Threefold State
+# 35. 三元社會
 
 # 36. The Beginning of the Industrial Revolution
+# 36. 工業革命的開端
 
 # 37. The Arrival of Steam Power
+# 37. 蒸汽動力的到來
 
 # 38. The Locomotive
+# 38. 火車頭
 
 # 40. Liberty and Economics
+# 40. 自由與經濟
 
 # 42. The Workers' Struggle
+# 42. 工人的抗爭
 
 # 43. Garibaldi: the Early Years
+# 43. Garibaldi：早年歲月
 
 # 44. Garibaldi and the Unification of Italy.
+# 44. Garibaldi 與義大利統一
 
+# 45. Henri Dunant
 # 45. Henri Dunant
 
 # 46. Abraham Lincoln
+# 46. Abraham Lincoln
 
 # 47. Tsar Alexander II
+# 47. 沙皇 Alexander 二世
 
+# 48. Bismarck
 # 48. Bismarck
 
 # 49. The Turn of The Century.
+# 49. 世紀之交
 
 # 50. The First World War
+# 50. 第一次世界大戰
 
 # 51. The Rise of Nationalism
+# 51. 民族主義的興起
 
 # 52. The Second World War
+# 52. 第二次世界大戰
 
 # 53. Prospects
+# 53. 展望
 
 presenting similar material, and we recommend that you also consider
 more contemporary resources.
@@ -129,8 +186,15 @@ been possible to verify every story or detail that Kovacs found in his
 extensive reading (largely in his local public library).
 Astrid Maclean
 
+呈現類似的素材，我們也建議您同時參考更多當代的資源。雖然本書中的某些細節對於在英國以外的國家教授歷史可能不那麼切題，但值得注意的是 Kovacs 如何為其教學情境挑選出恰當的故事，並編織出一幅展現人類從中世紀——每個人在社會階層中各有其位——到近代個體意識覺醒之發展歷程的圖景。在編輯本文時，日期已經過核對，但 Kovacs 在其廣泛閱讀（主要在當地公共圖書館）中所發現的每一個故事或細節，並不可能全部加以驗證。
+Astrid Maclean
+
 Chapter 1
 Spain and Holland
+
+第一章
+西班牙與荷蘭
+
 The most important thing we learn from history is to see that the human
 mind, the human soul are not always the same - they change in the
 course of history, in the course of centuries. You all here are different
@@ -138,6 +202,8 @@ today from what you were six or seven years ago, not only in your body
 but in your mind, you have grown mentally as well as with your body.
 And just as we grow up individually, so humanity as a whole is growing
 up. And the story of humanity's growing up is called history.
+
+我們從歷史中學到的最重要的事情，就是看到人類的心智、人類的靈魂並非一成不變——它們在歷史的進程中、在世紀的流轉中不斷變化。你們每一個人今天都與六、七年前不同了，不僅是身體，心智也是如此，你們的思想跟著身體一起成長了。正如我們每個人個別地在成長，整個人類也在成長。而人類成長的故事，就叫做歷史。
 Now think back to the early medieval times, when the peasants, the
 villains and serfs, looked up with great respect to their lords and master,
 the knights, and the knights respected and obeyed their master, the
@@ -152,12 +218,16 @@ about thirty
 generations ago. If you look back to that time thirty generations ago,
 one could say it was the time of authority; everybody had a "higher authority" over him - and the highest authority over all was the Pope in
 Rome.
+
+現在回想一下中世紀早期，那時農民、佃農和農奴懷著極大的敬意仰望他們的領主和主人——騎士們，而騎士們敬重並服從他們的主人——國王。他們所有人——農民、騎士、國王——都懷著極大的敬意仰望修士和神父，這些上帝的神聖僕人。修士和神父不僅因為是聖人而受到尊敬，也因為他們能讀能寫，擁有書本中所有的知識而受到敬重。而修士和神父仰望他們的上級——主教；主教們則敬重並服從他們的主人，也就是 Rome 的教宗。這一切大約是一千年前的事——大約三十代以前。如果你回顧三十代以前的那個時代，可以說那是一個權威的時代；每個人頭上都有一個「更高的權威」——而所有人之上最高的權威，就是 Rome 的教宗。
 It may sound quite strange to us, that even if a king was stupid or evil,
 his knights would still obey him; even if a monk behaved not at all like a
 holy man, he would still be respected; and no matter what kind of person the Pope was, he was still the highest authority to whom all looked
 up with great reverence. The people in those days wanted an authority
 over them, deep down they liked it that there was somebody who told
 them what they should do and what they should think.
+
+這在我們聽來可能很奇怪：即使一位國王愚蠢或邪惡，他的騎士們仍然會服從他；即使一位修士的行為一點也不像聖人，他仍然會受到尊敬；無論教宗是怎樣的人，他仍然是所有人都懷著極大崇敬仰望的最高權威。那個時代的人們渴望有一個權威在他們之上，在內心深處他們喜歡有人告訴他們該做什麼、該想什麼。
 And the people - the few people - who wanted to think for themselves and who came to ideas which the Pope and bishops did not like,
 these people were called "heretics." And they had a very bad time. There
 was a special court of justice, called the Inquisition. It was not an ordinary
@@ -169,16 +239,22 @@ the poor heretics who came before this court were nearly always
 condemned to death and burnt at the stake. The bishops and priests
 who condemned Joan of Arc to death were such a court of the dreadful
 Inquisition.
+
+而那些人——那少數人——想要獨立思考、提出教宗和主教們不喜歡的想法的人，這些人被稱為「異端」。他們的日子非常難過。有一個特別的法庭，叫做宗教裁判所。它不是一般由法官和律師組成的法庭，而是由神父和主教組成的法庭，那些可憐的異端分子被帶到這個法庭前，幾乎無一例外地被判處死刑，在火刑柱上被燒死。判處 Joan of Arc 死刑的那些主教和神父，就是這種可怕的宗教裁判所的成員。
 You see, the Inquisition was just a part of this time of authority; most
 people in the world wanted to have
 an authority over them, and anybody who challenged the authority - especially the authority of the
 Church, the authority of the Pope - just had to be killed because they
 upset the authority which all the other people wanted.
+
+你看，宗教裁判所不過是這個權威時代的一部分；世上大多數人都想要有一個權威凌駕在他們之上，任何挑戰權威的人——特別是挑戰教會的權威、教宗的權威——就必須被處死，因為他們動搖了所有其他人所渴望的權威。
 All that was about a thousand years ago, and it lasted for about five
 hundred years. Then around five hundred years ago there came this
 great change in the human soul - the age of discoveries, the age of
 inventions. Now there were more than a few isolated heretics - thousands and millions of people everywhere in Europe began to think for
 themselves.
+
+這一切大約發生在一千年前，持續了大約五百年。然後大約在五百年前，人類的靈魂中出現了一個巨大的變化——發現的時代、發明的時代到來了。現在不再只有少數孤立的異端——歐洲各地成千上萬、數以百萬計的人開始獨立思考。
 And as people began to think for themselves, they not only made voyages into unknown seas, they not only looked at the stars through telescopes (as Galileo Galilei did), they were also no longer willing to bow
 down before authority.
 Luther could call the Pope a scoundrel and
@@ -189,9 +265,13 @@ the authority of the Pope any longer, at least in the northern countries
 of Europe. In the South, in Italy, in Spain, people remained Roman
 Catholic, they wanted the authority of the Pope - and Spain, Portugal
 and Italy have remained Roman Catholic to this day.
+
+當人們開始獨立思考，他們不僅航向未知的海域，不僅透過望遠鏡觀察星辰（如 Galileo Galilei 所做的），他們也不再願意在權威面前俯首稱臣。Luther 可以稱教宗為無賴和魔鬼，而教宗對他無可奈何，因為成千上萬的德國人願意為 Luther 而戰、保衛他。宗教改革就這樣到來了：它來到了德國、英格蘭、蘇格蘭。人們不再想要教宗的權威了，至少在歐洲北部的國家是如此。在南方，在義大利、在西班牙，人們依然是天主教徒，他們想要教宗的權威——西班牙、葡萄牙和義大利至今仍是天主教國家。
 But there were also countries where the people had to fight a long
 and terrible struggle to free themselves from the authority of the Pope.
 Such a country was Holland.
+
+但也有一些國家的人民必須經歷長期而可怕的鬥爭，才能將自己從教宗的權威中解放出來。荷蘭就是這樣一個國家。
 Now at that time, five hundred years ago, Holland was not a country
 on its own - it was a part of Germany. And as the Reformation spread
 through Germany it also reached Holland and many of the Dutch people
@@ -204,6 +284,8 @@ want any bloodshed in his lands and so he did nothing to stop people
 from becoming Protestants. He did not like it by any means, however, he
 did not want the people he ruled to suffer violence and bloodshed. But
 all this changed when Charles V died in 1558.
+
+在那個時候，五百年前，荷蘭還不是一個獨立的國家——它是德國的一部分。隨著宗教改革在德國傳播，它也傳到了荷蘭，許多荷蘭人成為了新教徒。當時的德國及許多其他領地的皇帝是 Charles 五世，一位強大的統治者。他統治著德國、奧地利、西班牙以及西班牙在美洲的殖民地。人們說：「在他的帝國裡，太陽永不落下。」Charles 五世是一位非常虔誠的天主教徒，但他不希望他的領土上發生流血事件，因此他並未採取行動阻止人們成為新教徒。他絕非樂見此事，然而他不願自己統治下的人民遭受暴力和流血。但這一切在 Charles 五世於 1558 年去世後徹底改變了。
 Upon the death of this mighty ruler his great empire was divided between his two sons. One son ruled over Germany and Austria, the other
 over Spain and the Spanish colonies in America, as well as Holland.
 It is rather strange that Holland - which was so close to Germany -
@@ -214,19 +296,27 @@ Spain and also Holland was Philip II. He was the king who sent the great
 Armada against England and suffered a terrible defeat. But of course the
 battle of the little English ships against the Armada happened much
 later.
+
+這位強大統治者去世後，他龐大的帝國被分給了他的兩個兒子。一個兒子統治德國和奧地利，另一個統治西班牙和西班牙在美洲的殖民地，以及荷蘭。荷蘭離德國如此之近，卻落入了數千英里之外的西班牙國王的統治之下，這確實相當奇怪，但 Charles 五世的帝國就是這樣被瓜分的。於是荷蘭人落入了西班牙的統治之下。繼承了西班牙和荷蘭的 Charles 五世之子是 Philip 二世。他就是那個派出大無敵艦隊攻打英格蘭、卻遭受慘敗的國王。但當然，英格蘭小船對抗無敵艦隊的戰役是很久之後的事了。
 What happened first, many years before the Armada, was that Philip
 II, the King of Spain, was also ruler of Holland. But Philip was not like his
 father, he was a fanatical Roman Catholic. He would
 not allow
 Protestants in any country under his dominion, and he was determined
 to make an end of the Protestants in Holland.
+
+首先發生的事情，在無敵艦隊之前許多年，是 Philip 二世，西班牙國王，同時也是荷蘭的統治者。但 Philip 不像他的父親，他是一個狂熱的天主教徒。他不允許他統治下的任何國家存在新教徒，他決心要消滅荷蘭的新教徒。
 Philip II did not bother to go to Holland himself to suppress the Dutch
 Protestants - he gave the task to a woman, to his half-sister Margaret.
 She was appointed Governor of Holland, and given the task to destroy
 the Dutch Protestants.
+
+Philip 二世懶得親自去荷蘭鎮壓荷蘭新教徒——他把這個任務交給了一個女人，他同父異母的姊妹 Margaret。她被任命為荷蘭總督，被賦予消滅荷蘭新教徒的任務。
 And so the dreaded Inquisition came to Holland, these courts of law
 which did not deal with ordinary crimes but only with "crimes against the
 Roman Church." The Dutch Protestants were dragged before the Inquisition, tortured, condemned to death and then burnt at the stake.
+
+於是可怕的宗教裁判所來到了荷蘭，這些法庭不處理普通的罪行，只處理「反對羅馬教會的罪行」。荷蘭新教徒被拖到宗教裁判所前，被拷打、被判處死刑，然後在火刑柱上被燒死。
 Now there were also a good many Roman Catholics in Holland, people who had nothing to fear from the horrors of the Inquisition - but
 they could not stand seeing their compatriots, their fellow-Dutchmen,
 tortured and burnt to death. In particular there were two Dutch noblemen who were devout Roman Catholics but who felt that Margaret, the
@@ -235,6 +325,8 @@ William of Orange, and Egmont. They went to Margaret and begged her
 - on behalf of all Dutch Roman Catholics - to stop the Inquisition and its
 
 horrors.
+
+不過荷蘭也有不少天主教徒，這些人不用擔心宗教裁判所的恐怖——但他們無法忍受看到自己的同胞、自己的荷蘭同伴被拷打燒死。特別是有兩位荷蘭貴族，他們是虔誠的天主教徒，但覺得總督 Margaret 做得太過分了。這兩位貴族的名字是 William of Orange 和 Egmont。他們去見 Margaret，代表所有荷蘭天主教徒懇求她停止宗教裁判所及其恐怖行徑。
 Now Margaret was a very cunning woman; she realized that if she did
 not pay attention to William of Orange and Egmont, there was a chance
 that the Dutch Catholics and Protestants would join together and rise
@@ -243,18 +335,24 @@ She did not have
 enough soldiers at her command to fight the whole Dutch nation, so
 Margaret pretended that she would do what William and Egmont asked
 for, and the Inquisition was stopped.
+
+Margaret 是一個非常狡猾的女人；她意識到如果她不理會 William of Orange 和 Egmont，荷蘭的天主教徒和新教徒就有可能聯合起來，反抗她和整個西班牙的統治。她手下沒有足夠的士兵來對抗整個荷蘭民族，所以 Margaret 假裝會照 William 和 Egmont 的要求去做，宗教裁判所就此停止了。
 The Dutch people were overjoyed: whenever William and Egmont
 went in the streets of Dutch cities, people cheered them and blessed
 them. They all thought the bad times of persecution and terror were
 over. But while the Dutch were jubilant, believing all was well, Margaret
 had more and more soldiers sent from Spain (they had to come by sea
 until she had an army, so large that it could crush any Dutch resistance.
+
+荷蘭人民欣喜若狂：每當 William 和 Egmont 走在荷蘭城市的街頭，人們就為他們歡呼、祝福他們。所有人都以為迫害和恐怖的壞日子已經過去了。但就在荷蘭人歡天喜地、以為一切安好的同時，Margaret 卻不斷地從西班牙調來越來越多的士兵（他們必須走海路），直到她擁有了一支龐大到足以粉碎任何荷蘭抵抗的軍隊。
 At this point something happened that gave Margaret the excuse she
 needed. There were many beautiful old churches in Holland - they had
 been built in the past when all the people were Roman Catholics, when
 all accepted the authority of the Pope. The Roman Catholics had all these
 churches, but the new faith, the Protestants had no churches for themselves. In some places the Protestants decided that this was not fair, so
 they stormed the churches and threw the Catholics out.
+
+就在這時，發生了一件事，給了 Margaret 她所需要的藉口。荷蘭有許多美麗的古老教堂——它們是在過去所有人都是天主教徒、所有人都接受教宗權威的時候建造的。天主教徒擁有所有這些教堂，而新信仰的新教徒卻沒有自己的教堂。在一些地方，新教徒認為這不公平，於是他們衝進教堂，把天主教徒趕了出去。
 Margaret was very pleased when this happened - this was the excuse
 for which she had waited, the excuse to bring back the Inquisition, the
 excuse to use her great army if the Dutch tried to resist. But Margaret
@@ -263,6 +361,8 @@ was very cunning. She first called all the Dutch Catholic noblemen together, amo
 Protestants are attacking us, the Catholics, driving us out of our churches. So the Inquisition has to come back. What I demand from you as
 good Roman Catholics is an oath of loyalty - that you will stand by me
 and help me destroy the Protestants."
+
+Margaret 對此非常高興——這正是她等待已久的藉口，恢復宗教裁判所的藉口，在荷蘭人試圖抵抗時動用她龐大軍隊的藉口。但 Margaret 非常狡猾。她先把所有荷蘭天主教貴族召集在一起，其中包括 William of Orange 和 Egmont。她說：「你們看，當我停止宗教裁判所之後發生了什麼事，新教徒如何攻擊我們天主教徒，把我們趕出我們的教堂。所以宗教裁判所必須恢復。我要求你們作為好的天主教徒宣誓效忠——你們要站在我這邊，幫助我消滅新教徒。」
 Egmont and many other Dutch nobles swore this oath of loyalty; but
 William of Orange did not trust the Spanish and their trickery, he was
 certain that even if he swore that oath, his life would not be safe. He also
@@ -276,6 +376,8 @@ But Egmont would not listen to him. He trusted Margaret, he trusted
 King Philip II. And so William of Orange bade farewell to Egmont, and
 knew in his heart he would never see his friend again. He then fled to
 Germany.
+
+Egmont 和許多其他荷蘭貴族宣誓效忠了；但 William of Orange 不信任西班牙人和他們的詭計，他確信即使他宣了誓，他的生命也不會安全。他還對他的朋友 Egmont 說：「Margaret 恨我們倆，因為我們讓她停止了宗教裁判所。她不會善罷甘休，直到我們為此付出生命的代價。我要在她對我們下手之前逃往德國。跟我一起走吧。」但 Egmont 不聽他的話。他信任 Margaret，信任 Philip 二世國王。於是 William of Orange 向 Egmont 道別，心中知道自己再也見不到這位朋友了。然後他逃往了德國。
 Now that Margaret had made certain that the Dutch Catholics would
 not stand in her way, now that she had a large army of Spanish soldiers
 at her command, she started to deal with the Protestants.
@@ -285,26 +387,37 @@ time could expect no mercy. You can imagine what happened: people
 quickly packing as much as they could and carrying it on their backs -
 the roads of Holland all crammed with refugees,
 some fleeing to Germany but many also getting into boats to take them to England.
+
+既然 Margaret 已經確保荷蘭天主教徒不會阻礙她的計畫，既然她手下有一支龐大的西班牙軍隊，她開始對付新教徒了。首先，荷蘭新教徒被告知他們有二十四小時離開這個國家：在此之後任何在荷蘭被發現的新教徒都別指望得到任何仁慈。你可以想像發生了什麼：人們匆忙地打包盡可能多的東西背在背上——荷蘭的道路上擠滿了難民，有些逃往德國，但也有許多人搭船前往英格蘭。
 Throughout British history, the British have often benefited from letting refugees come to their land. The Dutch were famous for their skills
 in weaving cloth, they brought their skill and knowledge to Britain,
 starting the textile industries, the weaving of woollen cloth, which until
 recently, was one of the great and very profitable industries in Yorkshire
 and Scotland. It was the Dutch Protestants fleeing from the Inquisition
 who helped to make these into great and flourishing industries.
+
+在整個英國歷史中，英國人常常從接納難民中獲益。荷蘭人以其紡織技藝聞名，他們把技術和知識帶到了英國，開創了紡織業，羊毛布的編織直到不久前仍是 Yorkshire 和蘇格蘭最重要、最賺錢的產業之一。正是那些逃離宗教裁判所的荷蘭新教徒，幫助把這些產業發展成繁榮昌盛的大產業。
 But only a small part of the Dutch Protestants could save themselves.
 Many of them were too poor to pay for a passage to England, others did
 not want to leave their homeland even if their lives were at stake - and
 many stayed in the hope that Margaret would only punish the men who
 had stormed the Catholic churches, and that innocent people who had
 not harmed anybody had nothing to fear.
+
+但只有一小部分荷蘭新教徒能夠自救。他們中許多人太窮了，付不起去英格蘭的船費；另一些人即使生命受到威脅也不願離開自己的祖國——還有許多人留了下來，希望 Margaret 只會懲罰那些衝進天主教教堂的人，而沒有傷害任何人的無辜者無需恐懼。
 Well, Margaret certainly punished those, they were found out and
 hanged by the hundreds. Perhaps Margaret would have been quite willing to leave it at that and do no more against the Protestants. But now
 her half-brother and master, King Philip II of Spain, decided that a
 woman was, perhaps, too soft-hearted to wipe out the Dutch Protestants, so he sent a man to Holland, a Spanish nobleman, the Duke of
 Alba. He was the right man for this task: haughty and proud, utterly without mercy, and a man who regarded anybody who was not Spanish and
 
+是的，Margaret 確實懲罰了那些人，他們被搜捕出來，數以百計地被絞死。也許 Margaret 本來很願意就此罷手，不再對新教徒採取更多行動。但現在她同父異母的兄弟兼主人——西班牙國王 Philip 二世——認為一個女人或許太心軟了，無法消滅荷蘭新教徒，於是他派了一個男人到荷蘭，一個西班牙貴族——Alba 公爵。他是執行這項任務的最佳人選：傲慢而驕傲，完全沒有仁慈之心，是一個把任何非西班牙人都視為……
+
 Chapter 2
 The Dutch Rebellion
+
+第二章
+荷蘭起義
 The Dutch Catholic noblemen had sworn an oath of loyalty and support
 for Margaret - even the noble Egmont had sworn this oath. Only William
 of Orange had refused - and had fled to Germany. And now the Duke of
@@ -316,6 +429,8 @@ at the door by soldiers who took him away and threw him into prison.
 On the same day Spanish soldiers were put on guard in every part of
 Holland to stop any more Dutch from fleeing. From now on it was a
 crime punishable by death to try and leave the country.
+
+荷蘭天主教貴族們已經宣誓效忠並支持 Margaret——就連高貴的 Egmont 也宣了誓。只有 William of Orange 拒絕了——並逃往了德國。而現在 Alba 公爵帶著 Philip 二世國王關於如何對付荷蘭人的特別指令來到了荷蘭。他抵達後不久，Alba 邀請貴族們參加一場宴會。Egmont 也被邀請了並且赴宴，但當宴會結束 Egmont 正要離開時，他在門口被士兵攔下，被帶走並投入了監獄。同一天，西班牙士兵被派駐到荷蘭各地站崗，以阻止更多荷蘭人逃跑。從此以後，試圖離開這個國家就是一項可判處死刑的罪行。
 Then Duke Alba set up courts which were far worse than the Inquisition, the Dutch called them Blood Courts. The Spanish Judges in these
 courts had a very simple rule: a Dutchman was guilty of high treason
 against His Majesty the King of Spain if he had ever listened to a Protestant preacher, or if he had a friend or relative who was a Protestant, or if
@@ -325,6 +440,8 @@ This meant of course that every person in Holland was guilty under
 that law. But, as Alba had made it known, if he did not have all Dutch
 people killed, those who stayed alive owed this only to Alba's kindness
 and generosity - they had not deserved it!
+
+然後 Alba 公爵設立了比宗教裁判所更加可怕的法庭，荷蘭人稱之為血腥法庭。這些法庭中的西班牙法官有一條非常簡單的規則：一個荷蘭人如果曾經聽過新教傳教士講道，或者如果他有一個朋友或親戚是新教徒，或者如果他有一個朋友或親戚曾經從荷蘭逃走，或者如果他曾經說過一句反對西班牙國王的話，就犯了對陛下西班牙國王的叛國大罪。這當然意味著荷蘭的每一個人在這條法律下都是有罪的。但正如 Alba 所宣稱的，如果他沒有把所有荷蘭人都殺掉，那些活下來的人只能歸功於 Alba 的仁慈和慷慨——他們本不配活著！
 And so these so-called "judges" began their work. One of the first to
 be tried and condemned to death was Egmont. All his life he had been a
 good Roman Catholic, a loyal, faithful supporter of King Philip II - but this
@@ -337,6 +454,8 @@ one knew in the morning if he would still be free or alive at nightfall.
 :
 :
 
+於是這些所謂的「法官」開始了他們的工作。最早被審判並判處死刑的人之一就是 Egmont。他一生都是一個好天主教徒，一個忠誠、忠實的 Philip 二世國王的支持者——但這並沒有救了他。1568 年，他被斬首，頭顱被插在長矛上示眾，讓荷蘭人看看等待他們的是什麼。也許在他最後的時刻，Egmont 想起了他的朋友 William of Orange 的警告。但 Egmont 不過是無數喪命者中的第一個。在荷蘭的任何城市中，沒有一天沒有處決。商人、教師、醫生，都可以看到他們被綁在馬尾巴上，拖向絞刑架、火刑柱或行刑台。沒有人在早晨知道自己到了夜幕降臨時是否還能自由或活著。
+
 However, under this rule of terror,
 there grew amongst the Dutch
 people the will and the resolution to rise and fight against the cruel
@@ -348,6 +467,8 @@ criminals or burnt at the stake.
 When this little army attacked a Spanish camp here, and another one
 there, the Spaniards were at first taken completely by surprise, and
 William of Orange conquered a few Dutch towns where the people received him with joy.
+
+然而，在這恐怖統治之下，荷蘭人民心中漸漸生長出起身反抗殘暴西班牙壓迫者的意志和決心。他們所需要的只是一位領袖、一位有戰爭和戰鬥經驗的將軍、一個勇敢而堅定的人。這樣一個人來了：他就是 William of Orange。他秘密返回荷蘭，很快就召集了一小群絕望的人。他們知道自己對抗西班牙強大國力的機會微乎其微，但他們寧願戰死也不願像罪犯一樣被絞死或在火刑柱上被燒死。當這支小軍隊攻擊了這裡一個西班牙營地、那裡又一個的時候，西班牙人起初完全措手不及，William of Orange 攻下了幾座荷蘭城鎮，那裡的人民歡天喜地地迎接了他。
 But after the first shock of surprise, the well-trained Spanish soldiers
 soon had their regiments in fighting order, and William's small force
 could not stand up to the Spanish army - it had to retreat from the
@@ -364,8 +485,14 @@ could win a battle here and a battle there, but they could never vanquish
 William and they could not make an end of the rebellion. And so the war
 dragged on and on.
 
+但在最初的震驚之後，訓練有素的西班牙士兵很快就整頓好了部隊的戰鬥隊形，William 的小部隊無法抵擋西班牙大軍——他不得不從佔領的城鎮撤退。西班牙人——出於復仇的渴望——殺死了這些不幸城鎮中所有的居民，男人、女人和孩子。但現在連荷蘭的天主教徒也轉而反對殘暴的西班牙人了。在城市和村莊裡，天主教徒和新教徒聯合起來，起身反抗 Alba 和他那支屠夫軍隊。Alba 一鎮壓了一處的叛亂，另一處又爆發了新的叛亂。就這樣，叛亂不斷壯大和蔓延——但 William 始終沒有一支強大到足以打破西班牙勢力的軍隊。另一方面，西班牙人可以在這裡贏得一場戰鬥、在那裡贏得一場戰鬥，但他們始終無法擊敗 William，也無法終結這場叛亂。就這樣，戰爭拖延了很久很久。
+
 Chapter 3
 The Siege of Leyden
+
+第三章
+Leyden 圍城戰
+
 The most famous action in
 this war between
 the Dutch
@@ -381,12 +508,16 @@ Orange, whereupon a Spanish general called Valdez marched a large
 army against the city and laid siege to it. General Valdez did not try to
 take Leyden by storm, he reckoned that sooner or later hunger would
 force the citizens of Leyden to surrender.
+
+在這場荷蘭人與西班牙人之間的戰爭中，最著名的行動是 1574 年的 Leyden 圍城戰。Leyden 是那些建在「海底」的荷蘭城市之一，當然，那是在海水被巨大的堤壩推出之後。因此，Leyden 城建在海平面以下，只有堤壩的巨大城牆阻擋著海水。如同許多其他荷蘭城市，Leyden 宣布支持 William of Orange，於是一位叫做 Valdez 的西班牙將軍率領一支大軍向該城進軍並圍城。Valdez 將軍並沒有試圖強攻 Leyden，他估計飢餓遲早會迫使 Leyden 市民投降。
 And so weeks passed and months passed: in the city food became
 scarce and there came great suffering. People killed their cats and dogs
 and ate them, even rats and mice were eaten. Very young children and
 very old people died - they did not have enough strength to live on the
 tiny rations. This was the moment when the cunning Spanish General
 Valdez sent a messenger to the Mayor of Leyden asking him to surrender the city.
+
+就這樣，一週一週、一月一月過去了：城裡的食物越來越匱乏，巨大的苦難降臨了。人們殺掉自己的貓狗來吃，甚至連老鼠都被吃掉了。非常年幼的孩子和非常年老的人死去了——他們沒有足夠的力氣靠那微薄的配給活下去。正是在這個時刻，狡猾的西班牙將軍 Valdez 派了一名使者到 Leyden 市長那裡，要求他投降。
 By this time there were quite a number of people in Leyden who had
 had enough of being ravenously hungry day or night. When they heard a
 Spanish messenger had arrived, they came together in the great square
@@ -403,10 +534,14 @@ into my heart - and then you are free to let the Spaniards in. But as long
 as I live I will not surrender, and no true Dutchman will."
 And with these words he drew his sword and held it out to the crowd.
 
+到了這時候，Leyden 城裡已經有相當多的人受夠了日日夜夜飢腸轆轆。當他們聽說一名西班牙使者到了，他們聚集在市政廳前的大廣場上，高喊：「投降！投降！」有些人甚至威脅說，如果市長不打開城門讓至少能帶來食物的西班牙人進來，就要殺了他。市長走了出來，平靜地走入人群之中。當人們看到他時，叫喊聲停止了，市長開始說話：「忍受飢餓的煎熬確實可怕，我們所有人這幾週都在忍受——但這仍然好過一旦落入殘暴西班牙人之手後將遭受的非人折磨。我不會交出我的城市——如果你們想投降，就先殺了我。這是我的劍——你們任何一個人都可以把它刺入我的心臟——然後你們就可以自由地讓西班牙人進來了。但只要我活著，我就不會投降，任何真正的荷蘭人也不會。」說著，他拔出了劍，伸向人群。
+
 For a moment there was deep silence, and then there came one great
 shout: "No surrender!" And the Spanish messenger returned to General
 Valdez with the news that these mad Dutchmen would still not surrender. General Valdez only smiled, another week and they would give
 in, so he thought.
+
+有那麼一刻，一片深沉的寂靜，然後爆發出一聲巨大的呼喊：「絕不投降！」西班牙使者帶著這些瘋狂的荷蘭人仍然不肯投降的消息回到了 Valdez 將軍那裡。Valdez 將軍只是微微一笑，再過一個星期他們就會屈服的，他這麼想。
 What the proud Spaniard did not know was that during that night a
 man crawled and crept cautiously and silently through the Spanish lines
 towards Leyden - the soldiers on guard never noticed the dark shadow
@@ -422,6 +557,8 @@ were protected against the sea by dikes, and so the ships could only
 reach Leyden if the citizens broke the dikes, then the sea-water would
 cover the ground and at high tide the ships could sail in to the rescue
 and bring food.
+
+這個驕傲的西班牙人不知道的是，在那個夜裡，一個人小心翼翼、悄無聲息地匍匐穿過了西班牙人的防線，向 Leyden 爬去——站崗的士兵從未注意到那個穿越營地的黑影。那個人到達了 Leyden——給城市帶來了一個希望的訊息，一個讓人們重新振作、賦予他們新力量的訊息。這位來自 William of Orange 的信使告訴 Leyden 的市民們，一支艦隊正趕來救援，不是一支大艦隊，但足夠大，能攜帶大量食物，還有士兵來幫助對抗西班牙人。Leyden 城——以及城外和平時期農民種植小麥、放牧牛群的田野——都被堤壩保護著不受海水侵襲，所以船隻要到達 Leyden，市民們就必須打破堤壩，讓海水淹沒地面，到漲潮時船隻就能駛入前來救援並運送食物。
 It was a sad thing for the people of Leyden to be told that they would
 have to break the dikes which their forefathers had built with so much
 hard work, it was a sad thing to let the sea come in and cover fields and
@@ -429,6 +566,8 @@ meadows; the sea-water would ruin the soil for years to come and nothing would g
 to use their old enemy, the sea, against the new enemy, the Spaniards -
 otherwise the rescue ships could not reach them. And so they demolished the dikes and the sea-water poured in and covered the fields and
 its waves lapped round the walls of Leyden.
+
+得知他們必須打破祖先付出如此艱辛勞動才建造的堤壩，對 Leyden 的��民來說是一件令人悲傷的事；讓海水湧入、淹沒田野和草地，是一件令人痛心的事；海水將在未來多年毀壞土壤，什麼都長不出來。但 Leyden 的人民別無選擇：他們必須用他們的老敵人——海——來對付新敵人——西班牙人——否則救援船隻無法到達他們。於是他們拆毀了堤壩，海水傾瀉而入，淹沒了田野，波浪拍打著 Leyden 的城牆。
 The flooding came as quite a surprise to the Spaniards, the water was
 rising and coming up to their knees - and they quickly withdrew to two
 fortresses which stood on higher ground and so remained above water.
@@ -440,6 +579,8 @@ which now covered the land around the city, they looked out hoping to
 see the ships William of Orange had sent to their rescue, but the ships
 remained out in the deep sea. And when night came, the people of Leyden were in dark despair. It seemed as if their last hope had gone, they
 had sacrificed the fields and farms to no purpose.
+
+洪水讓西班牙人大吃一驚，水在上漲，已經到了他們的膝蓋——他們迅速撤退到兩座建在高地上、因而仍在水面之上的堡壘。但不幸的是，對荷蘭人來說，水位並沒有升得足夠高，讓船隻通行。即使漲潮時，水也太淺了，船隻無法通過。Leyden 的人民從城牆上向外望去，望著如今覆蓋城市四周土地的波浪，他們滿懷希望地望著，期盼看到 William of Orange 派來救援他們的船隻，但船隻仍停留在遠處的深海中。當夜幕降臨時，Leyden 的人民陷入了深深的絕望。他們最後的希望似乎已經破滅，他們白白犧牲了田野和農場。
 But during the night a storm blew up, a roaring gale lashed the North
 Sea, and great waves swept high over the ruined dikes, the water level
 rose - and in the howling storm and riding the great waves the Dutch
@@ -450,6 +591,8 @@ And the cannons of the Spaniards could have shattered every Dutch ship
 before it ever got near Leyden. And so the Dutch sailors dared not go on
 - they kept their ships out of reach of the Spanish cannons and did not
 sail on to Leyden.
+
+但在夜間，一場暴風刮了起來，咆哮的狂風鞭打著北海，巨浪高高地越過了殘破的堤壩，水位上升了——在呼嘯的暴風中，荷蘭艦隊乘著巨浪向 Leyden 駛來。但他們沒有走太遠——因為在深海和 Leyden 城之間有一片高地，上面矗立著兩座西班牙堡壘。西班牙人的大砲可以在任何荷蘭船隻靠近 Leyden 之前就把它們炸得粉碎。所以荷蘭水手們不敢繼續前進——他們讓船隻停留在西班牙大砲射程之外，沒有駛向 Leyden。
 Just imagine that night: pitch dark, the storm howling, the uproar of
 the waves - and no one really knowing what was going on. The people of
 Leyden had already given up all hope, and expected the Spaniards to
@@ -468,6 +611,8 @@ attack. And the Spaniards had no wish to fight on two sides, the Dutch
 ships on one side and the people of Leyden on the other side. And so
 the Spaniards took flight, they left the fortresses and cannons behind,
 and up to their breasts in water they strode through the flooded countryside to reach dry ground far away from Leyden.
+
+想像一下那個夜晚：漆黑一片，暴風呼嘯，波濤洶湧——沒有人真正知道正在發生什麼。Leyden 的人民已經放棄了一切希望，隨時等待西班牙人到來；另一方面，西班牙人也很害怕——他們看到了荷蘭船隻黑暗的輪廓駛了進來，隨時預期一場戰鬥。就在那時，傳來了一聲驚天巨響，聲音之大數英里外都能聽到。原來是洶湧的波浪沖刷掉了 Leyden 城牆一部分的地基，整段城牆轟然倒塌。Leyden 的人民聽到巨響，以為西班牙人炸毀了城牆——而他們已經沒有力氣戰鬥了——便準備赴死。但他們不必害怕；西班牙人也被那聲巨響嚇壞了。他們以為那聲響是 Leyden 的人民出城來攻擊他們，同時荷蘭船隻也將發動進攻。西班牙人不想腹背受敵，一邊是荷蘭船隻，另一邊是 Leyden 的人民。於是西班牙人逃跑了，他們丟下了堡壘和大砲，水淹到胸口地涉過被洪水淹沒的鄉間，去到遠離 Leyden 的乾燥地面。
 When nothing came the Dutch discovered to their surprise and joy
 
 that the fortresses had
@@ -475,6 +620,8 @@ been
 abandoned and that there was not a
 Spaniard in sight. The ships could sail in and bring food to the famished
 people of Leyden.
+
+當什麼都沒有發生時，荷蘭人驚喜地發現堡壘已經被遺棄，一個西班牙人也看不到了。船隻可以駛入，為飢餓的 Leyden 人民帶來食物。
 The rescue of Leyden was a great event for Holland; messengers on
 horse-back galloped from town to town to bring the good news and it
 made the Dutch people even more determined to fight the Spanish oppressors.
@@ -487,6 +634,8 @@ vain. The Dutch did not want to be ruled by Spain any longer; they declared Holl
 the crown. But William was so modest that he did not want to be called
 King. So in 1576 Holland became a republic. But a republic must have a
 president - or as the Dutch called it a "protector" - and the first protector or president, as we would say, was William of Orange.
+
+Leyden 的解救是荷蘭的一件大事；騎馬的信使從一個城鎮飛馳到另一個城鎮傳遞這個好消息，這使荷蘭人民更加堅定了反抗西班牙壓迫者的決心。最終，西班牙國王 Philip 二世意識到 Alba 公爵以恐怖和酷刑進行的統治只是使荷蘭人——天主教徒和新教徒——團結起來反對西班牙。Alba 被恥辱地召回西班牙——連 Margaret 也不得不回西班牙去了。現在 Philip 派了一任又一任總督，試圖用好話和承諾贏回荷蘭人，但一切都是徒勞。荷蘭人不再想被西班牙統治了；他們宣布荷蘭為獨立國家，並向 William of Orange 獻上王冠。但 William 非常謙遜，他不想被稱為國王。因此在 1576 年，荷蘭成為了一個共和國。但一個共和國必須有一位總統——或者如荷蘭人所稱的「護國者」——而第一任護國者，或者用我們的說法就是總統，就是 William of Orange。
 Philip of Spain was beside himself with rage when he
 heard of
 William's election. In his fury he offered a great reward to any man who
@@ -494,6 +643,8 @@ would murder William of Orange. And in 1584 a vile man, Gérard, tried to
 earn this reward and stabbed William to death. But he was caught and
 executed,
 and the Dutch elected William's son, Maurice of Nassau, as
+
+西班牙的 Philip 聽到 William 當選的消息後怒不可遏。在盛怒之下，他懸賞巨額獎金給任何願意謀殺 William of Orange 的人。1584 年，一個卑鄙的人 Gérard 企圖賺取這筆賞金，將 William 刺死了。但他被抓獲並被處決，荷蘭人選舉了 William 的兒子 Maurice of Nassau 作為
 "protector." So Philip gained nothing by the foul murder. Quite the contrary - young Maurice made a treaty of alliance with Queen Elizabeth of
 England who sent soldiers and arms to Holland to help the Dutch against
 Spain.
@@ -507,8 +658,14 @@ the Great Armada in order to first conquer Britain and then crush little
 Holland.
 As you know Philip's great Armada was destroyed by the little ships of
 
+「護國者」。所以 Philip 從這場卑劣的謀殺中一無所獲。恰恰相反——年輕的 Maurice 與英格蘭女王 Elizabeth 締結了同盟條約，Elizabeth 派遣了士兵和武器到荷蘭幫助荷蘭人對抗西班牙。你可以想像 Philip 國王的憤怒：他試圖用恐怖和酷刑來打垮頑強的荷蘭人——沒有奏效；他試過用好話和承諾——他們不聽；他策劃了對他們的領袖 William of Orange 的謀殺——這也沒有帶來任何改變。而現在他們正在成為他最痛恨的敵人——英格蘭人——的盟友！就在那時，Philip 決定建造一支龐大的艦隊，也就是大無敵艦隊，打算先征服英國，然後再粉碎小小的荷蘭。如你所知，Philip 的大無敵艦隊被
+
 Chapter 4
 The Divine Right of Kings
+
+第四章
+君權神授
+
 The story of the rebellion of the Netherlands is a stirring tale of brave
 men fighting against a mighty and cruel oppressor. But it is also, in one
 way, a sad tale - for it is a story of Christians fighting each other for the
@@ -524,6 +681,8 @@ that's what the Pope in Rome had always taught. Now the Protestants
 had broken away from the Pope, but they still had the old way of thinking and they treated the Roman Catholics as "heretics" as well as any
 Protestants who had a slightly different kind of worship or Church. It
 took a long time until this misguided way of thinking disappeared.
+
+荷蘭起義的故事是一個勇敢的人們對抗強大而殘暴的壓迫者的激動人心的故事。但從某種意義上說，這也是一個悲傷的故事——因為這是基督徒為了宗教而互相廝殺的故事。但這不僅僅發生在荷蘭；我們現在來到了歷史上全歐洲天主教徒和新教徒互相爭鬥的時代，然後新教徒之間也開始因為某種教會和另一種教會之間的差異而互相爭鬥。你可能會問：「怎麼可能信仰基督——愛之主——的人們會以基督教的名義互相迫害和殺戮呢？」但幾個世紀以來，人們已經習慣了這樣的想法：信仰不同的人、所謂的「異端」是邪惡的，理應受到懲罰——這正是 Rome 的教宗一直以來所教導的。現在新教徒已經脫離了教宗，但他們仍然保留著舊有的思維方式，他們把天主教徒視為「異端」，也把任何敬拜或教會形式稍有不同的新教徒視為「異端」。這種錯誤的思維方式花了很長時間才消失。
 When in 1603 Queen Elizabeth of England appointed James VI, the
 son of Mary Stuart, as her successor, Scotland and England became one
 country under one ruler, James I of Great Britain as he was thence
@@ -544,6 +703,8 @@ of England. But James did nothing of the sort, he had no liking for the
 
 Church of Rome at all and showed it. Catholics were not allowed to have
 churches or to worship in public.
+
+1603 年，當英格蘭女王 Elizabeth 指定 Mary Stuart 的兒子 James 六世為她的繼承人時，蘇格蘭和英格蘭成為一個國家，由一位統治者統治，他從此被稱為大不列顛的 James 一世。James 是英國歷史上一位非常奇特的國王：他當然是個蘇格蘭人，一輩子說話都帶著濃重的蘇格蘭口音，但蘇格蘭人很快就有充分的理由恨他。James 的母親 Mary Stuart 是天主教徒，但 James 在遠離母親的環境中被撫養成新教徒，英國的天主教徒很快就恨他了。過了一段時間，不少新教徒也開始恨他。歷史上很少有國王能像 James 那樣樹敵眾多。如果 James 不是被培養為新教徒的，Elizabeth 就永遠不會讓他成為她的繼承人。但英格蘭仍然有相當多的天主教徒，他們希望 Mary Stuart 的兒子在內心深處其實是天主教徒，一旦成為英格蘭國王就會重新讓古老的 Rome 宗教成為英格蘭的國教。但 James 完全沒有這樣做，他對 Rome 教會毫無好感並且毫不掩飾。天主教徒不被允許擁有教堂或公開禮拜。
 And so the English Roman Catholics regarded James as a traitor, he
 had "betrayed" his mother's religion. And a number of Roman Catholic
 noblemen hatched a plot to do away with King James and with the whole
@@ -552,6 +713,8 @@ The leader of this plot was a man called Guy Fawkes, and the plot is
 called the "Gunpowder Plot," because the plan was to use gunpowder to
 blow up the English Parliament and everybody in it on a day when the
 King was there.
+
+因此英格蘭的天主教徒把 James 視為叛徒，他「背叛」了他母親的宗教。一些天主教貴族密謀除掉 James 國王以及整個英格蘭議會。這個陰謀的領導者是一個叫 Guy Fawkes 的人，這個陰謀被稱為「火藥陰謀」，因為計畫是在國王在場的某一天用火藥炸毀英格蘭議會和裡面的所有人。
 Underneath the houses of Parliament in London, there were big cellars, and merchants - or anybody else - who wanted a store for his
 goods could rent one of these cellars from the government.
 So it was quite easy for Guy Fawkes and his fellow-conspirators to rent
@@ -560,6 +723,8 @@ sticks of fire-wood - and they laid fuses. Now they only had to wait for
 the day when King James would come and visit the Houses of Parliament,
 the next date when this was to happen was November 5, 1605. On that
 day Guy Fawkes himself was to put fire to the fuses.
+
+在倫敦議會大廈的下面，有很大的地窖，商人——或者任何人——如果想要存放貨物，都可以向政府租用這些地窖中的一個。所以 Guy Fawkes 和他的同謀者們租用這些地窖中的一個是相當容易的，他們搬進了 36 桶火藥和引火用的木柴——並且鋪設了引信。現在他們只需要等待 James 國王來訪議會的那一天，下一次預定的日期是 1605 年 11 月 5 日。在那一天，Guy Fawkes 本人將點燃引信。
 Now one of the conspirators had a friend who was a courtier of King
 James and who was to accompany the King when he visited Parliament.
 The conspirator could not bear to let his friend go to his death - and so
@@ -579,6 +744,8 @@ other conspirators, and they were all executed. To this day the event is
 
 commemorated every November 5 with fireworks, a bonfire and a "Guy"
 is burned
+
+其中一個密謀者有一位朋友是 James 國王的朝臣，他將在國王訪問議會時陪同前往。這位密謀者無法忍心讓他的朋友去送死——所以他用偽裝的筆跡、沒有署名地寫了一封信給他，警告他不要和國王一起去議會，因為將會有一次「重大打擊」。這位朝臣感到困惑——他無法想像這一切是什麼意思。但議會裡將要發生某件事情，這似乎是確定的。他把信帶給了國王的首席大臣 Lord Salisbury——他是一個非常聰明的人，立刻猜到「重大打擊」意味著爆炸。經過思考後，他帶著信去見國王，警告他有一個針對他生命的陰謀。立刻（那時已經是 11 月 4 日的夜晚了）士兵被派去搜查議會下方的地窖，他們一個地窖一個地窖地搜查，發現 Guy Fawkes 正在火藥桶之間鋪設引信。他被逮捕了，被拷打直到他交出了其他密謀者的名字，他們全部被處決了。直到今天，每年 11 月 5 日仍以煙火、篝火和焚燒「Guy」人偶來紀念這一事件。
 You might think that because he was hated by the Catholics, James
 would at least have all the Protestants on his side. But it was not so. The
 Protestants were split into two parties. There was first of all, the Church
@@ -590,6 +757,8 @@ called it "popery" and they would not go to such a Church. They had their
 own prayer meetings without all these things. The Puritans always
 dressed in dark clothes; they regarded bright colours as sinful. They also
 regarded theatres and dancing and playing cards - in short all amusements - as sins.
+
+你可能會認為，既然 James 被天主教徒所恨，至少所有新教徒會站在他這邊。但事實並非如此。新教徒分裂成了兩個派別。首先是英格蘭教會，James 作為國王是這個教會的領袖。但還有清教徒（意為「純潔的人」）。清教徒認為英格蘭教會太像 Rome 教會了，因為它允許雕像、繪畫、管風琴音樂和蠟燭，而且還有主教和大主教。清教徒厭惡這一切——他們稱之為「教宗習氣」，不願去這樣的教會。他們有自己的祈禱聚會，沒有這些東西。清教徒總是穿深色的衣服；他們認為鮮豔的顏色是罪惡的。他們也認為戲劇、跳舞和打牌——簡而言之，所有的娛樂——都是罪過。
 The Puritans did not want to have anything to do with the Church of
 England. But King James who was head of the Church of England wanted
 only one kind of Church and one kind of service in his whole kingdom.
@@ -600,6 +769,8 @@ they bought a ship, called the Mayflower and one hundred families sailed
 on the Mayflower to America where they started a new colony called New
 England. These Puritans were called the Pilgrim Fathers, and the day of
 their arrival in America, November 11, 1620, is remembered with a national holiday in the United States - Thanksgiving.
+
+清教徒不想跟英格蘭教會有任何關係。但身為英格蘭教會領袖的 James 國王只想在整個王國裡有一種教會和一種禮拜形式。清教徒被禁止舉行他們的祈禱聚會——那些堅持舉行的人被投入監獄或被迫繳納鉅額罰款。許多清教徒覺得這種迫害令人無法忍受，最終他們買了一艘船，叫做 Mayflower 號，一百個家庭搭乘 Mayflower 號航向美洲，在那裡建立了一個叫做 New England 的新殖民地。這些清教徒被稱為「朝聖先父」，他們到達美洲的那天——1620 年 11 月 11 日——在美國以一個全國性假日——感恩節——來紀念。
 So, not only the Catholics, but also the puritan Protestants had no liking for King James. But in Scotland, the Church of Scotland, founded by
 John Knox, did not want to have bishops or archbishops, and the Scots
 stubbornly refused to obey King James' wish that their Church should become like the Church of England. So King James had few friends in his native Scotland and most people hated him.
@@ -607,11 +778,16 @@ You would think that James had at least won the hearts of the English
 people who belonged to the Church of England. But he even made ordinary English people his enemies - for a different reason, a reason that
 had nothing to do with religion at all.
 
+所以，不僅天主教徒，連清教徒新教徒也不喜歡 James 國王。而在蘇格蘭，由 John Knox 創立的蘇格蘭教會不想設立主教或大主教，蘇格蘭人頑固地拒絕服從 James 國王要求他們的教會變得像英格蘭教會的願望。所以 James 國王在他的故鄉蘇格蘭幾乎沒有朋友，大多數人都恨他。你會以為 James 至少贏得了屬於英格蘭教會的英格蘭人的心。但他甚至把普通英格蘭人也變成了他的敵人——原因完全不同，一個與宗教毫無關係的原因。
+
 X
 
 •
 Chapter 5
 Charles I
+
+第五章
+Charles 一世
 King James was an odd king; he was not cruel or evil, yet in one way or
 another he managed to make enemies in both his kingdoms; the
 Catholics called him a traitor, the Puritans and the Scots regarded him
@@ -625,6 +801,8 @@ of King James, people were no longer willing to treat kings like gods.
 James simply ignored the discontent, the complaints, the bitterness
 amongst his subjects, and as long as he lived he did as he pleased. And
 when he died in 1625 he left his son a heritage of trouble.
+
+James 國王是一位奇特的國王；他並不殘忍或邪惡，然而他想方設法在他的兩個王國中都樹敵無數；天主教徒稱他為叛徒，清教徒和蘇格蘭人認為他幾乎和 Rome 的教宗一樣壞，而英格蘭人則對他蔑視議會感到不滿。但 James 從不擔心人民的不滿；他如此堅信「君權神授」，如此確信身為國王他就是不可能做錯任何事——普通人怎麼想他根本無關緊要。在古埃及，確實是這樣的；那裡的人民確實把法老視為某種神聖的存在；但那是很久以前的事了，在 James 國王的時代，人們不再願意把國王當神來對待。James 對臣民中的不滿、抱怨和怨恨視而不見，只要他活著就我行我素。當他在 1625 年去世時，他給兒子留下了一份充滿麻煩的遺產。
 The son, Charles, had been brought up to believe, like his father, in
 the "divine rights of kings;" like his father, he treated Parliament with
 contempt and he oppressed the Puritans.
@@ -634,6 +812,8 @@ James the discontent of the people in Britain had been simmering, but
 under Charles it boiled over, and this boiling over brought civil war to
 Britain - British people fought and killed each other - and in the end,
 Charles lost his crown and his life.
+
+兒子 Charles 從小就像他的父親一樣被教導相信「君權神授」；像他的父親一樣，他蔑視議會，壓迫清教徒。當一壺水煮沸時，水先是慢慢冒泡——然後突然就沸騰溢出了。在 James 時代，英國人民的不滿一直在醞釀，但在 Charles 統治下它沸騰溢出了，而這次沸騰給英國帶來了內戰——英國人互相廝殺——最終，Charles 失去了王冠和生命。
 The first "boiling-over" against Charles I took place in Edinburgh, in St
 Giles Cathedral in 1638.
 Like his father, Charles wanted only one kind of Church and one kind
@@ -644,6 +824,8 @@ It seems a small matter what kind of prayers people say in Church, or
 what words they use in a prayer. But the people of Edinburgh did not
 think so; they were greatly upset and angry that they were not allowed
 to say their prayers in their own way in Church.
+
+第一次反對 Charles 一世的「沸騰溢出」發生在 1638 年 Edinburgh 的 St Giles 大教堂。像他的父親一樣，Charles 只想在大不列顛有一種教會和一種禮拜形式：所有教區都應該遵循英格蘭教會的方式。所以他下令，英格蘭教會使用的祈禱書必須在英國所有的教堂禮拜中使用。人們在教堂裡說什麼樣的祈禱詞，用什麼字眼來祈禱，似乎是一件小事。但 Edinburgh 的人民不這麼認為；他們非常不安和憤怒，因為他們不被允許在教堂裡用自己的方式祈禱。
 
 When the Sunday came on which the new Prayer Book was to be
 used for the first time in St Giles Cathedral, there was a great crowd in St
@@ -661,6 +843,8 @@ the people out of the Church and into the street. But the riots continued
 all day long in the streets. And as the news of the riots spread, people all
 over Scotland, noblemen and commoners, rose in rebellion against King
 Charles.
+
+當新祈禱書要在 St Giles 大教堂首次使用的那個星期天到來時，St Giles 裡擠滿了人，到處是憤怒的低語。St Giles 的教長走了進來，會眾安靜下來，教長開始朗讀新祈禱書。但他才說了幾句話，一位老婦人——她的名字叫 Jenny Geddes——就大喊：「你這個假賊！你要對著我的��朵唸彌撒嗎？」（意思是：新祈禱書就像天主教教堂的彌撒，你要強迫我聽）。然後這位老婦人 Jenny Geddes 拿起她坐的凳子，朝牧師扔去。轉眼間整個教堂一片混亂；婦女們撲向教長，用拳頭打他；人們高喊「打倒這個教宗習氣！」最後，士兵們進來救了教長的命，把人們趕出教堂、趕到街上。但暴動在街上持續了一整天。隨著暴動的消息傳開，蘇格蘭各地的人民——貴族和平民——都起來反抗 Charles 國王。
 The leaders of the rebellion came together at Greyfriars Church and
 churchyard in Edinburgh. Here they drafted a pledge that they would
 fight for the Church of Scotland and defend it with their lives, and many
@@ -674,6 +858,8 @@ further bloodshed Charles gave in and the Covenanters returned proudly to Scotla
 way they liked; they had revolted against their King and the King had not
 been able to suppress the rebellion, he had to give in and let the
 Covenanters have the kind of Church they wanted.
+
+起義的領袖們聚集在 Edinburgh 的 Greyfriars 教堂和墓地。在這裡他們起草了一份誓約，承諾他們將為蘇格蘭教會而戰，誓死���衛它，來自蘇格蘭各地的數千人在這份誓約上簽了名。這份誓約被稱為「盟約」，簽署它的人被稱為「盟約派」。盟約派拿起武器向英格蘭進軍，在那裡擊敗了 Charles 國王派來對付他們的軍隊。為了阻止進一步的流血，Charles 讓步了，盟約派驕傲地返回蘇格蘭。他們捍衛了自己按照自己的方式祈禱和禮拜的權利；他們反抗了自己的國王，而國王未能鎮壓叛亂，他不得不讓步，讓盟約派擁有他們想要的教會。
 So the first rebellion against King Charles I came from the Scottish
 Puritans. Unfortunately, Charles did not learn his lesson from the
 Covenanters' rebellion; he still believed that, as a King, he had "divine
@@ -688,6 +874,8 @@ Magna Carta.
 And King Charles called up his noblemen to fight against the rebellious commoners who dared to take up arms against their own King.
 And so in 1642 the terrible Civil War in which British people fought
 and killed each other began.
+
+所以第一次反對 Charles 一世國王的叛亂來自蘇格蘭的清教徒。不幸的是，Charles 沒有從盟約派的叛亂中吸取教訓；他仍然相信作為國王，他有「神聖的權利」，可以向英格蘭議會發號施令。但英格蘭議會議員們也到了不滿「沸騰溢出」的地步。Charles 國王和議會之間有太多爭吵了——大多是關於金錢和稅收——最終很明顯，國王和議會無法一起統治，必須有一方退出。Charles 國王試圖做他父親做過的事，但當他命令議員們回家、關閉議會時，事情確實「沸騰溢出」了。議會號召英格蘭人民拿起武器���捍衛他們在大憲章中確立的古老權利。而 Charles 國王召集他的貴族們去對付那些竟敢拿起武器反抗���己國王的叛亂平民。就這樣，1642 年，英國人互相廝殺的可怕內戰開始了。
 The men who fought on the side of King Charles were mostly noblemen who rode into battle on their horses, they were called "Cavaliers"
 (from the French cheval, horse). The soldiers who fought for Parliament
 and its rights were called "Roundheads" because they cut their hair
@@ -706,8 +894,14 @@ never drawn
 a sword or fired a gun before. This leader was Oliver
 Cromwell.
 
+站在 Charles 國王一邊作戰的人大多是騎馬投入戰鬥的貴族，他們被稱為「騎士黨」（來自法語 cheval，意為馬）。為議會及其權利而戰的士兵被稱為「圓顱黨」，因為他們剪短了頭髮，不像騎士黨那樣留著長而捲曲的頭髮。一開始 Charles 國王擁有更好的軍隊——因為騎士黨的人從小就接受戰鬥訓練；那仍然是一個貴族子弟只被培養從軍、而不從事任何其他行業或職業的時代。所以對騎士黨來說，戰鬥和戰爭不過是生活的一部分。但圓顱黨是平民——農民和農場工人、店主、木匠、手藝人，幾乎沒有受過任何武器訓練或有任何使用武器的經驗。因此，如果議會的軍隊沒有找到一個知道如何把從未拔過劍、開過槍的人訓練成堅強戰士的領袖，他們對付 Charles 國王的騎士黨的勝算將會非常渺茫。這位領袖就是 Oliver Cromwell。
+
 Chapter 6
 Cromwell and the Civil War
+
+第六章
+Cromwell 與內戰
+
 If we look back to early medieval times we find that the life of all people
 was arranged on a kind of ladder, the ladder of authority. On the lowest
 rung of the ladder were the villains (the feudal serfs), then came the
@@ -726,6 +920,8 @@ We saw that the Dutch turned against their lawful King, Philip of Spain,
 the Scots Covenanters had turned against their lawful King, Charles, and
 now it was the Roundheads turn to rise in rebellion against Charles in
 England. But you can see, it was all part of the same process: the old authorities were cast aside one by one.
+
+如果我們回顧中世紀早期，我們會發現所有人的生活都按照一種階梯來安排——權威的階梯。在階梯最低一級的是農奴（封建的農奴），然後是「貴族」和騎士，再來是國王。更高處是教會——修士、神父、修道院院長、主教，以及教宗。教宗站在階梯的最高一級，是所有人之上最高的權威。但當發現的時代到來，當人們想要獨立思考時，宗教改革也隨之而來，這意味著全歐洲的人們加入了不再承認教宗權威的教會。可以說，新教徒把教宗從階梯頂端推了下來。但一旦最高的權威被推翻，整個天主教教會的階層體系不再被承認，下一個最高的權威就是國王。我們來到了人們也開始反對國王權威的時代；這是下一步。我們看到荷蘭人反對他們的合法國王——西班牙的 Philip，蘇格蘭的盟約派反對他們的合法國王 Charles，現在輪到圓顱黨在英格蘭起來反抗 Charles 了。但你可以看到，這都是同一個過程的一部分：舊的權威被一個接一個地推翻。
 The leader of the Roundheads in their fight against the Cavaliers was
 Oliver Cromwell. As a young man Cromwell had been the despair of his
 parents. They could not get him to do any useful work or study. He spent
@@ -744,6 +940,8 @@ As he was now such a shining example of Puritan life, it is not
 surprising that
 people were greatly impressed by this earnest and virtuous young man and they were so impressed that they elected him as
 Member of Parliament.
+
+圓顱黨對抗騎士黨的領袖是 Oliver Cromwell。年輕時，Cromwell 曾令父母絕望。他們無法讓他做任何有用的工作或學習。他把時間花在喝酒和賭博上，在酒館裡醉酒鬧事，揮霍他父親的錢。但經過幾年這種不光彩的生活後，Oliver Cromwell 開始厭倦所有���些「娛樂」——它們開始讓他感到無聊，內心空虛而不滿足。然後，讓所有人驚訝的是，他洗心革面了——他開始閱讀和學習，尤其是關於宗教的書籍，這些書籍的研讀徹底改變了他。他成為了最嚴格的清教徒。他鄙視��使是最溫和的娛樂或享樂形式：他所有的時間都奉獻給了辛勤工作、祈禱和只讀宗教書籍。既然他現在是清教徒生活的光輝典範，人們被這位認真而有德行的年輕人深深打動也就不足為奇了，他們是如此印象深刻，以至於選舉他為議會議員。
 In the Parliament Cromwell soon became the foremost enemy of King
 Charles. He spoke again and again against the King who had no respect
 for the rights of the people. And so, when King and Parliament took to
@@ -763,6 +961,8 @@ As a smith takes a lump of iron and forges and hammers it in the fire
 into a sharp sword, so Cromwell forged his army of untrained civilians
 into a powerful fighting force that was more than a match for the Cavaliers. At first the Cavaliers had spoken with contempt of the Roundheads
 but after a few battles they called them with respect the "Ironsides."
+
+在議會中，Cromwell 很快成為 Charles 國王最主要的敵人。他一次又一次地發言反對這位不尊重人民權利的國王。所以，當國王和議會訴諸武力、讓戰爭來決定誰應該統治英國時，Cromwell 被授予議會軍隊——圓顱黨——的指揮權也就是自然而然的事了。作為一名軍事指揮官，Cromwell 展現了真正的天才。首先，他每天不停歇地訓練和操練他的農民和手藝人，直到他們成為一支能與騎士黨抗衡的戰鬥力量。但他做的不僅僅是這些。他讓士兵們感覺到他們是在打一場對抗邪惡勢力的「聖戰」，而且他的軍營生活按照清教徒的規則運作。當士兵們做完武器操練和行軍之後，他們不能簡單地休息——接下來是祈禱、讀聖經和唱聖歌。Cromwell 本人是一位出色的佈道者，當他佈道告訴他們，他們被選中為上帝而戰、對抗罪人和魔鬼的僕人時，士兵們已經準備好面對任何危險、為神聖的事業獻出生命。就像鐵匠取一塊鐵在火中鍛造和錘打成一把鋒利的劍一樣，Cromwell 把他那支未經訓練的平民軍隊鍛造成了一支強大的戰鬥力量，足以與騎士黨匹敵甚至更勝一籌。起初騎士黨輕蔑地談論圓顱黨，但經過幾場戰役後，他們帶著敬意稱他們為「鐵甲軍」。
 But this Civil War between the Cavaliers and Roundheads was a long
 war; it lasted four years, and it was a cruel and merciless war. And although it was a war between Englishmen at first, Scotland was also
 drawn into the fight.
@@ -777,6 +977,8 @@ goat's blood. Then this "fiery cross" as it was called was given to a clansman w
 another clansman who took the cross and ran on. So the cross was
 passed from hand to hand until all men of that clan knew that their chief
 called them to war.
+
+但這場騎士黨與圓顱黨之間的內戰是一場漫長的戰爭；它持續了四年，是一場殘酷而無情的戰爭。雖然起初它是英格蘭人之間的戰爭，但蘇格蘭也被捲入了這場戰鬥。蘇格蘭的盟約派當然站在 Cromwell 一邊，派遣軍隊幫助他。但有一位蘇格蘭貴族 Montrose 伯爵，他自己起初是盟約派的一員，卻改變了主意；他站到了 Charles 國王一邊，號召蠻荒的高地部族前來為國王而戰。在高地召集軍隊的方式是這樣做的：用兩根棍子做成十字架，末端在火中燒焦，然後蘸上山羊血。然後這個被稱為「火焰十字架」的東西交給一位族人，他全速奔跑穿過峽谷、翻過山嶺，直到他遇到另一位族人，那人接過十字架繼續奔跑。就這樣，十字架在一雙雙手之間傳遞，直到那個部族的所有男人都知道他們的首領召喚他們去打仗。
 And so the fiery cross was sent round to call the Highland clans to the
 standard of Montrose, and the Highland men came in their thousands,
 not because they cared for King Charles but because they hated the
@@ -792,6 +994,8 @@ Once they had taken the city, the Highlanders robbed and plundered
 and killed
 civilians. Montrose was horrified - this was not what he
 wanted.
+
+於是火焰十字架被送出去召喚高地部族到 Montrose 的旗幟下，高地人成千上萬地來了，不是因為他們在乎 Charles 國王，而是因為他們恨蘇格蘭盟約派的領袖——另一位蘇格蘭貴族 Argyll 侯爵。現在蘇格蘭也有了內戰——一場高地人和低地人之間的戰爭，因為盟約派大多是蘇格蘭低地人。起初 Montrose 和他的高地人相當成功。1644 年在 Perth 附近的 Tippermuir，高地人以兇猛的衝鋒撲向盟約派——幾分鐘之內盟約派就全面潰逃了。然後 Montrose 繼續前進，攻下了 Aberdeen 城。一旦他們攻下了城市，高地人就搶劫、掠奪並殺害平民。Montrose 大為震驚——這不是他想要的。
 He now marched south to take Glasgow - and Glasgow surrendered
 without fighting. And Montrose told his Highlanders that any of them
 who plundered or robbed in Glasgow would be hanged. But this was not
@@ -801,6 +1005,8 @@ army of Covenanters came against him, he was defeated. Montrose escaped from the
 fled to France.
 And so, in Scotland, the King's party had lost the Civil War. And soon
 the same happened in England.
+
+他現在向南進軍去攻取 Glasgow——Glasgow 不戰而降。Montrose 告訴他的高地人，任何人如果在 Glasgow 搶劫或掠奪就會被絞死。但這不合野蠻的高地人的心意��他們大多數人乾脆離開回家了。所以 Montrose 只剩下一小支部隊，當另一支盟約派軍隊前來對付他時，他被擊敗了。Montrose 從戰場上逃脫，藏身在高地——然後逃往了法國。就這樣，在蘇格蘭，國王的陣營輸掉了內戰。而很快英格蘭也發生了同樣的事。
 In the battle of Naseby in 1645, Cromwell and his Ironsides defeated
 and completely shattered the last Cavalier army. King Charles was not
 there at this last battle of the Cavaliers, but when the news reached him
@@ -812,6 +1018,8 @@ prisoner by Scots troops. The Scots Covenanters had sent an army to
 help Cromwell, and King Charles made his way to this Scottish army and
 surrendered himself. He asked to be taken to Scotland and to be given
 asylum there.
+
+1645 年的 Naseby 戰役中，Cromwell 和他的鐵甲軍擊敗並徹底粉碎了最後一支騎士黨軍隊。Charles 國王不在騎士黨的最後一戰的現場，但當消息傳到他那裡時，他知道自己再也無法召集一支軍隊，他的事業已經失敗了。他無法逃離英格蘭（海軍支持圓顱黨）——而圓顱黨很快就會俘虜他。在這種可悲的困境下，Charles 國王決定被蘇格蘭軍隊俘虜對他來說會更好。蘇格蘭盟約派已經派了一支軍隊去幫助 Cromwell，Charles 國王便向這支蘇格蘭軍隊走去，投降了。他要求被帶到蘇格蘭並在那裡獲得庇護。
 The Scots were in a quandary: they had no real quarrel with King
 Charles - he had given them freedom of worship and that was all they
 had wanted. After all Charles was the grandson of Mary Stuart, a Scots
@@ -823,8 +1031,14 @@ not be paid to the Scots if they kept the King. Under this double threat
 the Scots gave in, and Charles was handed over to the English. The Civil
 War had come to an end.
 
+蘇格蘭人陷入了兩難：他們與 Charles 國王沒有真正的爭執——他已經給了他們信仰自由，而那正是他們所要求的一切。畢竟 Charles 是 Mary Stuart——一位蘇格蘭女王——的孫子，他仍然是蘇格蘭的國王。所以蘇格蘭人決定把 Charles 帶到蘇格蘭。但隨後 Cromwell 傳來一個訊息：如果不把國王交��英格蘭人，英格蘭和蘇格蘭之間就會爆發戰爭。而且英格蘭議會欠蘇格蘭二十萬英鎊的軍餉，如果蘇格蘭人留住國王���這筆錢就不會支付。在這雙重威脅下，蘇格蘭人讓步了，Charles 被交給了英格蘭人。內戰就此結束。
+
 Chapter 7
 The Execution of Charles
+
+第七章
+Charles 的處決
+
 In early medieval times the "ladder" of authority existed with the serfs on
 the bottom rung and the Pope on the top. As we have seen, the Reformation did away with the authority of the Pope, and the next stage was
 that the authority of the Kings also crumbled. But this brings us to another question: which class of the people was it that turned against the
@@ -845,6 +1059,8 @@ The growth of cities during the Middle Ages had produced a new
 class, the citizens, or burghers or "middle class," and it was this middle
 class that turned first against the Pope, then against kings and at the
 same time against the lords and noblemen.
+
+在中世紀早期，權威的「階梯」存在著，農奴在最底層，教宗在最頂端。正如我們所見，宗教改革廢除了教宗的權威，下一個階段是國王的權威也開始崩塌。但這帶來了另一個問題：是哪個階層的人起來反對了古老的權威？在中世紀早期，一個從領主身邊逃走、在城市裡住了一年零一天而未被抓獲的農奴就獲得了自由——他成為一個「市民」，不需要服從任何騎士或領主。自由始於城市，首先是城市裡的人追隨了 Luther 或 Calvin 或 John Knox 成為了新教徒。城市居民，即「市民」或「城鎮居民」，擁有這種獨立精神，最終轉而反對古老的權威，把它們從「階梯」上推了下來。市民或城鎮居民不是耕種土地的農民，也不是只受過戰鬥訓練的騎士，他們是手藝人——屠夫、麵包師、木匠、商人和生意人。他們就是我們現在所說的「中產階級」。中世紀城市的發展產生了一個新的階級——市民，或城鎮居民，或「中產階級」——正是這個中產階級最先反對教宗，然後反對國王，同時也反對領主和貴族。
 And the Civil War in England was really a war between the middle
 classes on one side and the old order, noblemen and King on the other.
 You can see the clash between the old order and the new order even
@@ -867,6 +1083,8 @@ he shared every hardship with his troops - he was full of fiery enthusiasm for t
 If you think of Oliver Cromwell, red-faced, stumpy, ill-dressed and illmannered but full of fiery energy, and of King Charles, tall, elegant, pale,
 proud, then you have in these two persons the whole contrast between
 the new class and the old class.
+
+英格蘭的內戰實際上是一場中產階級與舊秩序——貴族和國王——之間的戰爭。你甚至可以在兩位領袖——Charles 國王和 Oliver Cromwell——的性格中看到新舊秩序的衝突。Charles 國王來自一個古老的貴族家庭——Stuart 家族，幾個世紀以來一直是騎士、領主、國王。他不是通過偉大的事蹟或辛勤工作贏得王冠的，王冠是他血統與生俱來的權利。Charles 總是以他驕傲的氣度表明，他充分意識到自己是世代國王的後裔。有 Charles 的畫像，展示著一張蒼白、狹長的貴族面孔，留著精心打理的長髮和短尖鬍子。所有肖像都顯示出一種傲慢而略帶疲倦的表情。Oliver Cromwell 矮壯結實，紅臉膛，粗糙的面容：他的職業是啤酒釀造商，他之所以成為圓顱黨的領袖，不是因為他天生如此，而是靠著辛勤工作和純粹的能力。他沒有 Charles 國王或騎士黨那樣優雅的風度，但他與他的部隊同甘共苦——他對清教徒的事業充滿了熾熱的熱情，他的士兵們愛戴他。如果你想像一下 Oliver Cromwell——紅臉、矮胖、衣著不整、舉止粗魯但充滿熾熱的能量——再想像一下 Charles 國王——高挑、優雅、蒼白、驕傲——那麼在這兩個人身上，你就看到了新階級與舊階級之間的全部對比。
 Now when Charles had been handed over by the Scots to the English,
 the English Parliament decided to keep him prisoner in a place called
 Holmby Hall in Northamptonshire. The Members of Parliament thought
@@ -881,6 +1099,8 @@ his Ironsides would not dare to go against King and Parliament together.
 But Cromwell forestalled this. He sent a company of soldiers to Holmby
 where Charles was held prisoner and these soldiers took the King away -
 and so he was now prisoner of his worst enemy, Cromwell.
+
+當 Charles 被蘇格蘭人交給英格蘭人之後，英格蘭議會決定把他關在 Northamptonshire 一個叫 Holmby Hall 的地方。議員們認為 Charles 已經受到了教訓，假以時日，也許可以讓他重新成為國王。但與此同時，英格蘭議會和 Cromwell 的士兵——圓顱黨或鐵甲軍——之間出了麻煩。問題是議會缺錢，Cromwell 的士兵已經好幾個月沒有領到薪餉了。鐵甲軍對拿不到薪餉非常不滿，有人談論叛變和衝擊議會。在這種情況下，一些議員認為最好的辦法是讓 Charles 重新登上王位，Cromwell 和他的鐵甲軍肯定不敢同時對抗國王和議會。但 Cromwell 搶先了一步。他派了一連士兵到關押 Charles 的 Holmby，這些士兵把國王帶走了——於是他現在成了他最大敵人 Cromwell 的囚犯。
 Now Cromwell was quite determined that Charles should die - but it
 had to be "legal" and it had to be done with the consent of Parliament.
 Well, there were about 250 members of Parliament, and only a hundred
@@ -897,6 +1117,8 @@ Charles should be put before a court of law for high treason - which was
 quite ridiculous. The actual trial, when it came some weeks later, was utterly unfair and unjust, it was a farce. Charles was not even allowed to say
 anything to defend himself. The so-called judges found him guilty of high
 treason and condemned him to death.
+
+Cromwell 下定決心要讓 Charles 死——但這必須是「合法的」，必須獲得議會的同意。當時議會大約有 250 名議員，其中只有一百人是清教徒、站在 Cromwell 一邊，其餘 150 人寧可讓 Charles 重新當國王，他們肯定不會同意處死他。所以有一天 Cromwell 派了一連士兵進入議會，他們逮捕了一些議員，趕走了其他人——只留下了那大約一百個可以指望完全按照 Cromwell 的意願行事的人。這些留下的一百名議員（被稱為殘缺議會，因為它只是原來議會的尾巴部分）現在通過了一項法律，要以叛國大罪把 Charles 國王送上法庭——這完全是荒謬的。幾週後正式的審判開始了，它極其不公正、不公平，完全是一場鬧劇。Charles 甚至不被允許為自己辯護。所謂的法官判定他犯了叛國大罪，判處死刑。
 When Charles was led away from the court, one soldier on guard-duty
 said loyally "God bless Your Majesty," an officer turned round and hit the
 soldier with his fist. Charles looked at the brutal officer and said: "I think
@@ -917,6 +1139,8 @@ Charles had done many foolish things in his life, but nothing wicked,
 he had not deserved to die like this. If anybody is to blame for the mistakes of Charles I, it is his father, James, with his ideas about the "divine
 rights of kings." Charles's execution did not bring peace to Britain but
 started a new civil war.
+
+當 Charles 從法庭被帶走時，一個站崗的士兵忠誠地說「上帝保佑陛下」，一名軍官轉過身來用拳頭打了那個士兵。Charles 看著那個粗暴的軍官說：「我認為這個處罰對那個人所做的事來說太重了。」1649 年 1 月 30 日，Charles 被押往他的死亡之地——在一棟曾經是他自己的宮殿、倫敦 Whitehall 宮前。街上擠滿了人，也許有些人希望他死，但大多數人並不希望，他們都被國王無畏的態度深深打動。他想對人民說幾句最後的話——但連這也被剝奪了，因為士兵們盡可能地用武器製造噪音，讓沒有人能聽到 Charles 說了什麼。於是 Charles 跪了下來，把頭放在行刑台上。斧頭落下後，戴著黑色面具的劊子手舉起頭顱高喊：「看哪，一個叛徒的頭！」——但人群中唯一的回應是一聲嘆息。Charles 一生中做過許多愚蠢的事，但沒有做過邪惡的事，他不應該這樣死去。如果有人要為 Charles 一世的錯誤負責，那就是他的父親 James，和他關於「君權神授」的思想。Charles 的處決沒有為英國帶來和平，反而引發了一場新的內戰。
 After the death of Charles, the Rump Parliament - the hundred odd
 Members of Parliament whom Cromwell had left, declared Britain a
 "republic" or, as they called it, a "commonwealth." But the real ruler was
@@ -933,6 +1157,8 @@ when they heard King Charles had been executed like a common criminal, and they 
 Six days after the execution of Charles, at a meeting at the Market Cross
 in the High Street in Edinburgh, the Scots proclaimed the son of Charles,
 Charles II as their King.
+
+Charles 死後，殘缺議會——Cromwell 留下的那一百多名議員——宣布英國為「共和國」，或者如他們所稱的「共和聯邦」。但真正的統治者不是這個殘缺議會——而是 Cromwell，因為殘缺議會只做 Cromwell 要求的事。所以 Cromwell 現在實際上擁有的權力比可憐的 Charles 國王曾經擁有的還要大。在我們的時代，像 Cromwell 這樣的人會被稱為獨裁者。英格蘭人默默忍受了：他們可能不太喜歡，但他們忍受了 Oliver Cromwell 的獨裁統治。然而蘇格蘭人沒有。在蘇格蘭，即使是清教徒、盟約派，聽到 Charles 國王像一個普通罪犯一樣被處決時也深感震驚，他們不喜歡一個有名無實的「共和國」。Charles 被處決六天後，在 Edinburgh High Street 的市場十字架集會上，蘇格蘭人宣布 Charles 的兒子 Charles 二世為他們的國王。
 Now this younger Charles, Charles II had escaped to Holland where
 he waited and hoped for the time when he could return and assume the
 crown that had been taken from his father. But young Charles made a
@@ -950,6 +1176,8 @@ and he was
 condemned to death. Lord Argyll, the Covenanters' leader watched
 contentedly as Montrose was led to death. Yet, the day was not far when
 Lord Argyll himself would be led the same way to his own execution.
+
+這位年輕的 Charles，Charles 二世，已經逃到了荷蘭，在那裡等待並期盼著有一天能夠回來，戴上從他父親手中奪走的王冠。但年輕的 Charles 犯了一個大錯。他以為既然蘇格蘭人甚至盟約派都宣布他為國王，他們就已經忘記了彼此之間的舊怨，於是他請求曾經率領高地人的 Montrose 在蘇格蘭召集一支軍隊對抗 Cromwell。Charles 二世自己留在荷蘭。但盟約派和他們的領袖 Argyll 勳爵並沒有忘記 Montrose 在 Tippermuir 戰役中迅速擊潰了他們；他們沒有忘記高地人在 Aberdeen 的搶劫和屠殺，而他們把這些歸咎於 Montrose。所以當 Montrose 到來時，他們反對了他。他們俘虜了他，判處他死刑。盟約派的領袖 Argyll 勳爵滿意地看著 Montrose 被押赴刑場。然而，Argyll 勳爵自己被同樣方式押赴刑場處決的日子也不遠了。
 Charles II now realized that only one man could unite the Scots and
 rouse them to fight for him, and that was he himself. And so, in 1650, the
 young King (he was only twenty) landed in Scotland, and the Scots people, even the Covenanters who had rebelled against his father, now took
@@ -959,14 +1187,22 @@ and English.
 :
 :
 
+Charles 二世現在意識到只有一個人能團結蘇格蘭人、激勵他們為他而戰，那就是他自己。於是在 1650 年，這位年輕的國王（他才二十歲）在蘇格蘭登陸，蘇格蘭人民——甚至是曾經反抗過他父親的盟約派——現在拿起武器為 Stuart 國王而戰。就這樣，英國再次被拋入了內戰——一場蘇格蘭人與英格蘭人之間的戰爭。
+
 Chapter 8
 England and Scotland
+
+第八章
+英格蘭與蘇格蘭
+
 It is rather strange that the Scots Covenanters were willing and ready to
 fight for Charles II - after all they were Puritans, and had much more in
 common with Cromwell and his Roundheads than with Charles II, who
 was not a Puritan at all, but belonged to the Church of England; he was a
 Cavalier who liked a merry life, and did not care for the austere life of the
 Puritans.
+
+蘇格蘭盟約派願意且準備好為 Charles 二世而戰，這確實相當奇怪——畢竟他們是清教徒，與 Cromwell 和他的圓顱黨有更多共同之處，而不是與 Charles 二世，後者根本不是清教徒，而是屬於英格蘭教會的；他是一個喜歡快樂生活的騎士派，不在乎清教徒嚴肅的生活方式。
 So why should the Covenanters rally to the standard of King Charles?
 Cromwell and his Rump Parliament had executed Charles I, they had
 made Great Britain a "republic," a "commonwealth" without bothering to
@@ -989,6 +1225,8 @@ when the ships came they could not land, for the coast was held by the
 Scots Covenanters. At Berwick, at Dunbar, and at Leith there were
 Covenanters, and their cannons stopped the English ships from coming
 near.
+
+那麼盟約派為什麼要聚集在 Charles 國王的旗幟下呢？Cromwell 和他的殘缺議會處決了 Charles 一世，把大不列顛變成了「共和國」、「共和聯邦」，根本沒有費心問蘇格蘭人是否同意這一切。蘇格蘭人不喜歡未經他們同意就被強加規則；當 Charles 一世強迫他們使用新祈禱書時他們奮起反抗，現在他們同樣準備反抗英格蘭那些未經蘇格蘭人同意就改變了政府形式——從王國變為共和國——的同為清教徒的人。這就是為什麼騎士派國王 Charles 二世發現蘇格蘭的清教徒盟約派如此願意且準備好為他而戰。正是 Cromwell 本人率領他的鐵甲軍北上入侵蘇格蘭，鎮壓蘇格蘭人反對英格蘭議會的叛亂。這次入侵蘇格蘭的主要戰鬥發生在 Edinburgh 附近。盟約派故意破壞了 Edinburgh 以南邊境地帶的田地和莊稼。他們還趕走了所有的牛羊，使 Cromwell 的軍隊在穿越邊境時找不到任何食物。英格蘭軍隊缺乏食物，所以 Cromwell 下令裝滿食物的船隻從英格蘭出發。但當船隻到達時卻無法靠岸，因為海岸被蘇格蘭盟約派控制著。在 Berwick、Dunbar 和 Leith 都有盟約派駐守，他們的大砲阻止了英格蘭船隻靠近。
 Cromwell decided to break through to the coast and marched his
 hungry Ironsides towards Queensferry, but they had to pass through
 Corstorphine and on Corstorphine Hill there were the Covenanters, and
@@ -1010,6 +1248,8 @@ Covenanters - who were not as well trained as Cromwell's Ironsides -
 were no match for these experienced soldiers. The Scots were defeated,
 Cromwell took Dunbar, and his ships could land and deliver food to his
 troops.
+
+Cromwell 決定突破到海岸，率領他飢餓的鐵甲軍向 Queensferry 進發，但他們必須穿過 Corstorphine，而 Corstorphine Hill 上有盟約派駐守，如果 Cromwell 試圖強攻這座山，他將損失半數軍隊。想像一下 Cromwell 滿臉漲紅地站在 Corstorphine，也許他可以在遠處 Firth of Forth 上看到他的補給船，但他就是無法突破過去。他不得不放棄突破到 Queensferry 的計畫；他轉而向西進軍 Dunbar。在 Dunbar，盟約派也在一座山——Doonhill——上佔據了堅固的陣地，擋在 Cromwell 軍隊的路上。如果蘇格蘭人一直留在山上，Cromwell 別無選擇，只能在他的士兵餓死之前撤回英格蘭。但急躁的蘇格蘭人犯了一個錯誤，下山與英格蘭人交戰，在野外戰鬥中，訓練不如 Cromwell 鐵甲軍的盟約派不是這些經驗豐富的士兵的對手。蘇格蘭人被擊敗了，Cromwell 佔領了 Dunbar，他的船隻得以靠岸，為他的軍隊運送食物。
 In the meantime Charles II tried something else to get the better of
 Cromwell. While Cromwell was battling at Dunbar, King Charles led another army of Covenanters south through the Borders into England. So,
 while Cromwell was trying to conquer Scotland, the Scots army invaded
@@ -1025,6 +1265,8 @@ on September 3,
 Covenanters fought bravely - but again they were not as battlehardened and experienced soldiers as the Ironsides, and at the end of
 the day with thousands of Covenanters dead on the battle-field, the remaining Scots troops fled in confusion. Cromwell had won the battle and
 the Civil War.
+
+與此同時，Charles 二世嘗試了另一種方法來戰勝 Cromwell。當 Cromwell 在 Dunbar 激戰時，Charles 國王率領另一支盟約派軍隊向南穿過邊境進入英格蘭。所以，在 Cromwell 試圖征服蘇格蘭的同時，蘇格蘭軍隊入侵了英格蘭，向南行軍，目標是攻取倫敦。這讓 Cromwell 大吃一驚。他該怎麼辦？他把鐵甲軍分成兩半。一半留給英格蘭將軍 Monk，命令他繼續征服蘇格蘭。Cromwell 自己帶著另一半急速南下追趕 Charles 二世。Cromwell 確實在 Worcester 追上了蘇格蘭軍隊。1651 年 9 月 3 日，這場內戰最後的激烈戰役爆發了。盟約派英勇作戰——但他們再次不是身經百戰的鐵甲軍的對手，到了這一天結束時，數千名盟約派戰死沙場，剩餘的蘇格蘭軍隊混亂地潰逃了。Cromwell 贏得了戰役，也贏得了內戰。
 Charles II had escaped from the battle, but he was now a fugitive and
 Cromwell had promised a great reward to anyone who would capture
 the King. Charles had to disguise himself - he cut his long hair off and he
@@ -1040,6 +1282,8 @@ that a company of Ironsides was approaching. Charles climbed quickly
 up an oak tree. It was summer and the leaves formed a green curtain behind which he could hide. The Ironsides came riding past the tree, so
 near that Charles could hear them talking - but they rode by without
 glancing at the tree.
+
+Charles 二世從戰場上逃脫了，但他現在是個逃犯，Cromwell 懸賞巨額獎金要捕獲國王。Charles 不得不偽裝自己——他剪掉了長髮，把臉和手染成深棕色。幸運的是，英格蘭仍然有忠於他的人，在鐵甲軍到處搜捕他的時候藏匿了他。有一次，他被一個農民收留，這時消息傳來說一連鐵甲軍正在逼近。Charles 迅速爬上了一棵橡樹。正值夏天，樹葉形成了一道綠色的帷幕，他可以藏在後面。鐵甲軍騎馬經過那棵樹，近得 Charles 都能聽到他們說話——但他們騎過去了，沒有朝那棵樹看一眼。
 Later on, an English nobleman sheltered the King; Charles had to pretend he was one of the servants who looked after the horse of the
 nobleman's wife. But how could they get the King to the coast so that he
 could flee from England? The lady pretended she had to go on a journey,
@@ -1058,6 +1302,8 @@ seemed so familiar to him.
 At long last Charles reached the coast on a grey, misty dawn, on a
 lonely stretch of the coast, a rowing boat was waiting for him and took
 him to a ship which brought him to France.
+
+後來，一位英格蘭貴族收留了國王；Charles 必須假裝自己是照顧那位貴族夫人的馬的僕人之一。但他們怎麼才能把國王送到海岸讓他逃離英格蘭呢？那位夫人假裝她必須出一趟遠門，Charles 作為她的僕人跟著她。途中他們不得不在一家旅店停下，發現裡面擠滿了 Cromwell 的士兵。其中一個士兵看著 Charles 說：「朋友，我覺得我在什麼地方見過你。」Charles 回答：「很有可能，我跟著我的主人旅行了不少地方。」「你以前是不是在一個叫 Baxter 先生的人那裡待過？」那個士兵問。「確實是的，」Charles 說，「你的記憶力一定很好，能從那時候就記得我。但請原諒，我必須去照顧我女主人的馬了。」他就這樣從一個人身邊脫身了，而那個人始終沒有意識到為什麼那張臉看起來如此眼熟。終於，在一個灰暗、霧濛濛的黎明，Charles 到達了海岸，在一段荒涼的海岸線上，一艘划艇正等著他，把他帶到一艘船上，那艘船把他送往了法國。
 In the meantime
 poor Scotland had to pay a heavy price for having
 helped the King. General Monk had been left with the task of dealing
@@ -1080,8 +1326,14 @@ General Monk had robbed Scotland of the "Stone of Scone." but he
 did not get the "Honours of Scotland" which he also wanted to take
 away. It was a minister's wife who saved them for Scotland.
 
+與此同時，可憐的蘇格蘭不得不為幫助國王付出沉重的代價。Monk 將軍被留下處理蘇格蘭事務，但在 Worcester 戰役和國王出逃之後，蘇格蘭人不再有繼續作戰的意願，一座又一座城市向 Monk 和他的鐵甲軍投降了。Monk 將軍決心要讓這些頑固的蘇格蘭人認識到他們不再是一個獨立的民族，蘇格蘭不過是英格蘭的一部分。蘇格蘭人一直有他們自己用於蘇格蘭國王加冕的珍貴物品——一頂金冠、一根鑲珠寶的權杖和一把長劍。這三樣東西被稱為蘇格蘭榮耀。此外還有一塊古老的石板——命運之石，或 Scone 之石。加冕時，國王坐在這塊石頭上接受加冕。據說，這塊石頭來自聖地，很久以前 Jacob 曾在一個夜晚枕著這塊石頭休息，那一夜他在夢中看到上帝的天使在天地之間來往。Monk 將軍把這塊石頭從蘇格蘭人手中奪走，送到了倫敦，直到最近它一直在 Westminster Abbey。直到 1996 年才被歸還蘇格蘭，現在在 Edinburgh 城堡中。Monk 將軍掠走了蘇格蘭的「Scone 之石」，但他沒有得到他同樣想要帶走的「蘇格蘭榮耀」。是一位牧師的妻子為蘇格蘭保住了它們。
+
 Chapter 9
 The Lord Protector
+
+第九章
+護國公
+
 When General Monk's army entered Edinburgh some faithful Scotsmen
 took the "Honours of Scotland," the crown, the sceptre, the sword from
 the castle and brought them to the strong fortress and castle of Dunotar. There was only a small force of Covenanters in Dunotar Castle but
@@ -1090,6 +1342,8 @@ knew where the "Honours" had gone and he sent an officer and a regiment of Irons
 surrender and the English saw no need to take the castle by storm, they
 surrounded the fortress and just waited until the defenders would run
 out of food and then would have to surrender.
+
+當 Monk 將軍的軍隊進入 Edinburgh 時，一些忠誠的蘇格蘭人把「蘇格蘭榮耀」——王冠、權杖和劍——從城堡中取出，帶到了堅固的 Dunotar 堡壘和城堡。Dunotar 城堡中只有一小支盟約派的部隊，但他們準備為「榮耀」戰鬥到最後一人。Monk 將軍知道「榮耀」去了哪裡，他派了一名軍官和一個團的鐵甲軍去取回它們。盟約派當然拒絕投降，英格蘭人也認為沒有必要強攻城堡，他們包圍了堡壘，只等待守軍糧食耗盡、不得不投降。
 Now near Dunotar there lived a Mr Granger, a minister of the Church
 of Scotland. Mr Granger and his wife thought of a way to save the "Honours of Scotland" before the castle would fall to the English.
 One day Mrs Granger went to the officer who commanded the English troops. She asked him for permission to pass through the English
@@ -1114,6 +1368,8 @@ to go back to General Monk without the "Honours."
 The "Honours" remained in Mr Granger's church until there was a
 King and crown once more, sceptre and sword were dug up and
 brought back to Edinburgh.
+
+在 Dunotar 附近住著一位 Granger 先生，他是蘇格蘭教會的牧師。Granger 先生和他的妻子想出了一個在城堡落入英格蘭人手中之前拯救「蘇格蘭榮耀」的辦法。有一天，Granger 夫人去找指揮英軍的軍官。她請求他允許她穿過英軍防線，上到城堡去取一些用來包紮傷口的繃帶布。城堡裡有相當大的存量，Granger 夫人說村民們已經用完了，她需要一些。軍官先檢查了 Granger 夫人的大籃子，以防她給城堡的守軍送食物，但籃子是空的，所以他讓她通過了。Granger 夫人上到城堡，告訴守軍她為什麼來：要搶救榮耀。在她的指示下，王冠、權杖和劍各自被完全包裹在長條繃帶布裡，然後放入大籃子中。然後在上面堆了大量的繃帶布。Granger 夫人帶了一個僕人一起來，否則她幾乎不可能把沉重的籃子搬下去。但兩個人合力做到了。英格蘭人幾乎沒看她和僕人一眼就放行了，她安全地到了家。然後在深夜，她和丈夫把「榮耀」埋在教堂講壇下面，它們就留在了那裡。一週後城堡的守軍投降了——但英格蘭人沒有找到王冠或權杖，經過長時間毫無結果的搜查後，不得不空手回去見 Monk 將軍。「榮耀」一直留在 Granger 先生的教堂裡，直到再次有了國王，王冠、權杖和劍才被挖出來帶回 Edinburgh。
 General Monk had failed to get hold of the "Honours of Scotland" -
 but he had Scotland in his power and he ruled over Scotland on behalf of
 his master, Cromwell, with an iron hand.
@@ -1139,6 +1395,8 @@ and would obey him blindly. And, moreover, Cromwell's enemies were
 divided and against each other - the Scots against the English, the King's
 party, the Royalists, against the Republicans. And so Cromwell remained
 in power.
+
+Monk 將軍未能得到「蘇格蘭榮耀」——但他控制了蘇格蘭，代表他的主人 Cromwell 以鐵腕統治蘇格蘭。Cromwell 本人以鐵腕統治著整個英國。理論上，英國應該由議會治理，但 Westminster 的議員們只是那些服從 Cromwell 命令的人；他們就像被 Cromwell 用繩子操控的木偶。過了一段時間，Cromwell 甚至厭倦了這個殘缺議會。有一天他帶著三百名士兵走進議會，對議員們說：「我要結束你們的廢話了！」在他的命令下，士兵們把目瞪口呆的議員們趕了出去。第二天有個愛開玩笑的人在緊閉的門上貼了一張告示：「房屋出租，不帶傢具。」再也沒有人能反對 Cromwell 了，騎士黨不是逃到了其他國家就是被處決了。盟約派被粉碎了，議會被關閉了。Cromwell 被保皇黨——那些想讓 Charles 二世重返王位的人——所恨，被想要議會統治的共和黨人所恨，被在 Monk 將軍統治下受苦的蘇格蘭人所恨，也被現在比在 Charles 一世統治下還缺乏自由的英格蘭人所恨。但 Cromwell 有軍隊為己所用，鐵甲軍愛戴他，會盲目地服從他。而且，Cromwell 的敵人們彼此分裂、互相對立——蘇格蘭人對英格蘭人，國王派即保皇黨對共和黨人。所以 Cromwell 繼續掌權。
 He could have made himself King - but he thought it wiser to have a
 King's power without using the name "King." Instead he called himself
 Lord Protector (as William of Orange had been "Protector" of Holland).
@@ -1158,6 +1416,8 @@ body-guard of Ironsides, he never dared to go for a walk by himself. And
 in the great palace of Westminster where he lived, he changed his bedroom every night, so that any would-be murderer would not know
 where to find him. So the life of the most powerful man in Britain was
 neither happy nor comfortable.
+
+他本可以自封為國王——但他認為擁有國王的權力而不使用「國王」這個名號更為明智。他稱自己為護國公（正如 William of Orange 曾是荷蘭的「護國者」一樣）。作為護國公，Cromwell 把嚴肅的清教徒生活方式強加在每個人身上。人們因喝醉酒而受到懲罰，劇院被關閉，舞蹈被禁止，賽馬被禁止，賭博被禁止。在星期天，即使最溫和的娛樂也不被允許：甚至有一項法律禁止人們在星期天「虛度地行走」——也就是不必要的步行、散步消遣。Cromwell 已經成為一個「暴君」——一個未經人民同意就進行統治、僅靠讓人民恐懼來維持權力的人。任何公開反對 Cromwell 的人都面臨監禁、放逐或死亡的危險。而且，像所有暴君一樣，Cromwell 生活在對暗殺的持續恐懼中，他害怕他眾多敵人中的某一個會試圖謀殺他。他總是在普通衣服下面穿一套盔甲——這一定非常不舒服。無論他走到哪裡都有鐵甲軍衛隊陪同，他從不敢獨自散步。在他居住的 Westminster 大宮殿裡，他每晚都換臥室，這樣任何企圖行刺的人都不知道在哪裡找到他。所以英國最有權勢的人的生活既不快樂也不舒適。
 But in fairness to Cromwell, it must be said that he also did some
 good things for England. For instance, under the rule of the King the
 roads in Britain had never been safe for travellers; there used to be
@@ -1181,6 +1441,8 @@ himself the most powerful man in Britain, who was feared by the Spanish
 
 and the Dutch - this rule only lasted five years. In May 1658 Cromwell fell
 ill; he had worked hard, he had never
+
+但公平地說，Cromwell 也為英格蘭做了一些好事。例如，在國王統治時期，英國的道路對旅行者來說從不安全；以前有公路強盜會撲向任何看起來富有的旅行者，如果他們只拿走他的錢財或貴重物品而沒有殺了他，那旅行者就算幸運了。但在 Cromwell 的統治下，鐵甲軍清除了公路上的盜匪，幾個強盜被抓住絞死，其他的就消失了。但更重要的是，Cromwell 使英國成為了一個海上強國。在 Cromwell 統治時期，為英國海軍建造的船比任何國王在位時都多。當時有三個國家試圖稱霸海上——西班牙、荷蘭和英國。但 Cromwell 使英國海軍強大到足以先後擊敗西班牙和荷蘭的艦隊——因此正是在他的時代，英國開始「統治海洋」。這些海戰的一個結果是，西印度群島——中美洲東海岸的島嶼，Jamaica、Bahamas——從西班牙手中奪取，成為英國殖民地。這些島嶼種植甘蔗——糖和朗姆酒的貿易為英國商人帶來了巨大的財富。但 Cromwell 的統治——這個粗魯的鄉下人把自己變成了英國最有權勢的人，讓西班牙人和荷蘭人都畏懼——這個統治只持續了五年。1658 年 5 月 Cromwell 病倒了；他辛勤工作，他從未
 spared himself and his great
 strength was exhausted. There came a night when a terrible thunderstorm passed over England. Thunder rolled for hours on end, lightening
 flashed across the sky, rain and hail fell in torrents. And in that night
@@ -1208,8 +1470,14 @@ for Britain would be to have again a King, to bring the King back.
 You could see how often people changed sides. Monk had fought for
 Cromwell against the King - and now he wanted the King back.
 
+不知體恤自己，他巨大的精力已經耗盡了。有一天夜裡，一場可怕的雷暴席捲了英格蘭。雷聲連續轟鳴數小時，閃電劃過天空，暴雨和冰雹傾盆而下。就在那個夜晚，護國公 Cromwell 去世了。當時英格蘭有不少人說，在這場暴風雨中，魔鬼親自來帶走了 Cromwell 的靈魂去地獄。但這對 Cromwell 不太公平——他雖然是暴君——卻從未沉溺於奢華或享受，而且比他之前的國王們更認真地對待作為統治者的職責。Cromwell 臨終時說：「有些人會讚揚我所做的，另一些人會為我的死而高興。」英國大多數人都高興了，他們為這個以恐懼統治的嚴厲無情之人的離去感到解脫。Cromwell 的兒子 Richard 既沒有統治的意願也沒有統治的能力。他退位了——也就是說，他放棄了「護國公」的頭銜和權力，退隱到鄉下的農場。於是議會再次被召集，英國的「共和國」或「共和聯邦」應該再次由議會治理。但事情並非如此發展，因為軍隊——鐵甲軍——和議會合不來。鐵甲軍像 Cromwell 一樣，蔑視議員們和他們所謂的「嘮叨」。鐵甲軍曾服從 Cromwell，他們不願意服從議會。所以情況看起來相當無望，因為事實上根本沒有政府。在這個時候，代表 Cromwell 統治蘇格蘭的 Monk 將軍採取了行動來改變局面。他認為對英國來說最好的事情是再次擁有一位國王，把國王請回來。你可以看到人們多麼頻繁地改變立場。Monk 曾為 Cromwell 對抗國王而戰——而現在他想讓國王回來。
+
 Chapter 10
 The Restoration
+
+第十章
+王政復辟
+
 Cromwell is a very good example of what is called a dictator; it is somebody who has come to power not because he has inherited it, like a king,
 and not because he has been elected like a Prime Minister, but because
 he took power by force. A dictator comes to power by force, and rules by
@@ -1227,6 +1495,8 @@ real government. In this situation General Monk, who had ruled Scotland
 for Cromwell, decided that what Britain needed was a King, and that
 King should be Charles II, the son of Charles I who had been executed by
 Cromwell.
+
+Cromwell 是所謂獨裁者的一個很好的例子；獨裁者是那些不是因為繼承而獲得權力（像國王那樣），也不是因為被選舉而獲得權力（像首相那樣），而是以武力奪取權力的人。獨裁者以武力掌權，以武力統治。Cromwell 是近代史上第一個這類獨裁者，這個新時代始於新的發明和發現。後來還有其他這樣的獨裁者——Napoleon、Hitler、Mussolini。這確實很奇怪；一方面我們看到人民起來反抗國王的舊權威——但往往自由並沒有到來，取而代之的是一種新的「權威」——獨裁者的權威，比國王的舊權威更加糟糕。這是近代史上相當頻繁發生的事情：革命以更嚴酷的壓迫告終。但這些獨裁者遲早會死，當他們死去時，留下的是混亂和無序。Cromwell 死後也是如此。議會和鐵甲軍僵持不下，沒有真正的政府。在這種情況下，曾代表 Cromwell 統治蘇格蘭的 Monk 將軍決定，英國需要的是一位國王，而那位國王應該是 Charles 二世——被 Cromwell 處決的 Charles 一世的兒子。
 Just think of this: General Monk had been fighting against Charles II at
 the time of Cromwell, he had helped in the defeat of Charles II who had
 to flee in disguise to save his life. And now the same General Monk wanted to bring Charles II back to the throne of Britain.
@@ -1247,6 +1517,8 @@ It was a message of generous promises - and when General Monk
 had read it out, all Members of Parliament cheered and they all now
 voted that Charles II should be restored to the throne and rule as King.
 This is called the Restoration.
+
+想想看：Monk 將軍在 Cromwell 時代曾經對抗 Charles 二世作戰，他曾經幫助打敗了不得不偽裝逃亡以保全性命的 Charles 二世。而現在同一個 Monk 將軍想要把 Charles 二世帶回英國的王座。當 Monk 將軍宣布支持 Charles 二世國王時，他肯定有蘇格蘭人民站在他這邊——但英格蘭呢？Monk 將軍對英格蘭不能確定——但他集結了一支軍隊向南進發。當他向南進軍時，他在任何地方都沒有遇到反對：恰恰相反，一路上英格蘭人民都在 Monk 的軍隊經過時歡呼。Monk 率領軍隊直入倫敦。1660 年，當 Monk 到達倫敦後，他前往議會，向議員們宣讀了 Charles 二世的一封信。信的內容是：如果國家願意接受 Charles 為合法國王，他承諾絕不干涉議會，絕不干涉人民的宗教信仰，讓每個人都能按自己的方式禮拜——他不會向那些曾經反對他的人報復，也不會為父親的被處決而報復。這是一封慷慨承諾的信——當 Monk 將軍宣讀完畢，所有議員都歡呼起來，他們一致投票通過 Charles 二世應該被恢復王位、作為國王統治。這就是所謂的王政復辟。
 And so Charles, who had been in France, landed at Dover and all the
 miles from the coast right up to his palace in London people stood in
 packed crowds along the roads and cheered. Nine years earlier Charles
@@ -1265,6 +1537,8 @@ that there would be no revenge; but he had no intention to keep these
 promises and as soon as he was well installed, he broke every one of
 them.
 First of all he revenged his father's death. The judges who had sentenced Charles I to death were arrested, condemned and hanged. Even
+
+於是在法國的 Charles 在 Dover 登陸了，從海岸一直到他在倫敦的宮殿，數英里的道路兩旁人們密密麻麻地站著歡呼。九年前 Charles 偽裝逃離，現在他凱旋歸來。蘇格蘭當然也是一片歡騰。在 Edinburgh，教堂鐘聲響起，號角齊鳴，大砲轟響，夜晚燃起了篝火。在 Mercat Cross 有一座「葡萄酒噴泉」，人們可以像喝水一樣喝酒；在 High Street 上有一張長桌，擺滿了蛋糕、甜食和水果，人人都可以自取。然而——如果蘇格蘭人知道等待他們的是什麼，他們就不會慶祝 Charles 二世的回歸了，他們會流下痛苦的淚水。你看，Charles 做出了美好的承諾——他承諾不會報復；但他根本沒有打算遵守這些承諾，一旦他穩固了地位，他就一個接一個地打破了所有承諾。首先他為父親的死進行了報復。判處 Charles 一世死刑的法官們被逮捕、審判和絞死。甚至
 the corpse of Cromwell was taken from its grave, hanged on a gallows
 and then beheaded.
 And Charles II also broke his other promise: to allow people freedom
@@ -1307,6 +1581,8 @@ the "outed" ministers (those who had been driven from the churches)
 held the services. Lord Lauderdale would not allow this either; he sent
 soldier to break up these meetings and to arrest any man who had taken
 part. But the Covenanters began to fight back.
+
+現在他轉而反對清教徒和盟約派。像他的父親和祖父一樣，他強迫清教徒接受他們最痛恨的東西：主教。你可以想像蘇格蘭盟約派是多麼痛苦地失望，但蘇格蘭有一個人認為他可以說服 Charles 二世遵守承諾，那就是盟約派的領袖 Argyll 侯爵。十年前正是 Argyll 勳爵把蘇格蘭的王冠戴在了 Charles 頭上；正是 Argyll 勳爵命令盟約派為國王而戰，他們在 Dunbar 和 Worcester 為他浴血奮戰。所以 Argyll 勳爵以為 Charles 國王會感激他。但 Charles 只在認為蘇格蘭人能幫他打敗 Cromwell 的時候才對他們感興趣。現在他不再需要他們了，他沒有時間理會蘇格蘭人。在他統治的二十五年裡，他一次也沒有來過蘇格蘭。他沒有時間理會盟約派，也沒有時間理會他們的領袖 Argyll 勳爵。當 Argyll 到達倫敦求見國王時，他被逮捕了，作為囚犯被送回 Edinburgh，被指控叛國，判處死刑。曾經 Argyll 勳爵目睹 Montrose 沿著 Edinburgh 的 High Street 走向死亡。現在輪到他了，他沿著 High Street 被押赴刑場。Argyll 的處決只是迫害盟約派的開始。Charles 國王任命了一個卑鄙的蘇格蘭人 Lauderdale 勳爵，強迫盟約派加入英格蘭教會。人民不僅必須接受主教，他們自己的堂區牧師還被趕出了教堂，Lauderdale 勳爵安插了他自己選定的牧師，其中大多數根本不稱職。但盟約派是頑強的人；他們乾脆不再去教堂了；他們在露天、在山丘上聚會，那些被「趕出」的牧師（被趕出教堂的牧師）在那裡主持禮拜。Lauderdale 勳爵也不允許這樣做；他派士兵去驅散這些聚會，逮捕任何參加者。但盟約派開始了反擊。
 There was the Pentland Rising when a band of Covenanters marched
 from the Pentland Hills on Edinburgh, but they were surrounded and
 
@@ -1329,8 +1605,14 @@ Scotland. And this was the King for whom the Scots had fought at
 Dunbar and Worcester, the King for whom they had saved the "Honours
 of Scotland."
 
+有 Pentland 起義，一群盟約派從 Pentland Hills 向 Edinburgh 進軍，但他們被國王的士兵包圍並擊敗了。在戰鬥中陣亡的人反而是幸運的，被俘虜的人先被拷打然後被絞死。還有一場在 Clyde 河上 Bothwell Bridge 的戰鬥，一整支盟約派軍隊與國王的士兵作戰，但未經訓練的盟約派被經驗豐富的軍隊擊敗。數百名盟約派在戰鬥中喪生，數百人被俘，衣衫襤褸、半飢半飽地被關在 Greyfriars 墓地的露天之中數月，直到大多數人發誓服從。那些拒絕的人被送往美洲、西印度群島，被賣為奴隸在甘蔗種植園裡勞作。然而儘管遭受打壓——在蘇格蘭各地，盟約派仍然秘密地前往峽谷和山丘上的聚會；他們一手緊握聖經、一手緊握利劍去參加聚會。每當國王的士兵發現這樣的聚會，盟約派不會投降，而是戰鬥到最後一人。所以 Charles 二世的時代是蘇格蘭歷史上非常不幸的時期。而這就是蘇格蘭人曾在 Dunbar 和 Worcester 為之而戰的國王，蘇格蘭人曾為之保護了「蘇格蘭榮耀」的國王。
+
 Chapter 11
 The Merry Monarch
+
+第十一章
+歡樂君主
+
 Charles II behaved shamefully in his treatment of the Covenanters; he
 broke his promises and he sent men who fought for him to their death.
 But a man like Charles just could not live in peace and friendship with the
@@ -1347,6 +1629,8 @@ had broken your journey on Sunday and not used the Lord's day for travelling.
 A true Covenanter, a true Puritan would not allow himself the smallest
 pleasure. In a letter of that time a Scots Covenanter wrote to a friend:
 "On Wednesday I planted some trees in my garden. I hope God will forgive me that I rather enjoyed doing it."
+
+Charles 二世對待盟約派的方式是可恥的；他違背了承諾，把那些為他而戰的人送上了死路。但像 Charles 這樣的人就是不可能與盟約派和平友好地共存，這是不可能的，就像火與冰不可能共存一樣。想像一下在盟約派時代 Edinburgh 的生活是什麼樣的。不僅任何形式的娛樂都被禁止——除了祈禱以外的任何事情也都被禁止。一個人因為在星期天探望他生病的母親而被責備。人們因為穿新式樣的衣服而被罰款——清教徒的服裝全是黑色或深灰色。甚至演奏樂器——小提琴或長笛——也被認為是有罪的。既然你不該在星期天做任何工作，你也不該做任何旅行；如果你在星期一到達 Edinburgh，你必須帶某種證明——你住處主人的一封信——來證明你在星期天中斷了旅程，沒有用主的日子來旅行。一個真正的盟約派成員、一個真正的清教徒不會允許自己有最微小的快樂。在那個時代的一封信中，一位蘇格蘭盟約派成員寫給朋友：「星期三我在花園裡種了些樹。我希望上帝原諒我竟然頗為享受這件事。」
 Now compare the Scots Puritan, the Covenanters, with Charles II and
 his courtiers. When Charles came to the throne, there came back with
 him the Cavaliers, and life in England changed from grim austerity of
@@ -1365,6 +1649,8 @@ And these elegantly dressed and heavily perfumed Cavaliers devoted
 their time and energy whole-heartedly to amusements of any and every
 kind - and there was so much merry-making that Charles was called the
 "Merry Monarch."
+
+現在把蘇格蘭清教徒、盟約派，與 Charles 二世和他的朝臣們比較一下。當 Charles 登上王位時，騎士黨也跟著回來了，英格蘭的生活從 Cromwell 時代嚴酷的禁慾轉變為騎士黨毫無節制的尋歡作樂。Charles 和他每一個朝臣、每一個騎士黨人，在絲綢和緞子做的衣服上動輒花費數千英鎊，在裝飾腰帶、鞋扣、劍柄和手指的珠寶上花費了大量財富。他們噴灑——不如說是浸泡在昂貴的香水和香料中。他們開始了一種新的時尚——愚蠢的時尚——男性的髮型，但這種時尚卻持續了一個多世紀——他們戴假髮。頭髮完好的男人把頭髮剪得很短，然後戴上有著長長的、精心捲曲的頭髮、垂到肩膀的假髮。這些穿著優雅、噴滿香水的騎士黨人把他們所有的時間和精力全心全意地投入到各式各樣的娛樂中——如此多的歡宴嬉鬧，以至於 Charles 被稱為「歡樂君主」。
 The favourite occupation of the court of the Merry Monarch was gambling. They gambled with dice, they went riding and hunting, and they
 enjoyed a good play in a theatre just as much as a public hanging of a
 criminal.
@@ -1379,6 +1665,8 @@ whom and he showered with presents, money and jewels.
 This was the Merry Monarch, and there could be no friendship and no
 peace between him and the Covenanters. They were as different as fire
 and ice.
+
+歡樂君主的宮廷最喜歡的消遣是賭博。他們用骰子賭博，他們騎馬打獵，他們欣賞劇院裡的好戲，也同樣樂於觀看公開絞死罪犯。在所有這些尋歡作樂中，Charles 國王——歡樂君主——勝過了他所有的騎士黨人，他樹立了榜樣。他娶了一位葡萄牙公主，但可憐的王后很少見到她的皇家丈夫。他選了一個漂亮的女孩作為他所有歡宴嬉鬧的伴侶，那是他在倫敦街頭賣花時遇到的，她的名字叫 Nell Gwynn。國王走到哪裡，在他身邊的不是王后，而是 Nell Gwynn，他用禮物、金錢和珠寶傾瀉在她身上。這就是歡樂君主，他和盟約派之間不可能有友誼和和平。他們就像火與冰一樣截然不同。
 But there is one thing one can say for the Covenanters: none of them
 would break a promise. On the other hand, Charles broke every promise
 he had given: he had taken a terrible revenge on the men who had condemned his father to death, and he did all he could to force his religion
@@ -1392,6 +1680,8 @@ their district to elect them as Members of Parliament, and the countrypeople vot
 something - money or power - they voted for him. The Members of Parliament who were elected by the country people always voted for the
 King's wishes.
 But in the cities and towns most people were still Roundheads and so
+
+但有一點可以為盟約派說的：他們沒有人會違背承諾。另一方面，Charles 打破了他所做的每一個承諾：他對那些判處他父親死刑的人進行了可怕的報復，並且竭盡全力把他的宗教強加給盟約派。第三個承諾——不干涉英格蘭議會——就不那麼容易打破了；Charles 不想激起人民的憤怒、引起另一次叛亂、另一場內戰。但他找到了另一種方法來從議會那裡得到他想要的東西。他的許多騎士黨人擁有大莊園——大片的土地。這些大地主「參選議會」——也就是說，他們要求自己所在地區的人選他們為議員，鄉下人就投票給他們。因此許多議員都是騎士黨人、國王的朋友，每當國王想要某樣東西——金錢或權力——他們就投票支持他。由鄉下人選出的議員總是投票支持國王的意願。但在城市和城鎮裡，大多數人仍然是圓顱黨，所以
 
 were the Members of Parliament they elected. And these Roundheads in
 the Parliament always voted against the King's wishes. Sometimes one
@@ -1422,6 +1712,7 @@ to the faith of their great-grandmother, Mary Stuart, the Catholic faith.
 
 Chapter 12
 The Plague and the Great Fire
+第十二章 瘟疫與大火
 Picture for a moment two ways of life: the Puritan way which Cromwell
 forced on England and the Cavalier way which the Restoration of Charles
 II brought to England. Each way of life is really an "extreme." The people
@@ -1441,6 +1732,8 @@ the other, we shall look at what life was like for the common folk in those
 days. Although that time was only three or four hundred years ago -
 that's not more than ten or twelve generations ago - it was very different
 from our kind of life.
+
+騎士黨——他們像一個警示站在你面前——警示你不要變成其中任何一種——而是要在他們之間找到正確的平衡。所以我們可以看到，歷史不僅僅是過去的事情，我們可以從歷史中為我們今天的時代學到很多。現在在我們繼續這個動盪的十七世紀的歷史之前——英國人民在那個世紀被從一個極端拋向另一個極端——讓我們看看那個時代普通人的生活是什麼樣的。雖然那個時代距今只有三、四百年——不超過十或十二代人——但它與我們的生活方式非常不同。
 Just take one thing: travelling. The roads on which people had to travel were simply awful. On the main-roads the ruts made by the wheels of
 carts and carriages were so deep that carts often turned over. In some
 places there were holes filled with water and so deep that, sometimes, a
@@ -1459,6 +1752,8 @@ their plain black clothes. Remember the wigs men wore over their own
 hair. There is one place where this fashion of wigs for men has remained
 to this day: in a court of law. Judges and barristers still wear wigs when
 they are in court.
+
+就拿一件事來說：旅行。人們不得不行走的道路簡直糟透了。在主要道路上，車輪壓出的車轍如此之深，以至於車子經常翻倒。有些地方有積水的坑洞，深到有時馬和騎手衝進一個看似大水坑的地方差點被淹死。在 Cromwell 時代，這些道路至少不用擔心公路強盜，但在 Cromwell 之前和之後，沒有人會不帶武器就出門旅行，富人總是有武裝僕人陪同，因為一旦他們冒險離開城鎮幾英里，公路強盜就可能奪走他們的財產和性命。由於旅行的唯一方式是騎馬或乘坐馬車，任何超過幾英里的旅程都耗時無窮，非常不舒適而且危險。時裝色彩繽紛、做工精細——只有清教徒堅持穿他們樸素的黑色衣服。記得男人們戴在自己頭髮上面的假髮嗎。有一個地方，這種男性假髮的時尚一直保留到今天：在法庭上。法官和律師在出庭時仍然戴假髮。
 Now let us look at the houses. Only very rich people had brick or
 stone houses with many rooms and gardens. Ordinary people lived in little wattle and daub houses with wooden frames, and the space between
 the frames was only filled with mud or plaster. These walls kept neither
@@ -1471,6 +1766,8 @@ never walked, but let themselves be carried in sedan-chairs by servants.
 Against the horrible smell, ladies always carried with them oranges with
 cloves stuck in them and held them to their noses when they passed
 through an especially bad stretch.
+
+現在讓我們看看房屋。只有非常富有的人才有磚或石造的多房間花園住宅。普通人住在用木框架建造的編條泥牆小屋裡，框架之間的空隙只用泥巴或灰泥填充。這些牆壁既擋不住寒冷也擋不住潮濕。人們仍然習慣把所有垃圾從窗戶扔到街上——只有偶爾當垃圾堆高到堵住了街道時，清潔工才會來把垃圾運走。街道上的髒汙和臭味如此可怕，以至於富人從不步行，而是讓僕人用轎子抬著走。為了抵禦可怕的氣味，女士們總是隨身攜帶插了丁香的橘子，在經過特別難聞的路段時舉到鼻子前。
 Of course, these heaps of refuse harboured countless rats. The city of
 London, in particular, was swarming with rats which came from the many
 ships in the London docks. And at the time of King Charles II some ships
@@ -1483,6 +1780,8 @@ breeding-ground for the disease. But then more and more people died
 with the symptoms of plague (great swellings under the arm-pits) - and
 rich people, the King and his courtiers hurriedly left London and stayed
 in the clean air of the countryside.
+
+當然，這些垃圾堆裡藏著無數的老鼠。尤其是倫敦城，從倫敦碼頭的眾多船隻上來的老鼠到處亂竄。在 Charles 二世國王的時代，有些船隻帶來了一種可怕的傳染病，這種病通過老鼠傳播（或者更確切地說，通過寄生在老鼠身上的跳蚤傳播），它們帶來了瘟疫。瘟疫始於 1665 年冬天，起初只有零星幾個人死去，沒有人太在意，也沒有人想到街上的垃圾堆和老鼠是這種疾病的絕佳溫床。但隨後越來越多的人帶著瘟疫的症狀（腋窩下巨大的腫塊）死去——富人、國王和他的朝臣們匆忙地離開倫敦，到鄉下呼吸新鮮空氣去了。
 But the common folk who had no mansions in the countryside and
 who had to work to earn their bread could not leave London - and they
 died in their thousands. As soon as one person in a house died all the
@@ -1501,6 +1800,8 @@ And still people died. At one time a thousand people died every day.
 Whole streets became empty - there were rows of houses without a living soul in them. Only towards autumn the plague cases became fewer,
 and then came a very cold winter, the intense cold stopped the spread
 and so - after having raged for a whole year - the plague disappeared.
+
+但那些在鄉下沒有宅邸、必須工作謀生的普通百姓無法離開倫敦——他們成千上萬地死去。一旦一棟房子裡有一個人死了，住在這棟房子裡的所有其他人就被禁止離開；他們不被允許踏出家門半步，以免傳播瘟疫。他們的房門從外面被封上，並標上一個紅色十字架和「上帝憐憫我們」的字樣。被遺棄於命運之中，被囚禁在自己的房子裡，整個家庭死於瘟疫或飢餓。每個人都生活在恐懼之中。人們互相害怕，因為你最好的朋友、你的鄰居、任何碰觸你的人，都可能感染你。當一個乞丐碰到一個人的外套時，那個人就脫下外套扔掉，因為它可能已經被瘟疫感染了。人們仍然不斷死去。有一段時間每天有一千人死亡。整條街道都空了——一排排房子裡沒有一個活人。直到秋天瘟疫病例才漸漸減少，然後來了一個非常寒冷的冬天，嚴寒阻止了瘟疫的傳播——在肆虐了整整一年之後，瘟疫終於消失了。
 The city of London had not yet recovered from the ravages of the
 plague when, only one year later, it was struck by another terrible misfortune: the Great Fire.
 Most houses in London were just wattle and daub and so would burn
@@ -1512,6 +1813,8 @@ And the great fire came in 1666. It started at night in a baker's house,
 and the bakery went up in flames like a bundle of straw; the people next
 door in their timber houses made no attempt to stop the fire - it would
 have been useless. They hurriedly collected their possessions - as much
+
+倫敦城還未從瘟疫的蹂躪中恢復過來，僅僅一年後，又遭受了另一場可怕的災難：大火。倫敦的大多數房屋只是編條泥牆，所以很容易燃燒。街道非常狹窄，一旦一棟房子著火，不僅鄰居的房子，連對面的房子也會著火。如果有一座城市是為大火量身打造的，那就是 Charles 二世時代的倫敦。大火在 1666 年降臨。它在夜間從一個麵包師的房子裡開始，麵包店像一捆稻草一樣燃燒起來；隔壁木屋裡的人們沒有試圖滅火——那是徒勞的。他們匆忙地收集自己的財物——盡可能多地
 as they could - and piled them up in the road outside, and then they
 watched their homes becoming engulfed by the flames. A gust of wind
 carried sparks to a nearby inn where a lot of hay was stacked up for travellers' horses - and the hay stacks were ablaze in a moment. By now the
@@ -1523,8 +1826,13 @@ were packed with men, women, children carrying bundles and pushing
 in all directions.
 And then the fire reached the warehouses by the river Thames. The
 
+火勢以驚人的速度蔓延。人們被外面的尖叫呼喊聲和咆哮的火焰從睡夢中驚醒，穿著睡衣從窗戶跳出來。街上擠滿了男男女女和孩子們，背著包裹四處逃竄。然後火勢蔓延到了 Thames 河邊的倉庫。
+
 Chapter 13
 The Glorious Revolution
+
+第十三章
+光榮革命
 When Charles II died in 1685, his brother, James became King though he
 was a Catholic. It is rather surprising that the English Parliament, where
 all members were Protestants should agree to have a Roman Catholic as
@@ -1541,6 +1849,8 @@ man he appointed to deal with the Covenanters was Lord Claverhouse, a
 man who was as ruthless and merciless as the Duke of Alba had been.
 Claverhouse sent his soldiers to hunt down the Covenanters as they had
 never been hunted before.
+
+1685 年 Charles 二世去世時，他的弟弟 James 成為國王，儘管他是天主教徒。英格蘭議會——所有成員都是新教徒——竟然同意接受一個天主教徒作為國王，這確實令人驚訝。但兩個黨派，托利黨和輝格黨，都寧可要一個合法的國王——James 二世確實是合法的——也不願讓國家陷入另一場內戰。James 必須承諾不干涉新教教會，只要他遵守這個承諾，英格蘭議會就願意接受他為國王。但在蘇格蘭情況不同，蘇格蘭盟約派說：「根據蘇格蘭法律，天主教徒不能成為蘇格蘭國王。我們沒有國王，James 不是我們的國王。」這種頑固的拒絕承認 James 為合法國王給蘇格蘭帶來了巨大的苦難——因為 James 決定消滅這些叛逆、不服從的盟約派。他任命來對付盟約派的人是 Claverhouse 勳爵，一個像 Alba 公爵一樣冷酷無情的人。Claverhouse 派他的士兵去追捕盟約派，前所未有地殘酷。
 The Covenanters still had their forbidden prayer-meetings in the hills
 - but any who were caught at it were executed - or if they were lucky
 they had one ear cut off and were then sent as slaves to America and
@@ -1561,6 +1871,8 @@ The English Parliament had stood faithfully and loyally by James
 against the rebels, Argyll and Monmouth, but neither of the two parties
 liked what was going on afterwards. They began to think that James had
 to go. But who should take his place?
+
+盟約派仍然在山丘上舉行他們被禁止的祈禱聚會——但任何被抓到的人都被處決——如果幸運的話只是被割掉一隻耳朵，然後被送到美洲當奴隸，像牲口一樣被賣掉。Claverhouse 及其手下暴行最惡劣的例子是 Wigtown 殉道者。在 Wigtown，Claverhouse 的士兵逮捕了兩名婦女——一個六十歲，另一個只有二十歲——名叫 Margaret Lauchleson 和 Margaret Wilson。她們被問是否願意加入英格蘭教會。當她們拒絕時，她們在退潮時被帶到海邊綁在木樁上，當潮水上漲時她們被淹死了。James 二世國王的時代，他的爪牙殘酷的 Claverhouse 的時代，是整個蘇格蘭歷史上最糟糕、最可怕的時期。然而，James 本人也是蘇格蘭血統，一個 Stuart，Mary Stuart 的曾孫。但不僅僅是蘇格蘭的清教徒、盟約派拒絕接受天主教國王：也有英格蘭的清教徒……取而代之。英格蘭議會曾忠誠地支持 James 對抗叛亂者 Argyll 和 Monmouth，但兩個黨派都不喜歡之後發生的事。他們開始認為 James 必須離開。但誰應該取代他的位置？
 James had a daughter, Mary, who had married a Dutch nobleman,
 William of Orange, the great-grandson of the William who had fought
 the Spaniards. This William of Orange was a Protestant and the English
@@ -1577,6 +1889,8 @@ confirmed their fears that James was trying to make the country Roman
 Catholic.
 So Parliament sent a message to William of Orange to come and drive
 James out and to take his place as King.
+
+James 有一個女兒 Mary，她嫁給了一位荷蘭貴族 William of Orange——曾經對抗西班牙人的那位 William 的曾孫。這位 William of Orange 是新教徒，英格蘭議會開始認為他們寧可要一個荷蘭的但是新教徒的國王，也不要 James 這個英國的但是天主教徒的國王。然後 James 做了一件真正激怒議會和英格蘭及蘇格蘭所有人的事。他未經議會同意就通過了一項法律。這項法律本身其實是公平的——天主教會應該與任何其他教會享有同等權利——但讓英國人民和議會不滿的是國王未經議會就制定法律；他沒有這個權利。這也證實了他們的擔憂，即 James 正試圖使國家天主教化。所以議會給 William of Orange 發了一封信，請他來趕走 James 並取代他成為國王。
 In November 1688, William had a fleet ready to invade England. On
 the ships were large flags with the inscription "I will maintain the liberties
 of Britain and the Protestant religion." The fleet landed in Devon and an
@@ -1595,6 +1909,8 @@ The wonderful thing about this revolution against James was that it
 took place without any bloodshed at all and therefore in all history books
 it is called the Glorious Revolution. The year of the Glorious Revolution is
 1688, exactly a hundred years after the Great Armada.
+
+1688 年 11 月，William 準備好了一支入侵英格蘭的艦隊。船上掛著大旗，上面寫著「我將維護英國的自由和新教信仰」。艦隊在 Devon 登陸，一萬五千人的軍隊上了岸，這是自羅馬時代以來入侵英國最大的軍隊。但 William of Orange 的軍隊不是征服者的軍隊——他們行軍到哪裡，人們就出來歡迎和歡呼。James 本人率領一支英格蘭軍隊對抗入侵者，但他自己的士兵、自己的將軍們拋棄了他，轉而加入了 William of Orange。沒有戰鬥也沒有戰役，因為 James 已經沒有願意為他而戰的士兵了。James 被俘獲了。然而，William 不想處決自己妻子的父親、自己的岳父。James 被允許逃往法國。他再也沒有見過英國。這場反對 James 的革命精彩之處在於它完全沒有流血，因此在所有歷史書中它都被稱為光榮革命。光榮革命的年份是 1688 年，恰好是大無敵艦隊之後一百年。
 Both England and Scotland were jubilant and gladly accepted William
 as King. In fact he and his wife, Mary, were to rule together, so this is
 called the reign of William and Mary.
@@ -1607,8 +1923,13 @@ And so once again, Scotsmen fought each other, the Lowlanders for
 William and the Highlanders against the new King. But in this battle of
 Killiecrankie in 1689, Claverhouse was killed and although the Highlanders won the battle, they gave up and did not go on with the
 
+英格蘭和蘇格蘭都歡欣鼓舞，欣然接受 William 為國王。事實上他和他的妻子 Mary 將一起統治，所以這被稱為 William 和 Mary 的統治時期。蘇格蘭盟約派當然歡欣鼓舞，現在他們可以擁有自己的牧師，在自己的教堂裡禮拜，不用擔心受到迫害了。但殘酷的 Claverhouse 逃到了高地。許多高地部族仍然是天主教徒；他們庇護了 Claverhouse，他甚至說服他們起來反對 William。於是蘇格蘭人又一次互相廝殺，低地人支持 William，高地人反對新國王。但在 1689 年的 Killiecrankie 戰役中，Claverhouse 被殺了，雖然高地人贏得了這場戰鬥，但他們放棄了，沒有繼續……
+
 Chapter 14
 The Union of 1707
+
+第十四章
+1707 年聯合法案
 All the Stuart Kings (James VI, Charles I, Charles II, James II) had been
 clinging to the belief that a king had "divine rights," rights which God had
 given to him. But William of Orange could not claim "divine rights" - he
@@ -1621,6 +1942,8 @@ And the Parliament is only the assembly, the gathering of the men
 and women who are elected as Members of Parliament by the rest of the
 population. And the population can change their minds every five years
 when there are new elections and can change the government.
+
+所有的 Stuart 國王（James 六世、Charles 一世、Charles 二世、James 二世）都堅持相信國王擁有「神聖的權利」，即上帝賦予他的權利。但 William of Orange 不能宣稱「神聖的權利」——他是被議會推上王位的，只擁有議會賦予他的權利。從 William 開始，再沒有任何國王或女王違背議會的意願，隨著時間推移，國王們的話語權越來越少。最終是議會在統治國家，而不是國王和女王。議會不過是一個集會——由其餘人口選舉出的議員的集合。而人口每五年在新的選舉中可以改變主意，可以更換政府。
 At first the Scots had their own Parliament; it was in Edinburgh, in the
 building now called the Law Courts behind St Giles Cathedral. The Scots
 made their own laws there and the English made their own laws in London. But after a time the leaders of the Scots Parliament agreed that it
@@ -1634,6 +1957,8 @@ for the complicated job of governing Britain, but the common people in
 Scotland did not like it at all. They had been proud of their own Parliament. There were riots in Edinburgh, and even worse riots in Glasgow.
 Later on people quietened down - but there was a good deal of anger
 and discontent in Scotland.
+
+起初蘇格蘭人有自己的議會；它在 Edinburgh，就在 St Giles 大教堂後面現在被稱為法院大樓的建築裡。蘇格蘭人在那裡制定自己的法律，英格蘭人在倫敦制定自己的法律。但過了一段時間，蘇格蘭議會的領導人同意，如果蘇格蘭議員和英格蘭議員一起在倫敦開會，治國的工作會更簡單。於是 Edinburgh 的蘇格蘭議會被關閉了——蘇格蘭人和英格蘭人在倫敦共有一個議會。這就是 1707 年的「聯合」。蘇格蘭議員們同意這是治理英國這項複雜工作的最佳方案，但蘇格蘭的普通百姓一點也不喜歡。他們為自己的議會感到驕傲。Edinburgh 發生了暴動，Glasgow 的暴動更加嚴重。後來人們平靜下來了——但蘇格蘭有相當多的憤怒和不滿。
 Now there were people who were very pleased that there was trouble in Scotland. When James II had to flee from England, he did not give
 up his throne willingly. He was convinced that he was the rightful King, a
 King by the "Grace of God" and Parliament had no right to drive him out.
@@ -1655,6 +1980,8 @@ trouble in Scotland - to hear that many Scots people disliked the Union
 and were angry about it. The Jacobites thought that if they started a
 rebellion in Scotland they would get many supporters: they only waited
 for the right moment. And this right moment came - or at least the Jacobites thought so.
+
+有些人對蘇格蘭出了問題非常高興。當 James 二世不得不逃離英格蘭時，他並非心甘情願地放棄王位。他堅信自己是合法的國王，一個蒙「上帝恩典」的國王，議會無權把他趕走。他繼續自稱國王，從未放棄有一天自己或他的兒子能重返英國王位的希望。在英國也有人，特別是在蘇格蘭的高地部族中，認為 James 才是合法國王，希望他或他的兒子重新成為英國的統治者。支持 James 國王的人被稱為「Jacobite 黨人」（James 的拉丁文是 Jacobus）。蘇格蘭有 Jacobite 黨人，英格蘭也有一些，還有一些追隨 James 留在法國。當 James 二世去世後，在法國的 Jacobite 黨人宣布他的兒子——也叫 James——為大不列顛新的合法國王。他被稱為「詹謀士」——因為他聲稱自己有權成為國王。Jacobite 黨人和他們的詹謀士非常高興聽到蘇格蘭出了問題——聽到許多蘇格蘭人不喜歡聯合、為此感到憤怒。Jacobite 黨人認為如果他們在蘇格蘭發動叛亂，會獲得很多支持者：他們只是在等待合適的時機。而這個合適的時機來了——至少 Jacobite 黨人是這麼認為的。
 When William and Mary died in 1702, their daughter Anne became
 Queen, but Anne never married and when she died in 1714 there was no
 successor to the throne. But there was a distant relative in Germany - he
@@ -1708,6 +2035,10 @@ again Scotland was to become a battlefield.
 
 Chapter 15
 The Jacobite Rebellion
+
+第十五章
+Jacobite 叛亂
+
 It was natural that Bonnie Prince Charlie should first turn to the Scots
 Highlanders for help. Many Highlanders were still Roman Catholics like
 himself, and they also loved fighting; they had followed Montrose
@@ -1724,6 +2055,8 @@ So Bonnie Prince Charlie raised his standard of red silk at Glenfinnan
 and the Clansmen - summoned by the fiery cross - gathered. They put a
 "cockade" (a white rosette) on their bonnets, for that was the Stuart
 emblem.
+
+Bonnie Prince Charlie 首先向蘇格蘭高地人求助是很自然的事。許多高地人像他一樣仍然是天主教徒，而且他們也喜歡打仗；他們曾追隨 Montrose 對抗盟約派，追隨 Claverhouse 對抗 William of Orange，追隨詹謀士對抗政府軍。這就是為什麼 Bonnie Prince Charlie 於 1745 年 7 月 23 日在外赫布里底群島的 Eriskay 登陸，並向高地首領們發出訊息請他們來為他而戰。首領們起初不太願意——他們太清楚記得 1715 年起義對他們來說有多糟糕。但當 Bonnie Prince Charlie 對 Cameron 部族的首領 Lochiel 說：「你要坐在家裡從報紙上讀我的戰報嗎？」首領感到羞愧，說：「不，我和我的部族會與你同在。」其他首領也承諾他們的部族為王子而戰。於是 Bonnie Prince Charlie 在 Glenfinnan 升起了他的紅色絲綢旗幟，被火焰十字架召喚的族人們聚集了起來。他們在帽子上別了一個「帽徽」（白色花結），因為那是 Stuart 家族的徽章。
 One month after his arrival in Scotland, the Prince had an army of
 three thousand fierce Highlanders and as he led this army into the Lowlands, other volunteers joined him so that his army grew as it marched
 along.
@@ -1741,6 +2074,8 @@ merry gathering since the days of Mary Stuart.
 :
 :
 
+他到達蘇格蘭一個月後，王子已經擁有了三千名驍勇的高地戰士組成的軍隊，當他率領這支軍隊進入低地時，其他志願者也加入了他，軍隊在行軍途中不斷壯大。他的第一個目標是 Edinburgh 城——除了城堡之外，Edinburgh 不戰而降。城堡由 George 二世國王的正規軍守衛，堅守不降。但這並不讓 Charlie 王子擔心。他騎馬進入 Edinburgh，大群人潮前來歡迎他。甚至有人試圖在他騎馬經過時觸摸他的衣服，或親吻他的手。也有 Edinburgh 人沒有加入歡呼，他們沒有忘記 Claverhouse 的殘暴和 Wigtown 殉道者。那天晚上他在 Holyrood 宮舉行了盛大的宴會，古老的宮殿裡響起了音樂、舞蹈和歡笑，自 Mary Stuart 的時代以來就沒有見過如此歡樂的聚會。
+
 In the meantime, however, the Government in London had not been
 idle. Orders and messages had gone out and an English army was coming up from Dunbar. And in the early morning after the great party
 Prince Charles (who could only have had little rest) led his troops out of
@@ -1757,6 +2092,8 @@ taken by surprise; they were in such utter confusion that the whole battle was o
 only the horsemen escaped by riding away as fast as they could. After
 this splendid victory Prince Charles returned to Edinburgh where he
 spent a whole month in royal splendour.
+
+然而與此同時，倫敦的政府也沒有閒著。命令和訊息已經發出，一支英格蘭軍隊正從 Dunbar 北上。在盛大宴會後的清晨，Charles 王子（幾乎沒怎麼休息）率領他的部隊離開 Edinburgh 去迎戰敵人。那個時代軍隊行進緩慢，他們花了整整一天才走完九英里（15 公里）到達 Prestonpans，在那裡與英軍面對面。由於太晚了，兩支軍隊都沒有開戰，士兵們在田野裡躺下過夜。但在黑暗中，一個熟悉這一帶每寸土地的當地人來了，給 Charles 的士兵們指出了一條穿過沼澤的狹窄小路，引導他們繞到政府軍的後方，從出其不意的方向發動攻擊。當天亮時 Charles 王子發出進攻信號，英軍確實措手不及；他們陷入了徹底的混亂，整場戰鬥在短時間內就結束了。步兵全部被俘或被殺，只有騎兵騎馬盡可能快地逃跑了。在這場輝煌的勝利之後，Charles 王子回到 Edinburgh，在那裡以王室的排場度過了整整一個月。
 By then a good many Edinburgh people were a bit less happy about
 the visit. They had always regarded the Highlanders as savages and they
 were not too pleased to see these "wild men of the hills," with their
@@ -1772,6 +2109,8 @@ Prince Charles had no choice but to turn back. The soldiers were
 happy marching back, but they did not know that they had thrown away
 Bonnie Prince Charlie's chance to win the crown of Britain, for King
 George in London had already been packing to flee to Germany.
+
+到那時，不少 Edinburgh 人對這次造訪已經不那麼高興了。他們一直把高地人視為野蠻人，看到這些「山裡的野人」帶著不文明的習性出現在 Edinburgh 比較有教養的市民之間，他們並不太高興。但經過一個月的歡宴享樂之後，Charles 王子離開了 Edinburgh，率軍南下進入英格蘭。沿途的城市和城鎮都不戰而降，有些城市如 Manchester 和 Preston 還以招募同情 Charles 王子、願意為他而戰的新兵的形式提供了支持。似乎沒有什麼能阻擋他。但越往南走，高地人就越擔心如果得不到更多支持，他們將面對 George 國王軍隊的抵抗。當情況明確這種支持不會到來時，高地人選擇了返回蘇格蘭。Charles 王子別無選擇只能撤回。士兵們高高興興地往回走，但他們不知道自己已經拋棄了 Bonnie Prince Charlie 贏得英國王冠的機會，因為倫敦的 George 國王已經在打包準備逃往德國了。
 
 And while they marched back, the Government in London had time to
 gather new armies to fight against the Prince. Yet, Prince Charles was
@@ -1789,6 +2128,8 @@ And every time the Highlanders charged they were mown down by the
 rifle-fire. The day ended with the utter defeat of Bonnie Prince Charlie.
 The battle of Culloden Moor in 1746 was the last time British people
 fought each other in civil war.
+
+而當他們往回走的時候，倫敦的政府有時間集結新的軍隊來對付王子。然而，Charles 王子在 Falkirk 再次獲勝。但這場勝利對他毫無幫助，因為高地人拒絕留在低地，Charles 不得不帶他們去 Inverness。王子怒不可遏——他氣得在一陣暴怒中把頭撞向牆壁——但他不得不去 Inverness。即使在那裡，高地人也開始拋棄他。當英格蘭軍隊終於到來時，Charles 王子的兵力只有英軍的一半。在 Culloden Moor 隨後爆發的戰役中，留下的高地人以古老的高地勇氣和膽魄戰鬥，但他們面對的是訓練有素、經驗豐富的士兵。英軍排成三列：前排跪著，第二排俯身，第三排站著，三列都端著步槍準備射擊。每當高地人發起衝鋒，他們就被步槍火力擊倒。這一天以 Bonnie Prince Charlie 的徹底失敗而告終。1746 年的 Culloden Moor 戰役是英國人最後一次在內戰中互相廝殺。
 Charles fled and for five months he was kept hidden in the Highlands.
 A prize of £30,000 was offered for him by the Government, but none of
 the poor Highland crofters who sheltered the Prince ever betrayed him.
@@ -1811,11 +2152,19 @@ Many Highlanders and also Jacobites from the Lowlands fled - but
 :
 :
 
+Charles 逃走了，在高地被藏匿了五個月。政府懸賞三萬英鎊捉拿他，但那些庇護王子的貧窮高地佃農沒有一個出賣他。幫助他最多的人是一位叫 Flora MacDonald 的高地女士。有一次她給他帶來了一套女裝，他扮成 Flora 的女僕 Betty 到處走動。Flora MacDonald 冒著生命危險幫助王子，但她心甘情願。終於有機會把 Bonnie Prince Charlie 送上一條船的那一天，對她來說是悲傷的一天，當他向她道別時——他們再也沒有見過彼此。他逃到了法國，餘生四處漂泊；四十二年後的 1788 年，他作為一個心碎的、不快樂的人在 Rome 去世。但高地人為他們的叛亂付出了可怕的代價。數百人被拷打處決，家園被摧毀，家人被遺棄挨餓。高地服裝——蘇格蘭短裙和格子呢——被禁止，他們的歌曲和風笛也被禁止。甚至蓋爾語的使用也被禁止了。一個人可能因為穿蘇格蘭短裙而被送進監獄，甚至被送到美洲在那裡的種植園裡當七年奴隸。許多高地人和低地的 Jacobite 黨人逃離了——但……
+
 Chapter 16
 Past and Future: Russia and Germany
+
+第十六章
+過去與未來：俄羅斯與德國
+
 The Stuarts' time - from James VI to Bonnie Prince Charlie - was a time of
 upheaval, unrest and civil war in which the people of Britain fought each
 other, royalists and republicans, Puritans and Cavaliers, Scots and English, Catholics and Protestants. The Stuarts were basically trying to preserve the old order - the divine rights of kings, and ultimately even the
+
+Stuart 家族的時代——從 James 六世到 Bonnie Prince Charlie——是一個動盪、不安和內戰的時代，英國人民互相廝殺：保皇黨與共和黨人、清教徒與騎士黨、蘇格蘭人與英格蘭人、天主教徒與新教徒。Stuart 家族基本上試圖維護舊秩序——君權神授，甚至最終試圖維護
 Church of Rome. The Stuarts, in one way or another, tried to defend the
 old system of authority, and all the battles and wars and rebellions were
 really a long drawn out conflict between those who fought for the past
@@ -1848,6 +2197,8 @@ wonder that Russia was the most undeveloped country in Europe, even
 noblemen were illiterate, the peasants were feudal subjects who could
 not determine their own life, and few inventions and discoveries from
 western Europe had penetrated Russia.
+
+強迫他的人民——很違背他們的意願——接受變革，參與即將到來的現代世界。在這裡情況恰恰相反：變革來自皇帝，而不是來自人民。在成吉思汗這位韃靼戰士征服了中國然後又征服了俄羅斯之後，俄羅斯在韃靼人的統治下待了幾個世紀，韃靼人把俄羅斯人當奴隸對待。最終經過很長時間，韃靼人被趕走了，俄羅斯人有了自己的統治者，稱為「沙皇」（源自「Caesar」）。但俄羅斯人被奴役了太長時間，即使韃靼人不再是他們的主人，他們也已經習慣了，仍然是新主人——沙皇——的奴隸。俄羅斯的沙皇不像歐洲其他任何國王——他真正擁有「神聖的權利」，對每個俄羅斯人的生命擁有絕對的權力。這些俄羅斯統治者之一，生活在 Elizabeth 女王時代的「恐怖的 Ivan」，毫無理由地處決了數十萬俄羅斯人。大多數人接受沙皇有權殺死他想殺的任何臣民。難怪俄羅斯是歐洲最不發達的國家，即使貴族也是文盲，農民是無法決定自己命運的封建附庸，西歐的發明和發現幾乎沒有傳入俄羅斯。
 But at the time when Britain was ruled by the Merry Monarch, Charles
 II, there came a tsar in Russia who brought great changes: Peter the
 Great who ruled from 1689 to 1725. Peter travelled outside Russia,
@@ -1887,6 +2238,8 @@ West, in Britain, the people fought against the monarch to get things
 changed, in the East, in Russia, the monarch, Tsar Peter, forced the people to accept changes. And what about the middle of Europe, Germany
 and Austria? In Germany the upheaval was far worse than either in the
 West or in the East.
+
+但在英國被歡樂君主 Charles 二世統治的時期，俄羅斯出了一位帶來巨大變革的沙皇：Peter 大帝，他在 1689 年至 1725 年間統治。Peter 在朝臣和貴族的陪同下出國旅行，研究西方國家的知識以便帶回俄羅斯。他想學習如何建造大船、如何修建道路、如何訓練士兵；他對一切都感興趣。當他第一次來到倫敦時，他看到一個牙醫在工作——他對這個人的技術如此著迷，以至於他自己在他不幸的朝臣們身上練習拔牙。當他返回俄羅斯時，他帶回了五百名英格蘭和蘇格蘭的專家、機械師、造船師、外科醫生、建築師，還有一個蘇格蘭人（Peter Gordon）被委以訓練那些野蠻而無紀律的俄羅斯士兵的任務。Peter 從荷蘭帶走了鐘錶匠和書籍印刷商，就這樣他帶著一支外國人的隊伍返回俄羅斯，這些人將從上到下改變俄羅斯的生活。但俄羅斯人不想要任何改變，他們不想要更好的房屋、船隻或城市，他們不想要醫生和學校。Peter 自己的一些貴族和朝臣密謀要殺掉這位試圖改變俄羅斯舊有生活方式的沙皇，Peter 自己的兒子 Alex 也參與了這個陰謀。但陰謀被揭露，所有參與者都被處決了。Alex 死在獄中，否則他也會像其他人一樣被斬首。Peter 是一個無情的人：俄羅斯必須成為一個現代國家，任何阻礙的人都是他的敵人，都必須死。他在想要建造新城市——波羅的海沿岸的 St Petersburg——時同樣無情。十五萬農民被士兵驅趕到建城的工地，由於沒有足夠的鐵鍬，他們不得不用赤手挖掘。沒有足夠的大車，所以農民們不得不用雙手搬運磚頭和泥土。數千名工人死於飢餓或寒冷，但十個月後城市就建成了。Peter 大帝違背俄羅斯人的意願，強迫他們成為一個現代國家。他擁有「君權神授」——Stuart 家族想要卻從未擁有的。但 Peter 把他的「神聖權利」用於進步、用於變革——而 Stuart 家族卻試圖阻止變革。在西方，在英國，人民反對君主以求改變；在東方，在俄羅斯，君主——沙皇 Peter——強迫人民接受改變。那麼歐洲的中部，德國和奧地利呢？在德國，動盪比西方或東方都更加嚴重。
 Germany and Austria were supposed to be ruled by an emperor, but in
 fact, the emperor had very little power. Each German lord or prince ruled
 his own little part of Germany as he pleased and took little notice of the
@@ -1915,10 +2268,16 @@ ravages of the Thirty Years' War.
 :
 :
 
+德國和奧地利名義上由一位皇帝統治，但實際上皇帝幾乎沒有權力。每個德國領主或王公隨心所欲地統治自己的那一小塊德國領地，幾乎不理會皇帝。所有新教貴族聯合成一個大聯盟，所有天主教貴族組成另一個聯盟，他們開始了一場持續三十年的戰爭。皇帝 Ferdinand 二世本人是天主教徒，也是天主教聯盟的領袖。三十年間——1618 至 1648 年——軍隊橫掃德國，打仗、摧毀城市、蹂躪田野、搶劫掠奪。其他國家也被捲入了戰爭：瑞典國王率軍來幫助新教徒，法國派兵來幫助天主教徒，但這只給德國人民帶來了更多苦難。整個曾經繁榮的省份變成了荒漠；繁華的城鎮變成了廢墟。所謂的三十年戰爭之所以結束，只是因為雙方都精疲力竭無法再戰了。當和平達成時，新教徒和天主教徒仍然不願和平共處，但他們同意：如果統治德國某個省的王公或領主是新教徒，那麼他統治下的所有人都應該是新教徒，天主教徒必須離開這個省份，去一個由天主教王公統治的地方——那裡的天主教王公已經把他統治下的新教徒趕走了。於是德國北部主要成為新教地區，而德國南部、Bavaria 和奧地利主要成為天主教地區。整個德國遭受了如此大的苦難，如此多的東西被摧毀，以至於花了一個世紀德國才從三十年戰爭的蹂躪中恢復過來。
+
 The French Revolution
+法國大革命
 
 Chapter 17
 The Huguenots
+
+第十七章
+Huguenot 新教徒
 At the time when Leonardo da Vinci experimented with flying machines,
 and when Columbus and Magellan
 sailed out into unknown seas, and
@@ -1933,6 +2292,8 @@ Reformation. Luther in Germany, Calvin in Switzerland and John Knox in
 Scotland found thousands of followers and became the founders of
 Churches which no longer regarded the Pope in Rome as the supreme
 authority and master.
+
+在 Leonardo da Vinci 試驗飛行器的時候，在 Columbus 和 Magellan 駛入未知海域的時候，在 Copernicus 敢於說出與所有人所見相反的事——地球繞著太陽轉，而不是太陽繞著地球轉——的時候，在那個時候——大約十五世紀——人類開始了一個新的時代，這就像一次偉大的覺醒。隨著這次偉大的覺醒，人們產生了新的自由意識。人們不再盲目接受 Rome 教宗的權威，這種對教會權威的反叛導致了宗教改革。德國的 Luther、瑞士的 Calvin 和蘇格蘭的 John Knox 找到了成千上萬的追隨者，成為了不再把 Rome 教宗視為至高權威和主人的教會的創始人。
 But in addition, this rebellion against the authority of the Pope soon
 became a rebellion against kings. The Dutch rose against their ruler,
 King Philip II of Spain and gained their freedom. And in Britain, too
@@ -1947,6 +2308,8 @@ But, whenever and wherever something new comes into the world
 there are more than the people who welcome the new with heart and
 mind, there are also the people who hate what is new, and want to stop
 human progress.
+
+此外，這種對教宗權威的反叛很快也變成了對國王的反叛。荷蘭人起來反抗他們的統治者——西班牙國王 Philip 二世——並贏得了自由。在英國，人們也不再把國王視為擁有「神聖權利」的人。Charles 一世因試圖以「神聖權利」統治而付出了生命的代價，雖然 Charles 二世——歡樂君主——登上了王位，但他的繼任者和弟弟 James 二世在 1688 年的光榮革命中又失去了王位。英國人民不想要那些聲稱擁有神聖權利的國王——那個時代已經過去了，所以 Bonnie Prince Charlie 為 Stuart 家族重奪英國王冠的企圖從一開始就注定要失敗。新時代、人民新覺醒的思想不再容忍那些相信自己有神聖統治權的國王。但是，每當新事物來到世上的時候，除了那些全心全意歡迎新事物的人之外，也有仇恨新事物、想要阻止人類進步的人。
 The Popes in Rome were certainly not pleased with the rebellion
 against their authority. They would have put Luther before the Inquisition and they would have burnt him at the stake, if Luther had not had
 such a great number of followers in Germany. In Germany the Popes did
@@ -1967,6 +2330,8 @@ turn the clock back, and to rule by "divine right." And they succeeded for
 a time - for quite a long time, two hundred years. But, in the end, the last
 of these kings paid a terrible price for the mistakes made by the kings
 who had ruled before. The country where this happened was France.
+
+Rome 的教宗們對反抗他們權威的叛亂當然不高興。他們本想把 Luther 送上宗教裁判所的審判台，本想把他燒死在火刑柱上，如果 Luther 在德國沒有那麼多的追隨者的話。在德國，教宗沒有足夠的權力來傷害 Luther，但在義大利，教宗有權力對抗這種新精神。他們在 Florence 燒死了修士 Savonarola，因為他竟敢稱邪惡的教宗 Alexander Borgia 為「魔鬼之子」。他們燒死了另一位修士 Giordano Bruno，因為他竟敢說地球是宇宙中的一顆行星，繞著太陽運行。而 Galileo Galilei 只是因為否認了他所相信的關於地球的真理——地球繞太陽運行——才逃脫了酷刑和死亡。在義大利，新精神——宗教改革的精神、發現和科學的精神——被壓制了。在西班牙，教宗找到了國王們作為他們心甘情願的幫手——還記得西班牙的 Philip 如何試圖以武力為 Rome 教會征服荷蘭和英格蘭，卻慘遭失敗。現在我們來到另一個歐洲國家，那裡的國王們也竭盡全力阻止進步的步伐、把時鐘倒轉、以「神聖權利」統治。他們成功了一段時間——相當長的時間，兩百年。但最終，這些國王中的最後一位為前任國王所犯的錯誤付出了可怕的代價。這件事發生的國家就是法國。
 France, the land of Charlemagne, the land of Joan of Arc, had for
 many centuries been a land that was devoutly Roman Catholic, and obedient to the Pope. The Knights of France were the first knights who followed the Pope's call for a Crusade against the Turks. And it was also in
 France that the first and more beautiful Gothic churches with pointed
@@ -1974,6 +2339,8 @@ arches and stained-glass windows had been built.
 But France was also the country where the feudal system was harsher
 and lasted longer than in most other countries. In France for a very long
 time the peasants remained serfs who could be bought and sold with
+
+法國，Charlemagne 的國度，Joan of Arc 的國度，幾個世紀以來一直是一個虔誠信奉天主教、服從教宗的土地。法國騎士是第一批響應教宗號召去對抗突厥人的十字軍東征的騎士。法國也是第一批更美麗的哥德式教堂——帶有尖拱和彩色玻璃窗——被建造的地方。但法國也是封建制度比大多數其他國家更加嚴酷、持續更久的國家。在法國很長一段時間裡，農民一直是農奴，可以隨著
 the land like the trees that grew on it. And in France, too, the knights and
 noblemen were under strict obedience to the king. In France there was
 no Magna Carta, which set out what a king was and was not allowed to
@@ -2032,8 +2399,14 @@ the Pope, she had also made sure that for a long time to come, that people in Fr
 King. The Massacre of St Bartholomew's Night had kept the new spirit
 out of France - at least for a time.
 
+大部分屠殺發生在許多 Huguenot 新教徒居住的 Paris。但法國其他地方也發生了這些可怕的謀殺。總共有三萬名新教徒在這一夜被殺。這一事件被稱為 St Bartholomew 之夜大屠殺。幾千名 Huguenot 新教徒逃到了英格蘭，在那裡受到了善待和幫助。許多 Huguenot 難民把新的技藝帶到英國，以此回報對他們的善意。但在法國，Catherine de Medici 達到了她的目的。通過消滅新教徒，她不僅贏得了教宗的感激，還確保了在很長一段時間內，法國人民不敢挑戰教宗或國王的權威。St Bartholomew 之夜大屠殺把新精神擋在了法國之外——至少暫時如此。
+
 Chapter 18
 Le Roi Soleil
+
+第十八章
+太陽王
+
 Catherine de Medici was certainly an evil woman; one can hardly imagine
 the kind of soul who planned and quite calmly arranged the massacre of
 thousands of innocent people. But, on the other hand, in the time in
@@ -2154,6 +2527,7 @@ was still le Roi Soleil, the Sun-King, who said, "L'êtat, c'est moi."
 •
 Chapter 19
 Versailles
+第十九章 Versailles 凡爾賽宮
 Louis XIV simply commanded his parliament, the Estates General, to increase the taxes because he wanted a new palace, and squashed any
 objections by his words: "I am the state."
 There was already a large royal palace in Paris, but this was not good
@@ -2270,6 +2644,7 @@ the glory of Louis XIV.
 
 Chapter 20
 Banking
+第二十章 銀行業
 The extravagance, the sheer waste of money at the court of Louis XIV, in
 contrast to the plight of the peasant population, might lead one to think
 that this is a period in the history of France which people recall only with
@@ -2388,6 +2763,7 @@ festivities, games, and suffered only from one thing: boredom.
 
 Chapter 21
 Louis XV and Frederick the Great
+第二十一章 Louis 十五與 Frederick 大帝
 Louis XV had been completely spoiled from early childhood. No effort
 had ever been demanded of him, no wish had ever been denied to him,
 so he grew up into a lazy good-for-nothing who was, however, King of
@@ -2481,6 +2857,7 @@ differently.
 
 Chapter 22
 The Count of Saint Germain
+第二十二章 Saint Germain 伯爵
 You can see from the examples of Louis XV and Frederick the Great of
 Prussia that their upbringing influenced the fate of whole nations.
 France lost her colonies and became poorer than ever before, but Prussia became the most powerful of the German states.
@@ -2580,6 +2957,7 @@ upon the scene. Some people met him in London a year later, and then
 
 Chapter 23
 Rousseau, Voltaire and the Aristocrats
+第二十三章 Rousseau、Voltaire 與貴族階級
 The story of the Count of Saint Germain shows how the secret brotherhood of the Rosicrucians tried to guide the new age that had begun
 with the age of discovery, so that all the changes this new age would
 bring should come as blessings and not through chaos and disasters.
@@ -2711,6 +3089,7 @@ middle-class, the burghers, or bourgeois. This middle-class, the bourgeois, want
 
 Chapter 24
 The American War of Independence
+第二十四章 美國獨立戰爭
 We looked at the three "classes" into which France was divided at that
 time: the nobility or aristocrats, who had rights and privileges - even the
 privilege of not paying any taxes; the peasants who had neither rights
@@ -2826,6 +3205,7 @@ won their first victory.
 
 Chapter 25
 Louis XVI. The Three Estates
+第二十五章 Louis 十六與三級會議
 In the history of ancient times one hears mainly about kings and noblemen, and even the crusades were still lead and commanded by noble
 knights and kings. Joan of Arc was, perhaps, the first commoner to lead
 armies and to change the course of history. But then, with the beginning
@@ -2950,6 +3330,7 @@ French Revolution. It is still a national holiday in France.
 
 Chapter 26
 Liberty - Equality - Fraternity
+第二十六章 自由、平等、博愛
 The French Revolution began with the storming of the Bastille, when a
 mad crowd, excited by false rumours, stormed the old prison-fortress for
 no good reason at all. It was a sudden explosion, this revolution, but the
@@ -3145,6 +3526,7 @@ downfall of the last King of France.
 
 Chapter 28
 Danton, Robespierre and Marat
+第二十八章 Danton、Robespierre 與 Marat
 In 1792 France had answered the threats of the Duke of Brunswick by
 declaring war on Prussia and Austria. But Prussia and Austria had long
 prepared for this war, they had an army of eighty thousand trained soldiers ready, as well as a twenty-thousand strong army of the French
@@ -3275,6 +3657,7 @@ Aa
 
 Chapter 29
 The Reign of Terror
+第二十九章 恐怖統治
 Each of the three men, Danton, Robespierre, Marat, the leaders of the Jacobins, the masters of France in the year of madness, 1793, was really a
 caricature, a distortion, of one of the great ideals of the Revolution. Danton used his eloquence to play upon the peoples' love of freedom; Robespierre used or rather misused peoples' desire for equality for his own
 purpose; and Marat, the "friend of the people," appealed through his
@@ -3391,6 +3774,7 @@ believer in equality. To have better brains than other people was a crime
 
 Chapter 30
 Napoleon
+第三十章 Napoleon
 Robespierre was certainly a heartless monster, but in his own crazy way
 he had been sincere in his belief that he was doing his best for France.
 He himself was convinced that he was a selfless servant of France. The
@@ -3516,6 +3900,7 @@ Bonaparte and the people of Paris received him in triumph. The shooting in the T
 
 Chapter 31
 Egypt
+第三十一章 埃及
 Napoleon Bonaparte was not tall; he was short and stout and his soldiers
 used to speak of him affectionately as "our little corporal." But in this little, stout man there lived an iron will, a drive and energy which made all
 the taller people feel dwarfed in his presence.
@@ -3640,6 +4025,7 @@ turn defeat into victory.
 
 Chapter 32
 Emperor Napoleon and Trafalgar
+第三十二章 Napoleon 皇帝與 Trafalgar 海戰
 The French
 people welcomed Napoleon on his return from Egypt because they hoped he would save them from the Austrian armies. But
 there was also another reason. The Directorate, Barras and his friends,
@@ -3759,6 +4145,7 @@ plans.
 
 Chapter 33
 Austerlitz. Wellington. Russia 1812
+第三十三章 Austerlitz 戰役、Wellington、1812 年俄國遠征
 Napoleon wanted a "united Europe" - though he was far ahead of his
 time in his wish - but he wanted to unite the nations of Europe by force
 and under his own rulership; and so the idea of a united Europe - good
@@ -3847,6 +4234,7 @@ away their weapons and abandoned their guns.
 
 Chapter 34
 Elba. Waterloo
+第三十四章 Elba 島與 Waterloo 戰役
 After the disaster of the Russian campaign, the countries which had
 bowed so unwillingly to Napoleon's will now rose against him. Prussia
 and Austria joined with the victorious Russians and turned against
@@ -3933,9 +4321,11 @@ would have been gradual and the world would have been spared much
 suffering.
 
 The Nineteenth and Twentieth Centuries
+十九與二十世紀
 
 Chapter 35
 The Threefold State
+第三十五章 三元社會
 The word "body" not only refers to the human body, but can also be
 used in a different sense. In the legal profession, the word is also used
 with a quite different meaning. A group of people who act together, and
@@ -4016,6 +4406,7 @@ hardly anyone at the time realized it.
 
 Chapter 36
 The Beginning of the Industrial Revolution
+第三十六章 工業革命的開端
 The silent revolution, the Industrial Revolution, began in England, in Lancashire in the year 1764. By that time the making of woollen and cotton
 cloth had become a great industry in Lancashire. However, there were
 no factories, no smoking chimneys, only small towns and villages. The
@@ -4127,6 +4518,7 @@ James Hargreaves knocked over his wife's spinning wheel!
 
 Chapter 37
 The Arrival of Steam Power
+第三十七章 蒸汽動力的到來
 The stories of Hargreaves and Arkwright show two kinds of inventions
 which brought about the Industrial Revolution. Hargreaves' invention
 was a machine which could do the same work as the human hand, but
@@ -4197,6 +4589,7 @@ water power to steam power. The cotton factories were still called
 
 Chapter 38
 The Locomotive
+第三十八章 火車頭
 When James Watt went into partnership with the engineer, Boulton,
 their firm, Boulton and Watt, became world-famous as makers of steam
 engines. Steam engines revolutionized the cotton industry as cotton
@@ -4296,6 +4689,7 @@ asked the opinion of the Council of Doctors. And the learned medical
 
 Chapter 39
 The Proletarians
+第三十九章 無產階級
 At the time of the Industrial Revolution, there was also a great change in
 British agriculture, in farming. Most of the land belonged to noblemen,
 to lords, to the "Squire" as the peasants called him. The squire did not
@@ -4418,6 +4812,7 @@ pockets of the factory owners.
 
 Chapter 40
 Liberty and Economics
+第四十章 自由與經濟
 On the one hand were the cotton manufacturers who amassed fortunes
 while on the other their workers lived in conditions so inhuman that one
 can hardly fully imagine them; and the proprietors of coal mines enjoyed
@@ -4513,6 +4908,7 @@ wrong they were.
 
 Chapter 41
 Robert Owen
+第四十一章 Robert Owen
 At the time of the Industrial Revolution two new classes of people was
 created. On the one side there were the factory workers, the working
 class or the "proletarians" as they were called, and, on the other side, the
@@ -4632,6 +5028,7 @@ industry, in economics.
 
 Chapter 42
 The Workers' Struggle
+第四十二章 工人的抗爭
 Robert Owen was in his own way, a genius. Long before that time another genius, Leonardo da Vinci, had many ideas which were far ahead
 of his time: in Leonardo's own time his ideas could not yet be put into
 practice, and it was the same with Robert Owen. In his own time people
@@ -4752,6 +5149,7 @@ It all started with the Industrial Revolution.
 
 Chapter 43
 Garibaldi: the Early Years
+第四十三章 Garibaldi：早年歲月
 We have looked at the events which made Britain a world power in the
 nineteenth century. At the same time this great and wealthy nation had
 a working class that lived in misery because the ruling classes had no
@@ -4890,6 +5288,7 @@ who kept the country divided and the people oppressed.
 
 Chapter 44
 Garibaldi and the Unification of Italy
+第四十四章 Garibaldi 與義大利統一
 Before continuing with Garibaldi's biography we must look at conditions
 in Europe in the first half of the nineteenth century. After the French
 Revolution all the rulers in Europe, kings, emperors, tsars, feared that
@@ -5012,6 +5411,7 @@ a hero of fraternity.
 
 Chapter 45
 Henri Dunant
+第四十五章 Henri Dunant
 We have looked at liberty, equality and fraternity, but these qualities
 would be incomplete without something else. Like a great river which at
 its delta divides into three, so liberty, equality, fraternity come from one
@@ -5121,6 +5521,7 @@ He will never be forgotten - he is one of the great heroes of compassion, of mer
 
 Chapter 46
 Abraham Lincoln
+第四十六章 Abraham Lincoln
 Robert Owen was a hero of fraternity, and Garibaldi a hero of liberty.
 Now we come to our hero of equality. But we must be clear what "equality" means. It means "equality of rights," it means that every citizen of a
 state has the same rights. There must not be different laws for rich and
@@ -5241,6 +5642,7 @@ war for equality was Abraham Lincoln.
 
 Chapter 47
 Tsar Alexander II
+第四十七章 沙皇 Alexander 二世
 At the same time as there was a struggle for human rights and equality
 in America, a similar kind of struggle took place in Russia, a country
 which became America's opponent in the second half of the twentieth
@@ -5347,6 +5749,7 @@ strange coincidence that both the man who ended serfdom and the man
 
 Chapter 48
 Bismark
+第四十八章 Bismarck
 We have seen some of the great changes which took place in the nineteenth century, in Britain, and Italy, in France (where Napoleon III came
 to power), in America and in Russia. Now we come to Germany.
 In the middle of the nineteenth century, Germany was - like Italy -
@@ -5454,6 +5857,7 @@ And while they were at Versailles - the rulers of all the German states,
 
 Chapter 49
 The Turn of the Century
+第四十九章 世紀之交
 In the period from the end of the nineteenth to the beginning of the
 twentieth century there was what is sometimes called the second Industrial Revolution. From about 1880 onwards there was another great step
 forward which changed people's lives as much as or more than the first
@@ -5580,6 +5984,7 @@ British for taking their colony by force of arms.
 
 Chapter 50
 The First World War
+第五十章 第一次世界大戰
 By the end
 of the nineteenth century, colonies became important for
 other products than gold, silver or diamonds; now copper, rubber, and
@@ -5707,6 +6112,7 @@ changes to these two countries.
 
 Chapter 51
 The Rise of Nationalism
+第五十一章 民族主義的興起
 In the old days a war in Europe, let us say between France and Germany,
 meant conflict in Europe only. But with the Industrial Revolution came
 the need for raw materials and for colonies so any war in Europe also
@@ -5826,6 +6232,7 @@ armies.
 
 Chapter 52
 The Second World War
+第五十二章 第二次世界大戰
 Britain and France were well aware that Hitler and Mussolini were getting ready for another war, but there were also people in the British Government who believed that Hitler would use his great armies to war
 against Russia only - against the Communists. And so they did nothing to
 stop him when he marched his armies into Czechoslovakia and took the
@@ -5947,6 +6354,7 @@ disappeared, and in their place came new independent states.
 
 Chapter 53
 Prospects
+第五十三章 展望
 In the fifty years following the Second World War, the Cold War divided
 not only America and Russia but the whole world into two camps. On the
 one side the western countries - America, Britain, France, western Germany - believed in free enterprise, they believed that each person
