@@ -169,6 +169,14 @@ function extractFrontmatter(md) {
 }
 
 function extractTitle(md) {
+  // 1. YAML frontmatter title: 欄位（content.md 現行格式）
+  if (md.startsWith('---')) {
+    const fmEnd = md.indexOf('\n---', 3);
+    const fm = fmEnd > 0 ? md.slice(0, fmEnd) : md.slice(0, 600);
+    const titleMatch = fm.match(/^title:\s*"?([^"\n]+)"?/m);
+    if (titleMatch) return titleMatch[1].trim();
+  }
+  // 2. H1 標題 fallback
   const m = md.match(/^#\s+(.+)/m);
   if (!m) return '五年級古文明神話';
   // 去掉 lesson ID 前綴（如 "AM001 "）
@@ -283,8 +291,8 @@ function parseSourceUrls(rawMaterialsMd) {
     // 格式 B：「1. 名稱「描述」 — URL — 可信度」或「1. 名稱 — URL — 可信度」
     const formatB = line.match(/^\d+\.\s+(.+?)\s+—\s+(https?:\/\/\S+)/);
     if (formatB) {
-      // 從名稱中提取簡短關鍵字（去掉「」內容和「官網」等後綴）
-      const rawName = formatB[1].trim();
+      // 從名稱中提取簡短關鍵字（去掉「」內容和「官網」等後綴；去掉 ** bold 標記）
+      const rawName = formatB[1].trim().replace(/\*\*/g, '');
       const url = formatB[2].trim();
       // 保留完整名稱作為 key
       urls[rawName] = url;
@@ -494,6 +502,7 @@ function parseImages(imagesMd) {
     // 提取用途 — 支援多種欄位名：
     //   格式 A（舊）：**用途**：...  或  用途：...
     //   格式 B（現行）：- 在故事中的角色：...
+    //   格式 C（古文明神話）：- 說明：...
     let usage = '';
     const useFormatA = content.match(/\*{0,2}用途\*{0,2}[：:]\s*(.+)/);
     if (useFormatA) {
@@ -502,20 +511,24 @@ function parseImages(imagesMd) {
       const roleMatch = content.match(/在故事中的角色[：:]\s*(.+)/);
       if (roleMatch) usage = roleMatch[1].trim();
     }
+    if (!usage) {
+      const noteMatch = content.match(/說明[：:]\s*(.+)/);
+      if (noteMatch) usage = noteMatch[1].trim();
+    }
 
     // 提取授權
     let license = '';
     const licMatch = content.match(/\*{0,2}授權\*{0,2}[：:]\s*(.+)/);
     if (licMatch) license = licMatch[1].trim();
 
-    // 提取描述（現行格式特有）
+    // 提取描述 — 支援「描述：」和「圖片描述：」
     let description = '';
-    const descMatch = content.match(/描述[：:]\s*(.+)/);
+    const descMatch = content.match(/圖片描述[：:]\s*(.+)/) || content.match(/(?<!圖片)描述[：:]\s*(.+)/);
     if (descMatch) description = descMatch[1].trim();
 
-    // 提取展示時機（現行格式特有）
+    // 提取展示時機 — 支援「展示時機：」和「建議使用時機：」
     let timing = '';
-    const timingMatch = content.match(/展示時機[：:]\s*(.+)/);
+    const timingMatch = content.match(/展示時機[：:]\s*(.+)/) || content.match(/建議使用時機[：:]\s*(.+)/);
     if (timingMatch) timing = timingMatch[1].trim();
 
     // 提取來源名稱（不含 URL，截斷到 — 或行尾）
@@ -1175,7 +1188,8 @@ function main() {
   }
 
   // ── 讀取所有檔案（剝除 YAML frontmatter）──────────
-  const contentMd = stripFrontmatter(fs.readFileSync(path.join(resolvedDir, 'content.md'), 'utf-8'));
+  const contentMdRaw = fs.readFileSync(path.join(resolvedDir, 'content.md'), 'utf-8');
+  const contentMd = stripFrontmatter(contentMdRaw);
   const waldorfTeachingMd = stripFrontmatter(fs.readFileSync(path.join(resolvedDir, 'waldorf-teaching.md'), 'utf-8'));
   const imagesMd = stripFrontmatter(fs.readFileSync(path.join(resolvedDir, 'images.md'), 'utf-8'));
   const referencesMd = fs.readFileSync(path.join(resolvedDir, 'references.md'), 'utf-8');
@@ -1183,8 +1197,8 @@ function main() {
     ? fs.readFileSync(path.join(resolvedDir, 'raw-materials.md'), 'utf-8')
     : '';
 
-  // 解析
-  const title = extractTitle(contentMd);
+  // 解析：title 從原始檔（含 frontmatter）讀取，確保 YAML title: 欄位可被解析
+  const title = extractTitle(contentMdRaw);
   const meta = extractFrontmatter(contentMd);
   const subtitle = meta['子主題'] || meta['區塊'] || '';
 
@@ -1290,14 +1304,15 @@ function main() {
   }
 
   const versionSuffix = storyVersion ? `-${storyVersion}` : '';
-  const htmlFilename = `${storyId}${versionSuffix}-古文明神話完整版.html`;
+  const titleSlug = title.replace(/\s+/g, '');
+  const htmlFilename = `${storyId}${versionSuffix}-${titleSlug}.html`;
   const htmlPath = path.join(outputDir, htmlFilename);
   fs.writeFileSync(htmlPath, html, 'utf-8');
   console.log(`\n[assemble] HTML written: ${htmlPath}`);
 
   // ── 生成 PDF（選用）──────────────────────────────
   if (doPdf) {
-    const pdfFilename = `${storyId}${versionSuffix}-古文明神話完整版.pdf`;
+    const pdfFilename = `${storyId}${versionSuffix}-${titleSlug}.pdf`;
     const pdfPath = path.join(outputDir, pdfFilename);
     const pdfScript = path.resolve('publish/scripts/html-to-pdf.js');
     console.log(`[assemble] Generating PDF: ${pdfPath}`);
@@ -1377,7 +1392,7 @@ function main() {
       { local: htmlPath, driveName: `${driveBaseName}.html` },
     ];
     if (doPdf) {
-      const pdfPath = path.join(outputDir, `${storyId}${versionSuffix}-古文明神話完整版.pdf`);
+      const pdfPath = path.join(outputDir, `${storyId}${versionSuffix}-${titleSlug}.pdf`);
       if (fs.existsSync(pdfPath)) {
         filesToUpload.push({ local: pdfPath, driveName: `${driveBaseName}.pdf` });
       }
@@ -1412,7 +1427,7 @@ function main() {
   console.log(`  Prompt:   ${chalkboardPrompt.englishPrompt ? 'EN+ZH' : 'none'}`);
   console.log(`  Drawing:  ${chalkboardImageBase64 ? 'embedded' : 'not found'}`);
   console.log(`  HTML:     ${htmlPath}`);
-  if (doPdf) console.log(`  PDF:      ${path.join(outputDir, storyId + versionSuffix + '-古文明神話完整版.pdf')}`);
+  if (doPdf) console.log(`  PDF:      ${path.join(outputDir, storyId + versionSuffix + '-' + titleSlug + '.pdf')}`);
   if (doUpload && Object.keys(uploadResults).length > 0) {
     console.log(`  Drive:`);
     for (const [name, id] of Object.entries(uploadResults)) {

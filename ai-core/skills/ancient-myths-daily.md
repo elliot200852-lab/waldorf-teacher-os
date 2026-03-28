@@ -147,6 +147,18 @@ started_at: 2026-XX-XXTXX:XX:XX
 - 資料來源（至少 5 筆含 URL，其中至少 2 筆為中文來源）
 - 台灣文化呼應（1-2 段）
 
+**⚠️ 資料來源格式（嚴格遵守，供 assemble 腳本 URL 注入事實出處表使用）**：
+
+```
+1. **[key 與 content.md 事實出處「來源」欄完全一致]**
+   URL: https://...
+   [中/英] 備考說明
+```
+
+- 例：content.md 事實出處表「來源」欄寫 `Britannica — Ramayana (Indian epic)`，raw-materials.md 的 key 就必須是 `**Britannica — Ramayana (Indian epic)**`
+- **禁止**：`**名稱** — 來源 — https://...`（腳本無法正確解析此格式的 key）
+- **禁止**：`1. **名稱**\n來源 — URL`（URL 前無 `URL:` 標頭）
+
 **Checkpoint**：raw-materials.md > 500 字 + 至少 5 筆 URL（其中 ≥ 2 筆中文）→ 否則 FAIL
 
 ---
@@ -235,7 +247,17 @@ consciousness: [該課的意識階段描述]
 - **TW0X 特殊**：含三段：華德福教學指引（此課的意識發展重點）/ 南島語族教學備註 / 台灣文化呼應。「南島語族教學備註」須明確說明：施泰納的意識演化框架不應強加於台灣原住民文化之上，應以尊重在地知識體系的方式進行教學
 
 **Agent E（圖像與來源）**：
-- 產出：`images.md`（至少 3 張圖 + URL + 授權，圖片描述用中文）+ `references.md`（所有來源）
+- 產出：`images.md`（至少 3 張圖 + **必須有 `- 連結：https://...`** + 授權，圖片描述用中文）+ `references.md`（所有來源）
+- **images.md 每張圖必須包含以下欄位（缺少連結即 FAIL）**：
+  ```
+  ### 圖 N：[標題]
+  - 說明：[說明文字]
+  - 圖片描述：[中文圖像描述]
+  - 授權：[Met Museum CC0 / Wikimedia Commons CC / ...]
+  - 連結：https://...    ← 必填，Met 圖用 source_url，Wikimedia 用 commons 頁面 URL
+  - 建議使用時機：[說書哪個段落]
+  ```
+  Met Museum 圖的連結從 `museum-materials.yaml` 的 `source_url` 欄位取得（格式：`https://www.metmuseum.org/art/collection/search/[id]`）
 - references.md 分兩區：`## 教師延伸閱讀（中文）` + `## 學術參考（英文）`，中文區在前
 - **references.md 格式模板（嚴格遵守，不可偏離）**：
 
