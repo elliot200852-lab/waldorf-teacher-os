@@ -461,6 +461,7 @@ tracked_directories:
   - "projects/g9"
   - "projects/g9/content"
   - "publish"
+  - "publish/config"
   - "publish/images"
   - "publish/scripts"
   - "publish/templates"

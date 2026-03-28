@@ -159,7 +159,7 @@ started_at: 2026-XX-XXTXX:XX:XX
 - **禁止**：`**名稱** — 來源 — https://...`（腳本無法正確解析此格式的 key）
 - **禁止**：`1. **名稱**\n來源 — URL`（URL 前無 `URL:` 標頭）
 
-**Checkpoint**：raw-materials.md > 500 字 + 至少 5 筆 URL（其中 ≥ 2 筆中文）→ 否則 FAIL
+**Checkpoint**：raw-materials.md > 900 字 + 至少 5 筆 URL（其中 ≥ 2 筆中文）→ 否則 FAIL
 
 ---
 
@@ -291,7 +291,17 @@ aliases:
 
 **主線程**：三者完成後，品質自檢 → `quality-report.md`
 
-**Checkpoint**：6 檔全部存在 + chalkboard-prompt 含 `## English Prompt` → 否則 FAIL
+**Checkpoint**：執行自動驗證腳本
+
+```bash
+node publish/scripts/validate-story.js AM0XX
+```
+
+- 全部 PASS → 繼續 Step 4
+- 有 FAIL → 當場修正，修正後重新執行，不得進入 Step 4
+- 只有 WARN（廢棄欄位等相容性提示）→ 記錄，不阻擋 Step 4
+
+驗證範圍：7 件套存在、frontmatter 必填欄位、故事本文字數（>800）、事實出處筆數（≥5）、images.md 圖數與連結、raw-materials.md 字數與 URL、**交叉驗證**（content.md 來源 key ↔ raw-materials.md）
 
 ---
 
@@ -402,9 +412,9 @@ assemble-ancient-myths.js 的 `--upload` 旗標自動處理：
 |------|--------|----------|
 | 0→1 | project.yaml + theme-skeleton.yaml 存在 | FAIL |
 | 1→2 | current-task.yaml 非空（含 met_keywords） | FAIL |
-| 2→2.5 | raw-materials.md > 500 字 + 至少 5 筆 URL（其中 ≥ 2 筆中文） | FAIL |
+| 2→2.5 | raw-materials.md > 900 字 + 至少 5 筆 URL（其中 ≥ 2 筆中文） | FAIL |
 | 2.5→3 | museum-materials.yaml 存在（API 有結果）或標記 skip（API 失敗） | WARN（不阻擋） |
-| 3→4 | 6 檔全部存在 + chalkboard-prompt 含 `## English Prompt` | FAIL |
+| 3→4 | `node validate-story.js AM0XX` 全 PASS | FAIL |
 | 4→5 | ~/Downloads/AncientMyths-[課號]-chalkboard.png > 50KB | FAIL（重試 3 次）|
 | 5→6 | HTML + PDF 存在 + 黑板畫 base64 嵌入 | FAIL |
 | 6→7 | Drive 上傳成功 | WARN |
