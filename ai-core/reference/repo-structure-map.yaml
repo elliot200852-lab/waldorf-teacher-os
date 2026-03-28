@@ -420,6 +420,7 @@ tracked_directories:
   - ".claude/skills/json-canvas"
   - ".claude/skills/json-canvas/references"
   - ".claude/skills/lesson"
+  - ".claude/skills/lesson-engine"
   - ".claude/skills/load"
   - ".claude/skills/obsidian-bases"
   - ".claude/skills/obsidian-bases/references"

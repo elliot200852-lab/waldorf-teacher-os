@@ -11,7 +11,7 @@ aliases:
 
 ## 什麼是覆蓋層？
 
-覆蓋層（Subject Overlay）是搭配通用引擎 `subject-lesson-45.md` 使用的科目專屬檔案。引擎定義方法論（工作流、通用原則、節奏模板），覆蓋層定義該科目獨有的設計原則、研究任務、稽核維度與產出規格。
+覆蓋層（Subject Overlay）是搭配統一課程引擎 `lesson-engine.md` 使用的科目專屬檔案。引擎定義方法論（工作流、十條通用原則、三種格式節奏模板），覆蓋層定義該科目獨有的設計原則、研究任務、稽核維度與產出規格。
 
 ## 貢獻流程
 
@@ -31,7 +31,7 @@ aliases:
 ---
 name: [科目]-45
 type: subject-overlay
-engine: subject-lesson-45
+engine: lesson-engine
 description: [一句話描述]
 subjects:
   - [科目代碼]

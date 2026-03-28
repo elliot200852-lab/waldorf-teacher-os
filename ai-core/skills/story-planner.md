@@ -18,7 +18,7 @@ requires_args: false
 
 ## 適用對象
 
-David（管理員）。未來可擴展至其他教師。
+所有具 workspace 權限的教師。
 
 ## 根目錄
 

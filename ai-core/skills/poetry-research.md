@@ -68,7 +68,7 @@ python setup/scripts/research_pipeline_v2.py "<topic>" --grade <grade> --subject
 教師確認後，可自然銜接：
 - 「看詩」→ 讀取 `poems.md`
 - 「看詞彙」→ 讀取 `vocab-cards.md`
-- 「進入備課」→ 觸發 `lesson` 或 `subject-lesson-45` 技能
+- 「進入備課」→ 觸發 `lesson` 或 `lesson-engine` 技能
 - 「再研究一個主題」→ 重新執行 Step 1
 
 ## 產出檔案

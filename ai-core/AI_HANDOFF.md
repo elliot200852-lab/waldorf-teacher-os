@@ -119,8 +119,8 @@ aliases:
 | 「編輯文件」「寫入 Docs」「開 Google Docs」 | `ai-core/skills/docs-edit.md` |
 | 「設定 gws」「安裝 gws」「gws setup」 | `ai-core/skills/gws-setup.md` |
 | 「生成新檔案」「建立新文件」「新增文件」「產出新文件」 | `ai-core/skills/new-doc.md` |
-| 「設計一堂課」「45 分鐘」「lesson design」 | `ai-core/skills/subject-lesson-45.md` |
-| 「英文課設計」「English lesson」 | `ai-core/skills/english-45.md` |
+| 「設計一堂課」「45 分鐘」「90 分鐘」「連堂」「主課程」「Main Lesson」「區塊設計」「lesson design」 | `ai-core/skills/lesson-engine.md` |
+| 「英文課設計」「English lesson」 | `ai-core/skills/english-45.md`（overlay，由 lesson-engine 自動載入） |
 | 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `ai-core/skills/git-history.md` |
 | 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
@@ -185,6 +185,7 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 | english | `ai-core/reference/subject-english.yaml` | 英文課深度設計、施泰納語言哲學完整論述 |
 | history | `ai-core/reference/subject-history.yaml` | 歷史課深度設計、台灣主體史觀完整論述 |
 | student | `ai-core/reference/student-development.yaml` | 班級經營深度分析、個案討論、修復式正義完整框架 |
+| steiner_methods | `ai-core/reference/steiner-pedagogy-methods.yaml` | 課程設計需引用 GA 293/294 方法論（如同感—反感節律、十二感官、從整體到部分）|
 | **tcmb** | `ai-core/reference/tcmb-local-index.yaml` | **任何涉及臺灣歷史、文化、地方、族群、原住民、走讀、文學的工作。** AI 應主動查詢本地 TCMB 索引（53,000+ 筆臺史博素材，含圖像 URL 與授權），查詢指令見 reference 檔。不需網路、不消耗 API 額度。 |
 
 ---
@@ -204,5 +205,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-17（新增 video-setup 技能）*
+*最後更新：2026-03-28（lesson-engine 統一課程引擎、steiner-pedagogy-methods 新增）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

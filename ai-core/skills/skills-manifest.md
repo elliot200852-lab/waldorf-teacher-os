@@ -34,8 +34,8 @@ aliases:
 | 「查行事曆」「排課表」「加行事曆」 | `calendar` | `ai-core/skills/calendar.md` |
 | 「開試算表」「寫入 Sheets」「讀 Sheets」 | `sheets` | `ai-core/skills/sheets.md` |
 | 「編輯文件」「寫入 Docs」「開 Google Docs」 | `docs-edit` | `ai-core/skills/docs-edit.md` |
-| 「設計一堂課」「45 分鐘」「lesson design」 | `subject-lesson-45` | `ai-core/skills/subject-lesson-45.md` + 科目覆蓋層 |
-| 「英文課設計」「English lesson」 | `english-45`（覆蓋層） | `ai-core/skills/english-45.md` |
+| 「設計一堂課」「45/90 分鐘」「連堂」「主課程」「lesson design」 | `lesson-engine` | `ai-core/skills/lesson-engine.md` + 科目覆蓋層 |
+| 「英文課設計」「English lesson」 | `english-45`（覆蓋層） | `ai-core/skills/english-45.md`（由 lesson-engine 載入） |
 | 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `git-history` | `ai-core/skills/git-history.md` |
 | 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `obsidian-sync` | `ai-core/skills/obsidian-sync.md` |
 | 「加入新老師」「新增老師」「新增教師」「add teacher」 | `add-teacher` | `ai-core/skills/add-teacher.md` |

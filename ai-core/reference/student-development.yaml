@@ -4,38 +4,70 @@
 # 觸發入口：teacheros.yaml → student_inner_structure_model._load_when
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 包含：外骨骼 vs 內骨骼論、學科作為隱藏鷹架、班級經營與修復式正義
+# 適用範圍：1-12 年級（教師權威模式隨年級演變）
 
 student_inner_structure_model:
   exoskeleton_vs_endoskeleton:
-    exoskeleton: 主流體制提供的外骨骼——課綱、考試、升學壓力，為青少年構築強制性邊界與行為指引
+    exoskeleton: 主流體制提供的外骨骼——課綱、考試、升學壓力，為學生構築強制性邊界與行為指引
     endoskeleton: 華德福教育的真實目標——協助學生長出自身的內骨骼（內在結構），能自我約束、自我賦予意義
-    waldorf_tension: 體制外刻意移除外骨骼，所有青春期心理張力毫無遮蔽地湧現，由教師全權承接
+    waldorf_tension: 體制外刻意移除外骨骼，學生的心理張力毫無遮蔽地湧現，由教師全權承接
   curriculum_as_hidden_scaffold:
-    principle: 學科知識是治癒青春期混亂的「解藥」；將學生狂野的心理能量精準導入理性軌道與物理現實
-    tools:
-      history_literature: 課程演進精確對應意識發展軌跡——學科是心魂的鏡子，讓覺醒的自我在歷史中看見自己
-      mathematics: 等號兩端的絕對平衡——為動盪的內在提供不受情緒影響的智識避風港
-      phenomenological_science: 實作→觀察→結論——強制將感官衝動轉化為清晰的因果邏輯推演
-      physiology: 骨骼的堅硬力學——在潛意識層面為氾濫的情感提供秩序與支撐
-      art_practice: 黑白素描、黏土雕塑——將星芒體能量物質化，在材料的物理阻力中鍛鍊意志
-      farm_block: 土地與農事的不可妥協——行動與責任的必然連結，大自然不接受情緒勒索
+    principle: >
+      學科知識不只是「要教的內容」，更是對應學生發展需求的隱藏鷹架。
+      每個年級段的學科都有其心理療癒功能，將學生的心理能量導入適當軌道。
+    by_stage:
+      lower_school_1_3:
+        principle: 學科在圖像層滋養以太體，建立對世界的信任與美感
+        tools:
+          fairy_tales: 童話的善惡原型為兒童提供安全的心理結構
+          form_drawing: 直與曲的力量引導生命力的節律運動
+          practical_arts: 農耕、建造回應九歲轉變後對世界可靠性的渴望
+      middle_school_4_6:
+        principle: 學科在感覺層回應主客分離後的探索需求
+        tools:
+          mythology: 北歐神話的毀滅與重生回應四年級的內外撕裂
+          ancient_civilizations: 五年級透過人類意識演化史找到自身的文化位置
+          roman_history: 六年級的法律與秩序回應因果思考萌發的邏輯渴望
+      upper_middle_7_9:
+        principle: 學科是治癒青春期混亂的「解藥」；將狂野的心理能量精準導入理性軌道與物理現實
+        tools:
+          history_literature: 課程演進精確對應意識發展軌跡——學科是心魂的鏡子，讓覺醒的自我在歷史中看見自己
+          mathematics: 等號兩端的絕對平衡——為動盪的內在提供不受情緒影響的智識避風港
+          phenomenological_science: 實作→觀察→結論——強制將感官衝動轉化為清晰的因果邏輯推演
+          physiology: 骨骼的堅硬力學——在潛意識層面為氾濫的情感提供秩序與支撐
+          art_practice: 黑白素描、黏土雕塑——將星芒體能量物質化，在材料的物理阻力中鍛鍊意志
+          farm_block: 土地與農事的不可妥協——行動與責任的必然連結，大自然不接受情緒勒索
+      high_school_10_12:
+        principle: 學科成為獨立思考與判斷力的鍛造場，教師與學生在智識層面真正對話
+        tools:
+          philosophy: 希臘哲學與詩學引導十年級建構自己的思想框架
+          literature: 浪漫主義與存在主義文學回應十一年級對意義的追尋
+          capstone: 畢業專題讓十二年級展現獨立研究能力，見證自我的整合
 
 classroom_authority_model:
-  source_of_authority: 七至九年級教師的權威不再由體制自動賦予，必須透過真實的人際關係與專業能力贏得
+  authority_evolution:
+    principle: >
+      教師權威隨學生發展階段演變，不是單一模式。
+      低年級是自然的絕對權威，高年級須透過專業能力贏得，上學部則是平等的同行者。
+    by_stage:
+      grades_1_3: 教師是世界的代言人，權威來自兒童發展上的需要，不需額外贏取
+      grades_4_6: 權威開始需要專業能力支撐，但仍以溫暖的引導者角色為主
+      grades_7_9: 權威不再由體制自動賦予，必須透過真實的人際關係與專業能力贏得
+      grades_10_12: 教師是「值得尊敬的年長同行者」，以智識對話建立尊重
   non_negotiable_consistency: 規則一旦制定，必須溫和且絕對地貫徹——雙重標準或指令未執行，學生立刻撤銷信任
-  psychological_signal: 高度結構化、可預測的環境向焦慮的青少年傳遞「此處安全」的訊號；環境秩序是內在秩序的模具
+  psychological_signal: 高度結構化、可預測的環境向學生傳遞「此處安全」的訊號；環境秩序是內在秩序的模具
   what_students_need_from_teacher:
     - 對世界充滿熱情與改變意志的生命典範
     - 言行絕對一致的成人穩定度
     - 真誠回應偏題提問，不將挑釁視為個人攻擊
-    - 充滿愛的權威，而非體制威權
+    - 充滿愛的權威，而非體制威權（低年級）；真正的智識夥伴（上學部）
   conflict_resolution:
     philosophy: 修復式正義（Restorative Justice）而非懲罰性手段；衝突是療癒與成長的契機
     tools:
       talking_circles: 定期班級談話圈——建立情感安全網，讓每個聲音被聽見
       nvc: 非暴力溝通——識別需求，客觀描述事件而非主觀指責
       restorative_conversation: 修復性對話——理解傷害影響，犯錯者提出具體彌補方案
-      social_harmony: 訓練八年級學生擔任低年級衝突調解員——將掌控慾轉化為正向領導力
+      social_harmony: 訓練高年級學生擔任低年級衝突調解員——將掌控慾轉化為正向領導力
 
 waldorf_innate_advantages:
   developmental_insight: 深刻理解人類七年一週期的發展規律，能精準定義不同階段的教育邊界條件

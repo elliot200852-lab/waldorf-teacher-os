@@ -1248,6 +1248,7 @@ aliases:
 | [[ai-core/reference/repo-structure-map.yaml\|repo-structure-map.yaml]] | Repo 架構地圖（路徑→HOME.md 區段路由規則） |
 | [[ai-core/reference/corpus-taic.yaml\|corpus-taic.yaml]] | 台灣主權 AI 訓練語料庫查詢指引 |
 | [[ai-core/reference/tcmb-local-index.yaml\|tcmb-local-index.yaml]] | 國家文化記憶庫本地索引 AI 查詢指引 |
+| [[ai-core/reference/steiner-pedagogy-methods.yaml\|steiner-pedagogy-methods.yaml]] | GA 293/294 施泰納教學方法論錨點 |
 
 ### Reference 操作文件
 
@@ -1680,6 +1681,7 @@ aliases:
 | [[workspaces/Working_Member/Teacher_林詩閔/reference/113三年級台語課/秋季/113學年秋三年級台語課教學內容-詩閔\|113學年秋三年級台語課教學內容]] | 三年級台語課教學內容 |
 | [[workspaces/Working_Member/Codeowner_David/Kovacs_Books/Geology_and_Astronomy_Full\|Geology and Astronomy Full]] | Kovacs 地質學與天文學全文翻譯 |
 | [[workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/reviews/A013-quality\|A013 quality]] | 品質審核紀錄 |
+| [[workspaces/Working_Member/Codeowner_David/Kovacs_Books/Parsifal-The_Search_for_the_Grail_Full\|Parsifal The Search for the Grail Full]] | Kovacs 帕西法爾與聖杯之旅全文翻譯 |
 
 ---
 

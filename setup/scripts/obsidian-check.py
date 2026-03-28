@@ -486,7 +486,7 @@ def run_self_test():
     mock_home = """
 | [[setup/add-teacher.sh|add-teacher.sh]] | 新增教師腳本 |
 | [[lesson]] | 進入備課 |
-| [[subject-lesson-45]] | 45 分鐘課設計 |
+| [[lesson-engine]] | 統一課程設計引擎 |
 | [[setup/quick-start.sh|quick-start.sh]] | 快速安裝 |
 | [[obsidian-sync]] | Obsidian 同步 |
 | [[setup/scripts/obsidian-check.py|obsidian-check.py]] | 偵測腳本 |
@@ -503,7 +503,7 @@ def run_self_test():
         # --- 應回傳 True（已收錄）---
         ("setup/add-teacher.sh",    True,  "完整路徑在 HOME 中"),
         ("ai-core/skills/lesson.md", True, "[[lesson]] wikilink 存在"),
-        ("ai-core/skills/subject-lesson-45.md", True, "[[subject-lesson-45]] wikilink 存在"),
+        ("ai-core/skills/lesson-engine.md", True, "[[lesson-engine]] wikilink 存在"),
         ("setup/quick-start.sh",    True,  "完整路徑在 HOME 中"),
         ("ai-core/skills/obsidian-sync.md", True, "[[obsidian-sync]] wikilink 存在"),
         ("setup/scripts/obsidian-check.py", True, "完整路徑在 HOME 中"),

@@ -2,7 +2,7 @@
 # TeacherOS Reference — 台灣主權 AI 訓練語料庫（TAIC）
 # 路徑：ai-core/reference/corpus-taic.yaml
 # 用途：為 AI 備課提供 TAIC 的存取指引與教學應用對照
-# 觸發時機：story-research、subject-lesson-45、poetry-research
+# 觸發時機：story-research、lesson-engine、poetry-research
 #           等技能需要台灣本土素材時，載入本檔作為查詢參考
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -47,7 +47,7 @@ categories:
       - 差異化：D型學生以視覺素材為入口
     relevant_skills:
       - art-in-teaching
-      - subject-lesson-45
+      - lesson-engine
 
   languages_and_vocabulary:
     taic_label: 語言詞彙
@@ -56,7 +56,7 @@ categories:
       - 英文課：中英語言結構比較教學
       - 跨領域：施泰納語言哲學的具體教材
     relevant_skills:
-      - subject-lesson-45
+      - lesson-engine
       - poetry-research
 
   history_and_heritage:
@@ -70,7 +70,7 @@ categories:
     relevant_skills:
       - story-research
       - story-planner
-      - subject-lesson-45
+      - lesson-engine
 
   local_culture:
     taic_label: 在地文化
@@ -81,7 +81,7 @@ categories:
       - 差異化：B型學生以趣味性在地素材引入
     relevant_skills:
       - story-research
-      - subject-lesson-45
+      - lesson-engine
 
   indigenous_peoples:
     taic_label: 原住民族（原民會貢獻）
@@ -92,7 +92,7 @@ categories:
       - 英文課：跨文化理解的本土錨點
     relevant_skills:
       - story-research
-      - subject-lesson-45
+      - lesson-engine
 
   academic:
     taic_label: 學術內容（中研院等）

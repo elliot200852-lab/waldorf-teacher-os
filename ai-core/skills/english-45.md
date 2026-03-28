@@ -1,20 +1,18 @@
 ---
 name: english-45
 type: subject-overlay
-engine: subject-lesson-45
-description: 英文科 45 分鐘課堂設計覆蓋層。定義英文課專屬的設計原則、素材策略、文法整合邏輯與稽核維度。必須與通用引擎 subject-lesson-45.md 一起載入。
+engine: lesson-engine
+description: 英文科課堂設計覆蓋層。定義英文課專屬的設計原則、素材策略、文法整合邏輯與稽核維度。支援 45/90/120 分鐘格式，由 lesson-engine.md 統一載入。
 subjects:
   - english
 grades:
-  - 7
-  - 8
-  - 9
+  - 1-12
 ---
 
-# 英文科覆蓋層｜45 分鐘課堂設計
+# 英文科覆蓋層｜課堂設計（45/90/120 分鐘）
 
-> 本覆蓋層必須與通用引擎 `subject-lesson-45.md` 一起載入。
-> 引擎定義方法論（五階段工作流、六條通用原則、節奏模板），本覆蓋層定義英文課的科目專屬內容。
+> 本覆蓋層由統一課程引擎 `lesson-engine.md` 自動載入。
+> 引擎定義方法論（五階段工作流、十條通用原則、三種節奏模板），本覆蓋層定義英文課的科目專屬內容。
 
 ---
 
