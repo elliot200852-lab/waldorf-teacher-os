@@ -161,14 +161,15 @@ def _check_home_quality(staged_files: list[str], repo_root: Path) -> bool:
 
 # ── 大型二進位檔案攔截 ────────────────────────────────
 
-WARN_SIZE = 5 * 1024 * 1024    # 5 MB → 警告
-BLOCK_SIZE = 10 * 1024 * 1024  # 10 MB → 攔截
+WARN_SIZE = 3 * 1024 * 1024    # 3 MB → 警告
+BLOCK_SIZE = 5 * 1024 * 1024   # 5 MB → 攔截
 
 # 這些副檔名視為文字檔，不受大小攔截（.md 教案可能很長）
+# 注意：.html 不列入豁免，因為可能嵌入 base64 圖片變得肥大；.pdf 也不豁免
 TEXT_EXTENSIONS = {
     ".md", ".yaml", ".yml", ".json", ".txt", ".csv", ".tsv",
     ".py", ".js", ".ts", ".tsx", ".sh", ".ps1", ".bat",
-    ".html", ".css", ".xml", ".env", ".gitignore",
+    ".css", ".xml", ".env", ".gitignore",
 }
 
 
@@ -202,7 +203,7 @@ def _check_large_files(staged_files: list[str], repo_root: Path) -> bool:
 
     if blocked:
         print()
-        print(f"  {RED}[攔截] 以下檔案超過 10 MB，不允許 commit：{NC}")
+        print(f"  {RED}[攔截] 以下檔案超過 5 MB，不允許 commit：{NC}")
         for f, size in blocked:
             print(f"  {RED}  {size/1024/1024:.1f} MB: {f}{NC}")
         print()
