@@ -1,22 +1,25 @@
 ---
 aliases:
   - "林詩閔 台語唸謠設計技能"
-name: niamyio-personal
-description: 林詩閔老師專屬——台語唸謠教學活動設計。強調聲韻之美、呼吸節奏與視覺意象結合。
+name: niamyio-lin
+description: 林詩閔老師專屬——台語唸謠教學活動設計。強調聲韻之美、呼吸節奏與視覺意象結合。與系統版 niamyio 並行，擇一使用。
 triggers:
-  - 做唸謠
-  - 唸謠設計
-  - 唸謠教學
+  - 詩閔唸謠
+  - 詩閔版唸謠
+  - 林詩閔唸謠
+  - 聲韻唸謠設計
+  - 意象唸謠
 tags:
   - 技能
   - 台語
   - 唸謠
 author: 林詩閔
 created: 2026-03-23
+updated: 2026-04-17
 requires_args: false
 ---
 
-# skill: niamyio-personal — 林詩閔式台語唸謠設計協議
+# skill: niamyio-lin — 林詩閔式台語唸謠設計協議
 
 本技能專用於設計符合「華德福教學意境」與「視覺認讀需求」的台語唸謠。核心目標是透過聲音的韻律與畫面感的結合，穩固學生的聽說讀能力。
 
