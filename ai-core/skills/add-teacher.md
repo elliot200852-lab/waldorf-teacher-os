@@ -18,7 +18,7 @@ created: 2026-03-09
 # skill: add-teacher — 加入新老師（管理員專用）
 
 互動式建立新教師的 Workspace、ACL 權限與 Git 分支。
-取代 `setup/add-teacher.py`（或舊版 `add-teacher.sh`）的手動流程，改由 AI 對話引導完成。
+取代 `setup/add-teacher.py` 的手動流程，改由 AI 對話引導完成。
 
 ## 權限
 
@@ -388,8 +388,8 @@ Windows（PowerShell）：
 - Collaborator 已存在 → API 回傳 204，無副作用
 - Class folder 已存在 → 跳過建立
 
-### 與 add-teacher.py / add-teacher.sh 的關係
+### 與 add-teacher.py 的關係
 
-- **共存**，不刪除腳本（Python 版 `add-teacher.py` 為跨平台主版本，Shell 版 `add-teacher.sh` 為備用）
+- **共存**，不刪除腳本（`add-teacher.py` 是跨平台主版本，David 可在終端機直接執行）
 - 技能比腳本多了：預填 teacheros-personal.yaml、確認個人需求、產出新教師通知清單
 - 技能使用 AI 的 Read/Write/Edit/Bash 工具完成操作
