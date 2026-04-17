@@ -24,6 +24,14 @@ aliases:
 ## 命名規則
 `git-history_YYYY-MM-DD_v{N}.pdf`
 
+## 輸出位置（重要）
+
+**PDF 不進此資料夾。** 產出後直接丟以下任一處：
+- 本地暫存：`~/Downloads/` 或 `/tmp/`（檢視完刪除）
+- 永久留存：Google Drive（例如「TeacherOS-專案三層記憶 / Git History PDF」）
+
+此資料夾只放 `.md`（週記正本、設定、附屬筆記）。`.gitignore` 已對 `workspaces/**/reference/git-history/*.pdf` 加守門。
+
 ## 注意事項
 - weasyprint 在此環境無法安裝（proxy 限制）
 - pandoc + xelatex 可用但 DroidSansFallback 缺拉丁字元，效果差
