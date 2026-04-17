@@ -1,6 +1,12 @@
 ﻿# TeacherOS 快速啟動 — Windows 入口
 # 檢查 Python 3，然後呼叫 quick-start.py
 
+# 確保 PowerShell 與子行程的 stdout 都用 UTF-8（避免中文亂碼）
+$OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+$env:PYTHONIOENCODING = "utf-8"
+try { chcp 65001 | Out-Null } catch {}
+
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 # 偵測 Python
@@ -27,7 +33,7 @@ if (-not $py) {
             exit 1
         }
         Write-Host "  正在透過 winget 安裝 Python 3..." -ForegroundColor Cyan
-        winget install Python.Python.3.12 --accept-package-agreements --accept-source-agreements
+        winget install Python.Python.3.13 --accept-package-agreements --accept-source-agreements
         # 重新載入 PATH
         $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
         if (Get-Command python3 -EA 0) { $py = "python3" }

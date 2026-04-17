@@ -37,6 +37,11 @@ def check_fail(msg: str) -> None:
     _fail_count += 1
 
 
+def check_info(msg: str) -> None:
+    """選用項目未安裝/未設定時的提示訊息（不計入 PASS / FAIL）。"""
+    print(f"  [i ]  {msg}")
+
+
 def section(title: str) -> None:
     print()
     print(f"── {title} ──────────────────────────────────────────")
@@ -275,18 +280,22 @@ def check_gdrive_folder(os_type: str, is_wsl: bool, repo_root: Path, env_data: d
 
 
 def check_gws(os_type: str) -> None:
-    """檢查 5：Google Workspace CLI（gws）"""
-    section("5. Google Workspace CLI（選用，強烈建議）")
+    """檢查 5：Google Workspace CLI（gws）— 完全選用"""
+    section("5. Google Workspace CLI（gws，完全選用）")
 
     gws_bin: str | None = None
 
     if shutil.which("gws"):
         gws_bin = "gws"
     else:
-        # 備援路徑：nvm 安裝的 gws
-        nvm_gws = Path.home() / ".nvm" / "versions" / "node" / "v24.13.0" / "bin" / "gws"
-        if nvm_gws.is_file() and os.access(nvm_gws, os.X_OK):
-            gws_bin = str(nvm_gws)
+        # 備援路徑：nvm 安裝的 gws（掃描所有 node 版本，避免寫死版號）
+        nvm_root = Path.home() / ".nvm" / "versions" / "node"
+        if nvm_root.is_dir():
+            for version_dir in sorted(nvm_root.iterdir(), reverse=True):
+                candidate = version_dir / "bin" / "gws"
+                if candidate.is_file() and os.access(candidate, os.X_OK):
+                    gws_bin = str(candidate)
+                    break
 
     if gws_bin:
         r = run_cmd([gws_bin, "--version"])
@@ -309,25 +318,26 @@ def check_gws(os_type: str) -> None:
                 print("  支援服務：Gmail、Drive、Calendar、Sheets、Docs")
                 print("  參考文件：ai-core/reference/gws-cli-guide.md")
             else:
-                check_fail("gws 已安裝但尚未認證")
+                check_info("gws 已安裝，尚未完成 OAuth 認證")
                 print()
-                print("  請執行以下指令完成認證：")
+                print("  若要使用 Drive / Gmail / Calendar 等功能，請執行：")
                 print("    gws auth login")
-                print("  認證後即可透過 AI 直接操作 Google Workspace 五大服務。")
+                print("  完整指引：ai-core/reference/gws-cli-guide.md")
         else:
-            check_fail("gws 已安裝但尚未認證")
+            check_info("gws 已安裝，尚未完成 OAuth 認證")
             print()
-            print("  請執行以下指令完成認證：")
-            print("    gws auth login")
+            print("  若要使用，請執行：gws auth login")
     else:
-        check_fail("找不到 gws CLI（Google Workspace 操作將受限）")
+        check_info("gws CLI 未安裝（選用功能，不影響備課與課程設計）")
         print()
-        print("  gws CLI 讓 AI 直接操作 Gmail、Drive、Calendar、Sheets、Docs。")
-        print("  安裝方式：")
-        print("    npm install -g @anthropic-ai/googleworkspace-tools")
-        print("  安裝後執行認證：")
-        print("    gws auth login")
-        print("  完整指引：ai-core/reference/gws-cli-guide.md")
+        print("  gws CLI 讓 AI 直接操作你個人的 Gmail / Drive / Calendar / Sheets / Docs。")
+        print("  每位老師獨立建立自己的 GCP 專案與 OAuth 憑證——")
+        print("  與 David 的帳號完全分離。")
+        print()
+        print("  安裝步驟（之後想用再做即可）：")
+        print("    1. npm install -g @googleworkspace/cli")
+        print("    2. 依 ai-core/reference/gws-cli-guide.md 建立你自己的 OAuth client")
+        print("    3. gws auth login --account 你的@gmail.com")
 
 
 def check_git(os_type: str) -> None:

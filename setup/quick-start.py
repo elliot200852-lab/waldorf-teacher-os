@@ -368,12 +368,15 @@ def main():
 
     print_section("檢查 6.5：Git 身份與註冊 Email 一致性")
 
+    EMAIL_RE = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
+    PLACEHOLDER_NAMES = {"你的姓名", "Your Name", "your name"}
+
     if env_file.is_file():
         env_data = read_env_file(env_file)
         reg_email = env_data.get("USER_EMAIL", "").strip()
         reg_name = env_data.get("USER_NAME", "").strip()
 
-        if reg_email:
+        if reg_email and EMAIL_RE.match(reg_email):
             r = run_cmd(["git", "config", "user.email"])
             current_git_email = r.stdout.strip() if r.returncode == 0 else ""
 
@@ -384,8 +387,13 @@ def main():
                     print_info(f"（原值：{current_git_email}）")
             else:
                 print_success(f"git config user.email 已正確：{reg_email}")
+        elif reg_email:
+            print_warning(f"environment.env 的 USER_EMAIL 不是有效格式：{reg_email}")
+            print_info("請編輯 setup/environment.env，把 USER_EMAIL 填成你真正的 Email，再重新執行此腳本")
+        else:
+            print_warning("environment.env 缺少 USER_EMAIL，無法同步 Git 身份")
 
-        if reg_name:
+        if reg_name and reg_name not in PLACEHOLDER_NAMES:
             r = run_cmd(["git", "config", "user.name"])
             current_git_name = r.stdout.strip() if r.returncode == 0 else ""
 
@@ -396,6 +404,9 @@ def main():
                     print_info(f"（原值：{current_git_name}）")
             else:
                 print_success(f"git config user.name 已正確：{reg_name}")
+        elif reg_name in PLACEHOLDER_NAMES:
+            print_warning(f"environment.env 的 USER_NAME 仍為預設佔位符：{reg_name}")
+            print_info("請編輯 setup/environment.env 填入真實姓名，再重新執行此腳本")
     else:
         print_warning("environment.env 尚未建立，無法同步 Git 身份")
         print_info("請先完成 Step 6，再重新執行本腳本")
@@ -436,49 +447,39 @@ def main():
     # 檢查 8：切換到個人 Branch
     # ──────────────────────────────────────────────────────
 
-    print_section("檢查 8：切換到你的個人工作分支")
+    print_section("檢查 8：個人工作分支狀態")
 
-    # 從 environment.env 讀取 email
-    teacher_email = ""
-    if env_file.is_file():
-        env_data = read_env_file(env_file)
-        teacher_email = env_data.get("USER_EMAIL", "").strip()
+    # 先看當前分支：若已在 workspace/* 上，直接成功
+    r = run_cmd(["git", "branch", "--show-current"])
+    current_branch = r.stdout.strip() if r.returncode == 0 else ""
 
-    if not teacher_email:
-        r = run_cmd(["git", "config", "user.email"])
-        teacher_email = r.stdout.strip() if r.returncode == 0 else ""
+    if current_branch.startswith("workspace/"):
+        print_success(f"已在你的個人分支：{current_branch}")
+    else:
+        # 不在 workspace 分支上 — 列出可用分支讓老師自行切換
+        print_warning(f"目前在 '{current_branch or '未知'}' 分支，不是個人 workspace 分支")
+        print()
 
-    # 嘗試從遠端 branch 列表中找到 workspace/ 開頭的分支
-    run_cmd(["git", "fetch", "--all", "--quiet"])
-    r = run_cmd(["git", "branch", "-r"])
-    workspace_branches: list[str] = []
-    if r.returncode == 0:
-        for line in r.stdout.splitlines():
-            line = line.strip()
-            if "origin/workspace/" in line:
-                branch = line.replace("origin/", "").strip()
-                workspace_branches.append(branch)
+        run_cmd(["git", "fetch", "--all", "--quiet"])
+        r = run_cmd(["git", "branch", "-r"])
+        workspace_branches: list[str] = []
+        if r.returncode == 0:
+            for line in r.stdout.splitlines():
+                line = line.strip()
+                if "origin/workspace/" in line:
+                    branch = line.replace("origin/", "").strip()
+                    workspace_branches.append(branch)
 
-    if workspace_branches:
-        if len(workspace_branches) == 1:
-            branch_name = workspace_branches[0]
-            print_info(f"偵測到你的工作分支：{branch_name}")
-            r = run_cmd(["git", "checkout", branch_name])
-            if r.returncode == 0:
-                print_success(f"已切換到你的個人分支：{branch_name}")
-            else:
-                print_warning(f"自動切換失敗，請手動執行：git checkout {branch_name}")
-        else:
-            print_info("偵測到多個工作分支：")
+        if workspace_branches:
+            print_info("可用的 workspace 分支：")
             for b in workspace_branches:
                 print(f"  - {b}")
             print()
-            print_warning("請手動切換到你的分支，例如：")
+            print(_c(YELLOW, "請手動切換到你自己的分支（範例，把姓名換成你自己的）："))
             print("  git checkout workspace/Teacher_你的姓名")
-    else:
-        print_info("尚未找到你的個人分支")
-        print_info("這代表 David 還沒有建立你的工作空間")
-        print_info("請聯繫 David，等他建立後再執行一次 git pull")
+        else:
+            print_info("尚未找到任何 workspace 分支")
+            print_info("請聯繫 David，等他建立後再執行 git pull")
 
     # ──────────────────────────────────────────────────────
     # 檢查 9：Claude Code Hook 設定（選用）

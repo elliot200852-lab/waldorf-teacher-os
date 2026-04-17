@@ -11,6 +11,7 @@ FAIL=0
 
 check_pass() { echo "  [OK]  $1"; PASS=$((PASS+1)); }
 check_fail() { echo "  [!!]  $1"; FAIL=$((FAIL+1)); }
+check_info() { echo "  [i ]  $1"; }
 section()    { echo ""; echo "── $1 ──────────────────────────────────────────"; }
 
 # ── OS 偵測 ───────────────────────────────────────────────────
@@ -217,13 +218,22 @@ fi
 
 # ── 5. Google Workspace CLI（gws）─────────────────────────────
 
-section "5. Google Workspace CLI（選用，強烈建議）"
+section "5. Google Workspace CLI（gws，完全選用）"
 
 GWS_BIN=""
 if command -v gws &>/dev/null; then
   GWS_BIN="gws"
-elif [ -x "$HOME/.nvm/versions/node/v24.13.0/bin/gws" ]; then
-  GWS_BIN="$HOME/.nvm/versions/node/v24.13.0/bin/gws"
+else
+  # 備援：掃描所有 nvm node 版本（避免寫死版號）
+  if [ -d "$HOME/.nvm/versions/node" ]; then
+    for nvm_node in $(ls -1r "$HOME/.nvm/versions/node" 2>/dev/null); do
+      candidate="$HOME/.nvm/versions/node/$nvm_node/bin/gws"
+      if [ -x "$candidate" ]; then
+        GWS_BIN="$candidate"
+        break
+      fi
+    done
+  fi
 fi
 
 if [ -n "$GWS_BIN" ]; then
@@ -244,21 +254,23 @@ if [ -n "$GWS_BIN" ]; then
     echo "  支援服務：Gmail、Drive、Calendar、Sheets、Docs"
     echo "  參考文件：ai-core/reference/gws-cli-guide.md"
   else
-    check_fail "gws 已安裝但尚未認證"
+    check_info "gws 已安裝，尚未完成 OAuth 認證"
     echo ""
-    echo "  請執行以下指令完成認證："
+    echo "  若要使用 Drive / Gmail / Calendar 等功能，請執行："
     echo "    gws auth login"
-    echo "  認證後即可透過 AI 直接操作 Google Workspace 五大服務。"
+    echo "  完整指引：ai-core/reference/gws-cli-guide.md"
   fi
 else
-  check_fail "找不到 gws CLI（Google Workspace 操作將受限）"
+  check_info "gws CLI 未安裝（選用功能，不影響備課與課程設計）"
   echo ""
-  echo "  gws CLI 讓 AI 直接操作 Gmail、Drive、Calendar、Sheets、Docs。"
-  echo "  安裝方式："
-  echo "    npm install -g @anthropic-ai/googleworkspace-tools"
-  echo "  安裝後執行認證："
-  echo "    gws auth login"
-  echo "  完整指引：ai-core/reference/gws-cli-guide.md"
+  echo "  gws CLI 讓 AI 直接操作你個人的 Gmail / Drive / Calendar / Sheets / Docs。"
+  echo "  每位老師獨立建立自己的 GCP 專案與 OAuth 憑證——"
+  echo "  與 David 的帳號完全分離。"
+  echo ""
+  echo "  安裝步驟（之後想用再做即可）："
+  echo "    1. npm install -g @googleworkspace/cli"
+  echo "    2. 依 ai-core/reference/gws-cli-guide.md 建立你自己的 OAuth client"
+  echo "    3. gws auth login --account 你的@gmail.com"
 fi
 
 # ── 6. Git ────────────────────────────────────────────────────

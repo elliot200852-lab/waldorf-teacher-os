@@ -343,28 +343,25 @@ git branch --show-current
 >
 > 按 `Y` 同意，然後重新跑 `.\setup\start.ps1`。
 
-這會打開一個引導精靈，會問你：
+這會跑過 9 個檢查項目（**不會問你問題**，全自動跑完）：
 
-- 你的姓名、email、GitHub 帳號（你已經準備好了）
-- 是否要設定 Google Drive、Pandoc、Calendar 等選配功能（不確定就先按 Enter 跳過，之後可以再設定）
+- Git、Repo、Pandoc 是否就緒
+- 自動偵測你的 workspace 並建立 `setup/environment.env`
+- 自動同步 Git 身份與 Email
+- 安裝 Pre-commit / Pre-push hooks
+- 確認你站在自己的個人分支上
+- Claude Code Hook 設定
 
-**跟著提示一路按下去，不要怕**。每一步都是可逆的，改錯了再跑一次就好。
+**你只要看著它跑完即可**。畫面上每一行開頭：
+- `✓` 綠色＝過關
+- `⚠` 黃色＝提醒（通常不影響使用）
+- `✗` 紅色＝錯誤（請把畫面貼給 AI）
 
-## A7. 安裝「保護性」檢查器
+跑完看到 `技術安裝完成！` 就是成功。
 
-**貼入 PowerShell**：
+> Google Drive / Email / Calendar 等 gws 功能**完全選用**，這個腳本不會問、不會強制安裝。之後想用再依 `ai-core/reference/gws-cli-guide.md` 自己建立。
 
-```powershell
-python setup\install-hooks.py
-```
-
-這會安裝兩個自動檢查：
-- **Pre-commit**：每次你存檔前，檢查你有沒有不小心改到別人的資料夾
-- **Pre-push**：每次你推送到 GitHub 前，再檢查一次
-
-**看到 `TeacherOS Hook 安裝完成` 就是成功**。
-
-## A8. 驗收：確認全部就緒
+## A7. 驗收：確認全部就緒
 
 **貼入 PowerShell**（**三行，一行一行貼，各按一次 Enter**）：
 
@@ -507,28 +504,25 @@ git branch --show-current
 bash setup/start.sh
 ```
 
-這會打開一個引導精靈，會問你：
+這會跑過 9 個檢查項目（**不會問你問題**，全自動跑完）：
 
-- 你的姓名、email、GitHub 帳號（你已經準備好了）
-- 是否要設定 Google Drive、Pandoc、Calendar 等選配功能（不確定就先按 Enter 跳過，之後可以再設定）
+- Git、Repo、Homebrew、Pandoc 是否就緒
+- 自動偵測你的 workspace 並建立 `setup/environment.env`
+- 自動同步 Git 身份與 Email
+- 安裝 Pre-commit / Pre-push hooks
+- 確認你站在自己的個人分支上
+- Claude Code Hook 設定
 
-**跟著提示一路按下去，不要怕**。每一步都是可逆的，改錯了再跑一次就好。
+**你只要看著它跑完即可**。畫面上每一行開頭：
+- `✓` 綠色＝過關
+- `⚠` 黃色＝提醒（通常不影響使用）
+- `✗` 紅色＝錯誤（請把畫面貼給 AI）
 
-## B6. 安裝「保護性」檢查器
+跑完看到 `技術安裝完成！` 就是成功。
 
-**貼入終端機**：
+> Google Drive / Email / Calendar 等 gws 功能**完全選用**，這個腳本不會問、不會強制安裝。之後想用再依 `ai-core/reference/gws-cli-guide.md` 自己建立。
 
-```bash
-bash setup/install-hooks.sh
-```
-
-這會安裝兩個自動檢查：
-- **Pre-commit**：每次你存檔前，檢查你有沒有不小心改到別人的資料夾
-- **Pre-push**：每次你推送到 GitHub 前，再檢查一次
-
-**看到 `TeacherOS Hook 安裝完成` 就是成功**。
-
-## B7. 驗收：確認全部就緒
+## B6. 驗收：確認全部就緒
 
 **貼入終端機**（**三行，一行一行貼，各按一次 Enter**）：
 
@@ -658,23 +652,19 @@ AI 處理不了再找 David。
 
 ### Q2. 我的 Google Drive / Email / Calendar 以前可以用，現在連不上？
 
-這次整理把 Google Workspace 工具（`gws`）從系統中移除了。如果你之前有用這些功能，要自己重新設定一次。
+這次整理把 Google Workspace 工具（`gws`）從系統中移除了。**現在每位老師的 gws 都是獨立的**——你需要用自己的 Google 帳號建立自己的 OAuth 專案，跟 David 沒有關係（David 不會也不能看到你的 Drive / Email / Calendar）。
 
-**先問 AI**：「我之前用 TeacherOS 上傳 Drive / 寄 Email / 寫 Calendar，現在不行了。請根據 `teacher-reclone-guide-2026-04.md` 和 repo 裡的 `ai-core/reference/gws-cli-guide.md`，教我重新設定 gws。」——把這份指南和 `gws-cli-guide.md` 一起餵給 AI。
+**先問 AI**：「我之前用 TeacherOS 上傳 Drive / 寄 Email / 寫 Calendar，現在不行了。請根據 `teacher-reclone-guide-2026-04.md` 和 repo 裡的 `ai-core/reference/gws-cli-guide.md`，教我重新設定我自己的 gws（包含建立我自己的 GCP 專案、OAuth 憑證、`gws auth setup`、`gws auth login`）。」——把這份指南和 `gws-cli-guide.md` 一起餵給 AI。
 
-AI 走不下去才找 David（因為 OAuth 憑證的最後一步可能需要 David 在 GCP Console 開權限）。
+AI 會引導你完成全部步驟。如果卡在 GCP Console 介面看不懂、或是某個權限按鈕找不到，**繼續問 AI 並把畫面截圖貼給它**——這是你個人的 Google 帳號，David 沒有控制權，無法代你操作。
 
 如果你之前**沒在用這些功能**（只用 TeacherOS 的備課、課程設計、學生紀錄），**不受影響**，略過這題。
 
-### Q3. 我的 Obsidian 筆記還看得到嗎？
-
-看得到。Obsidian 讀的是你 `workspaces/Working_Member/Teacher_你的姓名/` 底下的 Markdown 檔案，這些內容在新的 repo 裡**完整保留**。重新用 Obsidian 打開同一個資料夾即可。
-
-### Q4. 舊的 Google Drive for Desktop 同步會不會衝突？
+### Q3. 舊的 Google Drive for Desktop 同步會不會衝突？
 
 不會。Google Drive 同步的是雲端硬碟，跟你桌面上的 Git 資料夾沒有連動。兩邊各做各的。
 
-### Q5. 我擔心我電腦裡有些東西沒上傳到 GitHub，刪掉就找不回來了？
+### Q4. 我擔心我電腦裡有些東西沒上傳到 GitHub，刪掉就找不回來了？
 
 David 這邊在系統整理前已經做過一次完整備份，所有有推送到 GitHub 的內容都在新的 repo 裡。
 
