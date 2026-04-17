@@ -127,7 +127,7 @@ workspaces/**/*.xlsx
 workspaces/**/*.pptx
 
 # Git History 週記資料夾禁止 PDF（正本為 .md，PDF 產出走 Drive，不進 repo）
-workspaces/**/reference/git-history/*.pdf
+Git History/*.pdf
 
 # Scheduled tasks lock file
 .claude/scheduled_tasks.lock

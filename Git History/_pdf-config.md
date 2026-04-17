@@ -30,7 +30,7 @@ aliases:
 - 本地暫存：`~/Downloads/` 或 `/tmp/`（檢視完刪除）
 - 永久留存：Google Drive（例如「TeacherOS-專案三層記憶 / Git History PDF」）
 
-此資料夾只放 `.md`（週記正本、設定、附屬筆記）。`.gitignore` 已對 `workspaces/**/reference/git-history/*.pdf` 加守門。
+此資料夾只放 `.md`（週記正本、設定、附屬筆記）。`.gitignore` 已對 `Git History/*.pdf` 加守門。
 
 ## 注意事項
 - weasyprint 在此環境無法安裝（proxy 限制）
