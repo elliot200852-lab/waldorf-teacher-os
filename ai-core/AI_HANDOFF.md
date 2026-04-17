@@ -10,21 +10,27 @@ aliases:
 
 ---
 
-## 第零步：確保 Repo 為最新版本
+## 第零步：確保 Repo 為最新版本（v2.0 分支模型）
 
 **每次新對話開始，在讀取任何檔案之前，必須先確認教師的 Repo 已更新至最新版本。**
 
-完整執行規格見：`ai-core/skills/opening.md`
+**v2.0 分支原則：**
+- admin（David）在 `main` 分支工作，直接 pull main
+- 老師在個人分支 `workspace/Teacher_{姓名}` 工作
+- 老師的「系統更新」透過把 main 合併進個人分支來取得；**不執行 `git pull origin main`**（會把 main 拉成當前分支內容，但只有在 current branch 是 main 時才安全）
+
+完整執行規格見：`ai-core/skills/opening.md` Step 0。
 
 簡要邏輯：
 
-| AI 能力 | 行為 |
-|---------|------|
-| 有終端機（Claude Code、Cowork） | 自動執行 `git fetch origin` → `git pull origin main`，報告結果 |
-| 無終端機（Gemini 語音、ChatGPT） | 提醒教師手動執行 `git pull origin main`，等待確認後才繼續 |
+| 身份 / AI 能力 | 行為 |
+|---------------|------|
+| admin + 有終端機 | `git fetch origin main` → `git pull --ff-only origin main` |
+| 老師 + 有終端機 | `git fetch origin main` → `git pull --ff-only origin $(git branch --show-current)` → `git merge origin/main --no-edit` |
+| 無終端機（Gemini 語音、ChatGPT） | 提醒教師手動執行對應指令，等待「已更新」確認 |
 
-如果教師有未 commit 的改動，先提醒存檔（觸發 wrap-up 技能）再 pull。
-如果 pull 有衝突，**停止載入**，請教師聯繫 David。
+如果教師有未 commit 的改動，先提醒存檔（觸發 wrap-up 技能）再更新。
+如果 merge 有衝突，**停止載入**，列出衝突檔案請教師聯繫 David。
 
 確認更新完成後，進入第一步。
 
@@ -77,12 +83,17 @@ aliases:
 
 ## 第二步：載入後主動報告（語音模式優先）
 
-讀完必讀檔案後，立即說：
+讀完必讀檔案後，立即從進度錨點讀出現況，主動報告。不要問「要做什麼」。
 
-> 「已載入系統。[班級] [科目] 目前在 Block [X] Step [Y]，下一步：[next_action 欄位內容]。
-> 說「進入備課」我會直接開始設計；說「收尾」我會同步進度。是否直接開始？」
+**報告模板（依工作線類型擇一）：**
 
-不要問「要做什麼」。要從進度錨點讀出現況，主動報告，等教師確認。
+- 有 Block／Step 架構（備課、主課程、英文課等）：
+  > 「已載入系統。[班級] [科目] 目前在 Block [X] Step [Y]，下一步：[next_action 欄位內容]。」
+
+- 無 Block 架構（導師、大旅行、專題、藝術融入等）：
+  > 「已載入系統。[工作線] 目前在 [current_position 欄位內容]，下一步：[next_action 欄位內容]。」
+
+最後補上：「說『進入備課』我會直接開始設計；說『收尾』我會同步進度。是否直接開始？」
 
 ---
 
@@ -100,7 +111,7 @@ aliases:
 | 「現在在哪」「做到哪了」 | `ai-core/skills/status.md` |
 | 「開始大綱」「學季規劃」 | `ai-core/skills/syllabus.md` |
 | 「進入備課」「做 Block」「開始設計」 | `ai-core/skills/lesson.md` |
-| 「收工」「收尾」「存檔」「儲存」「更新進度」「結束今天」「commit」「備份」 | `ai-core/skills/wrap-up.md` |
+| 「收工」「收尾」「存檔」「儲存」「更新進度」「結束今天」「commit 存檔」「備份」 | `ai-core/skills/wrap-up.md` |
 | 「查 DI」「確認差異化」 | `ai-core/skills/di-check.md` |
 | 「載入教學哲學」「看背景」「ref」 | `ai-core/skills/ref.md` |
 | 「導師業務」「班級事件」「個案討論」 | `ai-core/skills/homeroom.md` |
@@ -119,7 +130,7 @@ aliases:
 | 「寄信」「寄 Email」「發郵件」「寄給」 | `ai-core/skills/send-email.md` |
 | 「開試算表」「寫入 Sheets」「讀 Sheets」 | `ai-core/skills/sheets.md` |
 | 「編輯文件」「寫入 Docs」「開 Google Docs」 | `ai-core/skills/docs-edit.md` |
-| 「安裝 NotebookLM」「設定 NotebookLM」「連接 NotebookLM」「nlm 安裝」「NotebookLM 安裝」「裝 nlm」 | `ai-core/skills/notebooklm-setup.md` |
+| 「安裝 NotebookLM」「設定 NotebookLM」「連接 NotebookLM」「裝 NotebookLM」「nlm 安裝」「NotebookLM 安裝」「裝 nlm」（必須含安裝／設定／連接／裝字眼） | `ai-core/skills/notebooklm-setup.md` |
 | 「生成新檔案」「建立新文件」「新增文件」「產出新文件」 | `ai-core/skills/new-doc.md` |
 | 「設計一堂課」「45 分鐘」「90 分鐘」「連堂」「主課程」「Main Lesson」「區塊設計」「lesson design」 | `ai-core/skills/lesson-engine.md` |
 | 「英文課設計」「English lesson」 | `ai-core/skills/english-overlay.md`（overlay，由 lesson-engine 自動載入） |
@@ -127,7 +138,7 @@ aliases:
 | 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `ai-core/skills/git-history.md` |
 | 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
-| 「NotebookLM」「NotebookLM 做簡報/影片/語音/資訊圖表/測驗/報告/心智圖/學習卡/資料表」 | `ai-core/skills/notebooklm.md` |
+| 「NotebookLM」「NotebookLM 做簡報/影片/語音/資訊圖表/測驗/報告/心智圖/學習卡/資料表」（用於操作既有 NotebookLM，非安裝設定） | `ai-core/skills/notebooklm.md` |
 | 「發布」「組裝上傳」「跑管線」「publish」「assemble and upload」「組裝並上傳」 | `ai-core/skills/publish-pipeline.md` |
 | 「評估課程」「evaluate」「跑品質檢查」「課程評估」「評估教案」 | `ai-core/skills/lesson-evaluator.md` |
 | 「查文化記憶庫」「TCMB」「找臺灣素材」「搜臺灣文化」「查臺灣歷史」「查臺灣圖片」 | `ai-core/skills/tcmb-search.md` |
@@ -144,22 +155,37 @@ aliases:
 
 ## Git 安全規則（任何 AI 必須遵守）
 
-**核心原則：AI 執行 git 操作時，只能 add 教師 workspace 路徑內的檔案。**
+**核心原則：**
+1. AI 執行 git 操作時，只能 add 教師 workspace 路徑內的檔案（admin 除外）
+2. **老師必須在 `workspace/Teacher_{姓名}` 分支上工作，不得直接在 `main` 上 commit**（admin 除外）
 
 此規則適用於所有 AI 工具（Claude Code、Gemini Antigravity、ChatGPT 等），無論教師本機是否安裝了 pre-commit hook。
 
 ### 禁止行為
 
-- **絕對禁止** `git add .`、`git add -A`、`git add --all`
+- **絕對禁止** `git add .`、`git add -A`、`git add --all`（admin 亦同）
+- **絕對禁止** 使用 `--force` / `--no-verify`（除非 David 明確要求）
+- **絕對禁止** 老師在 `main` 分支上 commit（僅 admin 可在 main commit）
 - **絕對禁止** add 教師 workspace 路徑以外的任何檔案（包含根目錄、`ai-core/`、`setup/`、`.github/`、`publish/`）
 - **絕對禁止** 修改其他教師的 workspace
 
 ### 正確做法
 
-1. 從 `ai-core/acl.yaml` 確認教師的 `allowed_paths`（通常是 `workspaces/Working_Member/Teacher_{姓名}/`）
-2. commit 前執行 `git status`，逐一確認每個待 add 的檔案都在 `allowed_paths` 內
-3. 只 add 確認在範圍內的檔案：`git add workspaces/Working_Member/Teacher_{姓名}/具體檔案`
-4. 若發現有檔案在 workspace 外（例如根目錄的暫存檔），**不 add、不 commit**，提醒教師：「以下檔案在你的 workspace 以外，已跳過不 commit：[檔案清單]」
+1. commit 前先 `git branch --show-current`：若教師身份非 admin 且當前分支為 `main`，**立刻停手**，提醒教師切回個人分支
+2. 從 `ai-core/acl.yaml` 確認教師的 `allowed_paths`（通常是 `workspaces/Working_Member/Teacher_{姓名}/`）
+3. `git status`，逐一確認每個待 add 的檔案都在 `allowed_paths` 內
+4. 只 add 確認在範圍內的檔案：`git add workspaces/Working_Member/Teacher_{姓名}/具體檔案`
+5. push 時明確指定分支：`git push origin $(git branch --show-current)`，不依賴預設行為
+6. 若發現有檔案在 workspace 外（例如根目錄的暫存檔），**不 add、不 commit**，提醒教師：「以下檔案在你的 workspace 以外，已跳過不 commit：[檔案清單]」
+
+### admin 例外
+
+David（admin，`allowed_paths: *`）可以：
+- 在 main 分支 commit 與 push
+- 修改 ai-core/、setup/、projects/_di-framework/ 等共用路徑
+- 修改任何教師的 workspace（應謹慎，通常只為了修補問題）
+
+但仍受禁用 `git add .` / `-A` 的規則約束。
 
 ### 為什麼需要這條規則
 
@@ -180,9 +206,9 @@ AI 完成第一步後，掃描該資料夾的 YAML frontmatter（`triggers` + `d
 
 ## 第三步：對話結束前主動提醒
 
-多個 AI Agent 可能交替使用，wrap-up 是唯一的工作銜接機制。
-若教師未主動說「收工」，AI 應在對話尾聲主動提醒：
-「今天的工作要更新進度嗎？說『收尾』我來處理。」
+多個 AI Agent 可能交替使用，wrap-up 技能是唯一的工作銜接機制。
+若教師未主動說「收工」，AI 應在對話尾聲主動提醒教師觸發 wrap-up 技能：
+「今天的工作要更新進度嗎？說『收工』或『收尾』我來處理。」
 
 （wrap-up 的觸發語與執行規格已定義於上方「技能執行規則」，不重複列出。）
 
@@ -205,11 +231,11 @@ AI 完成第一步後，掃描該資料夾的 YAML frontmatter（`triggers` + `d
 
 ---
 
-## Reference 知識模組（按需載入）
+## Reference 知識模組（按觸發條件載入，傾向多讀）
 
 以下模組在 `teacheros-foundation.yaml` 的 `reference_loading_protocol` 已定義觸發條件。
-AI 在相關工作場景中應主動讀取，無需教師指示。
-**重要：** foundation 已包含每個 reference 的操作性設計原則（`_design_principles`），日常備課通常不需要載入完整 reference。只有深度設計或教師主動要求時才載入。
+AI 在相關工作場景中應主動讀取，無需教師指示。觸發條件偏保守設計——寧可多讀，不可漏讀。
+**重要：** foundation 已包含每個 reference 的操作性設計原則（`_design_principles`），日常備課通常不需要載入完整 reference。只有深度設計或教師主動要求時才載入完整檔案。
 
 | 模組 | 路徑 | 主動觸發場景 |
 |------|------|-------------|
@@ -237,5 +263,5 @@ AI 在相關工作場景中應主動讀取，無需教師指示。
 
 ---
 
-*最後更新：2026-03-28（lesson-engine 統一課程引擎、steiner-pedagogy-methods 新增）*
+*最後更新：2026-04-17（setup 清理、teacher-guide V2.6、TCMB 腳本搬到共用區、觸發語去衝突、報告模板彈性化）*
 *GitHub：github.com/elliot200852-lab/waldorf-teacher-os*

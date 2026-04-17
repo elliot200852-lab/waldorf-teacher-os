@@ -11,7 +11,7 @@ triggers:
   - 儲存
   - 儲存進度
   - 更新進度
-  - commit
+  - commit 存檔
   - 上傳
   - 備份今天的工作
   - 今天工作結束
@@ -64,6 +64,7 @@ args_format: "[選填：班級代碼 科目] (例: 9c english)"
 | 欄位 | 判斷依據 |
 |------|---------|
 | `current_position` | 這次工作推進到哪個區塊 / 步驟 / 單元 |
+| `block_status` | `in_progress` / `completed`（本 block 備課是否正式結束） |
 | `confirmed_decisions` | 教師確認的設計決策（主題選定、評量比例、單元架構等） |
 | `next_action.description` | 下一次對話應從哪裡繼續 |
 | `next_action.input_needed_from_teacher` | 下次開始前教師需要準備的事項 |
@@ -87,6 +88,8 @@ session:
     step: [值]           # 若有變動
     sub_block: [值]      # 若有變動
     unit_number: [值]    # 若有變動
+
+  block_status: [in_progress|completed]   # 本 block 備課狀態（若有變動）
 
   confirmed_decisions:   # 只附加新決策，不刪除舊項目
     - [新確認的決策]
@@ -128,12 +131,12 @@ session:
 
 特殊情境：
 - 教師說「架構有改動」→ 改為完整模式（全區塊重編譯）
-- `last_compiled` 超過 3 天且 Step 1 無變動 → 仍執行一次區塊三同步
 - INSTRUCTIONS.md 不存在 → 提示先執行一次「同步 Cowork」
 
 ### Step 3 — Obsidian 標籤修正（不碰 HOME.md）
 
 執行 `python3 setup/scripts/obsidian-check.py --skip-home-check`。
+（若未來腳本搬家，同步更新此路徑；目前共用腳本一律位於 `setup/scripts/`。）
 
 **`--skip-home-check` 會完全跳過 HOME.md 收錄偵測**，wrap-up 只處理標籤：
 
@@ -163,25 +166,44 @@ session:
 
 ### Step 4 — Git 存檔與推送
 
-**4a. 檢查變更**
+**4a. 分支確認（v2.0 必查）**
+
+執行 `git branch --show-current`，確認當前分支。
+
+- 若為 `main` 且教師身份非 admin → **立刻停手**，報告：「你目前在 `main` 分支上，這不是你的個人工作分支。我不能在這裡 commit。要我幫你切回 `workspace/Teacher_{姓名}` 嗎？」等教師確認後執行 `git checkout workspace/Teacher_{姓名}`，再繼續 4b
+- 若為 `workspace/Teacher_{姓名}`（一般老師）或 `main`（admin）→ 繼續
+- 若為其他分支 → 報告當前分支並詢問處理方式，不自行切換
+
+**4a'. 檢查變更**
 
 執行 `git status`，確認是否有未儲存的更動。
 
 - 若沒有任何更動 → 輸出「目前沒有新的更動，不需要存檔」，跳到 Step 5
 - 若有更動 → 繼續
 
-**4b. 產出 commit message**
+**4b. add 範圍規則（每次必查）**
+
+- **嚴禁** `git add .` / `git add -A` / `git add --all`（admin 亦同）
+- 只 add 本次對話明確修改過的檔案，逐一列出
+- 對每個檔案先確認在教師自己的 workspace 路徑範圍內（admin 例外）
+- 發現 `git status` 有不在本次對話範圍的檔案 → 在摘要中列出，不 add
+
+**4c. 產出 commit message**
 
 - 若教師觸發時已提供說明（例如「收工，備註完成 Unit 2」）→ 直接使用
 - 若未提供 → **AI 自行根據變更內容摘要產出簡潔中文備註，不詢問教師**
 
-**4c. 執行存檔**
+**4d. 執行存檔**
 
 ```bash
-git add [相關檔案]
+git add [逐一列出的檔案]
 git commit -m "[中文備註]"
-git push
+git push origin $(git branch --show-current)
 ```
+
+- **push 必須明確指定當前分支**：`git push origin $(git branch --show-current)`，不依賴預設行為
+- 老師推自己的分支（例：`origin workspace/Teacher_王琬婷`）
+- admin 推 main（例：`origin main`）
 
 - push 失敗 → 嘗試 `git pull --rebase` 後重試
 - 仍失敗 → 用簡單語言說明狀況，建議聯絡 David
@@ -189,7 +211,7 @@ git push
   - AI 可嘗試只 commit 授權範圍內的檔案（排除被攔截的檔案後重試）
   - 若全部被攔截 → 報告「Git 存檔跳過（權限不足）」，繼續 Step 5
 
-**4d. 確認結果**
+**4e. 確認結果**
 
 記錄 commit hash，供 Step 5 摘要使用。
 不需要顯示原始 git 輸出，用中文摘要即可。
@@ -204,12 +226,13 @@ git push
 | 項目 | 內容 |
 |------|------|
 | 產出檔案 | [新建/修改的 .md 列表] |
-| YAML 變動 | [哪個 session.yaml 更新了哪些欄位] |
+| YAML 變動 | [檔名] → [欄位]：[新值]（逐欄列出 Step 1 實際寫入的完整 diff） |
 | Obsidian 修正 | [若有：N 個 .md 補 aliases、N 個加入 HOME.md] |
 | Git | [commit hash] 已推送 |
 ```
 
 若某項目為空（例如無 YAML 變動），從表格中省略該行。
+**YAML 變動欄位必須列出新值**，讓教師可 review 是否推斷正確；若下次開工發現有誤，可直接修正 session.yaml。
 
 ### Step 6 — 跨平台開機提醒
 
@@ -217,14 +240,23 @@ git push
 
 > **下次啟動新對話時：**
 >
-> **第一步：更新系統**
-> 在終端機執行 `git pull origin main`，確保你有最新版本。
+> **有終端機能力的 AI（Claude Code、Cowork）：**
+> 直接說「開工」即可。AI 會自動偵測你的分支，執行對應的更新指令（老師會 merge main 進個人分支；admin 會 pull main），然後載入系統、報告進度。
 >
-> **第二步：告訴 AI 開工**
-> 說「開工」或「請讀取 `ai-core/AI_HANDOFF.md` 並依照載入序列初始化」。
-> AI 會自動載入系統、報告進度，接續今天的工作。
+> **無終端機能力的 AI（Gemini 語音、ChatGPT）：**
+> 先手動在終端機執行更新指令：
+> - **老師（在個人分支）**：
+>   ```
+>   git fetch origin main
+>   git merge origin/main --no-edit
+>   ```
+> - **David（在 main 分支）**：
+>   ```
+>   git pull origin main
+>   ```
+> 完成後，跟 AI 說「開工」或「請讀取 `ai-core/AI_HANDOFF.md` 並依照載入序列初始化」。
 >
-> （使用 Claude Code 的教師可直接輸入 `/opening`，AI 會自動處理 git pull 與載入。）
+> （使用 Claude Code 的教師可直接輸入 `/opening`，AI 會自動處理上述步驟。）
 
 此提醒在所有 AI 平台（Claude Code、Gemini、ChatGPT 等）皆適用。
 

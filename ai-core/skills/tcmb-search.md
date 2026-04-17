@@ -36,11 +36,10 @@ args_format: "<搜尋關鍵字> [--limit N]"
 
 ## 前置條件
 
-- 本地索引已建立：`~/.cache/teacheros/tcmb-local.db`
+- 本地索引已建立：`~/.cache/teacheros/tcmb-local.db`（跨 workspace 共用）
 - 若索引不存在，先執行：
   ```bash
-  cd workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
-  python3 tcmb_downloader.py --build --all
+  python3 setup/scripts/tcmb-search.py --build --all
   ```
 
 ## 執行步驟
@@ -55,8 +54,7 @@ args_format: "<搜尋關鍵字> [--limit N]"
 ### Step 2 — 執行搜尋
 
 ```bash
-cd {repo_root}/workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
-python3 tcmb_downloader.py --search "關鍵字" --limit 10
+python3 setup/scripts/tcmb-search.py --search "關鍵字" --limit 10
 ```
 
 若第一次搜尋結果不理想，嘗試：
@@ -114,9 +112,8 @@ sqlite3 ~/.cache/teacheros/tcmb-local.db \
 ## 索引維護
 
 ```bash
-cd workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
-python3 tcmb_downloader.py --status    # 查看索引狀態
-python3 tcmb_downloader.py --update    # 增量更新
+python3 setup/scripts/tcmb-search.py --status    # 查看索引狀態
+python3 setup/scripts/tcmb-search.py --update    # 增量更新
 ```
 
-建議每月執行一次 `--update`。
+建議每月執行一次 `--update`。索引位於 `~/.cache/teacheros/tcmb-local.db`，同一台機器上所有 workspace 共用。

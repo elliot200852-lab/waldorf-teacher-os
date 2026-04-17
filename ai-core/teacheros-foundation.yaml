@@ -269,6 +269,7 @@ reference_loading_protocol:
     english: ai-core/reference/subject-english.yaml
     history: ai-core/reference/subject-history.yaml
     student: ai-core/reference/student-development.yaml
+    tcmb: ai-core/reference/tcmb-local-index.yaml
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 完整版指引

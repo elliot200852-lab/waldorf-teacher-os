@@ -35,48 +35,74 @@ AI 自動偵測根目錄位置：嘗試 `git rev-parse --show-toplevel`，或從
 
 ## 執行步驟
 
-### Step 0 — 確保 Repo 為最新版本
+### Step 0 — 確保 Repo 為最新版本（v2.0 分支模型）
+
+**設計目標：** 老師開工時要能拉到主系統的更新（ai-core/ / setup/ / projects/_di-framework / 共用技能等），但不要干擾或拉取其他老師個人分支的未合併進度。
+
+**原理：** main 分支只存放已被 PR 合併的內容。老師在 `workspace/Teacher_xxx` 分支上工作時，把 main 合併進來，就能拿到系統更新，而**不會**拿到其他老師未合併的備課進度。
+
+---
 
 **有終端機能力的 AI（Claude Code、Cowork 等）：**
 
-依序執行以下指令：
+依序執行：
 
 ```bash
 # 1. 確認當前分支
-git branch --show-current
+current_branch=$(git branch --show-current)
 
 # 2. 檢查是否有未 commit 的改動
 git status --short
-
-# 3. 抓取最新資訊
-git fetch origin
-
-# 4. 合併 main 的最新內容
-git pull origin main
 ```
 
-判斷邏輯：
+**若有未 commit 的改動** → 先提醒：「你有未儲存的工作，要先存檔嗎？」若教師同意，觸發 `wrap-up` 技能，存完再繼續；若教師說不，AI 評估 merge 是否會衝突，若可能衝突就阻擋。
+
+```bash
+# 3. 只抓 main 的更新（不拉其他老師的分支 ref）
+git fetch origin main
+```
+
+接著依分支身份分流：
+
+| 身份 | 處理 |
+|------|------|
+| **admin**（current_branch = `main`） | 執行 `git pull --ff-only origin main`。 |
+| **老師**（current_branch = `workspace/Teacher_xxx`） | 先同步自己分支的 remote：`git fetch origin "$current_branch" 2>/dev/null \|\| true` 然後 `git pull --ff-only origin "$current_branch" 2>/dev/null \|\| true`（若 remote 還沒有此分支就略過）。**接著合併系統更新**：`git merge origin/main --no-edit`。 |
+| **既非 main 也非個人分支**（例如老師被意外留在奇怪的分支上） | **停下來**，報告當前分支並詢問：「你目前在 `{分支名}` 上，不是你的個人分支。要我幫你切回 `workspace/Teacher_xxx` 嗎？」 |
+
+判斷結果：
 
 | 狀況 | 處理 |
 |------|------|
-| `git status` 顯示有未 commit 的改動 | 先提醒：「你有未儲存的工作，要先存檔嗎？」若教師同意，觸發 `wrap-up` 技能，存完再繼續 |
-| `git pull` 成功，無衝突 | 報告：「已更新至最新版本。」繼續 Step 1 |
-| `git pull` 有衝突 | **停下來，不繼續載入。** 報告：「更新時發現檔案衝突，請聯繫 David 處理。」列出衝突的檔案清單 |
-| `git pull` 顯示 "Already up to date" | 報告：「已是最新版本。」繼續 Step 1 |
+| 全部成功 / "Already up to date" | 報告：「已是最新版本，系統更新已拉取。」繼續 Step 1 |
+| merge origin/main 有衝突 | **停下來，不繼續載入。** 報告：「合併系統更新時發生衝突。」列出衝突檔案清單，建議請教師聯繫 David |
+| fetch 失敗（網路問題） | 報告：「無法連線 GitHub，改用本地現有版本繼續。」繼續 Step 1（降級） |
+
+---
 
 **無終端機能力的 AI（Gemini 語音模式、ChatGPT 等）：**
 
 輸出以下提醒，等待教師確認後才繼續：
 
 > ⚠️ **開始前請先更新系統。**
-> 請在終端機執行以下指令：
+> 請在終端機執行以下指令（**老師在個人分支上**）：
 > ```
 > cd 你的-waldorf-teacher-os-資料夾
-> git pull origin main
+> git fetch origin main
+> git merge origin/main --no-edit
 > ```
+> 若你是 David（在 main 分支），改執行 `git pull origin main`。
 > 完成後告訴我「已更新」，我再繼續載入。
 
-**每次開場都必須執行此步驟。** 如果教師跳過確認直接說其他指令，AI 應再次提醒：「我需要確認你的系統已更新到最新版本。請先執行 git pull origin main，或告訴我『已更新』。」
+**每次開場都必須執行此步驟。** 如果教師跳過確認直接說其他指令，AI 應再次提醒：「我需要確認你的系統已更新到最新版本。請執行上面兩行指令，或告訴我『已更新』。」
+
+---
+
+**為什麼這樣做？**
+
+- `git fetch origin main`（非 `--all`）：只抓 main 的更新，不下載其他老師分支的 ref，老師的 `git branch -r` 清單保持乾淨
+- `git merge origin/main --no-edit`：把已審核合併進 main 的所有變更（系統層 + 已合併 PR）拉進老師個人分支；其他老師未 PR 的工作不在 main 裡，自然不會被拉進來
+- 想看別人工作的老師仍可手動執行 `git fetch --all` + `git branch -r`（reclone guide Part C 第二部分有教）
 
 ### Step 1 — 讀取 AI_HANDOFF.md
 

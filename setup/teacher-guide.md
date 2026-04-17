@@ -412,6 +412,10 @@ bash setup/start.sh            # Mac
 git branch --show-current      # 看你在哪個分支
 git checkout workspace/Teacher_你的姓名   # 回到自己的分支
 
+# 拉系統更新（開工時 AI 會自動做，手動做法備查）
+git fetch origin main
+git merge origin/main --no-edit      # 把 ai-core/、skills/ 等共用更新合併進來
+
 # 日常 Git（建議都讓 AI 做）
 git status
 git pull origin workspace/Teacher_你的姓名

@@ -64,9 +64,10 @@ auto_query:
 
   how_to_query:
     method_1_cli: |
-      cd workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
-      python3 tcmb_downloader.py --search "關鍵字"
+      # 共用腳本，所有 workspace 皆可直接執行，不需 cd
+      python3 setup/scripts/tcmb-search.py --search "關鍵字"
     method_2_api: |
+      # David 個人 pipeline（跨來源聚合：TCMB + 其他臺史資料源）
       cd workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
       python3 taiwan_history_api.py "關鍵字" --sources tcmb --format markdown
     method_3_direct_sql: |
@@ -88,9 +89,10 @@ auto_query:
 
 maintenance:
   update_command: |
-    cd workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
-    python3 tcmb_downloader.py --update
+    python3 setup/scripts/tcmb-search.py --update
   status_command: |
-    cd workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan
-    python3 tcmb_downloader.py --status
+    python3 setup/scripts/tcmb-search.py --status
   update_frequency: "建議每月執行一次 --update"
+  shared_note: |
+    tcmb-search.py 為共用腳本，所有 workspace 皆可使用。
+    索引位置 ~/.cache/teacheros/tcmb-local.db 為跨 workspace 共用（同一台機器上所有教師身份共享同一份索引）。
