@@ -1,0 +1,61 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：九年級 C 班・農場實習
+# 路徑：projects/class-9c/farm-internship/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+farm_internship_session:
+  class: class-9c
+  last_updated: 2026-03-13
+
+  overview:
+    name: 農場實習
+    type: 九年級實作體驗課程
+    description: >
+      學生分散至全台 19 個有機農場，進行 10 天實際土地工作。
+      體驗農場生活，進行紀錄、訪談與學習。
+      部分農場提供住宿，部分不提供。
+      回校後互相分享不同農場的經驗，拼湊為完整的實作學習。
+    total_farms: 19
+
+  current_position:
+    phase: 已結案
+    status: 已完成——返校週三日流程與分享會全部結束
+                # week 1-3：學生在各農場實習
+                # week 4（3/11-3/13）：返校整理、彩排、正式發表
+                # 3/11（三）：分組討論（4 場主題討論 + 報告準備）
+                # 3/12（四）：場佈 + 技術彩排（信宏主持彩排）
+                # 3/13（五）：分享會正式日（信宏主持上午場）
+
+  confirmed_decisions:
+    - "114 學年農場實習全階段分析報告已完成，存入 reference/"
+    - "會議定案：返校三日流程確認（來源：2026九年級農場實習回校工作.docx）"
+    - "信宏角色：3/12 主持技術彩排、3/13 上午場主持（10:50-12:30，10 組報告）"
+    - "報告規則：一組 7 分鐘（5 分鐘報告 + 2 分鐘提問）"
+    - "19 組農場：上午 10 組、下午 9 組"
+    - "3/13 分享會已完成，開場以卡繆〈快樂的薛西佛斯〉定調"
+    - "學生紀錄：張顥馨（孤立/合作困難）、黃馨瑩（未參加實習/功利選課）、黃又羿（違規帶手機）"
+    - "教學反思已融入卡繆結論，教學紀錄已輸出至 Google Drive"
+
+  next_action:
+    description: "農場實習課程已結束。後續若有個案跟進（張顥馨彈性引導、黃又羿訪談、黃馨瑩選課態度），歸入導師業務處理"
+    input_needed_from_teacher: null
+
+  output_files:
+    - type: 分析報告
+      file: reference/farm-internship-analysis-114.md
+      google_drive: 班級專案/九年級C班/農場實習/114學年農場實習全階段分析報告-20260306.docx
+    - type: 返校工作計畫
+      file: content/week4-返校工作計畫.md
+      source: "Google Drive: 2026九年級農場實習回校工作.docx"
+      date: 20260308
+    - type: 分享會流程與場次表
+      file: content/week4-分享會流程與場次.md
+      source: "Google Drive: 2026九年級農場實習回校工作.docx"
+      date: 20260308
+    - type: 教學歷程紀錄（含卡繆結論更新版）
+      file: content/農場實習教學紀錄_9C信宏.md
+      google_drive: 00-01-TeacherOS-專案三層記憶/projects/class-9c/farm-internship/農場實習教學紀錄_9C信宏-20260313.docx
+      date: 20260313
+
+  open_questions: []

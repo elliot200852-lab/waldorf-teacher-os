@@ -1,0 +1,144 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS — Repo 體積健康報告（每週一次）
+# 統計 repo 大小、各 workspace 容量、大檔案 top 10
+# 以 Issue 形式產出報告
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+name: Repo Health Report
+
+on:
+  schedule:
+    # 每週一早上 9:00 UTC+8 = 01:00 UTC
+    - cron: '3 1 * * 1'
+  workflow_dispatch:  # 手動觸發
+
+jobs:
+  health-report:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate health report
+        run: |
+          echo "## TeacherOS Repo 健康報告" > report.md
+          echo "" >> report.md
+          echo "**產生時間：** $(TZ='Asia/Taipei' date '+%Y-%m-%d %H:%M')" >> report.md
+          echo "" >> report.md
+
+          # 1. Repo total size (tracked files)
+          TOTAL_SIZE=$(git ls-files -z | xargs -0 du -ch 2>/dev/null | tail -1 | cut -f1)
+          echo "### 1. Repo 總大小" >> report.md
+          echo "" >> report.md
+          echo "已追蹤檔案總計：**${TOTAL_SIZE}**" >> report.md
+          echo "" >> report.md
+
+          # 2. Workspace sizes
+          echo "### 2. 各 Workspace 容量" >> report.md
+          echo "" >> report.md
+          echo "| Workspace | 大小 | 檔案數 |" >> report.md
+          echo "|-----------|------|--------|" >> report.md
+
+          for ws_dir in workspaces/Working_Member/*/; do
+            [ -d "$ws_dir" ] || continue
+            ws_name=$(basename "$ws_dir")
+            [ "$ws_name" = "_template" ] && continue
+
+            ws_size=$(git ls-files -z -- "$ws_dir" | xargs -0 du -ch 2>/dev/null | tail -1 | cut -f1)
+            ws_count=$(git ls-files -- "$ws_dir" | wc -l | xargs)
+            echo "| ${ws_name} | ${ws_size} | ${ws_count} |" >> report.md
+          done
+          echo "" >> report.md
+
+          # 3. Top 10 largest files
+          echo "### 3. 最大檔案 Top 10" >> report.md
+          echo "" >> report.md
+          echo "| 大小 | 檔案 |" >> report.md
+          echo "|------|------|" >> report.md
+
+          git ls-files -z | xargs -0 du -b 2>/dev/null | sort -rn | head -10 | while read size filepath; do
+            human_size=$(numfmt --to=iec-i --suffix=B "$size" 2>/dev/null || echo "${size}B")
+            echo "| ${human_size} | \`${filepath}\` |" >> report.md
+          done
+          echo "" >> report.md
+
+          # 4. Binary file count per workspace
+          BINARY_EXT="docx doc xlsx xls pptx ppt mp3 m4a mp4 mov wav ogg flac zip rar 7z gz tar tiff tif bmp emf psd exe dll"
+          echo "### 4. 各 Workspace 二進位檔案數" >> report.md
+          echo "" >> report.md
+          echo "| Workspace | 二進位檔案數 | 狀態 |" >> report.md
+          echo "|-----------|-------------|------|" >> report.md
+
+          for ws_dir in workspaces/Working_Member/*/; do
+            [ -d "$ws_dir" ] || continue
+            ws_name=$(basename "$ws_dir")
+            [ "$ws_name" = "_template" ] && continue
+
+            bin_count=0
+            while IFS= read -r f; do
+              [ -z "$f" ] && continue
+              f_clean=$(echo "$f" | tr -d '"')
+              ext="${f_clean##*.}"
+              ext_lower=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
+              for be in $BINARY_EXT; do
+                if [ "$ext_lower" = "$be" ]; then
+                  bin_count=$((bin_count + 1))
+                  break
+                fi
+              done
+            done < <(git ls-files -- "$ws_dir")
+
+            if [ "$bin_count" -gt 10 ]; then
+              status="⚠️ 超標"
+            elif [ "$bin_count" -gt 0 ]; then
+              status="注意"
+            else
+              status="✅"
+            fi
+            echo "| ${ws_name} | ${bin_count} | ${status} |" >> report.md
+          done
+          echo "" >> report.md
+
+          # 5. File type distribution (whole repo)
+          echo "### 5. 全 Repo 檔案類型分布（Top 15）" >> report.md
+          echo "" >> report.md
+          echo "| 類型 | 數量 |" >> report.md
+          echo "|------|------|" >> report.md
+
+          git ls-files | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -15 | while read count ext; do
+            echo "| .${ext} | ${count} |" >> report.md
+          done
+          echo "" >> report.md
+
+          echo "---" >> report.md
+          echo "*此報告由 GitHub Action 每週一自動產生。手動觸發：Actions → Repo Health Report → Run workflow*" >> report.md
+
+          cat report.md
+
+      - name: Ensure labels exist
+        run: |
+          gh label create "health-report" --description "自動產生的 Repo 健康報告" --color "0075ca" 2>/dev/null || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create or update Issue
+        run: |
+          REPORT_TITLE="[週報] Repo 健康報告 — $(TZ='Asia/Taipei' date '+%Y-%m-%d')"
+
+          # Close previous report issues
+          gh issue list --state open --label "health-report" --json number --jq '.[].number' | while read num; do
+            gh issue close "$num" --comment "已由新報告取代。"
+          done
+
+          gh issue create \
+            --title "$REPORT_TITLE" \
+            --body-file report.md \
+            --label "health-report"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

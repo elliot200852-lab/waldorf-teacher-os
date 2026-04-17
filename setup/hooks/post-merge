@@ -1,0 +1,9 @@
+#!/bin/sh
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS — Post-merge Hook（薄層入口）
+# 路徑：setup/hooks/post-merge
+# 觸發時機：git pull / git merge 完成後自動執行
+# 邏輯實作：setup/scripts/post-merge-check.py
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+python3 "$REPO_ROOT/setup/scripts/post-merge-check.py"

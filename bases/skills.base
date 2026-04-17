@@ -1,0 +1,52 @@
+filters:
+  and:
+    - file.inFolder("ai-core/skills")
+    - file.ext == "md"
+    - file.basename != "README"
+    - file.basename != "skills-manifest"
+formulas:
+  days_since_edit: (now() - file.mtime).days.round(0)
+properties:
+  file.name:
+    displayName: 技能
+  name:
+    displayName: 名稱
+  description:
+    displayName: 說明
+  triggers:
+    displayName: 觸發語
+  file.mtime:
+    displayName: 最後修改
+  formula.days_since_edit:
+    displayName: 距上次編輯（天）
+views:
+  - type: table
+    name: 全部技能
+    groupBy:
+      property: file.backlinks
+      direction: ASC
+    order:
+      - name
+      - description
+      - triggers
+      - formula.days_since_edit
+    sort:
+      - property: name
+        direction: ASC
+    columnSize:
+      note.description: 340
+  - type: table
+    name: 近期更新
+    filters:
+      and:
+        - formula.days_since_edit <= 14
+    order:
+      - name
+      - description
+      - file.mtime
+  - type: cards
+    name: 技能卡片
+    order:
+      - name
+      - description
+      - triggers

@@ -1,0 +1,38 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 2】
+# 名稱：十年級 (g10) 逐光班 班級脈絡
+# 路徑：{workspace}/projects/g10-zhuguang/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+project: 十年級逐光班班級脈絡
+code: g10-zhuguang
+type: class_context
+status: active
+
+class_focus:
+  age_group: 十年級 (15-16 歲)
+  developmental_theme: >
+    十年級的主題是「尋求事物的內在本質」。
+    學生正處於追求極端、內心矛盾與尋找秩序的階段。
+    引導原則：平衡、秩序與深思。
+  current_focus: >
+    導師專案：引導 31 位學生的個體發展，建立班級的向心力與自我管理能力。
+    透過數位共創工具（如 TeacherOS）協助學生有系統地整理與產出。
+
+class_structure:
+  name: 逐光班
+  student_count: 31
+  tutor: 姜善迪
+  class_list_anchor: projects/g10-zhuguang/class-list.yaml
+
+subjects:
+  - name: 導師課
+    description: 班級經營、個體觀察與引導
+    session_anchor: projects/g10-zhuguang/tutor-sessions/session.yaml
+  - name: ITCS
+    description: 資訊科技與電腦科學 (Information Technology and Computer Science)
+    session_anchor: projects/g10-zhuguang/ITCS/session.yaml
+
+special_notes:
+  cross_module_notes:
+    active: "建立 31 位學生的個人檔案與觀察紀錄。"

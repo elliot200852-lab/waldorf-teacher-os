@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git 衝突排除 — 三步完成</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Microsoft JhengHei", "Segoe UI", sans-serif;
+      background: #f7f5f0;
+      color: #2c2c2c;
+      padding: 32px 16px;
+    }
+    .container { max-width: 640px; margin: 0 auto; }
+    h1 {
+      font-size: 20px;
+      color: #1a1a1a;
+      border-bottom: 3px solid #4a7c59;
+      padding-bottom: 10px;
+      margin-bottom: 6px;
+    }
+    .subtitle { font-size: 13px; color: #888; margin-bottom: 24px; }
+    .info {
+      background: #e8f4e8;
+      border-left: 4px solid #4a7c59;
+      padding: 14px 16px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .step {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .step-num {
+      background: #4a7c59;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-title { font-size: 16px; font-weight: 700; }
+    .step-body { font-size: 14px; line-height: 1.9; color: #444; }
+    pre {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin: 10px 0;
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      user-select: all;
+    }
+    .green { color: #6a9955; }
+    .footer {
+      margin-top: 24px;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <h1>Git 衝突排除 — 三步完成</h1>
+  <p class="subtitle">林詩閔老師・2026-04-08</p>
+
+  <div class="info">
+    你的工作成果都已經安全保存在雲端（GitHub）上。<br>
+    以下操作只是讓你的電腦重新與雲端同步，不會遺失任何東西。
+  </div>
+
+  <!-- Step 1 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div class="step-title">開啟 Git Bash</div>
+    </div>
+    <div class="step-body">
+      在你的 <strong>waldorf-teacher-os</strong> 資料夾內，<br>
+      按右鍵 → 選「<strong>Open Git Bash here</strong>」。
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div class="step-title">貼上這三行指令</div>
+    </div>
+    <div class="step-body">
+      在黑色視窗中，把下面三行一次全部複製貼上，然後按 Enter：
+      <pre><span class="green"># 取消目前的衝突狀態</span>
+git merge --abort
+<span class="green"># 抓取雲端最新版本</span>
+git fetch origin
+<span class="green"># 讓本機與雲端完全同步</span>
+git reset --hard origin/main</pre>
+      完成後，你會看到類似 <code>HEAD is now at xxxxx</code> 的訊息，代表成功。
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div class="step-title">確認完成</div>
+    </div>
+    <div class="step-body">
+      輸入以下指令確認沒有問題：
+      <pre>git status</pre>
+      應該會顯示「<strong>nothing to commit, working tree clean</strong>」。<br><br>
+      看到這個訊息就代表衝突已排除，可以正常開工了。
+    </div>
+  </div>
+
+  <div class="footer">
+    以後每次開始工作前，先執行 <code>git pull origin main</code> 就能避免衝突。<br>
+    有問題請聯繫 David。
+  </div>
+
+</div>
+</body>
+</html>

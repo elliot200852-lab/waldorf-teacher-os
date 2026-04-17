@@ -1,0 +1,229 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3 歸檔】
+# 名稱：九年級 C 班・英文課已完成區塊歸檔
+# 路徑：class-9c/english/session-archive.yaml
+# 說明：Block 1 完成紀錄、syllabus 版本、evaluation_log、reference_files、
+#       extensions_completed 歸檔於此，減少開機載入 token 消耗。
+#       活躍工作線請見 session.yaml。
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# ── 評估紀錄（lesson-evaluator 校準期 5 堂）──────────────────
+# 校準已結案（2026-04-01），evaluator v2 進入常規使用。
+# 校準紀錄：week5-1(4), week6-1(4), week6-2(2.5), week6-3-4(4), week7-1(3)
+# 重大修正：課型辨識、過度差異化偵測、教師操作負荷、應用語境檢查、
+#           閱讀課教學參考模式、P09 歸納法校準、P03 學習單獨立評估
+# lesson-engine 同步新增「備課模式選擇」（完整教案 vs 教學參考指南）
+evaluation_log:
+  - unit: week5-1
+    date: 2026-03-31
+    verdict: PASS
+    teacher_score: 4
+    rhythm: "吸33:呼67:轉0"
+    flags:
+      - "轉換比 0%（明確缺陷）"
+      - "呼氣比對 9C 偏高"
+    strengths:
+      - "Y 字叉路開場——身體先行"
+      - "because/if 螺旋設計"
+    calibration_notes: "教師確認判定一致。發現 evaluator 缺少「教師操作負荷」維度與班級特性參照。"
+  - unit: week6-1
+    date: 2026-03-31
+    verdict: PASS
+    teacher_score: 4
+    rhythm: "測驗課型——獨立標準"
+    flags: []
+    strengths:
+      - "測驗分版外觀一致"
+      - "分類活動先建立結構感"
+    calibration_notes: "測驗課需獨立標準。「不當場對答案」是國中基本操作非亮點。任務自選機制運行不順。"
+  - unit: week6-2
+    date: 2026-03-31
+    verdict: REVISE
+    teacher_score: 2.5
+    rhythm: "吸53:呼33:轉0"
+    flags:
+      - "過度差異化——概念引入課不需 ABCD 四層，兩層即可"
+      - "缺有語境的應用——填空不等於使用"
+      - "缺分組互動——pair work 本身就是動覺"
+    strengths:
+      - "Connector Family 樹跨週視覺鷹架"
+      - "動詞片語以配角嵌入"
+    calibration_notes: "evaluator 原判 PASS，嚴重校準偏差。需新增「過度差異化偵測」與「課型適配 DI 層次標準」。"
+  - unit: week6-3-4
+    date: 2026-04-01
+    verdict: REVISE
+    lesson_type: "連堂課（90min）+ 閱讀課"
+    rhythm: "估算——吸30-35:呼55-60:轉5-10（無正式教案，無法精確計算）"
+    flags:
+      - "無正式教師教案——僅有教學參考+學習單，缺逐分鐘操作流程"
+      - "P05 口頭/書寫比例未明確設計"
+      - "任務自選機制對 9C 主動性低的班級可能不適用（同 week6-1）"
+    strengths:
+      - "文本選擇卓越——A Rice Sandwich 連接詞密度（21 個）完美配合教學進度"
+      - "學習單認知梯度精確——D/C/B/A 每層有獨立認知要求"
+      - "跨週敘事連貫——Connector Family 樹 + 連接詞在文學中自然重現"
+    teacher_score: 4
+    calibration_notes: >
+      教師給 4 分，evaluator 判 REVISE——偏差 1.5 級。
+      校準修正：閱讀課不需要逐分鐘教案。教學參考指南+品質好的學習單=完整備課模式。
+      教師可獨立操作。需在 evaluator 新增「閱讀課教學參考模式」獨立標準。
+
+  - unit: week7-1
+    date: 2026-04-01
+    verdict: REVISE
+    teacher_score: 3
+    lesson_type: "教學課（概念擴充型）"
+    rhythm: "吸33:呼56:轉0"
+    flags:
+      - "轉換比 0%"
+      - "名目時間 55min > 45min（22% 超出）"
+      - "P03 學習單本身缺動作/圖像入口——全為文字型，課堂活動的動覺不等於學習單的動覺"
+      - "P09 演繹法誤判——先給全部 connector 框架再逐一講解=演繹法，非華德福歸納法。文法應讓學生從語境中歸納規律，教師再命名"
+    strengths:
+      - "身體比喻（雙手平舉 vs 一高一低）"
+      - "so 橋樑詞處理——分層資訊控制"
+    calibration_notes: >
+      教師給 3 分，evaluator 原判 PASS——偏差 1.5 級，修正為 REVISE 後一致。
+      兩個重要校準：(1) 學習單和課堂流程的學習路徑要分開評估；
+      (2) P09「整體到部分」在文法教學中=歸納法，不是演繹法。
+      先給框架再填入細節 ≠ 先整體後局部。
+
+  - unit: week7-3
+    date: 2026-04-02
+    verdict: PASS
+    lesson_type: "閱讀課（導入型）"
+    rhythm: "吸47:呼38:轉11"
+    flags:
+      - "P05 書寫比例極低（4%）——導入課刻意設計，Week 8-3/8-4 補償"
+    strengths:
+      - "朗讀最後一段的沉默設計——教育勇氣，預備兩種回應"
+      - "D 類聲音鷹架——從教師聲音和停頓感受「出事了」就夠了"
+      - "制度傷害→個人傷害的轉場橋段——一句話完成情感串接"
+    calibration_notes: >
+      v2 常規使用首次。導入型閱讀課的討論/書寫刻意壓低不判 flag，
+      跨堂補償確認（Week 8-3 有 25min 深讀 + 7min 分析）。教師回報上課順利。
+
+# ── Block 1 完成紀錄 ──────────────────────────────────
+units_completed_archive:
+  - unit: week5-1
+    date: 20260307
+    theme: "The Road Not Taken — 我們為選擇編織的故事"
+    text: "Robert Frost, The Road Not Taken (1916)"
+    grammar_focus: "if / because 副詞子句"
+    status: 教案與學習單已完成
+    files:
+      教師教案: class-9c/english/content/9C-week5-1-v1-教師教案.md
+      學生學習單: class-9c/english/content/9C-week5-1-v1-學習單.md
+    skill_used: lesson-engine
+    notes: "首次使用 45 分鐘設計引擎產出的完整教學包，經三輪迭代（v1→v2→v3）"
+  - unit: week5-3
+    date: 20260316
+    theme: "動詞片語攻防戰 — 寒假作業驗收測驗課"
+    grammar_focus: "動詞片語辨析（講義 #143-#174）"
+    status: 教案、學習單、測驗卷已完成
+    files:
+      教師教案: class-9c/english/content/9C-week5-3-v1-教師教案.md
+      學生學習單: class-9c/english/content/9C-week5-3-v1-學習單.md
+      動詞片語測驗: class-9c/english/content/9C-week5-phrasal-verb-quiz.md
+    skill_used: lesson-engine + phrase-quiz
+    notes: "配對複習+快閃暖身 8min → 攻防戰 10min → 正式測驗 20min → 片語印象牆 5min。Follow-up 連結《The House on Mango Street》（Task A 找片語 / Task B 寫場景）"
+  - unit: week6-quiz
+    date: 20260323
+    theme: "動詞片語測驗 Week 6 — 講義 #175-#200"
+    grammar_focus: "動詞片語辨析（講義 #175-#200，26 個片語）"
+    status: 測驗卷已完成（基礎版三選一＋進階版四選一＋教師版含解析）
+    files:
+      測驗卷_Markdown: class-9c/english/content/9C-week6-phrasal-verb-quiz.md
+      基礎版_HTML: temp/beautify-quiz-基礎版-學生版.html
+      進階版_HTML: temp/beautify-quiz-進階版-學生版.html
+      教師版_HTML: temp/beautify-quiz-教師版.html
+    skill_used: beautify
+    notes: "差異化設計：基礎版 20 題三選一（B/D 類）＋進階版 20 題四選一（A/C 類），題目不同但範圍相同。教師版含雙版解析。"
+  - unit: week6-1
+    date: 20260323
+    theme: "動詞片語測驗課 — 講義 #175-#200 語言技能第一節"
+    grammar_focus: "動詞片語辨析（講義 #175-#200）"
+    status: 教案與學習單已完成
+    files:
+      教師教案: class-9c/english/content/9C-week6-1-v1-教師教案.md
+      學生學習單: class-9c/english/content/9C-week6-1-v1-學習單.md
+      測驗卷: class-9c/english/content/9C-week6-phrasal-verb-quiz.md
+    skill_used: null
+    notes: "Speed Sort 分類暖身 5min → 測驗 20min → 延伸任務二選一 15min → 收尾 5min。延伸任務差異化：Task A 對話創作（A/C 類）/ Task D 情境配對（B/D 類）。學習單含教師版（答案填入版）。"
+  - unit: week6-2
+    date: 20260323
+    theme: "連接詞闖關 Part 1 — because / so / but / although"
+    grammar_focus: "副詞子句連接詞（因果＋轉折）+ 動詞片語複習"
+    status: 教案與學習單已定案（PDF 排版待重做）
+    files:
+      教師教案: class-9c/english/content/9C-week6-2-v1-教師教案.md
+      學生學習單: class-9c/english/content/9C-week6-2-v1-學習單.md
+    skill_used: null
+    notes: "連接詞三節跨週設計第一節。雙主線：連接詞（主線）+ 動詞片語複習（副線）。學習單 D/C/B 三層，刪除原 Task A Free Writing。"
+  - unit: week6-3-4
+    date: 20260325
+    theme: "A Rice Sandwich — The House on Mango Street（閱讀課）"
+    text: "Sandra Cisneros, The House on Mango Street — A Rice Sandwich"
+    grammar_focus: "連接詞（because, when, before, after, although, even though, if, since, until, while, so...that）＋ 單字 16 個"
+    status: 教學參考、學習單（學生版＋教師版）已完成，PDF 已輸出至桌面「完成檔案」
+    files:
+      教學參考摘要: class-9c/english/reference/A_Rice_Sandwich.md
+      Mango_Street_教學參考: "class-9c/english/reference/mango-street-a-rice-sandwich-教學參考.md"
+      學生學習單_單字連接詞: "class-9c/english/content/9C-week6-4-v1-單字連接詞學習單.md"
+      教師版_單字連接詞: "class-9c/english/content/9C-week6-4-v1-單字連接詞學習單-教師版.md"
+      學生學習單_閱讀: "class-9c/english/content/9C-week6-4-v1-學習單.md"
+    skill_used: null
+    vocabulary:
+      count: 16
+      key_words: "canteen, principal, faint, skinny, nun, lunchroom, special, permission, embarrassed, ashamed, pale, belong, pretend, ordinary, notice, cafeteria"
+    conjunctions_taught: "because, when, before, after, although, even though, if, since, until, while, so...that"
+    worksheet_structure: "Part 1 單字配對（16 詞）＋ Part 2 連接詞填空（A Rice Sandwich 情境）"
+    notes: "週六第三、四節合堂設計。差異化保留。PDF 美化版四份已輸出至桌面「完成檔案」資料夾。"
+
+# ── 延伸完成紀錄 ──────────────────────────────────────
+extensions_completed:
+  - type: 藝術作品教學指南
+    date: 20260319
+    theme: "The House on Mango Street — 青春、愛情與女性自主"
+    artworks:
+      - "Springtime (Pierre-Auguste Cot, 1873) — 青春/愛情"
+      - "Self-Portrait with Two Pupils (Adélaïde Labille-Guiard, 1785) — 女性自主"
+    status: Stage 3 完成，含 ABCD 差異化教學建議
+    files:
+      enriched_yaml: temp/museum_street_scene_20260319/museum-materials-enriched.yaml
+      teaching_guide_html: "Google Drive: teaching-guides-HTML/The House on Mango Street — 青春、愛情與女性自主.html"
+    skill_used: art-in-teaching
+    notes: "首次完整走完 Stage 1→1.5→2→3→5 流程。同步建立 Apps Script HTML 瀏覽器（teaching-guides-HTML 資料夾）"
+
+# ── 參考檔案索引 ──────────────────────────────────────
+reference_files:
+  - file: class-9c/english/reference/conjunctions-國中範圍總整理.md
+    date: 20260323
+    description: "國中範圍連接詞完整整理（對等 / 從屬 / 相關 / 連接副詞）"
+  - file: class-9c/english/reference/phrasal-verbs-200-八下九上.md
+    date: 20260323
+    description: "動詞片語 200 個總表（八下＋九上，講義 #1-#200）"
+  - file: class-9c/english/reference/A_Rice_Sandwich.md
+    date: 20260325
+    description: "A Rice Sandwich 原文摘錄與教學參考（The House on Mango Street）"
+  - file: "class-9c/english/reference/mango-street-a-rice-sandwich-教學參考.md"
+    date: 20260325
+    description: "Mango Street A Rice Sandwich 完整教學參考，含單字表、連接詞範例、差異化教學建議"
+
+# ── 大綱版本紀錄 ──────────────────────────────────────
+syllabus_versions:
+  - version: v1
+    date: 20260228
+    status: 已確認並輸出
+    paths:
+      class_view: projects/class-9c/content/english/english-syllabus-v1-20260228.md
+      subject_view: projects/class-9c/english/content/english-syllabus-v1-20260228.md
+    google_drive: 00-01-TeacherOS-專案三層記憶/projects/class-9c/english/english-syllabus-v1-20260228.docx
+  - version: v2
+    date: 20260301
+    status: 已確認並輸出
+    changes: 套用寫作風格邊界——移除道德型收尾句、簡化過度解釋、評量表不加詮釋句
+    paths:
+      class_view: projects/class-9c/content/english/english-syllabus-v2-20260301.md
+      subject_view: projects/class-9c/english/content/english-syllabus-v2-20260301.md
+    google_drive: 00-01-TeacherOS-專案三層記憶/projects/class-9c/english/english-syllabus-v2-20260301.docx

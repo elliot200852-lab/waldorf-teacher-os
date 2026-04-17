@@ -1,0 +1,49 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 3】
+# 名稱：ITCS 進度錨點 (九年級)
+# 路徑：{workspace}/projects/g9/ITCS/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+subject: ITCS
+grade: g9
+type: session_anchor
+last_updated: 2026-04-05
+
+current_status:
+  block: 1
+  step: 2
+  topic: 課程大綱規劃 (Syllabus Design)
+  next_action: "準備第二階段 CS Unplugged (W6-W10) 的教學實體教具與講義"
+
+session_log:
+  - date: 2026-03-31
+    activity: "補全個人教學信念並確認課程架構"
+    notes: "完成了 teacheros-personal.yaml 的填寫，並根據 113 學年大綱提出了 114 學年的 15 週規劃建議。"
+  - date: 2026-04-05
+    activity: "正式產出 114 學年 ITCS 九年級教學大綱"
+    notes: "根據姜老師指示，將第二階段調整為 CS Unplugged 活動，第三階段調整為 Google Workspace 基礎操作。已存檔至 content/itcs-g9-syllabus-114-v1.md。"
+
+confirmed_decisions:
+  - "建立 ITCS 科目架構於個人 Workspace"
+  - "確認九年級 ITCS 課程結構：每週 1 次 90 分鐘，半年 15 次，分組教學"
+  - "完成個人教學信念與語氣錨點設定 (基於 ITCS 教學網站)"
+  - "成功讀取 113 學年九年級資訊科技課程大綱並建立參考檔"
+  - "確立九年級 ITCS 核心定位為 'WHAT is this?' (呼應運輸與通訊課程)"
+  - "完成 teacheros-personal.yaml 的 ITCS 教學信念與個人身份補全"
+  - "完成 114 學年 ITCS 九年級 15 週教學大綱規劃 (含 CS Unplugged 與 Google Workspace)"
+
+output_files:
+  syllabus_versions:
+    - version: v1.1
+      date: 20260405
+      paths:
+        class_view: "workspaces/Working_Member/Teacher_姜善迪/projects/g9/ITCS/content/itcs-g9-syllabus-114-v1.md"
+
+# 跨工作線提醒
+cross_module_notes:
+  active: ""
+
+open_questions:
+  - "九年級學生的具體 A/B/C/D 分布狀況 (待補充)"
+  - "GWS CLI 認證失敗問題 (localhost 拒絕連線)，暫改用手動另存 .docx 方式"
+

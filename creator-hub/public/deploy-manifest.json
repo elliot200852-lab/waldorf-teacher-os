@@ -1,0 +1,31 @@
+{
+  "deployedAt": "2026-04-13T11:43:09.268Z",
+  "syncedAt": "2026-04-13T06:56:34.818Z",
+  "channels": {
+    "taiwan-stories": {
+      "name": "臺灣的故事",
+      "count": 24,
+      "latest": "EN007"
+    },
+    "ancient-myths": {
+      "name": "古文明神話五年級",
+      "count": 14,
+      "latest": "TW02"
+    },
+    "botany": {
+      "name": "植物學五年級",
+      "count": 17,
+      "latest": "B017"
+    },
+    "island-myths-3rd": {
+      "name": "南島神話三年級",
+      "count": 3,
+      "latest": "I003"
+    },
+    "shanhaijing-3rd": {
+      "name": "三年級山海經",
+      "count": 1,
+      "latest": "山海經教學紀錄"
+    }
+  }
+}

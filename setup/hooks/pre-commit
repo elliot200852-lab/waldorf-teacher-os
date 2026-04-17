@@ -1,0 +1,33 @@
+#!/bin/sh
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS Pre-commit — 薄層入口，呼叫 Python 檢查腳本
+# 路徑：setup/hooks/pre-commit
+# 安裝方式：執行 bash setup/start.sh（或 python3 setup/install-hooks.py）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# Git hooks 必須是 shell script。
+# 所有邏輯在 setup/scripts/pre-commit-check.py 中。
+# Windows 上 Git 會用 Git Bash 執行 hooks，#!/bin/sh 是安全的。
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+python3 "$REPO_ROOT/setup/scripts/pre-commit-check.py"
+ACL_EXIT=$?
+
+# ── HOME.md 自動收錄攔截（所有角色，含 admin）──────────────
+# 防止 AI 在收工時自動將「（自動收錄）」條目塞入 HOME.md。
+# 即使 ACL 檢查通過，此檢查仍會攔截。
+if git diff --cached --name-only | grep -q "^HOME\.md$"; then
+    if git diff --cached -- HOME.md | grep "^+" | grep -q "（自動收錄）"; then
+        echo ""
+        echo "\033[0;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo "\033[0;31m  [攔截] HOME.md 含有「（自動收錄）」條目\033[0m"
+        echo "\033[0;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo ""
+        echo "  HOME.md 不接受自動收錄。請移除含「（自動收錄）」的行後重試。"
+        echo "  若需將檔案加入 HOME.md，請使用 obsidian-sync 技能（手動確認模式）。"
+        echo ""
+        exit 1
+    fi
+fi
+
+exit $ACL_EXIT

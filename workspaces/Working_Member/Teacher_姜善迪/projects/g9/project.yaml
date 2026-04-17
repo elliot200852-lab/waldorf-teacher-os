@@ -1,0 +1,27 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 2】
+# 名稱：九年級 (g9) 班級脈絡
+# 路徑：{workspace}/projects/g9/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+project: 九年級班級脈絡
+code: g9
+type: class_context
+status: active
+
+class_focus:
+  age_group: 九年級 (14-15 歲)
+  developmental_theme: >
+    星芒體萌動→誕生，因果思考萌發，質疑一切。
+    引導原則：世界是真的。追求事物的內在運作邏輯與因果。
+  current_focus: >
+    協助學生在智性與實踐之間建立連結，在資訊技術中看見邏輯與意志的具體展現。
+
+subjects:
+  - name: ITCS
+    description: 資訊科技與電腦科學 (Information Technology and Computer Science)
+    session_anchor: projects/g9/ITCS/session.yaml
+
+special_notes:
+  cross_module_notes:
+    active: ""

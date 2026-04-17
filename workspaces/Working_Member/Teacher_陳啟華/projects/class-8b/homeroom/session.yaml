@@ -1,0 +1,19 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 導師課進度錨點
+# 路徑：class-8b/homeroom/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+subject: 導師課
+class: 8b
+teacher: 陳啟華
+
+current_position:
+  block: 0
+  step: 0
+  description: 尚未開始
+
+next_action:
+  description: 填入班級資訊，開始班級經營規劃
+  type: setup
+
+last_updated: null

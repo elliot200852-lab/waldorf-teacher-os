@@ -1,0 +1,239 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS — Push 身份 + 路徑驗證（server-side 安全網）
+# client-side hook 可能未安裝，此 Action 是最後防線
+# 偵測到違規時自動建立 Issue 通知管理員
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+name: Push Identity Check
+
+on:
+  push:
+    # 監控所有分支：教師分支的越權 push 是主要威脅面
+    # main 和 workspace/* 都需要檢查
+
+jobs:
+  identity-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check commit identity and paths
+        id: check
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.event.after }}
+          BRANCH_NAME: ${{ github.ref_name }}
+        run: |
+          python3 << 'PYEOF'
+          import fnmatch, os, re, subprocess, sys
+
+          def git(*args):
+              r = subprocess.run(["git"] + list(args), capture_output=True, text=True)
+              return r.stdout.strip()
+
+          def matches(file_path, pattern):
+              if pattern == "*": return True
+              if pattern.endswith("/"): return file_path.startswith(pattern)
+              if "*" in pattern: return fnmatch.fnmatch(file_path, pattern)
+              return file_path == pattern or file_path.startswith(pattern.rstrip("/") + "/")
+
+          # ── 解析 ACL ──
+          acl = open("ai-core/acl.yaml", encoding="utf-8").read()
+          users = {}
+
+          def register(email, gh, entry):
+              users[email] = entry
+              if gh:
+                  users[f"{gh}@users.noreply.github.com"] = entry
+
+          # Admin
+          am = re.search(r"admin:\s*\n(.*?)(?=\n\S|\Z)", acl, re.DOTALL)
+          if am:
+              for e, g in zip(
+                  re.findall(r"email:\s*([^\s#\n]+)", am.group(0)),
+                  re.findall(r"github_username:\s*([^\s#\n]+)", am.group(0)),
+              ):
+                  register(e.strip(), g.strip(), {"is_admin": True, "allowed_paths": ["*"], "name": "Admin"})
+
+          # Teachers
+          for m in re.finditer(
+              r"-\s+name:\s+(.+?)\n(?:.*?\n)*?\s+email:\s+([^\s#\n]+)"
+              r"(?:.*?\n)*?\s+allowed_paths:\s*\n((?:\s+-[^\n]+\n)*)",
+              acl, re.DOTALL,
+          ):
+              name, email = m.group(1).strip(), m.group(2).strip()
+              paths = [p.strip().strip("\"'") for p in re.findall(r"-\s+([^\n#]+)", m.group(3))]
+              ghm = re.search(r"github_username:\s*([^\s#\n]+)", m.group(0))
+              gh = ghm.group(1).strip() if ghm else None
+              if email not in users:
+                  register(email, gh, {"is_admin": False, "allowed_paths": paths, "name": name})
+
+          # Bots
+          for bot_email in ["noreply@github.com", "41898282+github-actions[bot]@users.noreply.github.com"]:
+              users[bot_email] = {"is_admin": True, "allowed_paths": ["*"], "name": "Bot"}
+
+          def resolve_email(email):
+              """現代 GitHub noreply {id}+{username}@users.noreply.github.com → 舊格式映射"""
+              if "@users.noreply.github.com" in email:
+                  m = re.match(r"\d+\+(.+)@users\.noreply\.github\.com$", email)
+                  if m:
+                      alt = f"{m.group(1)}@users.noreply.github.com"
+                      if alt in users:
+                          return alt
+              return email
+
+          # Protected + shared
+          protected = []
+          pm = re.search(r"protected_always:\s*\n((?:\s+-[^\n]+\n)*)", acl)
+          if pm:
+              protected = [p.strip().strip("\"'") for p in re.findall(r"-\s+([^\n#]+)", pm.group(1))]
+
+          shared = []
+          sm = re.search(r"shared_writable:\s*\n((?:\s+-[^\n]+\n)*)", acl)
+          if sm:
+              shared = [p.strip().strip("\"'") for p in re.findall(r"-\s+([^\n#]+)", sm.group(1))]
+
+          # ── 取得 commit 範圍 ──
+          before = os.environ.get("BEFORE_SHA", "")
+          after = os.environ.get("AFTER_SHA", "")
+          zero = "0" * 40
+
+          if not before or before == zero:
+              commits_raw = git("log", "--format=%H|%ae|%s", "-1", after)
+          else:
+              commits_raw = git("log", "--format=%H|%ae|%s", f"{before}..{after}")
+
+          if not commits_raw:
+              print("No commits to check.")
+              sys.exit(0)
+
+          # ── 逐 commit 檢查 ──
+          email_violations = []
+          path_violations = []
+
+          for line in commits_raw.splitlines():
+              if "|" not in line: continue
+              parts = line.split("|", 2)
+              sha, email = parts[0], resolve_email(parts[1])
+              subject = parts[2] if len(parts) > 2 else ""
+
+              if email not in users:
+                  email_violations.append({"sha": sha[:8], "email": email, "subject": subject})
+                  continue
+
+              user = users[email]
+              if user["is_admin"]:
+                  continue
+
+              changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", sha)
+              for f in changed.splitlines():
+                  f = f.strip()
+                  if not f: continue
+                  is_prot = any(matches(f, p) for p in protected)
+                  is_ok = any(matches(f, p) for p in user["allowed_paths"]) or any(matches(f, p) for p in shared)
+                  if is_prot:
+                      path_violations.append({"sha": sha[:8], "email": email, "file": f, "reason": "受保護路徑"})
+                  elif not is_ok:
+                      path_violations.append({"sha": sha[:8], "email": email, "file": f, "reason": "超出授權範圍"})
+
+          # ── Workspace 分支額外檢查 ──────────────────────
+          branch = os.environ.get("BRANCH_NAME", "")
+          if branch.startswith("workspace/Teacher_"):
+              teacher_key = branch.replace("workspace/", "")  # e.g. Teacher_林詩閔
+              # 找出該教師的 allowed_paths
+              ws_user = None
+              for u_email, u_entry in users.items():
+                  if u_entry.get("name", "") == teacher_key.replace("Teacher_", "") or \
+                     f"workspace: workspaces/Working_Member/{teacher_key}/" in acl:
+                      if not u_entry.get("is_admin"):
+                          ws_user = u_entry
+                          break
+              # 更精確的查找：從 workspace 路徑反推
+              if not ws_user:
+                  ws_path = f"workspaces/Working_Member/{teacher_key}/"
+                  for u_email, u_entry in users.items():
+                      if ws_path in u_entry.get("allowed_paths", []):
+                          ws_user = u_entry
+                          break
+              if ws_user:
+                  # 比較分支 tip 與 main 的 diff，找出 workspace 外的檔案
+                  diff_raw = git("diff", "--name-only", "origin/main...HEAD")
+                  ws_allowed = ws_user.get("allowed_paths", [])
+                  for f in diff_raw.splitlines():
+                      f = f.strip()
+                      if not f:
+                          continue
+                      is_ok = any(matches(f, p) for p in ws_allowed) or any(matches(f, p) for p in shared)
+                      if not is_ok:
+                          path_violations.append({"sha": "branch", "email": branch, "file": f, "reason": f"workspace 分支包含授權外檔案"})
+
+          if not email_violations and not path_violations:
+              print("All commits passed identity and path checks.")
+              sys.exit(0)
+
+          # ── 組裝 Issue 內容 ──
+          body = "## Push 身份/權限異常通報\n\n"
+          body += f"**Push SHA**: `{after[:8]}`\n\n"
+
+          if email_violations:
+              body += "### 未登記的 Author Email\n\n"
+              body += "| Commit | Email | 訊息 |\n|--------|-------|------|\n"
+              for v in email_violations:
+                  body += f"| `{v['sha']}` | `{v['email']}` | {v['subject'][:60]} |\n"
+              body += "\n"
+
+          if path_violations:
+              body += "### 超出授權的檔案修改\n\n"
+              body += "| Commit | Email | 檔案 | 原因 |\n|--------|-------|------|------|\n"
+              for v in path_violations:
+                  body += f"| `{v['sha']}` | `{v['email']}` | `{v['file']}` | {v['reason']} |\n"
+              body += "\n"
+
+          body += "### 建議處理\n\n"
+          body += "1. 確認該教師重新執行 `setup/start.sh`（macOS）或 `setup/start.ps1`（Windows）\n"
+          body += "2. 若為誤操作，考慮 revert 該 commit\n"
+          body += "3. 若為合理操作，更新 `ai-core/acl.yaml` 的 `allowed_paths`\n"
+
+          # 輸出供下一步建立 Issue
+          with open(os.environ.get("GITHUB_OUTPUT", "/dev/null"), "a") as f:
+              f.write("has_violations=true\n")
+          # 把 body 寫到檔案供後續步驟讀取
+          with open("issue_body.md", "w", encoding="utf-8") as f:
+              f.write(body)
+
+          print("Violations detected. Issue will be created.")
+          emails = set(v["email"] for v in email_violations)
+          emails.update(v["email"] for v in path_violations)
+          with open(os.environ.get("GITHUB_OUTPUT", "/dev/null"), "a") as f:
+              f.write(f"violator_emails={', '.join(emails)}\n")
+
+          sys.exit(0)  # 不阻擋 workflow（push 已發生），但建 Issue
+          PYEOF
+
+      - name: Create Issue if violations found
+        if: steps.check.outputs.has_violations == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('issue_body.md', 'utf-8');
+            const emails = '${{ steps.check.outputs.violator_emails }}';
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[安全通報] 未授權 push 偵測：${emails}`,
+              body: body,
+              labels: ['security', 'identity-violation'],
+            });

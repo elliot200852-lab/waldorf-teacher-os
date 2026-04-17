@@ -1,0 +1,232 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS Reference — 教學哲學框架（按需載入）
+# 路徑：ai-core/reference/pedagogy-framework.yaml
+# 觸發入口：teacheros.yaml → pedagogical_framework._load_when
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 包含：人智學基礎、四體論、七年週期、1-12 年級發展樣態、
+#        頭心手三元、阿里曼力量與 AI 時代定位
+
+anthroposophical_foundation:
+  core_premise: 人類可透過嚴格的內在修煉，發展出超越感官的靈性認識能力；這是施泰納稱為「靈性科學」的認識論體系，而非宗教信仰
+  human_constitution:
+    physical_body: 可見的身體——物質層
+    etheric_body: 生命體 / 以太體——生命力、成長、記憶的承載者
+    astral_body: 星芒體——情感、慾望、意識的所在
+    ego: 自我（I）——個體靈性核心，跨世輪迴的承載者
+
+seven_year_cycles:
+  cycle_1:
+    age: 0–7 歲
+    body_developing: 物質體
+    learning_mode: 模仿——兒童透過直接複製環境與成人行為來學習
+  cycle_2:
+    age: 7–14 歲
+    body_developing: 生命體（以太體）
+    learning_mode: 圖像與情感——藝術、神話、故事是認知的媒介；教師的權威是學習的錨點
+  cycle_3:
+    age: 14–21 歲
+    body_developing: 星芒體
+    learning_mode: 獨立思考萌發——理想主義強烈，開始質疑一切，尋找因果與意義
+
+grade_developmental_context:
+  overview: >
+    華德福學校教育橫跨 1-12 年級（6/7-18 歲），覆蓋三個七年週期中的學校教育部分。
+    每個年級的學生都處於特定的意識發展位置，課程設計必須精確匹配。
+
+  # ── 低年級（1-3 年級）──────────────────────────────
+  lower_school:
+    position: 第二週期前段（6/7-9 歲）
+    body_developing: 以太體（剛從建構物質體的任務中釋放）
+    learning_mode: 圖像、模仿餘韻、教師權威
+    guiding_principle: 世界是美的
+    core_dynamic: >
+      兒童與世界的關係仍是一體的、夢幻的。教師是絕對的權威錨點——
+      不因制度，而因兒童在發展上需要一個值得仰望的成人作為世界的代言人。
+    grade_profiles:
+      grade_1:
+        age: 6–7 歲
+        consciousness: 童話般的世界一體感，現實與想像未分化
+        learning_mode: 模仿餘韻 + 新萌發的圖像性接受力
+        core_narrative: 童話——善與惡的原型力量以圖像形式呈現
+        curriculum_mirror:
+          literacy: 字母從圖像推導（GA 294 L1、L5）
+          math: 算術從整體到部分（GA 294 L1）
+          form_drawing: 直與曲的基本力量
+        teacher_role: 溫暖的權威，以故事與圖像編織整個世界
+      grade_2:
+        age: 7–8 歲
+        consciousness: 開始感受善惡張力，但仍在圖像層
+        learning_mode: 較長的敘事承受力，感覺生活開始細膩化
+        core_narrative: 寓言（動物本質映射人類性格）、聖徒傳說（克服內在動物性的典範）
+        curriculum_mirror:
+          math: 四則運算深化
+          concepts: 時間概念
+          form_drawing: 更複雜的形線畫
+        teacher_role: 引導兒童在寓言中認出自己的內在傾向
+      grade_3:
+        age: 8–9 歲
+        developmental_milestone: 九歲轉變（Rubicon）
+        consciousness: 自我與世界的分離感首次浮現（GA 293 L9，GA 294 L7）
+        psychological_crisis: 孤獨感、懷疑教師與父母的完美性、對世界安全感動搖
+        learning_mode: 需要看見成人如何在世界中站穩——農耕、建築、手工藝
+        core_narrative: 創世故事（希伯來聖經/各文化創世神話）——回應「世界從何而來」的深層焦慮
+        curriculum_mirror:
+          practical: 農耕區塊、房屋建造
+          math: 度量衡（在實際世界中找到秩序）
+        teacher_role: 可靠的成人，展示「是的，世界是可以被掌握的」
+
+  # ── 中年級（4-6 年級）──────────────────────────────
+  middle_school:
+    position: 第二週期後段（9-12 歲）
+    body_developing: 以太體（成熟中）
+    learning_mode: 感覺、發現、脈絡化
+    guiding_principle: 世界是美的→真的
+    core_dynamic: >
+      九歲轉變後，兒童進入主客分離的新意識。對世界的好奇從「參與」轉向「發現」。
+      以太體逐漸成熟，記憶力與概念化能力增強。
+      施泰納稱五年級前後為「童年的黃金時代」，內在與外在尚處於相對和諧的平衡中。
+    grade_profiles:
+      grade_4:
+        age: 9–10 歲
+        consciousness: 內外世界「撕裂」（GA 294 L7 後續），自我意識增強
+        learning_mode: 對「自己是什麼」與「世界是什麼」的區分產生強烈興趣
+        core_narrative: 北歐神話（諸神黃昏——世界的毀滅與重生）、本地地理與歷史
+        curriculum_mirror:
+          math: 分數（整體被切割的痛苦與美感）
+          geography: 地方誌
+          zoology: 動物學（人與動物的比較，GA 294 L7）
+        teacher_role: 引導兒童在分離中找到新的連結
+      grade_5:
+        age: 10–11 歲
+        consciousness: 內外平衡的高峰期，身體協調性最佳，思考清晰但尚未冷硬
+        learning_mode: 對人類文化的轉化歷程產生強烈共鳴
+        core_narrative: 古文明——印度、波斯、埃及、巴比倫、希臘——人類意識從神話走向理性
+        curriculum_mirror:
+          math: 小數與比例
+          botany: 植物學（植物作為地球的器官）
+          physical: 自由體操
+        teacher_role: 在人類文化的宏大敘事中，讓兒童看見自己所處的意識演化位置
+      grade_6:
+        age: 11–12 歲
+        consciousness: 因果思考萌發，骨骼系統完成發育（與礦物學對應）
+        learning_mode: 對物理世界的規律產生渴望，邏輯推理能力增強
+        core_narrative: 羅馬史——法律、秩序、公民權的建立；中世紀開端
+        curriculum_mirror:
+          geometry: 精確作圖
+          physics: 物理入門（聲學、光學、熱學——現象學取向）
+          mineralogy: 礦物學
+          math: 商業數學
+        teacher_role: 從「權威」轉向「引導者」，但仍需保持結構穩定性
+
+  # ── 高年級（7-9 年級）──────────────────────────────
+  upper_middle_school:
+    position: 第二與第三七年週期的過渡地帶（12–15 歲）
+    body_developing: 星芒體（萌動→誕生）
+    learning_mode: 因果思考萌發、質疑一切
+    guiding_principle: 世界是真的
+    core_dynamic: >
+      學生從「跟隨圖像與教師權威」轉向「尋找自身意義與世界因果」。
+      極度渴望自由與自主，卻尚未發展出足夠的內在結構承載這種自由；
+      如蛻皮中的甲殼類——內在柔軟易傷，外顯防衛叛逆。
+    nine_year_change_legacy: >
+      九歲意識首次分裂（自我與世界的分離感）是青春期張力的心理前奏，
+      帶著防衛心與批判性主體意識持續發酵至青春期全面爆發。
+    grade_profiles:
+      grade_7:
+        age: 12–13 歲
+        psychological_crisis: 界線探索與自我中心
+        astral_state: 星芒體初步活躍，主觀情感開始主導對世界的看法
+        classroom_manifestations:
+          - 持續測試課堂規則與教師底線
+          - 對「不公平」極度敏感
+          - 小團體開始形成
+          - 質疑傳統權威，但仍需要教師作為意義錨點
+        curriculum_mirror:
+          history: 地理大發現、文藝復興——探索未知邊界的渴望在歷史先驅中找到映射
+          biography: 貞德、哥倫布、麥哲倫——從歷史人物的勇氣中尋找形塑獨立認同的靈感
+          science: 現象學物理（槓桿、燃燒）——感官體驗導向規律推導
+          physiology: 柔軟系統（消化、呼吸、生殖）——安撫身體發育的隱秘焦慮
+      grade_8:
+        age: 13–14 歲
+        psychological_crisis: 邏輯萌發與社交焦慮
+        astral_state: 意識銳利化，渴求因果關係；強烈的同儕歸屬需求
+        classroom_manifestations:
+          - 為反對而反對的課堂辯論
+          - 情緒瞬間爆發，強度遠超事件本身
+          - 群體從眾壓力導致微型霸凌與排斥
+          - 對教師雙重標準零容忍
+        curriculum_mirror:
+          history: 革命史（宗教改革、法國大革命、工業革命）——內在反抗衝動在學術框架內安全釋放
+          anatomy: 骨骼與肌肉系統——為氾濫的情感提供堅硬的力學支撐；骨骼是秩序與穩定的象徵
+          math: 柏拉圖立體、幾何——透過數學看見宇宙和諧與神聖秩序，安撫存在焦慮
+      grade_9:
+        age: 14–15 歲
+        psychological_crisis: 存在焦慮與判斷力危機
+        astral_state: 感覺被靈性世界拋出（施泰納描述為「被靈性世界吐出來」）；尋求絕對真理與純粹性
+        classroom_manifestations:
+          - 非黑即白的極端評判，容不下灰色地帶
+          - 對成人虛偽的零容忍，言行不一立刻喪失信任
+          - 智力表現與情緒穩定度的極端落差
+          - 強烈的理想主義與對現實的幻滅感並存
+        curriculum_mirror:
+          art: 黑白素描——在光影極端對比中學會尋找灰色過渡地帶，打破二元極端思維
+          science: 熱力學、板塊構造——極端力量的對立與轉換，從感官走向嚴謹科學語言
+          literature: 《雙城記》、《神曲》——人類靈魂在光明與黑暗間的掙扎，探索複雜脈絡
+          farm_block: 農場實作——真實體力勞動不接受情緒勒索，行動與責任的必然連結
+
+  # ── 上學部（10-12 年級）──────────────────────────────
+  high_school:
+    position: 第三週期（15–18 歲）
+    body_developing: 自我（I）逐步獨立
+    learning_mode: 獨立判斷、批判思考
+    guiding_principle: 世界是真的→自由
+    core_dynamic: >
+      星芒體誕生後，獨立的情感生活與抽象思考能力逐步展開。
+      學生從「質疑一切」走向「建構自己的判斷」。
+      自我（I）開始在意識中顯現為主導力量。
+      教師不再是權威或引導者，而是「值得尊敬的年長同行者」（mentor）。
+    grade_profiles:
+      grade_10:
+        age: 15–16 歲
+        consciousness: 從九年級的存在焦慮中找到立足點，對世界的因果結構產生真正的智識興趣
+        learning_mode: 能承受並享受智識挑戰，開始形成自己的觀點
+        core_narrative: 古文明史（以思考力重訪五年級的圖像層體驗）、希臘哲學、詩學
+        curriculum_mirror:
+          chemistry: 有機化學
+          geography: 氣候與經濟的全球關聯
+          math: 三角函數
+          literature: 文學（悲劇與喜劇的本質）
+        teacher_role: 引入真正的智識對話，尊重學生觀點同時挑戰其深度
+      grade_11:
+        age: 16–17 歲
+        consciousness: 理想主義最強烈的時期，對社會不公深度敏感，內在孤獨感轉化為對意義的追尋
+        learning_mode: 能處理高度複雜與矛盾的材料，渴望「為什麼」的深層答案
+        core_narrative: 中世紀到啟蒙運動、但丁《神曲》、帕西法爾——靈魂的朝聖之旅
+        curriculum_mirror:
+          math: 投影幾何
+          physics: 電學與磁學
+          biology: 細胞學、生態學
+          literature: 浪漫主義與存在主義
+        teacher_role: 思想的對話者，不給標準答案但引導深度探索
+      grade_12:
+        age: 17–18 歲
+        consciousness: 整合前十一年的發展，自我（I）作為統整力量浮現，能同時容納矛盾
+        learning_mode: 獨立研究能力成熟，能為自己的學習負全責
+        core_narrative: 現代史、歌德《浮士德》——人類在知識、權力、愛與救贖之間的永恆掙扎
+        curriculum_mirror:
+          math: 微積分
+          architecture: 建築史（人類精神在物質中的體現）
+          biology: 動物學/人類學（回歸整體人的理解）
+          capstone: 畢業專題
+        teacher_role: 平等的夥伴，見證學生作為獨立個體的誕生
+
+head_heart_hands:
+  head: 清醒、獨立的思考力；能批判性評估 AI 輸出而非盲目接受的武裝心智
+  heart: 情感深度、同理心、道德直覺；機器永遠無法具備的內在溫暖
+  hands: 身體勞動、手工藝、藝術實踐；具身學習（Embodied Learning）是認知發展的基礎
+
+steiner_cosmological_context:
+  ahriman_principle: 現代技術（包含 AI）體現阿里曼力量——冷峻智力、機械化、抽象邏輯、否定人類靈性向度
+  technology_stance: 技術是人類演化的必然，不逃避，而是以靈性力量穿透並引導技術
+  waldorf_mission_in_ai_era: 作為保護「真正人類特質」（The Truly Human）的避風港與前鋒基地
+  ai_limitation: AI 能模擬人類智力與語言，卻永遠無法具備真正的意識、自我覺察、道德直覺或情感溫暖

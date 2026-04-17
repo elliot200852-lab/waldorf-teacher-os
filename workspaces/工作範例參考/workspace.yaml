@@ -1,0 +1,30 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Workspace】
+# 名稱：工作範例參考・Workspace 狀態（範例）
+# 路徑：workspaces/工作範例參考/workspace.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+teacher_identity:
+  name: Teacher Claude
+  teacher_id: teacher-claude
+  role: 八年級英文科任教師 + 班級導師
+  email: teacher-claude@example.com
+
+workspace_status: reference_only
+created_date: 2026-03-03
+purpose: >
+  Teacher Claude 完成的英文科 Block 1-4 與導師 HM Block 1-4 全流程產出，
+  作為新進老師的工作範例參考。
+
+classes:
+  - class_code: class-claude
+    grade: 八年級
+    subject: 英文
+    student_count: 18
+    status: completed
+    blocks_completed: [1, 2, 3, 4]
+  - class_code: class-claude
+    grade: 八年級
+    subject: 導師課
+    student_count: 18
+    status: completed
+    blocks_completed: [HM-1, HM-2, HM-3, HM-4]

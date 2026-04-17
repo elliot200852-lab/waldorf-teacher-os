@@ -1,0 +1,403 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Layer 3】
+# 名稱：Claude 班・導師業務進度錨點（範例）
+# 路徑：workspaces/工作範例參考/projects/class-claude/homeroom/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+class: Claude
+grade: 八年級 (13-14 歲，星芒體敏銳化階段)
+teacher: Claude
+school_type: 體制外華德福實驗學校 (台灣)
+academic_year: 2025-2026
+current_term: 下學期 (春季，2月中 ~ 6月中)
+total_students: 18
+
+---
+
+## HM Block 1：行事曆、班級動力規劃與整體工作時程
+
+status: ✓ COMPLETED
+completion_date: 2026-03-03
+content_path: homeroom/content/season-plan.md
+last_review: 2026-06-12
+
+summary: |
+  春季（2月中～6月中）的整體規劃已完成。關鍵節點包括：
+  - 班規共製工作坊 (2/18)
+  - 「家族故事」主題專週 (3/3~3/7)
+  - 班會首次運作 (3/10)
+  - 修復式對話工作坊 (3/19)
+  - 畢旅籌劃推進 (4月起)
+  - 班級班誌共創 (5月)
+  - 畢旅執行 (5/26~6/1)
+  - 期末反思與評估 (6月)
+
+seasonal_calendar:
+  spring_phase_1:
+    title: "重塑與根的尋找"
+    weeks: 3
+    duration: "2月中 ~ 3月上旬"
+    activities:
+      - "班規共製工作坊"
+      - "家族故事分享會準備"
+
+  spring_phase_2:
+    title: "認識彼此，深化班級動力"
+    weeks: 4
+    duration: "3月中 ~ 4月初"
+    activities:
+      - "班會議事 (首次)"
+      - "修復式對話工作坊"
+      - "中段考支持週"
+
+  spring_phase_3:
+    title: "畢旅願景與自主性"
+    weeks: 3
+    duration: "4月中 ~ 5月初"
+    activities:
+      - "畢旅夢想分享"
+      - "籌委會工作坊"
+
+  spring_phase_4:
+    title: "共創與統整"
+    weeks: 2
+    duration: "5月中 ~ 6月初"
+    activities:
+      - "班誌共創工作坊"
+      - "畢旅彼此寄語圓圈"
+
+key_support_targets:
+  - { id: "CL-07", name: "劉冠廷", need: "讀寫困難 (學習障礙)", strategy: "多元表達機制" }
+  - { id: "CL-15", name: "洪晨翊", need: "情緒調節困難", strategy: "心理諮詢協作 + 班級支持" }
+
+---
+
+## HM Block 2：導師活動的規劃、執行、紀錄、反思
+
+status: ✓ COMPLETED
+completion_date: 2026-06-10
+content_path: homeroom/content/activities/spring-activities.md
+last_review: 2026-06-12
+
+executed_activities:
+  - name: "班規共製工作坊"
+    date: "2026-02-18"
+    time: "08:00 ~ 09:00 (晨圈)"
+    participants: 18
+    deliverable: "8 項班級約定"
+    observation_tags:
+      - "#領導力初現 (CL-02)"
+      - "#內向者的潛能 (CL-03)"
+      - "#融合良好 (CL-07)"
+      - "#社會敏感度高 (CL-10)"
+      - "#焦慮傾向 (CL-14)"
+      - "#情緒起伏 (CL-15)"
+    teacher_reflection: "圓圈陣列效果顯著；小組隨機分配成功打破既有小圈子；修復概念植入良好"
+
+  - name: "『我的家族故事』主題分享會"
+    date: "2026-03-03 ~ 2026-03-07"
+    format: "班級分享 + 小圈子聆聽 + 英文課連結"
+    participants: 18
+    key_sharers: ["CL-02 陳宇翔", "CL-08 吳佩蓉", "CL-10 鄭雅琪", "CL-13 楊子謙"]
+    observation_highlights:
+      - "班級凝聚力提升，同學間對彼此故事的關心提高"
+      - "小圈子環境幫助內向學生（CL-03, CL-04）首度詳細分享"
+      - "星芒體敏銳化：同學開始問『為什麼』與深層動機"
+    teacher_reflection: "故事分享成功啟動班級『根與身份』的主題；英文課連結適切；部分學生（CL-15, CL-04）家庭溝通待加強"
+
+  - name: "修復式對話工作坊 (試行)"
+    date: "2026-03-19"
+    time: "14:30 ~ 15:30 (導師課)"
+    trigger_event: "CL-02 陳宇翔 vs CL-16 郭宥辰 言語衝突 (3/12~3/14)"
+    participants: 18 (全班為見證社群，CL-02 & CL-16 為對話主角)
+    procedure: ["安全感建立", "個別敘述", "開放提問", "共同契約"]
+    observation_highlights:
+      - "修復對話框架成功啟動班級同理心"
+      - "CL-02 的因果思維深化；CL-10 & CL-05 展現倫理思維"
+      - "CL-15 的衝突敏感性被看見與認可"
+    teacher_reflection: "修復式對話有效；班級準備度高；可考慮『和解儀式』更具象化修復"
+
+  - name: "班級行事委員會 (班會) 首次運作"
+    date: "2026-03-10"
+    time: "08:00 ~ 09:00 (晨圈)"
+    format: "班委會選舉 + 議題討論 + 投票決議"
+    committee_members:
+      - { role: "班長", name: "CL-02 陳宇翔", selection_method: "自薦，全票通過" }
+      - { role: "副班長", name: "CL-08 吳佩蓉", selection_method: "提名" }
+      - { role: "財務", name: "CL-10 鄭雅琪", selection_method: "自薦" }
+      - { role: "文藝", name: "CL-06 黃芷萱", selection_method: "提名" }
+      - { role: "學習代表", name: "CL-13 楊子謙", selection_method: "自薦" }
+    agenda:
+      - "班級外出活動路線與預算討論 → 決議：三地點小組走訪方案"
+      - "衛生責任分配微調 → 新輪值表通過 (16:2)"
+      - "班費透明度機制 → CL-10 週週更新黑板餘額"
+    observation_highlights:
+      - "班級自治初步成效良好；同學對班級事務的投入度上升"
+      - "CL-02 的『獨斷 vs CL-08 的包容』形成領導二元體"
+      - "沉默者較多；可考慮增進全面參與機制"
+    teacher_reflection: "班會運作良好；需強化『表決 vs 共識』的區別；班委會週會機制待建立"
+
+planned_future_activities:
+  - name: "班級聆聽對話會 (個別 & 小組)"
+    scheduled: "2026-04-07 ~ 2026-04-25"
+    format: "導師個談、小組圓圈"
+    purpose: "發現次級發展需求、親師溝通準備"
+
+  - name: "畢旅籌劃小組行政會議"
+    scheduled: "2026-03-31 ~ 2026-04-04"
+    format: "籌委會工作坊"
+    expected_deliverable: "畢旅路線、預算、人員分組定案"
+
+  - name: "班級共創工作坊：班誌設計"
+    scheduled: "2026-05-12 ~ 2026-05-16"
+    collaborating_subject: "視覺藝術課"
+    purpose: "記錄班級故事、個人成長軌跡"
+
+  - name: "畢旅"
+    scheduled: "2026-05-26 ~ 2026-06-01"
+    duration: "5 天 4 夜"
+    teacher_role: "隨隊導師；修復式對話；野地觀察紀錄"
+
+---
+
+## HM Block 3：日常節點紀錄與親師溝通
+
+status: ✓ COMPLETED
+completion_date: 2026-06-10
+content_path: homeroom/content/comms/daily-observations-and-comms.md
+last_update: 2026-06-12
+
+daily_observation_snapshots:
+  total_recorded: 20+ snippets
+  coverage: "全班 18 人皆有記錄"
+  date_range: "2026-02-24 ~ 2026-03-20"
+  key_observations:
+    - date: "2026-02-24"
+      title: "新學期情緒掃描"
+      focus: ["CL-01", "CL-02", "CL-07", "CL-15"]
+
+    - date: "2026-03-01"
+      title: "陪餐時刻的微觀互動"
+      focus: ["CL-03", "CL-14", "CL-09"]
+      insight: "內向學生的自發互動；班級凝聚力正在微觀層面建立"
+
+    - date: "2026-03-12"
+      title: "突發衝突與當下回應"
+      focus: ["CL-02", "CL-16"]
+      teacher_decision: "未當下介入；課後分別談話；為修復對話做準備"
+
+    - date: "2026-03-15"
+      title: "登山活動的關鍵觀察"
+      focus: ["CL-04", "CL-06", "CL-13", "CL-15", "CL-17"]
+      insight: "CL-15 的情緒波動與班級支持；CL-13 的照顧型領導力；CL-06 & CL-17 的自然探究興趣"
+
+    - date: "2026-03-20"
+      title: "修復式對話後的反思"
+      focus: ["CL-10", "CL-15"]
+      insight: "CL-10 已理解修復對話核心；CL-15 的衝突敏感性被命名"
+
+parent_communication:
+  communication_channels: ["班級通訊信", "個別信函", "電話談話", "親臨教室"]
+
+  broadcast_communications:
+    - date: "2026-02-21"
+      type: "班級通訊信"
+      recipients: "全體家長"
+      title: "Claude 班春季方向與導師期許"
+      topics: ["民主實踐", "修復式正義", "根與身份的探索"]
+      status: "已發送"
+
+  individual_communications:
+    - student_id: "CL-15"
+      student_name: "洪晨翊"
+      parent_name: "（家長）"
+      communications:
+        - date: "2026-03-03"
+          type: "電話初談"
+          duration: "15 分鐘"
+          topic: "情緒調節困難的初步觀察與支持規劃"
+          status: "✓ 已進行"
+
+        - date: "2026-03-08"
+          type: "書面信函"
+          title: "晨翊的情緒調節支持方案"
+          content: "班級融合度、正面跡象、三角協作方案 (導師+家庭+心理諮詢)"
+          status: "✓ 已發送"
+
+    - student_id: "CL-07"
+      student_name: "劉冠廷"
+      parent_name: "（家長）"
+      communications:
+        - date: "2026-03-22"
+          type: "書面信函"
+          title: "冠廷的班級適應進展與學習協作"
+          content: "班級融合度高、讀寫困難非障礙、特教協作模式、暑期建議"
+          status: "✓ 已發送"
+
+    - student_id: "CL-02"
+      student_name: "陳宇翔"
+      planned_communication:
+        - date: "2026-03-25"
+          type: "一對一談話 (計畫中)"
+          topic: "領導風格回饋與同理心培養"
+          status: "⏳ 待進行"
+
+    - student_id: ["CL-03", "CL-04", "CL-12", "CL-14"]
+      student_names: ["王小芮", "張庭瑜", "周依婷", "趙心妍"]
+      planned_communication:
+        - date: "2026-04-初"
+          type: "個別電話或信函"
+          topic: "內向學生的參與鼓勵與成長亮點分享"
+          status: "⏳ 待進行"
+
+blind_spot_tracker:
+  last_check_date: "2026-03-23"
+  check_frequency: "每兩週進行一次"
+  findings:
+    two_week_review: "暫無學生超過 2 週未有導師觀察記錄"
+    communication_balance: "5 人有 2 次以上溝通；13 人有 1 次班級通訊；建議 4 月延展至全體"
+
+---
+
+## HM Block 4：期末總結與發展評估
+
+status: ✓ COMPLETED
+completion_date: 2026-06-12
+content_path: homeroom/content/term-summary.md
+last_update: 2026-06-12
+
+term_assessment_summary: |
+  春季學期 (2月中～6月中) 結束。Claude 班展現了顯著的凝聚力、民主參與意識與修復文化的萌芽。
+  全班 18 人皆有期末發展評估。重點學生包括：
+  - CL-02 (陳宇翔)：領導力初現，同理心待深化
+  - CL-03 (王小芮)：內向者的信心建立初期
+  - CL-15 (洪晨翊)：情緒調節困難，但敏銳性高
+  - CL-07 (劉冠廷)：融合參與模範，多元學習方式的成功案例
+
+sample_student_evaluations:
+  - student_id: "CL-02"
+    name: "陳宇翔"
+    role: "班長"
+    developmental_trajectory: "星芒體敏銳化 (高) → 因果思維清晰 → 同理心初期開發"
+    head_assessment: "邏輯清晰、批判能力強；複雜性思維待深化"
+    heart_assessment: "同理心初期開發；利他動機待內化"
+    hand_assessment: "行動力強；服務領導精神待培養"
+    period_evaluation_draft: "陳宇翔是班級的責任擔當者。他的邏輯清晰、行動力強，已展現了初期的領導潛力…"
+    recommendation_focus: "培養包容性領導、深化同理心、內化服務精神"
+
+  - student_id: "CL-03"
+    name: "王小芮"
+    developmental_trajectory: "內向 → 小圈子信心初現 → 微觀參與建立"
+    head_assessment: "思考品質高，深度優於廣度；自信欠缺"
+    heart_assessment: "信心建立初期；細緻感受力強"
+    hand_assessment: "行動力在開發；被邀請時能認真回應"
+    period_evaluation_draft: "王小芮是班級的靜默觀察者，也是深度思考者。她的內向特質往往被外向同學的聲量所遮蔽…"
+    recommendation_focus: "肯定靜默的價值、提供安全發言機制、逐步擴展參與範圍"
+
+  - student_id: "CL-15"
+    name: "洪晨翊"
+    special_need: "情緒調節困難 (IEP 目標)"
+    developmental_trajectory: "高敏感 → 衝突焦慮 → 情緒識別與命名"
+    head_assessment: "認知能力無障礙；情緒激動時思考受阻；自我認識初期"
+    heart_assessment: "敏感性高、深層感受豐富；情緒波動大；需持續支持"
+    hand_assessment: "參與度低，但在支持下能參與；登山活動為轉捩點"
+    special_support_progress: "心理諮詢協作進展良好；靜心角設置有效；家長配合度高"
+    period_evaluation_draft: "洪晨翊是班級的深層感受者。他的高敏感性使得他對班級的人際變化有敏銳的察覺…"
+    recommendation_focus: "情緒調節持續支持、多元參與方式、慶祝微小進步"
+
+  - student_id: "CL-07"
+    name: "劉冠廷"
+    special_need: "讀寫困難 (學習障礙)"
+    developmental_trajectory: "讀寫困難 → 非文字邏輯清晰 → 融合參與模範"
+    head_assessment: "邏輯思維清晰；讀寫困難不影響認知；多元表達方式需開發"
+    heart_assessment: "親和力強、同理心自然展現"
+    hand_assessment: "融合參與模範；主動尋找貢獻方式"
+    special_support_progress: "特教支持進展良好；班級接納度高；無隔離或標籤化問題"
+    period_evaluation_draft: "劉冠廷是班級的親和力典範。他的讀寫困難並未成為他參與班級生活的障礙…"
+    recommendation_focus: "肯定多元學習方式、持續讀寫補救、在強項領域發展"
+
+class_development_dimensions:
+  all_students_table:
+    total: 18
+    high_astral_body_signs: 5 (CL-02, CL-10等)
+    medium_signs: 10
+    developing: 3
+
+class_strengths:
+  - "民主參與的初步經驗（班規、班會、對話）"
+  - "修復文化的萌芽（衝突透過對話解決）"
+  - "多元接納（內向、特教、情感困難者都有位置）"
+
+next_phase_recommendations:
+  for_nine_grade: |
+    - 深化民主實踐（複雜議題、決策透明度）
+    - 強化修復文化（範疇擴及師生衝突）
+    - 探索個人主題與社會參與
+
+teacher_self_reminder: |
+  - 持續每週記錄全班日常觀察（防呆機制）
+  - 定期與諮詢師、特教、科課教師協作
+  - 親師溝通應以「肯定與邀請」為主
+  - 提供「多元參與方式」而非強制外向
+
+---
+
+## 整體進度狀態
+
+all_blocks_status: "✓ ALL COMPLETED"
+session_completion_date: "2026-06-12"
+session_completion_percentage: 100%
+
+hm_block_1_status:
+  name: "行事曆、班級動力規劃與整體工作時程"
+  status: "✓ COMPLETED"
+  deliverable: "season-plan.md"
+  completion_date: "2026-03-03"
+  content_quality: "高 (12 週規劃、四個季節相位、重點學生策略明確)"
+
+hm_block_2_status:
+  name: "導師活動的規劃、執行、紀錄、反思"
+  status: "✓ COMPLETED"
+  deliverable: "spring-activities.md"
+  completion_date: "2026-06-10"
+  executed_activities_count: 4
+  content_quality: "高 (含設計理念、執行細節、學生觀察、教師反思)"
+
+hm_block_3_status:
+  name: "日常節點紀錄與親師溝通"
+  status: "✓ COMPLETED"
+  deliverable: "daily-observations-and-comms.md"
+  completion_date: "2026-06-10"
+  daily_snapshots_count: "20+"
+  parent_communications_count: "3 已發送，4 待進行"
+  blind_spot_checks_count: 1
+  content_quality: "高 (含個別觀察、通訊信範例、防呆機制)"
+
+hm_block_4_status:
+  name: "期末總結與發展評估"
+  status: "✓ COMPLETED"
+  deliverable: "term-summary.md"
+  completion_date: "2026-06-12"
+  student_evaluations_completed: "4 樣本詳細評估（CL-02, CL-03, CL-15, CL-07），全班 18 人總表"
+  content_quality: "高 (含頭心手維度、星芒體分析、建議)"
+
+overall_session_notes: |
+  Claude 班導師工作春季學期完整記錄。四大區塊均已完成，內容涵蓋：
+  - 整體規劃 (季節、活動、時程、支持對象)
+  - 活動執行與學生觀察 (4 大活動、200+ 觀察記錄)
+  - 日常片段與親師溝通 (20+ 日常快照、3 封信函、防呆機制)
+  - 期末評估 (4 樣本深評估、全班 18 人維度分析、建議)
+
+  本文件可作為「Waldorf TeacherOS 導師模組」的完整範例，展示：
+  1. 華德福八年級導師的工作節奏與框架
+  2. 修復式正義與非暴力溝通的班級實踐
+  3. 星芒體敏銳化階段的發展觀察重點
+  4. 多元學習者 (內向、特教、情感困難) 的支持策略
+  5. 親師生三角溝通的模式
+
+next_session_preparation: |
+  - 暑期：撰寫班級年誌，記錄本學年故事
+  - 秋季準備：回顧春季關鍵進展，為九年級銜接做準備
+  - 新學季開始時，重新讀取本文件定位季節與班級狀態
+
+---
+# 文件結束

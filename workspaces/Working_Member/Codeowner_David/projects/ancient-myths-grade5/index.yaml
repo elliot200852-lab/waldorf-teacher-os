@@ -1,0 +1,374 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 五年級古文明神話・故事總索引
+# 路徑：projects/ancient-myths-grade5/index.yaml
+# 由 pipeline 自動維護，勿手動編輯
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+stories:
+  - id: AM001
+    title: 創世與最初的人類（一）
+    block: block-1-india
+    story_ref: "Story 1-2"
+    mythology_topic: "梵天創世——宇宙蛋 Hiranyagarbha"
+    date_created: 2026-03-25
+    files:
+      content: stories/AM001/content.md
+      waldorf_teaching: stories/AM001/waldorf-teaching.md
+      chalkboard_prompt: stories/AM001/chalkboard-prompt.md
+      images: stories/AM001/images.md
+      references: stories/AM001/references.md
+      raw_materials: stories/AM001/raw-materials.md
+      quality_report: stories/AM001/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1B8bTko-G_zTWHJOUqtMVgrARA0BzT46u"
+      pdf: "17O7xiEwg3snCkUlKrUOTXmL5TNY1Sxsg"
+    tags: [梵天, 創世, 宇宙蛋, Hiranyagarbha, 古印度, 夢境意識]
+
+  - id: AM003
+    title: 摩奴與大洪水
+    block: block-1-india
+    story_ref: "Story 3-4"
+    mythology_topic: "摩奴（Manu）——毗濕奴魚化身（摩蹉 Matsya）引導人類渡過大洪水，重建世界"
+    date_created: 2026-03-26
+    files:
+      content: stories/AM003/content.md
+      waldorf_teaching: stories/AM003/waldorf-teaching.md
+      chalkboard_prompt: stories/AM003/chalkboard-prompt.md
+      images: stories/AM003/images.md
+      references: stories/AM003/references.md
+      raw_materials: stories/AM003/raw-materials.md
+      quality_report: stories/AM003/quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1xuDpxgs6Rit7-fu_MnX7_BtITrNzw3EX"
+      pdf: "1SLMIPX-4ud2heGDNjljrXXuYPp6OmLIk"
+    tags: [摩奴, Manu, 摩蹉, Matsya, 毗濕奴, 大洪水, 古印度, 夢境意識, 洪水神話]
+
+  - id: AM004
+    title: 種姓制度與聖牛
+    block: block-1-india
+    story_ref: "Story 3-4"
+    mythology_topic: "普魯沙宇宙人神話——四個種姓從神的身體誕生；神牛卡瑪達努（Kamadhenu）的故事"
+    date_created: 2026-03-26
+    files:
+      content: stories/AM004/content.md
+      waldorf_teaching: stories/AM004/waldorf-teaching.md
+      chalkboard_prompt: stories/AM004/chalkboard-prompt.md
+      images: stories/AM004/images.md
+      references: stories/AM004/references.md
+      raw_materials: stories/AM004/raw-materials.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1q4h_R_35AfCEnXjq1lgDsQ86wVajPoBu"
+      pdf: "187-ZN1mB3DZAwFL5kRP06hoFwu8Kj6DT"
+    tags: [普魯沙, Purusha, 種姓制度, Varna, 卡瑪達努, Kamadhenu, 神牛, 摩奴法典, 古印度, 夢境意識]
+
+  - id: AM005
+    title: 摩訶婆羅多——般度五子
+    block: block-1-india
+    story_ref: "Story 5"
+    mythology_topic: "般度五兄弟（堅戰、怖軍、阿周那、無種、偕天）的史詩冒險——俱盧之野大戰前夕，阿周那的猶豫與克里希納的薄伽梵歌教義"
+    date_created: 2026-03-27
+    files:
+      content: stories/AM005/content.md
+      waldorf_teaching: stories/AM005/waldorf-teaching.md
+      chalkboard_prompt: stories/AM005/chalkboard-prompt.md
+      images: stories/AM005/images.md
+      references: stories/AM005/references.md
+      raw_materials: stories/AM005/raw-materials.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1k7pmipzQUdV3Sd_VPXBIdUilRiaFvpXH"
+      pdf: "1Gd50NLQ34xSZr1J5wiIqBsQ458vddv91"
+    tags: [摩訶婆羅多, Mahabharata, 般度五子, Pandava, 阿周那, Arjuna, 克里希納, Krishna, 薄伽梵歌, Bhagavad Gita, 俱盧之野, Kurukshetra, 古印度, 夢境意識, 達磨, dharma]
+
+  - id: AM006
+    title: 羅摩與悉多
+    block: block-1-india
+    story_ref: "Story 6"
+    mythology_topic: "羅摩衍那（Ramayana）——羅摩流放森林、悉多遭魔王拉瓦納劫走、猴神哈奴曼越海尋人、楞伽之戰、排燈節的起源"
+    date_created: 2026-03-28
+    files:
+      content: stories/AM006/content.md
+      waldorf_teaching: stories/AM006/waldorf-teaching.md
+      chalkboard_prompt: stories/AM006/chalkboard-prompt.md
+      images: stories/AM006/images.md
+      references: stories/AM006/references.md
+      raw_materials: stories/AM006/raw-materials.md
+      quality_report: stories/AM006/quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1h5Z9ZpLUnnKCRQNnTdGXz7P9qTeuF7ZP"
+      pdf: "11NcwPQp_xBVSmwwxwF777_5fdumk9u64"
+    tags: [羅摩衍那, Ramayana, 羅摩, Rama, 悉多, Sita, 哈奴曼, Hanuman, 拉瓦納, Ravana, 排燈節, Diwali, dharma, 古印度, 夢境意識, 忠誠, 奉獻]
+
+  - id: AM007
+    title: 佛陀
+    block: block-1-india
+    story_ref: "Story 7"
+    mythology_topic: "悉達多太子離開宮殿，看見老、病、死——菩提樹下的覺悟"
+    date_created: 2026-03-30
+    files:
+      content: stories/AM007/content.md
+      waldorf_teaching: stories/AM007/waldorf-teaching.md
+      chalkboard_prompt: stories/AM007/chalkboard-prompt.md
+      images: stories/AM007/images.md
+      references: stories/AM007/references.md
+      raw_materials: stories/AM007/raw-materials.md
+      quality_report: stories/AM007/quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "14GUj1IlApHbkRyZUAUETk7NheM-WYhIc"
+      pdf: "1fWnTRXbGgCfBqq0Za8-cbEkKnflhAXue"
+    tags: [佛陀, Buddha, 悉達多, Siddhartha, 四門遊觀, 四聖諦, 菩提樹, 覺悟, 中道, 無常, 古印度, 夢境意識, 台灣佛教, 法鼓山, 慈濟]
+
+  - id: TW01
+    title: 島嶼插曲：布農族的射日與創世
+    block: island-interlude
+    story_ref: "台灣原住民——布農族"
+    mythology_topic: "布農族射日神話——太古有兩個太陽，父子踏上漫長旅途射下一個，太陽變成月亮，從此有了晝夜與農耕曆法"
+    tribe: 布農族
+    date_created: 2026-03-31
+    taiwan_connection:
+      - 布農族射日神話為台灣原住民最廣為人知的神話之一
+      - 與古印度 Block 1 形成對比：冥想式 vs 行動式創世
+      - 布農族傳統領域橫跨玉山國家公園，地理連結強
+    files:
+      content: stories/TW01/content.md
+      waldorf_teaching: stories/TW01/waldorf-teaching.md
+      chalkboard_prompt: stories/TW01/chalkboard-prompt.md
+      images: stories/TW01/images.md
+      references: stories/TW01/references.md
+      raw_materials: stories/TW01/raw-materials.md
+      quality_report: stories/TW01/quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1j0HOpvjH-BuOaL_0K0feT2o_XKI7TdM6"
+      pdf: "1mHpkmG8pa1DlGYI2I4oljUId4iEM-pjv"
+    tags: [布農族, Bunun, 射日神話, 台灣原住民, 島嶼插曲, 創世神話, 小米文化, pasibutbut, 南島語族, 玉山, 行動意識]
+
+  - id: TW02
+    title: 島嶼插曲：泰雅族的彩虹橋——善與惡的分界
+    block: island-interlude
+    story_ref: "台灣原住民——泰雅族"
+    mythology_topic: "泰雅族 gaga 規範與彩虹橋（Hakaw Utux）傳說：遵守 gaga 者死後可走過彩虹橋回到祖靈身邊"
+    tribe: 泰雅族
+    date_created: 2026-04-10
+    taiwan_connection:
+      - gaga 是泰雅族的核心倫理規範，涵蓋禁忌、祭儀、日常行為準則
+      - 彩虹橋（Hakaw Utux）傳說與波斯善惡二元呼應，但根植於台灣在地知識體系
+      - 與波斯 Block 3 形成文明對話：不同文化對善惡、彼岸的想像
+    files:
+      content: stories/TW02/TW02-content.md
+      waldorf_teaching: stories/TW02/TW02-waldorf-teaching.md
+      chalkboard_prompt: stories/TW02/TW02-chalkboard-prompt.md
+      images: stories/TW02/TW02-images.md
+      references: stories/TW02/TW02-references.md
+      raw_materials: stories/TW02/TW02-raw-materials.md
+      quality_report: stories/TW02/TW02-quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1bIDLMoYUWCDm12omJ1ZkBnLDAG9ENaFP"
+      pdf: "1w1MRxv-qIkKMngfE1Mgdkd_SP5LBkN7e"
+    tags: [泰雅族, Atayal, 彩虹橋, Hakaw Utux, gaga, 台灣原住民, 島嶼插曲, 善惡分界, 祖靈, 倫理規範]
+
+  - id: AM002
+    title: 創世與最初的人類（二）
+    block: block-1-india
+    story_ref: "Story 1-2"
+    mythology_topic: "印度教三位一體——梵天（創造）、毗濕奴（維護）、濕婆（毀滅與再生）"
+    date_created: 2026-03-25
+    files:
+      content: stories/AM002/content.md
+      waldorf_teaching: stories/AM002/waldorf-teaching.md
+      chalkboard_prompt: stories/AM002/chalkboard-prompt.md
+      images: stories/AM002/images.md
+      references: stories/AM002/references.md
+      raw_materials: stories/AM002/raw-materials.md
+      quality_report: stories/AM002/quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1OBoo-RGEQ-Fx7M3ZDyHifakBCdYc9vy7"
+      pdf: "1DNMDFPmLT19fMdYbQFAUpg_1YdPV0b4_"
+    tags: [Trimurti, 三相神, 梵天, 毗濕奴, 濕婆, 那塔羅加, 古印度, 宇宙呼吸, 布農族]
+
+  - id: AM008
+    title: 阿胡拉·馬茲達與阿里曼（一）
+    block: block-2-persia
+    story_ref: "Story 8-9"
+    mythology_topic: "瑣羅亞斯德教——光明之神阿胡拉·馬茲達與黑暗之神阿里曼的永恆戰鬥"
+    date_created: 2026-04-01
+    files:
+      content: stories/AM008/content.md
+      waldorf_teaching: stories/AM008/waldorf-teaching.md
+      chalkboard_prompt: stories/AM008/chalkboard-prompt.md
+      images: stories/AM008/images.md
+      references: stories/AM008/references.md
+      raw_materials: stories/AM008/raw-materials.md
+      quality_report: stories/AM008/quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "199f4fzkZtJpLwhKQPIFn-LMjl8hxZIN7"
+      pdf: "1PYKWcszwHVaxCkU2HK0GxOpvVb6LEnSA"
+    tags: [瑣羅亞斯德, Zoroastrianism, 阿胡拉·馬茲達, 阿里曼, 善惡二元論, 古波斯, Bundahishn, 拜火教, 泰雅族, 彩虹橋]
+
+  - id: AM009
+    title: 阿胡拉·馬茲達與阿里曼（二）
+    block: block-2-persia
+    story_ref: "Story 8-9"
+    mythology_topic: "善思善言善行——透過勤勞工作對抗黑暗，農耕作為神聖行為"
+    date_created: 2026-04-03
+    taiwan_connection:
+      - 布農族小米文化——農耕作為與天神溝通的神聖行為
+      - 波斯農耕轉型與台灣原住民從狩獵到定居的平行
+    files:
+      content: stories/AM009/content.md
+      waldorf_teaching: stories/AM009/waldorf-teaching.md
+      chalkboard_prompt: stories/AM009/chalkboard-prompt.md
+      images: stories/AM009/images.md
+      references: stories/AM009/references.md
+      raw_materials: stories/AM009/raw-materials.md
+      quality_report: stories/AM009/quality-report.md
+    quality_check: passed
+    chalkboard: pending
+    drive:
+      html: "1I5iNnOETESwPdHoQPyj9h0_RURJmErT2"
+      pdf: "1gf4_7MHVF6a9ymfkWzrJOQu7qrmmBRok"
+    tags: [瑣羅亞斯德, Zoroastrianism, 善思善言善行, Humata, Hukhta, Hvarshta, 阿胡拉·馬茲達, 農耕, Vendidad, 古波斯, 布農族, 小米文化]
+
+  - id: AM010
+    title: 瑣羅亞斯德
+    block: block-2-persia
+    story_ref: "Story 10"
+    mythology_topic: "瑣羅亞斯德（Zarathustra/Zoroaster）——先知在曠野中接受阿胡拉·馬茲達的啟示，聖典《阿維斯陀》的誕生，從遊牧到農耕的文明轉型"
+    taiwan_connection:
+      - 布農族小米祭儀——農耕作為與天地溝通的神聖行為
+      - 泰雅族 gaga 行為準則與善思善言善行的倫理呼應
+    date_created: 2026-04-04
+    files:
+      content: stories/AM010/content.md
+      waldorf_teaching: stories/AM010/waldorf-teaching.md
+      chalkboard_prompt: stories/AM010/chalkboard-prompt.md
+      images: stories/AM010/images.md
+      references: stories/AM010/references.md
+      raw_materials: stories/AM010/raw-materials.md
+      quality_report: stories/AM010/quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "16REOOGhe0dY8G3Ka3OcacmxDFmtjDB0k"
+      pdf: "1lole_hTe9ymiwfUiua_THVjab82eX7Vq"
+    tags: [瑣羅亞斯德, Zarathustra, Zoroaster, 阿維斯陀, Avesta, 迦薩, Gathas, 善思善言善行, 阿胡拉·馬茲達, 維斯塔斯帕, 欽瓦特橋, 拜火教, 古波斯, 二元覺醒, 布農族, 泰雅族, gaga]
+
+  - id: AM011
+    title: 波斯的智者
+    block: block-2-persia
+    mythology_topic: "東方三博士的原型——波斯新年 Nowruz，春天戰勝冬天"
+    taiwan_connection: "泰雅族的彩虹橋——善與惡的分界"
+    date_created: 2026-04-09
+    files:
+      content: stories/AM011/AM011-content.md
+      waldorf_teaching: stories/AM011/AM011-waldorf-teaching.md
+      chalkboard_prompt: stories/AM011/AM011-chalkboard-prompt.md
+      images: stories/AM011/AM011-images.md
+      references: stories/AM011/AM011-references.md
+      raw_materials: stories/AM011/AM011-raw-materials.md
+      quality_report: stories/AM011/AM011-quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1SiO-2RNpC_QImxuRfs3hkCBovWzJhj5j"
+      pdf: "1DdXigIY3bobuPY1uPb_IYmd4UP0Or7oI"
+    tags: [東方三博士, Magi, Nowruz, 波斯新年, 智者, 明星, 古波斯, 善惡二元, Zoroastrian, 彩虹橋, 泰雅族, 春天戰勝冬天]
+
+  - id: AM012
+    title: 馬爾杜克的創世
+    block: block-3-babylon
+    story_ref: "Story 12"
+    mythology_topic: "馬爾杜克斬殺混沌女神提亞瑪特，用她的身體創造天地——秩序從戰鬥中誕生"
+    taiwan_connection: "排灣族百步蛇——社會秩序從神話中誕生，但通過盟約而非征服"
+    date_created: 2026-04-13
+    files:
+      content: stories/AM012/AM012-content.md
+      waldorf_teaching: stories/AM012/AM012-waldorf-teaching.md
+      chalkboard_prompt: stories/AM012/AM012-chalkboard-prompt.md
+      images: stories/AM012/AM012-images.md
+      references: stories/AM012/AM012-references.md
+      raw_materials: stories/AM012/AM012-raw-materials.md
+      quality_report: stories/AM012/AM012-quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1W0Q8Rsb_KI-MbQfmVWBdXc3_RKLQG9Dr"
+      pdf: "1cy-z_89kwKolBJ_paU7cRZDBlDMWAYBz"
+    tags: [馬爾杜克, Marduk, 提亞瑪特, Tiamat, 埃努瑪·埃利什, Enuma Elish, 巴比倫, 美索不達米亞, 創世, 混沌, Chaoskampf, 星辰智慧, 排灣族, 百步蛇]
+
+  - id: AM013
+    title: 吉爾伽美什（一）——英雄與野人
+    block: block-3-babylon
+    story_ref: "Story 13-14"
+    mythology_topic: "烏魯克國王吉爾伽美什與恩奇都的友誼——野人被文明化，殺死森林守護者洪巴巴"
+    taiwan_connection: "布農族射日神話——仰望同一片天空的不同民族"
+    date_created: 2026-04-16
+    files:
+      content: stories/AM013/AM013-content.md
+      waldorf_teaching: stories/AM013/AM013-waldorf-teaching.md
+      chalkboard_prompt: stories/AM013/AM013-chalkboard-prompt.md
+      images: stories/AM013/AM013-images.md
+      references: stories/AM013/AM013-references.md
+      raw_materials: stories/AM013/AM013-raw-materials.md
+      quality_report: stories/AM013/AM013-quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1GY8kSXjyD5dgMme3_Il7UvaOy_bhjMpM"
+    tags: [吉爾伽美什, Gilgamesh, 恩奇都, Enkidu, 洪巴巴, Humbaba, 烏魯克, 友誼, 文明與荒野, 雪松森林, 巴比倫, 美索不達米亞, 星辰智慧, 布農族, 射日]
+
+  - id: AM014
+    title: 吉爾伽美什（二）——追尋永生
+    block: block-3-babylon
+    story_ref: "Story 13-14"
+    mythology_topic: "恩奇都之死→渡過死亡之水→烏塔那匹什提姆的大洪水→永生草被蛇偷走——人類終究無法逃避死亡"
+    taiwan_connection: "泰雅族彩虹橋、布農族祖靈觀——不同民族對死後之路的想像"
+    date_created: 2026-04-17
+    files:
+      content: stories/AM014/AM014-content.md
+      waldorf_teaching: stories/AM014/AM014-waldorf-teaching.md
+      chalkboard_prompt: stories/AM014/AM014-chalkboard-prompt.md
+      images: stories/AM014/AM014-images.md
+      references: stories/AM014/AM014-references.md
+      raw_materials: stories/AM014/AM014-raw-materials.md
+      quality_report: stories/AM014/AM014-quality-report.md
+    quality_check: passed
+    chalkboard: embedded
+    drive:
+      html: "1En2ZcT7Q0O_sfuGsgD2rGQl2QBdlKv_h"
+      pdf: "1RORQEEan-ufSCQJWKXsuVpXFeqQP86ps"
+    tags: [吉爾伽美什, Gilgamesh, 恩奇都, Enkidu, 烏塔那匹什提姆, Utnapishtim, 大洪水, 永生草, 死亡之水, 西杜瑞, Siduri, 烏魯克, 巴比倫, 美索不達米亞, 星辰智慧, 追尋永生, 泰雅族, 彩虹橋, 布農族]
+
+# 每筆格式：
+# - id: AM001
+#   title: 創世——梵天的夢
+#   block: block-1-india
+#   kovacs_chapter: null  # 無原文時為 null
+#   date_created: 2026-03-25
+#   files:
+#     content: stories/AM001/content.md
+#     waldorf_teaching: stories/AM001/waldorf-teaching.md
+#     chalkboard_prompt: stories/AM001/chalkboard-prompt.md
+#     images: stories/AM001/images.md
+#     references: stories/AM001/references.md
+#     raw_materials: stories/AM001/raw-materials.md
+#     quality_report: stories/AM001/quality-report.md
+#   quality_check: passed
+#   tags: []

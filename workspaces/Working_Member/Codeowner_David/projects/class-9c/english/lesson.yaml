@@ -1,0 +1,57 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Layer 3】
+# 名稱：九年級 C 班・英文科目參數
+# 路徑：projects/class-9c/english/lesson.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+class: 9C
+subject: 英文
+lesson_type: subject_lesson
+di_framework_ref: projects/_di-framework/project.yaml
+
+structure:
+  duration_per_session: 45 分鐘
+  weekly_sessions: 4
+  sessions_per_semester: 80
+
+current_unit:
+  theme: "Unit 2 — 深入：街上的人們，語言的骨架（第 3-5 週）"
+  text: "The House on Mango Street"
+  status: in_progress
+  week: 5
+
+# ── 第五週教學進度 ──
+week5:
+  session_1:  # 小說研讀
+    topic: "The Road Not Taken — 我們為選擇編織的故事"
+    grammar_focus: "if / because 副詞子句"
+    status: completed
+    content:
+      - content/9C-week5-1-v1-教師教案.md
+      - content/9C-week5-1-v1-學習單.md
+  session_2:  # 文學回應與創作
+    topic: 待設計（week5-2 課堂流程）
+    status: pending
+  session_3:  # 語言工坊（一）
+    topic: "動詞片語攻防戰 — 寒假作業驗收測驗課"
+    type: assessment
+    tags:
+      - 動詞片語
+      - 寒假作業驗收
+    scope: "講義 #143-#174（32 個片語，測驗涵蓋 25 個）"
+    versions:
+      basic: 三選一（基礎版）
+      advanced: 四選一（進階版）
+    flow: "配對複習 5min + 快閃暖身 3min → 攻防戰 10min → 正式測驗 20min → 片語印象牆 5min"
+    follow_up: "The House on Mango Street 片語探索（Task A 找片語 / Task B 寫場景）"
+    status: completed
+    content:
+      - content/9C-week5-phrasal-verb-quiz.md
+      - content/9C-week5-3-v1-教師教案.md
+      - content/9C-week5-3-v1-學習單.md
+  session_4:  # 語言工坊（二）
+    topic: 待設計
+    status: pending
+
+next_steps:
+  - 設計 week5-2 課堂流程（第五週第二節：文學回應與創作）
+  - 設計 week5-4 語言工坊（二）

@@ -1,0 +1,46 @@
+subject: 台語
+last_updated: 2026-04-02
+current_position:
+  block: 三 (評量與追蹤)
+  step: 2 (DI Profile 已更新詳細筆記與轉學生)
+next_action:
+  description: 已完成 Unit 4《老牛、白鷺與農伯》大區塊教案的全量整併與美化。儲存庫已清理，僅保留最終定稿。
+  input_needed_from_teacher: 下次開工時，請告知是否要啟動新單元設計（例如：第五單元）或其他專案？
+  tool_to_use: opening
+confirmed_decisions:
+  - 確立了結合華德福轉化教學法與 DI 的「TeacherOS 萬用課程設計腳本」 (包含課前沙盤推演與深度覆盤)。
+  - 徹底重構 4C 台語課程設計模式，從線性時間軸改為生動活潑的「大區塊模組調度 (Modular Palette)」。
+  - 完成 Unit 4《老牛、白鷺與農伯》大區塊課案（含水牛哥唸謠、牛王傳說、泥巴對話與遊戲，並儲存至 content/taiwanese-unit-4-modular.md）。
+  - 已將最新進度與腳本 Commit & Push 進入遠端專案庫。
+output_files:
+  syllabus_versions:
+    - version: v1
+      date: 20260316
+      paths:
+        class_view: workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-syllabus-v1-20260316.md
+        subject_view: workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-syllabus-v1-20260316.md
+  unit_design_versions:
+    - version: v1
+      lessons: L1-L4
+      date: 20260316
+      paths:
+        class_view: workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-unit-1-v1.md
+        subject_view: workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-unit-1-v1.md
+    - version: v1
+      lessons: L5-L7
+      date: 20260316
+      paths:
+        class_view: workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-unit-2-v1.md
+        subject_view: workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-unit-2-v1.md
+    - version: v1
+      lessons: L8
+      date: 20260316
+      paths:
+        class_view: workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-unit-3-v1.md
+        subject_view: workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-unit-3-v1.md
+    - version: v1
+      lessons: L4
+      date: 20260402
+      paths:
+        class_view: workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/content/taiwanese/taiwanese-unit-4-水牛哥與白鷺鷥-v1.md
+        subject_view: workspaces/Working_Member/Teacher_林詩閔/projects/class-4c/taiwanese/content/taiwanese-unit-4-水牛哥與白鷺鷥-v1.md

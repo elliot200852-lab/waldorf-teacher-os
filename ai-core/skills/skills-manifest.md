@@ -1,0 +1,82 @@
+---
+aliases:
+  - "技能索引"
+---
+
+# TeacherOS — 技能索引（Skills Index）
+
+> **所有技能的完整執行規格位於：`ai-core/skills/`**
+> 本文件是輕量索引，列出技能名稱、觸發語與規格檔案路徑。
+
+---
+
+## 技能觸發對照表
+
+| 教師說 | 技能 | 完整規格 |
+|--------|------|---------|
+| 「開工」「開始」「早安」「我來了」「start」 | `opening` | `ai-core/skills/opening.md` |
+| 「載入 9C」「讀一下狀態」 | `load` | `ai-core/skills/load.md` |
+| 「現在在哪？」「9C 做到哪了？」 | `status` | `ai-core/skills/status.md` |
+| 「開始大綱」「做學季規劃」 | `syllabus` | `ai-core/skills/syllabus.md` |
+| 「進入備課」「做 Block 2」 | `lesson` | `ai-core/skills/lesson.md` |
+| 「收工」「存檔」「收尾」「結束今天」「儲存」 | `wrap-up` | `ai-core/skills/wrap-up.md` |
+| 「查 DI」「確認差異化」 | `di-check` | `ai-core/skills/di-check.md` |
+| 「載入教學哲學」「看英文背景」 | `ref` | `ai-core/skills/ref.md` |
+| 「導師業務」「班級事件」「個案討論」 | `homeroom` | `ai-core/skills/homeroom.md` |
+| 「區塊結束」「做反思」「這個 block 完成了」 | `block-end` | `ai-core/skills/block-end.md` |
+| 「設計節奏」「規劃這週」「吸氣呼氣」 | `rhythm` | `ai-core/skills/rhythm.md` |
+| 「記錄學生」「個案觀察」「記一下誰」「學生紀錄」 | `student-note` | `ai-core/skills/student-note.md` |
+| 「教學紀錄」「教學回顧」「今天上課」「教學反思」 | `teaching-log` | `ai-core/skills/teaching-log.md` |
+| 「寫家長信」「學期評語」「家長通知」 | `parent-letter` | `ai-core/skills/parent-letter.md` |
+| 「同步 Cowork」「更新 Cowork」 | `sync-cowork` | `ai-core/skills/sync-cowork.md` |
+| 「寄信」「寄 Email」「發郵件」「寄給」 | `send-email` | `ai-core/skills/send-email.md` |
+| 「上傳到雲端」「同步 Drive」「傳到 Drive」 | `drive` | `ai-core/skills/drive.md` |
+| 「查行事曆」「排課表」「加行事曆」 | `calendar` | `ai-core/skills/calendar.md` |
+| 「開試算表」「寫入 Sheets」「讀 Sheets」 | `sheets` | `ai-core/skills/sheets.md` |
+| 「編輯文件」「寫入 Docs」「開 Google Docs」 | `docs-edit` | `ai-core/skills/docs-edit.md` |
+| 「設計一堂課」「45/90 分鐘」「連堂」「主課程」「lesson design」 | `lesson-engine` | `ai-core/skills/lesson-engine.md` + 科目覆蓋層 |
+| 「英文課設計」「English lesson」 | `english-overlay`（覆蓋層） | `ai-core/skills/english-overlay.md`（由 lesson-engine 載入） |
+| 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `git-history` | `ai-core/skills/git-history.md` |
+| 「sync Obsidian」「更新索引」「補標籤」「整理首頁」 | `obsidian-sync` | `ai-core/skills/obsidian-sync.md` |
+| 「加入新老師」「新增老師」「新增教師」「add teacher」 | `add-teacher` | `ai-core/skills/add-teacher.md` |
+| 「生成新檔案」「建立新文件」「新增文件」「產出新文件」 | `new-doc` | `ai-core/skills/new-doc.md` |
+| 「發 PR」「合併申請」「送回主系統」 | `pull-request` | `ai-core/skills/pull-request.md` |
+| 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `video-setup` | `ai-core/skills/video-setup.md` |
+| 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `sync-agents` | `ai-core/skills/sync-agents.md` |
+
+---
+
+## 內部共用技能（不可由教師直接觸發）
+
+| 技能 | 用途 | 被誰呼叫 | 完整規格 |
+|------|------|---------|---------|
+| `gemini-chalkboard` | Gemini 黑板畫生成（12 步 + 圖片內容驗證） | story-daily / ancient-myths-daily / botany-daily | `ai-core/skills/gemini-chalkboard.md` |
+| `publish-pipeline` | 統一發布管線（組裝 → 驗證 → 上傳 → 索引） | 各 daily pipeline 或教師手動觸發 | `ai-core/skills/publish-pipeline.md` |
+
+---
+
+## 使用方式
+
+**Claude Code**
+直接輸入 slash command，例如 `/opening`、`/load 9c`、`/wrap-up 9c`。
+`.claude/commands/` 中的薄層入口會自動引導至 `ai-core/skills/` 的正本執行。
+
+**其他 AI（Gemini、ChatGPT、任何有檔案讀取能力的 AI Agent）**
+1. 讀取 `ai-core/skills/README.md` 了解技能目錄結構
+2. 讀取對應技能的 `.md` 檔案取得完整執行規格
+3. 依照規格執行
+
+---
+
+## 新增或修改技能
+
+見 `ai-core/skills/README.md` 的「如何新增技能」章節。
+
+**必做：** 每次新增或修改技能後，必須同步更新以下三份索引文件：
+1. `ai-core/skills/README.md` — 技能清單表
+2. `ai-core/skills/skills-manifest.md`（本文件）— 觸發對照表
+3. `ai-core/AI_HANDOFF.md` — 技能觸發表與技能清單
+
+---
+
+*維護者：David。技能正本路徑：`ai-core/skills/`。最後更新：2026-03-17*

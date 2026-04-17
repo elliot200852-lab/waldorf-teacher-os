@@ -1,0 +1,17 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 導師課進度錨點
+# 路徑：class-3a/homeroom/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+subject: 導師課
+class: 3a
+teacher: wang-wan-ting
+
+current_position:
+  block: 0
+  step: 0
+
+next_action:
+  description: 尚未開始——等待教師啟用
+
+last_updated: 2026-04-04

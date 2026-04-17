@@ -1,0 +1,14 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS DI 輪廓配置】
+# 名稱：九年級 D 班・台灣文學主課程差異化設計設定
+# 路徑：projects/class-9d/ml-taiwan-literature/di-profile.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+subject: ml_taiwan_literature
+
+scaffolding_strategies:
+  A: []
+  B: []
+  C: []
+  D: []
+
+extension_strategies: []

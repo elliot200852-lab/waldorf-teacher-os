@@ -1,0 +1,44 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：Claude 班・英文課進度錨點
+# 路徑：projects/class-claude/working/english-session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+english_session:
+  class: class-claude
+  last_updated: 2026-03-03
+
+  current_position:
+    block: 四
+    step: 2
+    sub_block: null
+    unit_number: null
+    current_week: 10
+
+  confirmed_decisions:
+    - "學期範圍：下學期，10 週，40 節課"
+    - "每週節奏：2 節文學研讀（Freedom Writers Diary）+ 2 節語言工坊"
+    - "語言工坊：108 課綱三維度（字彙 + 溝通功能 + 文法句構）"
+    - "文學產出：個人日記式寫作，模仿 Freedom Writers 風格"
+    - "評量分配：寫作 40% + 日誌 20% + 課堂參與 15% + 語言技能 15% + 期末專題 10%"
+
+  next_action:
+    description: "Block 4 已完成，所有結案文件已產出。下學期可從 Block 1 重新規劃。"
+    input_needed_from_teacher: null
+
+  output_files:
+    syllabus_versions:
+      - version: v1
+        date: 20260303
+        status: 已確認
+        paths:
+          class_view: projects/class-claude/content/english/english-syllabus-v1-20260303.md
+          subject_view: projects/class-claude/english/content/english-syllabus-v1-20260303.md
+    units_completed:
+      - projects/class-claude/english/content/english-unit-1-v1-20260303.md
+      - projects/class-claude/english/content/english-units-2-4-v1-20260303.md
+    extensions_completed: []
+    assessment_files:
+      - projects/class-claude/english/content/teacher-term-report-20260510.md
+      - projects/class-claude/english/content/student-assessments-20260510.md
+
+  open_questions: []

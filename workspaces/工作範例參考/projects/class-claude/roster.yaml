@@ -1,0 +1,27 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 班級名冊（roster）— 含學生真名，gitignored
+# 路徑：projects/class-claude/roster.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+class: Claude
+grade: 八年級
+total: 18
+
+students:
+  - { id: CL-01, name: 林思語, seat: 1 }
+  - { id: CL-02, name: 陳宇翔, seat: 2 }
+  - { id: CL-03, name: 王小芮, seat: 3 }
+  - { id: CL-04, name: 張庭瑜, seat: 4 }
+  - { id: CL-05, name: 李承恩, seat: 5 }
+  - { id: CL-06, name: 黃芷萱, seat: 6 }
+  - { id: CL-07, name: 劉冠廷, seat: 7 }
+  - { id: CL-08, name: 吳佩蓉, seat: 8 }
+  - { id: CL-09, name: 蔡博宇, seat: 9 }
+  - { id: CL-10, name: 鄭雅琪, seat: 10 }
+  - { id: CL-11, name: 許皓軒, seat: 11 }
+  - { id: CL-12, name: 周依婷, seat: 12 }
+  - { id: CL-13, name: 楊子謙, seat: 13 }
+  - { id: CL-14, name: 趙心妍, seat: 14 }
+  - { id: CL-15, name: 洪晨翊, seat: 15 }
+  - { id: CL-16, name: 郭宥辰, seat: 16 }
+  - { id: CL-17, name: 蘇映瑄, seat: 17 }
+  - { id: CL-18, name: 謝翰廷, seat: 18 }

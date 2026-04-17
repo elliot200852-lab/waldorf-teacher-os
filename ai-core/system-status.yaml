@@ -1,0 +1,123 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 系統狀態快照】
+# 路徑：ai-core/system-status.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# 維護協議：
+#   讀取 — AI 平時「不主動」讀取此檔。
+#           以下情況才讀：
+#             1. David 說「查狀態」、「現在系統在哪」
+#             2. AI 需要跨班級比較現況
+#             3. 新 AI 首次接手且 AI_HANDOFF.md 不足以定位
+#   寫入 — 每次對話結束，AI「必須」更新有變動的欄位。
+#           只改有變化的欄位，不重寫整份文件。
+#   主要入口仍是 AI_HANDOFF.md，此文件是補充快照。
+#
+# 最後更新：2026-03-11
+
+system_status:
+
+  # ── 系統架構版本 ────────────────────────────────────
+  version: v7
+  architecture: Workspace + Collaborator + Branch 模式
+  last_major_restructure: 2026-03-04
+
+  # ── Workspace 結構 ─────────────────────────────────
+  workspace_structure:
+    container: workspaces/Working_Member/
+    naming_convention: "{Role}_{RealName}"
+    david_workspace: workspaces/Working_Member/Codeowner_David/
+    example_workspace: workspaces/工作範例參考/
+    template: workspaces/_template/
+
+  # ── Git 協作模型 ────────────────────────────────────
+  git_collaboration:
+    model: Collaborator + Branch
+    branch_naming: "workspace/{Teacher_ID}"
+    protection: Branch Protection + CODEOWNERS + Pre-commit Hook
+    teacher_daily_workflow: 在個人 branch 自由 commit/push
+    merge_to_main: 透過 PR，僅 David 可合併
+
+  # ── 框架與模板 ──────────────────────────────────────
+  di_framework: 完成（Block 1-4 模板、品質標準、輸出協議、108 課綱語言參考）
+  english_template: 完成（Block 1 含寫作風格邊界 + Block 2 + Block 3 + Block 4）
+  homeroom_template: 完成（HM Block 1-4 + Google iCal 同步機制）
+  main_lesson_template: 待建立
+
+  # ── David 的班級資料（位於 Codeowner_David workspace）──
+  # 路徑前綴：workspaces/Working_Member/Codeowner_David/projects/
+  students_yaml:
+    class-9c: 完成（roster + students + di-profile，22 人英文 DI 分類完成）
+    class-9d: 待填入（結構就緒，休眠中）
+
+  # ── 英文課進度 ──────────────────────────────────────
+  english_progress:
+    class-9c:
+      workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9c/
+      syllabus: v2-20260301（已輸出 Google Drive）
+      block: Block 2 Step 1（week5-1 已完成）
+      next: 設計 week5-2 課堂流程
+
+  # ── 台灣文學主課程進度（9D） ────────────────────────
+  ml_taiwan_literature_progress:
+    class-9d:
+      workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9d/
+      syllabus: 尚未開始
+      block: Block 0 Step 0 → 等待啟動 Block 1 學季大綱設計
+
+  # ── 未定主課程進度（9C） ────────────────────────────
+  ml_undecided_progress:
+    class-9c:
+      workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9c/
+      syllabus: 尚未開始
+      block: 休眠
+
+  # ── 導師業務進度 ────────────────────────────────────
+  homeroom_progress:
+    class-9c:
+      workspace_path: workspaces/Working_Member/Codeowner_David/projects/class-9c/
+      block: Block 3 Step 1 進行中
+      next: 3/12 發送三方面訪通知+晤談表；3/17 起三方面訪；3/21 班親會；3/28 春季節慶
+
+  # ── 環境與輸出系統 ──────────────────────────────────
+  environment:
+    build_sh: 完成（中文化 + 自動子資料夾 + /tmp 暫存 + Logo + 浮水印 + Front Matter 讀取 + 失敗保護 + GWS CLI 優先雙軌上傳）
+    pandoc: 3.9
+    google_drive: 已連接（Desktop 備案）
+    gws_cli: 首選上傳方式（MCP server 配置於 .claude/settings.json，涵蓋 drive/calendar/gmail/sheets/docs）；未安裝時自動退回 Google Drive Desktop
+    logo_watermark: 完成（Inline Logo + 華德福水彩浮水印，Gemini 完成）
+    demo_html: 完成（publish/teacheros-demo.html，153KB 自含，4 分頁，base64 資產嵌入）
+    voice_protocol: 完成（teacheros.yaml 內含 5 條語音輸入協議 + 開工報告模板）
+
+  # ── 多使用者與權限機制 ──────────────────────────────
+  multi_user_acl:
+    acl_yaml: 完成（David = Codeowner，教師 = Teacher_{姓名}，路徑皆指向 Working_Member/）
+    codeowners: 完成（.github/CODEOWNERS，@elliot200852-lab 全域保護 + 核心路徑保護）
+    pre_commit_hook: 完成（setup/hooks/pre-commit，雙重 email 驗證 + Python ACL 比對）
+    install_script: 完成（setup/install-hooks.sh）
+    workspace_template: 完成（workspaces/_template/）
+    workspace_david: 完成（workspaces/Working_Member/Codeowner_David/，含 class-9c + class-9d）
+    teacher_guide: v2.0（AI 口語指令版，含 Git 工作流程）
+    github_branch_protection: 已啟用（main branch 保護，PR 合併需 David 審批）
+    skills_wrap_up: 完成（ai-core/skills/wrap-up.md — 「收工」「存檔」觸發進度同步 + git commit + push）
+    skills_pull_request: 完成（ai-core/skills/pull-request.md — 「發 PR」觸發合併申請）
+    add_teacher_sh: 完成（自動建立 workspace + 權限 + 個人 branch）
+    quick_start_sh: 完成（含 Check 8 自動偵測並切換個人 branch + Check 9 Claude Code Hook 自動設定）
+    session_init_hook: 完成（.claude/scripts/session-init.py，動態 workspace 掃描，WORKSPACE_ID 驅動）
+
+  # ── 進行中維護專案 ──────────────────────────────────
+  pending_maintenance:
+    git_history_cleanup:
+      status: 待執行
+      handover: handover-git-cleanup.md
+      created: 2026-04-13
+      phases:
+        phase_1_working_tree: 待執行  # 工作目錄清理 + 跨平台修復
+        phase_2_git_filter: 待排程    # Git history filter（預計週五）
+        phase_3_branch_arch: 待排程   # 一師一分支架構
+      note: David 決定執行時間，依 handover 操作
+
+  # ── 系統維護 ────────────────────────────────────────
+  last_context_review: 2026-03-04
+  context_review_path: ai-core/reviews/context-review-20260228.md
+  session_log: ai-core/reviews/session-log.md

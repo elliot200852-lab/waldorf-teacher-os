@@ -1,0 +1,56 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 2】
+# 班級設定檔
+# 路徑：workspaces/Working_Member/Teacher_王琬婷/projects/class-3a/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+class: 3a
+grade: 三年級
+band_name: 嶺光班
+student_count: null
+teacher_role: 導師
+status: active
+
+homeroom_context: >
+  嶺光班，琬婷老師從一年級帶班至今。
+  三年級核心課題：九歲轉變（Rubicon），
+  孩子開始意識到自我與世界的分離，
+  課程以創世神話（南島/舊約/山海經）+ 農耕建築回應。
+
+class_files:
+  roster: roster.yaml
+  students: students.yaml
+
+subjects:
+  homeroom:
+    type: 班級導師模組
+    weekly_sessions: null
+    working_anchor: homeroom/session.yaml
+    content_path: homeroom/content/
+    note: 班級經營、活動規劃、親師溝通
+
+  ml-shanhaijing:
+    type: 週期性主課程（語文）
+    duration: 約 3 週（春季第 4-6 週）
+    schedule: 主課程時段 08:20-10:20
+    working_anchor: ml-shanhaijing/session.yaml
+    content_path: ml-shanhaijing/content/
+    reference_path: ml-shanhaijing/reference/
+    note: >
+      山海經華夏神話——三年級創世神話文化三部曲之第三部。
+      接續秋季南島神話、冬季舊約。
+
+current_semester: 2025-2026
+current_focus: 山海經神話主課程備課啟動
+
+next_steps:
+  - 填入學生 DI 樣態（students.yaml）
+  - 山海經神話 Block 1：確認故事選材與教學順序
+  - 導師模組啟用
+
+cross_module_notes:
+  active:
+    - >
+      山海經故事與秋季南島神話有跨文化母題呼應
+      （射日、洪水、創世），可在教學中建立連結
+  resolved: []

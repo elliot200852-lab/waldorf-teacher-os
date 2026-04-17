@@ -1,0 +1,126 @@
+# ━━━
+# 【TeacherOS 素材資料】
+# 名稱：AM012 博物館素材（美索不達米亞）
+# 路徑：workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM012/AM012-museum-materials.yaml
+# ━━━
+query: Mesopotamia
+api_source: met
+grade: 9
+timestamp: 20260413-120514
+total_results: 8
+items:
+- id: met_254613
+  title: Bronze figure of a boy in Eastern dress
+  title_zh: ''
+  artist: ''
+  date: mid-late 1st century BCE
+  period: Greek and Roman Art
+  medium: Bronze
+  image_url: https://images.metmuseum.org/CRDImages/gr/original/DP-39819-001.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/gr/web-large/DP-39819-001.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/254613
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_551786
+  title: Book of the Dead of the Priest of Horus, Imhotep (Imuthes)
+  title_zh: ''
+  artist: ''
+  date: ca. 332–200 B.C.
+  period: Egyptian Art
+  medium: Papyrus, ink
+  image_url: https://images.metmuseum.org/CRDImages/eg/original/2-35.9.20a–w_EGDP014589-4594.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/eg/web-large/2-35.9.20a–w_EGDP014589-4594.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/551786
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_729644
+  title: In proof of true love, a watercarrier skeleton arguing with a woman (Posada);
+    two skeleton angels in upper corners (Manilla)
+  title_zh: ''
+  artist: José Guadalupe Posada
+  date: ca. 1890–96
+  period: Drawings and Prints
+  medium: Type-metal engraving and letterpress
+  image_url: https://images.metmuseum.org/CRDImages/dp/original/DP865112.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/dp/web-large/DP865112.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/729644
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_472562
+  title: The Fieschi Morgan Staurotheke
+  title_zh: ''
+  artist: ''
+  date: early 9th century
+  period: Medieval Art
+  medium: Gilded silver, gold, enamel worked in cloisonné, and niello
+  image_url: https://images.metmuseum.org/CRDImages/md/original/DT119.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/md/web-large/DT119.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/472562
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_329077
+  title: Head of a ruler
+  title_zh: ''
+  artist: ''
+  date: ca. 2300–2000 BCE
+  period: Ancient West Asian Art
+  medium: Copper alloy
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP-23662-001.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP-23662-001.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/329077
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_329081
+  title: 'Proto-Cuneiform tablet with seal impressions: administrative account of
+    barley distribution with cylinder seal impression of a male figure, hunting dogs,
+    and boars'
+  title_zh: ''
+  artist: ''
+  date: ca. 3100–2900 BCE
+  period: Ancient West Asian Art
+  medium: Clay
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP293243.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP293243.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/329081
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_437422
+  title: Charity
+  title_zh: ''
+  artist: Guido Reni
+  date: ca. 1630
+  period: European Paintings
+  medium: Oil on canvas
+  image_url: https://images.metmuseum.org/CRDImages/ep/original/DT10776.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/ep/web-large/DT10776.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/437422
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_324138
+  title: Bowl with radial design of ibex horns
+  title_zh: ''
+  artist: ''
+  date: ca. 4500–4100 BCE
+  period: Ancient West Asian Art
+  medium: Ceramic, paint
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP-26826-003.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP-26826-003.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/324138
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}

@@ -1,0 +1,16 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Workspace 狀態追蹤
+# 路徑：workspaces/Working_Member/Teacher_李佳穎/workspace.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+teacher_identity:
+  name: 李佳穎
+  teacher_id: li-jia-ying-liz
+  role: 華德福教師
+  email: elizabeth0329@gmail.com
+
+workspace_status: active
+created_date: 2026-04-04
+purpose: 李佳穎的個人 workspace
+
+classes: []

@@ -1,0 +1,127 @@
+# ━━━
+# 【TeacherOS 工作線】
+# 名稱：AM005 般度五子博物館素材
+# 路徑：workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/AM005/museum-materials.yaml
+# ━━━
+query: Krishna
+api_source: met
+grade: 9
+timestamp: 20260327-145853
+total_results: 8
+items:
+- id: met_448185
+  title: '"Krishna and Balarma Fighting the Enemy", Folio from a Harivamsa (The Legend
+    of Hari (Krishna))'
+  title_zh: ''
+  artist: ''
+  date: ca. 1590–95
+  period: Islamic Art
+  medium: Ink, opaque watercolor, and gold on paper
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DT4803.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DT4803.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/448185
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_448183
+  title: '"Krishna Holds Up Mount Govardhan to Shelter the Villagers of Braj", Folio
+    from a Harivamsa (The Legend of Hari (Krishna))'
+  title_zh: ''
+  artist: ''
+  date: ca. 1590–95
+  period: Islamic Art
+  medium: Ink, opaque watercolor, and gold on paper
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DP231327.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DP231327.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/448183
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_551786
+  title: Book of the Dead of the Priest of Horus, Imhotep (Imuthes)
+  title_zh: ''
+  artist: ''
+  date: ca. 332–200 B.C.
+  period: Egyptian Art
+  medium: Papyrus, ink
+  image_url: https://images.metmuseum.org/CRDImages/eg/original/2-35.9.20a–w_EGDP014589-4594.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/eg/web-large/2-35.9.20a–w_EGDP014589-4594.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/551786
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_729644
+  title: In proof of true love, a watercarrier skeleton arguing with a woman (Posada);
+    two skeleton angels in upper corners (Manilla)
+  title_zh: ''
+  artist: José Guadalupe Posada
+  date: ca. 1890–96
+  period: Drawings and Prints
+  medium: Type-metal engraving and letterpress
+  image_url: https://images.metmuseum.org/CRDImages/dp/original/DP865112.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/dp/web-large/DP865112.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/729644
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_472562
+  title: The Fieschi Morgan Staurotheke
+  title_zh: ''
+  artist: ''
+  date: early 9th century
+  period: Medieval Art
+  medium: Gilded silver, gold, enamel worked in cloisonné, and niello
+  image_url: https://images.metmuseum.org/CRDImages/md/original/DT119.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/md/web-large/DT119.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/472562
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_329077
+  title: Head of a ruler
+  title_zh: ''
+  artist: ''
+  date: ca. 2300–2000 BCE
+  period: Ancient West Asian Art
+  medium: Copper alloy
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP-23662-001.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP-23662-001.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/329077
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_37904
+  title: 'Krishna Steals the Gopis’ Clothing: Page from a Dispersed Bhagavata Purana
+    Manuscript'
+  title_zh: ''
+  artist: ''
+  date: ca. 1620–30
+  period: Asian Art
+  medium: Ink and opaque watercolor on paper
+  image_url: https://images.metmuseum.org/CRDImages/as/original/1984_476_recto.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/as/web-large/1984_476_recto.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/37904
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_437422
+  title: Charity
+  title_zh: ''
+  artist: Guido Reni
+  date: ca. 1630
+  period: European Paintings
+  medium: Oil on canvas
+  image_url: https://images.metmuseum.org/CRDImages/ep/original/DT10776.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/ep/web-large/DT10776.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/437422
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}

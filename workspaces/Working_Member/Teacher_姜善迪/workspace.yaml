@@ -1,0 +1,48 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Workspace 狀態追蹤
+# 路徑：workspaces/Working_Member/Teacher_姜善迪/workspace.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+teacher_identity:
+  name: 姜善迪
+  teacher_id: jiang-shan-di
+  role: 慈心高中導師、10年級導師、資訊教師、輔導老師、資訊領域、HERMMES成員
+  email: dee@waldorf.ilc.edu.tw
+
+workspace_status: active
+
+created_date: 2026-04-01
+
+purpose: 姜善迪的個人 workspace
+
+# ────────────────────────────────────────────────────────
+# 班級清單 / Classes
+# ────────────────────────────────────────────────────────
+
+classes:
+   - class_code: 10A
+     grade: 十年級
+     subject: 資訊科技
+     student_count: 31
+     status: active
+     blocks_completed: []
+     notes: 全校資訊教育整體規劃
+classes:
+   - class_code: 9
+     grade: 九年級
+     subject: 人與電腦
+     student_count: 15
+     status: active
+     blocks_completed: []
+     notes: 基本的電腦科學與電腦科學史、資訊概論和基礎的操作：Google 文件、試算表、簡報
+# ──────────────────────────────────────────────────────
+# 範例：
+# ──────────────────────────────────────────────────────
+# classes:
+#   - class_code: 8a
+#     grade: 八年級
+#     subject: 英文
+#     student_count: 22
+#     status: active
+#     blocks_completed: []
+#     notes: 下學期開始新的文學閱讀主題

@@ -1,0 +1,12 @@
+#!/bin/sh
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS Pre-push — 薄層入口，呼叫 Python 檢查腳本
+# 路徑：setup/hooks/pre-push
+# 安裝方式：執行 bash setup/start.sh（或 python3 setup/install-hooks.py）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# Git 在 push 前呼叫此 hook，透過 stdin 傳入 push 範圍。
+# 所有邏輯在 setup/scripts/pre-push-check.py 中。
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+python3 "$REPO_ROOT/setup/scripts/pre-push-check.py"

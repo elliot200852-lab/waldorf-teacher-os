@@ -1,0 +1,79 @@
+filters:
+  and:
+    - file.inFolder("workspaces/Working_Member")
+    - file.ext == "md"
+    - not:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David")
+    - not:
+        - file.basename == "README"
+    - not:
+        - /^EXAMPLE/.matches(file.basename)
+formulas:
+  teacher: file.folder.replace(/.*Teacher_/, "").replace(/\/.*/, "")
+  relative_path: file.folder.replace(/workspaces\/Working_Member\/Teacher_[^/]+\/?/, "")
+  days_since_edit: (now() - file.mtime).days.round(0)
+properties:
+  file.name:
+    displayName: 檔案
+  formula.teacher:
+    displayName: 教師
+  formula.relative_path:
+    displayName: 位置
+  formula.days_since_edit:
+    displayName: 距上次編輯（天）
+  file.mtime:
+    displayName: 最後修改
+  file.tags:
+    displayName: 標籤
+views:
+  - type: table
+    name: 全部教師內容
+    groupBy:
+      property: formula.teacher
+      direction: ASC
+    order:
+      - file.name
+      - formula.teacher
+      - formula.relative_path
+      - file.tags
+      - formula.days_since_edit
+  - type: table
+    name: 陳佩珊
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Teacher_陳佩珊")
+    order:
+      - file.name
+      - formula.relative_path
+      - file.tags
+      - file.mtime
+  - type: table
+    name: 林詩閔
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Teacher_林詩閔")
+    order:
+      - file.name
+      - formula.relative_path
+      - file.tags
+      - file.mtime
+  - type: table
+    name: 劉佳芳
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Teacher_劉佳芳")
+    order:
+      - file.name
+      - formula.relative_path
+      - file.tags
+      - file.mtime
+  - type: table
+    name: 郭耀新
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Teacher_郭耀新")
+    order:
+      - file.name
+      - formula.relative_path
+      - file.tags
+      - file.mtime

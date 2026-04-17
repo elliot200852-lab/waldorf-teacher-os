@@ -1,0 +1,25 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Workspace 狀態追蹤
+# 路徑：workspaces/Working_Member/Teacher_陳啟華/workspace.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+teacher_identity:
+  name: 陳啟華
+  teacher_id: chen-qi-hua
+  role: 八年級導師
+  email: mj23191168@gmail.com
+
+workspace_status: active
+
+created_date: 2026-04-03
+
+purpose: 陳啟華老師的個人 workspace
+
+classes:
+  - class_code: 8b
+    grade: 八年級
+    subject: 導師課
+    student_count: null
+    status: active
+    blocks_completed: []
+    notes: 新建立，待填入班級資訊

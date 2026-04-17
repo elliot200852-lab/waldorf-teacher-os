@@ -1,0 +1,20 @@
+last_run:
+  date: 2026-04-13
+  lesson_id: AM012
+  title: "馬爾杜克的創世"
+  status: completed
+
+steps:
+  step0_confirm: PASS
+  step1_task: PASS
+  step2_research: PASS  # raw-materials.md 1,543 字，11 筆 URL（4 筆中文）
+  step25_museum: PASS   # Met API：8 件 Mesopotamia 藏品
+  step3_writing: PASS   # 7 件套全部到位，validate-story.js 9/9 通過
+  step4_chalkboard: PASS  # 226KB PNG，Gemini Pro 模型生成，內容驗證 PASS
+  step5_assemble: PASS  # HTML + PDF 生成，7 頁
+  step6_drive: PASS     # HTML + PDF 已上傳 Drive
+  step7_archive: PASS   # index.yaml + project.yaml 已更新
+
+notices:
+  - "Block 3 巴比倫起始課"
+  - "project.yaml total 修正為 14（含先前未計入的 TW02）"

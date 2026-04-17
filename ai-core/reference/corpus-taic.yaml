@@ -1,0 +1,157 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS Reference — 台灣主權 AI 訓練語料庫（TAIC）
+# 路徑：ai-core/reference/corpus-taic.yaml
+# 用途：為 AI 備課提供 TAIC 的存取指引與教學應用對照
+# 觸發時機：story-research、lesson-engine、poetry-research
+#           等技能需要台灣本土素材時，載入本檔作為查詢參考
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# ── 基本資訊 ──
+
+name: 臺灣主權AI訓練語料庫
+abbreviation: TAIC
+english_name: Taiwan Autonomous Intelligence Training Corpus
+url: https://taic.moda.gov.tw
+operator: 數位發展部（MODA）
+status: Beta（2026 年 3 月）
+scale:
+  tokens: 約 12 億（目標 1T）
+  datasets: 3,700+
+  contributors: 50+ 機構
+
+# ── 授權模式 ──
+
+license:
+  name: 臺灣主權AI訓練語料授權條款 第1版
+  tracks:
+    open_data:
+      description: 免註冊直接下載，可自由再製、改作
+      education_use: 允許
+    licensed_training:
+      description: 需註冊帳號並同意授權條款
+      education_use: 待確認（建議聯繫數發部）
+  note: >
+    TeacherOS 教學用途優先使用開放資料軌。
+    若需批次下載授權訓練資料，需透過帳號申請，
+    下載連結 7 天有效。
+
+# ── 資料分類與教學對應 ──
+
+categories:
+  arts_and_culture:
+    taic_label: 文化藝術
+    description: 藝術研究與文化遺產典藏
+    teacheros_use:
+      - 英文課：台灣藝術作品→英文描述寫作任務
+      - 歷史課：文化史素材、視覺教學錨點
+      - 差異化：D型學生以視覺素材為入口
+    relevant_skills:
+      - art-in-teaching
+      - lesson-engine
+
+  languages_and_vocabulary:
+    taic_label: 語言詞彙
+    description: 語言辭典、專業術語、語言學資源
+    teacheros_use:
+      - 英文課：中英語言結構比較教學
+      - 跨領域：施泰納語言哲學的具體教材
+    relevant_skills:
+      - lesson-engine
+      - poetry-research
+
+  history_and_heritage:
+    taic_label: 歷史文物
+    description: 歷史文獻與文化遺產素材
+    teacheros_use:
+      - 歷史課：一手文獻支撐傳記式教學
+      - 七年級：荷蘭時期、漢人移民文獻
+      - 八至九年級：日治、二二八、白色恐怖素材
+      - 臺灣的故事：story-research 優先查詢來源
+    relevant_skills:
+      - story-research
+      - story-planner
+      - lesson-engine
+
+  local_culture:
+    taic_label: 在地文化
+    description: 族群與民間文化內容
+    teacheros_use:
+      - 歷史課：原住民南島文化素材（填補最大缺口）
+      - 人文與社會：在地文化的現象學觀察教材
+      - 差異化：B型學生以趣味性在地素材引入
+    relevant_skills:
+      - story-research
+      - lesson-engine
+
+  indigenous_peoples:
+    taic_label: 原住民族（原民會貢獻）
+    description: 南島語族文化、族語、口傳文學
+    teacheros_use:
+      - 歷史課：台灣主體意識的根基素材
+      - 七年級：「Formosa 三視角」中的原住民視角
+      - 英文課：跨文化理解的本土錨點
+    relevant_skills:
+      - story-research
+      - lesson-engine
+
+  academic:
+    taic_label: 學術內容（中研院等）
+    description: 研究論文、政策分析
+    teacheros_use:
+      - 差異化：A型學生獨立研究的一手資料來源
+      - story-verify：事實查核的學術級參考
+    relevant_skills:
+      - story-verify
+      - story-research
+
+# ── 存取方式（供 AI 執行時參考） ──
+
+access:
+  web_browse:
+    method: 透過瀏覽器存取 https://taic.moda.gov.tw
+    search: 支援關鍵字搜尋（依內容、資料集 ID）
+    hot_keywords:
+      - 文化
+      - 交通
+      - 教育
+    note: 目前最直接的查詢方式
+
+  api:
+    status: Beta 階段，JSON 格式資料集清單可取得
+    note: 正式 REST API 文件待確認，建議先以網頁搜尋為主
+
+  batch_download:
+    method: 註冊帳號→提交批次下載申請→Email 連結（7天有效）
+    note: 適合方案 B（建立本地教學語料子集）時使用
+
+# ── 與既有資料源的關係 ──
+
+relation_to_existing_sources:
+  taiwan_history_api:
+    overlap: >
+      taiwan_history_api.py 已介接的 7 個資料源（TCMB、AA、NHRM、TM、
+      data.gov.tw、BOCH、OpenMuseum）中，部分內容也被收錄進 TAIC。
+      TAIC 的價值在於：(1) 統一格式 (2) 新增原民會等獨有來源
+      (3) 語料經過品質篩選 (4) 政府背書的授權明確性。
+    recommendation: >
+      story-research 執行時，先查 taiwan_history_api（即時、精確），
+      再以 TAIC 作為補充與交叉驗證來源。兩者互補而非取代。
+
+# ── 關聯專案：TAIDE ──
+
+related_project:
+  name: TAIDE（可信任生成式 AI 發展計畫）
+  url: https://taide.tw
+  latest_model: Gemma-3-TAIDE-12b-Chat-2602（2026-02 釋出）
+  relevance: >
+    TAIDE 以 TAIC 語料為基礎微調，是目前最懂正體中文的開源模型之一。
+    若未來 TeacherOS 需要本地化 LLM（如離線環境或高機敏場景），
+    TAIDE 模型是首選候選。
+
+# ── 使用注意事項 ──
+
+caveats:
+  - TAIC 仍在 Beta 階段，資料集品質參差不齊，用於教學前必須經教師審核
+  - 歷史敘事可能未充分考量台灣主體性，需以批判眼光篩選
+  - 12 億 token 分散在 3,700+ 資料集中，與教學直接相關的可能是一小部分
+  - 開放資料軌可自由使用；授權訓練資料軌的教育用途待確認

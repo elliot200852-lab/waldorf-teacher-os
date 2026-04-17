@@ -1,0 +1,527 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 「臺灣的故事」故事總索引
+# 由 story-archive skill 自動維護
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+last_updated: 2026-04-17
+total_stories: 26
+
+stories:
+  - id: A001
+    title: 從海底升起的島——臺灣的誕生
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前（約 500-600 萬年前至今）
+    location: 菲律賓海板塊與歐亞板塊交界處
+    date_created: 2026-03-21
+    files:
+      content: stories/A-origins/A001/content.md
+      narration: stories/A-origins/A001/narration.md
+      images: stories/A-origins/A001/images.md
+      raw_materials: stories/A-origins/A001/raw-materials.md
+    sources: [tvo, ncdr, ysnp, scimonth, pansci, wikipedia]
+    quality_check: pending_review
+    tags: [地質, 板塊運動, 蓬萊造山運動, 玉山, 中央山脈]
+
+  - id: A002
+    title: 水的雕刻刀——立霧溪與太魯閣
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前（約 230 萬年前至今）
+    location: 花蓮縣秀林鄉（太魯閣峽谷）
+    date_created: 2026-03-21
+    files:
+      content: stories/A-origins/A002/content.md
+      narration: stories/A-origins/A002/narration.md
+      images: stories/A-origins/A002/images.md
+      raw_materials: stories/A-origins/A002/raw-materials.md
+    sources: [taroko, boch_whp, wikipedia, ntu_hydro]
+    quality_check: pending_review
+    tags: [地質, 河流侵蝕, 太魯閣, 大理岩, 立霧溪, 嘉南平原]
+
+  - id: A003
+    title: 火的禮物——大屯火山與泥火山
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前（約 280 萬年前至今）
+    location: 臺北北投（大屯火山群）、高雄燕巢（烏山頂泥火山）
+    date_created: 2026-03-21
+    files:
+      content: stories/A-origins/A003/content.md
+      narration: stories/A-origins/A003/narration.md
+      images: stories/A-origins/A003/images.md
+      raw_materials: stories/A-origins/A003/raw-materials.md
+    sources: [tvo, ymsnp, forest_bureau, kcg_agri, wikipedia]
+    quality_check: pending_review
+    tags: [地質, 火山, 大屯火山群, 溫泉, 泥火山, 硫磺]
+
+  - id: A004
+    title: 石頭裡的秘密——卑南遺址
+    block: A-origins
+    sub_theme: 最早的足跡
+    era: 史前（約 5,300-2,300 年前）
+    location: 臺東縣臺東市南王里（卑南遺址）
+    date_created: 2026-03-22
+    files:
+      content: stories/A-origins/A004/content.md
+      narration: stories/A-origins/A004/narration.md
+      images: stories/A-origins/A004/images.md
+      raw_materials: stories/A-origins/A004/raw-materials.md
+    sources: [nmp, nrch, openmuseum, nhsrc, wikipedia, scitechvista]
+    quality_check: passed_v2
+    latest_version: v2
+    tags: [考古, 遺址, 卑南文化, 石板棺, 人獸形玉玦, 月形石柱, 臺灣玉]
+    v2:
+      date_created: 2026-03-22
+      narrative_angle: 從「玉」出發的全新敘事視角（v1 以怪手挖掘為開場）
+      files:
+        content: stories/A-origins/A004-v2/content.md
+        narration: stories/A-origins/A004-v2/narration.md
+        images: stories/A-origins/A004-v2/images.md
+        raw_materials: stories/A-origins/A004-v2/raw-materials.md
+
+  - id: A005
+    title: 海的搖籃——黑潮與臺灣
+    block: A-origins
+    sub_theme: 島嶼誕生
+    era: 史前至今
+    location: 臺灣東部海域（黑潮主流）、臺灣海峽（黑水溝）
+    date_created: 2026-03-22
+    files:
+      content: stories/A-origins/A005/content.md
+      narration: stories/A-origins/A005/narration.md
+      images: stories/A-origins/A005/images.md
+      raw_materials: stories/A-origins/A005/raw-materials.md
+    sources: [wikipedia, nrch, scitechvista, ntnu, e-info, oca, moa, fishdb, marine_gov]
+    quality_check: passed
+    tags: [海洋, 黑潮, 黑水溝, 臺灣海峽, 珊瑚礁, 洋流, 海洋生態]
+
+  - id: A006
+    title: 獨木舟上的民族——南島語族與臺灣
+    block: A-origins
+    sub_theme: 南島的孩子
+    era: 約六千年前至今
+    location: 臺灣（南島語族原鄉）、蘭嶼（達悟族）、太平洋與印度洋諸島
+    date_created: 2026-03-22
+    files:
+      content: stories/A-origins/A006/content.md
+      narration: stories/A-origins/A006/narration.md
+      images: stories/A-origins/A006/images.md
+      raw_materials: stories/A-origins/A006/raw-materials.md
+    sources: [wikipedia, matataiwan, taiwaninsight, pansci, nchdb, smiletaiwan, openmuseum, tm, sinica]
+    quality_check: passed
+    tags: [南島語族, 原住民, 達悟族, 拼板舟, 蘭嶼, 太平洋, 遷徙, 航海]
+
+  - id: A007
+    title: 山是我們的家——泰雅族與他們的獵場
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今
+    location: 臺灣中北部山區（南投仁愛、新竹尖石、宜蘭大同與南澳）
+    date_created: 2026-03-23
+    files:
+      content: stories/A-origins/A007/content.md
+      narration: stories/A-origins/A007/narration.md
+      images: stories/A-origins/A007/images.md
+      raw_materials: stories/A-origins/A007/raw-materials.md
+    sources: [cip, knowlegde_gov, tcmb, dmtip, alive, wikipedia, springer]
+    quality_check: passed
+    tags: [泰雅族, 獵場, gaga, 紋面, 傳統領域, 狩獵, 大霸尖山, 遷徙, 宜蘭]
+
+  - id: A008
+    title: 浪的節奏——阿美族的海與豐年祭
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今
+    location: 臺灣東部海岸（花蓮豐濱鄉、港口部落 Makota'ay、秀姑巒溪出海口、台東海岸）
+    date_created: 2026-03-24
+    files:
+      content: stories/A-origins/A008/content.md
+      narration: stories/A-origins/A008/narration.md
+      images: stories/A-origins/A008/images.md
+      raw_materials: stories/A-origins/A008/raw-materials.md
+    sources: [cip, knowlegde_gov, dmtip, tipp, boch, abda_hl, tcmb, culturalsurvival, wikipedia]
+    quality_check: passed
+    html_pdf_status: pending_chalkboard
+    tags: [阿美族, Pangcah, 豐年祭, Ilisin, 海祭, 捕魚祭, 港口部落, 年齡階級, 母系社會, 魚筌, 黑潮, 東海岸]
+
+  - id: A009
+    title: 鐵砂與煙霧——十三行人的秘密
+    block: A-origins
+    sub_theme: 最早的足跡
+    era: 史前（距今約 1,800—500 年前）
+    location: 新北市八里區（淡水河出海口南岸）
+    date_created: 2026-03-25
+    files:
+      content: stories/A-origins/A009/content.md
+      narration: stories/A-origins/A009/narration.md
+      images: stories/A-origins/A009/images.md
+      raw_materials: stories/A-origins/A009/raw-materials.md
+    sources: [sshm_ntpc, openmuseum, wikipedia, sinica, taiwan_panorama, springer]
+    quality_check: passed
+    tags: [十三行文化, 冶鐵, 鐵砂, 史前遺址, 八里, 淡水河口, 凱達格蘭族, 人面陶罐, 考古, 鐵器時代]
+
+  - id: A010
+    title: 百步蛇的子民——排灣族與他們的石板屋
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今
+    location: 臺灣南部山區（屏東縣三地門、春日；臺東縣達仁、金峰）
+    date_created: 2026-03-26
+    files:
+      content: stories/A-origins/A010/content.md
+      narration: stories/A-origins/A010/narration.md
+      images: stories/A-origins/A010/images.md
+      raw_materials: stories/A-origins/A010/raw-materials.md
+    sources: [wikipedia, cip, boch, matataiwan, nmns, thenewslens, dmtip]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1Y_Rx4_NE7R0aqahXwNnPUggcoCeFY_5O
+      pdf: 1MR5ZSSlLk5QbEoFOXw4fHlL3ITIBqdLX
+    tags: [排灣族, 石板屋, 百步蛇, 琉璃珠, 古陶壺, 頭目制度, 長嗣繼承, 老七佳, 大武山, 貴族制度, 紋樣, 各族的土地故事]
+
+  - id: A011
+    title: 血脈的地圖——科學家如何找到南島語族的故鄉
+    block: A-origins
+    sub_theme: 南島的孩子
+    era: 史前至今（約 6,000 年前—現代）
+    location: 臺灣（南島語族原鄉）、太平洋（夏威夷、紐西蘭）、印度洋（馬達加斯加）
+    date_created: 2026-03-26
+    files:
+      content: stories/A-origins/A011/content.md
+      narration: stories/A-origins/A011/narration.md
+      images: stories/A-origins/A011/images.md
+      raw_materials: stories/A-origins/A011/raw-materials.md
+    sources: [sinica, pansci, wikipedia, matataiwan, taiwan_insight, pnas_2015, pnas_nexus_2023]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1Jvz7WaAx1eTonay3pQ0DDRURk6N9vvPT
+      pdf: 1kW5pMFPoajx_Oz5PSiCS8E4BR1t7Ji6g
+    tags: [南島語族, 語言學, 出臺灣說, 布拉斯特, 大坌坑文化, 構樹, DNA, 毛利人, 夏威夷, 馬達加斯加, lima, Hawaiki, 南島的孩子]
+
+  - id: A012
+    title: 飛魚的守護者——達悟族與蘭嶼的海洋智慧
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今（約 2,000 年前至今日）
+    location: 臺東縣蘭嶼鄉（Ponso no Tao，人之島）
+    date_created: 2026-03-27
+    files:
+      content: stories/A-origins/A012/content.md
+      narration: stories/A-origins/A012/narration.md
+      images: stories/A-origins/A012/images.md
+      raw_materials: stories/A-origins/A012/raw-materials.md
+    sources: [wikipedia, ihc_cip, pansci, matataiwan, openmuseum, nchdb_boch, zazawanzine, fae_moa, cip_apc]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1y0pJEXonmmbIzLD31ztVP4PkaC7u8pb4
+      pdf: 1QecIw5pLtV7Og0HOVREvZikDdIfjxM2W
+    tags: [達悟族, 雅美族, 蘭嶼, 拼板舟, 飛魚祭, 飛魚, 地下屋, 招魚祭, 黑翅傳說, 南島語族, 海洋文化, 各族的土地故事]
+
+  - id: A013
+    title: 星星告訴我們何時狩獵——布農族的月亮曆與山的智慧
+    block: A-origins
+    sub_theme: 各族的土地故事
+    era: 史前至今
+    location: 臺灣中央山脈（南投縣信義鄉、花蓮縣卓溪鄉、臺東縣海端鄉）
+    date_created: 2026-03-28
+    files:
+      content: stories/A-origins/A013/content.md
+      narration: stories/A-origins/A013/narration.md
+      images: stories/A-origins/A013/images.md
+      raw_materials: stories/A-origins/A013/raw-materials.md
+    sources: [tcmb, ntm, ntua_anthro, cip, wikipedia, pansci]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1eLHP-W8ZZ_ZtGPzL0J8ZG0wHl2ALyMOf
+      pdf: 1xfEaBFc8Ry57y6a65nhLkgqFEwP_KT5A
+    tags: [布農族, Bunun, Islulusan, 獵曆, 射耳祭, Malahtangia, Pasibutbut, 八部合音, 月亮曆, 中央山脈, 加年端社, Mangdavan, 各族的土地故事]
+
+  - id: A014
+    title: 泥土裡的六千年——大坌坑人的秘密
+    block: A-origins
+    sub_theme: 最早的足跡
+    era: 史前（距今 6,000—4,200 年前）
+    location: 新北市八里區（淡水河口北岸，觀音山北麓）
+    date_created: 2026-03-30
+    files:
+      content: stories/A-origins/A014/content.md
+      narration: stories/A-origins/A014/narration.md
+      images: stories/A-origins/A014/images.md
+      raw_materials: stories/A-origins/A014/raw-materials.md
+    sources: [tcmb, wikipedia, sinica, scitechvista, boch, openmuseum, nmth]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1-0N3X25jCpr-wtRscwFTK5wSKToWKMH3
+      pdf: 1MZGVG0kKU2dUMIr9NXnfGPwkNdqsK4xe
+    tags: [大坌坑文化, 繩紋陶, 新石器時代, 張光直, 八里, 淡水河口, 南島語族, 最早的足跡, 考古, 農業起源, 貝塚, 史前遺址]
+
+  - id: A015
+    title: 一座小山丘裡的七層時光——芝山岩的秘密
+    block: A-origins
+    sub_theme: 最早的足跡
+    era: 史前（距今約 6,000 年前至清代）
+    location: 臺北市士林區（芝山岩遺址）
+    date_created: 2026-03-31
+    files:
+      content: stories/A-origins/A015/content.md
+      narration: stories/A-origins/A015/narration.md
+      images: stories/A-origins/A015/images.md
+      raw_materials: stories/A-origins/A015/raw-materials.md
+    sources: [tcmb, nrch, openmuseum, zcegarden, culture_gov_taipei, wikipedia]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1rB_cYB5tGnC21aESz7xvI4BRDPnPGQCj
+      pdf: 1N-B8crKUKctIJlwdAU0co3vnQk9lz9Cs
+    tags: [芝山岩, 芝山岩文化, 七層文化, 大坌坑文化, 訊塘埔文化, 圓山文化, 植物園文化, 碳化稻米, 木器, 臺北盆地, 考古, 最早的足跡, 隘門, 惠濟宮]
+
+  - id: A016
+    title: 追風的人——南島語族如何乘浪航向世界的盡頭
+    block: A-origins
+    sub_theme: 南島的孩子
+    era: 史前至今（約 3,000 年前—現代）
+    location: 臺灣東海岸（起點）→ 菲律賓 → 美拉尼西亞 → 夏威夷、紐西蘭、復活節島
+    date_created: 2026-04-01
+    files:
+      content: stories/A-origins/A016/content.md
+      narration: stories/A-origins/A016/narration.md
+      images: stories/A-origins/A016/images.md
+      raw_materials: stories/A-origins/A016/raw-materials.md
+    sources: [sinica, matataiwan, hokulea, worldhistory, smithsonian, pansci, theconversation, wikipedia, britannica, openmuseum]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1WObJFAO8n4NYXD5R4wyUgOUg7PGoXKpH
+      pdf: 17NEDlDDOgrXDghCPdU3_UMoOo5kxjedR
+    tags: [南島語族, 航海技術, 星辰導航, 浪型感知, 飛鳥辨位, 星羅盤, 棒圖, 霍庫勒阿, 構樹, 拉比塔文化, 太平洋遷徙, 達悟族, 波利尼西亞, 夏威夷, 紐西蘭, 復活節島, 南島的孩子]
+
+  - id: EN001
+    title: 羊皮紙上的美麗之島——葡萄牙人與福爾摩沙的相遇
+    block: B-encounter
+    sub_theme: Ilha Formosa
+    era: 1554 年（地圖命名）；1582 年（船難抵臺）
+    location: 里斯本（製圖師工坊）；臺灣西岸（1582 年船難地）；澳門
+    date_created: 2026-04-02
+    files:
+      content: stories/B-encounter/EN001/content.md
+      narration: stories/B-encounter/EN001/narration.md
+      images: stories/B-encounter/EN001/images.md
+      raw_materials: stories/B-encounter/EN001/raw-materials.md
+    sources: [sinica, researchgate, matataiwan, taiwanpanorama, nmth, taipeitimes]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1m4yEbnaXEB8O9M-Gl64Z3mxn6j5HDrNX
+      pdf: 1iXn1Cy9zjJlZSdW84xPXR0JnQSccOKIc
+    tags: [葡萄牙, 大航海時代, 福爾摩沙, Ilha Formosa, Lopo Homem, 地圖命名, 1582年船難, 耶穌會士, Francisco Pírez, 澳門日本航路, Ilha Formosa]
+
+  - id: EN002
+    title: 海盜、商人與幽靈之島——十六世紀東亞海上世界
+    block: B-encounter
+    sub_theme: 海上的十字路口
+    era: 1540s–1624
+    location: 臺灣西南海岸（魍港）、福建月港、日本平戶
+    date_created: 2026-04-03
+    files:
+      content: stories/B-encounter/EN002/content.md
+      narration: stories/B-encounter/EN002/narration.md
+      images: stories/B-encounter/EN002/images.md
+      raw_materials: stories/B-encounter/EN002/raw-materials.md
+    sources: [wikipedia, storystudio, pansci, independentcw, learnmode]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1OaYeWEj03CCkeIijpJT68kHNcyMg8a8s
+      pdf: 1HgxlJ2gAyXoP2Rsak9gyOLb7Sc36-5GJ
+    tags: [海盜, 走私, 倭寇, 林鳳, 顏思齊, 鄭芝龍, 笨港, 魍港, 月港, 海禁, 白銀貿易, 大航海時代, B-encounter]
+
+  - id: EN003
+    title: 順風而來——渡過黑水溝的漁民
+    block: B-encounter
+    sub_theme: 渡海的人
+    era: 1200s-1620s（宋元明）
+    location: 福建泉州沿海、澎湖群島、臺灣西南海岸（魍港）
+    date_created: 2026-04-04
+    files:
+      content: stories/B-encounter/EN003/content.md
+      narration: stories/B-encounter/EN003/narration.md
+      images: stories/B-encounter/EN003/images.md
+      raw_materials: stories/B-encounter/EN003/raw-materials.md
+    sources: [wikipedia, kamatiam, agriharvest, e-info, penghu_info, nrch, nmmst, rhythmsmonthly]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1TMuhy0VlUuRDVLFFaO1Jubgo7ud0KNBf
+      pdf: 1nvEmLA8S0d2_vZD_u1AgB9bOJ7_CDjPt
+    tags: [漁民, 烏魚, 信魚, 黑水溝, 澎湖, 臺灣海峽, 魍港, 泉州, 汪大淵, 澎湖寨巡檢司, 季風, 鹿皮貿易, 渡海的人, B-encounter]
+
+  - id: EN004
+    title: 高砂國的傳說——日本人眼中的臺灣
+    block: B-encounter
+    sub_theme: 海上的十字路口
+    era: 1593–1628
+    location: 京都、長崎、平戶（日本）→ 臺灣西南海岸、北臺灣新港社
+    date_created: 2026-04-08
+    files:
+      content: stories/B-encounter/EN004/EN004-content.md
+      narration: stories/B-encounter/EN004/EN004-narration.md
+      images: stories/B-encounter/EN004/EN004-images.md
+      raw_materials: stories/B-encounter/EN004/EN004-raw-materials.md
+      chalkboard_prompt: stories/B-encounter/EN004/EN004-chalkboard-prompt.md
+    sources: [wikipedia, nmth, storystudio, sinica, memory_culture, ja_wikipedia]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1DapeB-Rt5aHJWy98fmiBGu5YW4mwDeW4
+      pdf: 1UxmEDFwhYg1WLJVTwlLgkbnvfC3fxiNW
+    tags: [豐臣秀吉, 高山國, 高砂, 招諭書, 朱印船, 有馬晴信, 村山等安, 濱田彌兵衛, 理加, 新港社, 西拉雅族, 黑水溝, 大航海時代, B-encounter]
+
+  - id: EN005
+    title: 地圖上的謎之島——歐洲人如何想像一座沒踏上過的島嶼
+    block: B-encounter
+    sub_theme: Ilha Formosa
+    era: 1554–1635
+    location: 歐洲各國製圖工坊（里斯本、安特衛普、阿姆斯特丹）；臺灣海峽
+    date_created: 2026-04-10
+    files:
+      content: stories/B-encounter/EN005/EN005-content.md
+      narration: stories/B-encounter/EN005/EN005-narration.md
+      images: stories/B-encounter/EN005/EN005-images.md
+      raw_materials: stories/B-encounter/EN005/EN005-raw-materials.md
+      chalkboard_prompt: stories/B-encounter/EN005/EN005-chalkboard-prompt.md
+    sources: [storystudio, thenewslens, matataiwan, taiwanpanorama, wikipedia, tcmb]
+    quality_check: passed
+    html_pdf_status: completed
+    chalkboard_note: 佔位圖——待手動生成 Gemini 黑板畫後重新組裝
+    drive_files:
+      html: 1JvtWWgJyuYggBaL5BHfy3T8loSHbwygD
+      pdf: 1FPLwhzSgNwqwXcLrcNwN1OsrBfciNGun
+    tags: [古地圖, 製圖師, Lopo Homem, Ortelius, Theatrum, 三島式, 濁水溪, 福爾摩沙, Formosa, 大航海時代, Vingboons, 荷蘭東印度公司, Ilha Formosa, B-encounter]
+
+  - id: EN006
+    title: 一萬張鹿皮——漢人為什麼要來臺灣
+    block: B-encounter
+    sub_theme: 渡海的人
+    era: 1550s-1640s
+    location: 臺灣西部平原（嘉南平原）；福建漳泉沿海；日本長崎
+    date_created: 2026-04-11
+    files:
+      content: stories/B-encounter/EN006/EN006-content.md
+      narration: stories/B-encounter/EN006/EN006-narration.md
+      images: stories/B-encounter/EN006/EN006-images.md
+      raw_materials: stories/B-encounter/EN006/EN006-raw-materials.md
+      chalkboard_prompt: stories/B-encounter/EN006/EN006-chalkboard-prompt.md
+    sources: [nmth, pansci, taiwan_panorama, lca, wikipedia, tcmb, creative_comic, tjnp]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1eZBkFYquXn7ujB3ijDVjLhEvNcbJ4rO6
+      pdf: 1ZPQ5NPZJKUfI2YkEKQabJ9hLmIYiD48Y
+    tags: [梅花鹿, 鹿皮貿易, 陳第, 東番記, 平埔族, 荷蘭東印度公司, VOC, 獵鹿, 嘉南平原, 墾丁復育, 漢番交易, 日本武士, 渡海的人, B-encounter]
+
+  - id: EN007
+    title: 白銀的航線——馬尼拉大帆船與臺灣
+    block: B-encounter
+    sub_theme: 海上的十字路口
+    era: 1565-1624
+    location: 馬尼拉、墨西哥阿卡普爾科、臺灣海峽、福建月港
+    date_created: 2026-04-13
+    files:
+      content: stories/B-encounter/EN007/EN007-content.md
+      narration: stories/B-encounter/EN007/EN007-narration.md
+      images: stories/B-encounter/EN007/EN007-images.md
+      raw_materials: stories/B-encounter/EN007/EN007-raw-materials.md
+      chalkboard_prompt: stories/B-encounter/EN007/EN007-chalkboard-prompt.md
+    sources: [wikipedia, icm_macau, fjdaily, storystudio, ntu_digital]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: 1zi_7fNQv2YSNUtWdxRm7xd7av28cNpfz
+      pdf: 1qxfTlxuFDCWVPrzX88CStOO6OsZigXRQ
+    tags: [馬尼拉大帆船, 白銀貿易, 西班牙銀幣, 月港, 隆慶開海, 李旦, Captain China, Andrea Dittis, 臺灣海峽, 荷蘭東印度公司, 熱蘭遮城, 阿卡普爾科, 海上的十字路口, B-encounter]
+
+  - id: BT001
+    title: 三千公尺的綠色階梯——臺灣的植物電梯
+    block: BT-botany
+    sub_theme: 從海到天
+    era: 跨時代（地質至今）
+    location: 臺灣全島（海平面至玉山 3,952 公尺）
+    date_created: 2026-04-13
+    files:
+      content: stories/BT-botany/BT001/BT001-content.md
+      narration: stories/BT-botany/BT001/BT001-narration.md
+      images: stories/BT-botany/BT001/BT001-images.md
+      raw_materials: stories/BT-botany/BT001/BT001-raw-materials.md
+      chalkboard_prompt: stories/BT-botany/BT001/BT001-chalkboard-prompt.md
+    sources: [reforestation_tw, digitalarchives, fftc, wikipedia, e-info, ysnp, plos_one, natgeomedia, scitechvista]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: "1Z6AYJuHCqF9iUjuzpbCvO8kXM-VUIRsM"
+      pdf: "1Mrijfhy2U48Cl6aQCXNGv8ak1Bq3Sfqt"
+    tags: [植物學, 植被帶, 垂直分布, 紅樹林, 檜木, 紅檜, 扁柏, 臺灣杉, 冷杉, 玉山杜鵑, 玉山圓柏, 冰河孑遺, 特有種, 從海到天, BT-botany]
+
+  - id: BT002
+    title: 被留在山頂的旅人——臺灣高山的冰河遺孤
+    block: BT-botany
+    sub_theme: 島嶼的孤兒
+    era: 冰河時期至今（約 260 萬年前—現代）
+    location: 臺灣高山地區（玉山 3,952m、雪山 3,886m、南湖大山 3,742m、合歡山 3,422m）
+    date_created: 2026-04-14
+    files:
+      content: stories/BT-botany/BT002/BT002-content.md
+      narration: stories/BT-botany/BT002/BT002-narration.md
+      images: stories/BT-botany/BT002/BT002-images.md
+      raw_materials: stories/BT-botany/BT002/BT002-raw-materials.md
+      chalkboard_prompt: stories/BT-botany/BT002/BT002-chalkboard-prompt.md
+    sources: [scitechvista, e-info, pansci, ysnp, tcmb, plos_one, wikipedia, forest_gov]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: "1v1KIsZIe2GOU1iOaiZg0pZTquDpDOmKZ"
+      pdf: "1eUKYGKHe88dDEYOFSWaCekC4j51HvP6e"
+    tags: [植物學, 冰河孑遺, 高山植物, 玉山圓柏, 臺灣冷杉, 玉山杜鵑, 玉山薄雪草, 南湖柳葉菜, 橫斷山脈, 陸橋, 特有種, 冰河時期, 島嶼的孤兒, BT-botany]
+
+  - id: BT003
+    title: 千年巨人的呼吸——阿里山神木與臺灣檜木森林
+    block: BT-botany
+    sub_theme: 巨人的森林
+    era: 跨時代(1.8 億年前柏科起源至 1998-2000 搶救檜木林運動)
+    location: 阿里山(嘉義縣)、棲蘭山(宜蘭縣大同鄉)、太平山(宜蘭縣)、觀霧(新竹苗栗交界)
+    date_created: 2026-04-17
+    files:
+      content: stories/BT-botany/BT003/BT003-content.md
+      narration: stories/BT-botany/BT003/BT003-narration.md
+      images: stories/BT-botany/BT003/BT003-images.md
+      raw_materials: stories/BT-botany/BT003/BT003-raw-materials.md
+      chalkboard_prompt: stories/BT-botany/BT003/BT003-chalkboard-prompt.md
+    sources: [forest_gov, ysnp, scitechvista, ali_nsa, pansci, e-info, cet_taiwan, tcmb, wikipedia, twreporter]
+    quality_check: passed
+    html_pdf_status: completed
+    drive_files:
+      html: "1i9L8V_89ip55yYjnkK_kn-WrfaxN_k-C"
+      pdf: "1Opmbb1IuYe_hg0s-fPl12Bka0VhHcxgu"
+    tags: [植物學, 紅檜, 臺灣扁柏, 臺灣杉, 阿里山, 棲蘭山, 香林神木, 霧林帶, 檜木原始林, 日治伐木, 河合鈰太郎, 阿里山森林鐵路, 守護檜木林運動, 馬告, 倒木苗床, 巨人的森林, BT-botany]
+
+# 索引結構說明：
+# stories:
+#   - id: A001
+#     title: 故事標題
+#     block: A-origins
+#     sub_theme: 島嶼誕生
+#     era: 史前
+#     location: 臺東卑南
+#     date_created: 2026-04-01
+#     files:
+#       content: stories/A-origins/A001-content.md
+#       narration: stories/A-origins/A001-narration.md
+#       images: stories/A-origins/A001-images.md
+#     sources: [tcmb, boch]
+#     quality_check: passed
+#     tags: [考古, 遺址, 卑南, 史前文化]

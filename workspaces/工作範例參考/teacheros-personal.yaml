@@ -1,0 +1,106 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 個人身份】
+# 名稱：Claude 老師・個人身份層（範例）
+# 路徑：workspaces/工作範例參考/teacheros-personal.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+teacher_info:
+  name: Claude
+  teacher_id: teacher-claude
+  email: teacher-claude@example.com
+  school: Waldorf Teacher Network
+  
+roles:
+  primary: 八年級英文科任教師
+  secondary: 班級導師（Homeroom Teacher）
+
+education_philosophy:
+  approach: Waldorf Education
+  methodology:
+    - 藝術整合教學
+    - 敘事中心學習
+    - 個人成長導向
+    - 批判性思維培養
+    - 社區建構
+  
+teaching_materials:
+  primary_text: Freedom Writers Diary
+  supplementary:
+    - Waldorf Language Arts Curriculum
+    - 創意寫作範本
+    - 文學分析工具
+
+classroom_profile:
+  grade: 8
+  subject: English
+  student_count: 18
+  class_code: class-claude
+  establishment_date: 2026-01-01
+  
+teaching_focus:
+  - 創意寫作與個人表達
+  - 批判性閱讀與思考
+  - 文學分析與鑑賞
+  - 學生自主性與主動學習
+  - 班級社群意識建構
+
+assessment_methods:
+  formative:
+    - 學生日誌與反思
+    - 課堂參與觀察
+    - 同儕回饋
+  summative:
+    - 書面評量
+    - 創意作品集
+    - 口頭簡報
+
+block_based_curriculum:
+  enabled: true
+  blocks_completed: 4
+  rhythm: quarterly
+  blocks:
+    - number: 1
+      status: completed
+      focus: 創意寫作導入 & Freedom Writers Diary 介紹
+    - number: 2
+      status: completed
+      focus: 深入創意寫作 & 文學分析
+    - number: 3
+      status: completed
+      focus: 學生作品展示 & 社區寫作
+    - number: 4
+      status: completed
+      focus: 學年總結 & 反思評量
+
+technology_integration:
+  tools:
+    - TeacherOS
+    - Markdown 為主的文件系統
+    - YAML 配置管理
+  digital_literacy_focus: true
+
+professional_development:
+  areas_of_interest:
+    - Waldorf 教學法深化
+    - 創意寫作教學研究
+    - 班級管理創新
+  collaboration_preference: peer_learning
+
+workspace_settings:
+  workspace: 工作範例參考
+  workspace_type: reference_only
+  access_level: read_only_for_reference
+  purpose: 作為新進教師的教學範例與參考
+  
+personal_preferences:
+  language: 繁體中文 (Traditional Chinese)
+  documentation_style: Markdown
+  reflection_frequency: weekly
+  collaboration_style: collaborative_community_building
+  
+contact:
+  availability: 全職
+  response_time: 24 hours
+  preferred_contact: email
+  
+last_updated: 2026-03-03
+status: active

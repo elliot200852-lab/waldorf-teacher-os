@@ -1,0 +1,66 @@
+{
+  "site": {
+    "title": "WaldorfCreatorHubDatabase",
+    "subtitle": "華德福教學素材頻道",
+    "description": "每日更新的華德福教學素材庫——黑板畫、故事、教學指引"
+  },
+  "rootFolderId": "1OG3XrNjb3ETxuUIsDKqBLzq44sNRw7o1",
+  "pickFetchFolderId": "1SkjyvQ8SoxaJIWb79NaKv9oSrGJuMgU5",
+  "ignoreFolders": ["pic-fetch", "其他素材"],
+  "channels": {
+    "taiwan-stories": {
+      "folderName": "台灣的故事",
+      "name": "臺灣的故事",
+      "description": "從原住民的星空智慧到島嶼的海洋記憶——每一篇都是為課堂而生的臺灣敘事",
+      "prefix": "A",
+      "season": "autumn",
+      "icon": "auto_stories"
+    },
+    "ancient-myths": {
+      "folderName": "古文明神話五年級",
+      "name": "古文明神話五年級",
+      "description": "印度、埃及、希臘、北歐——人類意識覺醒的旅程",
+      "prefix": "AM",
+      "season": "summer",
+      "icon": "temple_hindu"
+    },
+    "botany": {
+      "folderName": "植物學五年級",
+      "name": "植物學五年級",
+      "description": "從藻類到蕨類——植物王國的演化故事",
+      "prefix": "B",
+      "season": "spring",
+      "icon": "park",
+      "sort": "storyId"
+    },
+    "island-myths-3rd": {
+      "folderName": "南島神話三年級",
+      "name": "南島神話三年級",
+      "description": "臺灣南島語系民族的創世神話——為三年級主課程精心設計的教學素材",
+      "prefix": "I",
+      "season": "spring",
+      "icon": "sailing"
+    },
+    "shanhaijing-3rd": {
+      "folderName": "三年級山海經",
+      "name": "三年級山海經",
+      "description": "以《山海經》神話為主線的三年級教學紀錄——奇獸、山川、上古世界的課堂探索",
+      "prefix": "SH",
+      "season": "autumn",
+      "icon": "terrain"
+    },
+    "taiwan-literature-9d": {
+      "folderName": "2026九年級台灣文學主課",
+      "name": "九年級臺灣文學主課程｜林信宏",
+      "description": "「這座島嶼上的人」— 從離散到扎根，從沉默到發聲。8天×120分鐘完整教案與教學回顧。",
+      "prefix": "TL",
+      "season": "spring",
+      "icon": "menu_book"
+    }
+  },
+  "defaults": {
+    "season": "winter",
+    "icon": "science",
+    "description": "華德福教學素材"
+  }
+}

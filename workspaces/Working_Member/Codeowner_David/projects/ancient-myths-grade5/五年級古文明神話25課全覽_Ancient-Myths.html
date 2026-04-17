@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html class="winter" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>古文明神話 25 課全覽｜五年級歷史主課程</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "var(--primary)",
+        "secondary": "var(--secondary)",
+        "accent": "var(--accent)",
+        "on-primary": "#ffffff",
+        "on-surface": "var(--on-surface)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        "surface": "var(--bg-wash-1)",
+        "surface-container": "var(--bg-wash-2)",
+        "outline-variant": "var(--outline-variant)",
+      },
+      fontFamily: {
+        "headline": ["Playfair Display", "Noto Serif TC", "Georgia", "serif"],
+        "body": ["Plus Jakarta Sans", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "sans-serif"],
+        "label": ["Plus Jakarta Sans", "Noto Sans TC", "sans-serif"],
+      },
+    },
+  },
+}
+</script>
+<style>
+html.winter {
+  --primary: #5E6B7F;
+  --secondary: #7B6B60;
+  --accent: #B8963A;
+  --bg-wash-1: #EDF0F5;
+  --bg-wash-2: #E0E5EF;
+  --bg-wash-3: #F0EBE5;
+  --on-surface: #1E2230;
+  --on-surface-variant: #3E4555;
+  --outline-variant: #B5BDCE;
+  --gradient-body: radial-gradient(circle at top left, #EDF0F5 0%, #E0E5EF 40%, #F0EBE5 100%);
+  --gradient-header: linear-gradient(135deg, #5E6B7F 0%, #B8963A 100%);
+}
+body { background: var(--gradient-body); min-height: 100vh; }
+.watercolor-wash-header {
+  background: var(--gradient-header);
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  mask-size: 100% 100%; -webkit-mask-size: 100% 100%;
+}
+.hand-drawn-border {
+  border: 2px solid var(--primary);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.botanical-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; opacity: 0.06; z-index: 50;
+}
+.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; }
+.drop-cap::first-letter {
+  font-size: 3.5rem; font-family: "Playfair Display", "Noto Serif TC", serif;
+  float: left; margin-right: 0.75rem; line-height: 1; color: var(--accent);
+}
+.block-card {
+  background: white; border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+}
+.block-card h4 { color: var(--primary); font-family: "Noto Serif TC", serif; font-size: 18px; font-weight: 700; margin-bottom: 0.5rem; }
+.block-card .core { color: var(--on-surface); font-size: 17px; line-height: 1.55; margin-bottom: 0.5rem; }
+.block-card .teaching { color: var(--secondary); font-size: 16px; line-height: 1.5; }
+.block-card .teaching strong { color: var(--accent); }
+.block-card .art { color: var(--on-surface-variant); font-size: 15px; font-style: italic; margin-top: 0.4rem; }
+.block-group { margin-bottom: 2rem; }
+.block-group-title {
+  font-family: "Playfair Display", "Noto Serif TC", serif;
+  font-size: 22px; font-weight: 700; color: white;
+  padding: 0.6rem 1.2rem; border-radius: 8px; margin-bottom: 1rem;
+  display: inline-block;
+}
+.block-group-sub {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 15px; color: var(--on-surface-variant);
+  margin-bottom: 0.5rem; padding-left: 0.2rem;
+}
+.bg-block-india { background: linear-gradient(135deg, #B8963A, #D4A854); }
+.bg-block-persia { background: linear-gradient(135deg, #8B4513, #A05020); }
+.bg-block-babylon { background: linear-gradient(135deg, #5E6B7F, #7080A0); }
+.bg-block-egypt { background: linear-gradient(135deg, #7B4A4A, #9B5050); }
+.bg-block-tw { background: linear-gradient(135deg, #5B7553, #6B8563); }
+.consciousness-badge {
+  display: inline-block; font-size: 13px; font-weight: 600;
+  padding: 2px 10px; border-radius: 20px; margin-left: 8px;
+  background: var(--bg-wash-2); color: var(--primary);
+}
+.optional-badge {
+  display: inline-block; font-size: 13px; font-weight: 400;
+  padding: 2px 10px; border-radius: 20px; margin-left: 8px;
+  background: var(--bg-wash-3); color: var(--on-surface-variant);
+  font-style: italic;
+}
+.cross-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.cross-card {
+  background: var(--bg-wash-3); border-radius: 10px; padding: 1rem 1.2rem;
+  border-left: 4px solid var(--secondary);
+}
+.cross-card h4 { font-family: "Noto Serif TC", serif; font-size: 17px; color: var(--primary); margin-bottom: 0.5rem; }
+.cross-card li { font-size: 16px; line-height: 1.6; color: var(--on-surface); }
+.arc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+.arc-card {
+  background: white; border-radius: 10px; padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  text-align: center;
+}
+.arc-card .arc-civ { font-family: "Noto Serif TC", serif; font-size: 18px; font-weight: 700; margin-bottom: 0.3rem; }
+.arc-card .arc-dir { font-size: 24px; margin-bottom: 0.3rem; }
+.arc-card .arc-theme { font-size: 14px; color: var(--on-surface-variant); line-height: 1.5; }
+.arc-card .arc-child { font-size: 13px; color: var(--accent); margin-top: 0.5rem; font-weight: 600; }
+@media print {
+  body { background: white !important; }
+  .botanical-overlay { display: none !important; }
+  .watercolor-wash-header { mask-image: none !important; -webkit-mask-image: none !important; }
+  header { display: none !important; }
+  main { max-width: 100% !important; padding: 0 2rem !important; }
+  .block-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body class="font-body text-[var(--on-surface)] selection:bg-[var(--secondary)]/20">
+<div class="botanical-overlay"></div>
+
+<header id="site-header" class="sticky top-0 z-40 bg-[var(--bg-wash-1)]/80 backdrop-blur-xl print:hidden transition-opacity duration-300">
+  <div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-xl mx-auto">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-[var(--primary)]" style="font-size: 2rem;">auto_stories</span>
+      <h1 class="font-headline text-3xl tracking-wide leading-relaxed text-[var(--primary)]">慈心華德福</h1>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-[900px] mx-auto px-8 py-6 relative overflow-hidden">
+
+  <div class="absolute -top-10 -right-10 opacity-[0.07] rotate-12">
+    <span class="material-symbols-outlined text-[12rem] text-[var(--primary)]">auto_stories</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="mb-6 text-center">
+    <div class="watercolor-wash-header p-5 mb-3 inline-block w-full">
+      <h2 class="font-headline text-4xl md:text-5xl text-on-primary leading-tight font-bold italic mb-2">古文明神話 25 課全覽</h2>
+      <p class="text-on-primary/90 font-label tracking-[0.2em] text-sm">五年級歷史主課程｜Kovacs, Ancient Mythologies</p>
+    </div>
+    <div class="space-y-2 text-left mt-3">
+      <p class="drop-cap text-[18px] leading-[1.6]">古文明神話課程追蹤的不只是歷史，而是人類意識的演化——從亞特蘭提斯到金字塔，從夢境般的神話思維走向清醒的歷史思維。這條弧線精確對應五年級孩子的內在發展：孩子正從童年的夢境中醒來，開始意識到自我、善惡、規則，最終面對死亡的問題。每一個古文明都是一面鏡子，映照孩子此刻的內在旅程。</p>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+  </div>
+
+  <!-- 意識演化弧線 -->
+  <section class="my-6">
+    <div class="bg-[var(--bg-wash-3)] p-5 border-l-[6px] border-[var(--accent)]/60 rounded-r-xl relative">
+      <span class="absolute -top-4 -left-4 material-symbols-outlined text-[var(--accent)]/30 text-5xl">timeline</span>
+      <blockquote class="font-headline italic text-xl text-[var(--primary)] leading-relaxed">
+        古印度（夢境・向內）→ 古波斯（二元覺醒・向下）→ 古巴比倫（星辰智慧・向上）→ 古埃及（死亡與永生・向前）
+      </blockquote>
+      <cite class="block mt-3 text-sm font-label tracking-widest text-[var(--secondary)]">施泰納意識演化弧線 × 五年級兒童發展</cite>
+    </div>
+  </section>
+
+  <!-- ==================== BLOCK 1：古印度 ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-india">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">self_improvement</span>
+      古印度（Story 1-7）
+    </div>
+    <div class="block-group-sub">
+      <strong>核心主題：</strong>人類最初的精神家園——物質世界是幻象，真正的實在是精神世界<br/>
+      <strong>意識階段：</strong>夢境意識——人與神靈世界合一
+    </div>
+
+    <div class="block-card">
+      <h4>AM001｜創世與最初的人類（一）<span class="consciousness-badge">夢境意識</span></h4>
+      <div class="core">梵天的創造——從宇宙蛋或蓮花中誕生世界</div>
+      <div class="art">藝術：濕水彩——暖色調金黃與紫紅，蓮花意象</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM002｜創世與最初的人類（二）</h4>
+      <div class="core">印度教三位一體：梵天（創造）、毗濕奴（維護）、濕婆（毀滅）</div>
+      <div class="art">藝術：濕水彩——三種色彩的交融與循環</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM003｜摩奴與大洪水</h4>
+      <div class="core">摩奴的故事——洪水與人類的重新開始</div>
+      <div class="teaching"><strong>教學：</strong>不是為種姓制度辯護，而是讓孩子理解最早的社會秩序</div>
+      <div class="art">藝術：濕水彩——洪水的藍色漫延與一艘小船</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM004｜種姓制度與聖牛</h4>
+      <div class="core">摩奴的法典——婆羅門、剎帝利、吠舍、首陀羅；聖牛的神聖性</div>
+      <div class="art">藝術：蠟塊畫——四種色彩代表四個種姓</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM005｜摩訶婆羅多——般度五子</h4>
+      <div class="core">般度五兄弟的冒險——正義與不義的鬥爭</div>
+      <div class="art">藝術：蠟塊畫——五兄弟的剪影</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM006｜羅摩與悉多</h4>
+      <div class="core">羅摩營救被魔王拉瓦納劫走的妻子悉多——忠誠、勇氣、犧牲</div>
+      <div class="art">藝術：蠟塊畫——森林中的羅摩與猴王哈奴曼</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM007｜佛陀 <span class="optional-badge">可選</span></h4>
+      <div class="core">悉達多太子離開宮殿，看見老、病、死——菩提樹下的覺悟</div>
+      <div class="art">藝術：濕水彩——從金色宮殿走向簡樸的林蔭</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+  </div>
+
+  <!-- ==================== BLOCK 2：古波斯 ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-persia">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">whatshot</span>
+      古波斯（Story 8-11）
+    </div>
+    <div class="block-group-sub">
+      <strong>核心主題：</strong>從夢境中醒來面對大地——光明與黑暗的對抗<br/>
+      <strong>意識階段：</strong>二元覺醒
+    </div>
+
+    <div class="block-card">
+      <h4>AM008｜阿胡拉・馬茲達與阿里曼（一）<span class="consciousness-badge">二元覺醒</span></h4>
+      <div class="core">光明之神與黑暗之神的永恆戰鬥</div>
+      <div class="teaching"><strong>教學：</strong>人類歷史上最早的一神教之一</div>
+      <div class="art">藝術：蠟塊畫——金色光焰與深紫黑暗的對峙</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM009｜阿胡拉・馬茲達與阿里曼（二）</h4>
+      <div class="core">善思善言善行——透過勤勞工作對抗黑暗</div>
+      <div class="art">藝術：蠟塊畫——光明與黑暗的對比，火焰，農耕場景</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM010｜瑣羅亞斯德</h4>
+      <div class="core">先知在曠野中接受啟示——聖典《阿維斯陀》</div>
+      <div class="art">藝術：蠟塊畫——荒野中的火焰與先知的剪影</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM011｜波斯的智者 <span class="optional-badge">可選</span></h4>
+      <div class="core">東方三博士的原型——波斯新年 Nowruz</div>
+      <div class="art">藝術：濕水彩——夜空中的星星與三個行走的身影</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+  </div>
+
+  <!-- ==================== BLOCK 3：古巴比倫 ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-babylon">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">star</span>
+      古巴比倫（Story 12-16）
+    </div>
+    <div class="block-group-sub">
+      <strong>核心主題：</strong>仰望星空建造城市——觀測星辰、發明文字與法律<br/>
+      <strong>意識階段：</strong>星辰智慧
+    </div>
+
+    <div class="block-card">
+      <h4>AM012｜馬爾杜克的創世 <span class="consciousness-badge">星辰智慧</span></h4>
+      <div class="core">馬爾杜克斬殺混沌女神提亞瑪特，用她的身體創造天地</div>
+      <div class="teaching"><strong>教學：</strong>與印度的和平創世形成對比</div>
+      <div class="art">藝術：蠟塊畫——巨龍與英雄的搏鬥</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM013｜吉爾伽美什（一）——英雄與野人</h4>
+      <div class="core">烏魯克國王吉爾伽美什與恩奇都的友誼</div>
+      <div class="art">藝術：蠟塊畫——城牆內的王與荒野中的野人</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM014｜吉爾伽美什（二）——追尋永生</h4>
+      <div class="core">恩奇都之死 → 渡過死亡之水 → 永生草被蛇偷走</div>
+      <div class="teaching"><strong>教學：</strong>人類文學史上最古老的史詩</div>
+      <div class="art">藝術：濕水彩——黑色的死亡之水與遠方的光</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM015｜漢摩拉比法典</h4>
+      <div class="core">世界上最早的成文法律——以眼還眼；楔形文字的發明</div>
+      <div class="art">藝術：黏土工作——楔形文字泥板實作</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM016｜巴別塔與星辰 <span class="optional-badge">可選</span></h4>
+      <div class="core">通天塔——人類試圖用建築觸碰天空；六十進制、星座記錄</div>
+      <div class="art">藝術：黏土工作——通天塔模型 + 星座圖</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+  </div>
+
+  <!-- ==================== BLOCK 4：古埃及 ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-egypt">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">change_history</span>
+      古埃及（Story 17-21）
+    </div>
+    <div class="block-group-sub">
+      <strong>核心主題：</strong>面對死亡追求永恆——金字塔、木乃伊、死者之書<br/>
+      <strong>意識階段：</strong>死亡與永生
+    </div>
+
+    <div class="block-card">
+      <h4>AM017｜埃及的創世——太陽神拉 <span class="consciousness-badge">死亡與永生</span></h4>
+      <div class="core">努恩的混沌之水中太陽神拉升起</div>
+      <div class="art">藝術：蠟塊畫 + 金色——太陽船在天空與地下世界的旅程</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM018｜拉的秘密名字</h4>
+      <div class="core">伊西斯用蛇咬傷拉，迫使他說出秘密名字</div>
+      <div class="teaching"><strong>教學：</strong>語言與命名的魔法力量</div>
+      <div class="art">藝術：蠟塊畫——蛇與太陽神的對峙</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM019｜賽克邁特的恐怖</h4>
+      <div class="core">獅頭女神賽克邁特懲罰人類——用紅色啤酒灌醉她才阻止屠殺</div>
+      <div class="teaching"><strong>教學：</strong>神的力量可以保護也可以毀滅</div>
+      <div class="art">藝術：蠟塊畫——獅頭女神的金色與紅色</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM020｜奧西里斯與伊西斯（一）</h4>
+      <div class="core">奧西里斯被弟弟賽特殺害肢解——伊西斯走遍全埃及收集遺體</div>
+      <div class="art">藝術：蠟塊畫——伊西斯展開翅膀的經典意象</div>
+    </div>
+
+    <div class="block-card">
+      <h4>AM021｜奧西里斯與伊西斯（二）——荷魯斯復仇</h4>
+      <div class="core">奧西里斯復活成為冥界之王；鷹頭神荷魯斯為父復仇</div>
+      <div class="teaching"><strong>教學：</strong>死亡不是結束，而是另一種存在的開始</div>
+      <div class="art">藝術：蠟塊畫——荷魯斯之眼 + 金字塔</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+  </div>
+
+  <!-- ==================== BLOCK 5：島嶼插曲 ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-tw">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">waves</span>
+      島嶼插曲（TW01-TW04）
+    </div>
+    <div class="block-group-sub">
+      <strong>核心主題：</strong>台灣這座島嶼上最古老的聲音——不是附錄，是回家
+    </div>
+
+    <div class="block-card">
+      <h4>TW01｜島嶼插曲：布農族的射日與創世</h4>
+      <div class="core">太古時代有兩個太陽，父子踏上漫長旅途射下其中一個</div>
+      <div class="teaching"><strong>教學：</strong>行動式創世——與印度冥想式創世形成自然對比</div>
+      <div class="art">藝術：濕水彩——兩個太陽，一個被射中後墜落變暗</div>
+    </div>
+
+    <div class="block-card">
+      <h4>TW02｜島嶼插曲：泰雅族的彩虹橋——善與惡的分界</h4>
+      <div class="core">只有遵守 gaga 的人死後才能走過彩虹橋</div>
+      <div class="teaching"><strong>教學：</strong>與波斯的光明/黑暗二元呼應</div>
+      <div class="art">藝術：濕水彩——山谷上方的彩虹橋</div>
+    </div>
+
+    <div class="block-card">
+      <h4>TW03｜島嶼插曲：排灣族的百步蛇與秩序之誕生</h4>
+      <div class="core">百步蛇是排灣族的守護者與祖先</div>
+      <div class="teaching"><strong>教學：</strong>與巴比倫的律法/秩序呼應</div>
+      <div class="art">藝術：蠟塊畫——百步蛇的菱形紋飾</div>
+    </div>
+
+    <div class="block-card">
+      <h4>TW04｜島嶼插曲：達悟族的海——靈魂往何處去</h4>
+      <div class="core">達悟族相信靈魂會渡海回到祖先來的地方</div>
+      <div class="teaching"><strong>教學：</strong>與埃及的來世觀呼應</div>
+      <div class="art">藝術：濕水彩——蘭嶼的海與拼板舟</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+  </div>
+
+  <!-- ==================== 意識演化弧線圖 ==================== -->
+  <section class="mb-6">
+    <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">意識演化弧線</h3>
+    <div class="arc-grid">
+      <div class="arc-card" style="border-top: 4px solid #B8963A;">
+        <div class="arc-dir" style="color: #B8963A;">&#8635;</div>
+        <div class="arc-civ" style="color: #B8963A;">古印度</div>
+        <div class="arc-theme">向內 / 冥想<br/>物質是幻象<br/>精神世界是唯一實在</div>
+        <div class="arc-child">孩子：童年夢境中的安全感</div>
+      </div>
+      <div class="arc-card" style="border-top: 4px solid #8B4513;">
+        <div class="arc-dir" style="color: #8B4513;">&#8681;</div>
+        <div class="arc-civ" style="color: #8B4513;">古波斯</div>
+        <div class="arc-theme">向下 / 耕地<br/>光明與黑暗的對抗<br/>善思善言善行</div>
+        <div class="arc-child">孩子：開始分辨善惡對錯</div>
+      </div>
+      <div class="arc-card" style="border-top: 4px solid #5E6B7F;">
+        <div class="arc-dir" style="color: #5E6B7F;">&#8679;</div>
+        <div class="arc-civ" style="color: #5E6B7F;">古巴比倫</div>
+        <div class="arc-theme">向上 / 觀星<br/>建造城市、發明文字<br/>法律與數學</div>
+        <div class="arc-child">孩子：開始抽象思考與規則意識</div>
+      </div>
+      <div class="arc-card" style="border-top: 4px solid #7B4A4A;">
+        <div class="arc-dir" style="color: #7B4A4A;">&#8680;</div>
+        <div class="arc-civ" style="color: #7B4A4A;">古埃及</div>
+        <div class="arc-theme">向前 / 追問來世<br/>金字塔、木乃伊<br/>死者之書</div>
+        <div class="arc-child">孩子：第一次意識到死亡的問題</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+  </div>
+
+  <!-- ==================== 跨文化連結 ==================== -->
+  <section class="mb-6">
+    <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">跨文化連結</h3>
+    <div class="cross-grid">
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">diversity_3</span>台灣呼應</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>摩奴洪水 ↔ 布農族洪水</li>
+          <li>波斯農耕 ↔ 小米文化</li>
+          <li>吉爾伽美什 ↔ 彩虹橋</li>
+          <li>埃及來世 ↔ 達悟靈魂觀</li>
+        </ul>
+      </div>
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">palette</span>藝術回應</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>古印度 → 濕水彩</li>
+          <li>古波斯 → 蠟塊畫</li>
+          <li>古巴比倫 → 黏土工作</li>
+          <li>古埃及 → 蠟塊畫 + 金色</li>
+        </ul>
+      </div>
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">eco</span>與植物學的呼應</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>兩條平行弧線</li>
+          <li>意識：從低到高</li>
+          <li>植物：從簡到繁</li>
+          <li>同一個孩子，兩面鏡子</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">spa</span>
+  </div>
+
+  <!-- ==================== 藝術回應總覽 ==================== -->
+  <section class="mb-6">
+    <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">藝術回應總覽</h3>
+    <div class="cross-grid">
+      <div class="cross-card" style="border-left-color: #B8963A;">
+        <h4 style="color: #B8963A;">古印度：濕水彩</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>暖色調金黃與紫紅</li>
+          <li>蓮花意象</li>
+          <li>曼陀羅圖案</li>
+          <li>色彩的交融與流動</li>
+        </ul>
+      </div>
+      <div class="cross-card" style="border-left-color: #8B4513;">
+        <h4 style="color: #8B4513;">古波斯：蠟塊畫</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>光明與黑暗的對比</li>
+          <li>火焰</li>
+          <li>農耕場景</li>
+          <li>先知剪影</li>
+        </ul>
+      </div>
+      <div class="cross-card" style="border-left-color: #5E6B7F;">
+        <h4 style="color: #5E6B7F;">古巴比倫：黏土工作</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>楔形文字泥板</li>
+          <li>通天塔模型</li>
+          <li>星座圖</li>
+          <li>英雄搏鬥場景</li>
+        </ul>
+      </div>
+      <div class="cross-card" style="border-left-color: #7B4A4A;">
+        <h4 style="color: #7B4A4A;">古埃及：蠟塊畫 + 金色</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>金字塔、尼羅河</li>
+          <li>鷹頭荷魯斯</li>
+          <li>死者之書圖像</li>
+          <li>伊西斯展翅</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 結語 -->
+  <section class="mb-4 text-center py-3">
+    <p class="font-headline text-lg text-[var(--primary)] italic mb-3">原型：Charles Kovacs, <em>Ancient Mythologies</em> (Wynstones Press)<br/>保留施泰納意識演化弧線，加入台灣原住民神話作為島嶼插曲</p>
+    <div class="inline-flex flex-col items-center">
+      <div class="w-16 h-[2px] bg-[var(--primary)]/30 mb-4"></div>
+      <span class="font-label text-base text-[var(--on-surface)]">骨架版 v1.0 — 2026.03.26</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-[var(--bg-wash-1)] w-full border-t-0 mt-4 pb-6">
+  <div class="max-w-4xl mx-auto flex flex-col items-center gap-3 px-6 text-center">
+    <div class="w-full opacity-15 flex justify-center items-center gap-2 py-2">
+      <span class="material-symbols-outlined text-[var(--secondary)]">auto_stories</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">auto_stories</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">auto_stories</span>
+    </div>
+    <div class="space-y-2">
+      <p class="text-[var(--primary)] font-headline italic text-lg">慈心華德福學校</p>
+    </div>
+    <div class="text-[var(--secondary)] font-body text-xs tracking-widest uppercase opacity-60">
+      五年級古文明神話主課程・25 課骨架
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

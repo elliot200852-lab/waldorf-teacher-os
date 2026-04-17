@@ -1,0 +1,45 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Workspace 狀態追蹤
+# 此檔案由 add-teacher 技能自動生成，記錄你的工作空間基本資訊
+# 路徑：workspaces/Working_Member/Teacher_謝岷樺/workspace.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+teacher_identity:
+  name: 謝岷樺
+  teacher_id: hsieh-min-hua
+  role: 填空
+  email: hsiehfreya@gmail.com
+
+workspace_status: active
+
+created_date: 2026-04-02
+
+purpose: 謝岷樺的個人 workspace
+
+# ────────────────────────────────────────────────────────
+# 班級清單 / Classes
+# ────────────────────────────────────────────────────────
+
+classes: []
+
+# ────────────────────────────────────────────────────────
+# 附註
+# ────────────────────────────────────────────────────────
+#
+# 1. 新增班級：
+#    a. 在此 classes: [] 下方加入班級資訊
+#    b. 執行 setup/add-teacher.py 或手動建立 projects/class-{code}/ 資料夾
+#    c. AI 系統會自動掃描並同步
+#
+# 2. 班級代碼規則：
+#    - 使用英文小寫與數字
+#    - 多詞時用 dash 分隔（例：8a-english、middle-school-biology）
+#    - 導師課建議加 -homeroom 後綴（例：7th-homeroom）
+#
+# 3. 進度追蹤：
+#    - blocks_completed 欄位會由 AI 自動更新
+#    - 詳細進度在 projects/class-{code}/working/*.yaml 中查看
+#
+# 4. 注意隱私：
+#    - roster.yaml（學生名單）通常放在 .gitignore 中
+#    - 不要在公開 repo 中提交實名學生資料

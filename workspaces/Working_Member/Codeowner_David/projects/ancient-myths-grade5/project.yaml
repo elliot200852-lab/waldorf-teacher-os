@@ -1,0 +1,94 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：五年級古文明神話・專案進度錨點
+# 路徑：projects/ancient-myths-grade5/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ancient_myths_grade5:
+  project_type: 獨立工作線
+  target_grades: [5]
+  current_focus: 五年級華德福古文明神話主課程
+  last_updated: 2026-04-17T14:30:00
+
+  current_position:
+    phase: 進行中
+    step: 3
+    description: "AM014 完成，Block 3 巴比倫（3/5），下一篇 AM015 漢摩拉比法典"
+
+  source_material:
+    kovacs_book: "Charles Kovacs, *Ancient Mythologies: India, Persia, Babylon, Egypt* (Wynstones Press, 184 pp, 21 stories)"
+    kovacs_chapters_path: null  # 目前無原文；取得後建立 kovacs-chapters/ 資料夾
+    theme_skeleton: theme-skeleton.md
+    theme_skeleton_yaml: theme-skeleton.yaml
+    transparency_note: >
+      Theme Skeleton 基於出版資訊、Waldorf 教師大綱與施泰納課程邏輯重建，
+      非基於 Kovacs 原文。21 個故事的精確章節待原文確認後校正。
+
+  story_count:
+    total: 16
+    by_block:
+      block-1-india: 7        # 第 1-7 課（古印度）
+      block-2-persia: 4       # 第 8-11 課（古波斯）
+      block-3-babylon: 3      # 第 12-16 課（古巴比倫）
+      block-4-egypt: 0        # 第 17-21 課（古埃及）
+      island-interludes: 2    # TW01-TW04（島嶼插曲）
+
+  pipeline:
+    version: 1.0.0
+    assemble_script: publish/scripts/assemble-ancient-myths.js
+    assemble_base: publish/scripts/assemble-base.js
+    drive_folder: "1lUTzAcmJ5UuI3njADbJ-a3HSLl3aUhpC"  # Google Drive「古文明神話五年級」
+    scheduled_task: ancient-myths-daily
+    schedule: "0 12 * * *"  # 每天中午 12:00（含週末）
+
+  pipeline_tracker:
+    last_run: 2026-04-17
+    last_story_produced: AM014
+    last_story_title: "吉爾伽美什（二）——追尋永生"
+    next_story_queued: AM015
+    next_story_title: "漢摩拉比法典"
+    run_history:
+      - { date: 2026-04-17, story: AM014, status: passed, drive_uploaded: true, chalkboard: embedded }
+      - { date: 2026-04-16, story: AM013, status: passed, drive_uploaded: true, chalkboard: embedded }
+      - { date: 2026-04-13, story: AM012, status: passed, drive_uploaded: true, chalkboard: embedded }
+      - { date: 2026-04-09, story: AM011, status: passed, drive_uploaded: true, chalkboard: embedded }
+      - { date: 2026-04-04, story: AM010, status: passed, drive_uploaded: true, chalkboard: embedded }
+      - { date: 2026-04-03, story: AM009, status: passed, drive_uploaded: true, chalkboard: pending }
+      - { date: 2026-04-01, story: AM008, status: passed, drive_uploaded: true }
+      - { date: 2026-03-31, story: TW01, status: passed, drive_uploaded: true }
+      - { date: 2026-03-30, story: AM007, status: passed, drive_uploaded: true }
+      - { date: 2026-03-28, story: AM006, status: passed, drive_uploaded: true }
+      - { date: 2026-03-27, story: AM005, status: passed, drive_uploaded: true }
+      - { date: 2026-03-26, story: AM004, status: passed, drive_uploaded: true }
+    creatorhub:
+      channel_id: ancient-myths
+      last_synced: 2026-03-29
+      file_count_on_drive: 8
+
+  island_interludes:
+    description: "4 篇台灣原住民故事，插在文明轉換點，與四大文明平等對話"
+    stories:
+      TW01: { after: AM007, title: "布農族的射日與創世", tribe: "布農族" }
+      TW02: { after: AM011, title: "泰雅族的彩虹橋", tribe: "泰雅族" }
+      TW03: { after: AM016, title: "排灣族的百步蛇與秩序", tribe: "排灣族" }
+      TW04: { after: AM021, title: "達悟族的海——靈魂往何處去", tribe: "達悟族" }
+    total_with_interludes: 25
+
+  output_per_lesson:
+    - content.md              # (a) 800 字說書人逐字稿
+    - waldorf-teaching.md     # (b) 300 字通用華德福教學指引（降級版：無 Kovacs 原文分析）
+    - chalkboard-prompt.md    # (c) 黑板畫 Prompt
+    - images.md               # (d) 投影圖畫清單
+    - references.md           # (e) 參考來源
+    - raw-materials.md        # (f) 素材包
+    - quality-report.md       # (g) 品質報告
+
+  upgrade_path:
+    trigger: "取得 Kovacs 原文後"
+    actions:
+      - "建立 kovacs-chapters/ 資料夾，逐章存入原文"
+      - "waldorf-teaching.md 升級為 kovacs-teaching.md（含原文教學分析）"
+      - "校正 theme-skeleton 的章節標題與順序"
+
+  next_action:
+    description: "AM014 完成，Block 3 巴比倫（3/5），下一篇 AM015 漢摩拉比法典"

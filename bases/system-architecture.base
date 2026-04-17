@@ -1,0 +1,54 @@
+filters:
+  and:
+    - file.hasTag("architecture-card")
+properties:
+  file.name:
+    displayName: 檔案
+  component_name:
+    displayName: 元件名稱
+  description_zh:
+    displayName: 說明
+  file_path:
+    displayName: 實際路徑
+  layer:
+    displayName: 層級
+  file_type:
+    displayName: 檔案類型
+views:
+  - type: table
+    name: 系統架構總覽
+    groupBy:
+      property: layer
+      direction: ASC
+    order:
+      - component_name
+      - description_zh
+      - layer
+      - file_type
+      - file_path
+  - type: table
+    name: 核心層（Tier 0-1）
+    filters:
+      or:
+        - layer == "Tier 0 - AI 入口"
+        - layer == "Tier 1 - 系統路由"
+    order:
+      - component_name
+      - description_zh
+      - file_path
+  - type: table
+    name: 共用知識層（Tier 2）
+    filters:
+      and:
+        - layer == "Tier 2 - 共用知識"
+    order:
+      - component_name
+      - description_zh
+      - file_path
+  - type: cards
+    name: 架構卡片
+    order:
+      - component_name
+      - description_zh
+      - layer
+      - file_type

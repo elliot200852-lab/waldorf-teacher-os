@@ -1,0 +1,245 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 系統參考】
+# 名稱：Wikilink 連結協議
+# 路徑：ai-core/reference/wikilink-protocol.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# 目的：定義 TeacherOS 全 repo 的 wikilink 連結慣例。
+# 所有 AI 技能（lesson-engine、new-doc、wrap-up、obsidian-sync）
+# 在建立或修改 .md 檔案時，依此協議加入結構化連結。
+#
+# 核心原理：Obsidian 自動產生 backlinks。
+# 只要檔案 A 包含 [[B]]，B 的反向連結面板就會顯示 A。
+# 策略 = 確保每個檔案都有有意義的 forward links → Obsidian 免費提供 reverse。
+#
+# 最後更新：2026-04-06
+
+# ── 一、連結類型 ──────────────────────────────────────
+
+link_types:
+
+  internal_wikilink:
+    syntax: "[[頁面名稱]]"
+    scope: Obsidian vault 內部頁面
+    note: >
+      使用 Obsidian 的 wikilink 語法。不含 .md 副檔名。
+      連結到不存在的頁面是正常的（Obsidian 顯示為虛線連結，
+      未來頁面建立後自動解析）。
+
+  external_link:
+    syntax: "[顯示文字](https://url)"
+    scope: 外部 URL（CreatorHub、Drive、參考網站）
+    note: >
+      Obsidian [[wikilink]] 不支援外部 URL。
+      對外連結一律使用標準 markdown 連結語法。
+
+# ── 二、連結放置規則 ──────────────────────────────────
+
+placement:
+
+  lesson_plan:
+    file_pattern: "*-教師教案.md"
+    frontmatter_related: true
+    body_section: true
+    rationale: "教師是主要讀者，frontmatter 供機器查詢，body 供人閱讀"
+
+  worksheet:
+    file_pattern: "*-學習單.md"
+    frontmatter_related: true
+    body_section: false
+    rationale: "學生會看到 body，不放 wiki 雜訊。frontmatter 僅供系統追蹤"
+
+  wiki_entry:
+    file_pattern: "wiki/*.md"
+    frontmatter_related: true
+    body_section: true
+    rationale: "已有此格式（lesson-engine Stage 6），維持不變"
+
+  concept_page:
+    file_pattern: "wiki/concepts/**/*.md"
+    frontmatter_related: true
+    body_section: true
+    rationale: "hub 節點，連結越多越好"
+
+  story_content:
+    file_pattern: "*-content.md"
+    frontmatter_related: true
+    body_section: true
+    rationale: "故事源檔需要連到同組件（narration、images）和外部發布 URL"
+
+  story_component:
+    file_pattern: "*-narration.md, *-images.md, *-chalkboard-prompt.md"
+    frontmatter_related: true
+    body_section: false
+    rationale: "組件檔只需 frontmatter 連結回 content 主檔和發布 URL"
+
+  yaml_file:
+    file_pattern: "*.yaml, *.yml"
+    frontmatter_related: false
+    body_section: false
+    rationale: "YAML 不支援 wikilink 語法"
+
+# ── 三、frontmatter `related:` 格式 ─────────────────
+
+frontmatter_schema:
+
+  field_name: related
+  type: list
+  items: string  # 每項為 "[[頁面名]]" 或 "[文字](URL)"
+  example:
+    - "[[9C-week7-1-v1-學習單]]"
+    - "[[9c-english-w6-3]]"
+    - "[[Sandra-Cisneros]]"
+    - "[[連接詞]]"
+    - "[CreatorHub — A001](https://waldorfcreatorhubdatabase.web.app/stories/A001.html)"
+
+  published_url:
+    field_name: published_url
+    type: string
+    scope: "僅素材檔案（stories/ 下的 -content.md）"
+    example: "https://waldorfcreatorhubdatabase.web.app/stories/A001.html"
+
+  published_channel:
+    field_name: published_channel
+    type: string
+    scope: "僅素材檔案"
+    example: "taiwan-stories"
+
+# ── 四、body `## 連結` 區段格式 ──────────────────────
+
+body_section_format:
+
+  heading: "## 連結"
+  position: 檔案末尾（最後一個區段）
+  template: |
+    ## 連結
+
+    - 學習單：[[{配對學習單檔名}]]
+    - 前一堂：[[{prev wiki entry}]]
+    - 下一堂：[[{next wiki entry}]]
+    - 文本：[[{text concept page}]]
+    - 作者：[[{author concept page}]]
+    - 主題：[[{theme concept page}]]
+
+  story_template: |
+    ## 連結
+
+    - 已發布：[CreatorHub — {ID}](https://waldorfcreatorhubdatabase.web.app/stories/{ID}.html)
+    - 說書稿：[[{ID}-narration]]
+    - 圖像清單：[[{ID}-images]]
+    - 黑板畫提示：[[{ID}-chalkboard-prompt]]
+
+  notes:
+    - 不是每個項目都一定存在，依實際檔案狀況填入
+    - 連結到不存在的頁面完全正常（Obsidian 紅色虛線連結）
+    - 外部 URL 用標準 markdown 語法，不用 wikilink
+
+# ── 五、概念頁（wiki/concepts/）────────────────────
+
+concept_pages:
+
+  directory_structure:
+    texts: "wiki/concepts/texts/"       # 作者、文本
+    themes: "wiki/concepts/themes/"     # 跨科主題
+    grammar: "wiki/concepts/grammar/"   # 文法概念
+
+  creation_threshold:
+    rule: "跨 2 科/班即建立"
+    description: >
+      當一個實體（作者、文本、主題）在 2 個以上不同科目或班級的檔案中出現時，
+      AI 自動建立概念頁，不需教師確認。
+
+  type_values:
+    - concept-author    # 作者（楊逵、Sandra Cisneros）
+    - concept-text      # 文本作品（The House on Mango Street）
+    - concept-theme     # 跨科主題（殖民與抵抗、identity）
+    - concept-grammar   # 文法概念（連接詞、關係代名詞）
+
+  frontmatter_template:
+    aliases: ["中文名", "English name"]
+    type: "{concept-author | concept-text | concept-theme | concept-grammar}"
+    auto_generated: true
+    last_refreshed: "{today}"
+    tags: [concept, "{sub-type}", "{related tags}"]
+
+  body_template: |
+    # {概念名稱}
+
+    {一句話描述}
+
+    ## 出現在哪些課堂
+
+    - [[{wiki entry 1}]] — {使用脈絡}
+    - [[{wiki entry 2}]] — {使用脈絡}
+
+    ## 相關概念
+
+    - [[{related concept 1}]]
+    - [[{related concept 2}]]
+
+# ── 六、外部連結（CreatorHub 回連）───────────────────
+
+external_links:
+
+  creatorhub:
+    base_url: "https://waldorfcreatorhubdatabase.web.app"
+    url_pattern: "/stories/{storyId}.html"
+    source_of_truth: "creator-hub/data/files.json"
+    channels_config: "creator-hub/data/channels.json"
+
+    channel_prefix_map:
+      taiwan-stories: ["A", "EN"]
+      botany: ["B"]
+      ancient-myths: ["AM", "TW"]
+      island-myths-3rd: ["I"]
+      shanhaijing-3rd: ["SH"]
+      others: null  # 無固定 prefix
+
+    repo_source_paths:
+      A: "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/"
+      EN: "workspaces/Working_Member/Codeowner_David/projects/stories-of-taiwan/stories/"
+      B: "workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories/"
+      AM: "workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories/"
+      I: null   # 無 repo 源檔（Drive 直接上傳）
+      SH: "workspaces/Working_Member/Teacher_王琬婷/projects/class-3a/ml-shanhaijing/content/"
+
+  script:
+    path: "setup/scripts/link-published.py"
+    trigger_phrases:
+      - "補外部連結"
+      - "link published"
+      - "回填發布連結"
+    independent_of_pipeline: true
+    reason: >
+      Firebase 部署是 GitHub Actions 非同步做的（每天 14:03 或手動觸發），
+      pipeline 結束時故事可能還沒上線。外部連結必須在確認已部署後才跑。
+
+# ── 七、技能整合要求 ──────────────────────────────────
+
+skill_integration:
+
+  lesson_engine:
+    when: "Stage 4 產出教案時"
+    action: "自動在末尾加 ## 連結 + frontmatter related:"
+    also: "偵測跨科實體，達門檻時建議建立概念頁"
+
+  new_doc:
+    when: "建立任何新 .md 檔案時"
+    action: "frontmatter 自動包含 related: []，AI 根據上下文填入初始連結"
+
+  wrap_up:
+    when: "commit 前"
+    action: "快速掃描本次修改的 .md 是否有 related:，缺少則提醒（不阻擋 commit）"
+
+  obsidian_sync:
+    when: "執行 sync 掃描時"
+    action: "新增 LINK_ORPHAN 類別，偵測缺少 related: 或 ## 連結 的 .md 檔"
+
+# ── 八、紅線（不做的事）──────────────────────────────
+
+anti_patterns:
+  - "不在 YAML 檔案中放 wikilinks（語法不支援）"
+  - "不在學習單 body 中放 wikilinks（學生會看到）"
+  - "不為每個 tag 建立概念頁（只有跨 2 科/班的才建）"
+  - "不修改已存在且格式正確的連結（冪等原則）"
+  - "不在 pipeline 中加入外部連結步驟（時間軸不同）"

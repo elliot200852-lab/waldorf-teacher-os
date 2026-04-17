@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="autumn" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>臺灣的故事｜年度主題全覽｜五年級臺灣史地主課程</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "var(--primary)",
+        "secondary": "var(--secondary)",
+        "accent": "var(--accent)",
+        "on-primary": "#ffffff",
+        "on-surface": "var(--on-surface)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        "surface": "var(--bg-wash-1)",
+        "surface-container": "var(--bg-wash-2)",
+        "outline-variant": "var(--outline-variant)",
+      },
+      fontFamily: {
+        "headline": ["Playfair Display", "Noto Serif TC", "Georgia", "serif"],
+        "body": ["Plus Jakarta Sans", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "sans-serif"],
+        "label": ["Plus Jakarta Sans", "Noto Sans TC", "sans-serif"],
+      },
+    },
+  },
+}
+</script>
+<style>
+html.autumn {
+  --primary: #8B6F47;
+  --secondary: #5B7553;
+  --accent: #C47D3B;
+  --bg-wash-1: #F5F0E8;
+  --bg-wash-2: #F0E8D5;
+  --bg-wash-3: #E8F0E5;
+  --on-surface: #2A2520;
+  --on-surface-variant: #544A40;
+  --outline-variant: #D1C4B0;
+  --gradient-body: radial-gradient(circle at top left, #F5F0E8 0%, #F0E8D5 40%, #E8F0E5 100%);
+  --gradient-header: linear-gradient(135deg, #8B6F47 0%, #5B7553 100%);
+}
+body { background: var(--gradient-body); min-height: 100vh; }
+.watercolor-wash-header {
+  background: var(--gradient-header);
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  mask-size: 100% 100%; -webkit-mask-size: 100% 100%;
+}
+.hand-drawn-border {
+  border: 2px solid var(--primary);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.botanical-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; opacity: 0.06; z-index: 50;
+}
+.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; }
+.drop-cap::first-letter {
+  font-size: 3.5rem; font-family: "Playfair Display", "Noto Serif TC", serif;
+  float: left; margin-right: 0.75rem; line-height: 1; color: var(--primary);
+}
+.block-card {
+  background: white; border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+}
+.block-card h4 { color: var(--primary); font-family: "Noto Serif TC", serif; font-size: 18px; font-weight: 700; margin-bottom: 0.5rem; }
+.block-card .desc { color: var(--on-surface); font-size: 16px; line-height: 1.55; margin-bottom: 0.5rem; }
+.block-card .target { color: var(--on-surface-variant); font-size: 14px; font-style: italic; margin-top: 0.3rem; }
+.block-group { margin-bottom: 2rem; }
+.block-group-title {
+  font-family: "Playfair Display", "Noto Serif TC", serif;
+  font-size: 22px; font-weight: 700; color: white;
+  padding: 0.6rem 1.2rem; border-radius: 8px; margin-bottom: 1rem;
+  display: inline-block;
+}
+.bg-block-a { background: linear-gradient(135deg, #8B6F47, #A08860); }
+.bg-block-b { background: linear-gradient(135deg, #4A7C6F, #5BA08B); }
+.bg-block-c { background: linear-gradient(135deg, #7B4A4A, #9B6060); }
+.bg-block-d { background: linear-gradient(135deg, #5E6B7F, #7080A0); }
+.bg-block-e { background: linear-gradient(135deg, #6B7F5E, #7A9B6A); }
+.bg-block-f { background: linear-gradient(135deg, #B8963A, #C4A74E); }
+.bg-block-g { background: linear-gradient(135deg, #7B6BA0, #9B7BB0); }
+.status-badge {
+  display: inline-block; font-size: 13px; font-weight: 600;
+  padding: 2px 10px; border-radius: 20px; margin-left: 8px;
+}
+.status-badge.done {
+  background: #E8F5E9; color: #2E7D32;
+}
+.status-badge.pending {
+  background: #F5F5F5; color: #9E9E9E;
+}
+.era-badge {
+  display: inline-block; font-size: 13px; font-weight: 600;
+  padding: 2px 10px; border-radius: 20px; margin-left: 8px;
+  background: var(--bg-wash-2); color: var(--primary);
+}
+.cross-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.cross-card {
+  background: var(--bg-wash-3); border-radius: 10px; padding: 1rem 1.2rem;
+  border-left: 4px solid var(--secondary);
+}
+.cross-card h4 { font-family: "Noto Serif TC", serif; font-size: 17px; color: var(--primary); margin-bottom: 0.5rem; }
+.cross-card li { font-size: 16px; line-height: 1.6; color: var(--on-surface); }
+.progress-bar-track {
+  background: var(--outline-variant); border-radius: 8px; height: 10px; width: 100%; overflow: hidden;
+}
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--secondary), var(--accent)); height: 100%; border-radius: 8px;
+  transition: width 0.5s ease;
+}
+@media print {
+  body { background: white !important; }
+  .botanical-overlay { display: none !important; }
+  .watercolor-wash-header { mask-image: none !important; -webkit-mask-image: none !important; }
+  header { display: none !important; }
+  main { max-width: 100% !important; padding: 0 2rem !important; }
+  .block-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body class="font-body text-[var(--on-surface)] selection:bg-[var(--secondary)]/20">
+<div class="botanical-overlay"></div>
+
+<header id="site-header" class="sticky top-0 z-40 bg-[var(--bg-wash-1)]/80 backdrop-blur-xl print:hidden transition-opacity duration-300">
+  <div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-xl mx-auto">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-[var(--primary)]" style="font-size: 2rem;">eco</span>
+      <h1 class="font-headline text-3xl tracking-wide leading-relaxed text-[var(--primary)]">慈心華德福</h1>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-[900px] mx-auto px-8 py-6 relative overflow-hidden">
+
+  <div class="absolute -top-10 -right-10 opacity-[0.07] rotate-12">
+    <span class="material-symbols-outlined text-[12rem] text-[var(--primary)]">menu_book</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="mb-6 text-center">
+    <div class="watercolor-wash-header p-5 mb-3 inline-block w-full">
+      <h2 class="font-headline text-4xl md:text-5xl text-on-primary leading-tight font-bold italic mb-2">臺灣的故事｜年度主題全覽</h2>
+      <p class="text-on-primary/90 font-label tracking-[0.2em] text-sm">五年級臺灣史地主課程｜年度目標 90-120 篇</p>
+    </div>
+    <div class="space-y-2 text-left mt-3">
+      <p class="drop-cap text-[18px] leading-[1.6]">臺灣的故事是一條時間之河。從六百萬年前海底升起的島嶼，到史前人類踏上這片土地的第一個足印；從大航海時代的風帆，到帝國邊陲的水圳與茶園；從戰爭的傷痕，到民主的芽。每一篇故事都是有憑有據的短篇（300-500 字），帶五年級學生在一整個學年裡，走過臺灣的前世今生。</p>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+  </div>
+
+  <!-- 核心提問 -->
+  <section class="my-6">
+    <div class="bg-[var(--bg-wash-3)] p-5 border-l-[6px] border-[var(--secondary)]/60 rounded-r-xl relative">
+      <span class="absolute -top-4 -left-4 material-symbols-outlined text-[var(--secondary)]/30 text-5xl">menu_book</span>
+      <blockquote class="font-headline italic text-xl text-[var(--primary)] leading-relaxed">
+        在我們之前，誰住在這裡？是誰把臺灣帶到世界面前？兩百年裡，人們怎麼在這片土地上活著？
+      </blockquote>
+      <cite class="block mt-3 text-sm font-label tracking-widest text-[var(--secondary)]">七大區塊核心提問</cite>
+    </div>
+  </section>
+
+  <!-- ==================== BLOCK A ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-a">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">terrain</span>
+      Block A：島嶼的誕生與最初的人｜史前—1624
+      <span class="status-badge done">已完成 11 篇</span>
+    </div>
+
+    <div class="block-card">
+      <h4>島嶼誕生</h4>
+      <div class="desc">臺灣的地質形成、板塊運動、山脈與海岸——六百萬年前，菲律賓海板塊與歐亞板塊的碰撞，讓這座島嶼從海底隆起。</div>
+      <div class="target">目標 3 篇 <span class="status-badge done">已完成 A001-A003, A005</span></div>
+    </div>
+
+    <div class="block-card">
+      <h4>最早的足跡</h4>
+      <div class="desc">史前遺址（卑南、十三行、大坌坑）、考古發現——石器、陶片、玉飾，這些沉默的證據訴說著最早的故事。</div>
+      <div class="target">目標 4 篇 <span class="status-badge done">已完成 A004, A009</span></div>
+    </div>
+
+    <div class="block-card">
+      <h4>南島的孩子</h4>
+      <div class="desc">南島語族的遷徙路線、臺灣作為南島語族原鄉的假說——從這座島嶼出發，他們的後代遍布太平洋。</div>
+      <div class="target">目標 3 篇 <span class="status-badge done">已完成 A006, A011</span></div>
+    </div>
+
+    <div class="block-card">
+      <h4>各族的土地故事</h4>
+      <div class="desc">泰雅的獵場、阿美的海、排灣的百步蛇、達悟的拼板舟——每一個族群都有自己與這片土地相處的方式。</div>
+      <div class="target">目標 5-8 篇 <span class="status-badge done">已完成 A007, A008, A010</span></div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+  </div>
+
+  <!-- ==================== BLOCK B ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-b">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">sailing</span>
+      Block B：海上來的人｜1540s-1624
+      <span class="status-badge pending">尚未開始</span>
+    </div>
+
+    <div class="block-card">
+      <h4>Ilha Formosa</h4>
+      <div class="desc">葡萄牙人眼中的美麗島、臺灣在歐洲古地圖上的出現——一座被命名卻未被占領的島嶼，如何進入世界的視野。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>海上的十字路口</h4>
+      <div class="desc">東亞貿易網絡、日本商人、海盜與走私——在國家力量到來之前，這裡是冒險者與商人的舞臺。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>渡海的人</h4>
+      <div class="desc">最早的漢人移民、漁民與商人——跨越黑水溝的勇氣，與在新土地上落腳的第一步。</div>
+      <div class="target">目標 2-4 篇</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+  </div>
+
+  <!-- ==================== BLOCK C ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-c">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">castle</span>
+      Block C：紅毛城的時代｜1624-1662
+      <span class="status-badge pending">尚未開始</span>
+    </div>
+
+    <div class="block-card">
+      <h4>大員的城堡</h4>
+      <div class="desc">荷蘭人在臺南建立的統治、熱蘭遮城與普羅民遮城——一個遙遠的商業帝國，為何要在這座島嶼上蓋城堡。</div>
+      <div class="target">目標 4 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>北方的十字架</h4>
+      <div class="desc">西班牙人在基隆與淡水、聖薩爾瓦多城——另一個帝國從北邊登陸，帶來了不同的語言與信仰。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>新港文書</h4>
+      <div class="desc">荷蘭人與原住民的互動、基督教傳入、羅馬字書寫系統——當兩個世界相遇，文字成為了橋樑也是武器。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>海上的角力</h4>
+      <div class="desc">鄭芝龍、海盜與商業帝國、荷蘭人的困境——在正規軍隊與海盜之間，臺灣海峽的命運正在被改寫。</div>
+      <div class="target">目標 2-3 篇</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+  </div>
+
+  <!-- ==================== BLOCK D ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-d">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">shield</span>
+      Block D：國姓爺與他的後人｜1662-1683
+      <span class="status-badge pending">尚未開始</span>
+    </div>
+
+    <div class="block-card">
+      <h4>國姓爺的抉擇</h4>
+      <div class="desc">鄭成功的身世、從中國到臺灣的決斷、攻取熱蘭遮城——一個混血兒的命運，與一座島嶼的轉折。</div>
+      <div class="target">目標 4 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>建設的二十年</h4>
+      <div class="desc">陳永華的制度建設、屯田、教育、開鑿水利——在戰爭與流亡之後，如何在新土地上建立秩序。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>明鄭的終結</h4>
+      <div class="desc">鄭經的統治、清廷的壓力、施琅渡海——一個政權的落幕，與另一個時代的序曲。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+  </div>
+
+  <!-- ==================== BLOCK E ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-e">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">agriculture</span>
+      Block E：帝國邊陲的日常｜1683-1895
+      <span class="status-badge pending">尚未開始</span>
+    </div>
+
+    <div class="block-card">
+      <h4>渡海的勇氣</h4>
+      <div class="desc">渡臺禁令與偷渡、唐山過臺灣的故事——黑水溝的波濤與「六死三留一回頭」的悲壯。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>開墾的汗水</h4>
+      <div class="desc">水利建設（瑠公圳、曹公圳）、農業開拓——每一條水圳的背後，都是一群人與大地搏鬥的故事。</div>
+      <div class="target">目標 4 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>漳泉械鬥</h4>
+      <div class="desc">不同族群的衝突與融合、閩客關係——來自同一片土地的人，為何在新家園裡互相爭鬥。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>臺灣的物產</h4>
+      <div class="desc">茶、樟腦、糖——臺灣與世界的連結。這些農產品讓臺灣從帝國的邊陲走上了國際舞臺。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>原漢之間</h4>
+      <div class="desc">番界、隘勇線、原住民與漢人的互動——一條看不見的線，劃開了兩個世界。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>反叛與正義</h4>
+      <div class="desc">林爽文、戴潮春——人民為何起義。當統治者忘記了人民，人民就會站起來。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>現代化的開端</h4>
+      <div class="desc">劉銘傳的鐵路、電報、郵政、臺灣建省——在帝國的最後時刻，一位官員試圖讓臺灣跟上世界的腳步。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+  </div>
+
+  <!-- ==================== BLOCK F ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-f">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">train</span>
+      Block F：另一個時代｜1895-1945
+      <span class="status-badge pending">尚未開始</span>
+    </div>
+
+    <div class="block-card">
+      <h4>馬關與乙未</h4>
+      <div class="desc">馬關條約、臺灣民主國、乙未抗日——當一座島嶼被簽字讓出，島上的人決定自己站起來。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>建設的另一面</h4>
+      <div class="desc">鐵路、公路、水庫、嘉南大圳與八田與一——殖民者帶來的現代化，背後有著複雜的動機與代價。</div>
+      <div class="target">目標 4 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>抵抗的聲音</h4>
+      <div class="desc">霧社事件、莫那魯道、西來庵事件——在秩序的表面之下，不屈的靈魂從未沉默。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>日常的臺灣</h4>
+      <div class="desc">市場、學校、神社、日治時期的生活樣貌——在大歷史的縫隙裡，普通人怎麼過日子。</div>
+      <div class="target">目標 3-5 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>戰爭的陰影</h4>
+      <div class="desc">二戰末期、空襲、徵兵、終戰——當戰火燒到家門口，島嶼上的每一個人都無法置身事外。</div>
+      <div class="target">目標 2-3 篇</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+  </div>
+
+  <!-- ==================== BLOCK G ==================== -->
+  <div class="block-group">
+    <div class="block-group-title bg-block-g">
+      <span class="material-symbols-outlined align-middle mr-1" style="font-size:20px">groups</span>
+      Block G：我們的時代｜1945-
+      <span class="status-badge pending">尚未開始</span>
+    </div>
+
+    <div class="block-card">
+      <h4>光復與震盪</h4>
+      <div class="desc">日本離開、國民政府來臺、二二八事件——一個時代的結束與另一個時代的開始，中間是巨大的震盪。</div>
+      <div class="target">目標 3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>沉默的年代</h4>
+      <div class="desc">白色恐怖、戒嚴——五年級點到為止。有些故事，需要等孩子再大一點才能完整訴說。</div>
+      <div class="target">目標 2 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>站起來</h4>
+      <div class="desc">經濟奇蹟、十大建設、臺灣製造——一座小島如何在世界經濟版圖上找到自己的位置。</div>
+      <div class="target">目標 2-3 篇</div>
+    </div>
+
+    <div class="block-card">
+      <h4>自由的聲音</h4>
+      <div class="desc">美麗島事件、解嚴、民主化——為高年級深化預留空間。自由不是天上掉下來的，是一代人爭取來的。</div>
+      <div class="target">目標 3-4 篇</div>
+    </div>
+  </div>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+  </div>
+
+  <!-- ==================== 進度總覽 ==================== -->
+  <section class="mb-6">
+    <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">進度總覽</h3>
+    <div class="block-card">
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h4 style="margin-bottom: 0.25rem;">目前進度</h4>
+          <p class="text-[var(--on-surface-variant)] text-[15px]">Block A — 11 篇完成（9 篇已上傳 Google Drive）</p>
+        </div>
+        <div class="text-right">
+          <span class="text-2xl font-bold text-[var(--accent)]">11</span>
+          <span class="text-[var(--on-surface-variant)] text-sm"> / 90-120</span>
+        </div>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" style="width: 10%;"></div>
+      </div>
+      <div class="flex justify-between mt-2 text-xs text-[var(--on-surface-variant)]">
+        <span>Block A 進行中</span>
+        <span>Block B-G 待啟動</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分隔線 -->
+  <div class="flex justify-center gap-3 py-3 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">eco</span>
+  </div>
+
+  <!-- ==================== 跨學科連結 ==================== -->
+  <section class="mb-6">
+    <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">跨學科連結</h3>
+    <div class="cross-grid">
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">translate</span>英文課</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>臺灣植物英文名稱</li>
+          <li>原住民族英文介紹</li>
+          <li>歷史人物英文傳記短文</li>
+        </ul>
+      </div>
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">science</span>自然科學</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>板塊運動與火山地質</li>
+          <li>黑潮與洋流</li>
+          <li>生態保育</li>
+        </ul>
+      </div>
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">calculate</span>數學／地理</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>地圖判讀</li>
+          <li>時間軸計算</li>
+          <li>面積與人口統計</li>
+        </ul>
+      </div>
+      <div class="cross-card">
+        <h4><span class="material-symbols-outlined align-middle mr-1" style="font-size:18px">palette</span>藝術回應</h4>
+        <ul class="list-disc list-inside space-y-1">
+          <li>板書畫（黑板畫）</li>
+          <li>濕水彩（地景）</li>
+          <li>蠟塊畫（人物）</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 結語 -->
+  <section class="mb-4 text-center py-3">
+    <p class="font-headline text-lg text-[var(--primary)] italic mb-3">年度主題骨架 draft-v0.1 — 2026.03.21<br/>年度目標 90-120 篇｜七大區塊時序推進</p>
+    <div class="inline-flex flex-col items-center">
+      <div class="w-16 h-[2px] bg-[var(--primary)]/30 mb-4"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-[var(--bg-wash-1)] w-full border-t-0 mt-4 pb-6">
+  <div class="max-w-4xl mx-auto flex flex-col items-center gap-3 px-6 text-center">
+    <div class="w-full opacity-15 flex justify-center items-center gap-2 py-2">
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+    </div>
+    <div class="space-y-2">
+      <p class="text-[var(--primary)] font-headline italic text-lg">慈心華德福學校</p>
+    </div>
+    <div class="text-[var(--secondary)] font-body text-xs tracking-widest uppercase opacity-60">
+      五年級臺灣史地主課程・年度主題骨架
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

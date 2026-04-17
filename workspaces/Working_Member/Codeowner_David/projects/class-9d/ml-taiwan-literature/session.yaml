@@ -1,0 +1,85 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：九年級 D 班・台灣文學主課程進度錨點
+# 路徑：projects/class-9d/ml-taiwan-literature/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ml_taiwan_literature_session:
+  class: class-9d
+  last_updated: 2026-04-15
+
+  current_position:
+    block: 一
+    step: 3
+    sub_block: null
+    unit_number: null
+    current_week: 8    # 第 8 週開始上課（週二至週四）
+
+  confirmed_decisions:
+    - "教學大綱 v1 確認：「這座島嶼上的人」— 8 天主課程（7+1），主題弧線 入口→漂流→沉默→根→汗→海→我→回音"
+    - "時代範圍：國民黨來臺（1945）以後至今，日治時期先不用"
+    - "文本來源：郭朝清老師整理的慈心九年級臺灣文學資料庫（37 篇），已轉 Markdown 存入 reference/texts/"
+    - "Day 1 教案 v2 確認：鋼琴暖身 + 水上組曲主文本，寫作示範用教室實物（粉筆/拖鞋/馬克杯），語氣落地不縹緲"
+    - "DI 策略：閱讀量分層（全班主文本 + 進階延伸），寫作鷹架（C/D 起手式寫黑板），回家作業務實不加量"
+    - "評量：課堂參與 30% + 工作本 50% + 期末反思 20%"
+    - "Day 1 已上課，教學實況良好：節奏得當、入口設計有效、教師幽默拉住學生"
+    - "Day 2 教案 v2 確認：暖身加 Day 1 書寫回顧、補讀改精讀、討論卡六題選題制、書寫從 FB 留言改角色視角書寫（四角色 + 精煉文字 + 文學手法）、教師黑板示範母親視角"
+    - "紅鞋子選讀四段確認：米街買雜誌 / 被捕 / 審問 / 判決書（A/B 讀全文）"
+    - "Day 3 教案 v1 完成：精讀三段落（被捕/審問/判決）+ 象徵技法 + 詩歌創作「沉默中的一句話」+ 三轉折點（台外省複雜性/葉石濤文學地位/臺灣主體性）+ 發戰士乾杯"
+    - "Day 4 教案 v2 確認：莫那能朗讀開場 + 照片牆視覺化討論（六代戰士/三轉折點）+ 對比技法 + 生活雜記「我與一個地方的記憶」+ 發工廠的舞會 + 飛鼠大學 A/B 延伸"
+    - "Day 5 教案 v1 確認（04-14）：David 審閱 OK"
+    - "Day 6 教案 v1 確認（04-14）：收束段調整——發放「四首臺灣的詩」取代胡德夫文本，學生預讀"
+    - "Day 7 教案 v2 確認（04-14）：撤換胡德夫。葉石濤降為開場定錨（15 min），向陽〈我的姓氏〉為核心（25 min），四首臺灣詩貫穿，技法改回散文詩（向陽風格分析），〈臺灣的孩子〉收束"
+    - "教學大綱 v1 教師版同步更新（04-15）：Day 6 回家閱讀改四首臺灣詩、Day 7 全面換文（葉石濤+向陽四首詩）、文本總覽表與寫作技法表同步"
+    - "學生版課程綱要 Markdown 源文件建立（04-15）：依原版 PDF 結構重建，書寫練習散文詩描述更新"
+    - "Day 7 收尾段修改（04-15）：回家作業改為兩件事——① 選段朗讀 ② 口述最深刻部分"
+    - "Day 8 回顧課教案 v1 完成（04-15）：Lesson Engine 設計。兩輪分享（朗讀+口述）+ 工作本整理 + 期末反思書寫"
+
+  next_action:
+    description: >
+      Day 1-8 全部教案完成。區塊一備課工作結束。
+
+      【已完成】
+      - Day 1-4 v2：全部定案
+      - Day 5 v1：David 審閱確認
+      - Day 6 v1：確認，收束段已修改（發放四首臺灣詩取代胡德夫）
+      - Day 7 v2：確認。收尾段更新為兩件回家任務
+      - Day 8 v1：回顧課。Lesson Engine 設計，稽核 10/10 通過
+
+      【待做】
+      1. Day 5-7 美化版 PDF/Word 輸出（如需列印）
+      2. 準備向陽〈我的姓氏〉朗讀音檔（David 手邊有）
+      3. 準備「葉石濤語錄」A4 講義
+      4. Day 8 教案 David 審閱
+    input_needed_from_teacher: "Day 8 教案審閱；確認是否需要美化版輸出"
+
+  output_files:
+    syllabus_versions:
+      - version: v1
+        date: 20260406
+        paths:
+          md: content/syllabus-v1.md
+          md_student: content/syllabus-v1-student.md
+          pdf_teacher: ~/Desktop/完成檔案/10_9D臺灣文學/9D臺灣文學_教學大綱_教師版v1.pdf
+          pdf_student: ~/Desktop/完成檔案/10_9D臺灣文學/9D臺灣文學_課程綱要_學生版.pdf
+    units_completed: []
+    lesson_plans:
+      - content/lesson-01-v2.md
+      - content/lesson-02-v2.md
+      - content/lesson-03-v1.md
+      - content/lesson-04-v2.md
+      - content/lesson-05-v1.md
+      - content/lesson-06-v1.md
+      - content/lesson-07-v2.md
+      - content/lesson-08-v1.md
+    supplementary:
+      - content/9D-Day3-示範詩-ABCD.md
+    reference:
+      - reference/向陽-我的姓氏-研究資料.md
+    beautified:
+      - content/完成檔案/Day5教案-汗奇蹟的代價-美化版.pdf
+      - content/完成檔案/Day5教案-汗奇蹟的代價.docx
+    extensions_completed: []
+
+  open_questions:
+    - "Day 5-7 美化版 PDF/Word 是否需要輸出"
+    - "Day 8 教案待 David 審閱"

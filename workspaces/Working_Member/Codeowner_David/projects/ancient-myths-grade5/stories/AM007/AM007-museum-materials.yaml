@@ -1,0 +1,124 @@
+# ━━━
+# 【TeacherOS 工作線】
+# 名稱：AM007 佛陀・博物館藝術素材
+# 路徑：projects/ancient-myths-grade5/stories/AM007/museum-materials.yaml
+# ━━━
+query: Buddha
+api_source: met
+grade: 9
+timestamp: 20260330-122901
+total_results: 8
+items:
+- id: met_78191
+  title: Buddha Shakyamuni
+  title_zh: ''
+  artist: ''
+  date: 12th century
+  period: Asian Art
+  medium: Brass with colored pigments
+  image_url: https://images.metmuseum.org/CRDImages/as/original/DP-15581-015.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/as/web-large/DP-15581-015.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/78191
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_42733
+  title: Buddha Maitreya (Mile)
+  title_zh: ''
+  artist: ''
+  date: dated 486 (10th year of Taihe reign)
+  period: Asian Art
+  medium: Gilt bronze with traces of pigment; piece-mold cast
+  image_url: https://images.metmuseum.org/CRDImages/as/original/DP170102.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/as/web-large/DP170102.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/42733
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_38950
+  title: Bodhisattva Avalokiteshvara
+  title_zh: ''
+  artist: ''
+  date: second quarter of the 8th century
+  period: Asian Art
+  medium: Copper alloy inlaid with silver and glass or obsidian
+  image_url: https://images.metmuseum.org/CRDImages/as/original/LK_DP316445r3_25AA.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/as/web-large/LK_DP316445r3_25AA.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/38950
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_38634
+  title: Crowned  Bodhisattva
+  title_zh: ''
+  artist: ''
+  date: 3rd–early 4th century
+  period: Asian Art
+  medium: Sandstone
+  image_url: https://images.metmuseum.org/CRDImages/as/original/DP701395.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/as/web-large/DP701395.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/38634
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_193451
+  title: Good Shepherd
+  title_zh: ''
+  artist: ''
+  date: 17th–18th century
+  period: European Sculpture and Decorative Arts
+  medium: Ivory, with traces of gilding and polychromy
+  image_url: https://images.metmuseum.org/CRDImages/es/original/38227.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/es/web-large/38227.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/193451
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_856720
+  title: The Esoteric Buddhist Goddess Karmavajri
+  title_zh: ''
+  artist: ''
+  date: 11th Century
+  period: Asian Art
+  medium: Silver inlaid with copper and gold
+  image_url: https://images.metmuseum.org/CRDImages/as/original/DP-24931-001.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/as/web-large/DP-24931-001.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/856720
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_551786
+  title: Book of the Dead of the Priest of Horus, Imhotep (Imuthes)
+  title_zh: ''
+  artist: ''
+  date: ca. 332–200 B.C.
+  period: Egyptian Art
+  medium: Papyrus, ink
+  image_url: https://images.metmuseum.org/CRDImages/eg/original/2-35.9.20a–w_EGDP014589-4594.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/eg/web-large/2-35.9.20a–w_EGDP014589-4594.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/551786
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_53176
+  title: Fudō Myōō, the Immovable Wisdom King (Achala Vidyaraja)
+  title_zh: ''
+  artist: Kaikei
+  date: early 13th century
+  period: Asian Art
+  medium: Japanese cypress with lacquer, color, gold, cut gold leaf (kirikane), and
+    inlaid crystal eyes
+  image_url: https://images.metmuseum.org/CRDImages/as/original/DP-22243-001.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/as/web-large/DP-22243-001.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/53176
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}

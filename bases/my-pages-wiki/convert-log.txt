@@ -1,0 +1,675 @@
+[Mon Apr  6 16:40:04 CST 2026] Starting .pages -> .md conversion...
+[1/347] Converting: 英文教學/詩歌與歌曲/節慶歌曲.pages
+[22/347] Converting: 英文教學/課程大綱與評量/7年級評量.pages
+[2/347] Converting: 英文教學/詩歌與歌曲/Do you hear the people sing .pages
+[23/347] Converting: 英文教學/課程大綱與評量/英文9c課堂 2025-2026.pages
+[3/347] Converting: 英文教學/詩歌與歌曲/9C戲劇主題曲.pages
+[24/347] Converting: 英文教學/課程大綱與評量/師訓「外語教學講座」--自由的哲學（月主題）.pages
+[4/347] Converting: 英文教學/詩歌與歌曲/English Wordplay-英文諧音梗.pages
+[25/347] Converting: 英文教學/口說與聽力/Meeting Charming Taiwan--聽力練習.pages
+[5/347] Converting: 英文教學/詩歌與歌曲/Smile_Nat King Cole .pages
+[26/347] Converting: 英文教學/口說與聽力/8c口頭報告的基本結構建議.pages
+[6/347] Converting: 英文教學/詩歌與歌曲/Whitman_Steiner_外語清醒_30分鐘逐字教案.pages
+[27/347] Converting: 英文教學/口說與聽力/1、語練2、英文課堂紀錄.pages
+[7/347] Converting: 英文教學/詩歌與歌曲/A Winter Walk and Finding Strength.pages
+[28/347] Converting: 英文教學/口說與聽力/C8秋1-口語練習.pages
+[8/347] Converting: 英文教學/詩歌與歌曲/長崎は今日も雨だった 歌詞 .pages
+[29/347] Converting: 英文教學/單字與詞彙/單字測驗-歷屆 p.72.pages
+[9/347] Converting: 英文教學/詩歌與歌曲/冬慶4歌.pages
+[30/347] Converting: 英文教學/單字與詞彙/單字測驗20240527.pages
+[10/347] Converting: 英文教學/詩歌與歌曲/神隱少女 歌詞.pages
+[31/347] Converting: 英文教學/單字與詞彙/200常用動詞片語-依核心動詞分類.pages
+[11/347] Converting: 英文教學/詩歌與歌曲/You raise me up lyrics.pages
+[32/347] Converting: 英文教學/單字與詞彙/國中字根教學.pages
+[12/347] Converting: 英文教學/詩歌與歌曲/amazing grace.pages
+[33/347] Converting: 英文教學/單字與詞彙/Vocabulary Test Unit32 歷屆試題1 .pages
+[13/347] Converting: 英文教學/閱讀與文學/Iran’s government will only fall when its soldiers, leaders, and people all change..pages
+[34/347] Converting: 英文教學/單字與詞彙/歷屆試題段落大意及單字.pages
+[14/347] Converting: 英文教學/閱讀與文學/My name -the house on Mango Street..pages
+[35/347] Converting: 英文教學/單字與詞彙/Luke's Podcast-The snowman單字.pages
+[15/347] Converting: 英文教學/寫作/Project前後未來-英文學習單.pages
+[36/347] Converting: 英文教學/單字與詞彙/adjectives_list_with_id.pages
+[16/347] Converting: 英文教學/寫作/辨識生命重量，試著看見自己.pages
+[37/347] Converting: 英文教學/單字與詞彙/nouns_list_with_categories.pages
+[17/347] Converting: 英文教學/寫作/AI_自由哲學_英語創作場景_第二組命題.pages
+[38/347] Converting: 英文教學/單字與詞彙/verbs_list_with_id.pages
+[18/347] Converting: 英文教學/寫作/生活畫布-lucky note.pages
+[39/347] Converting: 英文教學/文法/1200字動詞整理表_時態生活情境_8下+9上.pages
+[19/347] Converting: 英文教學/寫作/AI_自由哲學_英語創意教學五場景.pages
+[40/347] Converting: 英文教學/文法/現在完成式-Fortune cookies..pages
+[20/347] Converting: 英文教學/寫作/寫給十五歲的自己.pages
+[41/347] Converting: 英文教學/文法/關係子句的辨識與理解.pages
+[21/347] Converting: 英文教學/課程大綱與評量/9C 英文課 114 學年度春夏學期 教學大綱 .pages
+[42/347] Converting: 英文教學/文法/基本文法架構+英文六大基本時態：.pages
+[22/347] Converting: 英文教學/課程大綱與評量/7年級評量.pages
+[43/347] Converting: 英文教學/文法/分辨一般動詞、助動詞和be動詞、情狀助動詞定位檢測.pages
+[23/347] Converting: 英文教學/課程大綱與評量/英文9c課堂 2025-2026.pages
+[44/347] Converting: 眾神的記憶術——許丙丁與府城的聲音地層.pages
+[24/347] Converting: 英文教學/課程大綱與評量/師訓「外語教學講座」--自由的哲學（月主題）.pages
+[45/347] Converting: 推薦信與對外文件/Recommendation for Jo Yen Chiu to KIS International School Reignwood Park.pages
+[25/347] Converting: 英文教學/口說與聽力/Meeting Charming Taiwan--聽力練習.pages
+[46/347] Converting: 推薦信與對外文件/Reply-Form-Volunteers, for Enya Yang, Taiwan.pages
+[26/347] Converting: 英文教學/口說與聽力/8c口頭報告的基本結構建議.pages
+[47/347] Converting: 推薦信與對外文件/Recommendation for Jo Yen Chiu to Rugby School Japan.pages
+[27/347] Converting: 英文教學/口說與聽力/1、語練2、英文課堂紀錄.pages
+[48/347] Converting: 推薦信與對外文件/Recommendation for Jo Yen Chiu to Harrow International School Appi, Japan.pages
+[28/347] Converting: 英文教學/口說與聽力/C8秋1-口語練習.pages
+[49/347] Converting: 個人文件/琬婷50歲生日卡.pages
+[29/347] Converting: 英文教學/單字與詞彙/單字測驗-歷屆 p.72.pages
+[50/347] Converting: 個人文件/筆記.pages
+[30/347] Converting: 英文教學/單字與詞彙/單字測驗20240527.pages
+[51/347] Converting: 個人文件/華南產險申請理賠項目費用明細.pages
+[31/347] Converting: 英文教學/單字與詞彙/200常用動詞片語-依核心動詞分類.pages
+[52/347] Converting: 個人文件/華南銀行信用卡通知-林信宏(客服案件編號26006467).pages
+[32/347] Converting: 英文教學/單字與詞彙/國中字根教學.pages
+[53/347] Converting: 個人文件/永豐信用卡爭議佐證編號to 8321號專員.pages
+[33/347] Converting: 英文教學/單字與詞彙/Vocabulary Test Unit32 歷屆試題1 .pages
+[54/347] Converting: 個人文件/指令.pages
+[34/347] Converting: 英文教學/單字與詞彙/歷屆試題段落大意及單字.pages
+[55/347] Converting: 個人文件/Japanese.pages
+[35/347] Converting: 英文教學/單字與詞彙/Luke's Podcast-The snowman單字.pages
+[56/347] Converting: 個人文件/申訴google消保案件2026-01-04 .pages
+[36/347] Converting: 英文教學/單字與詞彙/adjectives_list_with_id.pages
+[57/347] Converting: 個人文件/存證信函 .pages
+[37/347] Converting: 英文教學/單字與詞彙/nouns_list_with_categories.pages
+[58/347] Converting: 個人文件/Japanese Dialogue.pages
+[38/347] Converting: 英文教學/單字與詞彙/verbs_list_with_id.pages
+[59/347] Converting: 未命名.pages
+[39/347] Converting: 英文教學/文法/1200字動詞整理表_時態生活情境_8下+9上.pages
+[60/347] Converting: a.2022-class9/Aimee Chen's recommendation letter.pages
+[40/347] Converting: 英文教學/文法/現在完成式-Fortune cookies..pages
+[61/347] Converting: a.2022-class9/Use 關代 to define these words.pages
+[41/347] Converting: 英文教學/文法/關係子句的辨識與理解.pages
+[62/347] Converting: a.2022-class9/九年級完成式文法講義2-2022.pages
+[42/347] Converting: 英文教學/文法/基本文法架構+英文六大基本時態：.pages
+[63/347] Converting: a.2022-class9/a.111學年秋冬C9學習指南2022-2023拷貝.pages
+[43/347] Converting: 英文教學/文法/分辨一般動詞、助動詞和be動詞、情狀助動詞定位檢測.pages
+[64/347] Converting: a.2022-class9/c9完成式文法講義1.pages
+[44/347] Converting: 眾神的記憶術——許丙丁與府城的聲音地層.pages
+[65/347] Converting: a.2022-class9/C9-單字測驗unit36&37-To my englsih class.pages
+[45/347] Converting: 推薦信與對外文件/Recommendation for Jo Yen Chiu to KIS International School Reignwood Park.pages
+[66/347] Converting: a.2022-class9/Writing_My name .pages
+[46/347] Converting: 推薦信與對外文件/Reply-Form-Volunteers, for Enya Yang, Taiwan.pages
+[67/347] Converting: a.2022-class9/Unit 20-23 Countries, languages, hoildays & occupations.pages
+[47/347] Converting: 推薦信與對外文件/Recommendation for Jo Yen Chiu to Rugby School Japan.pages
+[68/347] Converting: a.2022-class9/c9-The House on Mango Street_A smart cookie 討論.pages
+[48/347] Converting: 推薦信與對外文件/Recommendation for Jo Yen Chiu to Harrow International School Appi, Japan.pages
+[69/347] Converting: a.2022-class9/Somebody That I Used To Know.pages
+[49/347] Converting: 個人文件/琬婷50歲生日卡.pages
+[70/347] Converting: a.2022-class9/Whether the weather be fine.pages
+[50/347] Converting: 個人文件/筆記.pages
+[71/347] Converting: a.2022-class9/A Midsummer Night's Dream  500字版.pages
+[51/347] Converting: 個人文件/華南產險申請理賠項目費用明細.pages
+[72/347] Converting: a.2022-class9/What Sally Said-The house on Mango Street.pages
+[52/347] Converting: 個人文件/華南銀行信用卡通知-林信宏(客服案件編號26006467).pages
+[73/347] Converting: a.2022-class9/  Class 9   Vocabulary Quiz Unit 37.pages
+[53/347] Converting: 個人文件/永豐信用卡爭議佐證編號to 8321號專員.pages
+[74/347] Converting: a.2022-class9/C9-詩作仿寫-A house of my own..pages
+[54/347] Converting: 個人文件/指令.pages
+[75/347] Converting: a.2022-class9/22-C8-C9-PA-春夏專題報告序.pages
+[55/347] Converting: 個人文件/Japanese.pages
+[76/347] Converting: a.2022-class9/C9-1200單字測驗27-32.pages
+[56/347] Converting: 個人文件/申訴google消保案件2026-01-04 .pages
+[77/347] Converting: a.2022-class9/Stand By Your Man.pages
+[57/347] Converting: 個人文件/存證信函 .pages
+[78/347] Converting: a.2022-class9/Class 9 Grammar 1 —名詞.pages
+[58/347] Converting: 個人文件/Japanese Dialogue.pages
+[79/347] Converting: a.2022-class9/文法動詞--現在、過去、未來2022c9g.pages
+[59/347] Converting: 未命名.pages
+[80/347] Converting: a.2022-class9/Unit 17-19 Vocabulary on Places & locations, Transportation and Size & measurements .pages
+[60/347] Converting: a.2022-class9/Aimee Chen's recommendation letter.pages
+[81/347] Converting: a.2022-class9/C9 單字part1'2'3 with 連接詞 20230306.pages
+[61/347] Converting: a.2022-class9/Use 關代 to define these words.pages
+[82/347] Converting: a.2022-class9/Travel alone 13 invaluable lessons.pages
+[62/347] Converting: a.2022-class9/九年級完成式文法講義2-2022.pages
+[83/347] Converting: a.2022-class9/9D英語課 2023春夏季團體及個人口語呈現順序及登記 .pages
+[63/347] Converting: a.2022-class9/a.111學年秋冬C9學習指南2022-2023拷貝.pages
+[84/347] Converting: a.2022-class9/A Woman Called Esperanza.pages
+[64/347] Converting: a.2022-class9/c9完成式文法講義1.pages
+[85/347] Converting: a.2022-class9/C9 Songs-Teardrop on my guitar & The best day--Taylor Swift 2023-02-16.pages
+[65/347] Converting: a.2022-class9/C9-單字測驗unit36&37-To my englsih class.pages
+[86/347] Converting: a.2022-class9/C9-單字測驗-unit34.pages
+[66/347] Converting: a.2022-class9/Writing_My name .pages
+[87/347] Converting: a.2022-class9/C9-The Story of Rip Van Winkle.pages
+[67/347] Converting: a.2022-class9/Unit 20-23 Countries, languages, hoildays & occupations.pages
+[88/347] Converting: a.2022-class9/Our Good Day.pages
+[68/347] Converting: a.2022-class9/c9-The House on Mango Street_A smart cookie 討論.pages
+[89/347] Converting: a.2022-class9/The house on Mango Street.pages
+[69/347] Converting: a.2022-class9/Somebody That I Used To Know.pages
+[90/347] Converting: a.2022-class9/Amazing Grace .pages
+[70/347] Converting: a.2022-class9/Whether the weather be fine.pages
+[91/347] Converting: a.2022-class9/C9-G-名詞子句20230220.pages
+[71/347] Converting: a.2022-class9/A Midsummer Night's Dream  500字版.pages
+[92/347] Converting: a.2022-class9/9C英語課 2023春夏季團體及個人口語呈現順序及登記表.pages
+[72/347] Converting: a.2022-class9/What Sally Said-The house on Mango Street.pages
+[93/347] Converting: a.2022-class9/My name --writing.pages
+[73/347] Converting: a.2022-class9/  Class 9   Vocabulary Quiz Unit 37.pages
+[94/347] Converting: a.2022-class9/Can't Take My Eyes Off You.pages
+[74/347] Converting: a.2022-class9/C9-詩作仿寫-A house of my own..pages
+[95/347] Converting: a.2022-class9/C9-Song-A Place in This World.pages
+[75/347] Converting: a.2022-class9/22-C8-C9-PA-春夏專題報告序.pages
+[96/347] Converting: a.2022-class9/111 學年度春夏季Class 9英文課程大綱及學習指南 20230201.pages
+[76/347] Converting: a.2022-class9/C9-1200單字測驗27-32.pages
+[97/347] Converting: a.2022-class9/C9-段落寫作-The monkey garden.pages
+[77/347] Converting: a.2022-class9/Stand By Your Man.pages
+[98/347] Converting: a.2022-class9/a.111學年秋冬C9學習指南2022-2023.pages
+[78/347] Converting: a.2022-class9/Class 9 Grammar 1 —名詞.pages
+[99/347] Converting: a.2022-class9/訂購英文讀本.pages
+[79/347] Converting: a.2022-class9/文法動詞--現在、過去、未來2022c9g.pages
+[100/347] Converting: a.2022-class9/2022 C8、C9寒假作業-讀本摘要.pages
+[80/347] Converting: a.2022-class9/Unit 17-19 Vocabulary on Places & locations, Transportation and Size & measurements .pages
+[101/347] Converting: a.2022-class9/20210922慈心英文課綱先前工作.pages
+[81/347] Converting: a.2022-class9/C9 單字part1'2'3 with 連接詞 20230306.pages
+[102/347] Converting: a.2022-class9/評量週表格.pages
+[82/347] Converting: a.2022-class9/Travel alone 13 invaluable lessons.pages
+[103/347] Converting: a.2022-class9/口頭報告組員及主題.pages
+[83/347] Converting: a.2022-class9/9D英語課 2023春夏季團體及個人口語呈現順序及登記 .pages
+[104/347] Converting: a.2022-class9/unit 24-26 weather , geographical terms, animals & insects.pages
+[84/347] Converting: a.2022-class9/A Woman Called Esperanza.pages
+[105/347] Converting: a.2022-class9/i have dream .pages
+[85/347] Converting: a.2022-class9/C9 Songs-Teardrop on my guitar & The best day--Taylor Swift 2023-02-16.pages
+[106/347] Converting: 9c week5-3 學習單.pages
+[86/347] Converting: a.2022-class9/C9-單字測驗-unit34.pages
+[107/347] Converting: y.睦達/7D專題暑假齊跑單-Muda.pages
+[87/347] Converting: a.2022-class9/C9-The Story of Rip Van Winkle.pages
+[108/347] Converting: y.睦達/睦達英語.pages
+[88/347] Converting: a.2022-class9/Our Good Day.pages
+[109/347] Converting: Codeowner 個人分析2026.03.15 .pages
+[89/347] Converting: a.2022-class9/The house on Mango Street.pages
+[110/347] Converting: 測試信.pages
+[90/347] Converting: a.2022-class9/Amazing Grace .pages
+[111/347] Converting: 學校行政與活動/「文化講座」歐洲多元文化／陳之華.pages
+[91/347] Converting: a.2022-class9/C9-G-名詞子句20230220.pages
+[112/347] Converting: 學校行政與活動/2025春慶園遊會_節慶小組 林信宏.pages
+[92/347] Converting: a.2022-class9/9C英語課 2023春夏季團體及個人口語呈現順序及登記表.pages
+[113/347] Converting: 學校行政與活動/慈心春慶怎麼玩--立體懶人包大字報.pages
+[93/347] Converting: a.2022-class9/My name --writing.pages
+[114/347] Converting: 學校行政與活動/一把椅子--開放教室.pages
+[94/347] Converting: a.2022-class9/Can't Take My Eyes Off You.pages
+[115/347] Converting: 學校行政與活動/春慶攤位遊戲規則及流程.pages
+[95/347] Converting: a.2022-class9/C9-Song-A Place in This World.pages
+[116/347] Converting: 學校行政與活動/世界人權日--快閃活動 .pages
+[96/347] Converting: a.2022-class9/111 學年度春夏季Class 9英文課程大綱及學習指南 20230201.pages
+[117/347] Converting: 學校行政與活動/高中入學實作口試評量觀察與建議.pages
+[97/347] Converting: a.2022-class9/C9-段落寫作-The monkey garden.pages
+[118/347] Converting: 學校行政與活動/ 2025高年段春慶活動反思與建議報告.pages
+[98/347] Converting: a.2022-class9/a.111學年秋冬C9學習指南2022-2023.pages
+[119/347] Converting: 學校行政與活動/111.9-6觀課紀錄--周穎琦.pages
+[99/347] Converting: a.2022-class9/訂購英文讀本.pages
+[120/347] Converting: b.2022-class7/Class 7 winter final test模擬版.pages
+[100/347] Converting: a.2022-class9/2022 C8、C9寒假作業-讀本摘要.pages
+[121/347] Converting: b.2022-class7/111 學年度春夏季  Class 7 英文課程大綱及學習指南20230201.pages
+[101/347] Converting: a.2022-class9/20210922慈心英文課綱先前工作.pages
+[122/347] Converting: b.2022-class7/Sir Gawain and the Lady Ragnell 劇場版.pages
+[102/347] Converting: a.2022-class9/評量週表格.pages
+[123/347] Converting: b.2022-class7/Sir Gawain and the Lady Ragnell RT劇場版.pages
+[103/347] Converting: a.2022-class9/口頭報告組員及主題.pages
+[124/347] Converting: b.2022-class7/G7 最高級--Animal.pages
+[104/347] Converting: a.2022-class9/unit 24-26 weather , geographical terms, animals & insects.pages
+[125/347] Converting: b.2022-class7/C7-單字 Unit 1 、2識讀_聯想記憶.pages
+[105/347] Converting: a.2022-class9/i have dream .pages
+[126/347] Converting: b.2022-class7/C7-蔬菜單字問答word by word.pages
+[106/347] Converting: 9c week5-3 學習單.pages
+[127/347] Converting: b.2022-class7/形容詞最高級.pages
+[107/347] Converting: y.睦達/7D專題暑假齊跑單-Muda.pages
+[128/347] Converting: b.2022-class7/C7-單字測驗-空白格式.pages
+[108/347] Converting: y.睦達/睦達英語.pages
+[129/347] Converting: b.2022-class7/C7-What are your favorite fruits.pages
+[109/347] Converting: Codeowner 個人分析2026.03.15 .pages
+[130/347] Converting: b.2022-class7/Class 7 單字Vocabulary—Verbs 空白表格 .pages
+[110/347] Converting: 測試信.pages
+[131/347] Converting: b.2022-class7/Lancelot and the Round Table Part2--學問句.pages
+[111/347] Converting: 學校行政與活動/「文化講座」歐洲多元文化／陳之華.pages
+[132/347] Converting: b.2022-class7/Sir Lancelot and Black Knight.pages
+[112/347] Converting: 學校行政與活動/2025春慶園遊會_節慶小組 林信宏.pages
+[133/347] Converting: b.2022-class7/Sir Gawain and the Lady Ragnell 讀本版.pages
+[113/347] Converting: 學校行政與活動/慈心春慶怎麼玩--立體懶人包大字報.pages
+[134/347] Converting: b.2022-class7/Lancelot and the Round Table.pages
+[114/347] Converting: 學校行政與活動/一把椅子--開放教室.pages
+[135/347] Converting: b.2022-class7/a.111學年秋冬C7學習指南2022-2023.pages
+[115/347] Converting: 學校行政與活動/春慶攤位遊戲規則及流程.pages
+[136/347] Converting: b.2022-class7/C7-單字測驗-unit3-body parts.pages
+[116/347] Converting: 學校行政與活動/世界人權日--快閃活動 .pages
+[137/347] Converting: b.2022-class7/7D 春假作業--“Sir Malger and Lady Ragnell” 中的形容詞 .pages
+[117/347] Converting: 學校行政與活動/高中入學實作口試評量觀察與建議.pages
+[138/347] Converting: b.2022-class7/c7-單字-Unit8-1 Month& Season對話練習.pages
+[118/347] Converting: 學校行政與活動/ 2025高年段春慶活動反思與建議報告.pages
+[139/347] Converting: b.2022-class7/英文動詞的最基本規則.pages
+[119/347] Converting: 學校行政與活動/111.9-6觀課紀錄--周穎琦.pages
+[140/347] Converting: b.2022-class7/C7-單字故事-unit 1.pages
+[120/347] Converting: b.2022-class7/Class 7 winter final test模擬版.pages
+[141/347] Converting: c.詩歌短文/Imagine.pages
+[121/347] Converting: b.2022-class7/111 學年度春夏季  Class 7 英文課程大綱及學習指南20230201.pages
+[142/347] Converting: c.詩歌短文/beyond海闊天空歌詞.pages
+[122/347] Converting: b.2022-class7/Sir Gawain and the Lady Ragnell 劇場版.pages
+[143/347] Converting: c.詩歌短文/O Captain! My Captain!.pages
+[123/347] Converting: b.2022-class7/Sir Gawain and the Lady Ragnell RT劇場版.pages
+[144/347] Converting: c.詩歌短文/The last song.pages
+[124/347] Converting: b.2022-class7/G7 最高級--Animal.pages
+[145/347] Converting: c.詩歌短文/Annie’s Song.pages
+[125/347] Converting: b.2022-class7/C7-單字 Unit 1 、2識讀_聯想記憶.pages
+[146/347] Converting: c.詩歌短文/21-C9-RM-PA-The life of Rosa Park transcript- youtube 影片.pages
+[126/347] Converting: b.2022-class7/C7-蔬菜單字問答word by word.pages
+[147/347] Converting: c.詩歌短文/I Hate Myself For Loving you.pages
+[127/347] Converting: b.2022-class7/形容詞最高級.pages
+[148/347] Converting: c.詩歌短文/What a Wonderful World 聽力填空.pages
+[128/347] Converting: b.2022-class7/C7-單字測驗-空白格式.pages
+[149/347] Converting: c.詩歌短文/The Bear That Wasn't.pages
+[129/347] Converting: b.2022-class7/C7-What are your favorite fruits.pages
+[150/347] Converting: c.詩歌短文/Voice from a Ukrainian.pages
+[130/347] Converting: b.2022-class7/Class 7 單字Vocabulary—Verbs 空白表格 .pages
+[151/347] Converting: c.詩歌短文/Whatever will will be.pages
+[131/347] Converting: b.2022-class7/Lancelot and the Round Table Part2--學問句.pages
+[152/347] Converting: c.詩歌短文/Before Reading—Frankenstein.pages
+[132/347] Converting: b.2022-class7/Sir Lancelot and Black Knight.pages
+[153/347] Converting: c.詩歌短文/To know death before life ( Frankenstein).pages
+[133/347] Converting: b.2022-class7/Sir Gawain and the Lady Ragnell 讀本版.pages
+[154/347] Converting: d.David/青青推薦.pages
+[134/347] Converting: b.2022-class7/Lancelot and the Round Table.pages
+[155/347] Converting: d.David/歷史共備討論整理3_9年級_20180802.pages
+[135/347] Converting: b.2022-class7/a.111學年秋冬C7學習指南2022-2023.pages
+[156/347] Converting: d.David/小行星班文史主課教學內容及工作本書寫總覽20200628.pages
+[136/347] Converting: b.2022-class7/C7-單字測驗-unit3-body parts.pages
+[157/347] Converting: d.David/四十歲的出口.pages
+[137/347] Converting: b.2022-class7/7D 春假作業--“Sir Malger and Lady Ragnell” 中的形容詞 .pages
+[158/347] Converting: d.David/高年段排課架構檢討與改進方案分析.pages
+[138/347] Converting: b.2022-class7/c7-單字-Unit8-1 Month& Season對話練習.pages
+[159/347] Converting: d.David/老年詩.pages
+[139/347] Converting: b.2022-class7/英文動詞的最基本規則.pages
+[160/347] Converting: d.David/青青推薦信.pages
+[140/347] Converting: b.2022-class7/C7-單字故事-unit 1.pages
+[161/347] Converting: d.David/小行星班文史主課教學內容及工作本書寫總覽20200628拷貝.pages
+[141/347] Converting: c.詩歌短文/Imagine.pages
+[162/347] Converting: d.David/1-9成果分享.pages
+[142/347] Converting: c.詩歌短文/beyond海闊天空歌詞.pages
+[163/347] Converting: d.David/衛禾居163號房屋現況及交易附註事項（修訂1版）.pages
+[143/347] Converting: c.詩歌短文/O Captain! My Captain!.pages
+[164/347] Converting: 班級經營/戶外活動/人權之旅一日參訪計畫_宜蘭出發.pages
+[144/347] Converting: c.詩歌短文/The last song.pages
+[165/347] Converting: 班級經營/戶外活動/九年級農場實習_給學生的簡化版講義.pages
+[145/347] Converting: c.詩歌短文/Annie’s Song.pages
+[166/347] Converting: 班級經營/戶外活動/八年級語文練習專科課程—寫作教學流程摘要結合戶外挑戰「羅馬縱走」.pages
+[146/347] Converting: c.詩歌短文/21-C9-RM-PA-The life of Rosa Park transcript- youtube 影片.pages
+[167/347] Converting: 班級經營/戶外活動/未成年住宿同意書.pages
+[147/347] Converting: c.詩歌短文/I Hate Myself For Loving you.pages
+[168/347] Converting: 班級經營/戶外活動/8C心亮班嘉明湖挑戰行程規劃與調整說明.pages
+[148/347] Converting: c.詩歌短文/What a Wonderful World 聽力填空.pages
+[169/347] Converting: 班級經營/學生輔導/David8c宜蘭縣學習困難學生轉介前介入紀錄表.pages
+[149/347] Converting: c.詩歌短文/The Bear That Wasn't.pages
+[170/347] Converting: 班級經營/學生輔導/學習困難介入寫法(1).pages
+[150/347] Converting: c.詩歌短文/Voice from a Ukrainian.pages
+[171/347] Converting: 班級經營/學生輔導/8c 任以恩宜蘭縣學習困難學生轉介前介入紀錄表.pages
+[151/347] Converting: c.詩歌短文/Whatever will will be.pages
+[172/347] Converting: 班級經營/學生輔導/8C以恩個案輔導紀錄-信宏（完成）.pages
+[152/347] Converting: c.詩歌短文/Before Reading—Frankenstein.pages
+[173/347] Converting: 班級經營/學生輔導/8年C班連子寬 個案輔導紀錄 .pages
+[153/347] Converting: c.詩歌短文/To know death before life ( Frankenstein).pages
+[174/347] Converting: 班級經營/學生輔導/9C 學生生活及學習輔導記錄.pages
+[154/347] Converting: d.David/青青推薦.pages
+[175/347] Converting: 班級經營/學生輔導/學習取向健康指標.pages
+[155/347] Converting: d.David/歷史共備討論整理3_9年級_20180802.pages
+[176/347] Converting: 班級經營/學生輔導/妤帆的信.pages
+[156/347] Converting: d.David/小行星班文史主課教學內容及工作本書寫總覽20200628.pages
+[177/347] Converting: 班級經營/學生輔導/113學國中小附件四-任以恩.pages
+[157/347] Converting: d.David/四十歲的出口.pages
+[178/347] Converting: 班級經營/學生輔導/班級整體與個別狀況--給登山嚮導.pages
+[158/347] Converting: d.David/高年段排課架構檢討與改進方案分析.pages
+[179/347] Converting: 班級經營/學生輔導/學習輔導策略１－實用筆記法.pages
+[159/347] Converting: d.David/老年詩.pages
+[180/347] Converting: 班級經營/家長溝通/11-15九年級升學對談活動時程安排與提綱.pages
+[160/347] Converting: d.David/青青推薦信.pages
+[181/347] Converting: 班級經營/家長溝通/九年級班親會_會議大綱與流程_老師備用.pages
+[161/347] Converting: d.David/小行星班文史主課教學內容及工作本書寫總覽20200628拷貝.pages
+[182/347] Converting: 班級經營/家長溝通/9c冬季期末通知.pages
+[162/347] Converting: d.David/1-9成果分享.pages
+[183/347] Converting: 班級經營/家長溝通/9c春季班親會通知-V2-202603012.pages
+[163/347] Converting: d.David/衛禾居163號房屋現況及交易附註事項（修訂1版）.pages
+[184/347] Converting: 班級經營/家長溝通/8C 心亮班 夏季期末通知.pages
+[164/347] Converting: 班級經營/戶外活動/人權之旅一日參訪計畫_宜蘭出發.pages
+[185/347] Converting: 班級經營/家長溝通/心亮班9年級班親會議程及資料.pages
+[165/347] Converting: 班級經營/戶外活動/九年級農場實習_給學生的簡化版講義.pages
+[186/347] Converting: 班級經營/家長溝通/八C心亮班春學季期末通知.pages
+[166/347] Converting: 班級經營/戶外活動/八年級語文練習專科課程—寫作教學流程摘要結合戶外挑戰「羅馬縱走」.pages
+[187/347] Converting: 班級經營/家長溝通/戲劇演出週工作時程及家長支援需求.pages
+[167/347] Converting: 班級經營/戶外活動/未成年住宿同意書.pages
+[188/347] Converting: 班級經營/家長溝通/九年級秋季末期末通知.pages
+[168/347] Converting: 班級經營/戶外活動/8C心亮班嘉明湖挑戰行程規劃與調整說明.pages
+[189/347] Converting: 班級經營/家長溝通/2026春季心亮班開學通知.pages
+[169/347] Converting: 班級經營/學生輔導/David8c宜蘭縣學習困難學生轉介前介入紀錄表.pages
+[190/347] Converting: 班級經營/家長溝通/寫於農場實習前-給家長.pages
+[170/347] Converting: 班級經營/學生輔導/學習困難介入寫法(1).pages
+[191/347] Converting: 班級經營/家長溝通/關於慈心對九升十的教育價值我的個人建議--by 信宏.pages
+[171/347] Converting: 班級經營/學生輔導/8c 任以恩宜蘭縣學習困難學生轉介前介入紀錄表.pages
+[192/347] Converting: 班級經營/家長溝通/九年級冬季班親會通知及課表.pages
+[172/347] Converting: 班級經營/學生輔導/8C以恩個案輔導紀錄-信宏（完成）.pages
+[193/347] Converting: 班級經營/家長溝通/九年級農場實習_給家長的說明稿.pages
+[173/347] Converting: 班級經營/學生輔導/8年C班連子寬 個案輔導紀錄 .pages
+[194/347] Converting: 班級經營/戲劇/舞監每日收工檢查清單_學生版.pages
+[174/347] Converting: 班級經營/學生輔導/9C 學生生活及學習輔導記錄.pages
+[195/347] Converting: 班級經營/戲劇/第二天排練工作日誌_完整整理版.pages
+[175/347] Converting: 班級經營/學生輔導/學習取向健康指標.pages
+[196/347] Converting: 班級經營/戲劇/九年級戲劇工作前的說明.pages
+[176/347] Converting: 班級經營/學生輔導/妤帆的信.pages
+[197/347] Converting: 班級經營/戲劇/９年級戲構想.pages
+[177/347] Converting: 班級經營/學生輔導/113學國中小附件四-任以恩.pages
+[198/347] Converting: 班級經營/戲劇/九年級戲劇導師協助＋AI.pages
+[178/347] Converting: 班級經營/學生輔導/班級整體與個別狀況--給登山嚮導.pages
+[199/347] Converting: 班級經營/戲劇/9c排練工作日誌_2026-01-05（一）.pages
+[179/347] Converting: 班級經營/學生輔導/學習輔導策略１－實用筆記法.pages
+[200/347] Converting: 班級經營/戲劇/第二天排練工作日誌_角色提醒版.pages
+[180/347] Converting: 班級經營/家長溝通/11-15九年級升學對談活動時程安排與提綱.pages
+[201/347] Converting: 班級經營/戲劇/公爵_安哲魯_10分鐘暖身練習表_A4.pages
+[181/347] Converting: 班級經營/家長溝通/九年級班親會_會議大綱與流程_老師備用.pages
+[202/347] Converting: 班級經營/戲劇/貴賓&工作人員標示.pages
+[182/347] Converting: 班級經營/家長溝通/9c冬季期末通知.pages
+[203/347] Converting: 班級經營/班級活動與規範/「說好話運動」實施說明與家長通知 .pages
+[183/347] Converting: 班級經營/家長溝通/9c春季班親會通知-V2-202603012.pages
+[204/347] Converting: 班級經營/班級活動與規範/負面教材的告白 .pages
+[184/347] Converting: 班級經營/家長溝通/8C 心亮班 夏季期末通知.pages
+[205/347] Converting: 班級經營/班級活動與規範/Class meeting 2-21.pages
+[185/347] Converting: 班級經營/家長溝通/心亮班9年級班親會議程及資料.pages
+[206/347] Converting: 班級經營/班級活動與規範/教室搬家重點原則：.pages
+[186/347] Converting: 班級經營/家長溝通/八C心亮班春學季期末通知.pages
+[207/347] Converting: 班級經營/班級活動與規範/我人生的最後一年.pages
+[187/347] Converting: 班級經營/家長溝通/戲劇演出週工作時程及家長支援需求.pages
+[208/347] Converting: 走讀台灣-台中篇-流程及文獻.pages
+[188/347] Converting: 班級經營/家長溝通/九年級秋季末期末通知.pages
+[209/347] Converting: 跨領域與專題/2025 8c學生專題報告評審建議總表.pages
+[189/347] Converting: 班級經營/家長溝通/2026春季心亮班開學通知.pages
+[210/347] Converting: 跨領域與專題/台灣主體意識課程與論壇設計.pages
+[190/347] Converting: 班級經營/家長溝通/寫於農場實習前-給家長.pages
+[211/347] Converting: 跨領域與專題/記憶、想像與認同：臺灣主體性課程建構--流程.pages
+[191/347] Converting: 班級經營/家長溝通/關於慈心對九升十的教育價值我的個人建議--by 信宏.pages
+[212/347] Converting: 跨領域與專題/ai無法取代的.pages
+[192/347] Converting: 班級經營/家長溝通/九年級冬季班親會通知及課表.pages
+[213/347] Converting: 跨領域與專題/八年級的專題旅程：從遇見世界，到看見自己.pages
+[193/347] Converting: 班級經營/家長溝通/九年級農場實習_給家長的說明稿.pages
+[214/347] Converting: 跨領域與專題/專題Ⅰ--專題檢核進度&個別面談依據.pages
+[194/347] Converting: 班級經營/戲劇/舞監每日收工檢查清單_學生版.pages
+[215/347] Converting: 跨領域與專題/台灣「大罷免運動」中的公民社會參與脈絡.pages
+[195/347] Converting: 班級經營/戲劇/第二天排練工作日誌_完整整理版.pages
+[216/347] Converting: 跨領域與專題/Gemini AI 回答_「AI 是否會取代教師」—使用Wicked Question 探討.pages
+[196/347] Converting: 班級經營/戲劇/九年級戲劇工作前的說明.pages
+[217/347] Converting: 跨領域與專題/站在成長轉彎處——八C學生專題報告歷程.pages
+[197/347] Converting: 班級經營/戲劇/９年級戲構想.pages
+[218/347] Converting: 跨領域與專題/TeacherOS-測試報告-三合一.pages
+[198/347] Converting: 班級經營/戲劇/九年級戲劇導師協助＋AI.pages
+[219/347] Converting: z. 2021之前/6a/小行星班級戲劇選角表單.pages
+[199/347] Converting: 班級經營/戲劇/9c排練工作日誌_2026-01-05（一）.pages
+[220/347] Converting: z. 2021之前/6a/6A山野戶外教學計畫書.pages
+[200/347] Converting: 班級經營/戲劇/第二天排練工作日誌_角色提醒版.pages
+[221/347] Converting: z. 2021之前/6a/6a夏季班親會.pages
+[201/347] Converting: 班級經營/戲劇/公爵_安哲魯_10分鐘暖身練習表_A4.pages
+[222/347] Converting: z. 2021之前/6a/c.學生輔導、親師面談/6a班級及個人失竊案件歷程紀錄.pages
+[202/347] Converting: 班級經營/戲劇/貴賓&工作人員標示.pages
+[223/347] Converting: z. 2021之前/6a/b.備課資料與檔案/全球地理與東亞地理參考資料.pages
+[203/347] Converting: 班級經營/班級活動與規範/「說好話運動」實施說明與家長通知 .pages
+[224/347] Converting: z. 2021之前/6a/b.備課資料與檔案/2020小行星班6a魏晉隋唐主課 史料閱讀（全） 2.pages
+[204/347] Converting: 班級經營/班級活動與規範/負面教材的告白 .pages
+[225/347] Converting: z. 2021之前/6a/b.備課資料與檔案/外籍移工在台的三大困境.pages
+[205/347] Converting: 班級經營/班級活動與規範/Class meeting 2-21.pages
+[226/347] Converting: z. 2021之前/6a/b.備課資料與檔案/始皇本紀.pages
+[206/347] Converting: 班級經營/班級活動與規範/教室搬家重點原則：.pages
+[227/347] Converting: z. 2021之前/6a/b.備課資料與檔案/古羅馬主課引言 .pages
+[207/347] Converting: 班級經營/班級活動與規範/我人生的最後一年.pages
+[228/347] Converting: z. 2021之前/6a/b.備課資料與檔案/2020小行星班6a魏晉隋唐主課 史料閱讀（全）.pages
+[208/347] Converting: 走讀台灣-台中篇-流程及文獻.pages
+[229/347] Converting: z. 2021之前/6a/b.備課資料與檔案/魏晉隋唐課程綱要.pages
+[209/347] Converting: 跨領域與專題/2025 8c學生專題報告評審建議總表.pages
+[230/347] Converting: z. 2021之前/6a/b.備課資料與檔案/六年級聲光熱.pages
+[210/347] Converting: 跨領域與專題/台灣主體意識課程與論壇設計.pages
+[231/347] Converting: z. 2021之前/6a/b.備課資料與檔案/凱薩之死.pages
+[211/347] Converting: 跨領域與專題/記憶、想像與認同：臺灣主體性課程建構--流程.pages
+[232/347] Converting: z. 2021之前/6a/b.備課資料與檔案/義債.pages
+[212/347] Converting: 跨領域與專題/ai無法取代的.pages
+[233/347] Converting: z. 2021之前/6a/b.備課資料與檔案/古羅馬主課大綱 .pages
+[213/347] Converting: 跨領域與專題/八年級的專題旅程：從遇見世界，到看見自己.pages
+[234/347] Converting: z. 2021之前/6a/b.備課資料與檔案/六年級聲光熱 14.pages
+[214/347] Converting: 跨領域與專題/專題Ⅰ--專題檢核進度&個別面談依據.pages
+[235/347] Converting: z. 2021之前/6a/防疫開學2020春季.pages
+[215/347] Converting: 跨領域與專題/台灣「大罷免運動」中的公民社會參與脈絡.pages
+[236/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A小行星班秋季學期 期末通知單.pages
+[216/347] Converting: 跨領域與專題/Gemini AI 回答_「AI 是否會取代教師」—使用Wicked Question 探討.pages
+[237/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A小行星班冬季學期 期末通知單.pages
+[217/347] Converting: 跨領域與專題/站在成長轉彎處——八C學生專題報告歷程.pages
+[238/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A小行星班夏季課程大綱.pages
+[218/347] Converting: 跨領域與專題/TeacherOS-測試報告-三合一.pages
+[239/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A小行星班全年活動規劃.pages
+[219/347] Converting: z. 2021之前/6a/小行星班級戲劇選角表單.pages
+[240/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A 小行星班冬季課程大綱與說明.pages
+[220/347] Converting: z. 2021之前/6a/6A山野戶外教學計畫書.pages
+[241/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A 小行星班春季課程大綱與說明.pages
+[221/347] Converting: z. 2021之前/6a/6a夏季班親會.pages
+[242/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A 小行星班秋季課程大綱與說明.pages
+[222/347] Converting: z. 2021之前/6a/c.學生輔導、親師面談/6a班級及個人失竊案件歷程紀錄.pages
+[243/347] Converting: z. 2021之前/6a/Donna歌詞.pages
+[223/347] Converting: z. 2021之前/6a/b.備課資料與檔案/全球地理與東亞地理參考資料.pages
+[244/347] Converting: z. 2021之前/6a/小行星班級戲劇選角表單 2.pages
+[224/347] Converting: z. 2021之前/6a/b.備課資料與檔案/2020小行星班6a魏晉隋唐主課 史料閱讀（全） 2.pages
+[245/347] Converting: z. 2021之前/6a/山野戶外教學計畫書.pages
+[225/347] Converting: z. 2021之前/6a/b.備課資料與檔案/外籍移工在台的三大困境.pages
+[246/347] Converting: z. 2021之前/6a/小行星班夏季親師面談預約時間填表.pages
+[226/347] Converting: z. 2021之前/6a/b.備課資料與檔案/始皇本紀.pages
+[247/347] Converting: z. 2021之前/6a/The Monks of The Monastery .pages
+[227/347] Converting: z. 2021之前/6a/b.備課資料與檔案/古羅馬主課引言 .pages
+[248/347] Converting: z. 2021之前/6a/愛的錦囊.pages
+[228/347] Converting: z. 2021之前/6a/b.備課資料與檔案/2020小行星班6a魏晉隋唐主課 史料閱讀（全）.pages
+[249/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A小行星班春季學期 期末通知單   .pages
+[229/347] Converting: z. 2021之前/6a/b.備課資料與檔案/魏晉隋唐課程綱要.pages
+[250/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A 小行星班全年活動規劃及四季課程大綱.pages
+[230/347] Converting: z. 2021之前/6a/b.備課資料與檔案/六年級聲光熱.pages
+[251/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A小行星班春季園遊會分工.pages
+[231/347] Converting: z. 2021之前/6a/b.備課資料與檔案/凱薩之死.pages
+[252/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A小行星班夏季學期 期末通知單   .pages
+[232/347] Converting: z. 2021之前/6a/b.備課資料與檔案/義債.pages
+[253/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A 小行星班春季課程及教學大綱.pages
+[233/347] Converting: z. 2021之前/6a/b.備課資料與檔案/古羅馬主課大綱 .pages
+[254/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A小行星班冬季學期 期末通知單 .pages
+[234/347] Converting: z. 2021之前/6a/b.備課資料與檔案/六年級聲光熱 14.pages
+[255/347] Converting: z. 2021之前/5a/課程大綱與期末通知/寒假作業：15個成語解釋加造句.pages
+[235/347] Converting: z. 2021之前/6a/防疫開學2020春季.pages
+[256/347] Converting: z. 2021之前/5a/班親會及校外教學/5a全年學生學習自評.pages
+[236/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A小行星班秋季學期 期末通知單.pages
+[257/347] Converting: z. 2021之前/5a/班親會及校外教學/武荖坑植物觀察家長同意書.pages
+[237/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A小行星班冬季學期 期末通知單.pages
+[258/347] Converting: z. 2021之前/5a/班親會及校外教學/台東校外教學注意事項.pages
+[238/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A小行星班夏季課程大綱.pages
+[259/347] Converting: z. 2021之前/5a/班親會及校外教學/5A評量範例--信宏.pages
+[239/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A小行星班全年活動規劃.pages
+[260/347] Converting: z. 2021之前/5a/班親會及校外教學/5a冬季班親會.pages
+[240/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A 小行星班冬季課程大綱與說明.pages
+[261/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/矛盾的酒神一戴奧尼索斯Dionysus.pages
+[241/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A 小行星班春季課程大綱與說明.pages
+[262/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/看見台灣--五年級台灣史地課程核心架構.pages
+[242/347] Converting: z. 2021之前/6a/a.課程大綱與期末通知/6A 小行星班秋季課程大綱與說明.pages
+[263/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/工作本.pages
+[243/347] Converting: z. 2021之前/6a/Donna歌詞.pages
+[264/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/漢摩拉比法典重要摘錄.pages
+[244/347] Converting: z. 2021之前/6a/小行星班級戲劇選角表單 2.pages
+[265/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/普羅米修斯.pages
+[245/347] Converting: z. 2021之前/6a/山野戶外教學計畫書.pages
+[266/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/赫丘力故事1工作本書寫範例.pages
+[246/347] Converting: z. 2021之前/6a/小行星班夏季親師面談預約時間填表.pages
+[267/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/小行星班文史主課古文脈胳.pages
+[247/347] Converting: z. 2021之前/6a/The Monks of The Monastery .pages
+[268/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/穀神狄蜜特的故事.pages
+[248/347] Converting: z. 2021之前/6a/愛的錦囊.pages
+[269/347] Converting: z. 2021之前/5a/5a評量.pages
+[249/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A小行星班春季學期 期末通知單   .pages
+[270/347] Converting: z. 2021之前/6A 小行星班山野教育 公私糧志願樂捐表.pages
+[250/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A 小行星班全年活動規劃及四季課程大綱.pages
+[271/347] Converting: z. 2021之前/2021-Class 9/會考/108.pages
+[251/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A小行星班春季園遊會分工.pages
+[272/347] Converting: z. 2021之前/2021-Class 9/會考/106國中教育會考_英語_教用WORD.pages
+[252/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A小行星班夏季學期 期末通知單   .pages
+[273/347] Converting: z. 2021之前/2021-Class 9/會考/109.pages
+[253/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A 小行星班春季課程及教學大綱.pages
+[274/347] Converting: z. 2021之前/2021-Class 9/會考/106國中教育會考_英語_學用WORD.pages
+[254/347] Converting: z. 2021之前/5a/課程大綱與期末通知/5A小行星班冬季學期 期末通知單 .pages
+[275/347] Converting: z. 2021之前/2021-Class 9/會考/108國中會考英語B4學用練習卷.pages
+[255/347] Converting: z. 2021之前/5a/課程大綱與期末通知/寒假作業：15個成語解釋加造句.pages
+[276/347] Converting: z. 2021之前/2021-Class 9/會考/107.pages
+[256/347] Converting: z. 2021之前/5a/班親會及校外教學/5a全年學生學習自評.pages
+[277/347] Converting: z. 2021之前/2021-Class 9/會考/108國中會考英語A4解析.pages
+[257/347] Converting: z. 2021之前/5a/班親會及校外教學/武荖坑植物觀察家長同意書.pages
+[278/347] Converting: z. 2021之前/2021-Class 9/會考/110會考.pages
+[258/347] Converting: z. 2021之前/5a/班親會及校外教學/台東校外教學注意事項.pages
+[279/347] Converting: z. 2021之前/2021-Class 9/會考/105英文科(教用).pages
+[259/347] Converting: z. 2021之前/5a/班親會及校外教學/5A評量範例--信宏.pages
+[280/347] Converting: z. 2021之前/2021-Class 9/Week1--C8 Weekly.pages
+[260/347] Converting: z. 2021之前/5a/班親會及校外教學/5a冬季班親會.pages
+[281/347] Converting: z. 2021之前/2021-Class 9/Unit1 現在完成式 單字及動詞變化練習.pages
+[261/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/矛盾的酒神一戴奧尼索斯Dionysus.pages
+[282/347] Converting: z. 2021之前/2021-Class 9/英雄的旅程.pages
+[262/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/看見台灣--五年級台灣史地課程核心架構.pages
+[283/347] Converting: z. 2021之前/2021-Class8/Grammar Class8 Unit 1 天氣.pages
+[263/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/工作本.pages
+[284/347] Converting: z. 2021之前/4a/4A暑期英文識讀.pages
+[264/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/漢摩拉比法典重要摘錄.pages
+[285/347] Converting: z. 2021之前/4a/106學年度4a文字描述評量.pages
+[265/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/普羅米修斯.pages
+[286/347] Converting: z. 2021之前/4a/4年級夏季主課程1-夏商周傳說（下）.pages
+[266/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/赫丘力故事1工作本書寫範例.pages
+[287/347] Converting: z. 2021之前/4a/4a評量.pages
+[267/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/小行星班文史主課古文脈胳.pages
+[288/347] Converting: 走讀台灣-台南篇的歌曲.pages
+[268/347] Converting: z. 2021之前/5a/課程--文史（希臘、古文明、看見台灣）/穀神狄蜜特的故事.pages
+[289/347] Converting: 語文教學-中文台灣文學/《9C台灣近現代文學與歷史語文練習課》課程大綱及學習指南.pages
+[269/347] Converting: z. 2021之前/5a/5a評量.pages
+[290/347] Converting: 語文教學-中文台灣文學/2025台積電文學獎.pages
+[270/347] Converting: z. 2021之前/6A 小行星班山野教育 公私糧志願樂捐表.pages
+[291/347] Converting: 語文教學-中文台灣文學/三角與圓主課筆記.pages
+[271/347] Converting: z. 2021之前/2021-Class 9/會考/108.pages
+[292/347] Converting: 語文教學-中文台灣文學/莫那能研究報告_5000字.pages
+[272/347] Converting: z. 2021之前/2021-Class 9/會考/106國中教育會考_英語_教用WORD.pages
+[293/347] Converting: 語文教學-中文台灣文學/「一九四五」歌詞.pages
+[273/347] Converting: z. 2021之前/2021-Class 9/會考/109.pages
+[294/347] Converting: 語文教學-中文台灣文學/台灣文學.pages
+[274/347] Converting: z. 2021之前/2021-Class 9/會考/106國中教育會考_英語_學用WORD.pages
+[295/347] Converting: 語文教學-中文台灣文學/月琴.pages
+[275/347] Converting: z. 2021之前/2021-Class 9/會考/108國中會考英語B4學用練習卷.pages
+[296/347] Converting: 語文教學-中文台灣文學/《晚安  台灣》 .pages
+[276/347] Converting: z. 2021之前/2021-Class 9/會考/107.pages
+[297/347] Converting: 語文教學-中文台灣文學/寫一條歌，寫你我爾爾 .pages
+[277/347] Converting: z. 2021之前/2021-Class 9/會考/108國中會考英語A4解析.pages
+[298/347] Converting: 語文教學-中文台灣文學/島嶼天光.pages
+[278/347] Converting: z. 2021之前/2021-Class 9/會考/110會考.pages
+[299/347] Converting: 語文教學-中文台灣文學/ 一桿稱仔 作者：賴和.pages
+[279/347] Converting: z. 2021之前/2021-Class 9/會考/105英文科(教用).pages
+[300/347] Converting: 語文教學-中文台灣文學/1945歌曲.pages
+[280/347] Converting: z. 2021之前/2021-Class 9/Week1--C8 Weekly.pages
+[301/347] Converting: 語文教學-中文台灣文學/亞細亞孤兒.pages
+[281/347] Converting: z. 2021之前/2021-Class 9/Unit1 現在完成式 單字及動詞變化練習.pages
+[302/347] Converting: 語文教學-中文台灣文學/勿忘64.pages
+[282/347] Converting: z. 2021之前/2021-Class 9/英雄的旅程.pages
+[303/347] Converting: 9C 英文課 114 學年度春夏學季 教學大綱 .pages
+[283/347] Converting: z. 2021之前/2021-Class8/Grammar Class8 Unit 1 天氣.pages
+[304/347] Converting: e.英文小組/觀課記錄/1110906觀課紀錄-曙君英語.pages
+[284/347] Converting: z. 2021之前/4a/4A暑期英文識讀.pages
+[305/347] Converting: The Road Not Taken 學習單.pages
+[285/347] Converting: z. 2021之前/4a/106學年度4a文字描述評量.pages
+[306/347] Converting: 歷史教學/學習單與評量/台灣史一問一答.pages
+[286/347] Converting: z. 2021之前/4a/4年級夏季主課程1-夏商周傳說（下）.pages
+[307/347] Converting: 歷史教學/學習單與評量/現代史期末考題.pages
+[287/347] Converting: z. 2021之前/4a/4a評量.pages
+[308/347] Converting: 歷史教學/學習單與評量/現代史評量2025.pages
+[288/347] Converting: 走讀台灣-台南篇的歌曲.pages
+[309/347] Converting: 歷史教學/學習單與評量/九年級語文及歷史練習_學生講義.pages
+[289/347] Converting: 語文教學-中文台灣文學/《9C台灣近現代文學與歷史語文練習課》課程大綱及學習指南.pages
+[310/347] Converting: 歷史教學/學習單與評量/8c台灣史期末考申論題.pages
+[290/347] Converting: 語文教學-中文台灣文學/2025台積電文學獎.pages
+[311/347] Converting: 歷史教學/學習單與評量/九年級語文及歷史練習2025.08.218.pages
+[291/347] Converting: 語文教學-中文台灣文學/三角與圓主課筆記.pages
+[312/347] Converting: 歷史教學/學習單與評量/現代史主課學生評量總表.pages
+[292/347] Converting: 語文教學-中文台灣文學/莫那能研究報告_5000字.pages
+[313/347] Converting: 歷史教學/學習單與評量/8b台灣史評量.pages
+[293/347] Converting: 語文教學-中文台灣文學/「一九四五」歌詞.pages
+[314/347] Converting: 歷史教學/學習單與評量/【記憶、想像與認：臺灣主體性課程建構】參考資料.pages
+[294/347] Converting: 語文教學-中文台灣文學/台灣文學.pages
+[315/347] Converting: 歷史教學/學習單與評量/快問快答題庫_台灣史+吳濁流_亞細亞孤兒.pages
+[295/347] Converting: 語文教學-中文台灣文學/月琴.pages
+[316/347] Converting: 歷史教學/現代史/2025秋季9C現代史主課程--課程學習指南 .pages
+[296/347] Converting: 語文教學-中文台灣文學/《晚安  台灣》 .pages
+[317/347] Converting: 歷史教學/現代史/俄烏戰爭5個問題.pages
+[297/347] Converting: 語文教學-中文台灣文學/寫一條歌，寫你我爾爾 .pages
+[318/347] Converting: 歷史教學/現代史/Modern History Curriculum Design from David Lin .pages
+[298/347] Converting: 語文教學-中文台灣文學/島嶼天光.pages
+[319/347] Converting: 歷史教學/現代史/歷史主課設計from David Lin.pages
+[299/347] Converting: 語文教學-中文台灣文學/ 一桿稱仔 作者：賴和.pages
+[320/347] Converting: 歷史教學/現代史/9年級現代史主課2025課程大綱與紀錄_林信宏2025.11.06拷貝.pages
+[300/347] Converting: 語文教學-中文台灣文學/1945歌曲.pages
+[321/347] Converting: 歷史教學/現代史/9年級現代史主課2025課程大綱與紀錄_林信宏2025.11.06.pages
+[301/347] Converting: 語文教學-中文台灣文學/亞細亞孤兒.pages
+[322/347] Converting: 歷史教學/現代史/2025現代史主課.pages
+[302/347] Converting: 語文教學-中文台灣文學/勿忘64.pages
+[323/347] Converting: 歷史教學/現代史/9年級現代史_學生筆記格式_列印版_林信宏2025.11.06.pages
+[303/347] Converting: 9C 英文課 114 學年度春夏學季 教學大綱 .pages
+[324/347] Converting: 歷史教學/現代史/工業革命完整教案.pages
+[304/347] Converting: e.英文小組/觀課記錄/1110906觀課紀錄-曙君英語.pages
+[325/347] Converting: 歷史教學/歐美地理歷史/支撐美國超級大國地位的四大優勢.pages
+[305/347] Converting: The Road Not Taken 學習單.pages
+[326/347] Converting: 歷史教學/歐美地理歷史/2024 冬季8C 歐洲與美洲地理教學大綱_林信宏.pages
+[306/347] Converting: 歷史教學/學習單與評量/台灣史一問一答.pages
+[327/347] Converting: 歷史教學/歐美地理歷史/亞馬遜森林概況簡介.pages
+[307/347] Converting: 歷史教學/學習單與評量/現代史期末考題.pages
+[328/347] Converting: 歷史教學/歐美地理歷史/亞馬遜雨林面紗.pages
+[308/347] Converting: 歷史教學/學習單與評量/現代史評量2025.pages
+[329/347] Converting: 歷史教學/歐美地理歷史/8C 心亮班 歐美地理主課程 期末測驗.pages
+[309/347] Converting: 歷史教學/學習單與評量/九年級語文及歷史練習_學生講義.pages
+[330/347] Converting: 歷史教學/歐美地理歷史/臺灣和美國的工作文化差異.pages
+[310/347] Converting: 歷史教學/學習單與評量/8c台灣史期末考申論題.pages
+[331/347] Converting: 歷史教學/歐美地理歷史/哥倫布大交換.pages
+[311/347] Converting: 歷史教學/學習單與評量/九年級語文及歷史練習2025.08.218.pages
+[332/347] Converting: 歷史教學/歐美地理歷史/全球影響力：五個國家塑造世界文化.pages
+[312/347] Converting: 歷史教學/學習單與評量/現代史主課學生評量總表.pages
+[333/347] Converting: 歷史教學/台灣史/牡丹社事件：歷史背景與模擬記者會教學活動 .pages
+[313/347] Converting: 歷史教學/學習單與評量/8b台灣史評量.pages
+[334/347] Converting: 歷史教學/台灣史/228事件擴展研究報告.pages
+[314/347] Converting: 歷史教學/學習單與評量/【記憶、想像與認：臺灣主體性課程建構】參考資料.pages
+[335/347] Converting: 歷史教學/台灣史/台灣史人文探索課程安排.pages
+[315/347] Converting: 歷史教學/學習單與評量/快問快答題庫_台灣史+吳濁流_亞細亞孤兒.pages
+[336/347] Converting: 歷史教學/台灣史/臨床講義──對名叫臺灣的患者的診斷.pages
+[316/347] Converting: 歷史教學/現代史/2025秋季9C現代史主課程--課程學習指南 .pages
+[337/347] Converting: 歷史教學/台灣史/台灣議會設置請願運動_學習單.pages
+[317/347] Converting: 歷史教學/現代史/俄烏戰爭5個問題.pages
+[338/347] Converting: 歷史教學/台灣史/台灣史--霧社事件、議會設置請願、皇民化.pages
+[318/347] Converting: 歷史教學/現代史/Modern History Curriculum Design from David Lin .pages
+[339/347] Converting: 歷史教學/台灣史/二二八的紀念詩集—傷口的花 .pages
+[319/347] Converting: 歷史教學/現代史/歷史主課設計from David Lin.pages
+[340/347] Converting: 歷史教學/台灣史/黃仁勳、張忠謀看待歷史及台灣人要知道台灣史.pages
+[320/347] Converting: 歷史教學/現代史/9年級現代史主課2025課程大綱與紀錄_林信宏2025.11.06拷貝.pages
+[341/347] Converting: 歷史教學/台灣史/2025台灣史主課程：學生版筆記及講義-8b.pages
+[321/347] Converting: 歷史教學/現代史/9年級現代史主課2025課程大綱與紀錄_林信宏2025.11.06.pages
+[342/347] Converting: 歷史教學/台灣史/台灣文化協會綱領_學生學習單2.pages
+[322/347] Converting: 歷史教學/現代史/2025現代史主課.pages
+[343/347] Converting: 歷史教學/台灣史/228事件報告大綱摘要.pages
+[323/347] Converting: 歷史教學/現代史/9年級現代史_學生筆記格式_列印版_林信宏2025.11.06.pages
+[344/347] Converting: 歷史教學/台灣史/牡丹社事件國際記者會.pages
+[324/347] Converting: 歷史教學/現代史/工業革命完整教案.pages
+[345/347] Converting: 歷史教學/台灣史/日治接收台灣初期--國際記者會.pages
+[325/347] Converting: 歷史教學/歐美地理歷史/支撐美國超級大國地位的四大優勢.pages
+[346/347] Converting: 歷史教學/台灣史/2025台灣史主課程_教學設計-8B_林信宏.pages
+[326/347] Converting: 歷史教學/歐美地理歷史/2024 冬季8C 歐洲與美洲地理教學大綱_林信宏.pages
+[347/347] Converting: 走踏葉石濤的府城 .pages
+[327/347] Converting: 歷史教學/歐美地理歷史/亞馬遜森林概況簡介.pages
+[328/347] Converting: 歷史教學/歐美地理歷史/亞馬遜雨林面紗.pages
+[329/347] Converting: 歷史教學/歐美地理歷史/8C 心亮班 歐美地理主課程 期末測驗.pages
+[330/347] Converting: 歷史教學/歐美地理歷史/臺灣和美國的工作文化差異.pages
+[331/347] Converting: 歷史教學/歐美地理歷史/哥倫布大交換.pages
+[332/347] Converting: 歷史教學/歐美地理歷史/全球影響力：五個國家塑造世界文化.pages
+[333/347] Converting: 歷史教學/台灣史/牡丹社事件：歷史背景與模擬記者會教學活動 .pages
+[334/347] Converting: 歷史教學/台灣史/228事件擴展研究報告.pages
+[335/347] Converting: 歷史教學/台灣史/台灣史人文探索課程安排.pages
+[336/347] Converting: 歷史教學/台灣史/臨床講義──對名叫臺灣的患者的診斷.pages
+[337/347] Converting: 歷史教學/台灣史/台灣議會設置請願運動_學習單.pages
+[338/347] Converting: 歷史教學/台灣史/台灣史--霧社事件、議會設置請願、皇民化.pages
+[339/347] Converting: 歷史教學/台灣史/二二八的紀念詩集—傷口的花 .pages
+[340/347] Converting: 歷史教學/台灣史/黃仁勳、張忠謀看待歷史及台灣人要知道台灣史.pages
+[341/347] Converting: 歷史教學/台灣史/2025台灣史主課程：學生版筆記及講義-8b.pages
+[342/347] Converting: 歷史教學/台灣史/台灣文化協會綱領_學生學習單2.pages
+[343/347] Converting: 歷史教學/台灣史/228事件報告大綱摘要.pages
+[344/347] Converting: 歷史教學/台灣史/牡丹社事件國際記者會.pages
+[345/347] Converting: 歷史教學/台灣史/日治接收台灣初期--國際記者會.pages
+[346/347] Converting: 歷史教學/台灣史/2025台灣史主課程_教學設計-8B_林信宏.pages
+[347/347] Converting: 走踏葉石濤的府城 .pages
+[Mon Apr  6 17:15:22 CST 2026] Done. Total: 347

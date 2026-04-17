@@ -1,0 +1,200 @@
+# TeacherOS 系統路由中樞（ai-core/teacheros.yaml）
+# 每次對話必讀。負責：載入順序、workspace 路由、session 協議、多 AI Agent 協調。
+
+# 一、三層載入順序
+
+loading_sequence:
+  step_1:
+    file: ai-core/teacheros-foundation.yaml
+    description: >
+      華德福教育共用根基（精簡版：設計原則 + 年級發展 + DI 框架）。
+      深度教育哲學工作時，按檔案底部 _extended_version 指引載入完整版。
+    mandatory: true
+    note: 所有教師共讀，提供課程設計的思想底層
+  step_2:
+    file: "{workspace}/teacheros-personal.yaml"
+    description: 教師個人身份、年級、科目、偏好
+    mandatory: true
+    note: 從 acl.yaml 取得 workspace 路徑
+  step_3:
+    file: projects/_di-framework/project.yaml
+    description: 差異化教學共用框架（雙軸強制、品質標準）
+    mandatory: true
+    note: 每次工作必載，不論班級或科目
+  step_4:
+    file: "{workspace}/projects/class-{code}/project.yaml"
+    description: 班級脈絡與焦點
+    mandatory: when_class_specified
+  step_5:
+    file: "{workspace}/projects/class-{code}/{subject}/session.yaml"
+    description: 科目進度錨點
+    mandatory: when_subject_specified
+
+# 二、Workspace 機制
+
+workspace_system:
+  purpose: >
+    每位教師擁有獨立的 workspace，在其中進行所有教學設計工作。
+    Workspace 是教師的個人空間，不影響母結構，也不會被其他教師干擾。
+
+  structure:
+    shared_reference:
+      description: 共用引用（不複製，直接讀取母結構）
+      includes:
+        - ai-core/teacheros-foundation.yaml — 華德福教育共用根基
+        - ai-core/reference/ — 教學哲學完整參考文件
+        - projects/_di-framework/ — 差異化教學框架
+        - ai-core/skills/ — 技能正本
+        - setup/ — 安裝與設定工具
+      rule: >
+        教師只讀不改。更新由管理員統一維護，所有教師自動同步。
+        AI 若偵測到教師角色嘗試修改這些路徑，必須拒絕並說明原因。
+    teacher_owned:
+      description: 教師個人空間（100% 自主）
+      includes:
+        - teacheros-personal.yaml — 個人身份與哲學
+        - workspace.yaml — 工作空間狀態追蹤
+        - projects/class-{code}/ — 班級資料（students、session、content）
+        - skills/ — 教師個人技能（Personal Skills）
+      rule: >
+        完全屬於教師個人。AI 僅在此路徑範圍內進行寫入操作。
+        教師可自由修改，但框架結構需保留以確保系統運作。
+    template_source:
+      description: 新教師 workspace 的複製來源
+      path: workspaces/_template/
+      includes:
+        - teacheros-personal.yaml — 個人身份模板
+        - workspace.yaml — 工作空間狀態模板
+        - projects/ — 空白班級骨架
+        - skills/ — 個人技能範本與說明
+
+  reference_workspace:
+    path: workspaces/工作範例參考/
+
+  workspace_naming:
+    convention: "{Role}_{RealName}"
+    container: workspaces/Working_Member/
+
+  # onboarding_flow 見 setup/teacher-guide.md
+
+# 三、AI Session 協議
+
+ai_session_protocol:
+  session_start:
+    steps:
+      - 讀取 ai-core/teacheros.yaml（本文件）— 系統路由
+      - 讀取 ai-core/teacheros-foundation.yaml — 華德福共用根基
+      - 讀取 ai-core/acl.yaml — 確認使用者授權範圍（見下方 acl_enforcement）
+      - 確認使用者身份：優先讀取 setup/environment.env 的 USER_EMAIL；
+          若無法取得，主動詢問「請確認你的帳號 Email」；
+          admin 角色跳過路徑限制，teacher 角色全程只允許操作 allowed_paths 範圍
+      - 讀取 {workspace}/teacheros-personal.yaml — 教師個人身份
+      - 讀取 projects/_di-framework/project.yaml — 差異化教學框架（每次必載）
+      - 載入對應班級的 class-*/project.yaml — 掃描 current_focus
+      - 載入對應科目的 {subject}/session.yaml — 確認 Block/Step 與 next_action
+      - 主動報告現況（見 startup_report_template）
+
+    acl_enforcement:
+      on_unauthorized_request: >
+        若 teacher 角色要求操作不在其 allowed_paths 範圍內的路徑，
+        AI 應主動拒絕，說明：「你目前沒有操作 [路徑] 的授權。
+        如需擴充權限，請聯絡 David 更新 ai-core/acl.yaml。」
+      on_unknown_user: >
+        若 Email 不在 acl.yaml 中，通知使用者聯絡 David 登記，
+        並在確認前暫停所有寫入操作，僅允許讀取。
+      admin_bypass: >
+        admin 角色（allowed_paths: ["*"]）跳過所有路徑限制檢查。
+
+    workspace_routing:
+      principle: >
+        teacher 角色的 AI 工作階段中，查找任何輔助設定、模板或框架檔案時，
+        先去 workspaces/{teacher_id}/ 尋找同路徑的覆寫版本；
+        找到則使用 workspace 版本，找不到則退回 Repo 根目錄的標準版。
+      scope: 僅適用 teacher 角色；admin 角色不啟用 workspace 路由邏輯。
+
+    startup_report_template: >
+      已載入系統。
+      [班級] [科目] 目前在 Block [X] Step [Y]，
+      下一步：[next_action 欄位內容]。
+      [若 cross_module_notes.active 不為空：附帶跨線提醒：[內容]]
+      是否直接開始？
+
+    voice_input_protocol:
+      context: 教師可能以語音輸入，措辭口語化、省略上下文或指令不完整
+      rules:
+        - 讀完進度錨點後，AI 主動報告現況，不等教師詢問「我們做到哪了？」
+        - 若語音指令模糊（如「繼續」「就那個」），優先依進度錨點推斷意圖，確認後執行
+        - 推斷邏輯：「繼續」= 執行 next_action；「做上次那個」= 延續 last_updated 的工作線
+        - 不對模糊指令連續追問——最多一次確認，得到回應後立刻進入工作
+        - 語音輸入常有贅字、口誤、轉折，AI 捕捉核心意圖，忽略語音干擾詞
+
+  mid_session_reanchor:
+    trigger: >
+      當對話中出現以下情境時，AI 應主動重讀語氣錨點：
+      1. 連續處理技術性工作（系統架構、程式碼、檔案整理）後，
+         工作切換回課程設計或教育討論
+      2. 教師說「回到備課」「設計課程」「進入教育模式」等語句
+      3. AI 自覺回應風格偏向通用助理時
+    action: >
+      重讀 {workspace}/teacheros-personal.yaml 的 voice_anchor 段落。
+      若需要更完整的脈絡，再讀 core_character 與 subject_philosophies。
+      不需重讀整個檔案。
+    note: >
+      CLAUDE.md 的共通語氣錨點提供最小保障（不會被壓縮），
+      此機制在關鍵時刻補充教師個人的語氣與價值觀脈絡。
+
+  session_end:
+    steps:
+      - 條列今次對話確認的決定（簡短列點）
+      - 更新對應 {subject}/session.yaml 進度錨點（只改有變動的欄位）
+      - 更新 ai-core/system-status.yaml（反映真實現況）
+      - 新產出的備課內容存入 content/*.md
+      - 告知教師下次工作的起點（下一步是什麼）
+
+  output_defaults:
+    primary_language: 繁體中文
+    structure: 結構清晰、可直接操作
+    long_form: Markdown
+    state_update: YAML（只改動的區塊）
+    emoji: 不使用
+
+# 四、多 AI Agent 工作環境
+
+ai_agent_context:
+  primary_agents:
+    claude_code:
+      name: Claude Code
+      type: CLI 工具
+      file_access: 完整本機讀寫（Edit / Write / Read 工具）
+      skill_entry: >
+        .claude/commands/ 薄層入口 → 自動引導至 ai-core/skills/ 正本
+      strength: 複雜多步驟任務、檔案系統操作、slash command 自動化
+    google_antigravity:
+      name: Google Antigravity（Gemini）
+      type: Gemini-based IDE 整合工具
+      file_access: 完整本機讀寫（可直接讀取電腦資料夾）
+      skill_entry: >
+        直接讀取 ai-core/skills/ 正本執行，不經 .claude/commands/ 層
+      strength: 日常對話協作、快速迭代、語音輸入友善
+
+  workflow:
+    switching_pattern: 多工具交替使用，視工作性質選擇
+    continuity_mechanism: >
+      工具切換透過 {workspace}/projects/class-*/{subject}/session.yaml 保持工作連續。
+      切換前：執行 session-end 技能同步進度錨點。
+      切換後：執行 load 技能讀取上次停止位置。
+    handoff_note: >
+      若此次對話是從另一個 AI Agent 接手的，
+      讀取對應班級的各科目 session.yaml，即可從上次停止處繼續。
+      無需教師重新說明背景。
+
+  skill_access:
+    system_skills:
+      canonical_path: ai-core/skills/
+      note: 系統技能正本對所有 AI 工具開放，任何有檔案讀取能力的 Agent 皆可執行
+    personal_skills:
+      path: "{workspace}/skills/"
+      note: >
+        教師個人技能。AI 在載入 workspace 後掃描此資料夾的 frontmatter。
+        個人技能與系統技能同名時，在教師自己的 session 中使用個人版本，
+        並主動通知教師。詳見 AI_HANDOFF.md「教師個人技能」段落。

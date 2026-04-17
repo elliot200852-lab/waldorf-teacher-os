@@ -1,0 +1,56 @@
+# wiki/raw 消化紀錄
+# 由 raw-ingest 技能自動維護，請勿手動修改
+# 格式：每次消化後追加一條記錄
+
+ingested:
+  - file: "ai-core/reference/steiner-study-of-man-research.md"
+    date: "2026-04-06"
+    source_page: "wiki/sources/ga293-study-of-man.md"
+    concept_pages:
+      - "wiki/concepts/pedagogy/同感-反感極性.md"
+      - "wiki/concepts/pedagogy/三元意識論.md"
+      - "wiki/concepts/pedagogy/圖像優先原則.md"
+      - "wiki/concepts/pedagogy/十二感官.md"
+    status: done
+    notes: "原始文件位於 ai-core/reference/（非 wiki/raw/），直接消化"
+
+  - file: "ai-core/reference/steiner-practical-advice-research.md"
+    date: "2026-04-06"
+    source_page: "wiki/sources/ga294-practical-advice.md"
+    concept_pages:
+      - "wiki/concepts/pedagogy/圖像優先原則.md"
+      - "wiki/concepts/pedagogy/同感-反感極性.md"
+    status: done
+    notes: "原始文件位於 ai-core/reference/（非 wiki/raw/），直接消化"
+
+  - file: "wiki/raw/GA294_Practical_Advice_to_Teachers.md"
+    date: "2026-04-06"
+    source_page: "wiki/sources/ga294-practical-advice.md"
+    concept_pages:
+      - "wiki/concepts/pedagogy/語言教學法.md"
+      - "wiki/concepts/pedagogy/教師修養.md"
+      - "wiki/concepts/pedagogy/道德教育時機.md"
+      - "wiki/concepts/pedagogy/超越即時理解.md"
+      - "wiki/concepts/pedagogy/藝術性教學基底.md"
+      - "wiki/concepts/pedagogy/算術與幾何教學法.md"
+      - "wiki/concepts/pedagogy/呼吸與節奏.md"
+      - "wiki/concepts/pedagogy/記憶與遺忘.md"
+      - "wiki/concepts/pedagogy/意志培養.md"
+      - "wiki/concepts/pedagogy/歷史教學法.md"
+      - "wiki/concepts/pedagogy/自然史教學法.md"
+      - "wiki/concepts/pedagogy/朗誦與語言藝術.md"
+      - "wiki/concepts/pedagogy/地理教學法.md"
+    status: done
+    notes: >
+      GA 294 原文（14 講 + 結語，87,000 英文字）。完整 13 個概念頁已全數生成（A–M）。
+      第一批（2026-04-06）：語言教學法、教師修養。
+      第二批（2026-04-06）：道德教育時機、超越即時理解、藝術性教學基底、算術與幾何教學法、
+      呼吸與節奏、記憶與遺忘、意志培養、歷史教學法、自然史教學法、朗誦與語言藝術、地理教學法。
+      GA294 知識圖譜完整建立，共 17 個 wiki 頁面（1 源頁 + 3 既有 pedagogy + 13 新概念頁）。
+
+  - file: "ai-core/reference/ga293-294-teacheros-integration.md"
+    date: "2026-04-06"
+    source_page: "wiki/sources/ga293-294-integration.md"
+    concept_pages: []
+    status: done
+    notes: "整合分析文件，無新概念頁（已由前兩份涵蓋）"

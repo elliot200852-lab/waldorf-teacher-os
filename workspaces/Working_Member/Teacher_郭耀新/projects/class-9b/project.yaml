@@ -1,0 +1,148 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 2】
+# 班級設定檔 — 填空後即可使用
+# 路徑：projects/class-{code}/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# ────────────────────────────────────────────────────────
+# 【基本資訊】
+# ────────────────────────────────────────────────────────
+# 班級代碼（英文小寫 + 數字，例：8a、7th、middle-school-science）
+class: 9b
+
+# 年級（例：七年級、八年級、九年級、高二）
+grade: 九年級
+
+# 該班級的學生人數（方便快速參考）
+student_count: 待確認
+
+# 你在本班級的角色（例：導師、英文科任、數學科任、藝術教師）
+# 如果同時是導師+科任，寫「導師（班導師）+ 英文科任」
+teacher_role: 資訊科技科任
+
+# 班級狀態（active = 進行中、archived = 已結束、planning = 規劃中）
+status: active
+
+# ────────────────────────────────────────────────────────
+# 【班級背景脈絡】
+# ────────────────────────────────────────────────────────
+# 寫下這個班級的特色、學生樣態、班級文化等
+# 這會幫助 AI 理解你的教學背景，設計更貼切的課程
+# 字數：2-5 句話
+
+homeroom_context: >
+  九年級學生（十五歲）處於追求獨立與尋找內在平衡的階段，邏輯與思考能力急遽覺醒。
+  本課程將帶領他們透過實體拆解與專案實作，探索科技底層邏輯，建立數位足跡與公民意識。
+
+# ────────────────────────────────────────────────────────
+# 【班級檔案清單】
+# ────────────────────────────────────────────────────────
+# 下列檔案會由 AI 自動掃描與讀取，記錄路徑
+
+class_files:
+  # 學生完整名單（格式：YAML，含學生代碼、姓名等）
+  # 通常放在 .gitignore 中，不上傳到公開 repo
+  roster: roster.yaml
+
+  # 學生 DI 分類、學習樣態（DI = Differentiated Instruction，差異化教學）
+  students: students.yaml
+
+  # 工作進度錨點（每個科目一個）
+  # 範例位置：
+  #   working/english-session.yaml
+  #   working/homeroom-session.yaml
+
+# ────────────────────────────────────────────────────────
+# 【科目設定】
+# ────────────────────────────────────────────────────────
+# 說明：填入你在本班教的所有科目
+#
+# 結構：
+#   {subject_key}:
+#     type: 課程類型（例：英文專科、導師課、主課程、藝術工作坊）
+#     weekly_sessions: 一週上課節數
+#     di_profile: DI 分析檔案路徑
+#     working_anchor: 進度錨點檔案路徑
+#     content_path: 備課內容輸出資料夾
+#     note: 備註（可選）
+
+subjects:
+  information_technology:
+    type: 資訊專科
+    weekly_sessions: 1
+    di_profile: information_technology/di-profile.yaml
+    working_anchor: working/information_technology-session.yaml
+    content_path: information_technology/content/
+    note: 動手拆解、數位公民素養、利他數位敘事專案
+
+  # 如果你是導師，加入導師課
+  # homeroom:
+  #   type: 班級導師模組
+  #   weekly_sessions: 3
+  #   working_anchor: working/homeroom-session.yaml
+  #   content_path: homeroom/content/
+  #   note: 班級經營、活動規劃、親師溝通
+
+  # 如果教其他科目，複製上方格式填寫
+  # math:
+  #   type: 數學專科
+  #   weekly_sessions: 4
+  #   di_profile: math/di-profile.yaml
+  #   working_anchor: working/math-session.yaml
+  #   content_path: math/content/
+
+# ────────────────────────────────────────────────────────
+# 【學期與進度追蹤】
+# ────────────────────────────────────────────────────────
+# 目前學年（例：2025-2026）
+current_semester: 2025-2026
+
+# 目前重點工作（例：「英文 Block 1（學季大綱設計）」）
+# AI 會根據這個欄位，在你每次開始對話時提醒你現在在做什麼
+current_focus: 尚未開始——請先完成 students.yaml 的 DI 分類
+
+# 接下來的待辦清單（列點式）
+next_steps:
+  - 填入學生 DI 樣態（students.yaml）
+  - 開始 Block 1（學季大綱設計）
+  - 列出分科目標與教學方法
+
+# ────────────────────────────────────────────────────────
+# 【跨科協作備註】
+# ────────────────────────────────────────────────────────
+# 如果有多位老師教同一班級，或多個科目需要協調，在這裡記錄
+
+cross_module_notes:
+  # active: 當前需要協調的事項
+  active: []
+  # 例：
+  # active:
+  #   - "英文與人文課程協作：下週二討論主課程與英文課的連結"
+
+  # resolved: 已解決的協作事項（供查閱）
+  resolved: []
+
+# ────────────────────────────────────────────────────────
+# 【附註：本檔案的使用方式】
+# ────────────────────────────────────────────────────────
+#
+# 1. 初次使用：
+#    - 複製 _class-template 資料夾，改名為 class-{your-code}
+#    - 填寫上方「填空」欄位
+#    - 不確定的地方先留空，AI 會詢問
+#
+# 2. 進度追蹤：
+#    - current_focus 與 next_steps 由你更新，用來提醒你的進度
+#    - AI 每次開始工作時會讀取並報告現況
+#
+# 3. 跨模組協作：
+#    - 如果你有共教老師或跨科連結，在 cross_module_notes 記錄
+#    - AI 會自動提醒你有待協調事項
+#
+# 4. 詳細進度：
+#    - 分科目詳細進度在 working/{subject}-session.yaml 中查看
+#    - 本檔案是「大局視圖」，session.yaml 是「工作詳情」
+#
+# 5. 產出內容：
+#    - AI 產出的教材、備課、評量會放在 {subject}/content/ 資料夾
+#    - 你可以在那裡找到所有備課檔案，版本控制也在那裡

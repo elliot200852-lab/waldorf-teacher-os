@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!--
+  AI 備課工作坊展示頁 — 當華德福教師遇見 AI
+  一堂九年級英文課的真實備課實錄（藝廊翻卡版）
+  素材來源：2026-04-02 David × Claude Code 備課 session
+  建立日期：2026-04-03
+-->
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>當華德福教師遇見 AI — 一堂九年級英文課的備課實錄</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<style>
+/* ── 春季色彩系統（waldorf-base） ── */
+:root {
+  --primary: #6B7F5E;
+  --secondary: #9B7BB0;
+  --accent: #D4A574;
+  --bg-wash-1: #F0F5EB;
+  --bg-wash-2: #E8F0D8;
+  --bg-wash-3: #F2E8F5;
+  --on-surface: #2A3325;
+  --on-surface-variant: #4A5544;
+  --outline-variant: #C4D1B8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Plus Jakarta Sans", "Noto Sans TC", "PingFang TC", sans-serif;
+  color: var(--on-surface);
+  background: radial-gradient(circle at top left, #F0F5EB 0%, #E8F0D8 40%, #F2E8F5 100%);
+  min-height: 100vh;
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero h1 {
+  font-family: "Playfair Display", "Noto Serif TC", serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  color: var(--primary);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.hero .subtitle {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+.hero .intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--on-surface-variant);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── 章節標題 ── */
+.act-header {
+  max-width: 1100px;
+  margin: 2.5rem auto 1rem;
+  padding: 0 1.5rem;
+}
+.act-header h2 {
+  font-family: "Playfair Display", "Noto Serif TC", serif;
+  font-size: 1.3rem;
+  color: var(--primary);
+  border-bottom: 2px solid var(--outline-variant);
+  padding-bottom: 0.4rem;
+  display: inline-block;
+}
+.act-header h2 span {
+  color: var(--secondary);
+  font-weight: 400;
+}
+
+/* ── 卡片網格 ── */
+.card-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ── 翻卡 ── */
+.card-container {
+  perspective: 1200px;
+  height: 480px;
+}
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.card.flipped { transform: rotateY(180deg); }
+
+.card-front, .card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 正面 */
+.card-front {
+  padding: 2rem 1.8rem;
+  justify-content: space-between;
+  color: #fff;
+}
+.card-front .card-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.card-front .card-num {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  opacity: 0.2;
+  line-height: 1;
+  margin: 0.5rem 0;
+}
+.card-front .card-title {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+.card-front .card-hook {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  flex: 1;
+}
+.card-front .flip-hint {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  text-align: right;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* 正面配色 */
+.front-green  { background: linear-gradient(135deg, #5a7050 0%, #7a9468 100%); }
+.front-purple { background: linear-gradient(135deg, #7b6098 0%, #a48dba 100%); }
+.front-warm   { background: linear-gradient(135deg, #b08a5c 0%, #c9a87a 100%); }
+.front-mixed  { background: linear-gradient(135deg, #5e6b50 0%, #8b7ba0 100%); }
+.front-deep   { background: linear-gradient(135deg, #4a5a42 0%, #6b5e80 100%); }
+
+/* 背面 */
+.card-back {
+  transform: rotateY(180deg);
+  background: #fff;
+  border: 1px solid var(--outline-variant);
+  display: flex;
+  flex-direction: column;
+}
+.card-back-header {
+  padding: 1rem 1.4rem 0.6rem;
+  border-bottom: 1px solid var(--outline-variant);
+  flex-shrink: 0;
+}
+.card-back-header h3 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+.card-back-content {
+  padding: 0.8rem 1.4rem 1rem;
+  overflow-y: auto;
+  flex: 1;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--on-surface);
+}
+.card-back-content p { margin-bottom: 0.6rem; }
+.card-back-content ol, .card-back-content ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+.card-back-content li { margin-bottom: 0.3rem; }
+.card-back-content strong { color: var(--primary); }
+.card-back-content .highlight {
+  background: var(--bg-wash-2);
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  font-size: 0.8rem;
+}
+.card-back-content em { color: var(--secondary); font-style: normal; font-weight: 600; }
+
+/* 背面表格 */
+.card-back-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  margin: 0.5rem 0;
+}
+.card-back-content th {
+  background: var(--bg-wash-2);
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 0.75rem;
+}
+.card-back-content td {
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+.card-back-content .pass { color: #4a7c50; font-weight: 700; }
+.card-back-content .flag { color: #b07040; font-weight: 600; }
+
+.card-back .flip-back {
+  padding: 0.4rem 1.4rem 0.6rem;
+  text-align: right;
+  font-size: 0.72rem;
+  color: var(--secondary);
+  opacity: 0.6;
+  flex-shrink: 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* 背面滾動條 */
+.card-back-content::-webkit-scrollbar { width: 4px; }
+.card-back-content::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 2px;
+}
+
+/* ── 頁尾 ── */
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem 3rem;
+  max-width: 600px;
+  margin: 1rem auto 0;
+}
+footer .closing {
+  font-family: "Playfair Display", "Noto Serif TC", serif;
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+footer .meta {
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+
+/* ── RWD ── */
+@media (max-width: 700px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .card-container { height: 440px; }
+  .hero { padding: 2rem 1rem 1.5rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ━━━━━━━━━━ Hero ━━━━━━━━━━ -->
+<section class="hero">
+  <h1>當華德福教師遇見 AI</h1>
+  <p class="subtitle">一堂九年級英文課的備課實錄</p>
+  <p class="intro">
+    這不是一份使用說明。這是 2026 年 4 月 2 日下午，一位華德福英文教師坐在電腦前，用語音對 AI 說了一段話之後，實際發生的事。
+    <br><br>
+    13 張卡片。每一張都是那次對話的真實截圖。點擊翻面，看見背後的細節。
+  </p>
+</section>
+
+<!-- ━━━━━━━━━━ Act 1：教師開口 ━━━━━━━━━━ -->
+<div class="act-header">
+  <h2>一、教師開口 <span>The Teacher Speaks</span></h2>
+</div>
+
+<div class="card-grid">
+
+  <!-- Card 1 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-green">
+        <div class="card-label">Act 1 / 教師的聲音</div>
+        <div class="card-num">01</div>
+        <div class="card-title">一段語音輸入，啟動了整個設計</div>
+        <div class="card-hook">「下禮拜的工坊從這個 The First Job 裡面，我整理了幾個文法架構，請你記住...」——這是教師的原始口語，沒有修飾，沒有格式化。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>David 的原始指令（逐字）</h3></div>
+        <div class="card-back-content">
+          <p>下禮拜的工坊從這個 The First Job 裡面，我整理了幾個文法架構，請你記住，我們來學學那一種，再來綜合複習幾個重點：</p>
+          <p>1、"I didn't know where these envelopes were coming from or where they were going." 裡面的 "where" 的功能。</p>
+          <p>2、《The First Job》裡面的一個長段，它其實是一個長句子，我要把它分析好：「So the next morning I put on the navy blue dress that made me look older and borrowed money for lunch and bus fare because Aunt Lala said I wouldn't get paid till the next Friday. I went in and saw the boss of the Peter Pan photo finishers on North Broadway where Aunt Lala worked and lied about my age like she told me to, and sure enough, I started that same day.」</p>
+          <p>3、關係代名詞，我們可以以「First Job」為例。這三個重點，一樣也不要漏掉我們的「連接詞」。</p>
+          <p>請幫我把它編成第八週的第二堂跟第三堂，每堂各 45 分鐘，並以 45 分鐘可以完成的方式，設計教案跟學習單。注意第一堂的工坊會跟著 Week 8 第一堂「The First Job」的文本做轉換，設計時要留意切換的節奏。</p>
+          <p>所以現在請你開始設計這兩堂課、這兩場工作坊的教案與學習單草稿，我之後、上課前會再過來審閱修改。</p>
+          <p>請按照我說的先進行設計，然後自己先跑 Evaluator，並給我這兩堂課的 Evaluator 報告。</p>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-green">
+        <div class="card-label">Act 1 / 脈絡</div>
+        <div class="card-num">02</div>
+        <div class="card-title">這週節次調了</div>
+        <div class="card-hook">Week 8 原本的節奏（兩堂工坊 + 兩堂閱讀）被打散重排。AI 需要理解這個脈絡，才能設計出銜接正確的課。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>Week 8 節次重排</h3></div>
+        <div class="card-back-content">
+          <p>Week 8 節次已重排（04-02 David 確認）：</p>
+          <ul>
+            <li><strong>8-1</strong>：The First Job 第二堂（分組深讀 + 語言擴展，已有教案）</li>
+            <li><strong>8-2</strong>：工坊課（待設計）<em>&larr; 本次</em></li>
+            <li><strong>8-3</strong>：工坊課（待設計）<em>&larr; 本次</em></li>
+            <li><strong>8-4</strong>：The First Job 第三堂（頭心手三選一，已有教案）</li>
+          </ul>
+          <div class="highlight">
+            AI 要設計的是中間兩堂工坊課。它們夾在文學閱讀課之間——前一堂是情感衝擊（The First Job 深讀），後一堂是個人回應（頭心手三選一）。工坊課的任務：從文學體驗轉入語言技能。
+          </div>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ━━━━━━━━━━ Act 2：AI 拆解 ━━━━━━━━━━ -->
+<div class="act-header">
+  <h2>二、AI 拆解 <span>AI Unpacks</span></h2>
+</div>
+
+<div class="card-grid">
+
+  <!-- Card 3 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-purple">
+        <div class="card-label">Act 2 / 拆解</div>
+        <div class="card-num">03</div>
+        <div class="card-title">三個文法重點，全部來自同一篇文本</div>
+        <div class="card-hook">AI 不是從文法書裡抓題目——是從 Sandra Cisneros 的小說裡，把教師口語指出的三個語言現象精確定位。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>AI 整理的三個文法重點</h3></div>
+        <div class="card-back-content">
+          <p><strong>1. where 子句</strong></p>
+          <p>"I didn't know where these envelopes were coming from or where they were going."</p>
+          <p>where 作為名詞子句連接詞（間接問句）vs 關係副詞（描述地點）——同一個字，兩種功能。</p>
+
+          <p><strong>2. 長句拆解</strong></p>
+          <p>"So the next morning I put on the navy blue dress that made me look older and borrowed money..."</p>
+          <p>複合複雜句的結構分析——Cisneros 把 10 個短句塞進 1 個長句。為什麼？因為 Esperanza 的生活在那一天失控了。</p>
+
+          <p><strong>3. 關係代名詞</strong></p>
+          <p>who / which / that，以 The First Job 為例。</p>
+
+          <div class="highlight">
+            <strong>額外要求：</strong>連接詞（前幾週主線）不可斷線，必須持續整合。AI 需要把新概念放進已建立的連接詞生態系統中。
+          </div>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-purple">
+        <div class="card-label">Act 2 / 設計原則</div>
+        <div class="card-num">04</div>
+        <div class="card-title">七條規則，全部來自校準教訓</div>
+        <div class="card-hook">這不是通用教學原則——是這位教師和 AI 在過去六週備課中，透過一次次修正累積出來的具體規則。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>設計原則（遵循已建立的模式）</h3></div>
+        <div class="card-back-content">
+          <ol>
+            <li><strong>歸納法（P09）</strong>：先從文本中發現語言現象 &rarr; 學生注意規律 &rarr; 教師命名。不先給規則再舉例</li>
+            <li><strong>概念引入課 DI 標準</strong>：新概念時兩層即可（鷹架 + 開放），不做 ABCD 四層<br><em>Week 6-2 校準教訓</em></li>
+            <li><strong>學習單不能全文字（P03）</strong>：加入視覺元素——句子結構圖、標記顏色區分</li>
+            <li><strong>應用語境</strong>：至少一個創造性/社交性應用環節（pair work 切句、自由書寫）</li>
+            <li><strong>轉換比 > 0%</strong>：每堂課至少一個明確轉場</li>
+            <li><strong>連接詞螺旋</strong>：不是「又教連接詞」，而是把新工具放進已建立的生態系統</li>
+            <li><strong>8-1 &rarr; 8-2 轉換</strong>：從情感的「不知道」到語言的「不知道」。用 "I didn't know..." 作為橋樑</li>
+          </ol>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ━━━━━━━━━━ Act 3：AI 設計 ━━━━━━━━━━ -->
+<div class="act-header">
+  <h2>三、AI 設計 <span>AI Designs</span></h2>
+</div>
+
+<div class="card-grid">
+
+  <!-- Card 5 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-warm">
+        <div class="card-label">Act 3 / 執行步驟</div>
+        <div class="card-num">05</div>
+        <div class="card-title">七步驟，從設計到品控</div>
+        <div class="card-hook">AI 不只設計教案——設計完之後自己跑品質檢查，然後更新進度系統。教師上課前回來審閱即可。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>執行步驟</h3></div>
+        <div class="card-back-content">
+          <ol>
+            <li>設計 Week 8-2 教案（lesson-engine 流程，含 Stage 3 稽核）</li>
+            <li>設計 Week 8-2 學習單</li>
+            <li>設計 Week 8-3 教案</li>
+            <li>設計 Week 8-3 學習單</li>
+            <li>對兩堂課各跑一次 lesson-evaluator（快速模式）</li>
+            <li>呈現 evaluator 報告</li>
+            <li>更新 session.yaml（追加 units_completed 條目）</li>
+          </ol>
+          <div class="highlight">
+            lesson-engine 是 TeacherOS 的核心備課引擎。它不只產出教案文字——它內建華德福教育的 10 條設計原則、差異化教學雙軸、節奏分析。每份教案完成後自動進入品質稽核流程。
+          </div>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-warm">
+        <div class="card-label">Act 3 / 第一堂</div>
+        <div class="card-num">06</div>
+        <div class="card-title">Sentence Surgery<br>Esperanza 的句子建築術</div>
+        <div class="card-hook">where 子句 + Cisneros 的長句拆解。把 10 個短句擠在 1 個長句裡——因為 Esperanza 的生活在那天失控了。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>Week 8-2 大綱（45 min）</h3></div>
+        <div class="card-back-content">
+          <p><strong>定位：</strong>從 8-1 的文學體驗轉入語言工坊。Esperanza 的「不知道」延伸到句子結構。「where」是她困惑的語言標記。</p>
+          <table>
+            <tr><th>區塊</th><th>時間</th><th>內容</th><th>呼吸</th></tr>
+            <tr><td>開場回顧</td><td>5 min</td><td>8-1 深讀快速回顧 + 黑板寫「I didn't know...」學生完成句子</td><td>呼</td></tr>
+            <tr><td>Where 發現</td><td>10 min</td><td>從文本歸納兩種 where：間接問句 vs 關係副詞</td><td>吸&rarr;呼</td></tr>
+            <tr><td>轉場</td><td>2 min</td><td>找長句 + 數 and 出現幾次</td><td>轉</td></tr>
+            <tr><td>長句手術</td><td>15 min</td><td>pair work 切句 &rarr; 全班辨識 6 個連接工具</td><td>呼</td></tr>
+            <tr><td>分層練習</td><td>12 min</td><td>D 配對 / C 填空 / B 合併 / A 自由書寫</td><td>呼</td></tr>
+            <tr><td>收尾</td><td>3 min</td><td>1-2 人分享 + 預告關係代名詞</td><td>轉</td></tr>
+          </table>
+          <div class="highlight">
+            DI 層次：兩層為主（鷹架版 D/C + 開放版 B/A）。概念引入課不過度分層——這是 Week 6-2 的校準教訓。
+          </div>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-warm">
+        <div class="card-label">Act 3 / 第二堂</div>
+        <div class="card-num">07</div>
+        <div class="card-title">句子裡的標籤<br>連接詞工具箱總整合</div>
+        <div class="card-hook">關係代名詞是最後一塊拼圖。學完後，學生手中有完整的工具組——明天他們要用這些工具寫自己的回應。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>Week 8-3 大綱（45 min）</h3></div>
+        <div class="card-back-content">
+          <p><strong>定位：</strong>Cisneros 如何用 who/which/that 在不停下故事的前提下加入細節。收尾時將整個連接詞生態系統做一次完整盤點。</p>
+          <table>
+            <tr><th>區塊</th><th>時間</th><th>內容</th><th>呼吸</th></tr>
+            <tr><td>開場</td><td>5 min</td><td>8-2 回顧 + 圈出 that 子句</td><td>吸</td></tr>
+            <tr><td>發現</td><td>10 min</td><td>從 The First Job 找 who/which/that &rarr; 歸納規則</td><td>吸&rarr;呼</td></tr>
+            <tr><td>工具箱整合</td><td>8 min</td><td>回到長句：標出所有工具 &rarr; 畫完整工具箱地圖</td><td>吸</td></tr>
+            <tr><td>分層練習</td><td>17 min</td><td>D 圈選 / C 合併 / B 改寫 / A 寫「我的第一次」</td><td>呼</td></tr>
+            <tr><td>總複習</td><td>5 min</td><td>工具箱地圖 + 自我評估 + 預告 8-4</td><td>轉</td></tr>
+          </table>
+          <div class="highlight">
+            DI 層次：四層（學生已有兩週工坊經驗，能自主選層）。Task A「我的第一次」與 The First Job 主題呼應——直接預備明天的頭心手回應。
+          </div>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-warm">
+        <div class="card-label">Act 3 / 產出</div>
+        <div class="card-num">08</div>
+        <div class="card-title">一次對話，六份文件</div>
+        <div class="card-hook">兩堂教案、兩份學習單、兩份品質報告。全部自動存檔、自動追蹤版本。教師上課前回來審閱修改。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>產出清單</h3></div>
+        <div class="card-back-content">
+          <ol>
+            <li><strong>9C-week8-2-v1-教師教案.md</strong><br>Sentence Surgery — where 子句 + 長句拆解</li>
+            <li><strong>9C-week8-2-v1-學習單.md</strong><br>學生版（Task D/C/B/A 四層）</li>
+            <li><strong>9C-week8-3-v1-教師教案.md</strong><br>關係代名詞 + 工具箱總整合</li>
+            <li><strong>9C-week8-3-v1-學習單.md</strong><br>學生版（Task D/C/B/A 四層 + 自我評估）</li>
+            <li><strong>Evaluator 報告 &times; 2</strong><br>直接呈現在對話中（見下方品控卡片）</li>
+            <li><strong>session.yaml 更新</strong><br>追加 units_completed 條目</li>
+          </ol>
+          <div class="highlight">
+            輸出路徑：projects/class-9c/english/content/<br>
+            所有檔案自動加入 YAML frontmatter（aliases、tags、class、subject、type）。版本由 session.yaml 統一追蹤。
+          </div>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ━━━━━━━━━━ Act 4：AI 品控 ━━━━━━━━━━ -->
+<div class="act-header">
+  <h2>四、AI 品控 <span>AI Quality Check</span></h2>
+</div>
+
+<div class="card-grid">
+
+  <!-- Card 9 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-mixed">
+        <div class="card-label">Act 4 / 節奏分析</div>
+        <div class="card-num">09</div>
+        <div class="card-title">吸 22% / 呼 71% / 轉 7%</div>
+        <div class="card-hook">華德福課堂有呼吸——教師帶領是「吸氣」，學生活動是「呼氣」。AI 自動計算每堂課的呼吸比例。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>Evaluator 8-2 節奏分析</h3></div>
+        <div class="card-back-content">
+          <p><strong>課型：</strong>概念引入課 + 教學課（混合型）</p>
+          <p style="font-family:monospace;font-size:0.72rem;background:#f5f5f0;padding:0.5rem;border-radius:4px;overflow-x:auto;white-space:pre;">0────5────10───17──20─────30────32──44─45
+|回顧 5m| Where 10m |轉| 長句手術 15m | 分層練習 12m |3m|
+| 呼   | 吸&rarr;呼    | | 呼(pair work)|    呼       |轉|</p>
+          <table>
+            <tr><th>指標</th><th>數值</th><th>標準</th><th>判定</th></tr>
+            <tr><td>吸氣比</td><td>10/45 = 22%</td><td>概念引入 &le; 50%</td><td class="pass">&#10003;</td></tr>
+            <tr><td>呼氣比</td><td>32/45 = 71%</td><td>—</td><td class="pass">學生主導充足</td></tr>
+            <tr><td>轉換比</td><td>3/45 = 7%</td><td>&ge; 5%</td><td class="pass">&#10003;</td></tr>
+            <tr><td>應用環節</td><td>27/45 = 60%</td><td>&ge; 30%</td><td class="pass">&#10003; 遠超標準</td></tr>
+            <tr><td>動覺佔比</td><td>15/45 = 33%</td><td>&ge; 15%</td><td class="pass">&#10003; pair work</td></tr>
+            <tr><td>最長連續吸氣</td><td>10 min</td><td>&le; 15 min</td><td class="pass">&#10003;</td></tr>
+          </table>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 10 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-mixed">
+        <div class="card-label">Act 4 / 10 原則</div>
+        <div class="card-num">10</div>
+        <div class="card-title">P01-P10 逐條稽核</div>
+        <div class="card-hook">四體論、現象學、歸納法、從整體到部分——每一條華德福設計原則，AI 都自動檢查是否落實。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>Evaluator 8-2：10 原則稽核</h3></div>
+        <div class="card-back-content">
+          <table>
+            <tr><th>#</th><th>原則</th><th></th><th>說明</th></tr>
+            <tr><td>P01</td><td>四體論</td><td class="pass">&#10003;</td><td>想：where 歸納。感：Esperanza 失控感。做：pair work 切句</td></tr>
+            <tr><td>P02</td><td>七年週期</td><td class="pass">&#10003;</td><td>九年級「看見手法」——從讀懂意思到分析寫作選擇</td></tr>
+            <tr><td>P03</td><td>頭心手</td><td class="flag">&#10003;&#9888;</td><td>課堂含三元。學習單偏文字型——句子結構圖部分補償</td></tr>
+            <tr><td>P04</td><td>現象學</td><td class="pass">&#10003;</td><td>先觀察 where 兩種用法 &rarr; 學生注意差異 &rarr; 教師命名</td></tr>
+            <tr><td>P05</td><td>生成性負載</td><td class="pass">&#10003;</td><td>pair work 切句不給答案，學生自己找切割點</td></tr>
+            <tr><td>P06</td><td>圖像優先</td><td class="pass">&#10003;</td><td>三色粉筆（白/黃/藍）、長句預寫黑板</td></tr>
+            <tr><td>P07</td><td>意志=做</td><td class="pass">&#10003;</td><td>切句是身體動作 + pair work 討論</td></tr>
+            <tr><td>P08</td><td>整體到部分</td><td class="pass">&#10003;</td><td>先看完整長句 &rarr; 感受速度 &rarr; 再切開分析</td></tr>
+            <tr><td>P09</td><td>歸納法</td><td class="pass">&#10003;</td><td>兩個 where 句並列 &rarr; 學生觀察差異 &rarr; 教師命名</td></tr>
+            <tr><td>P10</td><td>節律重複</td><td class="pass">&#10003;</td><td>because/and/till/like 在長句中自然現身，不重教</td></tr>
+          </table>
+          <p class="flag" style="margin-top:0.5rem;font-size:0.78rem;">flag：P03 學習單圖像入口偏弱（Task D/C 為純文字配對/填空）</p>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 11 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-mixed">
+        <div class="card-label">Act 4 / 品質三檢</div>
+        <div class="card-num">11</div>
+        <div class="card-title">DI 適配 / 教師負荷 / 應用語境</div>
+        <div class="card-hook">差異化有沒有做對？一個老師能不能獨立操作？學生是在「做」還是在「填空」？三個維度，逐項檢查。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>Evaluator 8-2：三維品質檢查</h3></div>
+        <div class="card-back-content">
+          <p><strong>DI 適配</strong></p>
+          <table>
+            <tr><td>學習優勢覆蓋</td><td>3/4</td><td>語言、動作、圖像。藝術型缺席（可接受）</td></tr>
+            <tr><td>ABCD 層次</td><td>兩層</td><td>鷹架 + 開放。概念引入課正確</td></tr>
+            <tr><td>過度差異化</td><td>無</td><td>Week 6-2 校準教訓已吸收</td></tr>
+          </table>
+
+          <p style="margin-top:0.8rem;"><strong>教師操作負荷</strong></p>
+          <table>
+            <tr><td>課前準備</td><td>中等——長句需預寫黑板</td></tr>
+            <tr><td>課中切換</td><td>低——五段順序推進</td></tr>
+            <tr><td>巡視壓力</td><td>中等——需判斷 D 類切割進度</td></tr>
+            <tr><td>單人可執行</td><td class="pass">&#10003; 可行</td></tr>
+          </table>
+
+          <p style="margin-top:0.8rem;"><strong>應用語境</strong></p>
+          <table>
+            <tr><td>有語境的應用</td><td class="pass">&#10003;</td><td>pair work（社交）+ 自由書寫（創造）</td></tr>
+            <tr><td>非純填空</td><td class="pass">&#10003;</td><td>Task C 有情境句包裝</td></tr>
+            <tr><td>口頭/書寫平衡</td><td class="pass">&#10003;</td><td>口頭 30% + 書寫 27% + 操作 33%</td></tr>
+          </table>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 12 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-deep">
+        <div class="card-label">Act 4 / 整體印象</div>
+        <div class="card-num">12</div>
+        <div class="card-title">PASS — 長句手術是靈魂</div>
+        <div class="card-hook">AI 不只說「通過」——它說出為什麼這堂課有效，以及教師要注意什麼。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>Evaluator 8-2：整體印象</h3></div>
+        <div class="card-back-content">
+          <p><strong>亮點：</strong></p>
+          <ul>
+            <li>8-1 &rarr; 8-2 轉場精準：從情感的「不知道」到語言的「不知道」，用 "I didn't know where..." 一句話完成課型切換</li>
+            <li>長句拆解是本堂課的靈魂——10 個短句擠在一個長句裡，Cisneros 用語言結構模擬 Esperanza 的心理狀態。這不是文法練習，是文學分析</li>
+            <li>連接詞螺旋收束自然：6 種已學工具在同一個句子裡共存，學生在辨識中複習</li>
+            <li>概念引入課不做 ABCD 四層——Week 6-2 校準教訓已內化</li>
+          </ul>
+
+          <p><strong>注意：</strong></p>
+          <ul>
+            <li>學習單 Task D/C 為純文字操作，P03 圖像入口偏弱。建議未來版本在 Task D 加入句子結構圖</li>
+            <li>若 where 發現超時，壓縮方案合理，但需確保關係副詞 where 在 Part 3 被明確提及</li>
+          </ul>
+
+          <div class="highlight">
+            <strong>總判定：<span class="pass">PASS</span></strong><br>
+            教師可直接使用。長句手術不可壓縮，其餘可微調。
+          </div>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 13 -->
+  <div class="card-container">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+      <div class="card-front front-deep">
+        <div class="card-label">Act 4 / 第二堂品控</div>
+        <div class="card-num">13</div>
+        <div class="card-title">Week 8-3：也 PASS</div>
+        <div class="card-hook">工具箱圖是三週教學的收束作品。中文的「的」是最好的教學橋樑。連接詞生態系統完成。</div>
+        <div class="flip-hint">點擊翻面 ></div>
+      </div>
+      <div class="card-back">
+        <div class="card-back-header"><h3>Evaluator 8-3 完整報告</h3></div>
+        <div class="card-back-content">
+          <p><strong>課型：</strong>概念引入課 + 統整課（混合型）</p>
+          <p style="font-family:monospace;font-size:0.72rem;background:#f5f5f0;padding:0.5rem;border-radius:4px;overflow-x:auto;white-space:pre;">0──5──10───16──24─────────41──45
+|回顧| 發現 10m |轉|整合8m| 分層練習 17m  |複習|
+|吸  | 吸&rarr;呼   | | 吸  |    呼        |轉  |</p>
+          <table>
+            <tr><th>指標</th><th>數值</th><th>判定</th></tr>
+            <tr><td>吸氣比</td><td>51%</td><td class="pass">&#10003; 邊界內（統整課偏高）</td></tr>
+            <tr><td>呼氣比</td><td>38%</td><td class="pass">17 min 最大呼氣區塊</td></tr>
+            <tr><td>轉換比</td><td>13%</td><td class="pass">&#10003;</td></tr>
+            <tr><td>應用環節</td><td>38%</td><td class="pass">&#10003;</td></tr>
+          </table>
+
+          <p style="margin-top:0.6rem;"><strong>亮點：</strong></p>
+          <ul>
+            <li>工具箱圖是三週連接詞教學的收束性視覺作品——建議教師拍照保存</li>
+            <li>中文「的」作為教學橋樑精準——學生秒懂關係代名詞功能</li>
+            <li>Task A「我的第一次」與 The First Job 呼應，直接預備 8-4 頭心手回應</li>
+            <li>自我評估不收回——metacognitive 練習歸還學生</li>
+          </ul>
+
+          <p><strong>注意：</strong></p>
+          <ul>
+            <li>吸氣比 51% 接近上限。Part 3 若超時應果斷壓縮</li>
+            <li>動作型入口偏弱——但統整收束課可接受</li>
+          </ul>
+
+          <div class="highlight">
+            <strong>總判定：<span class="pass">PASS</span></strong><br>
+            連接詞工具箱完成。8-4 頭心手回應的基礎已建立。
+          </div>
+        </div>
+        <div class="flip-back">< 點擊返回</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ━━━━━━━━━━ Footer ━━━━━━━━━━ -->
+<footer>
+  <p class="closing">
+    最高度的技術自動化，是為了成就最純粹的低科技人文互動。
+  </p>
+  <p class="meta">
+    TeacherOS &middot; 宜蘭慈心華德福 &middot; 2026
+  </p>
+</footer>
+
+</body>
+</html>

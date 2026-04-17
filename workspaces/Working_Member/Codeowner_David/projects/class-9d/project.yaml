@@ -1,0 +1,34 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 2】
+# 名稱：九年級 D 班（台灣文學主課程）
+# 路徑：projects/class-9d/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+class: 9D
+grade: 九年級
+teacher_role: 主課程教師
+di_framework_ref: projects/_di-framework/project.yaml
+
+# ── 班級檔案索引（AI 讀這裡就知道要載入什麼）────────────────
+class_files:
+  roster: roster.yaml
+  students: students.yaml
+  session_state: ml-taiwan-literature/session.yaml
+
+subjects:
+  ml_taiwan_literature:
+    type: 主課程
+    topic: 台灣文學
+    weekly_sessions: 待定
+    lesson: ml-taiwan-literature/lesson.yaml
+    di_profile: ml-taiwan-literature/di-profile.yaml
+    assessment: ml-taiwan-literature/assessment.yaml
+    content_output: ml-taiwan-literature/content/
+
+current_semester: 2025-2026
+current_focus: 尚未開始
+
+next_steps:
+  - 填入學生 DI 樣態（students.yaml）
+  - 開始台灣文學主課程學季大綱設計
+
+status: active

@@ -1,0 +1,133 @@
+filters:
+  and:
+    - file.inFolder("wiki")
+    - file.ext == "md"
+    - not:
+        - file.name == "_wiki-handoff"
+formulas:
+  category: |
+    if(file.hasTag("lesson-wiki"), "備課日誌",
+    if(file.hasTag("concept-pedagogy"), "教育哲學",
+    if(file.hasTag("concept-grammar"), "文法概念",
+    if(file.hasTag("concept-author"), "作者文本",
+    if(file.hasTag("concept-text"), "作者文本",
+    if(file.hasTag("source-raw"), "消化來源",
+    "其他"))))))
+properties:
+  file.name:
+    displayName: 頁面
+  type:
+    displayName: 類型
+  formula.category:
+    displayName: 分類
+  subject:
+    displayName: 科目
+  class:
+    displayName: 班級
+  block:
+    displayName: 區塊
+  week:
+    displayName: 週次
+  theme:
+    displayName: 主題
+  source:
+    displayName: 來源
+  last_refreshed:
+    displayName: 更新日
+  ingested_date:
+    displayName: 消化日期
+  file.tags:
+    displayName: 標籤
+views:
+  - type: table
+    name: 全部 wiki 頁面
+    groupBy:
+      property: formula.category
+      direction: ASC
+    order:
+      - formula.category
+      - file.name
+      - type
+      - file.tags
+  - type: table
+    name: 備課日誌（lesson-wiki）
+    filters:
+      and:
+        - file.hasTag("lesson-wiki")
+    order:
+      - class
+      - subject
+      - block
+      - week
+      - file.name
+      - theme
+  - type: table
+    name: 教育哲學概念
+    filters:
+      and:
+        - file.hasTag("concept-pedagogy")
+    order:
+      - file.name
+      - source
+      - last_refreshed
+      - file.tags
+  - type: table
+    name: 文法概念
+    filters:
+      and:
+        - file.hasTag("concept-grammar")
+    order:
+      - file.name
+      - file.tags
+  - type: table
+    name: 施泰納相關（GA293/294）
+    filters:
+      or:
+        - file.hasTag("GA293")
+        - file.hasTag("GA294")
+        - file.hasTag("steiner")
+    groupBy:
+      property: formula.category
+      direction: ASC
+    order:
+      - formula.category
+      - file.name
+      - type
+  - type: table
+    name: 素材來源（source-raw）
+    filters:
+      and:
+        - file.hasTag("source-raw")
+    order:
+      - file.name
+      - ingested_date
+      - file.tags
+  - type: table
+    name: 作者文本
+    filters:
+      or:
+        - file.hasTag("concept-author")
+        - file.hasTag("concept-text")
+    order:
+      - file.name
+      - source
+      - file.tags
+  - type: table
+    name: 導師業務
+    filters:
+      and:
+        - file.hasTag("導師")
+    order:
+      - file.name
+      - source
+      - last_refreshed
+  - type: table
+    name: 9C 英文關聯頁面
+    filters:
+      or:
+        - file.hasTag("class-9c")
+        - file.hasTag("english")
+    order:
+      - formula.category
+      - file.name
+      - week

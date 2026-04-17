@@ -1,0 +1,37 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 2】
+# 班級設定檔
+# 路徑：workspaces/Working_Member/Teacher_陳啟華/projects/class-8b/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+class: 8b
+grade: 八年級
+student_count: null
+teacher_role: 導師
+status: active
+
+homeroom_context: >
+  填空：簡要描述這個班級的特色。
+
+class_files:
+  roster: roster.yaml
+  students: students.yaml
+
+subjects:
+  homeroom:
+    type: 班級導師模組
+    weekly_sessions: null
+    working_anchor: working/homeroom-session.yaml
+    content_path: homeroom/content/
+    note: 班級經營、活動規劃、親師溝通
+
+current_semester: 2025-2026
+current_focus: 尚未開始——請先完成 students.yaml 的 DI 分類
+
+next_steps:
+  - 填入學生 DI 樣態（students.yaml）
+  - 開始班級經營規劃
+
+cross_module_notes:
+  active: []
+  resolved: []

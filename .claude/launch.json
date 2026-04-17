@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "TeacherOS Demo Preview",
+      "runtimeExecutable": "/opt/homebrew/bin/python3",
+      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "/Users/Dave/Desktop/WaldorfTeacherOS-Repo/publish"],
+      "port": 3000
+    },
+    {
+      "name": "CreatorHub Preview",
+      "runtimeExecutable": "/Users/Dave/.nvm/versions/node/v24.13.0/bin/npx",
+      "runtimeArgs": ["serve", "/Users/Dave/Desktop/WaldorfTeacherOS-Repo/creator-hub/public", "-p", "3002", "--no-clipboard"],
+      "port": 3002
+    },
+    {
+      "name": "ParentComm",
+      "runtimeExecutable": "/Users/Dave/.nvm/versions/node/v24.13.0/bin/npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/Dave/Desktop/ParentCommunication", "--", "--port", "3001"],
+      "port": 3001
+    },
+    {
+      "name": "Tutorial Preview",
+      "runtimeExecutable": "/opt/homebrew/bin/python3",
+      "runtimeArgs": ["-m", "http.server", "3003", "--directory", "/Users/Dave/Desktop/WaldorfTeacherOS-Repo/workspaces/Working_Member/Codeowner_David/reference"],
+      "port": 3003
+    }
+  ]
+}

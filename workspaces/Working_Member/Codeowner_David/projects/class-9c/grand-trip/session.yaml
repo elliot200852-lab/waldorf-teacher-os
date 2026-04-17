@@ -1,0 +1,102 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：九年級 C 班・大旅行（學習服務之旅）
+# 路徑：projects/class-9c/grand-trip/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 大旅行工作進度錨點
+# 每次對話結束後由 AI 更新，只改動有變化的欄位，不可手動大幅改寫
+
+grand_trip_session:
+  class: class-9c
+  last_updated: 2026-04-01
+
+  overview:
+    name: 大旅行
+    formal_name: 九年級學習服務之旅
+    type: 跨領域體驗課程（服務學習 × 在地走讀 × 團隊生活）
+    description: >
+      九年級畢業前的學習服務之旅。學生以大眾運輸橫跨台中、台南、高雄三城市，
+      結合服務學習、在地文化走讀與團體自主生活，是華德福九年級的核心體驗。
+    dates: 2026/6/8（一）～ 6/12（五）
+    duration: 5 天 4 夜
+    route: 宜蘭 → 台中 → 台南 → 高雄 → 宜蘭
+    participants: 22 學生 + 2 教師（共 24 人）
+
+  current_position:
+    phase: V3 行程計畫書撰寫中
+    step: 2
+    status: >
+      Day 1 已確認（台中舊城走讀 + Mini Hotels）。
+      Day 2–5 待逐日確認。V3 計畫書草稿已產出（.md + .html）。
+
+  confirmed_decisions:
+    - "日期：2026/6/8（一）～ 6/12（五），5 天 4 夜"
+    - "路線：宜蘭出發，台中→台南→高雄，全程大眾運輸"
+    - "交通：客運為主（宜蘭→台北→台中→台南均客運），僅台南→高雄搭台鐵"
+    - "預算：每人約 5,800-8,200 元（含交通、住宿、門票、餐費；教師公開費用由 22 生均攤）"
+    - "台南服務：淨灘（台南社大海廢計畫或環保局）"
+    - "Day 3 動線：四草綠色隧道 → 安平 → 淨灘（沿海動線）"
+    - "台中、高雄服務機構：保留，之後再決定"
+    - "Day 1 行程確認：06:35 宜蘭出發 → 台北轉乘 → 台中（11:40 抵達）"
+    - "Day 1 活動確認：台中舊城走讀（中山綠橋→市役所→中央書局→州廳→一中），教師版教學指引 + 學生版走讀手冊已備妥"
+    - "Day 1 住宿確認：Mini Hotels 台中火車站館（台中市東區大勇街 69 號，04-2225-9966）"
+    - "Day 1 行李：直接放 Mini Hotels，不寄台中車站行李房"
+
+  logistics:
+    transport: 客運為主、台鐵為輔（不搭高鐵）
+    budget_per_student: 5800-8200 元
+    cities: [台中, 台南, 高雄]
+    accommodation:
+      taichung: "Mini Hotels 台中火車站館（台中市東區大勇街 69 號，04-2225-9966）"
+      tainan: 待確認（救國團台南學苑優先）
+      kaohsiung: 待確認（背包41/紙飛機/Single Inn 候選）
+
+  next_action:
+    description: >
+      繼續確認 Day 2–5 行程細節：
+      1. Day 2 行程確認（台中服務學習機構 + 台南府城散步）
+      2. Day 3 行程確認（四草 + 淨灘）
+      3. Day 4 行程確認（奇美 + 科工館 + 駁二）
+      4. Day 5 行程確認（旗津 + 歸程）
+      5. 確認台南、高雄住宿
+      6. 聯繫服務學習機構
+    input_needed_from_teacher: "逐日提供 Day 2–5 確認行程"
+
+  output_files:
+    - type: 行程規劃
+      file: content/行程總覽與規劃建議.md
+      date: 20260308
+      version: v1
+      status: 草稿（已被 V3 取代）
+    - type: 可行性評估
+      file: content/V1-可行性評估報告.md
+      date: 20260308
+      version: v1
+      status: 已參考，修正建議已納入 V3
+    - type: 景點聯絡資訊
+      file: content/agent1-addresses-phones.md
+      date: 20260308
+      status: 參考用
+    - type: V3 行程計畫書
+      file: content/V3-行程計畫書.md
+      date: 20260401
+      version: v3
+      status: 草稿（Day 1 已確認，Day 2–5 待填入）
+    - type: V3 行程計畫書（HTML 美化版）
+      file: content/V3-行程計畫書.html
+      date: 20260401
+      version: v3
+      status: 草稿
+    - type: Day 1 走讀教師版教學指引
+      file: （外部檔案）台中舊城走讀_教師版教學指引.docx
+      status: 已備妥
+    - type: Day 1 走讀學生版手冊
+      file: （外部檔案）台中舊城走讀_學生版走讀手冊.docx
+      status: 已備妥
+
+  open_questions:
+    - "台中服務機構三選一：弘道/1919食物銀行/荒野——之後再決定"
+    - "高雄服務機構三選一：志願服務中心/伊甸/長青中心——之後再決定"
+    - "台南住宿：救國團台南學苑優先，待確認"
+    - "高雄住宿：背包41/紙飛機/Single Inn，待確認"
+    - "Mini Hotels 24 人團體報價與房型配置：待確認"

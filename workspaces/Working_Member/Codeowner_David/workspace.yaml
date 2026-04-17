@@ -1,0 +1,35 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Workspace 狀態追蹤 — Codeowner_David
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+teacher_identity:
+  name: David
+  teacher_id: codeowner-david
+  role: 系統管理員（Codeowner）兼華德福教師
+  email: elliot200852@gmail.com
+
+workspace_status: active
+created_date: 2026-03-03
+purpose: David 的個人教學工作空間，同時兼系統管理員身份
+
+# ── 班級清單 ──────────────────────────────────────────
+classes:
+  - class_code: class-9c
+    grade: 九年級
+    subjects: [英文, 導師課, 主課程]
+    student_count: 22
+    status: active
+    blocks_completed: [Block 1]
+
+  - class_code: class-9d
+    grade: 九年級
+    subjects: [台灣文學主課程]
+    student_count: null
+    status: active
+    blocks_completed: []
+
+# ── 備註 ──────────────────────────────────────────────
+notes: >
+  此 workspace 從 projects/class-9c/ 和 projects/class-9d/ 搬遷而來。
+  所有原始教學成果（大綱、研究參考、roster 等）完整保留。
+  搬遷日期：2026-03-03。

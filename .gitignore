@@ -1,0 +1,130 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Claude（追蹤 commands/ 與 scripts/，排除其餘）
+.claude/worktrees/
+.claude/settings.local.json
+
+# Obsidian
+.obsidian/
+
+# Google Docs shortcut files
+*.gdoc
+*.gsheet
+*.gslides
+
+# TeacherOS 個人環境設定（每位使用者各自設定，不上傳）
+setup/environment.env
+
+# Google OAuth 憑證與 token（含個人授權，不上傳）
+setup/credentials.json
+setup/token.json
+setup/token*.json
+setup/credentials*.json
+**/token.json
+**/credentials.json
+client_secret*.json
+
+# GWS CLI 暫存檔（不上傳）
+gws_*.txt
+gws_*.log
+
+# Windows 捷徑檔（不上傳）
+*.lnk
+
+# 學生個人資料（含真名，不上傳）
+projects/*/roster.yaml
+**/student-notes/
+
+# 期末學生評量總檔（含還原的真實姓名，不上傳）
+projects/*/english/content/student-assessments*.md
+
+# Cowork Folder Instructions（個人編譯版，每位教師各自生成，不上傳）
+INSTRUCTIONS.md
+
+# Firebase 快取
+.firebase/
+
+# Service Account 金鑰（本地開發用，絕不上傳）
+**/service-account-key.json
+**/waldorfcreatorhubdatabase-*.json
+
+# 個人通訊錄（含個資，不上傳）
+**/reference/contacts.csv
+**/reference/class_*_directory.csv
+**/reference/class_*_contacts.py
+
+# David 個人語氣範本（含私人文章，不上傳）
+workspaces/Working_Member/Codeowner_David/skills/voice-samples/
+workspaces/Working_Member/Codeowner_David/skills/voice-calibration-log.md
+
+# HOME.md — Codeowner 個人 Obsidian 導航頁（不上傳）
+HOME.md
+
+# Remotion 影片專案（追蹤原始碼，排除產出物與依賴）
+video/node_modules/
+video/out/
+video/dist/
+video/.remotion/
+
+# Node.js 依賴（根目錄）
+node_modules/
+
+# Python 快取（全域）
+__pycache__/
+*.pyc
+
+# 臨時檔案
+temp/
+
+# 大型二進位檔案（不適合 git 追蹤）
+*.m4a
+*.mp3
+*.mp4
+*.wav
+*.mov
+*.zip
+*.tar.gz
+*.rar
+*.pdf
+
+# Claude session 檔案
+.claude/.last-obsidian-check
+.claude/.session-marker
+
+# Tool Download — 使用者本地環境（不上傳）
+.env
+venv/
+*.app
+
+# 暫存 JSON 檔
+temp_*.json
+zongmin_sheet.json
+
+# GWS client secret（任何位置）
+**/gws-client-secret.json
+
+# graphify 工具輸出
+graphify-out/
+
+# 備份與日誌
+*.bak
+*.log
+
+# 孤立技能定義
+*.skill
+
+# Workspace 中的二進位文件（用 Google Drive 管理）
+workspaces/**/*.docx
+workspaces/**/*.xlsx
+workspaces/**/*.pptx
+
+# Scheduled tasks lock file
+.claude/scheduled_tasks.lock

@@ -1,0 +1,20 @@
+# 臺灣的故事管線狀態追蹤
+story_id: BT002
+title: 被留在山頂的旅人——臺灣高山的冰河遺孤
+pipeline_version: 3.0.0
+started_at: 2026-04-14T10:30:00
+completed_at: 2026-04-14T11:15:00
+mode: completed
+
+steps:
+  step_0_1: { status: PASS, note: "BT002, 島嶼的孤兒 (2/4-5), BT-botany 區塊第二篇" }
+  step_2:   { status: PASS, note: "raw-materials.md, 20 sources with URLs, TCMB local + web search" }
+  step_3:   { status: PASS, note: "content.md 11876b, narration.md 9301b, images.md 4788b, chalkboard-prompt.md 3594b" }
+  step_4:   { status: PASS, note: "subagent 品質檢查 PASSED (3 WARN, 0 FAIL)" }
+  step_5:   { status: PASS, note: "Gemini 黑板畫生成成功, AssemblyStory-BT002-chalkboard.png, 圖片內容驗證 PASS" }
+  step_6:   { status: PASS, note: "HTML+PDF, Drive upload OK, 真實黑板畫已嵌入" }
+  step_7:   { status: PASS, note: "index.yaml total_stories: 25, BT-botany: 2" }
+pending_actions: []
+drive_files:
+  html: "1v1KIsZIe2GOU1iOaiZg0pZTquDpDOmKZ"
+  pdf: "1eUKYGKHe88dDEYOFSWaCekC4j51HvP6e"

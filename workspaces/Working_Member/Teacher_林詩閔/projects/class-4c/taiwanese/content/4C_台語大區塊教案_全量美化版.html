@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="spring" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>4C 台語大區塊主題專案：老牛、白鷺與農伯（完整美化手冊）</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "var(--primary)",
+        "secondary": "var(--secondary)",
+        "accent": "var(--accent)",
+        "on-primary": "#ffffff",
+        "on-surface": "var(--on-surface)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        "surface": "var(--bg-wash-1)",
+        "surface-container": "var(--bg-wash-2)",
+        "surface-container-low": "var(--bg-wash-3)",
+        "outline-variant": "var(--outline-variant)",
+      },
+      fontFamily: {
+        "headline": ["Playfair Display", "Noto Serif TC", "Georgia", "serif"],
+        "body": ["Plus Jakarta Sans", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "sans-serif"],
+        "label": ["Plus Jakarta Sans", "Noto Sans TC", "sans-serif"],
+      },
+    },
+  },
+}
+</script>
+
+<style>
+html.spring {
+  --primary: #6B7F5E;
+  --secondary: #9B7BB0;
+  --accent: #D4A574;
+  --bg-wash-1: #F0F5EB;
+  --bg-wash-2: #E8F0D8;
+  --bg-wash-3: #F2E8F5;
+  --on-surface: #2A3325;
+  --on-surface-variant: #4A5544;
+  --outline-variant: #C4D1B8;
+  --season-icon: "eco";
+  --gradient-header: linear-gradient(135deg, #6B7F5E 0%, #9B7BB0 100%);
+}
+body { background: radial-gradient(circle at top left, #F0F5EB 0%, #E8F0D8 40%, #F2E8F5 100%); min-height: 100vh; }
+.watercolor-wash-header {
+  background: var(--gradient-header);
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  mask-size: 100% 100%; -webkit-mask-size: 100% 100%;
+}
+.hand-drawn-border {
+  border: 2px solid var(--primary);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.drop-cap::first-letter {
+  font-size: 3.5rem; font-family: "Playfair Display", "Noto Serif TC", serif;
+  float: left; margin-right: 0.75rem; line-height: 1; color: var(--primary);
+}
+h3 { font-family: "Playfair Display", "Noto Serif TC", serif; color: var(--primary); border-bottom: 1px solid var(--outline-variant); padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+h4 { font-family: "Plus Jakarta Sans", "Noto Sans TC", sans-serif; font-weight: 700; color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+p { margin-bottom: 1rem; line-height: 1.7; font-size: 18px; }
+li { margin-bottom: 0.5rem; font-size: 17px; }
+</style>
+</head>
+
+<body class="font-body text-[var(--on-surface)] selection:bg-[var(--secondary)]/20">
+<header class="sticky top-0 z-40 bg-[var(--bg-wash-1)]/80 backdrop-blur-xl px-8 py-6 max-w-screen-xl mx-auto flex items-center gap-3">
+  <span class="material-symbols-outlined text-[var(--primary)] text-3xl">eco</span>
+  <h1 class="font-headline text-3xl text-[var(--primary)]">Waldorf Teacher OS</h1>
+</header>
+
+<main class="max-w-[900px] mx-auto px-8 py-6">
+  <!-- Hero Section -->
+  <section class="mb-10 text-center">
+    <div class="watercolor-wash-header p-8 mb-4 inline-block w-full">
+      <h2 class="font-headline text-4xl md:text-5xl text-on-primary leading-tight font-bold italic mb-2">老牛、白鷺與農伯</h2>
+      <p class="text-on-primary/90 font-label tracking-[0.2em] uppercase text-sm">4C 台語大區塊主題微循環</p>
+    </div>
+  </section>
+
+  <!-- Phase 1 -->
+  <section class="mb-10">
+    <h3 class="text-2xl font-bold">📌 第一階段：宏觀定位 (Macro-Level)</h3>
+    <ul class="space-y-4 list-disc list-inside ml-4 text-[18px]">
+      <li><strong>發展任務</strong>：陪伴九到十歲（四年級）面臨「過河（Rubicon）」的心智童年，從牛那種腳踏實地、深沈且平靜的反芻力量中，找到扎根大地的安定感。</li>
+      <li><strong>教育學理據</strong>：與四年級「動物學」主課程深度連結。擷取 Kovacs 動物學中「牛無上牙、重力代謝極致」的現象，轉化為台語聲韻的輕重感知。</li>
+      <li><strong>課程目標</strong>：透過台語的韻律與對話，讓孩子「感受」牛的體態、與白鷺鷥的共生環境、以及與農家的情感。不著重死背單字。</li>
+      <li><strong>主要資源</strong>：牛王下凡故事、原創唸謠《水牛佮鷺鷥》、肢體節奏活動。</li>
+    </ul>
+  </section>
+
+  <!-- Phase 2 -->
+  <section class="mb-10">
+    <h3 class="text-2xl font-bold">📌 第二階段：大區塊模組庫 (Modular Palette)</h3>
+    <p class="italic text-[var(--on-surface-variant)]">*(供 4 節課自由調度的模組資源池)*</p>
+
+    <!-- Block 1 -->
+    <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 p-6 my-6">
+      <h4 class="text-xl">🎨 區塊一：原創台語唸謠 (Rhymes)</h4>
+      <div class="space-y-4 mt-2">
+        <p><strong>1. 【水牛浴泥・輕重對比】(核心)</strong><br>
+        水牛哥，沓沓行 (ta̍uh-ta̍uh kiânn)，趴佇田岸哺青草 / 白翎鷥 (pe̍h-līng-si)，翼股輕，巡來巡去飛袂停。<br>
+        日頭赤焱焱！水牛蹽落湳塗溝 (làm-thôo-kau)。<br>
+        漉落去，塗糜 (thôo-muê) 軟膏膏，洗浴趁爽笑呵呵！<br>
+        白翎點水，阿伯牽牛。踏泥做穡，好過秋。</p>
+        <p><strong>2. 【摔斷牙的牛王】(趣味暖身)</strong><br>
+        玉帝派牛來播種，跋一倒 (pua̍h-tó)，磕斷喙齒 (kha̍p-tn̄g tshuì-khí)，頂下顛倒差足多！<br>
+        一步撒做三把草，自此苦命哺青草。</p>
+        <p><strong>3. 【阿伯看天】(平靜收束)</strong><br>
+        春雨落，巡田水，老牛行過湳塗溝。身軀烏烏心清氣，望著秋天好穀收。</p>
+      </div>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="hand-drawn-border bg-[var(--bg-wash-3)]/40 p-6 my-6">
+      <h4 class="text-xl">📖 區塊二：故事與傳說 (Stories - 最終修訂版腳本)</h4>
+      
+      <div class="mt-4 space-y-6">
+        <div>
+          <h5 class="font-bold text-[var(--primary)] mb-2">1. 【牛王下凡】— 消失的頂喙齒 (Tíng-tshuì-khí)</h5>
+          <p>很久很久以前，天上的玉皇大帝心疼人類種地辛苦，吩咐「牛王」下凡去撒草籽。玉帝交代：「牛王啊，你要穩穩地走，記得『**三步撒一把 (Sann-pōo sà tsi̍t-pé)**』，草才不會長得太亂。」</p>
+          <p>牛王背著大布袋，心裡想著趕快下凡立大功。沒想到跑到南天門時，冷風「呼——呼——」地吹過來。牛王一個腳跳脫（kha-si̍t），「哎呀！跋一倒 (pua̍h-tó)！」祂的嘴巴重重磕在了南天門厚實的門檻上。牛王慘叫一聲，一摸嘴巴：「喔唷——撞斷喙齒 (kha̍p-tn̄g tshuì-khí) 囉！」祂整齊的門牙，也就是**頂喙齒 (tíng-tshui-ki)**，竟然全撞飛、撞斷了。</p>
+          <p>牛王跌得頭殼暈暈，掉到人間的時候，竟然把玉皇大帝的話聽反了。祂一邊跑一邊喊：「**一步撒三把 (Tsi̍t-pōo sà sann-pé)**！一步撒三把！」草長得滿山遍野，農夫累到沒辦法拔。牛王露出沒有頂喙齒的空嘴巴對農夫說：「對不起，既然草這麼多，我願意一輩子幫農夫**哺青草 (pōo tshinn-tsháu)**，補償我的錯。」</p>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-[var(--primary)] mb-2">2. 【臆謎猜】— 誰在烏塗水裡洗浴？</h5>
+          <p>老師先哼唱兩句經典兒歌：「白翎鷥，擔畚箕，擔到溪仔墘...」隨後開展謎題：<br>
+          「大偵探們，請聽今天的謎猜。我們這位主角，牠有：『**大身軀 (tuā-sin-khu)，烏色皮 (o-sik phuê)，上蓋愛洗浴在烏塗 (o-thôo) 水。**』牠的頭頂帶著兩支彎彎的月亮，長長的嘴巴總是噴著白煙。</p>
+          <p>牠背上坐著一位白白淨淨、腳細長長的好朋友。大家說：『**白翎鷥 (pe̍h-līng-si)，翼股輕，巡來巡去飛袂停。**』這位客人穿著雪白的身軀，雖然腳長長，卻從來不沾泥巴（烏塗）。</p>
+          <p>大身軀的牛大哥每走一步，巨大的牛蹄踏進泥田，發出『噗滋、噗滋』的聲音，泥底下的蟲子被驚動跳了出來，白翎鷥就趁機低頭一喙啄下去。一個重、一個輕；一個烏、一個白。請問是誰呢？」</p>
+        </div>
+
+        <div>
+          <h5 class="font-bold text-[var(--primary)] mb-2">3. 【神奇的四個布袋】— 水牛哥的魔法倉庫</h5>
+          <p>小朋友，你們知道為什麼水牛哥休息時，嘴巴還在動嗎？因為牠的肚子裡藏著四個神奇的布袋，每一口草都要經過四場冒險：</p>
+          <ul class="space-y-3 ml-4 text-[17px]">
+            <li><strong>第一個大布袋【瘤胃—溫慢的倉庫】</strong>：這是最大的口袋。牛王工作趕時間，先將吞下的草存在這裡。在這個暖烘烘的倉庫裡，有無數的小精靈正在跳舞，幫忙把硬草變軟。</li>
+            <li><strong>第二個小布袋【網胃—細心的篩子】</strong>：這個袋子像蜂巢一樣有個網子。它會檢查每一口草，如果有小石頭或硬樹枝，網胃守門員就會把它攔下來，不讓它傷害後面的路。</li>
+            <li><strong>第三個厚布袋【瓣胃—神奇脫水機】</strong>：這個袋子像是一本厚厚的書，有很多層葉片。它會緊緊擠壓草木漿，把多餘的水分擰乾，台語叫它「百葉」。</li>
+            <li><strong>最後的真布袋【皺胃—魔法廚房】</strong>：這裡才是真正烹飪、吸收養分的地方。</li>
+          </ul>
+          <p class="mt-4">每當水牛哥在樹下「反芻」時，牠其實是在溫習大地的味道。這就是牛的慢速魔法。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 3 -->
+    <h4 class="text-xl">🎶 區塊三：歌唱與節律活動 (Activities / Singing)</h4>
+    <ul class="space-y-3 ml-4 mb-6 text-[18px]">
+      <li><strong>1. 【水牛與鷺鷥腳步】</strong>：重踏四拍（扮演牛的沈重） vs 指尖輕點八分音符（扮演鷺鷥輕盈）。</li>
+      <li><strong>2. 【反芻的呼吸體操】</strong>：深吸氣（像舌頭將草捲入），憋氣暫停，然後發出「呼～嗯～～」的低頻音慢慢吐氣（咀嚼）。適合降躁靜心。</li>
+      <li><strong>3. 【牛犁歌變奏響板】</strong>：老師哼唱《牛犁歌》，孩子聽到特定的牛/農具字眼就敲響板。</li>
+    </ul>
+
+    <!-- Block 4 -->
+    <h4 class="text-xl">💬 區塊四：對話與角色扮演 (Dialogue / Scaffolding)</h4>
+    <div class="space-y-4 ml-4 mb-6 text-[18px]">
+      <p><strong>1. 【泥巴裡的相遇】三重奏：</strong><br>牛：「塗糜軟膏膏，有夠涼啦！」<br>白翎鷥：「牛大哥，我來共你抾牛蝨！」<br>農伯：「洗好欲起工囉！」</p>
+      <p><strong>2. 【拔草的無奈】幽默對話：</strong><br>農伯：「哎喲喂，草發遐爾濟！」<br>牛王：「歹勢啦，是我跋一倒撒了傷濟。」<br>白翎鷥：「免煩惱，伊上愛哺青草！」</p>
+      <p><strong>3. 【小牛學吃草】生物學對答：</strong><br>小牛：「阿母，草咬袂斷啦！」<br>母牛：「戇囝，咱無頂喙齒。舌先伸長長去捲，吞落去才慢慢仔哺。」</p>
+    </div>
+
+    <!-- Block 5 -->
+    <h4 class="text-xl">🎲 區塊五：遊戲 (Games)</h4>
+    <ul class="space-y-3 ml-4 mb-6 text-[18px]">
+      <li><strong>1. 【大風吹變種：撒草籽】</strong>：聽指令變身！「三步撒一把」立刻跳三步；「一步撒三把」立刻跋倒假裝狂哺草。</li>
+      <li><strong>2. 【湳塗木頭人】</strong>：農夫走動時大家活動，農夫轉頭時，水牛必須定格。</li>
+      <li><strong>3. 【互助共生捉蟲記】</strong>：A牛只能跪爬，B白翎鷥手搭背上，合作撿紙團蟲。</li>
+    </ul>
+
+    <!-- Block 6 -->
+    <h4 class="text-xl">✍️ 區塊六：書寫與工作本 (Writing & Documentation)</h4>
+    <ul class="space-y-3 ml-4 mb-6 text-[18px]">
+      <li><strong>1. 【圖像 1：爛泥與小鳥】</strong>：畫泥巴泡澡牛與背上的鳥。認讀：「塗糜軟膏膏 / 哺青草」。</li>
+      <li><strong>2. 【圖像 2：無上牙的老牛嘴】</strong>：畫出無門牙的上顎與捲草長舌。認讀：「無頂喙齒，舌先捲，慢慢仔哺」。</li>
+      <li><strong>3. 【連環畫與黏貼】(DI差異化)</strong>：供 C/D 型預備好的對話貼紙，A/B 鼓勵自行寫出幽默心聲。</li>
+    </ul>
+  </section>
+
+  <div class="flex justify-center gap-3 py-6 opacity-40">
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+    <span class="material-symbols-outlined text-[var(--secondary)] text-sm">local_florist</span>
+  </div>
+
+  <!-- Dry Run -->
+  <section class="mb-10">
+    <h3 class="text-2xl font-bold">💡 特別檢查點：課前沙盤推演 (Dry Run)</h3>
+    <ul class="space-y-4 ml-4 text-[18px]">
+      <li><strong>1. 動靜切換測試</strong>：如果在玩完遊戲後孩子太瘋，我該如何快速啟用【反芻的呼吸體操】讓他們安靜？</li>
+      <li><strong>2. 教具防呆</strong>：C/D型的對話貼紙是否已經剪好？黑板畫「爛泥溝」空間是否充足？</li>
+      <li><strong>3. 時間預算</strong>：如果只剩10分鐘，我該捨棄哪個對話，確保能畫完圖再下課？</li>
+    </ul>
+  </section>
+
+  <!-- Evaluation -->
+  <section class="mb-10">
+    <h3 class="text-2xl font-bold">📌 第三階段：自我評鑑與反思 (Evaluation & Reflection)</h3>
+    <div class="space-y-6 ml-4 text-[18px]">
+      <p><strong>1. 教學目標達成度</strong>：台語語感的建立（軟膏膏、沓沓行）。</p>
+      <p><strong>2. 模組調度與方法評估</strong>：能否在動態釋放後回到反芻的平靜？差異化鷹架是否有效？</p>
+      <p><strong>3. 學生觀察</strong>：（空白區：紀錄表現特別突出或有狀況的孩子）。</p>
+      <p><strong>4. 未來課程優化</strong>：牛的四個神奇袋子，下個月進入「哺乳類」主題時可獨立延伸。</p>
+    </div>
+  </section>
+
+  <footer class="mt-12 pt-8 border-t border-[var(--outline-variant)]/30 text-center">
+    <p class="text-[var(--primary)] font-headline italic text-xl">華德福教師作業系統 (Waldorf Teacher OS)</p>
+    <p class="text-[var(--secondary)] font-body text-xs tracking-widest uppercase opacity-60 mt-2">教學紀錄與課程設計備份</p>
+  </footer>
+</main>
+</body>
+</html>

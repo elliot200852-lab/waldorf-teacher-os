@@ -1,0 +1,183 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：九年級 C 班・英文課進度錨點
+# 路徑：class-9c/english/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 英文課工作進度錨點
+# 每次對話結束後由 AI 更新，只改動有變化的欄位，不可手動大幅改寫
+
+english_session:
+  class: class-9c
+  last_updated: 2026-04-08
+
+  current_position:
+    block: 二
+    step: 5         # Block 2 — Week 7-3 已上課完成，Week 8 節次重排
+    sub_block: null
+    unit_number: 2    # week 7-8 對應單元二
+    current_week: 8   # 第八週（學校行事曆週次）
+                      # 已完成：week5-1, week5-3, week6-1, week6-2 教案＋學習單
+                      #         week6-3/4 A Rice Sandwich 教學參考＋學習單（含教師版）
+                      #         week7-1 連接詞 Panorama 學習單 v2（學生版＋教師版 PDF 定案）
+                      #         week7-2 Connect Your World 學習單 v2（學生版＋教師版 PDF 定案）
+                      #         week7-3 The First Job 導入（已上課，運作順利，美化版 PDF 已輸出）
+                      # 草稿待審：week8-3 + week8-4 The First Job 第二、三堂教案＋學習單（v1 草稿）
+                      # Week 8 節次重排（David 04-02 確認）：
+                      #   8-1：The First Job 第二堂（原 8-3 教案）
+                      #   8-2：工坊課
+                      #   8-3：工坊課
+                      #   8-4：The First Job 第三堂（原 8-4 教案）
+                      # AI 在 Block 2 工作時，若此欄為 0，應詢問教師當前週次後更新
+                      # 週次換算參考（依 confirmed_decisions 的 10 週規劃）：
+                      #   week 1-4  → 農場實習（無英文課）
+                      #   week 5-6  → 單元一（小說導讀 + 語言工坊基礎）
+                      #   week 7-8  → 單元二
+                      #   week 9-10 → 單元三
+                      #   week 11-12 → 單元四
+                      #   week 13-14 → 單元五（含期末 vignette 完稿）
+
+  confirmed_decisions:
+    - "學期範圍：下學期，10 週，40 節課"
+    - "每週節奏：第 1-2 節語言工坊 + 第 3-4 節小說研讀（The House on Mango Street）"
+    - "語言工坊內容骨幹：108 課綱三維度（2,000 字彙 + 46 溝通功能 + 文法句構）"
+    - "語言工坊工具：文法教材 + 會考題本 + 教室雙電腦站點旋轉（具體名稱不列入大綱）"
+    - "文學產出：個人短篇素描（vignette），模仿 Cisneros 風格"
+    - "評量分配（定案）：小說討論 20% + 創意寫作 20% + 詞彙溝通 25% + 文法閱讀 25% + 學習歷程 10%"
+
+  next_action:
+    description: >
+      【已完成 — Week 8-4, 9-1, 9-2 (Edna's Ruthie) 教案與劇本 (David 定案 Reader's Theater 版)】
+      - 教案：8-4 (Meet Ruthie), 9-1 (The Truth about Ruthie), 9-2 (Adults are Just Kids 讀劇)
+      - 學習單：Papa 自學單, 8-4 學習單, 9-1 學習單
+      - 腳本：The Broken Umbrella, The Bingo Night
+      
+      【待做】
+      1. David 核對排版並列印上述教案/分組劇本發放給全班
+      2. 準備進入下一階段期末考評或結算
+    input_needed_from_teacher: "檢視成品是否需要微調或進入檔案輸出"
+  output_files:
+    _archive_path: class-9c/english/session-archive.yaml
+    # Block 1 紀錄、syllabus、evaluation_log、reference_files 已歸檔
+    units_completed:
+      - unit: week7-3
+        date: 20260402
+        theme: "A Rice Sandwich 收尾 + The First Job 導入"
+        text: "Sandra Cisneros, The House on Mango Street — The First Job"
+        grammar_focus: "無獨立文法環節，連接詞透過朗讀自然滲透（模式 A）"
+        status: 已完成——已上課，運作順利
+        files:
+          教師教案: class-9c/english/content/9C-week7-3-v1-教師教案.md
+          美化版PDF: "桌面/完成檔案/01_9C英文課程/01_9C-week7-3-教師教案-美化版.pdf"
+        skill_used: lesson-engine + english-overlay
+        notes: "The First Job 三堂課第一堂。04-02 上課，運作順利。Evaluator PASS（閱讀導入型，吸47:呼38:轉11）。亮點：朗讀沉默設計、D 類聲音鷹架、制度→個人傷害轉場。"
+      - unit: week8-3
+        date: 20260331
+        theme: "The First Job 分組深讀 + 語言擴展"
+        text: "Sandra Cisneros, The House on Mango Street — The First Job"
+        grammar_focus: "連接詞在敘事中的轉折功能 because, and, 缺席的 but/so（模式 A 分析）"
+        vocabulary_focus: "lie, match, grab, trust, coatroom, birthday, permission, Oriental"
+        status: 已審閱定案（04-06）
+        files:
+          教師教案: class-9c/english/content/9C-week8-1-v1-教師教案.md
+          教案PDF: "桌面/完成檔案/9C-week8-連堂工作坊-教師教案.pdf"
+        skill_used: lesson-engine + english-overlay
+        notes: "The First Job 三堂課第二堂。04-06 David 審閱：收尾改為呼吸轉換（連堂銜接），學生站起來看長句數 and。"
+      - unit: week8-2
+        date: 20260406
+        theme: "Sentence Surgery — where 子句 + The First Job 長句拆解"
+        text: "Sandra Cisneros, The House on Mango Street — The First Job"
+        grammar_focus: "where 子句（間接問句 vs 關係副詞）+ 複合複雜句結構分析 + 連接詞整合"
+        status: 已審閱定案（04-06）
+        files:
+          教師教案: class-9c/english/content/9C-week8-2-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week8-2-v1-學習單.md
+          教師版學習單: class-9c/english/content/9C-week8-2-v1-學習單-教師版.md
+          學生版PDF: "桌面/完成檔案/9C-week8-2-學習單-學生版.pdf"
+          教師版PDF: "桌面/完成檔案/9C-week8-2-學習單-教師版.pdf"
+        skill_used: lesson-engine + english-overlay
+        notes: "工坊課。04-06 David 審閱：3B 改為學生上台黑板書寫（D→B→A/C）、Task A 改回家作業、轉場壓縮至 1min。Wiki：9c-english-w8-1&2.md。"
+      - unit: week8-3
+        date: 20260407
+        theme: "她不知道為什麼 — 間接問句 what/why/how/if + 關係代名詞 who/which/that"
+        text: "Sandra Cisneros, The House on Mango Street — A Rice Sandwich + The First Job"
+        grammar_focus: "間接問句加深（what/why/how/if）+ 關係代名詞（who/which/that）+ 動詞片語整合"
+        status: 已審閱定案（04-07）
+        files:
+          教師教案v2: class-9c/english/content/9C-week8-3-v2-教師教案.md
+          學習單v2: class-9c/english/content/9C-week8-3-v2-學習單.md
+          學生版PDF: "桌面/完成檔案/01_9C英文課程/9C-week8-3-學習單-學生版.pdf"
+          教師版PDF: "桌面/完成檔案/01_9C英文課程/9C-week8-3-學習單-教師版.pdf"
+          板書速覽PDF: "桌面/完成檔案/01_9C英文課程/9C-week8-3-板書流程速覽.pdf"
+        skill_used: lesson-engine + english-overlay + beautify
+        notes: "v2 重新設計（04-06→04-07）。學習單大幅修改：移除 Quick Reference 與 Task B，Task D 精選 8 題（4IQ+4RP），Task C 精選 6 題（3IQ+3RP），Task A 改為引導式寫作（6 步故事骨架＋中文參考故事，回家作業）。全部答案逐題校對。簡便教案只保留板書與時間流程。"
+      - unit: week8-4
+        date: 20260331
+        theme: "The First Job 延伸活動 + 收尾 + Follow-up"
+        text: "Sandra Cisneros, The House on Mango Street — The First Job / Papa Who Wakes Up Tired in the Dark"
+        grammar_focus: "學生在自己的產出中運用連接詞（模式 A 自由運用）"
+        status: 草稿待審閱
+        files:
+          教師教案: class-9c/english/content/9C-week8-4-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week8-4-v1-學習單.md
+        skill_used: lesson-engine + english-overlay
+        notes: "The First Job 三堂課第三堂。回顧 3min → 頭心手三選一 22min（HEAD 分析書寫 / HEART 寫信 / HANDS 畫置衣間）→ 分享 10min → 收尾 5min → Follow-up Papa Who Wakes Up Tired in the Dark 5min。"
+      - unit: week8-4_ruthie
+        date: 20260408
+        theme: "遇見 Ruthie (Meet Ruthie) — 春季收尾第一堂"
+        text: "Sandra Cisneros, The House on Mango Street — Edna's Ruthie"
+        grammar_focus: "關係代名詞 (who/which) + 動詞片語（模式 A）"
+        status: 定案（04-08）
+        files:
+          教師教案: class-9c/english/content/9C-week8-4-Ruthie-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week8-4-Ruthie-v1-學習單.md
+          Papa自學單: class-9c/english/content/9C-week8-4-v1-Papa-自學單.md
+        skill_used: lesson-engine + english-overlay
+        notes: "春季收尾三堂課第一堂。Draw Ruthie 圖像活動。Papa 自學單作課前回家作業。"
+      - unit: week9-1_ruthie
+        date: 20260408
+        theme: "Ruthie 的秘密與失落 (The Truth about Ruthie) — 春季收尾第二堂"
+        text: "Sandra Cisneros, The House on Mango Street — Edna's Ruthie"
+        grammar_focus: "間接問句 (why/if) + 連接詞 but/because（模式 A）"
+        status: 定案（04-08）
+        files:
+          教師教案: class-9c/english/content/9C-week9-1-Ruthie-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week9-1-Ruthie-v1-學習單.md
+        skill_used: lesson-engine + english-overlay
+        notes: "春季收尾三堂課第二堂。Detective Task——她說了什麼 vs 她實際做了什麼。"
+      - unit: week9-2_ruthie
+        date: 20260408
+        theme: "成人的脆弱 (Adults are Just Kids) — 春季收尾第三堂 / 期末展演"
+        text: "Sandra Cisneros, The House on Mango Street — Edna's Ruthie + Papa Who Wakes Up Tired in the Dark"
+        grammar_focus: "四大文法有機整合（模式 A）— 連接詞、動詞片語、關係代名詞、間接問句"
+        status: 定案（04-08）
+        files:
+          教師教案: class-9c/english/content/9C-week9-2-Ruthie-v1-教師教案.md
+          劇本A: class-9c/english/content/9C-week9-2-Script-A.md
+          劇本B: class-9c/english/content/9C-week9-2-Script-B.md
+          課程企劃書: class-9c/english/content/9C-spring-closure-plan-week8-4_9-1_9-2.md
+        skill_used: lesson-engine + english-overlay
+        notes: "春季收尾第三堂。Reader's Theater 讀劇展演（15+20+10 分鐘）。劇本 A：The Broken Umbrella；劇本 B：The Bingo Night。四文法整合收尾。"
+      - unit: week7-1
+        date: 20260323
+        theme: "連接詞闖關 Part 2 — when / before / after / if"
+        grammar_focus: "副詞子句連接詞（時間＋條件）+ 動詞片語複習"
+        status: 草稿待審閱
+        files:
+          教師教案: class-9c/english/content/9C-week7-1-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week7-1-v1-學習單.md
+        skill_used: null
+        notes: "連接詞三節跨週設計第二節。草稿，待 David 審閱。"
+      - unit: week7-2
+        date: 20260323
+        theme: "連接詞闖關 Part 3 — 八大連接詞綜合複習"
+        grammar_focus: "八大連接詞綜合運用 + 動詞片語複習"
+        status: 草稿待審閱
+        files:
+          教師教案: class-9c/english/content/9C-week7-2-v1-教師教案.md
+          學生學習單: class-9c/english/content/9C-week7-2-v1-學習單.md
+        skill_used: null
+        notes: "連接詞三節跨週設計第三節（綜合）。草稿，待 David 審閱。"
+
+  # evaluation_log 已歸檔至 session-archive.yaml（5 堂校準完成，evaluator v2 進入常規使用）
+
+  open_questions: []

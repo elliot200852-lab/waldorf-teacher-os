@@ -1,0 +1,105 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：三年級 A 班・山海經神話主課程進度錨點
+# 路徑：class-3a/ml-shanhaijing/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 主課程工作進度錨點
+# 每次對話結束後由 AI 更新，只改動有變化的欄位，不可手動大幅改寫
+
+ml_shanhaijing_session:
+  class: class-3a
+  last_updated: 2026-04-05
+
+  content_status:
+    teaching_record_html:
+      status: 完成
+      date: 2026-04-04
+      location: Google Drive「與他人分享」資料夾
+      filename: 山海經教學紀錄.html
+      note: 13 個故事單元，含說書稿、出處原文、教學指引、黑板書寫、專科活動建議、黑板畫照片（8 張 WebP 嵌入）
+    teaching_record_md:
+      status: 完成
+      date: 2026-04-05
+      path: content/山海經教學紀錄.md
+      note: 純文字版（含 Obsidian frontmatter），已完成修復與板書同步
+
+  overview:
+    name: 山海經神話
+    type: 週期性主課程（語文）
+    description: >
+      三年級春季語文主課程。以《山海經》華夏上古神話為素材，
+      對應孩子九歲轉變後從天堂夢境走向入世的發展狀態。
+      接續秋季「南島神話」（海洋性格）、冬季「舊約」（普世律法），
+      春季進入「山海經」（大陸性格），完成三年級創世神話的文化三部曲。
+    schedule: 主課程時段（08:20-10:20），約 3 週
+    semester_position: 春季第 4-6 週
+    linked_to:
+      - 秋季南島神話（已完成）
+      - 冬季舊約（已完成）
+    core_question: 人類如何從神的護佑走向自立？
+
+  current_position:
+    block: 山海經神話
+    step: 1
+    sub_block: 教學簡報自動產出
+    current_week: 0
+
+  confirmed_decisions:
+    - "完成 13 個單元教案自總表（山海經教學紀錄.md）的修復與還原。"
+    - "依照老師提供的 8 張板書照片，完成所有相關單元的黑板書寫文字替換。"
+    - "在「龍的誕生」單元中新增「龍的傳說」自由書寫段落。"
+    - "透過 NotebookLM 完成第1~13課的教學簡報自動產出（PPTX檔，下載至桌面），採用清新的四季華德福風格。"
+
+  story_arc:
+    note: >
+      以下為預定的故事選材方向（已由琬婷老師確認並完成教案編寫）。
+      山海經神話的核心敘事線：創世 → 秩序建立 → 人類自立。
+    planned_stories:
+      - name: 盤古開天
+        theme: 天地分離——從混沌到秩序
+      - name: 女媧造人
+        theme: 人類的出現——泥土與生命
+      - name: 女媧補天
+        theme: 秩序的修復——天塌地陷與五色石
+      - name: 后羿射日
+        theme: 英雄的行動——與南島射日神話的呼應
+      - name: 精衛填海
+        theme: 意志的堅持——不屈的小鳥
+      - name: 大禹治水
+        theme: 人類自立——三過家門不入，以智慧與勞動治理世界
+      - name: 夸父追日
+        theme: 人類的極限——追逐與犧牲
+    cross_cultural_bridges:
+      - "后羿射日 ↔ 布農族射日神話（秋季已學）——不同文化對同一母題的回應"
+      - "女媧造人 ↔ 南島創世（秋季）/ 舊約創世（冬季）——三種「人從哪裡來」的圖像"
+      - "大禹治水 ↔ 洪水神話（秋季布農族版本）——水的破壞與人的回應"
+
+  teaching_approach:
+    note: 延續秋季南島神話的教學模式
+    story_source: 琬婷老師自行蒐集、編寫、改寫
+    writing_work: >
+      工作本書寫：每則故事後安排書寫練習，
+      包含教師引導的摘要書寫與自由書寫交替。
+    language_goals:
+      - 透過神話故事初步聽讀簡單的文言文
+      - 以部首字為架構繼續擴充字量詞量
+      - 關鍵字擴寫與自由書寫練習
+      - 簡單詞性（名詞、動詞、形容詞、副詞）
+      - 段落與標點符號
+
+  next_action:
+    description: >
+      教學簡報皆已產出並置於桌面。下一步可進行正式授課的簡報微調，或發展針對 A/B/C/D 四類學生進行 DI 差異化教學設計。
+    input_needed_from_teacher: "檢視桌面兩個 NotebookLM 產出的 PPTX 檔案，進行排版或修改確認。"
+
+  output_files:
+    syllabus_versions: []
+    units_completed:
+      - 01-13 教案修復
+    reference_files:
+      - path: reference/山海經上課文本及板書文字.md
+        note: 老師提供的原始上課文本基準
+
+  open_questions:
+    - "是否要在山海經區塊中加入地圖/地理元素（山海經本身是地理志）？"
+    - "跨文化比較（射日、洪水、創世）是否在課堂中明確帶出，還是留給孩子自己感受？"

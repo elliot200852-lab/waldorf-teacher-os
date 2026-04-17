@@ -1,0 +1,33 @@
+project: 三年級南島神話主課程
+code: grade3-austronesian-myths
+type: main_lesson_block
+status: active_development
+grade: 3
+duration: 3 weeks (15 days)
+daily_hours: 2
+
+purpose: >
+  以南島語系民族的創世神話為素材，設計三年級主課程區塊。
+  回應九歲轉變（Rubicon）的發展需求——世界從何而來？我能掌握世界嗎？
+  融入華德福三年級三大支柱：創世故事、農耕、建造。
+  讓孩子認識自己腳下這塊土地的海洋文化內涵。
+
+story_source:
+  author: 王琬婷（琬婷老師）
+  document: 南島神話（Google Doc）
+  stories_count: 10
+  enhancement: AI 優化（補充外部文化研究、感官細節、適齡語言）
+
+thematic_arc:
+  week1: 天地與生命（創造與分離）
+  week2: 人與自然的關係（文明的工具）
+  week3: 災難與新生（毀滅與重建）
+
+daily_rhythm:
+  part1: 晨圈活動（20 分鐘）
+  part2: 前日故事回顧與討論（30 分鐘）
+  part3: 工作本書寫（30 分鐘）
+  part4: 新故事講述（20 分鐘）
+
+content_output: content/
+reference_output: reference/

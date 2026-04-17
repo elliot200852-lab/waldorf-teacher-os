@@ -1,0 +1,23 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 班級名單紀錄】
+# 路徑：{workspace}/projects/g10-zhuguang/class-list.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+class_name: 十年級逐光班
+student_count: 31
+tutor: 姜善迪
+
+students:
+  - id: g10-01
+    name: "學生 1"
+    note: ""
+  - id: g10-02
+    name: "學生 2"
+    note: ""
+  - id: g10-03
+    name: "學生 3"
+    note: ""
+  # ... 此處將包含 31 位學生佔位符 ...
+  - id: g10-31
+    name: "學生 31"
+    note: ""

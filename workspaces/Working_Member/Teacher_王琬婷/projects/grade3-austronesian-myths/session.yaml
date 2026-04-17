@@ -1,0 +1,49 @@
+grade3_austronesian_myths_session:
+  class: grade-3 (琬婷老師班級)
+  last_updated: 2026-03-29
+
+  current_position:
+    block: 一
+    step: 2
+    phase: 初稿完成，待教師審閱
+
+  confirmed_decisions:
+    - 三週主題弧線：天地與生命 → 人與自然的關係 → 災難與新生
+    - 每日節奏：晨圈 20 + 回顧 30 + 書寫 30 + 新故事 20
+    - 延伸活動移出主課，作為副課程建議附錄
+    - 10 個故事 + 2 深化日 + 3 統整/結業日 = 15 天
+    - 故事三（天界與人間分離）拆上下兩天
+    - 書寫延遲一天原則：Part 3 書寫前一天的故事，D01 畫封面
+    - 黑板畫也延遲一天，D01 黑板畫為課程封面
+    - HTML 美化版已上傳 Google Drive「南島神話三年級」資料夾
+    - CreatorHub 新增獨立頻道 island-myths-3rd，已部署 Firebase
+    - Drive 檔案以 I001-I003 前綴命名，sync-drive 正確掃描 3 stories
+    - Drive 資料夾已分享給 channel-deployer service account
+    - repo 清理：creator-hub/ 生成物移除追蹤，加 .gitignore
+
+  next_action:
+    description: >
+      教師（David / 琬婷老師）審閱三週教案初稿。
+      重點確認：說書稿語言是否適齡、引導文是否需要調整、晨圈歌謠是否可用。
+      HTML 美化版在 Drive：https://drive.google.com/drive/folders/1z1tgfYHfFBG-oBOo4a_22VK3DBfX7tDN
+    input_needed_from_teacher: 審閱回饋
+
+  output_files:
+    week1:
+      path: content/week1-天地與生命.md
+      status: 初稿完成
+      lines: 813
+      size: 49KB
+    week2:
+      path: content/week2-人與自然的關係.md
+      status: 初稿完成
+      lines: 887
+      size: 48KB
+    week3:
+      path: content/week3-災難與新生.md
+      status: 初稿完成
+      lines: 773
+      size: 37KB
+    overview:
+      path: content/overview-三週課程總覽.md
+      status: 初稿完成

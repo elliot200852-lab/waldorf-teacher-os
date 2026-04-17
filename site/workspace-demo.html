@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工作範例展示 — TeacherOS CreatorHub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── workspace-demo.html 專用樣式 ── */
+
+    /* 垂直時間軸 */
+    .ws-timeline {
+      position: relative;
+      padding-left: 3.5rem;
+      margin: 2rem 0;
+    }
+    .ws-timeline::before {
+      content: '';
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--gold-dim), transparent);
+    }
+    .ws-step {
+      position: relative;
+      padding: 0 0 2.5rem 0;
+    }
+    .ws-step:last-child {
+      padding-bottom: 0;
+    }
+    .ws-step-num {
+      position: absolute;
+      left: -3.5rem;
+      top: 0;
+      width: 34px;
+      height: 34px;
+      background: var(--gold);
+      color: var(--black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 1;
+      box-shadow: 0 0 0 4px var(--black);
+    }
+    .ws-step-label {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .ws-step-body {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    /* 摺疊區：箭頭放大 + 靠左 */
+    .ws-collapse .collapse-arrow {
+      font-size: 1.2rem;
+      margin-right: 0.75rem;
+    }
+    .ws-collapse .collapse-header {
+      justify-content: flex-start;
+    }
+    .ws-collapse .collapse-header span:not(.collapse-arrow) {
+      flex: 1;
+    }
+    .ws-collapse .collapse-content {
+      text-align: left;
+    }
+
+    /* 嵌入文件微調 */
+    .full-doc .doc-body h2 {
+      margin-top: 2.5rem;
+    }
+    .full-doc .doc-body p {
+      line-height: 1.9;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ 導覽列 ═══ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">TeacherOS CreatorHub</a>
+    <button class="nav-toggle" aria-label="選單">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="architecture.html">系統架構</a></li>
+      <li><a href="skills.html">技能引擎</a></li>
+      <li><a href="di-framework.html">差異化教學</a></li>
+      <li><a href="workspace-demo.html">工作範例</a></li>
+      <li><a href="david-live.html">真實現場</a></li>
+      <li><a href="evolution.html">演變歷程</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-body">
+
+<!-- ═══ Hero ═══ -->
+<section class="hero">
+  <div class="container">
+    <h1>工作範例展示</h1>
+    <p class="subtitle">
+      Teacher Claude 完成的八年級英文完整教學區塊——<br>
+      從課程大綱到逐節教案、差異化活動設計，<br>
+      全文嵌入，可直接閱讀。
+    </p>
+  </div>
+</section>
+
+<!-- ═══ 介紹段落 ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-intro">
+      <p>
+        <strong>Teacher Claude</strong> 是一位在 TeacherOS CreatorHub 框架內運作的 AI 示範教師。<br>
+        以下展示的是她為八年級完成的完整教學設計：<br>
+        涵蓋 4 個英文教學區塊與 4 個導師課程區塊，<br>
+        每個區塊從課程大綱、週計畫、逐節教案，<br>
+        到差異化活動設計與學生評量記錄，均為完整的教材包。
+      </p>
+      <p style="margin-top: 1.5rem;">
+        此工作空間狀態為 <span class="badge badge-green">reference_only</span>，<br>
+        供其他教師學習與參考。<br>
+        你可以查看 Teacher Claude 的完整輸出，<br>
+        理解 TeacherOS CreatorHub 如何將教師的基模設計轉化為可操作的課堂實踐。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 完整課程大綱 ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="collapse-group ws-collapse">
+      <div class="collapse-item open">
+        <div class="collapse-header">
+          <span class="collapse-arrow">&#9654;</span>
+          <span>英文課程大綱 — Freedom Writers Diary（完整全文）</span>
+        </div>
+        <div class="collapse-body">
+          <div class="collapse-content">
+            <div class="full-doc">
+              <div class="doc-header">
+                <div class="doc-icon">📄</div>
+                <div class="doc-meta">
+                  <div class="doc-title">英文課程大綱 — Freedom Writers Diary</div>
+                  <div class="doc-path">workspaces/英文課程範例/english-syllabus-freedom-writers-20260304.md</div>
+                </div>
+              </div>
+              <div class="doc-body">
+
+                <h1>英文課程大綱 — Freedom Writers Diary</h1>
+
+                <h2>基本資訊</h2>
+                <table>
+                  <tr><th>班級</th><td>Claude班 八年級</td></tr>
+                  <tr><th>科目</th><td>英文</td></tr>
+                  <tr><th>任教老師</th><td>Claude 老師</td></tr>
+                  <tr><th>課程週期</th><td>10週（40堂課，每週4堂課，每堂45分鐘）</td></tr>
+                </table>
+
+                <h2>教學目標</h2>
+                <ol>
+                  <li><strong>發展個人立場與自我表達能力</strong> —<br>
+                  學生能透過閱讀他人故事，反思自身經驗，<br>
+                  並以英文清晰表達個人觀點與情感。</li>
+                  <li><strong>分析角色動機與人物複雜性</strong> —<br>
+                  學生能深入理解文本中的人物選擇，<br>
+                  辨識不同角色背後的動機與掙扎，<br>
+                  發展同理心與批判性思考。</li>
+                  <li><strong>透過創意寫作激發意志力</strong> —<br>
+                  學生能運用日誌、敘述、詩歌等多種寫作形式，<br>
+                  將內在感受外化為具體文字，鍛鍊意志力與個性。</li>
+                  <li><strong>識別文學主題與更大敘事結構</strong> —<br>
+                  學生能從具體故事抽象出普遍主題（自由、正義、身分、改變），<br>
+                  並認識這些主題如何在歷史與當代世界中迴盪。</li>
+                  <li><strong>在小組討論中傾聽與表達</strong> —<br>
+                  學生能在安全、尊重的環境中與同學分享想法，<br>
+                  練習有效溝通與集體思考，建立班級社群。</li>
+                </ol>
+
+                <h2>教學策略</h2>
+                <ul>
+                  <li><strong>讀寫循環</strong>：<br>
+                  每週兩節經典文本深讀，兩節語言工作坊（語法、寫作技巧、詞彙）</li>
+                  <li><strong>多感官進入文本</strong>：<br>
+                  聆聽（朗誦、音樂背景），視覺（圖像、視頻片段），<br>
+                  動作（角色扮演、身體表達），創作（畫圖、寫作）</li>
+                  <li><strong>學生聲音為核心</strong>：<br>
+                  個人日誌、同學對話、小組呈現，讓學生的思考可見與可聞</li>
+                  <li><strong>有意圖的分化設計</strong>：<br>
+                  多入口點（不同難度的文本、不同形式的任務）<br>
+                  與多出口點（多種呈現與表達方式）</li>
+                  <li><strong>連接個人與歷史</strong>：<br>
+                  現代故事遇見革命時代，<br>
+                  引導學生理解個人經驗與更大社會變革的關係</li>
+                </ul>
+
+                <h2>每週節奏</h2>
+                <table>
+                  <tr>
+                    <th>星期</th>
+                    <th>課程焦點</th>
+                    <th>活動形式</th>
+                  </tr>
+                  <tr>
+                    <td>週一</td>
+                    <td>文學經典深讀 I</td>
+                    <td>導入 + 朗誦 + 初步討論</td>
+                  </tr>
+                  <tr>
+                    <td>週二</td>
+                    <td>文學經典深讀 II</td>
+                    <td>細讀分析 + 角色討論 + 個人回應寫作</td>
+                  </tr>
+                  <tr>
+                    <td>週三</td>
+                    <td>語言工作坊 I</td>
+                    <td>語法、詞彙、修辭技巧集中訓練</td>
+                  </tr>
+                  <tr>
+                    <td>週四</td>
+                    <td>語言工作坊 II</td>
+                    <td>創意寫作練習、同儕回饋、分享朗誦</td>
+                  </tr>
+                </table>
+
+                <h2>課程規劃：10週單元架構</h2>
+
+                <h3>第一單元：身分故事（第1–2.5週）</h3>
+                <p><strong>核心問題</strong>：What shapes us?<br>
+                什麼塑造了我們？</p>
+                <p><strong>教學目標</strong>：<br>
+                引導學生進入個人敘事的力量，<br>
+                認識自己的故事如何被家庭、文化、經歷塑造。</p>
+                <ul>
+                  <li><strong>第1週</strong>：序章與學生背景故事
+                    <ul>
+                      <li>朗誦序章，討論「誰是 Freedom Writers？」</li>
+                      <li>個人故事日誌：「我的名字故事」</li>
+                    </ul>
+                  </li>
+                  <li><strong>第2週</strong>：選定學生故事（第一輪）
+                    <ul>
+                      <li>細讀 2–3 篇學生日誌條目，分析寫作技巧與個人聲音</li>
+                      <li>語言工作坊：故事導入技巧、展示而非說教</li>
+                    </ul>
+                  </li>
+                  <li><strong>第2.5週</strong>：身分主題寫作與迷你呈現
+                    <ul>
+                      <li>學生撰寫「身分的多面性」短文</li>
+                      <li>小組分享與同儕回饋</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h3>第二單元：衝突與觀點（第3–5週）</h3>
+                <p><strong>核心問題</strong>：How do different people see the same situation?<br>
+                不同的人如何看待同一件事？</p>
+                <p><strong>教學目標</strong>：<br>
+                培養學生理解多元觀點的能力，<br>
+                認識到衝突並非單一事實，而是視角與經驗的碰撞。</p>
+                <ul>
+                  <li><strong>第3週</strong>：衝突敘事深讀（暴力、歧視、家庭破裂）
+                    <ul>
+                      <li>選讀 3–4 篇涉及深刻衝突的學生日誌</li>
+                      <li>課堂討論：理解衝突的根源與後果，不迴避難題</li>
+                    </ul>
+                  </li>
+                  <li><strong>第4週</strong>：多視角寫作與角色扮演
+                    <ul>
+                      <li>語言工作坊：從不同角色的眼光重述同一事件</li>
+                      <li>小組角色扮演排練</li>
+                    </ul>
+                  </li>
+                  <li><strong>第5週</strong>：正義觀與選擇的複雜性
+                    <ul>
+                      <li>討論：在不完美的世界中，如何做出道德選擇？</li>
+                      <li>創意寫作：「如果我處於他/她的位置」情景寫作</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h3>第三單元：正義與聲音（第6–8週）</h3>
+                <p><strong>核心問題</strong>：What does fairness mean?<br>
+                什麼是公平？我的聲音如何能帶來改變？</p>
+                <p><strong>教學目標</strong>：<br>
+                連接個人敘事與集體行動，<br>
+                讓學生認識到個人聲音的政治與倫理力量。</p>
+                <ul>
+                  <li><strong>第6週</strong>：系統不公義的識別
+                    <ul>
+                      <li>分析：書中學生們面對的制度性障礙<br>（種族歧視、貧窮、教育不平等）</li>
+                      <li>當代連結：台灣社會中類似的不公義案例</li>
+                    </ul>
+                  </li>
+                  <li><strong>第7週</strong>：寫作即行動
+                    <ul>
+                      <li>語言工作坊：倡議寫作、公開信、詩歌作為改變工具</li>
+                      <li>學生集體創作：一份關於班級或校園不公義的宣言</li>
+                    </ul>
+                  </li>
+                  <li><strong>第8週</strong>：呈現與對話
+                    <ul>
+                      <li>學生代表班級作品進行公開朗誦</li>
+                      <li>與聽眾對話：你的聲音如何引發思考？</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h3>第四單元：自由與未來（第9–10週）</h3>
+                <p><strong>核心問題</strong>：What does freedom mean to you?<br>
+                自由對你意味著什麼？</p>
+                <p><strong>教學目標</strong>：<br>
+                回到深層的存在性問題，<br>
+                讓學生思考自己對自由、責任、未來的想像。</p>
+                <ul>
+                  <li><strong>第9週</strong>：自由的多重定義
+                    <ul>
+                      <li>比較：法律自由、心理自由、精神自由</li>
+                      <li>個人反思日誌：「在我的生活中，自由看起來像什麼？」</li>
+                    </ul>
+                  </li>
+                  <li><strong>第10週</strong>：最終課題與學期總結
+                    <ul>
+                      <li><strong>最終課題選項</strong>（學生擇一）：
+                        <ul>
+                          <li>A. 完整個人敘事短文（1500–2000 字）：<br>講述一個將你改變的時刻</li>
+                          <li>B. 創意專案：多媒體自傳（錄音、視覺、文字混合）</li>
+                          <li>C. 倡議作品：一份針對你關心的議題的寫作集合</li>
+                        </ul>
+                      </li>
+                      <li>班級展覽與慶祝：學生作品展示與互相祝賀</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h2>學生任務與參與期待</h2>
+                <ul>
+                  <li><strong>每週寫作參與</strong>：<br>
+                  每週至少 3 次回應日誌與創意寫作，每次 200–400 字</li>
+                  <li><strong>閱讀參與</strong>：<br>
+                  準時完成指定閱讀段落，帶著標記與註釋來課堂</li>
+                  <li><strong>課堂討論參與</strong>：<br>
+                  每堂課至少發言一次，尊重他人觀點的同時表達自己的想法</li>
+                  <li><strong>小組合作</strong>：<br>
+                  在小組活動中承擔角色責任，準時完成組內分配任務</li>
+                  <li><strong>同儕回饋</strong>：<br>
+                  細心閱讀同學的寫作，提供建設性、尊重的回饋</li>
+                  <li><strong>評量參與</strong>：<br>
+                  知曉自己的學習目標，參與自我評價過程，提出改進方向</li>
+                </ul>
+
+                <h2>評量方式</h2>
+                <table>
+                  <tr>
+                    <th>評量面向</th>
+                    <th>占比</th>
+                    <th>評量方式</th>
+                  </tr>
+                  <tr>
+                    <td>持續寫作組合</td>
+                    <td>40%</td>
+                    <td>週間日誌、回應、創意寫作的累積評價，<br>側重個人聲音與寫作成長</td>
+                  </tr>
+                  <tr>
+                    <td>回應日誌</td>
+                    <td>20%</td>
+                    <td>對文本的深度理解與個人反思，<br>評估閱讀理解與批判思考</td>
+                  </tr>
+                  <tr>
+                    <td>參與與討論</td>
+                    <td>15%</td>
+                    <td>課堂參與、同儕合作、傾聽與表達的質量</td>
+                  </tr>
+                  <tr>
+                    <td>語言技能檢查點</td>
+                    <td>15%</td>
+                    <td>語法、詞彙、句型變化的應用能力<br>（透過迷你任務與寫作）</td>
+                  </tr>
+                  <tr>
+                    <td>最終課題</td>
+                    <td>10%</td>
+                    <td>最終作品的完成度、個人聲音的表現、<br>對單元主題的深度反思</td>
+                  </tr>
+                </table>
+
+                <h2>所需資源</h2>
+                <ul>
+                  <li><strong>主要教材</strong>：<br>
+                  The Freedom Writers Diary — Erin Gruwell &amp; Freedom Writers</li>
+                  <li><strong>補充資源</strong>：<br>
+                  相關紀錄片片段、歷史背景資料<br>（LA 種族暴力歷史、1990 年代美國都市教育）</li>
+                  <li><strong>技術需求</strong>：<br>
+                  教室朗讀投影、學生寫作記錄本（紙本或數位）、<br>
+                  音樂播放設備（背景音樂輔助沉浸）</li>
+                  <li><strong>教室佈置</strong>：<br>
+                  安全討論圈、學生寫作展示牆、<br>
+                  季節擺飾（視主題調整氛圍）</li>
+                </ul>
+
+                <h2>課程設計理念</h2>
+                <p>
+                  這份課程的核心信念：<br>
+                  每個青少年都有一個值得傾聽的故事。<br>
+                  在華德福教育的框架中，八年級學生正經歷深刻的自我意識覺醒與社會意識形成——<br>
+                  他們對「不公平」極度敏感，對成人虛偽零容忍，<br>
+                  但同時還在尋找自己在世界中的位置與意義。
+                </p>
+                <p>
+                  這本書提供了一個完美的文學容器：<br>
+                  真實的青少年聲音、深刻的社會議題、希望與改變的可能性。<br>
+                  透過深讀，學生不僅學習英文，<br>
+                  更重要的是，他們看見了自己的反映——<br>
+                  他們的掙扎、夢想、對正義的渴望。
+                </p>
+                <p>
+                  寫作則是這門課的靈魂。<br>
+                  當學生將自己的故事與書中的年輕人交織時，<br>
+                  他們不只在學習語言技巧，而是在進行深刻的自我認識與社會批判。<br>
+                  這正是 AI 時代華德福教育的使命：<br>
+                  在機械化與抽象化的浪潮中，保護青少年的真實聲音，<br>
+                  引導他們發現自己的力量。
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 補充說明 ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="card" style="padding: 2rem;">
+      <h3 style="margin-top: 0;">完整教材包內容</h3>
+      <p>
+        Teacher Claude 還完成了完整的 Unit 1–4 逐節教案、<br>
+        差異化活動設計、學生評量記錄與學期報告。<br>
+        上述大綱僅為起點——<br>
+        從這份大綱出發，每一個單元都展開為詳細的週計畫<br>
+        與逐節 45 分鐘課堂流程。
+      </p>
+      <p style="margin-top: 1rem; color: var(--text-dim); font-size: 0.9rem;">
+        包括：課堂板書設計、分組安排、<br>
+        差異化活動三層（基礎、核心、延伸）、<br>
+        學生評量表、教師反思日誌、家長溝通信函。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 統計區 ═══ -->
+<section class="section" style="background: var(--black-light);">
+  <div class="container">
+    <h2 class="text-center">Teacher Claude 的完整輸出</h2>
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">完整教學區塊</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">40</div>
+        <div class="stat-label">課堂課時</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">800+</div>
+        <div class="stat-label">差異化活動</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">160</div>
+        <div class="stat-label">評量檢查點</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 工作流程說明 ═══ -->
+<section class="section">
+  <div class="container">
+    <h2>TeacherOS CreatorHub 工作流程</h2>
+
+    <div class="ws-timeline">
+      <div class="ws-step">
+        <div class="ws-step-num">1</div>
+        <div class="ws-step-label">教師定義教學基模</div>
+        <div class="ws-step-body">
+          教師決定教學主題、核心問題、學期弧線。<br>
+          這是意義架構師的核心工作——AI 不替教師做這個決定。
+        </div>
+      </div>
+
+      <div class="ws-step">
+        <div class="ws-step-num">2</div>
+        <div class="ws-step-label">AI 展開細節設計</div>
+        <div class="ws-step-body">
+          根據教師的基模，AI 自動展開為完整的週計畫、<br>
+          逐節教案、活動設計與教材建議。
+        </div>
+      </div>
+
+      <div class="ws-step">
+        <div class="ws-step-num">3</div>
+        <div class="ws-step-label">差異化多層次活動</div>
+        <div class="ws-step-body">
+          每一堂課的設計自動內建三層差異化：<br>
+          基礎、核心、延伸，確保不同能力的學生都被照顧。
+        </div>
+      </div>
+
+      <div class="ws-step">
+        <div class="ws-step-num">4</div>
+        <div class="ws-step-label">評量與回饋系統</div>
+        <div class="ws-step-body">
+          持續性評量、觀察紀錄、學生自評——<br>
+          AI 協助整理數據，但評判與回饋始終由教師做出。
+        </div>
+      </div>
+
+      <div class="ws-step">
+        <div class="ws-step-num">5</div>
+        <div class="ws-step-label">教師現場調整</div>
+        <div class="ws-step-body">
+          所有計畫都是建議，不是指令。<br>
+          教師在教室現場根據學生的真實狀態，<br>
+          隨時調整、變通、甚至完全拋開計畫。
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem; padding: 2rem; background: rgba(201, 169, 110, 0.06); border-left: 4px solid var(--gold); border-radius: 4px;">
+      <p style="margin: 0; font-size: 0.95rem; line-height: 1.9;">
+        教師保有 100% 的教學意圖控制權。<br>
+        AI 不生成決策，只生成選項與細節。<br>
+        教師決定什麼時候使用、何時變通、<br>
+        何時完全拋開計畫，回應當下教室的真實需要。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 工作空間狀態 ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="card-grid-2">
+      <div class="card">
+        <span class="card-tag">workspace_status</span>
+        <h3>Reference Only</h3>
+        <p>此工作範例為唯讀參考。<br>
+        你可以學習 Teacher Claude 的設計思路與輸出格式，<br>
+        但不能直接修改或編輯這份內容。<br>
+        這是一個教學示範，<br>
+        標示了 TeacherOS CreatorHub 的潛在輸出品質與完整度。</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">use_case</span>
+        <h3>學習與改編</h3>
+        <p>推薦作法是將此範例作為靈感來源。<br>
+        根據你自己班級的特質與教學哲學，<br>
+        改編相應的單元主題、選定不同的文學作品、調整評量方式。<br>
+        TeacherOS CreatorHub 的價值在於展示一種系統化的課程設計思路，<br>
+        而非提供一成不變的範本。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ═══ 下一步 ═══ -->
+<section class="section" style="background: rgba(201, 169, 110, 0.05);">
+  <div class="container">
+    <h2>下一步</h2>
+    <p>看完了 AI 示範教師的完整輸出。<br>
+    準備好看看真實教師 David 如何在現場使用這套系統嗎？</p>
+    <div style="margin-top: 2rem;">
+      <a href="david-live.html" style="display: inline-block; padding: 1rem 2rem; background: var(--gold); color: var(--black); text-decoration: none; border-radius: 4px; font-weight: 500; transition: background 0.2s;">進入真實現場 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 頁尾 ═══ -->
+<footer class="site-footer">
+  <p>TeacherOS CreatorHub — 華德福教師 AI 共創系統</p>
+  <p style="margin-top: 0.5rem;">
+    <a href="https://github.com/elliot200852-lab/waldorf-teacher-os" target="_blank">GitHub</a>
+    &nbsp;·&nbsp; 設計者：David &nbsp;·&nbsp; 2026
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS — Access Control List（使用者權限註冊表）
+# 路徑：ai-core/acl.yaml
+# 維護者：David（唯一有權修改此檔案的人）
+# 受保護：.github/CODEOWNERS 確保任何修改都需要 David 的 GitHub 審核
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#
+# 用途：
+#   1. AI 在每次工作開始時讀取此檔案，確認使用者身份與授權範圍。
+#   2. Pre-commit Hook（setup/hooks/pre-commit）讀取此檔案，
+#      在 git commit 時攔截超出授權的修改。
+#
+# 新增老師步驟：
+#   1. 在 teachers 清單中複製範例格式，填入真實資料。
+#   2. 在 GitHub 合併後生效（需要 David 審核此檔案的 PR）。
+#
+# Workspace 命名規則：{身份}_{真實姓名}
+#   - Codeowner_{Name}：系統管理員（擁有合併權限）
+#   - Teacher_{Name}：一般教師
+#   所有教師 workspace 位於 workspaces/Working_Member/ 下
+#   工作範例參考 為特殊命名，不套 Role_Name 格式
+#
+# 最後更新：2026-03-10
+
+# ── 管理員（無限制）────────────────────────────────────
+
+roles:
+
+  admin:
+    - name: 林信宏（David）
+      email: elliot200852@gmail.com
+      github_username: elliot200852-lab
+      role: 系統管理員（Codeowner）兼華德福教師
+      workspace: workspaces/Working_Member/Codeowner_David/
+      allowed_paths:
+        - "*"                              # 最高權限，無任何路徑限制
+
+# ── 試用教師（依班級授權）──────────────────────────────
+#
+# 新增格式（複製下方註解區塊，移除 # 符號並填入資料）：
+#
+#   - name: 老師姓名
+#     email: teacher@school.edu.tw        # 對應 setup/environment.env 的 USER_EMAIL
+#     github_username: github-username    # 用於 CODEOWNERS 追蹤
+#     workspace: workspaces/teacher-id/  # 此老師的個人工作區路徑
+#     allowed_paths:
+#       - projects/class-4c/             # 授權修改的班級資料夾
+#       - workspaces/teacher-id/         # 授權修改自己的 workspace（100% 自由）
+#     blocked_paths:                     # 明確禁止的路徑（可選，補強說明用）
+#       - ai-core/
+#       - setup/
+#       - .github/
+
+  teachers:
+    # ── Workspace 建立流程 ──
+    # 1. 新教師提供：姓名、Email、班級代碼、科目
+    # 2. 管理員執行：python3 setup/add-teacher.py（或 bash setup/add-teacher.sh）
+    # 3. 腳本自動：寫入 acl.yaml + 建立 workspace + 複製模板
+    # 4. 管理員 commit + push，教師 pull 即可使用
+    #
+    # 新增格式（複製下方範例，修改相關欄位）：
+    #   - name: 老師姓名
+    #     email: teacher@school.edu.tw
+    #     github_username: github-username
+    #     workspace: workspaces/Working_Member/Teacher_{教師姓名}/
+    #     allowed_paths:
+    #       - workspaces/Working_Member/Teacher_{教師姓名}/
+    #     blocked_paths:
+    #       - ai-core/
+    #       - setup/
+    #       - .github/
+
+    - name: Teacher Claude
+      email: teacher-claude@waldorf.example
+      github_username: teacher-claude-ref
+      workspace: workspaces/工作範例參考/
+      allowed_paths:
+        - workspaces/工作範例參考/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 郭耀新
+      email: dylankuo84137@waldorf.ilc.edu.tw
+      github_username: dylankuo84137
+      role: 學校網路工程師
+      workspace: workspaces/Working_Member/Teacher_郭耀新/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_郭耀新/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 林詩閔
+      email: main5405@gmail.com
+      github_username: main5405
+      workspace: workspaces/Working_Member/Teacher_林詩閔/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_林詩閔/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 劉佳芳
+      email: funwen1013@gmail.com
+      github_username: funwen1013
+      workspace: workspaces/Working_Member/Teacher_劉佳芳/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_劉佳芳/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 林雅婷
+      email: a0106tin@gmail.com
+      github_username: a0106tin
+      workspace: workspaces/Working_Member/Teacher_林雅婷/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_林雅婷/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 莊宜瑾
+      email: j798546@gmail.com
+      github_username: j798546
+      workspace: workspaces/Working_Member/Teacher_莊宜瑾/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_莊宜瑾/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 張銘分
+      email: chocolates.beans@gmail.com
+      github_username: chocolatesbeans-cmf
+      workspace: workspaces/Working_Member/Teacher_張銘分/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_張銘分/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 張仁謙
+      email: s0955159620@gmail.com
+      github_username: andy0955
+      workspace: workspaces/Working_Member/Teacher_張仁謙/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_張仁謙/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 陳佩珊
+      email: vernachen327@gmail.com
+      github_username: vernachen327-eng
+      workspace: workspaces/Working_Member/Teacher_陳佩珊/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_陳佩珊/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 姜善迪
+      email: dee@waldorf.ilc.edu.tw
+      github_username: Im-Parzival
+      workspace: workspaces/Working_Member/Teacher_姜善迪/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_姜善迪/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 李佳穎
+      email: elizabeth0329@gmail.com
+      github_username: Liz1314-hash
+      workspace: workspaces/Working_Member/Teacher_李佳穎/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_李佳穎/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 謝岷樺
+      email: hsiehfreya@gmail.com
+      github_username: hsiehfreya
+      workspace: workspaces/Working_Member/Teacher_謝岷樺/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_謝岷樺/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 陳啟華
+      email: mj23191168@gmail.com
+      github_username: mj23191168-cell
+      workspace: workspaces/Working_Member/Teacher_陳啟華/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_陳啟華/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+    - name: 王琬婷
+      email: hsinhunglin520@gmail.com
+      github_username: hsinhunglin520-blip
+      role: 3A 導師
+      workspace: workspaces/Working_Member/Teacher_王琬婷/
+      allowed_paths:
+        - workspaces/Working_Member/Teacher_王琬婷/
+      blocked_paths:
+        - ai-core/
+        - setup/
+        - .github/
+        - publish/build.sh
+
+# ── 永遠受保護的核心路徑（任何 Teacher 角色均不得修改）──
+#
+# 這些路徑即使不在 blocked_paths 中也永遠受到保護。
+# 修改這些路徑的 PR 在 GitHub 上必須由 David 審核。
+
+protected_always:
+  - ai-core/acl.yaml                    # 本文件——權限的根基
+  - ai-core/teacheros.yaml              # 系統路由中樞
+  - ai-core/teacheros-foundation.yaml   # 華德福教育共用根基（所有教師共讀）
+  - ai-core/reference/                  # 教學哲學完整參考文件
+  - .github/CODEOWNERS                  # GitHub 審核規則
+  - .github/                            # 整個 GitHub 設定資料夾
+  - setup/hooks/                        # Hook 腳本
+  - publish/build.sh                    # 輸出腳本
+
+# ── 共用可寫路徑（所有已註冊使用者均可修改）────────────
+#
+# 這些路徑由系統技能（obsidian-sync、wrap-up 等）自動維護。
+# 任何已登記於 acl.yaml 的使用者（admin 或 teacher）都可以修改。
+# 用途：避免自動化技能修改共用檔案時被 pre-commit 攔截。
+#
+# 新增路徑時只需在此清單加一行，不需修改 hook 或個別教師的 allowed_paths。
+
+shared_writable:
+  - Good-notes/                     # 共享筆記區（所有註冊教師可新增與編輯）
+  - wiki/                           # 備課知識庫（lesson-engine 自動產出，所有教師共寫）

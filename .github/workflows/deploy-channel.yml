@@ -1,0 +1,115 @@
+# ━━━
+# 【TeacherOS 系統設定】
+# 名稱：CreatorHub Firebase 自動部署（Sync + Deploy 兩段式）
+# 路徑：.github/workflows/deploy-channel.yml
+# ━━━
+name: Deploy Creator Hub to Firebase
+
+on:
+  schedule:
+    # Every day at 14:00 Taiwan time (UTC+8 = 06:00 UTC)
+    - cron: '3 6 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'creator-hub/scripts/**'
+      - 'creator-hub/data/channels.json'
+      - 'creator-hub/firebase.json'
+  workflow_dispatch:
+    # Manual trigger from GitHub UI or `gh workflow run`
+
+permissions:
+  contents: read
+
+jobs:
+  # ────────────────────────────────────────────────
+  # Sync + Deploy — single job, no cross-job artifact transfer
+  # ────────────────────────────────────────────────
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: creator-hub
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync from Google Drive
+        env:
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_DRIVE_SA_KEY }}
+        run: npm run sync
+
+      - name: Extract thumbnails
+        env:
+          GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_DRIVE_SA_KEY }}
+        run: npm run thumbnails
+
+      - name: Generate site
+        run: npm run generate
+
+      - name: Validate build quality
+        run: npm run validate
+
+      - name: Deploy to Firebase Hosting
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_WALDORFCREATORHUBDATABASE }}
+        run: |
+          echo "$GOOGLE_APPLICATION_CREDENTIALS_JSON" > /tmp/sa-key.json
+          export GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa-key.json
+          npx firebase-tools deploy --only hosting --project waldorfcreatorhubdatabase --non-interactive
+          rm /tmp/sa-key.json
+
+      - name: Verify deployment
+        run: |
+          echo "Waiting 30s for Firebase propagation..."
+          sleep 30
+
+          SITE_URL="https://waldorfcreatorhubdatabase.web.app"
+
+          # 1. Homepage returns 200
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL")
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "::error::Homepage returned $HTTP_CODE (expected 200)"
+            exit 1
+          fi
+          echo "✅ Homepage: HTTP $HTTP_CODE"
+
+          # 2. deploy-manifest.json exists and has correct data
+          MANIFEST=$(curl -s "$SITE_URL/deploy-manifest.json")
+          if [ -z "$MANIFEST" ] || ! echo "$MANIFEST" | python3 -c "import json,sys; json.load(sys.stdin)" 2>/dev/null; then
+            echo "::error::deploy-manifest.json is missing or invalid"
+            exit 1
+          fi
+          echo "✅ deploy-manifest.json: loaded"
+
+          # 3. Check total story count from manifest
+          REPORT=$(echo "$MANIFEST" | python3 -c "
+          import json, sys
+          data = json.load(sys.stdin)
+          total = 0
+          for cid, info in data.get('channels', {}).items():
+              count = info.get('count', 0)
+              print(f'  {cid}: {count} stories')
+              total += count
+          print(f'TOTAL={total}')
+          " 2>/dev/null)
+          echo "$REPORT"
+          TOTAL=$(echo "$REPORT" | grep "^TOTAL=" | cut -d= -f2)
+          if [ -z "$TOTAL" ] || [ "$TOTAL" = "0" ]; then
+            echo "::error::No stories in deployed manifest — sync may have failed"
+            exit 1
+          fi
+          echo "✅ Total stories deployed: $TOTAL"
+
+          echo ""
+          echo "🎉 Deployment verification passed"

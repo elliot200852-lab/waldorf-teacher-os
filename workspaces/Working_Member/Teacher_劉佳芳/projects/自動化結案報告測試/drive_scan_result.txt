@@ -1,0 +1,10 @@
+--- Scanning 尤清1203研習 (10UrIo8pUXtB3PEgmKnxdbCySVuwzz5fc) ---
+Error scanning 尤清1203研習: Command failed: npx -y @googleworkspace/cli drive files list --params "{\"q\":\"'10UrIo8pUXtB3PEgmKnxdbCySVuwzz5fc' in parents and trashed = false\"}"
+Using keyring backend: keyring
+error[auth]: Authentication failed: Failed to get token: Server error: invalid_grant: reauth related error (invalid_rapt); See https://support.google.com/a/answer/9368756 for more info: invalid_grant: reauth related error (invalid_rapt); See https://support.google.com/a/answer/9368756 for more info
+
+--- Scanning 12月研習 (18YnR8vR4Nl4MEbobJu_WzDBH0iU2YVAQ) ---
+Error scanning 12月研習: Command failed: npx -y @googleworkspace/cli drive files list --params "{\"q\":\"'18YnR8vR4Nl4MEbobJu_WzDBH0iU2YVAQ' in parents and trashed = false\"}"
+Using keyring backend: keyring
+error[auth]: Authentication failed: Failed to get token: Server error: invalid_grant: reauth related error (invalid_rapt); See https://support.google.com/a/answer/9368756 for more info: invalid_grant: reauth related error (invalid_rapt); See https://support.google.com/a/answer/9368756 for more info
+

@@ -1,0 +1,30 @@
+# TeacherOS — 換行符正規化
+# 確保跨平台（macOS / Windows / Linux）的一致性
+
+# 自動正規化換行符
+* text=auto
+
+# 強制 LF（跨平台一致）
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+
+# PowerShell 保持 CRLF（Windows 原生）
+*.ps1 text eol=crlf
+
+# 二進位檔案（不做換行符轉換）
+*.docx binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.mp3 binary
+*.mp4 binary
+*.zip binary

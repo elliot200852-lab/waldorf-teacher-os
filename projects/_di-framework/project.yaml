@@ -1,0 +1,283 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 2】
+# 名稱：差異化教學共用框架（所有班級共用，必讀）
+# 路徑：projects/_di-framework/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+project: 差異化教學框架
+code: _di-framework
+type: shared_framework
+status: active_development
+scale: 全校推廣（目前以 class-9c / class-9d 為試點）
+
+mother_document:
+  title: 華德福差異化教學模組：系統邏輯與關聯矩陣
+  path: projects/_di-framework/content/system-logic-map.md
+
+purpose: >
+  跨班級、跨科目的差異化教學方法論系統。
+  所有班級與科目課程設計的共用基礎框架。
+  每次工作開始前必須載入，作為課程設計的規則底層。
+  長期目標：建立可供全校教師使用的 DI 設計系統，
+  並發展為 AI 協作介面，協助教師完成差異化課程設計。
+
+core_principle: >
+  差異化教學不是補救教學，而是預設學生之間存在差異，
+  在課程設計階段主動為不同學習狀態的學生建立多層次的學習路徑。
+
+# ── 兩個獨立軸線 ──────────────────────────────────────────
+
+di_axes:
+
+  axis_learning_strengths:
+    name: 學習優勢
+    description: >
+      學生認知與表達的偏好模式，與能力程度無關，為獨立軸線。
+      每次課程設計與評量應涵蓋至少 2–3 個優勢入口，
+      確保不同偏好的學生都有進入學習的管道。
+    dimensions:
+      - 語言型（閱讀、文字、口語討論）
+      - 圖像型（圖表、視覺化、素描記錄）
+      - 動作型（身體移動、實作、手工）
+      - 藝術型（音樂、繪畫、戲劇、詩歌）
+    granularity: >
+      班級層次。students.yaml 記錄各班主要學習優勢的人數分布，
+      不追蹤個別學生（特殊狀況見 special_cases）。
+
+  axis_ability_motivation:
+    name: 能力 × 動機矩陣
+    description: >
+      每位學生都有一個 DI 類型（A/B/C/D），代表其在特定科目中的能力與動機狀態。
+      「高能力」與「高動機」的具體定義因科目而異，須在各班 students.yaml
+      的科目段落中另行定義。
+    matrix:
+      A: { ability: 高, motivation: 高, strategy: 延伸挑戰、自主探究、引導同儕 }
+      B: { ability: 低, motivation: 高, strategy: 鷹架支持、小步驟成功經驗、建立自信 }
+      C: { ability: 高, motivation: 低, strategy: 提升意義感、連結個人興趣、減少無效重複 }
+      D: { ability: 低, motivation: 低, strategy: 降低焦慮、建立安全感、從具體操作切入 }
+    dynamic_labeling:
+      principle: >
+        學生的 DI 類型是動態標籤，應隨教師觀察而更新；
+        同一學生在不同科目可有不同類型。
+      default_behavior: 教師未手動更新時，系統維持上次記錄的類型不變。
+      update_trigger: 教師主動觀察到學生狀態轉變時手動調整，記錄於 last_updated。
+    definition_location: >
+      各科目「高能力」與「高動機」的定義存放於各班
+      students.yaml → subject_contexts → {科目} → ability_definition /
+      motivation_definition。
+
+# ── 模板強制要求（所有課程設計與評量必須同時滿足）──────────────
+
+template_requirements:
+  mandatory_axes:
+    - axis: 學習優勢（axis_learning_strengths）
+      requirement: >
+        每一份課程設計與每一項評量，必須涵蓋至少 2–3 種學習優勢入口。
+        四種類型（語言型 / 圖像型 / 動作型 / 藝術型）不需要全覆蓋，
+        但不可只有單一形式。這是所有模板的硬性結構要求。
+      applies_to: [課程設計, 評量設計]
+    - axis: 能力 × 動機矩陣（axis_ability_motivation）
+      requirement: >
+        每一份課程設計必須針對 A/B/C/D 四類學生提供差異化任務或支持。
+        至少區分高挑戰（A/C）與鷹架版本（B/D）兩個層次；
+        條件允許時進一步細化為四層。
+      applies_to: [課程設計, 評量設計]
+  checklist_note: >
+    未來的 AI 協作介面將以此 mandatory_axes 為核對清單，
+    確保每份產出模板都符合雙軸要求才能完成。
+
+# ── 產出品質標準（AI 每次產出前必讀）─────────────────────────
+
+output_quality_standard:
+  mandatory: true
+  scope: 所有 Block 產出（策略分析、教學流程、學習單、講義等）
+  full_specification: projects/_di-framework/content/strategy-output-quality-standard.md
+  quality_example: projects/_di-framework/reference/strategy-analysis-quality-example.md
+  ai_instruction: >
+    每次產出差異化教學建議或課程設計前，你必須先讀取上述
+    full_specification 與 quality_example，確認你理解產出的品質基準。
+    如果你的產出無法通過 full_specification 中的品質自檢清單，
+    必須修正後才能呈現給教師。
+
+# ── 學生知識庫操作協議（凡涉及學生資料時必讀）─────────────────
+
+student_knowledge_protocol:
+  mandatory: true
+  scope: 所有涉及學生資料讀寫的操作
+  path: projects/_di-framework/content/student-knowledge-protocol.md
+  ai_instruction: >
+    凡涉及學生能力、程度、喜好等資訊的讀取或寫入，
+    必須先讀取此協議文件，確認角色、路由與操作規則。
+    未確認教師角色前，不得寫入任何學生資料。
+
+  core_rules_summary:
+    rule_1_human_first: >
+      先描述學生的內在狀態與心理需求，再展開教學策略。
+      每類學生（A/B/C/D）的段落必須以心理素描開頭。
+    rule_2_no_abstract_labels: >
+      禁止使用無法操作的抽象標籤。
+      「鷹架支持」「延伸挑戰」「連結興趣」「提升意義感」
+      這些詞彙不可作為策略本身出現——必須展開為
+      課堂中實際會發生的具體畫面與操作步驟。
+    rule_3_classroom_scene: >
+      每一條策略必須讓教師讀完後，腦海中能浮現課堂場景。
+      包含：具體的材料、時機、動作、話語、任務內容。
+    rule_4_warmth: >
+      語氣必須像教師之間的專業對話，帶有對學生的理解與溫度。
+      不是 AI 式分類報告。華德福教育對人的理解應自然融入，
+      但不刻意堆砌術語。
+    rule_5_actionable: >
+      老師讀完後可以直接挑選一條策略，改造後明天帶進教室。
+      這是品質的最終檢驗標準。
+
+  self_check_before_output:
+    - 每類學生是否以心理素描開頭？
+    - 每條策略是否描述了課堂中實際會發生的畫面？
+    - 是否消除了所有抽象標籤？
+    - 學習優勢建議是否跟本單元的具體內容結合？
+    - 整體語氣是否像教師之間的專業對話？
+    - 老師讀完後能否直接拿走用？
+
+# ── 設計層次 ─────────────────────────────────────────────
+
+design_layers:
+  content: 同主題，不同深度的素材
+  process: 同目標，不同學習路徑與支持程度
+  product: 同成果期待，允許不同的表達與輸出形式
+  environment: 調整課堂節奏、座位安排與師生互動方式
+
+design_constraints:
+  - 一人執行可行性：單一教師在實際課堂中可操作，不依賴額外人力
+  - 差異化是設計預設，不是補救手段
+  - 避免標準化：策略保留彈性，不同班級與科目允許各自發展
+
+# ── 科目框架（在此樹狀下發展）─────────────────────────────
+
+subject_frameworks:
+  template_base_requirement: >
+    所有科目模板在建立時，必須同時包含：
+    （1）學習優勢多元入口設計欄位；
+    （2）A/B/C/D 差異化任務層次設計欄位。
+    見 template_requirements.mandatory_axes。
+  english:
+    status: 已建立
+    master_template: projects/_di-framework/content/english-di-template.md
+    applies_to: [class-9c, class-9d]
+    last_updated: 2026-02-27
+    block_architecture:
+      principle: >
+        英文課模板採區塊化設計（Block 1、Block 2…）。
+        每個區塊可獨立觸發，不強制按順序跑完全部，以保留教師的靈活操作空間。
+        區塊間有建議的前後參照關係，後置區塊應引用前置區塊的產出。
+        所有區塊共享同一進度錨點（class-*/working/english-session.yaml）。
+      blocks:
+        block_1:
+          name: 學季整體規劃
+          status: 已建立
+          path: projects/_di-framework/content/english-di-block1.md
+          requires: null
+          output: class-*/content/english-syllabus.md
+        block_2:
+          name: 班級實際教學
+          status: 已建立
+          path: projects/_di-framework/content/english-di-block2.md
+          requires: block_1（建議，非強制）
+          sub_blocks:
+            2-A:
+              name: 單元教學流程設計
+              scope: 教學單元規劃 + 逐節 45 分鐘課堂流程
+            2-B:
+              name: 差異化任務與驗收回饋機制設計
+              scope: 課中差異化延伸 + 家庭任務 + 減負驗收機制
+          output:
+            - class-*/content/english-unit-{n}.md
+            - class-*/content/english-task-{n}.md
+      session_anchor: class-*/working/english-session.yaml
+  main_lesson:
+    status: 待建立
+    path: projects/_di-framework/content/main-lesson-di-template.md
+    applies_to: [class-9c]
+    note: 主課程 DI 設計模板，目前適用 9C，未來可擴展至其他班級
+
+# ── 適用範圍 ─────────────────────────────────────────────
+
+applies_to:
+  current_classes: [class-9c, class-9d]
+  current_subjects: [英文, 主課程]
+  expandable: true
+  expansion_note: 其他科目與班級（包括全校教師）可依需求加入
+
+# ── 工作狀態 ─────────────────────────────────────────────
+
+current_focus: 建立英文課與主課程的 DI 設計模板
+next_steps:
+  - 建立主課程 DI 設計模板（content/main-lesson-di-template.md）
+  - 填入各班 students.yaml（依新格式：科目定義 + 人數分布 + 學習優勢 + 特殊狀況）
+  - 發展差異化評量框架
+
+content_output: projects/_di-framework/content/
+
+# ── 輸出格式協議 ─────────────────────────────────────────────
+
+output_protocol:
+  draft_format: Markdown（.md）
+  confirmed_format: Google Docs
+  conversion_tool: Pandoc（.md → .docx）
+  publish_script: publish/build.sh
+  environment_config: setup/environment.env  # 個人設定，不上傳 GitHub
+  environment_template: setup/environment.env.example  # 範本，已提交 GitHub
+  google_drive:
+    # 帳號與路徑由 setup/environment.env 動態讀取，不寫死於此
+    # 腳本自動組合路徑：~/Library/CloudStorage/GoogleDrive-{EMAIL}/我的雲端硬碟/{FOLDER}/projects/
+    structure:
+      class-9c_english: class-9c/english/
+      class-9d_main_lesson: class-9d/main-lesson/
+  workflow: >
+    Step 1：AI 產出 .md 草稿，存入 Repo 對應 content/ 資料夾（版本命名）。
+    Step 2：AI 向教師確認版本內容。
+    Step 3：AI 主動詢問：「要輸出到 Google Drive 嗎？」
+    Step 4：教師回答「要」後，AI 執行 publish/build.sh，不需教師輸入任何指令。
+    Step 5：腳本自動 Pandoc 轉換為 .docx，上傳至 Google Drive。
+    上傳方式：GWS CLI 優先（直接 API 上傳）；若未安裝或失敗，
+    無縫切換至 Google Drive Desktop 本機同步。使用者無需知道背後使用哪種方式。
+  ai_publish_protocol:
+    trigger: 教師確認版本內容後
+    ai_action: 主動詢問「這份文件要輸出到 Google Drive 嗎？」
+    on_yes: 執行 ./publish/build.sh <已存入的md路徑>（只傳路徑，班級科目自動解析）
+    on_no: 跳過，僅保留 .md 版本在 Repo
+    教師不需輸入: 任何指令或參數
+  publish_command_example: >
+    ./publish/build.sh projects/class-9c/content/english/english-syllabus-v1-20260227.md
+  scope: 適用所有 Block 產出（Block 1 教學大綱、Block 2 單元教學、學習單、講義等）
+  note: >
+    腳本會從檔案路徑自動解析班級（class-9c/8a/7a）與科目（english/main-lesson），
+    教師無需手動輸入參數。.docx 放入 Google Drive 本機資料夾後自動同步，不需手動上傳。
+
+# ── Reference 資料夾機制 ──────────────────────────────────────
+
+reference_protocol:
+  trigger_phrase: 請把這一份文件列為重要參考文件
+  purpose: >
+    使用者提供文件時，AI 將其存入對應的 reference/ 資料夾，
+    集中保存備課、方法論與外部素材，以便未來出版與跨班查閱時取用。
+  folder_structure:
+    di_framework_level: projects/_di-framework/reference/
+    class_level: projects/class-{x}/reference/
+    subject_level: projects/class-{x}/{subject}/reference/
+  placement_rule: >
+    文件與 DI 框架方法論相關 → 存入 _di-framework/reference/。
+    文件與某班整體相關 → 存入班級層 reference/。
+    文件與某班某科目相關 → 存入科目層 reference/。
+    若範疇不明確，AI 應主動詢問教師後再存入。
+  naming_convention: 原始檔名保留，不重新命名，除非教師另行指示。
+  current_reference_paths:
+    - projects/_di-framework/reference/
+    - projects/class-9c/reference/
+    - projects/class-9c/english/reference/
+    - projects/class-9c/main-lesson/reference/
+    - projects/class-9d/reference/
+    - projects/class-9d/main-lesson/reference/
+
+  expansion_note: >
+    未來若新增班級或科目資料夾，依相同規則在其下建立 reference/ 子資料夾，
+    並將路徑補入 current_reference_paths。
+

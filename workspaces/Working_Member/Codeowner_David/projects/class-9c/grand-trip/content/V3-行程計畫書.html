@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="summer" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>九年級 C 班 服務學習之旅 計畫書 V3</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "var(--primary)",
+        "secondary": "var(--secondary)",
+        "accent": "var(--accent)",
+        "on-primary": "#ffffff",
+        "on-surface": "var(--on-surface)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        "surface": "var(--bg-wash-1)",
+        "surface-container": "var(--bg-wash-2)",
+        "surface-container-low": "var(--bg-wash-3)",
+        "outline-variant": "var(--outline-variant)",
+      },
+      fontFamily: {
+        "headline": ["Playfair Display", "Noto Serif TC", "Georgia", "serif"],
+        "body": ["Plus Jakarta Sans", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "sans-serif"],
+        "label": ["Plus Jakarta Sans", "Noto Sans TC", "sans-serif"],
+      },
+    },
+  },
+}
+</script>
+<style>
+html.summer {
+  --primary: #4A7C6F;
+  --secondary: #C47D3B;
+  --accent: #E06B40;
+  --bg-wash-1: #FFF8F0;
+  --bg-wash-2: #FFE8C8;
+  --bg-wash-3: #F0E0D0;
+  --on-surface: #1C2A25;
+  --on-surface-variant: #3D4A44;
+  --outline-variant: #C4D4CC;
+  --gradient-body: radial-gradient(circle at top left, #FFF8F0 0%, #FFE8C8 40%, #F0E0D0 100%);
+  --gradient-header: linear-gradient(135deg, #4A7C6F 0%, #C47D3B 100%);
+}
+body { background: var(--gradient-body); min-height: 100vh; }
+.watercolor-wash-header {
+  background: var(--gradient-header);
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  mask-size: 100% 100%; -webkit-mask-size: 100% 100%;
+}
+.hand-drawn-border {
+  border: 2px solid var(--primary);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.botanical-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.06; z-index: 50; background-repeat: no-repeat; background-position: top right; background-size: 40%; }
+.material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; }
+.drop-cap::first-letter { font-size: 3.5rem; font-family: "Playfair Display", "Noto Serif TC", serif; float: left; margin-right: 0.75rem; line-height: 1; color: var(--primary); }
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; }
+th { background: var(--bg-wash-2); color: var(--primary); font-weight: 600; text-align: left; padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--outline-variant); font-size: 15px; }
+td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--outline-variant); font-size: 15px; line-height: 1.5; vertical-align: top; }
+tr:hover td { background: var(--bg-wash-2); transition: background 0.2s; }
+.tag { display: inline-block; background: var(--bg-wash-2); color: var(--accent); font-size: 13px; padding: 2px 10px; border-radius: 12px; font-weight: 600; }
+.tag-tbd { background: #fde8e8; color: #b91c1c; }
+.section-num { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--primary); color: white; font-weight: 700; font-size: 14px; margin-right: 0.5rem; flex-shrink: 0; }
+@media print {
+  body { background: white !important; color: #1C1C18 !important; min-height: auto !important; }
+  .botanical-overlay, header { display: none !important; }
+  .watercolor-wash-header { background: var(--primary) !important; mask-image: none !important; -webkit-mask-image: none !important; border-radius: 0 !important; }
+  main { max-width: 100% !important; padding: 0 2rem !important; overflow: visible !important; }
+  .hand-drawn-border { border-radius: 4px !important; }
+  a { text-decoration: none !important; color: inherit !important; }
+  .hand-drawn-border, blockquote { break-inside: avoid; }
+}
+</style>
+</head>
+<body class="font-body text-[var(--on-surface)] selection:bg-[var(--secondary)]/20">
+<div class="botanical-overlay"></div>
+
+<header id="site-header" class="sticky top-0 z-40 bg-[var(--bg-wash-1)]/80 backdrop-blur-xl print:hidden transition-opacity duration-300">
+  <div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-xl mx-auto">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-[var(--primary)]" style="font-size:2rem;">sunny</span>
+      <h1 class="font-headline text-3xl tracking-wide leading-relaxed text-[var(--primary)]">慈心華德福高中</h1>
+    </div>
+    <span class="tag">V3 草稿 2026-04-01</span>
+  </div>
+  <div class="bg-gradient-to-b from-[var(--outline-variant)] to-transparent h-4 opacity-20"></div>
+</header>
+<script>
+(function(){var h=document.getElementById('site-header');if(!h)return;var t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){var d=window.scrollY>10;h.style.opacity=d?'0':'1';h.style.pointerEvents=d?'none':'auto';h.style.visibility=d?'hidden':'visible';t=false;});t=true;}});})();
+</script>
+
+<main class="max-w-[900px] mx-auto px-8 py-6 relative overflow-hidden">
+<div class="absolute -top-10 -right-10 opacity-[0.07] rotate-12">
+  <span class="material-symbols-outlined text-[12rem] text-[var(--primary)]">sunny</span>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="mb-6 text-center">
+  <div class="watercolor-wash-header p-5 mb-3 inline-block w-full">
+    <h2 class="font-headline text-4xl md:text-5xl text-on-primary leading-tight font-bold italic mb-2">服務學習之旅</h2>
+    <p class="text-on-primary/90 font-label tracking-[0.2em] uppercase text-sm">九年級 C 班 五天四夜 計畫書</p>
+  </div>
+  <div class="text-left mt-3 space-y-1">
+    <p class="text-[18px] leading-[1.6]"><strong>日期</strong>：2026 年 6 月 8 日（一）～ 6 月 12 日（五）</p>
+    <p class="text-[18px] leading-[1.6]"><strong>人數</strong>：學生 22 人 + 教師 2 人，共 24 人</p>
+    <p class="text-[18px] leading-[1.6]"><strong>路線</strong>：宜蘭 → 台中 → 台南 → 高雄 → 宜蘭</p>
+    <p class="text-[18px] leading-[1.6]"><strong>交通</strong>：客運為主、台鐵為輔，全程大眾運輸</p>
+  </div>
+</section>
+
+<div class="flex justify-center gap-3 py-3 opacity-40">
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+</div>
+
+<!-- ===== 一、教育目的 ===== -->
+<section class="mb-6">
+  <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">一、教育目的與摘要</h3>
+  <p class="drop-cap text-[18px] leading-[1.6] mb-4">這不是畢業旅行。九年級的「大旅行」是華德福教育的核心體驗——在真實的土地上移動、在陌生的城市裡生活五天，這件事本身就是課程。學生不是觀光客，而是帶著問題去旅行的探索者。</p>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+    <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-4 py-3 text-center">
+      <span class="material-symbols-outlined text-[var(--accent)] text-2xl mb-1">volunteer_activism</span>
+      <p class="text-[15px] font-semibold text-[var(--primary)]">服務</p>
+      <p class="text-[14px] text-[var(--on-surface-variant)]">志願服務與關懷社會</p>
+    </div>
+    <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-4 py-3 text-center">
+      <span class="material-symbols-outlined text-[var(--accent)] text-2xl mb-1">school</span>
+      <p class="text-[15px] font-semibold text-[var(--primary)]">學習</p>
+      <p class="text-[14px] text-[var(--on-surface-variant)]">歷史走讀、博物館、生態</p>
+    </div>
+    <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-4 py-3 text-center">
+      <span class="material-symbols-outlined text-[var(--accent)] text-2xl mb-1">directions_walk</span>
+      <p class="text-[15px] font-semibold text-[var(--primary)]">自主</p>
+      <p class="text-[14px] text-[var(--on-surface-variant)]">分組帶領、覓食規劃</p>
+    </div>
+    <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-4 py-3 text-center">
+      <span class="material-symbols-outlined text-[var(--accent)] text-2xl mb-1">map</span>
+      <p class="text-[15px] font-semibold text-[var(--primary)]">走讀</p>
+      <p class="text-[14px] text-[var(--on-surface-variant)]">雙腳踏過，讀出歷史</p>
+    </div>
+  </div>
+
+  <h4 class="font-headline text-[18px] mb-2 text-[var(--primary)]">各城市學習主軸</h4>
+  <table>
+    <thead><tr><th>城市</th><th>主題</th><th>核心問題</th></tr></thead>
+    <tbody>
+      <tr><td><strong>台中</strong></td><td>殖民現代化與空間政治</td><td>誰建造了這個城市？為了誰建造？</td></tr>
+      <tr><td><strong>台南</strong></td><td>生態、歷史與記憶的府城</td><td>一座城市如何記得自己？</td></tr>
+      <tr><td><strong>高雄</strong></td><td>藝術、科技與海洋文化</td><td>我可以為我住的地方做什麼？</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== 五日總覽 ===== -->
+<div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-5 py-3 my-4">
+  <h4 class="font-headline text-[18px] text-[var(--accent)] mb-2 italic">五日總覽</h4>
+  <table>
+    <thead><tr><th>日期</th><th>城市</th><th>主題</th><th>住宿</th></tr></thead>
+    <tbody>
+      <tr><td>6/8（一）</td><td>宜蘭 → <strong>台中</strong></td><td>殖民舊城走讀</td><td>Mini Hotels 台中火車站館</td></tr>
+      <tr><td>6/9（二）</td><td><strong>台中</strong> → <strong>台南</strong></td><td>服務學習 + 府城散步</td><td><span class="tag tag-tbd">待確認</span></td></tr>
+      <tr><td>6/10（三）</td><td><strong>台南</strong></td><td>四草生態 + 淨灘服務</td><td>同上（連住）</td></tr>
+      <tr><td>6/11（四）</td><td><strong>台南</strong> → <strong>高雄</strong></td><td>奇美博物館 + 港都藝文</td><td><span class="tag tag-tbd">待確認</span></td></tr>
+      <tr><td>6/12（五）</td><td><strong>高雄</strong> → 宜蘭</td><td>旗津海洋文化 + 歸程</td><td>—</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="flex justify-center gap-3 py-3 opacity-40">
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+</div>
+
+<!-- ===== 二、每日行程 ===== -->
+<section class="mb-6">
+  <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">二、每日行程表</h3>
+
+  <!-- Day 1 -->
+  <h4 class="font-headline text-[18px] mb-2 text-[var(--primary)] flex items-center"><span class="section-num">1</span>Day 1｜6/8（一）宜蘭 → 台中：殖民舊城走讀</h4>
+  <table>
+    <thead><tr><th style="width:100px;">時間</th><th>內容</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td>06:05</td><td>宜蘭轉運站集合</td><td></td></tr>
+      <tr><td>06:35–07:45</td><td>客運：宜蘭 → 台北</td><td>葛瑪蘭 06:35 班，約 70 分鐘</td></tr>
+      <tr><td>07:45–09:00</td><td>台北轉乘（購票 + 早餐）</td><td>預留 75 分鐘</td></tr>
+      <tr><td>09:00–11:40</td><td>客運：台北 → 台中</td><td>統聯 09:00 班，約 2h40m</td></tr>
+      <tr><td>11:40–12:00</td><td>抵台中，步行至 Mini Hotels 放行李</td><td>後站步行約 5 分鐘</td></tr>
+      <tr><td>12:00–12:45</td><td><strong>午餐</strong>：鐵路大道周邊</td><td>分組自由覓食</td></tr>
+      <tr><td>13:00</td><td><strong>站點 1：中山綠橋・綠川</strong></td><td>命名政治、殖民現代化</td></tr>
+      <tr><td>13:20</td><td><strong>站點 2：新盛綠川水岸廊道</strong></td><td>建築時間疊層</td></tr>
+      <tr><td>13:45</td><td><strong>站點 3：台中市役所</strong></td><td>殖民建築作為權力語言</td></tr>
+      <tr><td>14:05</td><td><strong>站點 4：中央書局（外觀）</strong></td><td>文化抵抗；週一公休</td></tr>
+      <tr><td>14:25</td><td><strong>站點 5：台中州廳建築群</strong></td><td>空間尺度政治</td></tr>
+      <tr><td>14:55</td><td><strong>站點 6：台中一中校門口</strong></td><td>全日總結討論</td></tr>
+      <tr><td>15:20–17:00</td><td><strong>一中街自由時間</strong>（含晚餐自理）</td><td>三人以上同行</td></tr>
+      <tr><td>17:00</td><td>一中校門口集合，步行回車站</td><td>約 25 分鐘</td></tr>
+      <tr><td>17:30</td><td>回 Mini Hotels</td><td></td></tr>
+      <tr><td>晚上</td><td>反思紀錄 + 走讀心得寫作</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <!-- Day 2 -->
+  <h4 class="font-headline text-[18px] mb-2 mt-6 text-[var(--primary)] flex items-center"><span class="section-num">2</span>Day 2｜6/9（二）台中 → 台南：服務學習 + 府城初探</h4>
+  <table>
+    <thead><tr><th style="width:100px;">時間</th><th>內容</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td>07:00–08:00</td><td>早餐（Mini Hotels 自助式）</td><td></td></tr>
+      <tr><td>08:00–08:30</td><td>退房，步行至台中車站</td><td></td></tr>
+      <tr><td>09:00–12:00</td><td><strong>服務學習：台中場</strong></td><td><span class="tag tag-tbd">待確認機構</span></td></tr>
+      <tr><td>12:00–12:45</td><td>午餐、取行李搭車</td><td></td></tr>
+      <tr><td>12:45–15:00</td><td>客運：台中 → 台南</td><td>統聯/和欣，約 2h15m</td></tr>
+      <tr><td>15:00–15:30</td><td>抵台南，前往住宿放行李</td><td></td></tr>
+      <tr><td>16:00–18:00</td><td><strong>府城舊城區散步</strong></td><td>孔廟 → 府中街 → 台灣文學館</td></tr>
+      <tr><td>18:00–20:00</td><td><strong>府城小吃探索</strong>（自理）</td><td>國華街 → 正興街 → 神農街</td></tr>
+      <tr><td>20:30</td><td>住宿集合、反思紀錄</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <!-- Day 3 -->
+  <h4 class="font-headline text-[18px] mb-2 mt-6 text-[var(--primary)] flex items-center"><span class="section-num">3</span>Day 3｜6/10（三）台南深度日：四草生態 + 淨灘</h4>
+  <table>
+    <thead><tr><th style="width:100px;">時間</th><th>內容</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td>07:00–08:00</td><td>早餐（不退房）</td><td></td></tr>
+      <tr><td>08:00–09:00</td><td>公車前往四草</td><td>約 40–60 分鐘</td></tr>
+      <tr><td>09:00–12:00</td><td><strong>四草綠色隧道</strong>（竹筏生態導覽）</td><td>須預約 24 人班次</td></tr>
+      <tr><td>12:00–13:00</td><td>午餐：安平老街</td><td></td></tr>
+      <tr><td>13:00–13:20</td><td><strong>公車：四草 → 安平</strong></td><td>不步行（V1 修正）</td></tr>
+      <tr><td>13:20–15:00</td><td><strong>安平古堡 + 安平樹屋</strong></td><td></td></tr>
+      <tr><td>15:00–16:30</td><td>安平老街漫步</td><td></td></tr>
+      <tr><td>19:00–22:00</td><td><strong>大東夜市</strong>（週三營業）</td><td>自由活動</td></tr>
+      <tr><td>22:30</td><td>住宿集合、反思紀錄</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <!-- Day 4 -->
+  <h4 class="font-headline text-[18px] mb-2 mt-6 text-[var(--primary)] flex items-center"><span class="section-num">4</span>Day 4｜6/11（四）台南 → 高雄：奇美 + 港都藝文</h4>
+  <table>
+    <thead><tr><th style="width:100px;">時間</th><th>內容</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td>07:00–08:00</td><td>早餐、退房</td><td></td></tr>
+      <tr><td>09:00–11:30</td><td><strong>奇美博物館</strong></td><td>學生票 150 元；需線上預約</td></tr>
+      <tr><td>11:30–12:00</td><td>公車至台鐵保安站</td><td></td></tr>
+      <tr><td>12:00–12:35</td><td><strong>台鐵：台南 → 高雄</strong></td><td>自強號 33 分</td></tr>
+      <tr><td>12:35–13:30</td><td>住宿放行李、午餐</td><td></td></tr>
+      <tr><td>14:00–16:00</td><td><strong>科工館</strong></td><td>學生團體票 50 元</td></tr>
+      <tr><td>16:30–18:00</td><td><strong>駁二藝術特區</strong></td><td>戶外免費；展覽 60–100 元</td></tr>
+      <tr><td>18:00–20:00</td><td><strong>鹽埕小吃探索</strong>（自理）</td><td></td></tr>
+      <tr><td>20:30</td><td>住宿集合、反思紀錄</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <!-- Day 5 -->
+  <h4 class="font-headline text-[18px] mb-2 mt-6 text-[var(--primary)] flex items-center"><span class="section-num">5</span>Day 5｜6/12（五）高雄 → 宜蘭：旗津 + 歸程</h4>
+  <table>
+    <thead><tr><th style="width:100px;">時間</th><th>內容</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td>07:00–08:00</td><td>早餐、退房</td><td>行李寄高雄站行李房</td></tr>
+      <tr><td>09:00–11:00</td><td><strong>旗津半日遊</strong>（渡輪 → 老街 → 砲台 → 燈塔）</td><td></td></tr>
+      <tr><td>11:15–12:00</td><td>午餐：鼓山/西子灣周邊</td><td></td></tr>
+      <tr><td>13:00–17:40</td><td><strong>客運：高雄 → 台北</strong></td><td>國光 13:00 班，約 4h40m</td></tr>
+      <tr><td>18:30–19:40</td><td><strong>客運：台北 → 宜蘭</strong></td><td>葛瑪蘭 18:30 班</td></tr>
+      <tr><td>~19:40</td><td><strong>宜蘭轉運站解散</strong></td><td>家長接送</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="flex justify-center gap-3 py-3 opacity-40">
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+</div>
+
+<!-- ===== 三、交通住宿用餐 ===== -->
+<section class="mb-6">
+  <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">三、交通・住宿・用餐</h3>
+
+  <h4 class="font-headline text-[18px] mb-2 text-[var(--primary)]">城際交通總覽</h4>
+  <table>
+    <thead><tr><th>路段</th><th>方式</th><th>推薦班次</th><th>票價/人</th><th>車程</th><th>訂票電話</th></tr></thead>
+    <tbody>
+      <tr><td>宜蘭 → 台北</td><td>葛瑪蘭客運</td><td>06:35</td><td>125 元</td><td>70 分</td><td>(02) 2955-1500</td></tr>
+      <tr><td>台北 → 台中</td><td>統聯客運</td><td>09:00</td><td>290 元</td><td>2h40m</td><td>(02) 2723-5678</td></tr>
+      <tr><td>台中 → 台南</td><td>統聯/和欣</td><td>12:45</td><td>235 元</td><td>2h15m</td><td>(04) 2202-3666</td></tr>
+      <tr><td>台南 → 高雄</td><td>台鐵自強號</td><td>11:32</td><td>145 元</td><td>33 分</td><td>(02) 2381-5100</td></tr>
+      <tr><td>高雄 → 台北</td><td>國光客運</td><td>13:00</td><td>470 元</td><td>4h40m</td><td>(02) 2361-3456</td></tr>
+      <tr><td>台北 → 宜蘭</td><td>葛瑪蘭客運</td><td>18:30</td><td>125 元</td><td>70 分</td><td>(02) 2955-1500</td></tr>
+      <tr style="background: var(--bg-wash-2);"><td colspan="3"><strong>城際交通合計</strong></td><td colspan="3"><strong>約 1,390 元/人</strong>（團體優惠後可省 10–20%）</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 住宿 -->
+  <h4 class="font-headline text-[18px] mb-2 mt-5 text-[var(--primary)]">住宿</h4>
+
+  <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-5 py-3 my-4">
+    <h4 class="font-headline text-[18px] text-[var(--accent)] mb-1.5 italic">Day 1｜台中（已確認）</h4>
+    <div class="space-y-1 text-[18px] leading-[1.5]">
+      <p><strong>Mini Hotels 台中火車站館</strong></p>
+      <p>地址：台中市東區大勇街 69 號｜電話：(04) 2225-9966</p>
+      <p>距台中車站後站步行約 5 分鐘 ｜ 提供自助式早餐 ｜ 免費 WiFi</p>
+    </div>
+    <table class="mt-3">
+      <thead><tr><th>房型</th><th>數量</th><th>每房價格</th><th>小計</th></tr></thead>
+      <tbody>
+        <tr><td>四人房</td><td>4 間</td><td>1,900 元</td><td>7,600 元</td></tr>
+        <tr><td>三人房</td><td>2 間</td><td>1,600 元</td><td>3,200 元</td></tr>
+        <tr><td>單人房</td><td>2 間</td><td>1,000 元</td><td>2,000 元</td></tr>
+        <tr style="background: var(--bg-wash-2);"><td><strong>合計</strong></td><td><strong>8 間（24 人）</strong></td><td></td><td><strong>12,800 元</strong></td></tr>
+      </tbody>
+    </table>
+    <p class="text-[15px] text-[var(--on-surface-variant)] mt-2">每人住宿費分攤：12,800 / 22 = 約 582 元/人（教師費用由學生均攤）</p>
+  </div>
+
+  <div class="hand-drawn-border bg-[var(--bg-wash-3)]/30 px-5 py-3 my-4">
+    <h4 class="font-headline text-[18px] text-[var(--on-surface-variant)] mb-1.5 italic">Day 2–3｜台南（連住兩晚）<span class="tag tag-tbd ml-2">待確認</span></h4>
+    <p class="text-[17px] leading-[1.55]">首選：救國團台南學苑，(06) 275-0512，台南市東區大學路 1 號</p>
+  </div>
+
+  <div class="hand-drawn-border bg-[var(--bg-wash-3)]/30 px-5 py-3 my-4">
+    <h4 class="font-headline text-[18px] text-[var(--on-surface-variant)] mb-1.5 italic">Day 4｜高雄 <span class="tag tag-tbd ml-2">待確認</span></h4>
+    <p class="text-[17px] leading-[1.55]">候選：背包 41 (07) 3850-041 ／紙飛機 (07) 5514-188 ／Single Inn (07) 2261-188</p>
+  </div>
+
+  <!-- Day 1 飲食 -->
+  <h4 class="font-headline text-[18px] mb-2 mt-5 text-[var(--primary)]">Day 1 飲食推薦</h4>
+
+  <p class="text-[17px] leading-[1.55] mb-2"><strong>午餐</strong>｜鐵路大道周邊（12:00–12:45，分組自由覓食）</p>
+  <table>
+    <thead><tr><th></th><th>名稱</th><th>特色</th><th>預算</th></tr></thead>
+    <tbody>
+      <tr><td>首推</td><td><strong>台鐵鐵路便當</strong></td><td>國民便當，到台中的儀式感</td><td>80–100 元</td></tr>
+      <tr><td>傳統</td><td><strong>第五市場</strong></td><td>老市場，麵線、割包、豬腳飯</td><td>60–100 元</td></tr>
+      <tr><td>甜點</td><td><strong>宮原眼科</strong></td><td>台中名店，冰淇淋</td><td>視購買</td></tr>
+    </tbody>
+  </table>
+
+  <p class="text-[17px] leading-[1.55] mb-2 mt-4"><strong>晚餐</strong>｜一中街商圈（15:20–17:00 自由時間內自理，預算 150–200 元）</p>
+  <table>
+    <thead><tr><th></th><th>名稱</th><th>特色</th></tr></thead>
+    <tbody>
+      <tr><td>必吃</td><td><strong>繼光香香雞</strong></td><td>台中炸雞排發源地，一中街創始店</td></tr>
+      <tr><td>台中特色</td><td><strong>大麵羹</strong></td><td>庶民小吃，鹼麵 + 勾芡湯底</td></tr>
+      <tr><td>夏日</td><td><strong>泡泡冰</strong></td><td>台中特色剉冰</td></tr>
+      <tr><td>飲料</td><td><strong>珍珠奶茶</strong></td><td>一中街飲料店密集</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 預算 -->
+  <h4 class="font-headline text-[18px] mb-2 mt-5 text-[var(--primary)]">預算估算（每位學生）</h4>
+  <table>
+    <thead><tr><th>項目</th><th>估算</th><th>備註</th></tr></thead>
+    <tbody>
+      <tr><td>城際交通（含均攤）</td><td>~1,520 元</td><td>客運 + 台鐵</td></tr>
+      <tr><td>市區交通</td><td>~260 元</td><td>公車、捷運、渡輪</td></tr>
+      <tr><td>住宿 4 晚（含均攤）</td><td>2,000–3,200 元</td><td>每晚 500–800 元</td></tr>
+      <tr><td>門票（含均攤）</td><td>~500–600 元</td><td></td></tr>
+      <tr><td>餐費 5 天（自理）</td><td>1,500–2,500 元</td><td>每日 300–500 元</td></tr>
+      <tr style="background: var(--bg-wash-2);"><td><strong>每生總計</strong></td><td><strong>約 5,800–8,200 元</strong></td><td></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="flex justify-center gap-3 py-3 opacity-40">
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+</div>
+
+<!-- ===== 四、安全檢核 ===== -->
+<section class="mb-6">
+  <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">四、安全檢核</h3>
+
+  <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-5 py-3 my-4">
+    <h4 class="font-headline text-[18px] text-[var(--accent)] mb-2 italic">安全守則</h4>
+    <ol class="space-y-2 text-[17px] leading-[1.55] list-decimal list-inside">
+      <li><strong>分組行動</strong>：全班分為兩大組行動，不單獨離隊；自由時間至少三人同行</li>
+      <li><strong>集合紀律</strong>：每段出發前點名，遲到等候不超過 5 分鐘</li>
+      <li><strong>通訊</strong>：僅兩位隨行教師攜帶手機，負責導航與聯絡；學生不攜帶手機</li>
+      <li><strong>天氣應對</strong>：六月南台灣 28–35°C，隨時補水，備雨具與防曬</li>
+      <li><strong>淨灘安全</strong>：穿舊鞋或涼鞋，備手套，不下水</li>
+      <li><strong>交通安全</strong>：公車上下車教師清點人數；過馬路全班統一行動</li>
+      <li><strong>住宿規範</strong>：
+        <ul class="ml-6 mt-1 space-y-1 list-disc">
+          <li>每晚 <strong>21:00 宵禁</strong>，不得進出住宿點</li>
+          <li><strong>22:30 全數寢室熄燈</strong>休息</li>
+          <li>違反規則且屢勸不聽者，通知家長帶回</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+
+  <h4 class="font-headline text-[18px] mb-2 text-[var(--primary)]">緊急聯絡</h4>
+  <table>
+    <thead><tr><th>對象</th><th>姓名</th><th>電話</th></tr></thead>
+    <tbody>
+      <tr><td>隨行教師 1</td><td>林信宏（David）</td><td><span class="tag tag-tbd">待填入</span></td></tr>
+      <tr><td>隨行教師 2</td><td><span class="tag tag-tbd">待確認</span></td><td><span class="tag tag-tbd">待填入</span></td></tr>
+      <tr><td>學校</td><td>慈心華德福學校</td><td><span class="tag tag-tbd">待填入</span></td></tr>
+      <tr><td>警察</td><td>—</td><td>110</td></tr>
+      <tr><td>消防/救護</td><td>—</td><td>119</td></tr>
+    </tbody>
+  </table>
+
+  <h4 class="font-headline text-[18px] mb-2 mt-5 text-[var(--primary)]">風險評估摘要</h4>
+  <table>
+    <thead><tr><th>風險項目</th><th>等級</th><th>應對</th></tr></thead>
+    <tbody>
+      <tr><td>Day 3 四草→安平步行</td><td>已修正 → 公車</td><td>V1 評估修正</td></tr>
+      <tr><td>Day 4 奇美→保安站步行</td><td>已修正 → 公車</td><td>V1 評估修正</td></tr>
+      <tr><td>台北中轉銜接</td><td>中</td><td>預留 50–75 分鐘</td></tr>
+      <tr><td>6 月高溫</td><td>中</td><td>隨身飲水、防曬、20% 彈性時間</td></tr>
+      <tr><td>服務機構臨時取消</td><td>中</td><td>每城市備 2 個備選</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="flex justify-center gap-3 py-3 opacity-40">
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+</div>
+
+<!-- ===== 五、行前準備（攜帶用品）===== -->
+<section class="mb-6">
+  <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">五、攜帶用品</h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+    <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-4 py-3">
+      <h4 class="font-headline text-[16px] text-[var(--accent)] mb-2 flex items-center gap-2">
+        <span class="material-symbols-outlined text-lg">luggage</span> 行李
+      </h4>
+      <ul class="space-y-1 text-[17px] leading-[1.55]">
+        <li>簡單的後背包（不帶行李箱）</li>
+        <li>換洗衣物（可集合洗衣減輕負擔）</li>
+      </ul>
+    </div>
+    <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-4 py-3">
+      <h4 class="font-headline text-[16px] text-[var(--accent)] mb-2 flex items-center gap-2">
+        <span class="material-symbols-outlined text-lg">checklist</span> 必備物品
+      </h4>
+      <ul class="space-y-1 text-[17px] leading-[1.55]">
+        <li>水壺</li>
+        <li>健保卡</li>
+        <li>零用錢（不超過 3,000 元）</li>
+      </ul>
+    </div>
+    <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-4 py-3">
+      <h4 class="font-headline text-[16px] text-[var(--accent)] mb-2 flex items-center gap-2">
+        <span class="material-symbols-outlined text-lg">checkroom</span> 衣物與配件
+      </h4>
+      <ul class="space-y-1 text-[17px] leading-[1.55]">
+        <li>遮陽帽</li>
+        <li>輕便好走的鞋子</li>
+        <li>輕薄外套</li>
+        <li>其他 6 月份應備物品</li>
+      </ul>
+    </div>
+  </div>
+  <p class="text-[15px] text-[var(--on-surface-variant)] italic">走讀行程屬學習之旅，請勿穿著不便行走的鞋子。請自行思考 6 月份應攜帶的物品並準備齊全。</p>
+</section>
+
+<div class="flex justify-center gap-3 py-3 opacity-40">
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+  <span class="material-symbols-outlined text-[var(--secondary)] text-sm">filter_vintage</span>
+</div>
+
+<!-- ===== 附錄一：Day 1 走讀 ===== -->
+<section class="mb-6">
+  <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">附錄一：Day 1 台中舊城走讀</h3>
+
+  <p class="text-[18px] leading-[1.6] mb-3">完整教學指引與學生走讀手冊另見附件 DOCX 檔案。以下為各站教學摘要。</p>
+
+  <div class="hand-drawn-border bg-[var(--bg-wash-2)]/50 px-5 py-3 my-4">
+    <h4 class="font-headline text-[18px] text-[var(--accent)] mb-2 italic">學習目標</h4>
+    <ol class="space-y-2 text-[17px] leading-[1.55] list-decimal list-inside">
+      <li>辨識日治時期城市規劃的空間邏輯，理解殖民地現代化的雙重性格</li>
+      <li>以「空間權力」視角，分析誰建造空間、誰使用、誰被排除</li>
+      <li>從中央書局等案例，理解文化行動如何表達主體意識</li>
+      <li>整合走讀所見，形成「歷史如何遺留在空間中」的個人詮釋</li>
+    </ol>
+  </div>
+
+  <table>
+    <thead><tr><th>站點</th><th>核心概念</th><th>引導問題</th><th>週一注意</th></tr></thead>
+    <tbody>
+      <tr><td><strong>中山綠橋・綠川</strong></td><td>命名即宣示主權</td><td>改名改了什麼？利益歸誰？</td><td>全天開放</td></tr>
+      <tr><td><strong>新盛綠川廊道</strong></td><td>建築時間疊層</td><td>找出老建築，猜年代</td><td>全天開放</td></tr>
+      <tr><td><strong>台中市役所</strong></td><td>殖民建築＝權力語言</td><td>這棟建築想讓你感受到什麼？</td><td>9:30 開放；外觀講解</td></tr>
+      <tr><td><strong>中央書局</strong></td><td>文化抵抗；關門即教材</td><td>開書店是一種抵抗嗎？</td><td><strong>週一公休</strong></td></tr>
+      <tr><td><strong>州廳建築群</strong></td><td>空間尺度政治</td><td>自由走在百年前的禁地</td><td>戶外全天開放</td></tr>
+      <tr><td><strong>台中一中</strong></td><td>全日總結</td><td>誰建造？誰使用？台灣人在哪？</td><td>校門口外討論</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== 附錄二三（待撰寫）===== -->
+<section class="mb-6">
+  <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">附錄二：家長同意書</h3>
+  <p class="text-[18px] leading-[1.6] text-[var(--on-surface-variant)] italic">待撰寫。將包含：行程說明、費用明細、緊急聯絡人、醫療需求、行為守則、家長簽名欄。</p>
+</section>
+
+<section class="mb-4">
+  <h3 class="font-headline text-xl text-[var(--primary)] mb-3 border-b border-[var(--outline-variant)]/30 pb-1.5">附錄三：風險評估同意書</h3>
+  <p class="text-[18px] leading-[1.6] text-[var(--on-surface-variant)] italic">待撰寫。將包含：風險類型說明、各活動風險等級、緩解措施、保險事宜、家長簽名欄。</p>
+</section>
+
+<!-- ===== 結語 ===== -->
+<section class="mb-4 text-center py-3">
+  <div class="inline-flex flex-col items-center">
+    <div class="w-16 h-[2px] bg-[var(--primary)]/30 mb-4"></div>
+    <span class="font-label text-base text-[var(--on-surface)]">V3 草稿｜2026-04-01｜Day 1 已確認，Day 2–5 待逐日確認</span>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-[var(--bg-wash-1)] w-full border-t-0 mt-4 pb-6">
+  <div class="max-w-4xl mx-auto flex flex-col items-center gap-3 px-6 text-center">
+    <div class="w-full opacity-15 flex justify-center items-center gap-2 py-2">
+      <span class="material-symbols-outlined text-[var(--secondary)]">sunny</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">sunny</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">sunny</span>
+    </div>
+    <p class="text-[var(--primary)] font-headline italic text-lg">慈心華德福高中 九年級 C 班</p>
+    <div class="text-[var(--secondary)] font-body text-xs tracking-widest uppercase opacity-60">
+      2026 服務學習之旅 計畫書 V3
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

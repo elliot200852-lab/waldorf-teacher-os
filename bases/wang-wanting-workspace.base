@@ -1,0 +1,98 @@
+filters:
+  and:
+    - file.inFolder("workspaces/Working_Member/Teacher_王琬婷")
+    - file.ext == "md"
+    - not:
+        - /^EXAMPLE/.matches(file.basename)
+    - not:
+        - file.basename == "README"
+formulas:
+  folder_category: |
+    file.folder
+      .replace("workspaces/Working_Member/Teacher_王琬婷", "")
+      .replace(/^\/projects\/class-3a/, "3A 嶺光班")
+      .replace(/^\/skills$/, "個人技能")
+      .replace(/^$/, "個人設定")
+  relative_folder: file.folder.replace("workspaces/Working_Member/Teacher_王琬婷/", "")
+  days_since_edit: (now() - file.mtime).days.round(0)
+properties:
+  file.name:
+    displayName: 檔案
+  file.tags:
+    displayName: 標籤
+  file.mtime:
+    displayName: 修改時間
+  formula.folder_category:
+    displayName: 分類
+  formula.relative_folder:
+    displayName: 位置
+  formula.days_since_edit:
+    displayName: 距上次編輯（天）
+views:
+  - type: table
+    name: 資料夾總覽
+    groupBy:
+      property: formula.folder_category
+      direction: ASC
+    order:
+      - file.name
+      - file.tags
+      - file.mtime
+      - formula.relative_folder
+  - type: table
+    name: 一年級歷程（1A 嶺光）
+    filters:
+      and:
+        - file.folder.includes("1A嶺光")
+    order:
+      - file.name
+      - formula.relative_folder
+      - file.mtime
+  - type: table
+    name: 二年級歷程（2A 嶺光）
+    filters:
+      and:
+        - file.folder.includes("2A嶺光")
+    order:
+      - file.name
+      - formula.relative_folder
+      - file.mtime
+  - type: table
+    name: 三年級歷程（3A 嶺光）
+    filters:
+      and:
+        - file.folder.includes("3A嶺光")
+    order:
+      - file.name
+      - formula.relative_folder
+      - file.mtime
+  - type: table
+    name: 山海經神話主課程
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Teacher_王琬婷/projects/class-3a/ml-shanhaijing")
+    order:
+      - file.name
+      - formula.relative_folder
+      - file.mtime
+  - type: table
+    name: 導師行政
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Teacher_王琬婷/projects/class-3a/reference")
+        - not:
+            - file.folder.includes("嶺光")
+        - not:
+            - file.folder.includes("遠距")
+    order:
+      - file.name
+      - file.tags
+      - file.mtime
+  - type: table
+    name: 學習脈絡
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Teacher_王琬婷/projects/class-3a/學習脈絡")
+    order:
+      - file.name
+      - file.mtime

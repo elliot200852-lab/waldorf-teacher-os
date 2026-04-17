@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="spring" lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>結案報告</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "var(--primary)",
+        "secondary": "var(--secondary)",
+        "accent": "var(--accent)",
+        "on-primary": "#ffffff",
+        "on-surface": "var(--on-surface)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        "surface": "var(--bg-wash-1)",
+        "surface-container": "var(--bg-wash-2)",
+        "surface-container-low": "var(--bg-wash-3)",
+        "outline-variant": "var(--outline-variant)",
+      },
+      fontFamily: {
+        "headline": ["Playfair Display", "Noto Serif TC", "Georgia", "serif"],
+        "body": ["Plus Jakarta Sans", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "sans-serif"],
+        "label": ["Plus Jakarta Sans", "Noto Sans TC", "sans-serif"],
+      },
+    },
+  },
+}
+</script>
+<style>
+html.spring {
+  --primary: #6B7F5E;
+  --secondary: #9B7BB0;
+  --accent: #D4A574;
+  --bg-wash-1: #F0F5EB;
+  --bg-wash-2: #E8F0D8;
+  --bg-wash-3: #F2E8F5;
+  --on-surface: #2A3325;
+  --on-surface-variant: #4A5544;
+  --outline-variant: #C4D1B8;
+  --season-icon: "eco";
+  --gradient-body: radial-gradient(circle at top left, #F0F5EB 0%, #E8F0D8 40%, #F2E8F5 100%);
+  --gradient-header: linear-gradient(135deg, #6B7F5E 0%, #9B7BB0 100%);
+}
+body { background: var(--gradient-body); min-height: 100vh; }
+.watercolor-wash-header {
+  background: var(--gradient-header);
+  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 100' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'><path d='M0,0 C20,10 40,-5 60,5 C80,15 100,0 100,0 L100,90 C80,100 60,85 40,95 C20,105 0,90 0,90 Z' fill='black'/></svg>");
+  mask-size: 100% 100%; -webkit-mask-size: 100% 100%;
+}
+.hand-drawn-border {
+  border: 2px solid var(--primary);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.botanical-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; opacity: 0.06; z-index: 50;
+}
+.drop-cap::first-letter {
+  font-size: 3.5rem; font-family: "Playfair Display", "Noto Serif TC", serif;
+  float: left; margin-right: 0.75rem; line-height: 1; color: var(--primary);
+}
+@media print {
+  body { background: white !important; color: #1C1C18 !important; min-height: auto !important; }
+  .botanical-overlay { display: none !important; }
+  .watercolor-wash-header {
+    background: var(--primary) !important; mask-image: none !important; -webkit-mask-image: none !important; border-radius: 0 !important;
+  }
+  header { display: none !important; }
+  main { max-width: 100% !important; padding: 0 2rem !important; overflow: visible !important; }
+  .hand-drawn-border { border-radius: 4px !important; }
+  .hand-drawn-border, blockquote { break-inside: avoid; }
+  .page-break { page-break-after: always; break-after: page; }
+}
+table { width: 100%; border-collapse: collapse; background: white; margin-top: 10px; margin-bottom: 20px; }
+th, td { border: 1px solid var(--outline-variant); padding: 8px 12px; }
+th { background-color: var(--primary); color: white; }
+tr:nth-child(even) { background-color: var(--bg-wash-1); }
+</style>
+</head>
+<body class="font-body text-[var(--on-surface)] selection:bg-[var(--secondary)]/20">
+<div class="botanical-overlay"></div>
+<header id="site-header" class="sticky top-0 z-40 bg-[var(--bg-wash-1)]/80 backdrop-blur-xl print:hidden transition-opacity duration-300">
+  <div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-xl mx-auto">
+    <div class="flex items-center gap-3">
+      <span class="material-symbols-outlined text-[var(--primary)]" style="font-size: 2rem;">eco</span>
+      <h1 class="font-headline text-3xl tracking-wide leading-relaxed text-[var(--primary)]">實驗教育計畫結案報告</h1>
+    </div>
+  </div>
+  <div class="bg-gradient-to-b from-[var(--outline-variant)] to-transparent h-4 opacity-20"></div>
+</header>
+<main class="max-w-[900px] mx-auto px-8 py-6 relative overflow-hidden">
+  <div class="absolute -top-10 -right-10 opacity-[0.07] rotate-12">
+    <span class="material-symbols-outlined text-[12rem] text-[var(--primary)]">eco</span>
+  </div>
+
+  <section class="mb-6 text-center">
+    <!-- 這邊自動讀取 markdown，這裡保留最上方裝飾 -->
+  </section>
+
+  <div class="prose prose-stone prose-lg max-w-none text-[var(--on-surface)] leading-[1.6]
+    prose-headings:font-headline prose-headings:text-[var(--primary)]
+    prose-h3:border-b prose-h3:border-[var(--outline-variant)]/30 prose-h3:pb-1.5
+    prose-h4:text-[var(--secondary)] prose-h4:font-bold
+    prose-p:text-[18px] prose-li:text-[18px]
+    prose-a:text-[var(--primary)] hover:prose-a:text-[var(--secondary)]
+  ">
+    <h1>🌀 Waldorf Transformative Lesson Schema (華德福轉化學習大區塊模組腳本)</h1>
+<h2>📌 第一階段：宏觀定位 (Macro-Level ｜ 為什麼教？教什麼？)</h2>
+<ul>
+<li><strong>發展任務 (Developmental Task)</strong>：<blockquote>
+<p>[對應孩子當下年段的心智特徵。如：九歲過河期需找尋權威與扎根大地的力量；十二歲需客觀的因果邏輯思考。]</p>
+</blockquote>
+</li>
+<li><strong>教育學理據 (Pedagogical Reasoning)</strong>：<blockquote>
+<p>[這套教材如何回應上述發展任務？擷取了現象學的哪個特徵（例如：重力、輕盈、擴張、收縮），將其轉化為課程的感官元素。]</p>
+</blockquote>
+</li>
+<li><strong>課程目標 (Aims)</strong>：<blockquote>
+<p>[定義整組微循環帶給孩子的「感受目標」，而非純知識目標。]</p>
+</blockquote>
+</li>
+<li><strong>核心資源清單 (Main Sources)</strong>：<blockquote>
+<p>[這幾節課會用到的終極武器清單，例如：哪個國家的神話傳說、搭配什麼特製節律活動。]</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2>📌 第二階段：大區塊模組庫 (Modular Palette ｜ 教學現場的資源卡牌)</h2>
+<p><em>(核心理念：捨棄死板的單節課時間軸，將內容拆解為「能量模組」，授課時依據現場孩子的呼吸頻率自由抽牌調度)</em></p>
+<h3>🎨 區塊一：語文意象輸入 (Rhymes, Poems or Speech)</h3>
+<ul>
+<li><strong>【趣味暖身】</strong>：帶動氣氛的節奏短句。</li>
+<li><strong>【核心畫面】</strong>：承載本次課程靈魂的優美詩詞或唸謠，注重聲韻表現。</li>
+<li><strong>【平靜收束】</strong>：協助孩子從高昂情緒冷卻、充滿安定感的結語。</li>
+</ul>
+<h3>📖 區塊二：故事與敘事 (Stories)</h3>
+<ul>
+<li><strong>【核心傳說 / 歷史事件】</strong>：以富有畫面感的口傳故事為主體。</li>
+<li><strong>【現象描述】</strong>：將科學現象或數學概念，化為擬人與動態的隱喻（如四個胃袋的消化歷程）。</li>
+</ul>
+<h3>🎶 區塊三：節律與動覺學習 (Activities / Kinesthetic)</h3>
+<ul>
+<li><strong>【對比節奏】</strong>：如沈重踏步對比輕盈跳躍，區分大肌肉與精細動作。</li>
+<li><strong>【呼吸體操 / 音樂】</strong>：配合課程氛圍的直笛吹奏、響板敲擊或降噪呼吸法。</li>
+</ul>
+<h3>💬 區塊四：對話與提問鷹架 (Dialogue / Scaffolding)</h3>
+<ul>
+<li><strong>【角色扮演對白】</strong>：設定好的情境對話，讓孩子代入角色（如歷史人物辯論、小動物互動）。</li>
+<li><strong>【差異化回答】</strong>：依據學生的理解層次（DI 光譜），預先設計好的引導提示詞。</li>
+</ul>
+<h3>🎲 區塊五：能量轉換遊戲 (Games)</h3>
+<ul>
+<li><strong>【動態釋放】</strong>：如大風吹、老鷹抓小雞的變種，用以極大化「呼氣（發散）」。</li>
+<li><strong>【定格意志力】</strong>：如木頭人、平衡遊戲，訓練身體抑制力與「吸氣（收斂）」。</li>
+</ul>
+<h3>✍️ 區塊六：實作與工作本任務 (Practicing &amp; Documentation)</h3>
+<ul>
+<li><strong>【黑板畫與圖像建構】</strong>：今天主課程本上必須呈現的核心幾何、繪畫與配色指引。</li>
+<li><strong>【差異化輸出 (DI Tasks)】</strong>：為高動機學生留下的創意空白、為低動機或需支持學生準備的「省力鷹架」（如圖卡、文字貼紙）。</li>
+</ul>
+<hr>
+<h2>💡 特別檢查點：課前沙盤推演 (Dry Run)</h2>
+<p><em>(在上課前一晚，閉上眼在腦海走過一次)</em></p>
+<ol>
+<li><strong>轉場防呆 (Transition Check)</strong>：活動之間的切換詞是什麼？如果全班失控太瘋狂，我要用哪一招「強制收心」？</li>
+<li><strong>鷹架就位 (Scaffolding Ready)</strong>：給特需學生的貼紙、輔具是否已經放在桌面觸手可及的地方？</li>
+<li><strong>時間備案 (Time Budget)</strong>：如果突發事件導致時間不夠，我該斷尾求生捨棄哪個區塊？</li>
+</ol>
+<hr>
+<h2>📌 第三階段：課後檢核與反思 (Evaluation &amp; Reflection)</h2>
+<p><em>(這不再只是一個打勾勾的無聊評鑑，而是將觀察轉化為行動的覆盤)</em></p>
+<ol>
+<li><strong>教學目標達成度 (Aims Check)</strong>：<ul>
+<li>孩子是否有展現出課程期待的「畫面感與氣質」？從哪裡看出來？</li>
+</ul>
+</li>
+<li><strong>模組調度與方法評估 (Methods Evaluation)</strong>：<ul>
+<li>那個「最失控」的遊戲，最後是否有成功切換回「平靜」？轉化是否成功？</li>
+<li>提供的鷹架輔具，是否真實地幫助卡關的孩子獲得了成就感？</li>
+</ul>
+</li>
+<li><strong>學生特殊光譜觀察 (Student Observations)</strong>：<ul>
+<li>有沒有平時沈默的孩子突然有亮眼表現？有誰在某個環節卡住了？記入他們的差異化觀察名單 (DI Profile)。</li>
+</ul>
+</li>
+<li><strong>未來課程優化 (Future Adjustments)</strong>：<ul>
+<li>課程中激發了什麼出乎意料的提問，可以延伸為下一次的主題或研究？</li>
+</ul>
+</li>
+</ol>
+
+  </div>
+
+</main>
+
+<footer class="bg-[var(--bg-wash-1)] w-full border-t border-[var(--outline-variant)]/30 mt-6 pt-6 pb-6 print:hidden">
+  <div class="max-w-4xl mx-auto flex flex-col items-center gap-3 px-6 text-center">
+    <div class="w-full opacity-15 flex justify-center items-center gap-2 py-2">
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+      <span class="material-symbols-outlined text-[var(--secondary)]">eco</span>
+    </div>
+    <div class="space-y-2">
+      <p class="text-[var(--primary)] font-headline italic text-lg">宜蘭縣立慈心華德福教育實驗高級中等學校</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

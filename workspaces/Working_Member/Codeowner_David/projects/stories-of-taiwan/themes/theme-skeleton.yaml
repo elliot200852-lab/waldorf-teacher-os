@@ -1,0 +1,315 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 「臺灣的故事」年度主題骨架
+# 對齊五年級臺灣史地主課程
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+version: draft-v0.1
+last_updated: 2026-03-21
+target_grade: 5
+total_estimated_stories: 90-120
+
+# ── 秋季學期（9-11 月）── 「這片土地的記憶」
+
+blocks:
+
+  A-origins:
+    title: 島嶼的誕生與最初的人
+    subtitle: 史前—原住民
+    season: 秋
+    era: 史前—1624
+    estimated_stories: 15-20
+    core_question: 在我們之前，誰住在這裡？
+    search_keywords:
+      - 史前遺址 臺灣
+      - 卑南遺址
+      - 十三行遺址
+      - 大坌坑文化
+      - 南島語族 遷徙
+      - 原住民 傳說
+      - 臺灣 地質 形成
+    sub_themes:
+      - name: 島嶼誕生
+        description: 臺灣的地質形成、板塊運動、山脈與海岸
+        stories_target: 3
+      - name: 最早的足跡
+        description: 史前遺址（卑南、十三行、大坌坑）、考古發現
+        stories_target: 4
+      - name: 南島的孩子
+        description: 南島語族的遷徙路線、臺灣作為南島語族原鄉的假說
+        stories_target: 3
+      - name: 各族的土地故事
+        description: 泰雅的獵場、阿美的海、排灣的百步蛇、達悟的拼板舟
+        stories_target: 5-8
+    data_sources_priority:
+      - tcmb      # 原住民文化素材豐富
+      - boch      # 考古遺址為文化資產
+      - tm        # 老照片、地方志
+      - openmuseum
+
+  BT-botany:
+    title: 島嶼的植物王國
+    subtitle: 臺灣植物誌
+    season: 春
+    era: 跨時代（地質至今）
+    estimated_stories: 20-30
+    core_question: 這座島上的植物，如何訴說一個比人類更古老的故事？
+    waldorf_context: >
+      五年級植物學主課程。華德福植物學從植物與大地的關係出發，
+      不以分類學為中心，而以植物的姿態、生長環境、與人的關係為觀察重點。
+      臺灣的植物故事天然適合這個取向——從海岸到高山，
+      垂直壓縮的植被帶讓學生在一座島嶼上看見整個地球的植物圖景。
+    search_keywords:
+      - 臺灣 特有種 植物
+      - 臺灣杉 紅檜 扁柏
+      - 臺灣 植被帶 垂直分布
+      - 原住民 民族植物學
+      - 臺灣 高山植物
+      - 臺灣 紅樹林 珊瑚礁
+      - 臺灣 農業史 稻米 茶 樟腦
+      - 阿里山 神木
+      - 玉山 杜鵑
+      - 蘭嶼 熱帶植物
+    sub_themes:
+      - name: 從海到天
+        description: 臺灣垂直植被帶——海岸林、闊葉林、針葉林、高山草原，3,952 公尺內走過全世界
+        stories_target: 4-5
+      - name: 島嶼的孤兒
+        description: 臺灣特有種植物——冰河退去後留在山頂的活化石、島嶼隔離演化的奇蹟
+        stories_target: 4-5
+      - name: 巨人的森林
+        description: 神木群與原始森林——紅檜、扁柏、臺灣杉，以及日治伐木與保育的拉鋸
+        stories_target: 3-4
+      - name: 人與植物的約定
+        description: 原住民的民族植物學——小米、構樹、月桃、苧麻，植物如何編織文化
+        stories_target: 4-5
+      - name: 養活一座島
+        description: 農業植物史——稻米、甘蔗、茶、樟腦、香蕉，植物如何塑造臺灣經濟
+        stories_target: 3-4
+      - name: 看不見的戰爭
+        description: 外來種入侵與生態保育——小花蔓澤蘭、銀合歡，以及復育的故事
+        stories_target: 2-3
+    data_sources_priority:
+      - tcmb      # 植物文化素材
+      - taif      # 臺灣植物資訊整合查詢系統
+      - wikipedia
+      - e-info    # 環境資訊中心
+      - tesri     # 特有生物研究保育中心
+
+  B-encounter:
+    title: 海上來的人
+    subtitle: 大航海時代
+    season: 秋
+    era: 1540s-1624
+    estimated_stories: 8-12
+    core_question: 是誰把臺灣帶到世界面前？
+    search_keywords:
+      - Formosa 葡萄牙
+      - 大航海時代 臺灣
+      - 東亞海域 貿易
+      - 臺灣 古地圖
+      - 倭寇 臺灣
+      - 漢人 移民 早期
+    sub_themes:
+      - name: Ilha Formosa
+        description: 葡萄牙人眼中的美麗島、臺灣在歐洲古地圖上的出現
+        stories_target: 3
+      - name: 海上的十字路口
+        description: 東亞貿易網絡、日本商人、海盜與走私
+        stories_target: 3
+      - name: 渡海的人
+        description: 最早的漢人移民、漁民與商人
+        stories_target: 2-4
+    data_sources_priority:
+      - tcmb
+      - tm        # 古地圖
+      - openmuseum
+
+  # ── 冬季學期（12-2 月）── 「被書寫的島嶼」
+
+  C-dutch-spanish:
+    title: 紅毛城的時代
+    subtitle: 荷蘭與西班牙統治
+    season: 冬
+    era: 1624-1662
+    estimated_stories: 12-15
+    core_question: 遠方來的人，在這裡留下了什麼？
+    search_keywords:
+      - 荷蘭 東印度公司 臺灣
+      - 熱蘭遮城
+      - 紅毛城
+      - 新港文書
+      - 西班牙 雞籠
+      - 淡水 聖多明哥城
+      - 鄭芝龍
+    sub_themes:
+      - name: 大員的城堡
+        description: 荷蘭人在臺南建立的統治、熱蘭遮城與普羅民遮城
+        stories_target: 4
+      - name: 北方的十字架
+        description: 西班牙人在基隆與淡水、聖薩爾瓦多城
+        stories_target: 3
+      - name: 新港文書
+        description: 荷蘭人與原住民的互動、基督教傳入、羅馬字書寫系統
+        stories_target: 3
+      - name: 海上的角力
+        description: 鄭芝龍、海盜與商業帝國、荷蘭人的困境
+        stories_target: 2-3
+    data_sources_priority:
+      - tcmb
+      - boch      # 古蹟（紅毛城、安平古堡等）
+      - archives
+      - tm
+
+  D-koxinga:
+    title: 國姓爺與他的後人
+    subtitle: 鄭氏時期
+    season: 冬
+    era: 1662-1683
+    estimated_stories: 10-12
+    core_question: 一個人的決定，可以改變一座島嶼嗎？
+    search_keywords:
+      - 鄭成功
+      - 國姓爺
+      - 延平王
+      - 陳永華
+      - 明鄭
+      - 赤崁樓
+    sub_themes:
+      - name: 國姓爺的抉擇
+        description: 鄭成功的身世、從中國到臺灣的決斷、攻取熱蘭遮城
+        stories_target: 4
+      - name: 建設的二十年
+        description: 陳永華的制度建設、屯田、教育、開鑿水利
+        stories_target: 3
+      - name: 明鄭的終結
+        description: 鄭經的統治、清廷的壓力、施琅渡海
+        stories_target: 3
+    data_sources_priority:
+      - tcmb
+      - boch
+      - tm
+
+  # ── 春季學期（3-5 月）── 「帝國邊陲的日常」
+
+  E-qing:
+    title: 帝國邊陲的日常
+    subtitle: 清領時期
+    season: 春
+    era: 1683-1895
+    estimated_stories: 20-25
+    core_question: 兩百年裡，人們怎麼在這片土地上活著？
+    search_keywords:
+      - 清領 臺灣
+      - 渡臺禁令
+      - 械鬥
+      - 瑠公圳
+      - 曹公圳
+      - 茶 樟腦
+      - 林爽文
+      - 劉銘傳
+      - 牡丹社事件
+      - 番界
+    sub_themes:
+      - name: 渡海的勇氣
+        description: 渡臺禁令與偷渡、唐山過臺灣的故事
+        stories_target: 3
+      - name: 開墾的汗水
+        description: 水利建設（瑠公圳、曹公圳）、農業開拓
+        stories_target: 4
+      - name: 漳泉械鬥
+        description: 不同族群的衝突與融合、閩客關係
+        stories_target: 3
+      - name: 臺灣的物產
+        description: 茶、樟腦、糖——臺灣與世界的連結
+        stories_target: 3
+      - name: 原漢之間
+        description: 番界、隘勇線、原住民與漢人的互動
+        stories_target: 3
+      - name: 反叛與正義
+        description: 林爽文、戴潮春——人民為何起義
+        stories_target: 3
+      - name: 現代化的開端
+        description: 劉銘傳的鐵路、電報、郵政、臺灣建省
+        stories_target: 3
+    data_sources_priority:
+      - tcmb
+      - archives
+      - boch
+      - tm
+      - datagov
+
+  # ── 夏季學期（6-7 月）── 「新的開始」
+
+  F-japanese:
+    title: 另一個時代
+    subtitle: 日本統治時期
+    season: 夏
+    era: 1895-1945
+    estimated_stories: 15-20
+    core_question: 現代化的代價，誰來承擔？
+    search_keywords:
+      - 日治 臺灣
+      - 乙未戰爭
+      - 霧社事件
+      - 莫那魯道
+      - 嘉南大圳
+      - 八田與一
+      - 日治 學校
+      - 臺灣總督府
+    sub_themes:
+      - name: 馬關與乙未
+        description: 馬關條約、臺灣民主國、乙未抗日
+        stories_target: 3
+      - name: 建設的另一面
+        description: 鐵路、公路、水庫、嘉南大圳與八田與一
+        stories_target: 4
+      - name: 抵抗的聲音
+        description: 霧社事件、莫那魯道、西來庵事件
+        stories_target: 3
+      - name: 日常的臺灣
+        description: 市場、學校、神社、日治時期的生活樣貌
+        stories_target: 3-5
+      - name: 戰爭的陰影
+        description: 二戰末期、空襲、徵兵、終戰
+        stories_target: 2-3
+    data_sources_priority:
+      - tcmb
+      - tm        # 日治明信片、老照片
+      - archives
+      - nhrm
+      - boch
+
+  G-modern:
+    title: 我們的時代
+    subtitle: 戰後臺灣
+    season: 夏
+    era: 1945-
+    estimated_stories: 10-15
+    core_question: 我們怎麼走到今天？
+    search_keywords:
+      - 光復 臺灣
+      - 二二八事件
+      - 白色恐怖
+      - 經濟奇蹟
+      - 美麗島事件
+      - 民主化
+      - 解嚴
+    sub_themes:
+      - name: 光復與震盪
+        description: 日本離開、國民政府來臺、二二八事件
+        stories_target: 3
+      - name: 沉默的年代
+        description: 白色恐怖、戒嚴——五年級點到為止
+        stories_target: 2
+      - name: 站起來
+        description: 經濟奇蹟、十大建設、臺灣製造
+        stories_target: 2-3
+      - name: 自由的聲音
+        description: 美麗島事件、解嚴、民主化——為高年級深化預留空間
+        stories_target: 3-4
+    data_sources_priority:
+      - nhrm      # 轉型正義核心資料
+      - archives   # 政治檔案
+      - tcmb
+      - datagov
+    note: 五年級深度適中，留給八九年級做深度處理

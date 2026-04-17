@@ -1,0 +1,35 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 3】
+# 名稱：ITCS 進度錨點 (十年級)
+# 路徑：{workspace}/projects/class-10a/ITCS/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+subject: ITCS
+grade: 10a
+type: session_anchor
+last_updated: 2026-04-15
+
+current_status:
+  block: 1
+  step: 2
+  topic: 課程大綱規劃 (Syllabus Design)
+  next_action: "確認主課程大綱草案，產出正式 Block 1 文件並進入 Block 2 單元設計"
+
+session_log:
+  - date: 2026-04-15
+    activity: "初始化十年級 ITCS 班級架構與主課程大綱規劃"
+    notes: "建立班級配置、DI 分類表（標記 3 位 A 類學生），並初步產出三週主課程大綱草案。"
+
+confirmed_decisions:
+  - "確立十年級 ITCS 為三週主課程模式 (15 堂，每堂 100 分鐘)"
+  - "將 徐期珩、王昕耀、劉宥樂 設定為 ITCS A 類學生"
+  - "連結 GWS 帳號 (dee@waldorf.ilc.edu.tw) 並完成初步授權"
+
+output_files:
+  syllabus_versions: []
+
+cross_module_notes:
+  active: ""
+
+open_questions:
+  - "十年級 ITCS 的核心主題（如：演算法、網路協定、AI 深入應用？）"

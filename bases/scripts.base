@@ -1,0 +1,76 @@
+filters:
+  and:
+    - file.hasTag("script-card")
+
+formulas:
+  platform_icon: 'if(platform == "cross-platform", "macOS + Windows", if(platform == "macos", "macOS", if(platform == "windows", "Windows", platform)))'
+
+properties:
+  file.name:
+    displayName: "檔案"
+  script_name:
+    displayName: "腳本名稱"
+  description_zh:
+    displayName: "中文說明"
+  script_path:
+    displayName: "路徑"
+  category:
+    displayName: "分類"
+  formula.platform_icon:
+    displayName: "平台"
+  language:
+    displayName: "語言"
+
+views:
+  - type: table
+    name: "全部腳本"
+    order:
+      - script_name
+      - description_zh
+      - category
+      - formula.platform_icon
+      - language
+      - script_path
+    groupBy:
+      property: category
+      direction: ASC
+
+  - type: table
+    name: "Setup 類"
+    filters:
+      and:
+        - 'category == "setup"'
+    order:
+      - script_name
+      - description_zh
+      - formula.platform_icon
+      - script_path
+
+  - type: table
+    name: "發布與輸出"
+    filters:
+      and:
+        - 'category == "publish"'
+    order:
+      - script_name
+      - description_zh
+      - script_path
+
+  - type: table
+    name: "Hooks 與自動化"
+    filters:
+      or:
+        - 'category == "hook"'
+        - 'category == "automation"'
+    order:
+      - script_name
+      - description_zh
+      - script_path
+
+  - type: cards
+    name: "腳本卡片"
+    order:
+      - script_name
+      - description_zh
+      - category
+      - formula.platform_icon

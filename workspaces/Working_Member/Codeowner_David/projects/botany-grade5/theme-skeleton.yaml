@@ -1,0 +1,382 @@
+# 五年級植物學主課程骨架
+botany_skeleton:
+  source: "Charles Kovacs, Botany (Floris Books, 2005)"
+  target_grade: 5
+  total_lessons: 30
+
+  blocks:
+    block-1-plant-and-earth:
+      name: "植物與大地"
+      lessons: [1, 2, 3, 4, 5, 6]
+
+    block-2-fern-to-tree:
+      name: "從蕨類到樹"
+      lessons: [7, 8, 9, 10, 11, 12, 13, 14]
+
+    block-3-individual-plants:
+      name: "毛蟲與蝴蝶、個別植物"
+      lessons: [15, 16, 17, 18, 19, 20, 21, 22]
+
+    block-4-plants-and-people:
+      name: "世界各地的植物與人"
+      lessons: [23, 24, 25, 26, 27, 28, 29, 30]
+
+  lessons:
+    B001:
+      number: 1
+      title: "植物在太陽與大地之間"
+      kovacs_chapter: "01_The_Plant_Between_Sun_and_Earth"
+      block: block-1-plant-and-earth
+      core_image: "植物是連接天與地的橋樑——根向下探入黑暗，花朝上迎向光明"
+      taiwan_species: ["玉山植物帶垂直分布"]
+      taiwan_connection: "玉山——台灣最高峰上，從山腳到山頂的植物帶垂直分布，就是太陽與大地之間的完整光譜"
+      art_response: "濕水彩——黃色（太陽/光）從上方暈染，藍色（大地/水）從下方上升，中間交會處是綠色（植物）"
+
+    B002:
+      number: 2
+      title: "蒲公英"
+      kovacs_chapter: "02_The_Dandelion"
+      block: block-1-plant-and-earth
+      core_image: "一朵花裡藏著植物的全部秘密——根、莖、葉、花、種子"
+      taiwan_species: ["台灣蒲公英（Taraxacum formosanum）"]
+      taiwan_connection: "台灣蒲公英——台灣特有種，與西洋蒲公英共存於低海拔草地。可帶學生觀察：校園裡的蒲公英是台灣原生的還是外來的？（葉緣鋸齒形狀不同）"
+      art_response: "蠟塊畫——蒲公英從根到飛散的種子"
+
+    B003:
+      number: 3
+      title: "真菌"
+      kovacs_chapter: "03_Fungi"
+      block: block-1-plant-and-earth
+      core_image: "真菌沒有葉綠素，不能自己製造食物——像嬰兒完全依賴母親。真菌活在黑暗中，分解死去的東西，讓養分回歸大地。"
+      taiwan_species:
+        - "牛樟芝（Antrodia cinnamomea）"
+        - "段木香菇"
+      taiwan_connection: "牛樟芝——台灣特有真菌，只長在牛樟樹上，原住民傳統藥用；段木香菇——台灣中海拔山區的香菇栽培文化（埔里、新社）；故事線：「為什麼最珍貴的東西長在最黑暗的地方？」"
+      art_response: "蠟塊畫——深褐色與暗紅色，從腐木中長出的菇"
+
+    B004:
+      number: 4
+      title: "藻類"
+      kovacs_chapter: "04_Algae"
+      block: block-1-plant-and-earth
+      core_image: "藻類是植物界的學步兒——在水中邁出第一步，開始自己製造食物（光合作用），但還離不開水。"
+      taiwan_species:
+        - "海葡萄（長莖葡萄蕨藻）"
+        - "紫菜"
+        - "溫泉藻"
+      taiwan_connection: "海葡萄——綠島、小琉球海域，原住民與漁村食用；紫菜——台灣北海岸（石門）冬季採收的傳統；溫泉藻——陽明山、北投溫泉區的嗜熱藻類；故事線：「大海是植物的第一個家」"
+      art_response: "濕水彩——藍綠色在水中流動擴散"
+
+    B005:
+      number: 5
+      title: "地衣"
+      kovacs_chapter: "05_Lichens"
+      block: block-1-plant-and-earth
+      core_image: "地衣是真菌與藻類的共生體——兩個不完整的生命攜手合作，一起活在最嚴酷的環境中（岩石表面、極地、高山）。地衣是最早登上陸地的先鋒。"
+      taiwan_species:
+        - "合歡山、雪山的高山地衣"
+        - "校園老樹樹幹上的地衣"
+      taiwan_connection: "合歡山、雪山的高山地衣——岩石上的彩色斑塊；校園老樹樹幹上的地衣——空氣品質指標（地衣對二氧化硫敏感，有地衣代表空氣好）；故事線：「當沒有人願意住在那裡的時候，地衣第一個搬進去」"
+      art_response: "蠟塊畫——灰色岩石上的黃、綠、白色斑塊"
+
+    B006:
+      number: 6
+      title: "苔蘚"
+      kovacs_chapter: "06_Moss"
+      block: block-1-plant-and-earth
+      core_image: "苔蘚是植物界的幼童——已經離開水、站上了陸地，但還只能貼在地面上，矮矮的、軟軟的。苔蘚沒有真正的根，用整個身體吸水。"
+      taiwan_species:
+        - "太平山、棲蘭山的檜木林底層苔蘚毯"
+        - "台灣中海拔雲霧帶苔蘚"
+        - "阿里山步道的苔蘚包覆"
+      taiwan_connection: "太平山、棲蘭山的檜木林底層苔蘚毯；台灣中海拔雲霧帶——全世界苔蘚多樣性最高的區域之一；阿里山步道的苔蘚包覆——整棵樹被苔蘚覆蓋的「綠色巨人」；故事線：「苔蘚是森林的毯子，讓大地不會冷」"
+      art_response: "濕水彩——各種深淺不同的綠色，層層疊疊"
+
+    B007:
+      number: 7
+      title: "蕨類"
+      kovacs_chapter: "07_Ferns"
+      block: block-2-fern-to-tree
+      core_image: "蕨類是植物界的「童年」——終於長出了巨大的葉片，但一輩子不開花、不結果。用孢子繁殖——像灑出億萬顆微塵，只有極少數能存活。"
+      taiwan_species:
+        - "筆筒樹（Cyathea lepifera）"
+        - "台灣桫欏"
+      taiwan_connection: "台灣是蕨類王國——超過 700 種蕨類，比整個歐洲還多；筆筒樹——以台灣為分布中心的樹蕨，華盛頓公約二級保護，高可達 10 公尺以上，是活著的侏羅紀遺跡；台灣桫欏——枯葉垂掛如草裙的「東洋舞姬」；故事線：「三億年前，蕨類是地球上最高大的植物。我們燒的煤炭，就是牠們的身體。」"
+      art_response: "蠟塊畫——筆筒樹的問號狀嫩芽（fiddle head）展開的過程"
+
+    B008:
+      number: 8
+      title: "針葉樹"
+      kovacs_chapter: "08_Conifers"
+      block: block-2-fern-to-tree
+      core_image: "針葉樹終於有了種子——但還沒有花，種子裸露在毬果裡。針葉是為了對抗寒冷和乾燥而演化出的堅韌之葉。"
+      taiwan_species:
+        - "台灣紅檜（Chamaecyparis formosensis）"
+        - "台灣扁柏（Chamaecyparis obtusa var. formosana）"
+        - "台灣杉（Taiwania cryptomerioides）"
+      taiwan_connection: "台灣紅檜——阿里山神木群，樹齡可達數千年。日治時期的大規模伐木與戰後的保育轉折；台灣杉——以台灣命名的活化石；故事線：「神木站在那裡的時候，人類還沒有文字」"
+      art_response: "蠟塊畫——深綠色針葉與褐色毬果"
+
+    B009:
+      number: 9
+      title: "樹與大地"
+      kovacs_chapter: "09_Trees_and_the_Earth"
+      block: block-2-fern-to-tree
+      core_image: "樹是植物界的「大人」——深根入地、高枝入天，一棵大樹就是一個小世界（生態系）。"
+      taiwan_species:
+        - "樟樹"
+        - "榕樹"
+      taiwan_connection: "樟樹——台灣低海拔最具代表性的大喬木。清代台灣的樟腦產業曾佔世界產量七成以上，牽動漢番關係與國際貿易；榕樹——台灣村莊的「公共客廳」，氣根形成的樹冠可覆蓋整個廟埕；故事線：「一棵老樟樹底下住了多少生命？」"
+      art_response: "大幅蠟塊畫——一棵大樹的剖面，從根到冠層的所有生物"
+
+    B010:
+      number: 10
+      title: "開花植物導論"
+      kovacs_chapter: "10_Flowering_Plants"
+      block: block-2-fern-to-tree
+      core_image: "開花是植物的「青春」——為了吸引傳粉者而展現色彩與香氣，這是生命第一次為了「他者」而打扮自己。"
+      taiwan_species: ["台灣原生開花植物（約 4,000 種原生種）"]
+      taiwan_connection: "台灣的開花植物多樣性——約 4,000 種原生種，特有種比例極高。以學校周邊可觀察到的開花植物為起點。"
+      art_response: "濕水彩——從綠色中綻放出各種花色"
+
+    B011:
+      number: 11
+      title: "低等與高等開花植物"
+      kovacs_chapter: "11_Lower_and_Higher_Flowering_Plants"
+      block: block-2-fern-to-tree
+      core_image: "單子葉 vs. 雙子葉——平行脈 vs. 網狀脈，花瓣三的倍數 vs. 四或五的倍數。"
+      taiwan_species:
+        - "稻"
+        - "竹"
+        - "檳榔"
+        - "茶"
+        - "樟"
+      taiwan_connection: "單子葉：稻（台灣人的主食）、竹（建築、器物、筍）、檳榔（文化爭議性植物）；雙子葉：茶（台灣烏龍茶文化）、樟（樟腦歷史）"
+      art_response: "工作本——兩類葉脈的精確素描"
+
+    B012:
+      number: 12
+      title: "花的構造"
+      kovacs_chapter: "12_The_Blossom"
+      block: block-2-fern-to-tree
+      core_image: "花的四個同心圓——花萼（保護）、花瓣（美）、雄蕊（給予）、雌蕊（接受）。"
+      taiwan_species: ["台灣百合（Lilium formosanum）"]
+      taiwan_connection: "台灣百合——台灣特有種，從海平面到 3,000 公尺都能生長。純白花瓣外側帶紫紅色條紋。曾因過度採摘而銳減，近年復育成功。"
+      art_response: "工作本——台灣百合的花部解剖圖（實物觀察後繪製）"
+
+    B013:
+      number: 13
+      title: "花粉"
+      kovacs_chapter: "13_Pollen"
+      block: block-2-fern-to-tree
+      core_image: "花粉是植物的「信使」——每一粒花粉都帶著一半的生命訊息，需要找到另一半才能完成。"
+      taiwan_species:
+        - "龍眼"
+        - "荔枝"
+      taiwan_connection: "蜜蜂與龍眼蜜——台灣養蜂文化（南投、台南）；風媒花粉與台灣春季的「花粉季」"
+      art_response: "顯微鏡觀察（如果有的話）或放大圖繪製——花粉的奇異形狀"
+
+    B014:
+      number: 14
+      title: "花與蝴蝶"
+      kovacs_chapter: "14_Flowers_and_Butterflies"
+      block: block-2-fern-to-tree
+      core_image: "花與蝴蝶的共同演化——花需要蝴蝶傳粉，蝴蝶需要花的蜜。美麗不是裝飾，是生存的語言。"
+      taiwan_species:
+        - "紫斑蝶"
+        - "大白斑蝶"
+        - "馬兜鈴"
+      taiwan_connection: "台灣是「蝴蝶王國」——約 400 種蝴蝶；紫斑蝶遷徙——每年秋冬從北部南下到高雄茂林越冬，春天再北返（台灣版的帝王蝶）；大白斑蝶與馬兜鈴的關係"
+      art_response: "濕水彩——蝴蝶與花的對稱構圖"
+
+    B015:
+      number: 15
+      title: "毛蟲與蝴蝶"
+      kovacs_chapter: "15_Caterpillars_and_Butterflies"
+      block: block-3-individual-plants
+      core_image: "變態——毛蟲完全溶解自己，才能變成蝴蝶。這是自然界最激烈的「死亡與重生」。"
+      taiwan_species: ["柑橘鳳蝶"]
+      taiwan_connection: "在校園或學校附近飼養蝴蝶幼蟲，觀察完整的變態過程。可用柑橘鳳蝶（食草為柑橘類，台灣常見）。"
+      art_response: "連續畫——卵、幼蟲、蛹、成蝶的四格變態記錄"
+
+    B016:
+      number: 16
+      title: "鬱金香"
+      kovacs_chapter: "16_The_Tulip"
+      block: block-3-individual-plants
+      core_image: "鬱金香從鱗莖長出——所有的能量預先儲存在地下，像一顆沉睡的心臟等待春天的信號。"
+      taiwan_species:
+        - "台灣百合（野生鱗莖植物）"
+        - "薑"
+        - "芋"
+      taiwan_connection: "以「鱗莖植物」為核心概念轉化——百合科：台灣百合（野生鱗莖植物）；薑科：薑（台灣重要香料作物，地下莖儲能）；芋：排灣族、達悟族的重要主食，從地下莖長出的生命；故事線：「看不見的地方，儲存著最大的力量」"
+      art_response: "工作本——鱗莖/塊莖的剖面圖"
+
+    B017:
+      number: 17
+      title: "種子與子葉"
+      kovacs_chapter: "17_Seeds_and_Cotyledons"
+      block: block-3-individual-plants
+      core_image: "種子是植物為未來打包的行李——裡面有胚芽（新生命）、子葉（第一份食物）、種皮（保護殼）。"
+      taiwan_species:
+        - "綠豆"
+        - "小米"
+        - "紅藜"
+      taiwan_connection: "實作：泡綠豆觀察子葉展開；台灣原住民的種子保存文化——小米（布農族）、紅藜（排灣族）；故事線：「一顆小米種子裡，藏著一整個族群的記憶」"
+      art_response: "工作本——綠豆發芽的逐日觀察記錄"
+
+    B018:
+      number: 18
+      title: "玫瑰"
+      kovacs_chapter: "18_The_Rose"
+      block: block-3-individual-plants
+      core_image: "玫瑰是開花植物的「女王」——花瓣層層包裹，香氣濃烈，但莖上有刺。美與保護並存。"
+      taiwan_species:
+        - "山櫻花（Prunus campanulata）"
+        - "台灣野薔薇"
+      taiwan_connection: "山櫻花——薔薇科，台灣最早開的櫻花，深桃紅色鐘形花。每年一月底到二月，從南到北次第開放；台灣野薔薇——低海拔山區常見，白色小花成簇；故事線：「薔薇科是台灣山林裡最大的家族之一」"
+      art_response: "蠟塊畫——山櫻花的鐘形花與深色花瓣"
+
+    B019:
+      number: 19
+      title: "薔薇科延伸"
+      kovacs_chapter: "19_The_Rose_Family_"
+      block: block-3-individual-plants
+      core_image: "薔薇科是一個龐大的家族——從玫瑰、蘋果到櫻桃，美麗的花朵與實用的果實都出自同一個家族。"
+      taiwan_species:
+        - "山櫻花（Prunus campanulata）"
+        - "台灣野薔薇"
+        - "梅"
+        - "李"
+        - "桃"
+      taiwan_connection: "薔薇科在台灣的多樣面貌——從觀賞的山櫻花到食用的梅、李、桃，薔薇科是台灣山林與農業中最重要的家族之一"
+      art_response: "工作本——薔薇科不同成員的花與果實比較素描"
+
+    B020:
+      number: 20
+      title: "高麗菜（十字花科）"
+      kovacs_chapter: "20_The_Cabbage"
+      block: block-3-individual-plants
+      core_image: "高麗菜把葉子層層包裹成球——像是植物把自己藏在葉子裡面。十字花科的花有四片花瓣排成十字形。"
+      taiwan_species:
+        - "高麗菜"
+        - "芥菜（客家酸菜、福菜、梅乾菜）"
+        - "蘿蔔"
+      taiwan_connection: "高麗菜——台灣高冷蔬菜的代表，梨山、清境的高山高麗菜；芥菜——客家文化中的重要醃漬蔬菜（酸菜、福菜、梅乾菜）；蘿蔔——台灣菜頭糕、醃蘿蔔的飲食文化"
+      art_response: "工作本——高麗菜剖面的層次素描 + 十字形花瓣觀察"
+
+    B021:
+      number: 21
+      title: "蕁麻"
+      kovacs_chapter: "21_The_Nettle"
+      block: block-3-individual-plants
+      core_image: "蕁麻會刺人，但同時是營養豐富的野菜和藥草。外表不友善的植物，內在可能是最慷慨的。"
+      taiwan_species:
+        - "咬人貓（Urtica thunbergiana）"
+        - "咬人狗（Dendrocnide meyeriana）"
+        - "苧麻（Boehmeria nivea）"
+      taiwan_connection: "咬人貓——台灣中海拔森林常見，觸碰後劇烈刺痛；咬人狗——更猛烈的蕁麻科植物；苧麻——蕁麻科，原住民的重要纖維植物（織布）；故事線：「會咬人的家族裡，也有給人穿衣服的成員」"
+      art_response: "工作本——蕁麻科植物的刺毛構造圖"
+
+    B022:
+      number: 22
+      title: "橡樹"
+      kovacs_chapter: "22_The_Oak"
+      block: block-3-individual-plants
+      core_image: "橡樹是力量與持久的象徵——生長緩慢但異常堅固，一棵橡樹可以活數百年。"
+      taiwan_species:
+        - "台灣青剛櫟"
+        - "栓皮櫟"
+      taiwan_connection: "殼斗科（台灣青剛櫟、栓皮櫟等）——台灣中低海拔森林的重要成員；松鼠與殼斗科果實的關係——松鼠埋藏橡實忘記挖出來，反而幫森林種了新樹；泰雅族的「櫟實」採集文化；故事線：「台灣的山上也有橡樹，只是我們叫它們『青剛櫟』」"
+      art_response: "大幅蠟塊畫——一棵青剛櫟從橡實到大樹的生命史"
+
+    B023:
+      number: 23
+      title: "樺樹"
+      kovacs_chapter: "23_The_Birch"
+      block: block-4-plants-and-people
+      core_image: "樺樹是北方森林的先鋒樹種——最先在荒地上長出來，白色的樹皮在黑暗的森林裡閃閃發光。"
+      taiwan_species: ["台灣赤楊（Alnus formosana）"]
+      taiwan_connection: "台灣赤楊——台灣特有種，崩塌地與開闊地的先鋒樹種，根部有固氮菌共生；故事線：「災難過後，第一個站出來的植物」（呼應台灣山區常見的崩塌與植被演替）"
+      art_response: "蠟塊畫——崩塌地上孤零零站立的赤楊"
+
+    B024:
+      number: 24
+      title: "棕櫚"
+      kovacs_chapter: "24_The_Palm_Tree"
+      block: block-4-plants-and-people
+      core_image: "棕櫚是熱帶的象徵——不分枝、一根主幹直直向上，像一根柱子撐起一把傘。"
+      taiwan_species:
+        - "台東蘇鐵（Cycas taitungensis）"
+        - "檳榔"
+        - "椰子"
+      taiwan_connection: "台東蘇鐵——不是棕櫚但外型相似，是真正的活化石（存在超過兩億年）；檳榔——台灣最具爭議的棕櫚科植物。原住民的文化植物 vs. 水土保持問題 vs. 口腔癌風險；椰子——台灣南部海岸景觀；故事線：「直直往上長、絕不彎腰的植物」"
+      art_response: "蠟塊畫——棕櫚/蘇鐵的直立姿態"
+
+    B025:
+      number: 25
+      title: "茶、糖與咖啡"
+      kovacs_chapter: "25_Tea__Sugar_and_Coffee"
+      block: block-4-plants-and-people
+      core_image: "這三種植物改變了人類歷史——它們讓人們跨越海洋去尋找、種植、交易。植物不只是食物，還是權力與文化的載體。"
+      taiwan_species:
+        - "台灣烏龍茶"
+        - "甘蔗"
+        - "台灣咖啡"
+      taiwan_connection: "茶：台灣烏龍茶——從福建引進到發展出獨特品種（東方美人、凍頂烏龍、阿里山高山茶），日治時期的茶業輸出；糖：台灣糖業——荷蘭時期就開始種甘蔗，日治時期台灣成為東亞最大糖產地，台糖鐵路、糖廍文化；咖啡：台灣咖啡——日治時期引進，近年精品咖啡復興（阿里山、古坑、屏東）；故事線：「台灣這座小島上，這三種植物都曾經改變過島上人們的命運」"
+      art_response: "工作本——台灣茶/糖/咖啡的歷史地圖（標示產區與貿易路線）"
+
+    B026:
+      number: 26
+      title: "草與穀物"
+      kovacs_chapter: "26_Grass_and_Cereals"
+      block: block-4-plants-and-people
+      core_image: "草是地球上最成功的植物——被割了還能長、被踩了還能活。穀物是人類馴化的草——稻、麥、玉米養活了全人類。"
+      taiwan_species:
+        - "稻"
+        - "小米"
+        - "甘蔗"
+      taiwan_connection: "稻：台灣稻米文化——兩期稻作、池上米、蓬萊米 vs. 在來米的歷史。水田地景作為台灣最核心的文化風景；小米：布農族的小米曆法——小米不只是食物，是時間、是祭典、是族群認同；甘蔗：禾本科，台灣糖業的主角；故事線：「你每天吃的那碗飯，是一棵草的種子」"
+      art_response: "工作本——稻穗的精確素描 + 稻米從插秧到收割的生命週期"
+
+    B027:
+      number: 27
+      title: "葉與花"
+      kovacs_chapter: "27_Leaves_and_Blossoms"
+      block: block-4-plants-and-people
+      core_image: "葉是植物的「呼吸」器官，花是植物的「表達」器官。葉向光展開吸收能量，花向世界綻放釋放美。"
+      taiwan_species: ["台灣欒樹"]
+      taiwan_connection: "台灣欒樹的四色變化（綠葉、黃花、紅蒴果、褐色）是最佳的「葉與花」教學對象。台灣雖然不像溫帶有明顯的秋葉，但中海拔的楓香、青楓在冬季仍有色變。"
+      art_response: "濕水彩——台灣欒樹的四季色彩變化"
+
+    B028:
+      number: 28
+      title: "蜜蜂"
+      kovacs_chapter: "28_Bees"
+      block: block-4-plants-and-people
+      core_image: "蜜蜂是植物的盟友——沒有蜜蜂，大多數開花植物無法結果。蜜蜂的社會是自然界最精密的合作系統。"
+      taiwan_species:
+        - "台灣本土蜜蜂（東方蜂 Apis cerana）"
+        - "西方蜂（Apis mellifera）"
+      taiwan_connection: "台灣本土蜜蜂（東方蜂 Apis cerana）vs. 西方蜂（Apis mellifera）；龍眼蜜、荔枝蜜——台灣最重要的蜂蜜種類；近年蜜蜂消失的危機（農藥、棲地喪失）"
+      art_response: "工作本——蜜蜂身體構造 + 蜂巢的六角形幾何（可與數學課連結）"
+
+    B029:
+      number: 29
+      title: "蜂巢"
+      kovacs_chapter: "29_The_Beehive"
+      block: block-4-plants-and-people
+      core_image: "蜂巢的六角形結構是自然界最有效率的建築——用最少的蠟封住最大的空間。蜂群的分工是「個體為整體服務」的極致。"
+      taiwan_species: ["台灣養蜂人"]
+      taiwan_connection: "台灣養蜂人的故事——逐花而居的遊牧生活（跟著龍眼花、荔枝花的花期移動蜂箱）；蜂蜜品質與環境的關係；故事線：「養蜂人是跟著花走的旅人」"
+      art_response: "幾何作圖——用圓規畫出完美的六角形蜂巢（結合數學）"
+
+    B030:
+      number: 30
+      title: "蜜蜂的精神"
+      kovacs_chapter: "30_The_Spirit_of_the_Bee"
+      block: block-4-plants-and-people
+      core_image: "整個植物學區塊的收束——從最低等的真菌到蜜蜂與花的共舞，植物的演化史就是生命從黑暗走向光明、從孤獨走向合作的旅程。而人類站在這一切的頂端，有責任照護這個花園。"
+      taiwan_species: ["玉山植物帶垂直分布"]
+      taiwan_connection: "回到第一課的玉山意象——從山腳到山頂，我們走過了植物的整部歷史；台灣的生態保育——從砍伐檜木到國家公園、從開發山坡地到棲地復育；故事線：「我們能不能像蜜蜂一樣，在取用的同時也給予？」"
+      art_response: "全班合作大型畫——一幅從海底藻類到高山地衣的「台灣植物王國」全景圖"

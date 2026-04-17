@@ -1,0 +1,24 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Workspace 狀態追蹤
+# 路徑：workspaces/Working_Member/Teacher_王琬婷/workspace.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+teacher_identity:
+  name: 王琬婷
+  teacher_id: wang-wan-ting
+  role: 3A 導師
+  email: hsinhunglin520@gmail.com
+
+workspace_status: active
+
+created_date: 2026-04-04
+
+purpose: 王琬婷的個人 workspace
+
+classes:
+  - class_code: 3a
+    grade: 三年級
+    subjects: [導師課, 南島神話主課程]
+    student_count: null
+    status: active
+    blocks_completed: []

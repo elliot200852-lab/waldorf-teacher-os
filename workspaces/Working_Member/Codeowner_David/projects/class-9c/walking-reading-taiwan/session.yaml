@@ -1,0 +1,154 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：九年級 C 班・走讀臺灣進度錨點
+# 路徑：projects/class-9c/walking-reading-taiwan/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+walking_reading_taiwan_session:
+  class: class-9c
+  last_updated: 2026-03-27
+
+  overview:
+    name: 走讀臺灣
+    type: 跨領域主題課程（文學 × 歷史 × 走讀）
+    schedule: 每週五・專一+專二（90 分鐘）
+    total_weeks: 4
+    total_sessions: 8（每週 2 節 × 4 週）
+    linked_to: 服務學習之旅（2026/6/8-6/12，臺中→臺南→高雄）
+    core_question: 書寫到底能做什麼？
+    three_city_arc:
+      taichung: 書寫的代價——一個人敢不敢說話
+      tainan: 記憶的形式——一座城市怎麼記得自己
+      kaohsiung: 行動的選擇——我可以為我住的地方做什麼
+
+  current_position:
+    block: 一
+    step: 3
+    city: 臺南（Week 6 已上課，Week 8 報告準備中）
+    current_week: 2    # week 2 of 4（Week 6 完課；Week 7 清明連假；Week 8 分組報告）
+
+  confirmed_decisions:
+    - "課程結構：臺中 1 週 + 臺南 2 週 + 高雄 1 週 = 4 週 8 節"
+    - "臺中篇文本：楊逵〈和平宣言〉+ 楊双子〈大麵羹〉（主）+ 楊双子〈豐仁冰〉（課後閱讀）"
+    - "教學順序反轉：先大麵羹（具體、感官）→ 再和平宣言（抽象、歷史）"
+    - "課堂學習單（上課用）+ 課後學習單（功課，四選一差異化任務）"
+    - "豐仁冰不進課堂，作為自主閱讀，下週或導師課收尾"
+    - "臺南篇文本：葉石濤散文引文（6 站）＋ 許丙丁《小封神》台語原文＋註解"
+    - "臺南篇走讀範圍：臺南火車站→民生綠園→老街→赤崁樓→孔廟"
+    - "臺南篇設計模式延續臺中篇：身體入口→懸疑轉場（24/30+）→朗讀儀式→四選一差異化"
+    - "臺南篇課後任務 A 降低門檻：從 600 字宣言改為 300 字記憶策展人＋紀念牌設計"
+    - "Week 6 學習單重設計：加入暖身/聯語/諺語（一府二鹿三艋舺、葉石濤語錄、祀典武廟聯語）；Part 2 地名只列不描述；Part 3 空白地圖課後 Google Maps 作業"
+    - "Week 8 分組報告結構：歌曲 30 秒 + 葉石濤 2 分鐘 + 許丙丁 2 分鐘 + 各組創意 2 分鐘"
+    - "教學反思：一次放太多任務，學生缺框架容易迷路；Week 8 需設明確節點，一次推進一件事"
+
+  week1_teaching_log:
+    date: 2026-03-21
+    observations:
+      - "課後任務四選一：學生只選了 B（食物身世調查）、C（兩張照片）、D（寫信）三種任務"
+      - "任務 A（600 字宣言）零人選擇——門檻太高或題目太抽象，下次設計需調整"
+    teacher_homework:
+      - "讀完〈一中豐仁冰〉（楊双子）"
+      - "讀完楊雙子的完整文章"
+      - "完成自己的作業（教師也做四選一）"
+    implication_for_next_design: >
+      下次備課（臺南篇或 week 2 設計）必須從這裡起步：
+      1. 先確認教師功課完成狀態（豐仁冰讀了嗎？楊雙子讀了嗎？）
+      2. 討論任務 A 零人選擇的原因與調整方向
+      3. 再進入臺南篇設計
+
+  next_action:
+    description: >
+      【Week 6 已完課 — 2026-03-27】
+      - 學生完成學習單（歌曲、分組閱讀、討論）
+      - 各組已定位，明確知道 Week 8 要做什麼
+      - 18 位學生書寫作業評語已記錄至個人學習紀錄
+
+      【Week 7 = 清明連假，不上課】
+
+      【Week 8 準備事項（開課前需完成）】
+      1. 確認各組報告準備情況（歌曲呈現方式已討論？葉石濤/許丙丁摘要是否開始準備？）
+      2. Week 8 課堂需要設明確節點——一次推進一件事，避免同時開太多任務
+      3. 視需要調整 Week 8 教學流程（原 Week 7 流程）以配合報告節奏
+    input_needed_from_teacher: "Week 8 開始前確認各組準備進度"
+
+  output_files:
+    - type: 教學流程
+      file: content/9C-walk-read-week1-教學流程.md
+      date: 20260320
+    - type: 課堂學習單
+      file: content/9C-walk-read-week1-課堂學習單.md
+      date: 20260320
+    - type: 課後學習單
+      file: content/9C-walk-read-week1-課後學習單.md
+      date: 20260320
+    - type: 教案分析
+      file: content/9C-walk-read-week1-教案分析.md
+      date: 20260320
+    - type: 教學規劃草稿
+      file: content/9C-走讀臺灣-教學規劃-草稿.md
+      date: 20260320
+      version: v0.1
+    - type: 教學大綱草稿
+      file: content/9C-走讀臺灣-教學大綱-草稿.md
+      date: 20260320
+      version: v0.1
+    - type: 臺南篇閱讀材料
+      file: content/9C-walk-read-tainan-閱讀材料.md
+      date: 20260326
+    - type: 臺南篇 Week 6 教學流程
+      file: content/9C-walk-read-week6-教學流程.md
+      date: 20260326
+      version: v1
+      status: 草稿待審閱
+    - type: 臺南篇 Week 7 教學流程
+      file: content/9C-walk-read-week7-教學流程.md
+      date: 20260326
+      version: v1
+      status: 草稿待審閱
+    - type: 臺南篇課堂學習單
+      file: content/9C-walk-read-tainan-課堂學習單.md
+      date: 20260326
+      version: v1
+      status: 草稿待審閱
+    - type: 臺南篇課後學習單
+      file: content/9C-walk-read-tainan-課後學習單.md
+      date: 20260326
+      version: v1
+      status: 草稿待審閱
+    - type: 美化版 PDF
+      path: ~/Desktop/完成檔案/06_走讀臺灣/
+      date: 20260326
+      files:
+        - 臺南篇-閱讀材料.pdf
+        - 臺南篇-week6-教學流程.pdf
+        - 臺南篇-week7-教學流程.pdf
+        - 臺南篇-課堂學習單.pdf
+        - 臺南篇-課後學習單.pdf
+    - type: Week 6 學習單（修訂版）
+      file: content/9C-walk-read-tainan-學習單-Week6-學生版.md
+      date: 20260327
+      version: v1
+    - type: Week 6 學習單教師版
+      file: content/9C-walk-read-tainan-學習單-Week6-教師版.md
+      date: 20260327
+      version: v1
+    - type: Week 6 學習單 PDF（學生版）
+      path: ~/Desktop/完成檔案/06_走讀臺灣/9C-走讀臺南-學習單-Week6-學生版.pdf
+      date: 20260327
+    - type: Week 6 學習單 PDF（教師版）
+      path: ~/Desktop/完成檔案/06_走讀臺灣/9C-走讀臺南-學習單-Week6-教師版.pdf
+      date: 20260327
+
+  source_materials:
+    - name: 走讀臺中教案 v2
+      path: ~/Downloads/台中走讀文學歷史-教案v2.md
+      note: David 的原始教學構想，臺中篇教學流程以此為基礎調整
+    - name: 走讀台中-閱讀文獻
+      path: Google Doc (1oSNF4FTx4nUWeuyE-sbiiWzmiW0jLooJGB4Q5SHuswI)
+      note: 三篇閱讀文本（和平宣言、大麵羹、豐仁冰）
+
+  open_questions:
+    - "高雄篇文本選擇：陳芳明、打狗文學、或其他方向？"
+    - "走讀任務的繳交與評分方式"
+    - "走讀手冊模板的具體格式（目前只有方向描述，尚未製作模板）"
+    - "《小封神》台語原文取得方式"

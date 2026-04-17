@@ -1,0 +1,34 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：演講分享進度錨點
+# 路徑：projects/lecture-sharing/session.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+lecture_sharing_session:
+  last_updated: 2026-04-10
+
+  current_position:
+    block: 一
+    step: 1
+
+  overview:
+    title: 作為教育者、同事與家長的我——一個華德福教師的真實面貌
+    speaker: 林信宏（David）
+    audience: 華德福教育教師培訓學員
+    duration: 40 分鐘
+    date: 2026-04-12（週日早上）
+
+  confirmed_decisions:
+    - "演講大綱與完整講稿已完成（演講大綱與講稿.md）"
+    - "演講卡片已完成（演講卡片-林信宏.html）"
+
+  next_action:
+    description: >
+      演講素材已備齊。確認上台前準備事項（列印卡片？試講？PPT？）
+    input_needed_from_teacher: "是否需要輸出 PDF 或製作投影片？"
+
+  output_files:
+    - content/演講大綱與講稿.md
+    # 演講卡片-林信宏.html → 保留於桌面完成檔案，不納入 repo
+
+  open_questions: []

@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>4月1日 華德福教師 AI 工作坊</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+<style>
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #6B7F5E;
+  --primary-dark: #4A5B3F;
+  --secondary: #9B7BB0;
+  --accent: #D4A574;
+  --bg: #F5F2EB;
+  --bg-slide: #FDFBF7;
+  --text: #2A3325;
+  --text-light: #5A6555;
+  --text-muted: #8A9585;
+  --border: #D4CFC4;
+  --highlight: #E8E0D0;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Noto Sans TC", "PingFang TC", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+/* ── Slide Container ── */
+.deck {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6vh 8vw;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  background: var(--bg-slide);
+  overflow-y: auto;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Slide Layouts ── */
+.slide-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: left;
+}
+
+.slide-content.center {
+  text-align: center;
+}
+
+/* ── Typography ── */
+h1 {
+  font-family: "Playfair Display", "Noto Serif TC", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.6em;
+  line-height: 1.3;
+}
+
+h2 {
+  font-family: "Playfair Display", "Noto Serif TC", serif;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5em;
+  line-height: 1.35;
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.4em;
+}
+
+p, li {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.8;
+  color: var(--text);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.5;
+}
+
+/* ── Punchline ── */
+.punchline {
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  font-style: italic;
+  color: var(--primary-dark);
+  border-left: 4px solid var(--accent);
+  padding: 0.8em 1.2em;
+  margin: 1.5em 0;
+  background: linear-gradient(135deg, rgba(212,165,116,0.08), rgba(107,127,94,0.06));
+  border-radius: 0 8px 8px 0;
+  line-height: 1.6;
+}
+
+/* ── Section Divider ── */
+.slide.divider {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.slide.divider h1,
+.slide.divider h2,
+.slide.divider p {
+  color: #FDFBF7;
+}
+
+.slide.divider .section-number {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  opacity: 0.3;
+  margin-bottom: 0.2em;
+  color: #FDFBF7;
+}
+
+/* ── Decorative Elements ── */
+.leaf-border {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.leaf-border.top-right {
+  top: 2vh;
+  right: 3vw;
+  background: radial-gradient(ellipse at center, var(--primary) 0%, transparent 70%);
+  border-radius: 0 60% 0 60%;
+}
+
+.leaf-border.bottom-left {
+  bottom: 2vh;
+  left: 3vw;
+  background: radial-gradient(ellipse at center, var(--secondary) 0%, transparent 70%);
+  border-radius: 60% 0 60% 0;
+}
+
+/* ── Scenario Cards ── */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.scenario-card {
+  background: rgba(107,127,94,0.06);
+  border: 1px solid rgba(107,127,94,0.15);
+  border-radius: 12px;
+  padding: 1em 1.4em;
+}
+
+.scenario-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3em;
+}
+
+.scenario-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── Three Column ── */
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  margin-top: 1em;
+}
+
+.col-card {
+  background: rgba(107,127,94,0.05);
+  border-radius: 12px;
+  padding: 1.2em;
+  border-top: 3px solid var(--primary);
+}
+
+.col-card.warn {
+  border-top-color: var(--accent);
+}
+
+.col-card.stop {
+  border-top-color: var(--secondary);
+}
+
+.col-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+.col-card li {
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* ── Progress Bar ── */
+.progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width 0.4s ease;
+  z-index: 100;
+}
+
+/* ── Nav Controls ── */
+.nav {
+  position: fixed;
+  bottom: 2vh;
+  right: 3vw;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  z-index: 100;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+
+.nav:hover { opacity: 1; }
+
+.nav button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.nav button:hover { transform: scale(1.1); }
+
+.nav .page-info {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: "Playfair Display", serif;
+}
+
+.fullscreen-btn {
+  position: fixed;
+  bottom: 2vh;
+  left: 3vw;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+  z-index: 100;
+}
+
+.fullscreen-btn:hover { opacity: 1; }
+
+/* ── Decorative SVG Illustrations ── */
+.deco-svg {
+  position: absolute;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .slide { padding: 4vh 5vw; }
+  .three-col { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLIDE 0: Title -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide active" data-slide="0">
+  <div class="leaf-border top-right"></div>
+  <div class="leaf-border bottom-left"></div>
+  <div class="slide-content center">
+    <p style="font-size:1rem; color:var(--text-muted); letter-spacing:0.3em; margin-bottom:1em;">2026.04.01</p>
+    <h1 style="font-size:clamp(2.2rem,5vw,3.8rem); margin-bottom:0.3em;">華德福教師<br/>AI 工作坊</h1>
+    <p style="font-size:1.1rem; color:var(--text-light); margin-top:1.5em;">林信宏（David）</p>
+    <p style="font-size:0.95rem; color:var(--text-muted);">宜蘭慈心華德福學校</p>
+    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:3em;">按 <kbd style="background:var(--highlight); padding:0.2em 0.5em; border-radius:4px;">→</kbd> 或點擊右側按鈕翻頁</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 1: 問題起點 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide divider" data-slide="1">
+  <div class="slide-content center">
+    <div class="section-number">01</div>
+    <h1>問題起點</h1>
+    <p style="font-size:1.2rem; opacity:0.85;">這個系統是怎麼長出來的</p>
+  </div>
+</div>
+
+<div class="slide" data-slide="2">
+  <div class="leaf-border top-right"></div>
+  <div class="slide-content">
+    <h2>一個華德福老師的日常</h2>
+    <ul>
+      <li>九年級兩個班，英文、導師、走讀、大旅行、農場實習同時跑</li>
+      <li>沒有統一教材，每一堂課從零設計</li>
+      <li>每天打開電腦的第一件事：想起來上次做到哪裡了</li>
+    </ul>
+    <div class="punchline">
+      問題不是不會做，是東西太多、記不住。<br/>光是重建工作記憶就耗掉半小時。
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-slide="3">
+  <div class="leaf-border bottom-left"></div>
+  <div class="slide-content">
+    <h2>David 做了三件事</h2>
+    <ul>
+      <li><strong>幫 AI 建工作記憶</strong>——每個班級、科目都有進度檔，AI 打開對話 30 秒就能接續上次</li>
+      <li><strong>把流程拆成技能說明書</strong>——備課、寫信、記錄觀察，每一種都有標準化步驟</li>
+      <li><strong>讓不同老師共用</strong>——個人工作區放自己的資料，公共區放教育理念和設計工具</li>
+    </ul>
+    <div class="punchline">
+      不是讓 AI 替你教書，是讓 AI 幫你記住你正在做的所有事。
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 1.5: 架構地圖 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide divider" data-slide="4">
+  <div class="slide-content center">
+    <div class="section-number">02</div>
+    <h1>系統架構地圖</h1>
+    <p style="font-size:1.2rem; opacity:0.85;">一眼看懂整個系統，找到你的位置</p>
+  </div>
+</div>
+
+<div class="slide" data-slide="5">
+  <div class="leaf-border top-right"></div>
+  <div class="slide-content">
+    <h2>TeacherOS 全景圖</h2>
+    <div style="display:flex; flex-direction:column; gap:1.2em; margin-top:1em;">
+      <!-- Layer 1: Foundation -->
+      <div style="background:linear-gradient(135deg, rgba(107,127,94,0.12), rgba(155,123,176,0.08)); border-radius:12px; padding:1.2em 1.5em; border-left:4px solid var(--primary-dark);">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h3 style="margin-bottom:0.2em;">公共知識層</h3>
+            <p style="font-size:0.92rem; color:var(--text-light);">教育哲學 / 設計原則 / 差異化框架 / 品質標準</p>
+          </div>
+          <span style="font-size:0.8rem; color:var(--text-muted); background:rgba(107,127,94,0.1); padding:0.3em 0.8em; border-radius:20px;">所有老師共讀</span>
+        </div>
+      </div>
+      <!-- Layer 2: Skills -->
+      <div style="background:rgba(212,165,116,0.1); border-radius:12px; padding:1.2em 1.5em; border-left:4px solid var(--accent);">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h3 style="margin-bottom:0.2em;">技能引擎層</h3>
+            <p style="font-size:0.92rem; color:var(--text-light);">備課引擎 / 評估器 / 家長信 / 學生記錄 / 收工同步 / ...</p>
+          </div>
+          <span style="font-size:0.8rem; color:var(--text-muted); background:rgba(212,165,116,0.15); padding:0.3em 0.8em; border-radius:20px;">所有老師可用</span>
+        </div>
+      </div>
+      <!-- Layer 3: Personal -->
+      <div style="background:rgba(155,123,176,0.08); border-radius:12px; padding:1.2em 1.5em; border-left:4px solid var(--secondary);">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <h3 style="margin-bottom:0.2em;">個人工作區</h3>
+            <p style="font-size:0.92rem; color:var(--text-light);">你的班級 / 你的進度 / 你的學生資料 / 你的教學偏好</p>
+          </div>
+          <span style="font-size:0.8rem; color:var(--text-muted); background:rgba(155,123,176,0.12); padding:0.3em 0.8em; border-radius:20px;">只有你自己</span>
+        </div>
+      </div>
+    </div>
+    <div class="punchline" style="margin-top:1.5em;">
+      上面兩層是共用的基礎建設，你不需要動。<br/>你只需要在自己的工作區裡工作。
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-slide="6">
+  <div class="leaf-border bottom-left"></div>
+  <div class="slide-content">
+    <h2>一個老師的工作流長什麼樣子</h2>
+    <!-- Flow diagram using CSS -->
+    <div style="display:flex; flex-direction:column; gap:0; align-items:center; margin-top:1.5em;">
+      <!-- Step 1 -->
+      <div style="background:var(--primary); color:#fff; padding:0.8em 2em; border-radius:10px; font-size:1.05rem; font-weight:500; text-align:center; width:80%; max-width:500px;">
+        說「開工」——AI 讀取你的所有進度
+      </div>
+      <div style="width:2px; height:24px; background:var(--border);"></div>
+      <!-- Step 2 -->
+      <div style="background:rgba(107,127,94,0.1); border:1px solid rgba(107,127,94,0.2); padding:0.8em 2em; border-radius:10px; font-size:1.05rem; text-align:center; width:80%; max-width:500px;">
+        AI 報告：「9C 英文目前在第二區塊，下一步是......」
+      </div>
+      <div style="width:2px; height:24px; background:var(--border);"></div>
+      <!-- Step 3 -->
+      <div style="background:rgba(212,165,116,0.12); border:1px solid rgba(212,165,116,0.2); padding:0.8em 2em; border-radius:10px; font-size:1.05rem; text-align:center; width:80%; max-width:500px;">
+        你說要做什麼——備課 / 寫信 / 記錄 / 反思
+      </div>
+      <div style="width:2px; height:24px; background:var(--border);"></div>
+      <!-- Step 4 -->
+      <div style="background:rgba(155,123,176,0.1); border:1px solid rgba(155,123,176,0.2); padding:0.8em 2em; border-radius:10px; font-size:1.05rem; text-align:center; width:80%; max-width:500px;">
+        AI 執行 → 你審閱修改 → 確認
+      </div>
+      <div style="width:2px; height:24px; background:var(--border);"></div>
+      <!-- Step 5 -->
+      <div style="background:var(--primary); color:#fff; padding:0.8em 2em; border-radius:10px; font-size:1.05rem; font-weight:500; text-align:center; width:80%; max-width:500px;">
+        說「收工」——AI 自動存檔、同步進度
+      </div>
+    </div>
+    <div class="punchline" style="margin-top:1.5em;">
+      開工 → 接續 → 工作 → 收工。<br/>下次打開，從你停下的地方繼續。
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 2: 心態建立 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide divider" data-slide="7">
+  <div class="slide-content center">
+    <div class="section-number">03</div>
+    <h1>在學工具之前</h1>
+    <p style="font-size:1.2rem; opacity:0.85;">先建立對的心態</p>
+  </div>
+</div>
+
+<div class="slide" data-slide="8">
+  <div class="leaf-border top-right"></div>
+  <div class="slide-content">
+    <h2>AI 是實習生，不是萬能助理</h2>
+    <p>它執行力很強、文字漂亮，但完全不知道什麼重要、什麼不重要。</p>
+    <p style="margin-top:0.8em;">你問它「幫我設計一堂課」，它會給你一堂課——格式完整、結構合理。<br/>但那堂課不知道你的學生上週經歷了什麼。</p>
+    <div class="punchline">
+      AI 負責跑腿、整理、草擬。<br/>「這堂課要不要這樣上」——這個決定永遠是你的。
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-slide="9">
+  <div class="leaf-border bottom-left"></div>
+  <div class="slide-content">
+    <h2>真正的門檻不是技術</h2>
+    <p>技術門檻其實不高。真正的門檻是清晰度。</p>
+    <p style="margin-top:0.8em;">你必須能回答一個問題：<strong>「我這堂課到底要幹嘛？」</strong></p>
+    <p style="margin-top:0.8em;">你給 AI「我想讓學生體會到什麼是真正的勞動」，它能幫你設計出很好的活動。<br/>你給它「幫我想一堂課」，它只能給你一個通用模板。</p>
+    <div class="punchline">
+      你自己想不清楚的事情，AI 不會幫你想清楚。
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-slide="10">
+  <div class="leaf-border top-right"></div>
+  <div class="slide-content">
+    <h2>駕馭，還是被操縱？</h2>
+    <p><strong>被操縱：</strong>AI 產出了一份教案，你覺得「好像也可以」，就直接拿去用了。<br/>久了之後，你的教學像在執行別人寫的劇本。</p>
+    <p style="margin-top:0.8em;"><strong>駕馭：</strong>你看完 AI 的草稿，會說「不對，這裡太趕了」「這個順序反了」。<br/>你改得動它，代表你還在駕駛座上。</p>
+    <div class="punchline">
+      如果 AI 給你的東西你從來不改，<br/>那不是它太厲害，是你放棄思考了。
+    </div>
+    <p style="margin-top:1em; color:var(--text-light);">華德福老師天天在練「為什麼要這樣做」——這就是駕馭 AI 最大的資本。</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 3: 核心工具 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide divider" data-slide="11">
+  <div class="slide-content center">
+    <div class="section-number">04</div>
+    <h1>核心工具</h1>
+    <p style="font-size:1.2rem; opacity:0.85;">備課引擎 + 課程評估器</p>
+  </div>
+</div>
+
+<div class="slide" data-slide="12">
+  <div class="leaf-border top-right"></div>
+  <div class="slide-content">
+    <h2>Lesson Engine：備課引擎</h2>
+    <p>一份給 AI 讀的備課規格書，三個核心組件：</p>
+    <ul style="margin-top:0.8em;">
+      <li><strong>10 條設計原則</strong>——學生必須自己動腦、每堂課要差異化、新概念先圖像後文字</li>
+      <li><strong>3 種節奏模板</strong>——45 分鐘專科、90 分鐘連堂、120 分鐘主課程</li>
+      <li><strong>5 階段工作流</strong>——研究 → 草稿 → AI 自我審核 → 教師審閱 → 定稿</li>
+    </ul>
+    <div class="punchline">
+      AI 被明確告知：「你是備課引擎，不是教師。」
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-slide="13">
+  <div class="leaf-border bottom-left"></div>
+  <div class="slide-content">
+    <h2>Lesson Evaluator：課程評估器</h2>
+    <p>備課引擎負責生產，評估器負責檢查。<strong>刻意分開，建議在不同對話跑。</strong></p>
+    <ul style="margin-top:0.8em;">
+      <li><strong>先辨識課型</strong>——教學課、測驗課、概念引入課各有不同標準</li>
+      <li><strong>節奏量化</strong>——計算學生接收 vs 行動的比例</li>
+      <li><strong>差異化適配</strong>——不是層次越多越好，要對應真實需求</li>
+      <li><strong>教師操作負荷</strong>——設計再好，一個人做不來就沒用</li>
+      <li><strong>應用語境</strong>——填空不等於使用語言</li>
+    </ul>
+    <p style="margin-top:0.8em;">判定結果：<strong>PASS</strong>（可用）/ <strong>REVISE</strong>（修改）/ <strong>REDO</strong>（重來）</p>
+  </div>
+</div>
+
+<div class="slide" data-slide="14">
+  <div class="leaf-border top-right"></div>
+  <div class="slide-content">
+    <h2>這樣做，老師不會不思考嗎？</h2>
+    <p>系統裡有三道防線：</p>
+    <ul>
+      <li>AI 被告知「你不是教師」——它不會假裝自己在做教育判斷</li>
+      <li>工作流有<strong>強制暫停點</strong>——教師審閱跳不過去</li>
+      <li>生產和評估<strong>分開</strong>——老師必須自己決定接受哪一邊的意見</li>
+    </ul>
+    <div class="punchline">
+      防線在設計裡，但最終防線在教師自己身上。<br/>如果你決定不思考，什麼設計都擋不住。
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 4: 真實故事 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide divider" data-slide="15">
+  <div class="slide-content center">
+    <div class="section-number">05</div>
+    <h1>從教室裡長出來的</h1>
+    <p style="font-size:1.2rem; opacity:0.85;">每一次更新都是因為撞到了問題</p>
+  </div>
+</div>
+
+<div class="slide" data-slide="16">
+  <div class="leaf-border bottom-left"></div>
+  <div class="slide-content">
+    <h2>場景 A：設計很漂亮，一個人做不來</h2>
+    <p>Y 字型分組活動——學生走到岔路口選擇方向。<br/>評估器判 PASS。</p>
+    <p style="margin-top:0.8em;">但 David 指出：老師要同時貼膠帶、引導站位、觀察反應、聽學生說理由。<br/><strong>四件事同時做，一個人做不來。</strong></p>
+    <div class="punchline">
+      催生「教師操作負荷」維度：<br/>同時超過三件事就標記警告。
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-slide="17">
+  <div class="leaf-border top-right"></div>
+  <div class="slide-content">
+    <h2>場景 B：AI 判 PASS，教師只給 2.5 分</h2>
+    <p>概念引入課被分成 ABCD 四層學習單。看起來很用心。</p>
+    <p style="margin-top:0.8em;">但問題有三：</p>
+    <ul>
+      <li>學生還沒學會，分這麼多層沒有意義</li>
+      <li>整堂課都在填空——填空不等於使用語言</li>
+      <li>沒有任何互動環節</li>
+    </ul>
+    <div class="punchline">
+      差異化不是越多層越好。<br/>一口氣加了三個新維度進評估器。
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-slide="18">
+  <div class="leaf-border bottom-left"></div>
+  <div class="slide-content">
+    <h2>場景 C & D：用錯尺量、自選沒人選</h2>
+    <p><strong>測驗課被當教學課評：</strong>評估器說「新知識引入太少」——當然少，這是考試。<br/>催生了「課型辨識」：評分之前，先搞清楚你在評的是什麼。</p>
+    <p style="margin-top:1.2em;"><strong>學生自選任務，結果全班選最簡單的：</strong><br/>「自選機制」從設計亮點被降級為風險警告——<br/>自選不等於差異化，如果所有人都選最簡單的路，那只是偽選擇。</p>
+    <div class="punchline">
+      這些發現不是坐在電腦前想出來的，<br/>都是走進教室之後才知道的。
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 5: 系統幅度 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide divider" data-slide="19">
+  <div class="slide-content center">
+    <div class="section-number">06</div>
+    <h1>備課之外</h1>
+    <p style="font-size:1.2rem; opacity:0.85;">一個教師的日常，遠不止備課</p>
+  </div>
+</div>
+
+<div class="slide" data-slide="20">
+  <div class="leaf-border top-right"></div>
+  <div class="slide-content">
+    <h2>系統涵蓋的工作面向</h2>
+    <div class="three-col">
+      <div class="col-card">
+        <h3>行政溝通</h3>
+        <ul>
+          <li>家長信起草與寄送</li>
+          <li>Email 直接發送</li>
+          <li>行事曆管理</li>
+          <li>檔案上傳 Drive</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>學生與班級</h3>
+        <ul>
+          <li>課堂觀察記錄</li>
+          <li>導師業務處理</li>
+          <li>學期評語初稿</li>
+          <li>進度追蹤與反思</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>素材與產出</h3>
+        <ul>
+          <li>臺灣文化記憶庫<br/>(5萬筆本地索引)</li>
+          <li>詩歌素材研究</li>
+          <li>全自動內容管線</li>
+          <li>收工一鍵同步</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 6: 新手入口 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide divider" data-slide="21">
+  <div class="slide-content center">
+    <div class="section-number">07</div>
+    <h1>從哪裡開始</h1>
+    <p style="font-size:1.2rem; opacity:0.85;">五個場景，三句話就能入手</p>
+  </div>
+</div>
+
+<div class="slide" data-slide="22">
+  <div class="leaf-border bottom-left"></div>
+  <div class="slide-content">
+    <h2>五個真實的日常場景</h2>
+    <div class="scenario-grid">
+      <div class="scenario-card">
+        <h3>1. 禮拜天晚上備明天的課</h3>
+        <p>告訴 AI 主題和學生狀態，拿到教案初稿。你的工作：審閱和修改。</p>
+      </div>
+      <div class="scenario-card">
+        <h3>2. 開學第一週寫家長信</h3>
+        <p>列出重點，AI 整理成信件格式。把正式語調改成你自己的口吻。</p>
+      </div>
+      <div class="scenario-card">
+        <h3>3. 上完不太順的課，想記下來</h3>
+        <p>用語音講一遍觀察，AI 整理存檔。下次備課時自動浮現提醒。</p>
+      </div>
+      <div class="scenario-card">
+        <h3>4. 區塊結束，寫教學反思</h3>
+        <p>說出哪些有效哪些沒有，AI 整理成結構化反思報告。</p>
+      </div>
+      <div class="scenario-card">
+        <h3>5. 學期末寫學生評語</h3>
+        <p>根據整學期觀察紀錄起草。每一條都要過你的手——AI 準確但不溫暖。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-slide="23">
+  <div class="leaf-border top-right"></div>
+  <div class="slide-content">
+    <h2>關於「我怕我不會」</h2>
+    <ul>
+      <li><strong>怕說錯話</strong>——AI 不會因為你的指令不精確就壞掉。它很擅長處理不完美的問題。</li>
+      <li><strong>怕搞壞什麼</strong>——所有修改都有版本紀錄，任何時候都能回到上一個狀態。</li>
+      <li><strong>怕跟不上</strong>——你不需要會所有功能。備課、記錄、寫信，三個就夠開始了。</li>
+    </ul>
+    <div class="punchline">
+      不要用「學 AI 工具」的心態開始，<br/>用「試試看能不能幫上我一件事」的心態開始。
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-slide="24">
+  <div class="leaf-border bottom-left"></div>
+  <div class="slide-content center">
+    <h2>最小可行入口：三句話</h2>
+    <div style="margin-top:2em; font-size:clamp(1.1rem,1.8vw,1.4rem); line-height:2.4;">
+      <p><strong>1.</strong>「幫我設計一堂課，[年級] [科目]，主題是 [主題]。」</p>
+      <p><strong>2.</strong>「不對，我的意思是......」</p>
+      <p><strong>3.</strong>「好，存起來。」</p>
+    </div>
+    <p style="margin-top:2em; color:var(--text-muted); font-size:1rem;">其他的，遇到了再學。</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 7: 原則結語 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide divider" data-slide="25">
+  <div class="slide-content center">
+    <div class="section-number">08</div>
+    <h1>在 AI 時代</h1>
+    <p style="font-size:1.2rem; opacity:0.85;">一個教師應該知道、做、和不做的事</p>
+  </div>
+</div>
+
+<div class="slide" data-slide="26">
+  <div class="leaf-border top-right"></div>
+  <div class="slide-content">
+    <h2>知道、做、不做</h2>
+    <div class="three-col">
+      <div class="col-card">
+        <h3>要知道的</h3>
+        <ul>
+          <li>AI 沒有教育判斷力</li>
+          <li>品質不穩定，每次都要檢查</li>
+          <li>它會犯很有自信的錯</li>
+        </ul>
+      </div>
+      <div class="col-card warn">
+        <h3>要做的</h3>
+        <ul>
+          <li>當外接硬碟和初稿機器</li>
+          <li>先想三分鐘再問 AI</li>
+          <li>累積判斷力，不是產出量</li>
+        </ul>
+      </div>
+      <div class="col-card stop">
+        <h3>不要做的</h3>
+        <ul>
+          <li>讓 AI 替你做教育決定</li>
+          <li>輸出沒看過就交出去</li>
+          <li>停止學習新東西</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CLOSING -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slide" data-slide="27">
+  <div class="leaf-border top-right"></div>
+  <div class="leaf-border bottom-left"></div>
+  <div class="slide-content center">
+    <h1 style="font-size:clamp(1.6rem,3vw,2.4rem); line-height:1.5;">
+      AI 讓你從瑣事中解放，<br/>
+      但解放出來的時間該投入什麼——<br/>
+      <span style="color:var(--primary);">這個問題只有你自己能回答。</span>
+    </h1>
+    <p style="margin-top:3em; color:var(--text-muted); font-size:0.95rem;">
+      感謝你的時間。
+    </p>
+    <p style="margin-top:1.5em; color:var(--text-muted); font-size:0.85rem;">
+      David（林信宏）| 慈心華德福學校 | 2026.04.01
+    </p>
+  </div>
+</div>
+
+</div><!-- end .deck -->
+
+<!-- ── Progress Bar ── -->
+<div class="progress" id="progress"></div>
+
+<!-- ── Navigation ── -->
+<div class="nav">
+  <button onclick="prev()" aria-label="上一頁">&#8592;</button>
+  <span class="page-info" id="pageInfo">1 / 28</span>
+  <button onclick="next()" aria-label="下一頁">&#8594;</button>
+</div>
+
+<button class="fullscreen-btn" onclick="toggleFullscreen()">全螢幕</button>
+
+<!-- ── Script ── -->
+<script>
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+let current = 0;
+
+function showSlide(n) {
+  if (n < 0 || n >= total) return;
+  slides[current].classList.remove('active');
+  current = n;
+  slides[current].classList.add('active');
+  document.getElementById('pageInfo').textContent = (current + 1) + ' / ' + total;
+  document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+}
+
+function next() { showSlide(current + 1); }
+function prev() { showSlide(current - 1); }
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
+  if (e.key === 'Home') { e.preventDefault(); showSlide(0); }
+  if (e.key === 'End') { e.preventDefault(); showSlide(total - 1); }
+  if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
+});
+
+// Touch support
+let touchStartX = 0;
+document.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+document.addEventListener('touchend', (e) => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) { diff > 0 ? prev() : next(); }
+});
+
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+// Init
+showSlide(0);
+</script>
+
+</body>
+</html>

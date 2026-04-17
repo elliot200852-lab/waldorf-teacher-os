@@ -1,0 +1,607 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 五年級植物學・故事總索引
+# 路徑：projects/botany-grade5/index.yaml
+# 由 pipeline 自動維護，勿手動編輯
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+stories:
+  - id: B001
+    title: 植物在太陽與大地之間
+    block: block-1-plant-and-earth
+    kovacs_chapter: "01_The_Plant_Between_Sun_and_Earth"
+    taiwan_species: ["玉山植物帶垂直分布", "玉山圓柏"]
+    date_created: 2026-03-24
+    files:
+      content: stories/B001/content.md
+      kovacs_teaching: stories/B001/kovacs-teaching.md
+      chalkboard_prompt: stories/B001/chalkboard-prompt.md
+      images: stories/B001/images.md
+      references: stories/B001/references.md
+      raw_materials: stories/B001/raw-materials.md
+      quality_report: stories/B001/quality-report.md
+    quality_check: passed
+    drive:
+      html: "15hjBYvQtugWZIVOjIzDvTSQDaure274u"
+      pdf: "1feS0g6ptMvat6Vbvmm-rHZnNXTfCqpQp"
+    tags: [植物與大地, 光與暗, 玉山, 垂直分布, 台灣俗諺]
+  - id: B002
+    title: 蒲公英
+    block: block-1-plant-and-earth
+    kovacs_chapter: "02_The_Dandelion"
+    taiwan_species: ["台灣蒲公英（Taraxacum formosanum）"]
+    date_created: 2026-03-24
+    files:
+      content: stories/B002/content.md
+      kovacs_teaching: stories/B002/kovacs-teaching.md
+      chalkboard_prompt: stories/B002/chalkboard-prompt.md
+      images: stories/B002/images.md
+      references: stories/B002/references.md
+      raw_materials: stories/B002/raw-materials.md
+      quality_report: stories/B002/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1uuW4n3pdiIDQ0gb5SC0v2lHgRB4ZxmEj"
+      pdf: "17l9y-lciceGNR4YVI361Ai1H1clBwB6y"
+    tags: [蒲公英, 台灣特有種, 四大元素, 飛翔種子, 台灣蒲公英]
+  - id: B003
+    title: 真菌
+    block: block-1-plant-and-earth
+    kovacs_chapter: "03_Fungi"
+    taiwan_species: ["牛樟芝（Antrodia cinnamomea）", "段木香菇"]
+    date_created: 2026-03-25
+    files:
+      content: stories/B003/content.md
+      kovacs_teaching: stories/B003/kovacs-teaching.md
+      chalkboard_prompt: stories/B003/chalkboard-prompt.md
+      images: stories/B003/images.md
+      references: stories/B003/references.md
+      raw_materials: stories/B003/raw-materials.md
+      quality_report: stories/B003/quality-report.md
+    quality_check: passed
+    drive:
+      html: "16xw59s2cDD-94N356LLQiPULC6d-6_1t"
+      pdf: "1mrwYV23fKRJ43H6Z5t2Skt_iDXFfZYKD"
+    tags: [真菌, 牛樟芝, 台灣特有種, 分解者, 菌絲, 段木香菇, 嬰兒意象]
+  - id: B004
+    title: 藻類
+    block: block-1-plant-and-earth
+    kovacs_chapter: "04_Algae"
+    taiwan_species: ["海葡萄（長莖葡萄蕨藻）", "紫菜", "溫泉藻"]
+    date_created: 2026-03-26
+    files:
+      content: stories/B004/content.md
+      kovacs_teaching: stories/B004/kovacs-teaching.md
+      chalkboard_prompt: stories/B004/chalkboard-prompt.md
+      images: stories/B004/images.md
+      references: stories/B004/references.md
+      raw_materials: stories/B004/raw-materials.md
+      quality_report: stories/B004/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1OXCh6B4DGnsNMBzXal61pd5sEkfbG4Yk"
+      pdf: "1_eUmsPUFAWs5eubVC6ncqRZt1IgTgutg"
+    tags: [藻類, 海葡萄, 紫菜, 溫泉藻, 學步兒, 大海第一個家, 阿美族, 北海岸黑金, 陽明山]
+  - id: B005
+    title: 地衣
+    block: block-1-plant-and-earth
+    kovacs_chapter: "05_Lichens"
+    taiwan_species: ["合歡山、雪山的高山地衣", "校園老樹樹幹上的地衣"]
+    date_created: 2026-03-26
+    files:
+      content: stories/B005/content.md
+      kovacs_teaching: stories/B005/kovacs-teaching.md
+      chalkboard_prompt: stories/B005/chalkboard-prompt.md
+      images: stories/B005/images.md
+      references: stories/B005/references.md
+      raw_materials: stories/B005/raw-materials.md
+      quality_report: stories/B005/quality-report.md
+    quality_check: passed
+    drive:
+      html: "15vy_M_A7RHAI6_yHiBVbecogSlflauRW"
+      pdf: "1RN8JPe0FWecQ2Ih8VmTLHLwkfWYskb1k"
+    tags: [地衣, 共生, 合歡山, 高山地衣, 空氣品質指標, 先鋒物種, 校園生態, 地之子, 光之子]
+  - id: B006
+    title: 苔蘚
+    block: block-1-plant-and-earth
+    kovacs_chapter: "06_Moss"
+    taiwan_species: ["太平山、棲蘭山的檜木林底層苔蘚毯", "台灣中海拔雲霧帶苔蘚", "阿里山步道的苔蘚包覆"]
+    date_created: 2026-03-27
+    files:
+      content: stories/B006/content.md
+      kovacs_teaching: stories/B006/kovacs-teaching.md
+      chalkboard_prompt: stories/B006/chalkboard-prompt.md
+      images: stories/B006/images.md
+      references: stories/B006/references.md
+      raw_materials: stories/B006/raw-materials.md
+      quality_report: stories/B006/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1uDvq1Wpy2hwamWx2caxYgECRsGp2ZqOA"
+      pdf: "1SoWZFw2ZdYAu0CVZqz0a6R4WM42J1s-a"
+    tags: [苔蘚, 幼童, 太平山, 翠峰湖, 阿里山, 雲霧帶, 保水, 慷慨給予, 假根, 泥炭苔]
+  - id: B007
+    title: 蕨類
+    block: block-2-fern-to-tree
+    kovacs_chapter: "07_Ferns"
+    taiwan_species: ["筆筒樹（Cyathea lepifera）", "台灣桫欏"]
+    date_created: 2026-03-28
+    files:
+      content: stories/B007/content.md
+      kovacs_teaching: stories/B007/kovacs-teaching.md
+      chalkboard_prompt: stories/B007/chalkboard-prompt.md
+      images: stories/B007/images.md
+      references: stories/B007/references.md
+      raw_materials: stories/B007/raw-materials.md
+      quality_report: stories/B007/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1AqcJ3Wk1JuSWBvBV3I7cSdgqbK3flrBG"
+      pdf: "1z4n-5LQ2vSFfbmly_2wo1D9HCW-VLRxb"
+    tags: [蕨類, 第一次說我, 筆筒樹, 台灣桫欏, 蕨類王國, 侏羅紀活化石, 孢子, 問號嫩芽, 煤炭, 個體性覺醒]
+  - id: B008
+    title: 針葉樹
+    block: block-2-fern-to-tree
+    kovacs_chapter: "08_Conifers"
+    taiwan_species: ["台灣紅檜（Chamaecyparis formosensis）", "台灣扁柏（Chamaecyparis obtusa var. formosana）", "台灣杉（Taiwania cryptomerioides）"]
+    date_created: 2026-03-29
+    files:
+      content: stories/B008/content.md
+      kovacs_teaching: stories/B008/kovacs-teaching.md
+      chalkboard_prompt: stories/B008/chalkboard-prompt.md
+      images: stories/B008/images.md
+      references: stories/B008/references.md
+      raw_materials: stories/B008/raw-materials.md
+      quality_report: stories/B008/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1h98PAm2mt0pg6OORfgCNYB7YhpI3ZmVS"
+      pdf: "14K2qLu1aZiiNIy5Zyxv5Tb0dgVHLLY0M"
+    tags: [針葉樹, 四歲學前兒童, 台灣紅檜, 阿里山神木, 毬果, 樹脂魔法花, 伐木史, 保育, 台灣杉, 東亞最高樹]
+  - id: B009
+    title: 樹與大地
+    block: block-2-fern-to-tree
+    kovacs_chapter: "09_Trees_and_the_Earth"
+    taiwan_species: ["樟樹（Cinnamomum camphora）", "榕樹（Ficus microcarpa）"]
+    date_created: 2026-03-30
+    files:
+      content: stories/B009/content.md
+      kovacs_teaching: stories/B009/kovacs-teaching.md
+      chalkboard_prompt: stories/B009/chalkboard-prompt.md
+      images: stories/B009/images.md
+      references: stories/B009/references.md
+      raw_materials: stories/B009/raw-materials.md
+      quality_report: stories/B009/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1heVrKZvAsTdy8POokQPXriOv9WjMJE-g"
+      pdf: "15KXyfIwqydKRnt3nOOEKjnxUYf0q6xJN"
+    tags: [樹與大地, 木頭即大地, 樟樹, 樟腦, 腦丁, 榕樹, 氣根, 廟埕, 關鍵物種, 樹木生態系, 公寓樓層]
+  - id: B010
+    title: 開花植物導論
+    block: block-2-fern-to-tree
+    kovacs_chapter: "10_Flowering_Plants"
+    taiwan_species: ["台灣百合（Lilium formosanum）", "玉山杜鵑", "台灣一葉蘭", "圓仔花"]
+    date_created: 2026-03-31
+    files:
+      content: stories/B010/content.md
+      kovacs_teaching: stories/B010/kovacs-teaching.md
+      chalkboard_prompt: stories/B010/chalkboard-prompt.md
+      images: stories/B010/images.md
+      references: stories/B010/references.md
+      raw_materials: stories/B010/raw-materials.md
+      quality_report: stories/B010/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1FyN19EHWJUqJcDH87sPXLHymFq7Pl1HW"
+    tags: [開花植物, 青春, 太陽老師, 星星花形, 台灣百合, 魯凱族, 一枝草一點露, 圓仔花, 特有種, 被子植物]
+
+  - id: B011
+    title: 低等與高等開花植物
+    block: block-2-fern-to-tree
+    kovacs_chapter: "11_Lower_and_Higher_Flowering_Plants"
+    taiwan_species: ["稻", "竹", "檳榔", "茶", "樟"]
+    date_created: 2026-03-31
+    files:
+      content: stories/B011/content.md
+      kovacs_teaching: stories/B011/kovacs-teaching.md
+      chalkboard_prompt: stories/B011/chalkboard-prompt.md
+      images: stories/B011/images.md
+      references: stories/B011/references.md
+      raw_materials: stories/B011/raw-materials.md
+      quality_report: stories/B011/quality-report.md
+    quality_check: passed
+    drive:
+      html: "16Si9c4_AAmS8OGn9m4pL5o0X3kOI_GVJ"
+      pdf: "1PkANaujl5sGACwH6JmZnVl3bkg7G4PRE"
+    tags: [單子葉, 雙子葉, 平行脈, 網狀脈, 稻, 竹, 檳榔, 茶, 樟, 花萼, 球莖, 主根, 一粒米百粒汗]
+
+  - id: B012
+    title: 花的構造
+    block: block-2-fern-to-tree
+    kovacs_chapter: "12_The_Blossom"
+    taiwan_species: ["台灣百合（Lilium formosanum）", "梅花", "桐花", "毛茛"]
+    date_created: 2026-03-31
+    files:
+      content: stories/B012/content.md
+      kovacs_teaching: stories/B012/kovacs-teaching.md
+      chalkboard_prompt: stories/B012/chalkboard-prompt.md
+      images: stories/B012/images.md
+      references: stories/B012/references.md
+      raw_materials: stories/B012/raw-materials.md
+      quality_report: stories/B012/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1aq55_LrT5E54CGfVbqWQTdAn5hnAhSW8"
+      pdf: "1Two3JHJGV4r66KWGonGSPkTXXx9Sw7R9"
+    tags: [花的構造, 花萼, 花瓣, 雄蕊, 雌蕊, 子房, 花粉, 台灣百合, 梅花, 桐花, 祈禱之手, 權杖與寶球, 好花毋驚晚開]
+
+  - id: B013
+    title: 花粉
+    block: block-2-fern-to-tree
+    kovacs_chapter: "13_Pollen"
+    taiwan_species: ["龍眼（Dimocarpus longan）", "荔枝（Litchi chinensis）"]
+    date_created: 2026-04-01
+    files:
+      content: stories/B013/content.md
+      kovacs_teaching: stories/B013/kovacs-teaching.md
+      chalkboard_prompt: stories/B013/chalkboard-prompt.md
+      images: stories/B013/images.md
+      references: stories/B013/references.md
+      raw_materials: stories/B013/raw-materials.md
+      quality_report: stories/B013/quality-report.md
+    quality_check: passed
+    drive:
+      html: "13OSETWsL4q5FJjwbEo4QCQmfrJ5qTIMu"
+      pdf: "12HQ0v_F1lmYe0rlat94XAu59T9G96Dk8"
+    tags: [花粉, 太陽的祝福, 子房小地球, 蜜蜂, 花忠誠, 龍眼蜜, 荔枝蜜, 遊牧養蜂, 東方蜜蜂, 風媒蟲媒, 授粉]
+
+  - id: B014
+    title: 花與蝴蝶
+    block: block-2-fern-to-tree
+    kovacs_chapter: "14_Flowers_and_Butterflies"
+    taiwan_species: ["紫斑蝶", "大白斑蝶（Idea leuconoe clara）", "馬兜鈴"]
+    date_created: 2026-04-04
+    files:
+      content: stories/B014/content.md
+      kovacs_teaching: stories/B014/kovacs-teaching.md
+      chalkboard_prompt: stories/B014/chalkboard-prompt.md
+      images: stories/B014/images.md
+      references: stories/B014/references.md
+      raw_materials: stories/B014/raw-materials.md
+      quality_report: stories/B014/quality-report.md
+    quality_check: passed
+    drive:
+      html: "1720F7nLx6pmlFxbwIY-lAr2Mg81SnKYQ"
+      pdf: "19e5fKUaGA9KNVnIGzVHLVRUZkZR7OgVw"
+    tags: [花與蝴蝶, 共演化, 光的孩子, 紫斑蝶, 茂林越冬, 讓蝶道, 大白斑蝶, 爬森藤, 馬兜鈴, 珠光裳鳳蝶, 蝶仔, 鏡像隱喻, 蝴蝶王國]
+
+  - id: B015
+    title: 毛蟲與蝴蝶
+    block: block-3-individual-plants
+    kovacs_chapter: "15_Caterpillars_and_Butterflies"
+    taiwan_species: ["柑橘鳳蝶（Papilio xuthus）"]
+    date_created: 2026-04-09
+    files:
+      content: stories/B015/B015-content.md
+      kovacs_teaching: stories/B015/B015-kovacs-teaching.md
+      chalkboard_prompt: stories/B015/B015-chalkboard-prompt.md
+      images: stories/B015/B015-images.md
+      references: stories/B015/B015-references.md
+      raw_materials: stories/B015/B015-raw-materials.md
+      quality_report: stories/B015/B015-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1p2gX0qqRx07yj_iHM03gLKAA2_NTe1Cf"
+      pdf: "1fWWMt_5lxvMVsvItcfwRc-f7lP0mNf9C"
+    tags: [毛蟲與蝴蝶, 完全變態, 死亡與重生, 柑橘鳳蝶, 臭角, 縊蛹, 蝴蝶王國, 梁祝化蝶, 光之子, 陽光編織]
+  - id: B016
+    title: 鬱金香
+    block: block-3-individual-plants
+    kovacs_chapter: "16_The_Tulip"
+    taiwan_species: ["台灣百合", "薑", "芋"]
+    date_created: 2026-04-10
+    files:
+      content: stories/B016/B016-content.md
+      kovacs_teaching: stories/B016/B016-kovacs-teaching.md
+      chalkboard_prompt: stories/B016/B016-chalkboard-prompt.md
+      images: stories/B016/B016-images.md
+      references: stories/B016/B016-references.md
+      raw_materials: stories/B016/B016-raw-materials.md
+      quality_report: stories/B016/B016-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1oax-YNNFKeKLkpgpjKdpDOgU4vnzsK-P"
+      pdf: "1Luyab-2F2-U6rVQp2sSZ60HeyjoqPPPy"
+    tags: [鬱金香, 鱗莖, 地下儲能, 台灣百合, 薑根莖, 芋球莖, 看不見的力量, 球根植物]
+  - id: B017
+    title: 種子與子葉
+    block: block-3-individual-plants
+    kovacs_chapter: "17_Seeds_and_Cotyledons"
+    taiwan_species: ["綠豆", "小米", "紅藜"]
+    date_created: 2026-04-13
+    files:
+      content: stories/B017/B017-content.md
+      kovacs_teaching: stories/B017/B017-kovacs-teaching.md
+      chalkboard_prompt: stories/B017/B017-chalkboard-prompt.md
+      images: stories/B017/B017-images.md
+      references: stories/B017/B017-references.md
+      raw_materials: stories/B017/raw-materials.md
+      quality_report: stories/B017/B017-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1YDpeL5N53HsZhgbBbh-dy2tW3hKTKG1A"
+      pdf: "1O4nPkRRnBD_b-p1xJwINEwXd5WCCe-aR"
+    tags: [種子, 子葉, 先鋒官, 單子葉, 雙子葉, 綠豆, 小米, 布農族, 紅藜, 排灣族, 月亮播種, 斯瓦爾巴種子庫]
+  - id: B018
+    title: 玫瑰
+    block: block-3-individual-plants
+    kovacs_chapter: "18_The_Rose"
+    taiwan_species: ["山櫻花（Prunus campanulata）", "台灣野薔薇"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B018/B018-content.md
+      kovacs_teaching: stories/B018/B018-kovacs-teaching.md
+      chalkboard_prompt: stories/B018/B018-chalkboard-prompt.md
+      images: stories/B018/B018-images.md
+      references: stories/B018/B018-references.md
+      raw_materials: stories/B018/B018-raw-materials.md
+      quality_report: stories/B018/B018-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1FkTMpVmRG5q-TnSqQLsH9XUYbW2xr7UB"
+    tags: [玫瑰, 花中之后, 五角星, 薔薇科, 野薔薇, 山櫻花, 鬱金香對比, 木本灌木, 深根, 萼片秘密]
+
+  - id: B019
+    title: 薔薇科延伸
+    block: block-3-individual-plants
+    kovacs_chapter: "19_The_Rose_Family_"
+    taiwan_species: ["山櫻花", "台灣野薔薇", "梅", "李", "桃"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B019/B019-content.md
+      kovacs_teaching: stories/B019/B019-kovacs-teaching.md
+      chalkboard_prompt: stories/B019/B019-chalkboard-prompt.md
+      images: stories/B019/B019-images.md
+      references: stories/B019/B019-references.md
+      raw_materials: stories/B019/B019-raw-materials.md
+      quality_report: stories/B019/B019-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1hL3HD5sBENlB2ztmYGhJgha0Q0303R1g"
+      pdf: "1tZkw2HTvSkfsMCi4Mo5P3XyAwCS0u6IG"
+    tags: [薔薇科, 玫瑰家族, 五瓣花, 山櫻花, 梅花, 桃, 蘋果, 信義鄉, 拉拉山, 水蜜桃, 果樹]
+
+  - id: B020
+    title: 高麗菜（十字花科）
+    block: block-3-individual-plants
+    kovacs_chapter: "20_The_Cabbage"
+    taiwan_species: ["高麗菜", "芥菜", "蘿蔔"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B020/B020-content.md
+      kovacs_teaching: stories/B020/B020-kovacs-teaching.md
+      chalkboard_prompt: stories/B020/B020-chalkboard-prompt.md
+      images: stories/B020/B020-images.md
+      references: stories/B020/B020-references.md
+      raw_materials: stories/B020/B020-raw-materials.md
+      quality_report: stories/B020/B020-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1sP1y_UdW5dYmpICXGAuTu4aaZ5NRiYkE"
+      pdf: "1UMzG6zULX1RQa6RUtypUrPqHKrLhnz4x"
+    tags: [十字花科, 高麗菜, 甘藍, 芥菜, 客家, 酸菜, 福菜, 梅乾菜, 蘿蔔, 菜頭, 高山蔬菜, 梨山]
+
+  - id: B021
+    title: 蕁麻
+    block: block-3-individual-plants
+    kovacs_chapter: "21_The_Nettle"
+    taiwan_species: ["咬人貓", "咬人狗", "苧麻"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B021/B021-content.md
+      kovacs_teaching: stories/B021/B021-kovacs-teaching.md
+      chalkboard_prompt: stories/B021/B021-chalkboard-prompt.md
+      images: stories/B021/B021-images.md
+      references: stories/B021/B021-references.md
+      raw_materials: stories/B021/B021-raw-materials.md
+      quality_report: stories/B021/B021-quality-report.md
+    quality_check: passed
+    drive:
+      html: "15PC_rFeX7nqRu_LjoYOla4OGKJ-Z7pSM"
+      pdf: "17SH4szyULwbUw0X1tWe50lRzj42fNfgy"
+    tags: [蕁麻科, 咬人貓, 咬人狗, 苧麻, 泰雅族, 織布, 焮毛, 紅蛺蝶, 藥用植物, 纖維植物]
+
+  - id: B022
+    title: 橡樹
+    block: block-3-individual-plants
+    kovacs_chapter: "22_The_Oak"
+    taiwan_species: ["台灣青剛櫟", "栓皮櫟"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B022/B022-content.md
+      kovacs_teaching: stories/B022/B022-kovacs-teaching.md
+      chalkboard_prompt: stories/B022/B022-chalkboard-prompt.md
+      images: stories/B022/B022-images.md
+      references: stories/B022/B022-references.md
+      raw_materials: stories/B022/B022-raw-materials.md
+      quality_report: stories/B022/B022-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1cUEwb8XHV_t1U4gXooRKrEx3qWlo_sF6"
+      pdf: "1hUb_JmUfT0FtyE1izby_4Wck4QVRGMnX"
+    tags: [殼斗科, 青剛櫟, 栓皮櫟, 松鼠, 台灣黑熊, 台灣藍鵲, 鼯鼠, 橡實, 原住民食物, 德魯伊]
+
+  - id: B023
+    title: 樺樹
+    block: block-4-plants-and-people
+    kovacs_chapter: "23_The_Birch"
+    taiwan_species: ["台灣赤楊"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B023/B023-content.md
+      kovacs_teaching: stories/B023/B023-kovacs-teaching.md
+      chalkboard_prompt: stories/B023/B023-chalkboard-prompt.md
+      images: stories/B023/B023-images.md
+      references: stories/B023/B023-references.md
+      raw_materials: stories/B023/B023-raw-materials.md
+      quality_report: stories/B023/B023-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1gLRAXadxwNlXBCykp_856c1wnB5LODRz"
+      pdf: "11GbHwmJHVTMKvS9ZscSKdTK3jUrRYv8z"
+    tags: [樺木科, 台灣赤楊, 白樺, Frankia, 根瘤, 固氮, 崩塌地, 先鋒樹種, 演替, 泰雅族, 布農族]
+
+  - id: B024
+    title: 棕櫚
+    block: block-4-plants-and-people
+    kovacs_chapter: "24_The_Palm_Tree"
+    taiwan_species: ["台東蘇鐵", "檳榔", "椰子"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B024/B024-content.md
+      kovacs_teaching: stories/B024/B024-kovacs-teaching.md
+      chalkboard_prompt: stories/B024/B024-chalkboard-prompt.md
+      images: stories/B024/B024-images.md
+      references: stories/B024/B024-references.md
+      raw_materials: stories/B024/B024-raw-materials.md
+      quality_report: stories/B024/B024-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1yb5YRt54IPOhLfeVF6VaA8rIgHOzzzrF"
+      pdf: "1jLZOkKJO1zL6X0YYJha1YpMWHJ4MELuw"
+    tags: [棕櫚科, 台東蘇鐵, 椰子, 檳榔, 阿美族, 排灣族, 卑南族, 洋流傳播, 熱帶植物, 文化植物]
+
+  - id: B025
+    title: 茶、糖與咖啡
+    block: block-4-plants-and-people
+    kovacs_chapter: "25_Tea__Sugar_and_Coffee"
+    taiwan_species: ["台灣烏龍茶", "甘蔗", "台灣咖啡"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B025/B025-content.md
+      kovacs_teaching: stories/B025/B025-kovacs-teaching.md
+      chalkboard_prompt: stories/B025/B025-chalkboard-prompt.md
+      images: stories/B025/B025-images.md
+      references: stories/B025/B025-references.md
+      raw_materials: stories/B025/B025-raw-materials.md
+      quality_report: stories/B025/B025-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1DNk_7pWTkh4kEkhqfap3UovRyhfgK3D7"
+    tags: [茶, 糖, 咖啡, 烏龍茶, 東方美人, 甘蔗, 台糖, 五分車, 古坑咖啡, 阿里山, 殖民貿易]
+
+  - id: B026
+    title: 草與穀物
+    block: block-4-plants-and-people
+    kovacs_chapter: "26_Grass_and_Cereals"
+    taiwan_species: ["稻", "小米", "甘蔗"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B026/B026-content.md
+      kovacs_teaching: stories/B026/B026-kovacs-teaching.md
+      chalkboard_prompt: stories/B026/B026-chalkboard-prompt.md
+      images: stories/B026/B026-images.md
+      references: stories/B026/B026-references.md
+      raw_materials: stories/B026/B026-raw-materials.md
+      quality_report: stories/B026/B026-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1aE2IUXEAl0M7LTMyRDNr31yoACa7uFfW"
+    tags: [禾本科, 草, 穀物, 稻米, 蓬萊米, 小米, 布農族, 池上, 水田, 甘蔗]
+
+  - id: B027
+    title: 葉與花
+    block: block-4-plants-and-people
+    kovacs_chapter: "27_Leaves_and_Blossoms"
+    taiwan_species: ["台灣欒樹"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B027/B027-content.md
+      kovacs_teaching: stories/B027/B027-kovacs-teaching.md
+      chalkboard_prompt: stories/B027/B027-chalkboard-prompt.md
+      images: stories/B027/B027-images.md
+      references: stories/B027/B027-references.md
+      raw_materials: stories/B027/B027-raw-materials.md
+      quality_report: stories/B027/B027-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1LuYrX1YOAT67ZPawP1pVM_r7KT5WTfXK"
+    tags: [葉與花, 光合作用, 根葉搭配, 花粉, 授粉, 台灣欒樹, 四色變化, 楓香, 蜂巢隱喻]
+
+  - id: B028
+    title: 蜜蜂
+    block: block-4-plants-and-people
+    kovacs_chapter: "28_Bees"
+    taiwan_species: ["東方蜂", "西方蜂"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B028/B028-content.md
+      kovacs_teaching: stories/B028/B028-kovacs-teaching.md
+      chalkboard_prompt: stories/B028/B028-chalkboard-prompt.md
+      images: stories/B028/B028-images.md
+      references: stories/B028/B028-references.md
+      raw_materials: stories/B028/B028-raw-materials.md
+      quality_report: stories/B028/B028-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1Oney-0sR8wmfngysryLcUoV7KBqDXNil"
+      pdf: "1I_rEHRBZXR8u6ouio7YqHviTHBPHSnB-"
+    tags: [蜜蜂, 東方蜂, 西方蜂, 龍眼蜜, 荔枝蜜, 蜂蠟, 分群, 飛行的植物, 超個體, 賽夏族瓦祿]
+
+  - id: B029
+    title: 蜂巢
+    block: block-4-plants-and-people
+    kovacs_chapter: "29_The_Beehive"
+    taiwan_species: ["台灣養蜂人"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B029/B029-content.md
+      kovacs_teaching: stories/B029/B029-kovacs-teaching.md
+      chalkboard_prompt: stories/B029/B029-chalkboard-prompt.md
+      images: stories/B029/B029-images.md
+      references: stories/B029/B029-references.md
+      raw_materials: stories/B029/B029-raw-materials.md
+      quality_report: stories/B029/B029-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1uDsIvXyLUV3SvAYQuQBA6ej7hh848yrJ"
+      pdf: "13YAQ4j8F4tzC91Q_ySaj9quVH2MXVm3A"
+    tags: [蜂巢, 六角形, 蜂蠟, 工蜂, 搖擺舞, 龍眼花, 逐花而居, 個體為整體服務, 超有機體, 蜂巢猜想]
+
+  - id: B030
+    title: 蜜蜂的精神
+    block: block-4-plants-and-people
+    kovacs_chapter: "30_The_Spirit_of_the_Bee"
+    taiwan_species: ["玉山植物帶垂直分布", "東方蜜蜂"]
+    date_created: 2026-04-16
+    files:
+      content: stories/B030/B030-content.md
+      kovacs_teaching: stories/B030/B030-kovacs-teaching.md
+      chalkboard_prompt: stories/B030/B030-chalkboard-prompt.md
+      images: stories/B030/B030-images.md
+      references: stories/B030/B030-references.md
+      raw_materials: stories/B030/B030-raw-materials.md
+      quality_report: stories/B030/B030-quality-report.md
+    quality_check: passed
+    drive:
+      html: "1-3V5G2zjOnv1ngiFC5tiNYJHqZxedEJ5"
+      pdf: "10zkmzvYTis9lNIK7c1kFIqlQLz-9PO1i"
+    tags: [蜜蜂的精神, 收束篇, 玉山, 植物帶, 國家公園, 檜木保育, 群體心智, 取用與給予, 種子意象, 首尾呼應]
+
+# 每筆格式：
+# - id: B001
+#   title: 植物在太陽與大地之間
+#   block: block-1-plant-and-earth
+#   kovacs_chapter: "01_The_Plant_Between_Sun_and_Earth"
+#   taiwan_species: ["玉山植物帶"]
+#   date_created: 2026-03-25
+#   files:
+#     content: stories/B001/content.md
+#     kovacs_teaching: stories/B001/kovacs-teaching.md
+#     chalkboard_prompt: stories/B001/chalkboard-prompt.md
+#     images: stories/B001/images.md
+#     references: stories/B001/references.md
+#     raw_materials: stories/B001/raw-materials.md
+#     quality_report: stories/B001/quality-report.md
+#   quality_check: passed
+#   tags: []

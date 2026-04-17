@@ -1,0 +1,27 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 2】
+# 名稱：十年級 (10a) 班級脈絡
+# 路徑：{workspace}/projects/class-10a/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+project: 十年級班級脈絡
+code: 10a
+type: class_context
+status: active
+
+class_focus:
+  age_group: 十年級 (15-16 歲)
+  developmental_theme: >
+    智識興趣與獨立判斷。
+    引導原則：世界是真的→自由。
+  current_focus: >
+    深化對技術底層邏輯的理解，培養分析性思考與創造性實踐。
+
+subjects:
+  - name: ITCS
+    description: 資訊科技與電腦科學 (Information Technology and Computer Science)
+    session_anchor: projects/class-10a/ITCS/session.yaml
+
+special_notes:
+  cross_module_notes:
+    active: ""

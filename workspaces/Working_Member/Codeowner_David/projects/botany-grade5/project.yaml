@@ -1,0 +1,85 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：五年級植物學・專案進度錨點
+# 路徑：projects/botany-grade5/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+botany_grade5:
+  project_type: 獨立工作線
+  target_grades: [5]
+  current_focus: 五年級華德福植物學主課程
+  last_updated: 2026-04-01
+
+  current_position:
+    phase: 全 30 課完成
+    step: 30
+    description: "B028-B030 蜜蜂三部曲完成，Block 4 全部 8 篇齊全。植物學 30 課全集完成。"
+
+  source_material:
+    kovacs_book: "Charles Kovacs, *Botany* (Floris Books, 2005)"
+    kovacs_chapters_path: kovacs-chapters/
+    theme_skeleton: theme-skeleton.md
+    theme_skeleton_yaml: theme-skeleton.yaml
+
+  story_count:
+    total: 30
+    by_block:
+      block-1-plant-and-earth: 6    # 第 1-6 課（完成）
+      block-2-fern-to-tree: 8       # 第 7-14 課（完成）
+      block-3-individual-plants: 8  # 第 15-22 課（完成）
+      block-4-plants-and-people: 8  # 第 23-30 課（完成）
+
+  pipeline:
+    version: 1.0.0
+    assemble_script: publish/scripts/assemble-botany.js
+    assemble_base: publish/scripts/assemble-base.js
+    drive_folder: "1jjtNmAtzcpbzVmHY8Dz8Dqz4w2fMJbU4"  # Google Drive「植物學五年級」
+    scheduled_task: botany-daily
+    schedule: "0 12 * * *"  # 每天中午 12:00（含週末）
+
+  pipeline_tracker:
+    last_run: 2026-04-16
+    last_story_produced: B030
+    last_story_title: "蜜蜂的精神"
+    next_story_queued: null
+    next_story_title: "全 30 課完成"
+    run_history:
+      - { date: 2026-04-16, story: B030, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B029, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B028, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B027, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B026, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B025, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B024, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B023, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B022, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B021, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B020, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B019, status: passed, drive_uploaded: true }
+      - { date: 2026-04-16, story: B018, status: passed, drive_uploaded: true }
+      - { date: 2026-04-13, story: B017, status: passed, drive_uploaded: true }
+      - { date: 2026-04-10, story: B016, status: passed, drive_uploaded: true }
+      - { date: 2026-04-09, story: B015, status: passed, drive_uploaded: true }
+      - { date: 2026-04-04, story: B014, status: passed, drive_uploaded: true }
+      - { date: 2026-04-01, story: B013, status: passed, drive_uploaded: true }
+      - { date: 2026-03-31, story: B012, status: passed, drive_uploaded: true }
+      - { date: 2026-03-31, story: B011, status: passed, drive_uploaded: true }
+      - { date: 2026-03-31, story: B010, status: passed, drive_uploaded: true }
+      - { date: 2026-03-30, story: B009, status: passed, drive_uploaded: true }
+      - { date: 2026-03-29, story: B008, status: passed, drive_uploaded: true }
+    creatorhub:
+      channel_id: botany
+      last_synced: 2026-03-31
+      file_count_on_drive: 10
+
+  output_per_lesson:
+    - content.md           # (a) 800 字說書人逐字稿
+    - kovacs-teaching.md   # (b) 300 字教學精要
+    - chalkboard-prompt.md # (d) 黑板畫 Prompt
+    - images.md            # (e) 投影圖畫清單
+    - references.md        # (f) 參考來源
+    - raw-materials.md     # (g) 素材包
+    - quality-report.md    # (h) 品質報告
+
+  next_action:
+    description: "全 30 課完成。後續：(1) PDF 補生成（puppeteer 偶爾 timeout，需重跑 html-to-pdf.js）、(2) CreatorHub 部署檢查、(3) 進入下個年級主題"

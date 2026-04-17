@@ -1,0 +1,36 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS Layer 3】
+# 名稱：Claude 班・英文差異化教學設定（範例）
+# 路徑：workspaces/工作範例參考/projects/class-claude/english/di-profile.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+class: Claude
+subject: english
+last_updated: 2026-03-03
+
+# 能力×動機定義
+ability_definition: >
+  高能力：能獨立閱讀 200-300 字英文段落並掌握大意，
+  能以正確文法寫出 5 句以上的短文，聽力理解率達 70% 以上。
+motivation_definition: >
+  高動機：課堂參與度穩定，主動回答問題或參與討論，
+  家庭任務完成率達 80% 以上，對英文素材有主動探索行為。
+
+students:
+  - { id: CL-01, di_type: A, learning_strengths: [語言型, 藝術型], last_updated: 2026-03-03 }
+  - { id: CL-02, di_type: A, learning_strengths: [語言型, 圖像型], last_updated: 2026-03-03 }
+  - { id: CL-03, di_type: B, learning_strengths: [藝術型, 動作型], last_updated: 2026-03-03 }
+  - { id: CL-04, di_type: A, learning_strengths: [語言型, 藝術型], last_updated: 2026-03-03 }
+  - { id: CL-05, di_type: C, learning_strengths: [圖像型, 動作型], last_updated: 2026-03-03 }
+  - { id: CL-06, di_type: A, learning_strengths: [語言型, 圖像型], last_updated: 2026-03-03 }
+  - { id: CL-07, di_type: D, learning_strengths: [圖像型, 動作型], last_updated: 2026-03-03, note: 讀寫困難，需視覺輔助 }
+  - { id: CL-08, di_type: B, learning_strengths: [藝術型, 語言型], last_updated: 2026-03-03 }
+  - { id: CL-09, di_type: A, learning_strengths: [語言型, 圖像型], last_updated: 2026-03-03 }
+  - { id: CL-10, di_type: B, learning_strengths: [藝術型, 圖像型], last_updated: 2026-03-03 }
+  - { id: CL-11, di_type: D, learning_strengths: [動作型, 圖像型], last_updated: 2026-03-03 }
+  - { id: CL-12, di_type: D, learning_strengths: [藝術型, 語言型], last_updated: 2026-03-03 }
+  - { id: CL-13, di_type: C, learning_strengths: [動作型, 語言型], last_updated: 2026-03-03 }
+  - { id: CL-14, di_type: B, learning_strengths: [語言型, 藝術型], last_updated: 2026-03-03 }
+  - { id: CL-15, di_type: D, learning_strengths: [圖像型, 藝術型], last_updated: 2026-03-03, note: 情緒調節困難 }
+  - { id: CL-16, di_type: D, learning_strengths: [動作型, 圖像型], last_updated: 2026-03-03 }
+  - { id: CL-17, di_type: C, learning_strengths: [藝術型, 語言型], last_updated: 2026-03-03 }
+  - { id: CL-18, di_type: D, learning_strengths: [語言型, 動作型], last_updated: 2026-03-03 }

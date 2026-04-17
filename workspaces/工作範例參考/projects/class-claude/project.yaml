@@ -1,0 +1,47 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 專案記憶 — Layer 2】
+# 名稱：Claude 班（Claude 老師導師班・英文）
+# 路徑：projects/class-claude/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+class: Claude
+grade: 八年級
+teacher_role: 導師（班導師）+ 英文科任
+di_framework_ref: projects/_di-framework/project.yaml
+
+homeroom_context: >
+  Claude 老師為 Claude 班導師，同時擔任英文科任教師。
+  班級共 18 人，是一個中型華德福班級。
+  學生正處於八年級（13-14 歲），星芒體意識銳利化階段，
+  渴求因果關係，同儕歸屬需求強烈。
+
+class_files:
+  roster: roster.yaml
+  students: students.yaml
+  session_state: working/english-session.yaml
+  homeroom_session: homeroom/session.yaml
+
+subjects:
+  homeroom:
+    type: 班級導師模組
+    weekly_sessions: 3
+    note: 負責班級經營、活動行事與親師溝通
+    session_anchor: homeroom/session.yaml
+    content_output: homeroom/content/
+    status: completed
+    blocks_completed: [HM-1, HM-2, HM-3, HM-4]
+  english:
+    type: 英文專科
+    weekly_sessions: 4
+    content_output: english/content/
+
+current_semester: 2025-2026
+current_focus: 英文 Block 1（學季大綱設計）
+status: active
+
+next_steps:
+  - 英文：Block 1 — 完成學季教學大綱設計
+  - 導師：建立班級基本資訊
+
+cross_module_notes:
+  active: []
+  resolved: []

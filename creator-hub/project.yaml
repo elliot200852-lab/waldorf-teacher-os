@@ -1,0 +1,71 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【TeacherOS 工作線記憶 — Layer 3】
+# 名稱：CreatorHub 素材展示平台・專案進度錨點
+# 路徑：creator-hub/project.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+creatorhub:
+  project_type: 基礎設施
+  current_focus: 華德福教學素材頻道網站
+  last_updated: 2026-03-29
+
+  hosting:
+    platform: Firebase Hosting
+    project_id: waldorfcreatorhubdatabase
+    url: "https://waldorfcreatorhubdatabase.web.app"
+    drive_root_folder: "1OG3XrNjb3ETxuUIsDKqBLzq44sNRw7o1"
+
+  deployment:
+    workflow: .github/workflows/deploy-channel.yml
+    trigger_schedule: "3 6 * * *"  # 每天 14:03 台灣時間（UTC+8）
+    trigger_push_paths:
+      - creator-hub/scripts/**
+      - creator-hub/data/channels.json
+      - creator-hub/firebase.json
+    trigger_manual: workflow_dispatch  # gh workflow run
+
+  deploy_tracker:
+    last_deploy: 2026-03-29
+    last_deploy_trigger: workflow_dispatch
+    last_deploy_status: success
+    last_deploy_duration: "2m47s"
+
+  channels:
+    taiwan-stories:
+      display_name: "臺灣的故事"
+      drive_folder_name: "台灣的故事"
+      file_count: 17
+      last_synced: 2026-03-29
+      source_project: projects/stories-of-taiwan/project.yaml
+    ancient-myths:
+      display_name: "古文明神話五年級"
+      drive_folder_name: "古文明神話五年級"
+      file_count: 8
+      last_synced: 2026-03-29
+      source_project: projects/ancient-myths-grade5/project.yaml
+    botany:
+      display_name: "植物學五年級"
+      drive_folder_name: "植物學五年級"
+      file_count: 8
+      last_synced: 2026-03-29
+      source_project: projects/botany-grade5/project.yaml
+    island-myths-3rd:
+      display_name: "南島神話三年級"
+      drive_folder_name: "南島神話三年級"
+      file_count: 3
+      last_synced: 2026-03-29
+      source_project: null  # 尚無獨立 project.yaml
+    others:
+      display_name: "其他素材"
+      drive_folder_name: "其他素材"
+      file_count: 5
+      last_synced: 2026-03-29
+      source_project: null
+
+  totals:
+    channels: 5
+    total_files: 41
+    last_full_sync: 2026-03-29
+
+  next_action:
+    description: "日常維護——每日排程自動 sync + deploy，新素材上傳 Drive 後自動上線"

@@ -1,0 +1,93 @@
+# AM011 波斯的智者・博物館圖像素材（Met Museum API 搜尋結果）
+query: Persia Magi
+api_source: met
+grade: 9
+timestamp: 20260409-122443
+total_results: 6
+items:
+- id: met_329077
+  title: Head of a ruler
+  title_zh: ''
+  artist: ''
+  date: ca. 2300–2000 BCE
+  period: Ancient West Asian Art
+  medium: Copper alloy
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP-23662-001.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP-23662-001.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/329077
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_53162
+  title: Tobatsu Bishamonten
+  title_zh: ''
+  artist: ''
+  date: late 10th–early 11th century
+  period: Asian Art
+  medium: Zelkova wood with traces of color
+  image_url: https://images.metmuseum.org/CRDImages/as/original/DP-27915-006.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/as/web-large/DP-27915-006.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/53162
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_451725
+  title: '"The Concourse of the Birds", Folio 11r from a Mantiq al-Tayr (Language
+    of the Birds)'
+  title_zh: ''
+  artist: Habiballah of Sava
+  date: ca. 1600
+  period: Islamic Art
+  medium: Ink, opaque watercolor, gold, and silver on paper
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DP234083.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DP234083.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/451725
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_452032
+  title: Pierced Bowl Signed by Hasan al-Qashani
+  title_zh: ''
+  artist: ''
+  date: late 11th–early 12th century
+  period: Islamic Art
+  medium: Stonepaste; molded and pierced, monochrome decoration under transparent
+    glaze
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DP123181.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DP123181.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/452032
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_448959
+  title: Head from a Figure with a Beaded Headdress
+  title_zh: ''
+  artist: ''
+  date: 12th–early 13th century
+  period: Islamic Art
+  medium: Fossiliferous limestone; carved, drilled
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DP170373.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DP170373.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/448959
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_450761
+  title: Mold Fragment with Musicians
+  title_zh: ''
+  artist: ''
+  date: late 11th–early 12th century
+  period: Islamic Art
+  medium: Earthenware; carved
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DP367585.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DP367585.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/450761
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}

@@ -1,0 +1,122 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# TeacherOS — Session 過期警告
+# 定期掃描所有 session.yaml，找出超過 7/14 天未更新的工作線
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+name: Session Stale Check
+
+on:
+  schedule:
+    - cron: '3 1 * * 4'  # 每週四 09:03 台灣時間（UTC+8）
+  push:
+    branches: [main]
+    paths:
+      - '**/session.yaml'
+  workflow_dispatch:
+    # Manual trigger from GitHub UI or `gh workflow run`
+
+jobs:
+  stale-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Check session staleness
+        run: |
+          python3 << 'PYEOF'
+          import yaml, os, glob
+          from datetime import datetime
+
+          today = datetime.now().date()
+          warn_days = 7
+          error_days = 14
+          results = []
+
+          for path in sorted(glob.glob("workspaces/Working_Member/*/projects/class-*/*/session.yaml")):
+              with open(path, encoding="utf-8") as f:
+                  data = yaml.safe_load(f)
+              if not isinstance(data, dict):
+                  continue
+
+              # Find session key (xxx_session or session)
+              session = None
+              for k, v in data.items():
+                  if isinstance(v, dict) and "last_updated" in v:
+                      session = v
+                      break
+              if not session:
+                  continue
+
+              last = session.get("last_updated", "")
+              if not last:
+                  results.append((path, "never", 9999, "never updated"))
+                  continue
+
+              # Parse date (handle date, datetime string, and datetime.date objects)
+              try:
+                  if isinstance(last, str):
+                      d = datetime.fromisoformat(last.replace("Z", "")).date()
+                  elif hasattr(last, 'year'):
+                      d = last
+                  else:
+                      d = datetime.now().date()
+                  days = (today - d).days
+              except Exception:
+                  results.append((path, str(last), -1, "parse error"))
+                  continue
+
+              # Extract readable label from path
+              parts = path.split("/")
+              teacher = parts[2] if len(parts) > 2 else "?"
+              cls = parts[4] if len(parts) > 4 else "?"
+              subject = parts[5] if len(parts) > 5 else "?"
+              label = f"{teacher} / {cls} / {subject}"
+
+              if days >= error_days:
+                  results.append((label, str(last), days, "stale"))
+              elif days >= warn_days:
+                  results.append((label, str(last), days, "aging"))
+              else:
+                  results.append((label, str(last), days, "ok"))
+
+          # Write GitHub Actions Summary (visible in Actions tab)
+          summary_path = os.environ.get("GITHUB_STEP_SUMMARY", "/dev/null")
+          with open(summary_path, "w", encoding="utf-8") as out:
+              out.write("# Session Stale Check\n\n")
+              out.write(f"Checked on: {today}\n\n")
+              out.write("| Teacher / Class / Subject | Last Updated | Days | Status |\n")
+              out.write("|---|---|---|---|\n")
+              stale_count = 0
+              for label, last, days, status in results:
+                  icon = {
+                      "ok": "✅",
+                      "aging": "⚠️",
+                      "stale": "🔴",
+                      "never updated": "🔴",
+                      "parse error": "❓"
+                  }.get(status, "?")
+                  out.write(f"| {label} | {last} | {days} | {icon} {status} |\n")
+                  if status in ("stale", "never updated"):
+                      stale_count += 1
+              out.write(f"\n**Summary**: {stale_count} stale session(s) found.\n")
+
+          # Also print annotations to Actions log
+          for label, last, days, status in results:
+              if status in ("stale", "never updated"):
+                  print(f"::warning::{label} — last updated {last} ({days} days ago)")
+              elif status == "aging":
+                  print(f"::notice::{label} — last updated {last} ({days} days ago)")
+
+          PYEOF

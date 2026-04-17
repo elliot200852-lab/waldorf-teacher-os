@@ -1,0 +1,18 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【班級學生 DI 分析與學習樣態】
+# 路徑：class-3a/students.yaml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+class: 3a
+grade: 三年級
+di_framework_ref: projects/_di-framework/project.yaml
+total_students: null
+
+class_dynamic:
+  developmental_stage: 填空
+  key_tension: 填空
+  teacher_approach: 填空
+
+subject_contexts: {}
+
+special_cases: []

@@ -1,0 +1,86 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 【班級學生名冊】
+# 路徑：class-3a/roster.yaml
+#
+# ⚠️  隱私警告：此檔案包含學生真名，不上傳到 Git repo。
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+class: 3a
+grade: 三年級
+academic_year: 2025-2026
+total_students: 24
+as_of_date: 2026-04-04
+
+students:
+  - id: "01"
+    name: 吳以樂
+    gender: 男
+  - id: "02"
+    name: 龔晴天
+    gender: 女
+  - id: "03"
+    name: 李振赫
+    gender: 男
+  - id: "04"
+    name: 許瑋秦
+    gender: 女
+  - id: "05"
+    name: 歐柏儀
+    gender: 男
+  - id: "06"
+    name: 張好時
+    gender: 女
+  - id: "07"
+    name: 張以勒
+    gender: 男
+  - id: "08"
+    name: 康瑄倪
+    gender: 女
+  - id: "09"
+    name: 陳冠穎
+    gender: 男
+  - id: "10"
+    name: 湯璿
+    gender: 女
+  - id: "11"
+    name: 張安之
+    gender: 男
+  - id: "12"
+    name: 陳奕恩
+    gender: 女
+  - id: "13"
+    name: 歐豈宸
+    gender: 男
+  - id: "14"
+    name: 周昀希
+    gender: 女
+  - id: "15"
+    name: 薛翔仁
+    gender: 男
+  - id: "16"
+    name: 林荷
+    gender: 女
+  - id: "17"
+    name: 陳大器
+    gender: 男
+  - id: "18"
+    name: 羅可迦
+    gender: 女
+  - id: "19"
+    name: 張顥鄴
+    gender: 男
+  - id: "20"
+    name: 林映緹
+    gender: 女
+  - id: "21"
+    name: 姜子謙
+    gender: 男
+  - id: "22"
+    name: 李晨韻
+    gender: 女
+  - id: "23"
+    name: 謝秉佑
+    gender: 男
+  - id: "24"
+    name: 林奕全
+    gender: 男

@@ -1,0 +1,14 @@
+# 環境變數
+.env
+
+# Node 套件
+node_modules/
+
+# 錄音原始檔（體積過大，不納入版控）
+data/raw_notes/*.m4a
+data/raw_notes/*.mp3
+data/raw_notes/*.wav
+data/raw_notes/*.ogg
+
+# 暫存檔
+*.bak

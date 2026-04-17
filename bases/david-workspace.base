@@ -1,0 +1,140 @@
+filters:
+  and:
+    - file.inFolder("workspaces/Working_Member/Codeowner_David")
+    - file.ext == "md"
+    - not:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David/projects/botany-grade5/stories")
+    - not:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David/projects/ancient-myths-grade5/stories")
+    - not:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David/poetry_output")
+formulas:
+  relative_folder: file.folder.replace("workspaces/Working_Member/Codeowner_David/", "")
+  days_since_edit: (now() - file.mtime).days.round(0)
+properties:
+  file.name:
+    displayName: 檔案
+  summary:
+    displayName: 摘要
+  file.tags:
+    displayName: 標籤
+  file.mtime:
+    displayName: 修改時間
+  formula.relative_folder:
+    displayName: 位置
+  formula.days_since_edit:
+    displayName: 距上次編輯（天）
+views:
+  - type: table
+    name: David 工作總覽
+    groupBy:
+      property: formula.relative_folder
+      direction: ASC
+    order:
+      - file.name
+      - summary
+      - file.tags
+      - file.mtime
+      - formula.relative_folder
+  - type: table
+    name: 近期活躍（3 天內）
+    filters:
+      and:
+        - formula.days_since_edit <= 3
+    order:
+      - file.name
+      - summary
+      - file.tags
+      - file.mtime
+      - formula.relative_folder
+  - type: table
+    name: 9C 全部
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David/projects/class-9c")
+    order:
+      - file.name
+      - summary
+      - file.tags
+      - file.mtime
+      - formula.relative_folder
+  - type: table
+    name: 走讀臺灣
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David/projects/class-9c/walking-reading-taiwan")
+    order:
+      - file.name
+      - summary
+      - file.tags
+      - file.mtime
+      - formula.relative_folder
+  - type: table
+    name: 英文課
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David/projects/class-9c/english")
+    order:
+      - file.name
+      - summary
+      - file.tags
+      - file.mtime
+      - formula.relative_folder
+  - type: table
+    name: 大旅行
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David/projects/class-9c/grand-trip")
+    order:
+      - file.name
+      - summary
+      - file.tags
+      - file.mtime
+      - formula.relative_folder
+  - type: table
+    name: 導師業務
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David/projects/class-9c/homeroom")
+    order:
+      - file.name
+      - summary
+      - file.tags
+      - file.mtime
+      - formula.relative_folder
+  - type: table
+    name: 9D 台灣文學
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David/projects/class-9d")
+    order:
+      - file.name
+      - summary
+      - file.tags
+      - file.mtime
+      - formula.relative_folder
+  - type: table
+    name: 教學紀錄與反思
+    filters:
+      or:
+        - file.hasTag("教學反思")
+        - file.hasTag("教學紀錄")
+        - file.hasTag("備課筆記")
+        - file.name == "teaching-log.md"
+    order:
+      - file.name
+      - summary
+      - file.tags
+      - file.mtime
+      - formula.relative_folder
+  - type: table
+    name: 個人技能
+    filters:
+      and:
+        - file.inFolder("workspaces/Working_Member/Codeowner_David/skills")
+    order:
+      - file.name
+      - summary
+      - description
+      - file.mtime
+      - formula.relative_folder

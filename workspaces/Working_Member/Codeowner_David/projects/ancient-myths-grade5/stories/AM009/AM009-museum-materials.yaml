@@ -1,0 +1,120 @@
+# AM009 阿胡拉·馬茲達與阿里曼（二）— Met Museum 圖像素材
+query: Persia ancient
+api_source: met
+grade: 9
+timestamp: 20260403-175209
+total_results: 8
+items:
+- id: met_325818
+  title: Necklace with the head of the Egyptian god Bes
+  title_zh: ''
+  artist: ''
+  date: ca. 6th–4th century BCE
+  period: Ancient West Asian Art
+  medium: Gold
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP-41780-001.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP-41780-001.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/325818
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_329077
+  title: Head of a ruler
+  title_zh: ''
+  artist: ''
+  date: ca. 2300–2000 BCE
+  period: Ancient West Asian Art
+  medium: Copper alloy
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP-23662-001.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP-23662-001.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/329077
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_324291
+  title: Vessel terminating in the forepart of a fantastic leonine creature
+  title_zh: ''
+  artist: ''
+  date: ca. 5th century BCE
+  period: Ancient West Asian Art
+  medium: Gold
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP-19135-003.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP-19135-003.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/324291
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_322610
+  title: Relief panel
+  title_zh: ''
+  artist: ''
+  date: ca. 883–859 BCE
+  period: Ancient West Asian Art
+  medium: Gypsum alabaster
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP375419.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP375419.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/322610
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_322973
+  title: Plate with king hunting rams
+  title_zh: ''
+  artist: ''
+  date: ca. mid-5th–mid-6th century CE
+  period: Ancient West Asian Art
+  medium: Silver, mercury gilding, niello inlay
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP-42233-001.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP-42233-001.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/322973
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_53162
+  title: Tobatsu Bishamonten
+  title_zh: ''
+  artist: ''
+  date: late 10th–early 11th century
+  period: Asian Art
+  medium: Zelkova wood with traces of color
+  image_url: https://images.metmuseum.org/CRDImages/as/original/DP-27915-006.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/as/web-large/DP-27915-006.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/53162
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_322611
+  title: Relief panel
+  title_zh: ''
+  artist: ''
+  date: ca. 883–859 BCE
+  period: Ancient West Asian Art
+  medium: Gypsum alabaster
+  image_url: https://images.metmuseum.org/CRDImages/an/original/DP375420.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/an/web-large/DP375420.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/322611
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}
+- id: met_452032
+  title: Pierced Bowl Signed by Hasan al-Qashani
+  title_zh: ''
+  artist: ''
+  date: late 11th–early 12th century
+  period: Islamic Art
+  medium: Stonepaste; molded and pierced, monochrome decoration under transparent
+    glaze
+  image_url: https://images.metmuseum.org/CRDImages/is/original/DP123181.jpg
+  thumb_url: https://images.metmuseum.org/CRDImages/is/web-large/DP123181.jpg
+  source_url: https://www.metmuseum.org/art/collection/search/452032
+  license: CC0
+  api_source: met
+  desc_zh: ''
+  teaching_notes: {}

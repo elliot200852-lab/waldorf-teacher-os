@@ -1,0 +1,19 @@
+{
+  "name": "waldorf-creator-hub-database",
+  "version": "1.0.0",
+  "description": "YouTube-channel-style static site for Waldorf teaching materials",
+  "private": true,
+  "scripts": {
+    "sync": "node scripts/sync-drive.js",
+    "thumbnails": "node scripts/extract-thumbnails.js",
+    "generate": "node scripts/generate-site.js",
+    "validate": "node scripts/validate.js",
+    "build": "npm run sync && npm run thumbnails && npm run generate && npm run validate",
+    "preview": "npm run generate && npx serve public -l 3456",
+    "serve": "npx serve public -l 3456"
+  },
+  "dependencies": {
+    "googleapis": "^144.0.0",
+    "sharp": "^0.33.0"
+  }
+}
