@@ -67,18 +67,19 @@ skill_writing_rules:
   - 既有 .sh 腳本逐步遷移為 .py（狀態見下方 migration_status）
 
 # 腳本遷移狀態（2026-04-17 更新）
-# completed = Python 版已完成，Shell 版保留作為備份
 # active     = Shell 版仍在服役，尚未遷移
-# shell-only = 必須保持 Shell（如 Git hook 薄層入口）
+# shell-only = 必須保持 Shell（如 Git hook 薄層入口、跨平台啟動器）
 # removed    = 已從 repo 移除
 migration_status:
   setup/quick-start.sh:      { status: removed, note: "v2.0 reclone 時刪除（含已失效的 GWS 部署 code），由 setup/start.sh → quick-start.py 取代" }
-  setup/add-teacher.sh:      { status: completed, python: setup/add-teacher.py }
-  setup/install-hooks.sh:    { status: completed, python: setup/install-hooks.py }
-  setup/setup-check.sh:      { status: completed, python: setup/setup-check.py }
+  setup/add-teacher.sh:      { status: removed, note: "2026-04-17 setup 清理時刪除；由 setup/add-teacher.py 取代" }
+  setup/install-hooks.sh:    { status: removed, note: "2026-04-17 setup 清理時刪除；由 setup/install-hooks.py 取代" }
+  setup/setup-check.sh:      { status: removed, note: "2026-04-17 setup 清理時刪除；由 setup/setup-check.py 取代" }
+  setup/save.sh:             { status: removed, note: "2026-04-17 setup 清理時刪除；wrap-up skill 已完整取代此流程" }
+  setup/add-logo.py:         { status: removed, note: "2026-04-17 setup 清理時刪除；publish/build.sh 已不再呼叫" }
+  setup/gcal-write.py:       { status: removed, note: "2026-04-17 setup 清理時刪除；無技能呼叫" }
   setup/hooks/pre-commit:    { status: shell-only, note: "薄層入口 → setup/scripts/pre-commit-check.py" }
   setup/hooks/post-merge:    { status: shell-only, note: "薄層入口 → setup/scripts/post-merge-check.py" }
-  setup/save.sh:             { status: active, note: "wrap-up skill 已涵蓋此功能，低優先" }
   setup/start.sh:            { status: shell-only, note: "macOS/Linux 啟動器 → quick-start.py" }
   setup/start.ps1:           { status: shell-only, note: "Windows 啟動器 → quick-start.py" }
   publish/build.sh:          { status: active, note: "Pandoc 發佈腳本，待遷移" }

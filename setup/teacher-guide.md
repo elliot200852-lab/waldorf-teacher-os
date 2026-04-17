@@ -1,646 +1,336 @@
 ---
 aliases:
-  - "新教師環境設定指南"
+  - "TeacherOS 教師使用手冊"
+  - "Teacher Guide V2.6"
+version: "2.6"
+updated: 2026-04-17
+audience: 慈心華德福全體合作教師
+tags:
+  - type/onboarding
+  - type/reference
 ---
 
-# TeacherOS CreatorHub 華德福教師 AI 共創系統｜教師使用手冊
+# TeacherOS｜華德福教師 AI 共創系統 使用手冊
 
-**版本：2.4（跨平台版）**
-
----
-
-## 一、歡迎：這套系統能幫你做什麼
-
-TeacherOS CreatorHub 是一套讓 AI 協助教師完成課程設計的完整工作系統。你不需要懂任何程式，只需要用說話或打字的方式，跟 AI 一起完成教學工作的四個主要區塊（Block 1-4）。
-
-這套系統已經幫助許多華德福老師大幅減少備課時間，同時保留教師的專業判斷與創意。想知道成果會長什麼樣子？可以參考我們的教學範例：**`workspaces/工作範例參考/`**
-
-### 四個工作區塊，清楚的設計流程
-
-- **Block 1：學季教學大綱** - 規劃整個學季的教學目標、策略與評量設計，這是基礎藍圖
-- **Block 2：課堂教學設計** - 設計每堂課的45分鐘完整流程，並針對不同學習風格的學生設計分層任務
-- **Block 3：教學歷程紀錄** - 每堂課後，AI 幫你自動整理課堂觀察，建立學生學習檔案
-- **Block 4：學習評量與結案** - 期末根據全學期的紀錄，產出質性學習評量報告
-
-完成後，系統可以自動把文件輸出到你的 Google Docs，供分享或列印。
+**版本：2.6（對齊 TeacherOS v2.0 乾淨起點）**
+**最後更新：2026-04-17**
 
 ---
 
-## 二、快速開始（三步驟）
+## 這份指南在講什麼
 
-如果你已經等不及想開始用，這裡有最簡潔的三步驟。詳細說明見下方。
+TeacherOS 是一套讓 AI 協助教師完成備課的工作系統。你不用懂程式，只要用說話或打字的方式，跟 AI 一起完成四個主要區塊（Block 1-4）。
 
-### 步驟 1：取得帳號與下載系統
+這份指南是**日常使用手冊**，適合：
 
-**建立 GitHub 帳號（如果還沒有的話）**
+- **新加入的老師**：從零開始設定你的工作環境
+- **既有老師**：要回頭查某個流程、或想多了解系統結構
+- **任何時候卡住**：參考「遇到問題時」章節
 
-GitHub 是一個全球最大的程式碼共享平臺，但我們用它是來共享教學設計檔案。把它想像成一個智慧檔案櫃 — Git 就像聰明的檔案櫃助手，會記住你所有做過的修改，這樣就不用擔心改壞了什麼。
+> **如果你是既有老師、要做 v2.0 的一次性重裝**，請改看：
+> `setup/teacher-reclone-guide-2026-04.md`
+> 那一份是專門寫給「舊資料夾要換新」的老師，跟完不必再跟這份。
 
-前往 [https://github.com](https://github.com) 免費註冊帳號（需要 Email、密碼，以及一個帳號名稱）。
+---
 
-**下載 Git 工具**
+## 一、四個工作區塊
 
-Git 是那個「聰明的檔案櫃」的操作工具。前往 [https://git-scm.com/downloads](https://git-scm.com/downloads) 下載並安裝（選你的作業系統：Mac 或 Windows）。
+| Block | 工作內容 | 觸發方式 |
+|-------|----------|----------|
+| Block 1 | 學季教學大綱（目標、策略、評量） | 「開始 7C 英文課學季大綱」 |
+| Block 2 | 每堂課的 45 分鐘流程 + A/B/C/D 差異化任務 | 「設計 7C 英文第 2 單元」 |
+| Block 3 | 課後教學歷程紀錄（自動拆解學生動態） | 「記錄今天 7C 英文課發生的事」 |
+| Block 4 | 學期末質性評量報告 | 「9C 英文這學期做評量」 |
 
-安裝好 Git 之後，還需要安裝一個小工具來驗證你的身份（因為 TeacherOS 是私有專案，需要確認你有存取權限）。
+想看成品長什麼樣子，進入 `workspaces/工作範例參考/`。
 
-**安裝 GitHub CLI 並登入（必要步驟）**
+---
 
-GitHub CLI 是 GitHub 官方的命令列工具，安裝後只需登入一次，之後所有操作都不需要再輸入密碼。
+## 二、首次安裝（新老師）
 
-**Mac 使用者：**
+### Step 1. 申請 GitHub 帳號並聯絡 David
 
-1. 先安裝 Homebrew（如果還沒有的話）——在終端機貼上：
+1. 到 [github.com](https://github.com) 免費註冊
+2. 把你的 GitHub 帳號名稱與 Email 傳給 David
+3. David 會把你加入專案、建立你的個人分支 `workspace/Teacher_你的姓名`
+
+### Step 2. 安裝 Git 與 GitHub CLI
+
+**Mac：**
 
 ```bash
+# 安裝 Homebrew（若尚未安裝）
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-2. 安裝 GitHub CLI：
-
-```bash
-brew install gh
-```
-
-3. 登入 GitHub：
-
-```bash
+# 安裝 git 與 GitHub CLI
+brew install git gh
+# 登入 GitHub
 gh auth login
 ```
 
-系統會問你幾個問題，請這樣選：
-
-- `Where do you use GitHub?` → 選 **GitHub.com**
-- `What is your preferred protocol for Git operations on this host?` → 選 **HTTPS**
-- `Authenticate Git with your GitHub credentials?` → 選 **Yes**
-- `How would you like to authenticate GitHub CLI?` → 選 **Login with a web browser**
-
-接著會顯示一組代碼（one-time code），按 Enter 後瀏覽器會自動打開，貼上代碼並授權即可。
-
-看到 `✓ Logged in as 你的帳號名稱` 就表示成功了。
-
-**Windows 使用者：**
-
-1. 前往 [https://cli.github.com](https://cli.github.com) 下載安裝檔並執行安裝
-2. 安裝完成後，打開 PowerShell，執行：
+**Windows：**
 
 ```powershell
+# 安裝 Git
+winget install --id Git.Git -e --source winget
+# 安裝 GitHub CLI
+winget install --id GitHub.cli -e --source winget
+# 登入 GitHub
 gh auth login
 ```
 
-選擇方式與 Mac 相同（見上方說明）。
+`gh auth login` 的選擇：GitHub.com → HTTPS → Yes → Login with a web browser。
 
-> **遇到問題？** 如果 `gh auth login` 過程中出現錯誤，請確認：(1) 你已經有 GitHub 帳號並能正常登入網頁版；(2) David 已經邀請你加入專案，且你已在 GitHub 通知或 Email 中接受邀請。
+### Step 3. 下載 TeacherOS
 
-**開啟終端機（只是個黑色視窗）**
-
-- **Mac 使用者**：打開「應用程式」→「工具程式」→「終端機」
-- **Windows 使用者**：搜尋「cmd」（命令提示字元），或搜尋「PowerShell」，打開即可
-
-**執行下載指令**
-
-完成上方的 GitHub CLI 登入後，把以下指令貼入終端機，然後按 Enter：
+**Mac（終端機）：**
 
 ```bash
-git clone https://github.com/elliot200852-lab/waldorf-teacher-os.git
+cd ~/Desktop
+git clone https://github.com/elliot200852-lab/waldorf-teacher-os.git WaldorfTeacherOS-Repo
+cd WaldorfTeacherOS-Repo
 ```
 
-完成後，你的電腦桌面附近（或你打開終端機時所在的位置）會出現一個叫 `waldorf-teacher-os` 的資料夾。
+**Windows（PowerShell）：**
 
-### 步驟 2：一鍵安裝
+```powershell
+cd $HOME\Desktop
+git clone https://github.com/elliot200852-lab/waldorf-teacher-os.git WaldorfTeacherOS-Repo
+cd WaldorfTeacherOS-Repo
+```
 
-打開終端機，進入你剛才下載的資料夾（輸入 `cd waldorf-teacher-os`），然後依你的作業系統執行對應指令：
+### Step 4. 切換到你的個人分支
 
-**Mac / Linux 使用者：**
+```
+git checkout workspace/Teacher_你的姓名
+git branch --show-current
+```
+
+第二行應該印出 `workspace/Teacher_你的姓名`，代表你在對的位置。
+
+### Step 5. 執行一鍵安裝精靈
+
+**Mac：**
 
 ```bash
 bash setup/start.sh
 ```
 
-**Windows 使用者（PowerShell）：**
+**Windows：**
 
 ```powershell
 .\setup\start.ps1
 ```
 
-系統會自動：
-- 裝上「門鎖」（Git hooks，防止誤改他人資料）
-- 配好你的「鑰匙」（個人設定檔，讓 AI 認識你）
-- 檢查各項設備是否就緒
+> 若 Windows 出現 `此系統上已停用指令碼執行`，先貼一次這行：
+> ```powershell
+> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+> ```
 
-稍候幾分鐘，如果看到「設定完成」，你就準備好了。
+精靈會自動完成 9 個檢查，包含：Git / Pandoc / Pre-commit Hook / `environment.env` / Git 身份同步 / 個人分支確認 / Claude Code Hook。看到 `技術安裝完成！` 就完成了。
 
-> **技術備註**：`start.sh` / `start.ps1` 是啟動器，會自動呼叫 Python 3 跨平台安裝腳本 `quick-start.py`。你的電腦需要安裝 Python 3（Mac 通常已內建；Windows 請從 [python.org](https://www.python.org/downloads/) 下載）。
-
-### 步驟 3：聯繫 David 取得工作空間
-
-發送簡單的訊息給 David（系統設計者），說：「我想開始用 TeacherOS，已經完成快速安裝。」
-
-David 會建立你的個人工作空間。通常在 24 小時內，你會收到通知說你的工作空間已準備好。
-
-收到通知後，在終端機執行：
-
-```bash
-git pull
-```
-
-此時你的個人工作空間會出現在 `workspaces/{你的姓名}/` 位置。你可以在裡面建立屬於你的班級與課程。
+> Google Drive / Email / Calendar 等 gws 功能**完全選用**。精靈不會自動安裝，需要的老師請看「八、選配：Google Workspace CLI」。
 
 ---
 
-## 三、認識你的工作空間（Workspace）
+## 三、認識你的工作空間
 
-### 系統像一個圖書館
-
-想像 TeacherOS 就像一個圖書館：
-
-- **共用書架（ai-core）** - 存放系統核心邏輯與共用設定，所有老師都能讀，但無法改動（保護系統穩定性）
-- **你的書桌（workspaces/{你的姓名}）** - 完全屬於你個人的空間，你可以自由編輯、實驗、改造
-- **你寫的筆記（products）** - 你輸出的教案、紀錄、評量報告
-
-### 你的工作空間裡有什麼
-
-進入 `workspaces/{你的姓名}/` 資料夾，你會看到：
-
-```
-workspaces/你的姓名/
-├── teacheros-personal.yaml          ← 你個人的身份卡片（告訴 AI 你是誰、教什麼）
-├── skills/                          ← 你的個人技能（自建的 AI 工作指令）
-│   └── EXAMPLE-recitation.md        ← 範例：朗讀教學設計技能
-├── projects/
-│   ├── class-{班級代碼}/            ← 你的班級工作資料夾
-│   │   ├── students.yaml            ← 班級學生名單與學習樣態
-│   │   ├── english/
-│   │   │   └── content/             ← 英文課的所有產出（Block 1-4）
-│   │   └── working/                 ← 中途草稿與工作檔案
-│   └── ...
-└── templates/                        ← 你個人的範本與工具庫
-```
-
-### 參考工作範例
-
-想看看一個完整、成熟的工作空間長什麼樣子？參考：
-
-**`workspaces/工作範例參考/`**
-
-這個範例包括：
-- 完整的 Block 1-4 輸出
-- 真實班級的學生樣態分析
-- 各種教案設計的範例
-- 真實的評量報告
-
-你可以直接參考這個範例來理解系統的完整樣貌。**但請記住，你只能讀，無法編輯它。** 它就像圖書館裡的展示樣本。
-
-### 你能看到其他老師的工作空間
-
-在 `workspaces/` 資料夾下，你可以看到其他老師的工作空間。你可以閱讀他們的設計、學習他們的方法，**但無法編輯他們的檔案**。這樣既能互相學習，也保護了每個人的工作。
-
----
-
-## 四、建立你的教師身份
-
-在開始教學設計之前，你需要告訴 AI「你是誰、教什麼、教學理念是什麼」。這樣 AI 才能準確地協助你。
-
-### 系統的三層架構（你只需要管第三層）
-
-TeacherOS CreatorHub 用三層設計，讓所有教師共享華德福哲學根基，同時保有個人風格：
-
-| 層級 | 檔案 | 你需要做什麼 |
-|------|------|-------------|
-| 系統路由 | `ai-core/teacheros.yaml` | 不需要碰，AI 自動讀取 |
-| 共用根基 | `ai-core/teacheros-foundation.yaml` | 不需要碰，華德福哲學、發展心理學、課程原則都在這裡，所有教師共讀 |
-| **你的身份** | **`workspaces/{你的姓名}/teacheros-personal.yaml`** | **這是你唯一需要填寫的身份檔案** |
-
-共用根基已經包含了華德福教育哲學的完整框架，所以你的個人設定檔只需要填寫「你自己獨有的部分」——你的姓名、你教的科目、你的教學信念與偏好。
-
-### 編輯個人設定檔
-
-打開 `workspaces/{你的姓名}/teacheros-personal.yaml`。這份檔案有詳細的六段式引導與填寫說明，告訴你「共用根基已經處理了什麼，你只需要填什麼」。
-
-檔案中需要填寫的主要區塊：
-
-- **教師身份**：姓名、角色、Email
-- **教學範圍**：年級、科目
-- **個人教學信念**：你對所教科目的獨特理念（華德福共通哲學已在 foundation，你只需寫個人觀點）
-- **工作風格**：你偏好的 AI 互動方式
-- **溝通偏好**：語言、回應風格
-
-### 重要提醒：不要直接改 ai-core
-
-**千萬不要改動 `ai-core/` 裡的任何檔案。** 這些是所有教師共用的系統核心與哲學根基，只有 David 應該維護。你的個人設定應該都寫在你自己工作空間裡的 `teacheros-personal.yaml`。
-
-AI 啟動時會按順序載入：系統路由 → 共用根基 → 你的個人身份，確保系統按照你的風格運作。
-
-### 如果需要幫助
-
-不確定該怎麼填？你可以打開 AI 對話，上傳 `teacheros-personal.yaml.example` 檔案，告訴 AI：
-
-> 「我想填這份教師身份卡片，但我不知道從何開始。能幫我草擬內容嗎？」
-
-AI 會根據你簡短的說明（例如「我教七年級英文，注重溝通與創意」）來幫你起草這份檔案。
-
----
-
-## 五、建立你的班級
-
-有了個人身份後，你就可以為班級建立完整的工作結構。
-
-### 複製班級範本
-
-在 `workspaces/{你的姓名}/projects/` 裡，複製 `projects/_class-template/` 資料夾，改成你的班級代碼：
-
-```
-projects/
-  class-7c/          ← 複製 _class-template，改名為 class-7c
-  class-8a/
-  ...
-```
-
-### 填寫班級基本資訊
-
-打開 `projects/class-7c/project.yaml`，填寫：
-
-```yaml
-class: 7C
-grade: 七年級
-students_count: 28
-subjects:
-  - english
-  - main-lesson
-```
-
-### 最重要的一步：認識你的學生
-
-打開 `projects/class-7c/students.yaml`，這是班級學生的樣態記錄檔。
-
-TeacherOS 使用一個簡單的「能力 × 動機」雙軸矩陣，將學生分為四類：
-
-- **A 類**：高能力、高動機 → 需要挑戰性任務、領導機會
-- **B 類**：高能力、低動機 → 需要意義感、自主權
-- **C 類**：低能力、高動機 → 需要具體支持、逐步成就感
-- **D 類**：低能力、低動機 → 需要耐心陪伴、小步驟成功經驗
-
-**重要原則：這些分類標籤只有你和 AI 看得到，學生看不到。** 這是教師觀察工具，不是學生標籤。
-
-### 如何進行分類：使用決策樹
-
-想瞭解如何科學地判斷學生的能力與動機？參考：
-
-**`projects/_di-framework/content/di-classification-guide.md`**
-
-這份指南提供：
-- 「能力」與「動機」的具體定義
-- 實際課堂觀察方法（看什麼行為代表什麼）
-- 填寫 students.yaml 的逐步說明
-- 真實範例（怎樣的學生是 A 類、B 類、C 類、D 類）
-
-你不需要在第一堂課就完成分類。可以先上兩、三堂課，對班級有基本印象後再填寫。AI 會在後續設計時根據這份分類，自動為每類學生設計不同的學習任務。
-
----
-
-## 六、開始工作：四大區塊
-
-### Block 1：學季教學大綱
-
-**快速指令：** 告訴 AI：「我要開始做 7C 英文課學季大綱。」
-
-**產出內容：**
-- 本學季的教學目標（用簡單、清楚的語言，家長也能理解）
-- 教學策略（你的教學方式、為什麼這樣教）
-- 學期規劃（各單元主題、時程、重點活動）
-- 評量設計（怎麼評估學生學習、評分比例）
-
-**這是基礎。必須先完成 Block 1，才能啟動其他區塊。**
-
-Block 1 完成後，查看示範：**`workspaces/工作範例參考/projects/class-claude/english/content/block1-syllabus.md`**
-
-### Block 2：課堂教學設計
-
-**快速指令：** 「我要設計 7C 英文課第 2 單元。」
-
-**產出內容：**
-- 2-A：單元教學流程（45 分鐘每堂課的四段結構：暖身 → 主活動 → 檢核 → 收尾）
-- 2-B：差異化任務設計（針對 A/B/C/D 四類學生的不同任務與回饋機制）
-
-**你有三種設計深度可以選擇：**
-
-| 深度 | 說明 | 適合狀況 |
-|------|------|---------|
-| 精簡版 | 單元概覽、重點活動清單 | 有豐富教學經驗，只需快速參考 |
-| 標準版 | 每週摘要 + 關鍵活動設計 | 最常見、最實用；建議第二單元以後用 |
-| 完整版 | 逐節 45 分鐘完整詳細教案 | 首次教這個主題；需要最多支持時用 |
-
-和 AI 說「我想要精簡版」或「給我完整版」，AI 會自動調整產出的詳細程度。
-
-**想看範例？** **`workspaces/工作範例參考/projects/class-claude/english/content/`**
-
-### Block 3：教學歷程紀錄
-
-**時機：** 每堂課後可隨時進行（不一定要在課堂當下）
-
-**怎麼做：**
-
-告訴 AI：「我要紀錄今天 7C 英文課發生的事。」然後自然地描述課堂發生的事 — 某個學生特別投入、某個活動出乎意料地成功、某些學生卡關了、你發現的教學反思，等等。
-
-**AI 會自動：**
-- 拆解你的敘述，分配給對應的學生
-- 整理成「班級整體進度」和「個別學生動態」
-- 記錄教學反思，供未來參考
-
-你不需要自己整理格式。每次 AI 完成後，會自動存進班級的紀錄檔。
-
-### Block 4：學習評量與期末結案
-
-**時機：** 學期末
-
-AI 會自動調用 Block 3 的全學期教學歷程紀錄與 Block 1 的教學目標，產出：
-- 全班學習歷程摘要
-- 每位學生的質性能力評量報告
-
-最後一步，AI 會自動反查學生的真實姓名（從 students.yaml），產出適合列印的結案報告。
-
----
-
-## 七、每次使用的流程
-
-### 開始一次新對話
-
-每次打開 AI 開始工作，請先做兩件事：
-
-**第一步：更新系統（很重要！）**
-
-在終端機執行：
-
-```bash
-cd 你的-waldorf-teacher-os-資料夾
-git pull origin main
-```
-
-這一步確保你拿到 David 最新更新的系統、技能與框架。**每次開工都要做，養成習慣。** 如果你跳過這一步，AI 也會提醒你。
-
-> **使用 Claude Code 或 Cowork 的老師**：不需要手動執行，AI 會自動幫你處理。只要說「開工」就好。
-
-**第二步：告訴 AI「開工」**
-
-打開你選擇的 AI 工具（ChatGPT、Claude Code、Gemini 等），直接說：
-
-> 「開工」
-
-或更具體：
-
-> 「開工，9C 英文課。」
-
-AI 會自動載入系統脈絡，報告你上次的進度，然後問你今天要推進什麼。
-
-**你不需要重新介紹自己或解釋系統是什麼。AI 已經知道。**
-
-> **Claude Code 使用者**：可直接輸入 `/opening`，AI 會自動處理 git pull、載入系統、報告進度。
-
-### 中途離開，下次繼續
-
-每次對話結束，AI 會自動記錄你的進度。下次直接說：
-
-> 「我要繼續上次的 7C 英文課工作。」
-
-AI 會告訴你上次停在哪裡，然後繼續。
-
-### 如果對話偏離了方向
-
-直接說：
-
-> 「回到中軸。」
-
-AI 會立刻重新定位，告訴你現在在哪個步驟，問你要繼續還是調整。
-
-### 課堂前的準備工作（強烈建議）
-
-在啟動 AI 協助規劃整個區塊（特別是 Block 1）之前，強烈建議你先做一些自己的初步研究：
-
-1. 進行主題相關的網路搜尋、文本分析或教學研究
-2. 把你的想法、收集到的素材整理成 1-2 份 Markdown 檔案
-3. 在對話開始時，把這份檔案上傳給 AI 作為參考
-
-AI 會以你的研究為基礎來設計課程，確保方向是你想要的。如果你沒提供任何素材，AI 會要求你補齊，或明確授權 AI 在無基礎下進行設計。
-
----
-
-## 八、關於差異化教學
-
-TeacherOS CreatorHub 的差異化教學框架很簡單：**能力 × 動機 = 四類學生**。
-
-### 分類邏輯
-
-- **A 類**：高能力、高動機 → 給挑戰、給自主、給機會帶領同學
-- **B 類**：高能力、低動機 → 找到「為什麼要學」、給實踐機會
-- **C 類**：低能力、高動機 → 耐心陪伴、拆成小步驟、累積成就感
-- **D 類**：低能力、低動機 → 從最基礎開始、多鼓勵、尋找學習動力
-
-### 在課堂上怎麼用
-
-當你告訴 AI 「按 ABCD 四類設計差異化任務」時，AI 會：
-
-1. 先描述各類學生的「內在狀態」（A 類為什麼容易無聊？C 類為什麼容易放棄？）
-2. 提出具體的課堂做法（具體的活動、教法、提問方式）
-3. 給每類學生不同的任務與驗收標準
-
-讀完後，你應該能在腦海裡浮現實際的課堂場景，可以直接拿來用。
-
-### 學生看不到這些標籤
-
-**重要原則：** 這些分類只存在於你的紀錄裡（students.yaml）和 AI 對話中。學生永遠看不到「你是 C 類」這樣的標籤。這純粹是教師的觀察與設計工具。
-
-### 深入瞭解分類方法
-
-想瞭解怎樣科學地判斷學生的能力與動機？參考決策樹：
-
-**`projects/_di-framework/content/di-classification-guide.md`**
-
----
-
-## 九、文件輸出到 Google Docs
-
-每次 AI 完成一份文件（例如 Block 1 大綱、Block 2 教案），AI 會問你：
-
-> 「這份文件要輸出到 Google Drive 嗎？」
-
-你只需要回答：**「要」**
-
-### 使用 Claude Code 的老師
-
-AI 會自動完成轉換與上傳，文件直接出現在你的 Google Drive（需事先安裝 Google Drive for Desktop）。
-
-### 使用 ChatGPT 或 Gemini 的老師
-
-AI 會提供格式化的文字內容，你複製後貼到 Google 文件即可。
-
-### 找到你的文件
-
-完成後，打開你的 Google Drive，找到對應的檔案：
-- 右鍵 → 「用 Google 文件開啟」
-- 此時可以分享、列印、或繼續編輯
-
----
-
-## 九之二、Google Workspace CLI（選配，自行設定）
-
-如果你想讓 AI 能直接操作 Google Drive、Calendar、Gmail，你可以自行安裝 gws CLI。
-**這是選配功能，TeacherOS 不再包含 GWS 的自動安裝或認證。**
-
-### 簡要步驟
-
-1. 安裝 Node.js：[https://nodejs.org](https://nodejs.org)（選 LTS 版本）
-2. 安裝 gws：`npm install -g @googleworkspace/cli`
-3. 登入：`gws auth login`（瀏覽器會開啟 Google 登入頁面）
-
-詳細設定方式請聯繫 David 或參考 gws 官方文件。
-
----
-
-## 十、權限與安全（用門鎖、鑰匙、管理員的比喻）
-
-TeacherOS CreatorHub 用三層保護確保每位老師只能操作自己的班級，不會誤改他人資料。
-
-### 比喻：門鎖、鑰匙、管理員
-
-- **門鎖（Git Hooks）** - 在你的電腦上裝的防呆機制，每次你執行 `git commit`，門鎖會檢查你改了什麼，確認都在你的授權範圍內。如果你不小心改了不屬於你的班級資料夾，門鎖會自動攔截，commit 前就擋下來。
-- **鑰匙（environment.env）** - 你個人的身份識證。系統根據你的 Email（鑰匙），查閱授權清單，決定你能操作哪些資料夾。
-- **管理員（David）** - GitHub 上的總舵手。即使你強行上傳了什麼，David 也必須手動審核與核准，才能合併到主系統。
-
-### 三層保護
-
-| 層級 | 位置 | 作用 |
-|------|------|------|
-| **AI 層** | 每次對話開始 | AI 讀取你的身份（Email），只在授權範圍內協助操作 |
-| **Git 層** | 每次 git commit | 門鎖攔截超出授權的檔案修改，commit 前就擋下來 |
-| **GitHub 層** | 每次 Pull Request | David 手動審核並點擊 Approve，才能合併 |
-
-### 如果看到權限錯誤
-
-**AI 拒絕操作時：**
-告訴 AI：「我想操作 [路徑]，但被拒絕了。」AI 會說明原因，如需擴充授權，聯絡 David 更新 `acl.yaml`。
-
-**Git 被攔截時：**
-終端機會告訴你哪個檔案超出授權。如果是誤操作，還原那個檔案即可；如果是必要操作，聯絡 David 調整權限。
-
----
-
-## 十一、遇到問題時
-
-### 常見狀況與解決
-
-| 狀況 | 怎麼做 |
-|------|--------|
-| AI 好像忘記我們在做什麼 | 直接說「回到中軸」 |
-| 不知道下一步該做什麼 | 問 AI：「我們現在進度到哪裡？」 |
-| 想重新開始一個新班級 | 說「我要開始做 {班級代碼} 英文課學季大綱」 |
-| 文件沒出現在 Google Drive | 確認 Google Drive Desktop 是否在執行中；確認有網路連線 |
-| 無法連線至 GitHub 或網路問題 | 聯絡學校網路工程師；可能是防火牆或 VPN 設定 |
-| 忘記安裝 hook（門鎖） | 重新執行安裝：Mac/Linux `bash setup/start.sh`；Windows `.\setup\start.ps1` |
-| AI 拒絕操作某個路徑 | AI 會說明原因；如需擴充授權，聯絡 David 更新 `acl.yaml` |
-| Git commit 被攔截 | 確認修改的檔案是否在你的授權範圍內；如有疑問，聯絡 David |
-| 看不到 start.sh 或 start.ps1 | 確認你用的終端機位置是否在 `waldorf-teacher-os` 資料夾裡 |
-
----
-
-## 十二、系統資料夾一覽
-
-想瞭解整個系統的架構嗎？簡單參考如下：
+### 系統結構（只需要管你自己的部分）
 
 ```
 WaldorfTeacherOS-Repo/
-├── ai-core/                          ← 系統核心設定（所有老師共用，無法改動）
-│   ├── teacheros.yaml                ← 系統路由中樞（載入順序與 AI 協調規則）
-│   ├── teacheros-foundation.yaml     ← 華德福哲學共用根基（所有教師共讀）
-│   ├── acl.yaml                       ← 使用者授權表（David 維護）
-│   ├── AI_HANDOFF.md                  ← AI 每次對話必讀的系統說明
-│   ├── reference/                     ← 科目深度參考資料（pedagogy、student-development 等）
-│   └── system-status.yaml             ← 系統現況快照（AI 自動更新）
+├── ai-core/                              ← 系統核心（所有人共用，不要改）
+│   ├── teacheros.yaml                    ← 系統路由
+│   ├── teacheros-foundation.yaml         ← 華德福共用根基
+│   ├── acl.yaml                          ← 授權表（David 維護）
+│   ├── AI_HANDOFF.md                     ← AI 每次必讀
+│   ├── skills/                           ← 技能正本（所有 AI 共用）
+│   └── reference/                        ← 科目深度參考
 │
-├── projects/                          ← 共用教學框架（班級資料已移至各 workspace）
-│   ├── _di-framework/                 ← 差異化教學共用框架
-│   │   └── content/
-│   │       └── di-classification-guide.md  ← 能力分類決策樹（必讀）
-│   │
-│   └── _class-template/               ← 新班級的範本（由 add-teacher.py 自動複製）
+├── projects/_di-framework/               ← 差異化教學共用框架
 │
-├── workspaces/                        ← 每位老師的個人工作空間
-│   ├── 工作範例參考/                   ← 系統提供的完整範例（可看、無法改）
-│   │   ├── teacheros-personal.yaml
-│   │   └── projects/
-│   │       └── class-claude/
-│   │           ├── project.yaml
-│   │           ├── students.yaml
-│   │           ├── english/
-│   │           │   └── content/       ← 完整的 Block 1-4 範例
-│   │           └── working/
-│   │
-│   ├── _template/                     ← 新老師的範本（由 add-teacher.py 自動複製）
-│   │
-│   └── Working_Member/                ← 所有活躍教師的工作空間
-│       ├── Codeowner_David/           ← David（管理員）的工作空間
-│       │   ├── teacheros-personal.yaml
-│       │   └── projects/
-│       │       ├── class-9c/          ← 九年級英文 + 導師課
-│       │       └── class-9d/          ← 九年級台灣文學主課程
-│       │
-│       └── Teacher_{你的姓名}/         ← 你的工作空間（由管理員建立）
-│           ├── teacheros-personal.yaml ← 你的個人身份設定
-│           ├── workspace.yaml
-│           ├── skills/                ← 你的個人技能（Personal Skills）
+├── workspaces/
+│   ├── 工作範例參考/                     ← 完整範例，可看不可改
+│   └── Working_Member/
+│       └── Teacher_你的姓名/             ← ⭐ 這是你的領土
+│           ├── teacheros-personal.yaml   ← 你的身份卡
+│           ├── workspace.yaml            ← 工作狀態
+│           ├── skills/                   ← 個人技能
 │           └── projects/
-│               ├── class-7c/          ← 你的班級工作資料夾
-│               └── ...
+│               └── class-7c/             ← 班級資料夾
+│                   ├── project.yaml
+│                   ├── students.yaml
+│                   ├── english/
+│                   │   └── session.yaml
+│                   └── ...
 │
-├── setup/                             ← 設定相關工具
-│   ├── start.sh                       ← macOS/Linux 啟動器（呼叫 quick-start.py）
-│   ├── start.ps1                      ← Windows 啟動器（呼叫 quick-start.py）
-│   ├── quick-start.py                 ← 跨平台一鍵安裝腳本（Python 3）
-│   ├── quick-start.sh                 ← 一鍵安裝腳本（Shell 版，備用）
-│   ├── install-hooks.py               ← 門鎖安裝腳本（Python 跨平台版）
-│   ├── install-hooks.sh               ← 門鎖安裝腳本（Shell 版，備用）
-│   ├── setup-check.py                 ← 環境檢查腳本（Python 跨平台版）
-│   ├── setup-check.sh                 ← 環境檢查腳本（Shell 版，備用）
-│   ├── add-teacher.py                 ← 新增教師腳本（Python 跨平台版）
-│   ├── add-teacher.sh                 ← 新增教師腳本（Shell 版，備用）
-│   ├── environment.env.example        ← 個人設定檔範本
-│   ├── environment.env                ← 你的個人設定（不上傳至 GitHub）
-│   └── teacher-guide.md               ← 本文件
-│
-├── publish/                           ← 文件輸出相關工具
-│   └── build.sh                       ← 自動把 .md 轉成 Google Drive 文件
-│
-└── .github/                           ← GitHub 上傳審核設定
-    └── CODEOWNERS                     ← PR 審核規則（只有 David 能合併）
+├── setup/                                ← 設定工具（本資料夾）
+└── publish/                              ← Markdown → Docx → Drive 輸出管線
 ```
 
-### 重要資料夾說明
+### 你的書桌：`workspaces/Working_Member/Teacher_你的姓名/`
 
-- **ai-core** - 系統大腦，包含系統路由（teacheros.yaml）、華德福共用根基（teacheros-foundation.yaml）、科目參考資料（reference/）。所有教師共讀，不改動
-- **workspaces/Working_Member/** - 所有老師的個人工作空間（命名格式 `Teacher_{姓名}`）
-- **workspaces/工作範例參考/** - 完整範例，隨時可參考
-- **setup** - 每位老師只需設定一次的工具
-- **工作範例參考** - 完整的、成熟的工作範例，你應該定期參考它
+這個資料夾 100% 屬於你，AI 只會在此範圍內寫入。
+
+### 其他老師的工作你可以「讀」但不能「改」
+
+`git branch -r` 或問 AI「幫我看 xx 老師最近做了什麼」即可查閱，互不干擾。
 
 ---
 
-## 十三、建立個人技能（Personal Skills）
+## 四、建立個人身份與班級
 
-### 什麼是個人技能
+### 個人身份（一次性）
 
-TeacherOS CreatorHub 有兩層技能系統：
+打開 `workspaces/Working_Member/Teacher_你的姓名/teacheros-personal.yaml`，填寫：
 
-- **系統技能**（`ai-core/skills/`）— 所有教師共用，由管理員維護。例如 `/lesson`、`/session-end` 等
-- **個人技能**（`{你的 workspace}/skills/`）— 你自己建立，只在你的工作空間生效
+- `teacher_identity`：姓名、Email、學校
+- `teaching_scope`：年級、科目
+- `subject_philosophies`：你對各科目的個人教學信念
+- `voice_anchor`：你希望 AI 用什麼語氣跟你協作
 
-個人技能讓你把自己常用的工作流程「教給 AI」。例如你每次設計朗讀教學都有固定的步驟，就可以把它寫成一個技能。下次只要說「朗讀教學」，AI 就會按照你設計的流程來執行。
+不會填？直接對 AI 說：「幫我草擬 `teacheros-personal.yaml`，我教七年級英文，重視溝通與創意。」AI 會起草，你再微調。
 
-### 怎麼建立個人技能
+### 新增班級
 
-1. 進入你的 `skills/` 資料夾（在你的 workspace 根目錄下）
-2. 新建一個 `.md` 檔案，例如 `recitation.md`
-3. 檔案頂部必須包含 YAML frontmatter（格式說明），然後寫上執行步驟
+對 AI 說：「幫我建立 7C 班級資料夾，有 28 位學生。」AI 會：
 
-**最小範例：**
+1. 從 `projects/_class-template/` 複製骨架到你的 workspace
+2. 填好 `project.yaml`、空白 `students.yaml`、各科目 `session.yaml`
+3. 提醒你之後補學生名單
+
+### 學生 A/B/C/D 分類
+
+TeacherOS 使用「能力 × 動機」雙軸矩陣：
+
+| 類別 | 能力 | 動機 | 教學方向 |
+|------|------|------|---------|
+| A | 高 | 高 | 延伸挑戰、自主探究、引導同儕 |
+| B | 低 | 高 | 鷹架支持、小步驟成功經驗、建立自信 |
+| C | 高 | 低 | 提升意義感、連結個人興趣、減少無效重複 |
+| D | 低 | 低 | 降低焦慮、建立安全感、從具體操作切入 |
+
+**重要**：分類只存在於 `students.yaml` 與 AI 對話中，學生看不到。這是教師的觀察工具，不是學生標籤。
+
+詳細判斷指引：`projects/_di-framework/content/di-classification-guide.md`
+
+---
+
+## 五、每次使用的流程（日常三指令）
+
+### 開場：「開工」
+
+每次打開 AI 對話，第一句話說「開工」或「開工，9C 英文課」。
+
+AI 會：
+
+1. 自動執行 `git pull`（不用你動手）
+2. 確認你站在自己的 `workspace/Teacher_xxx` 分支上
+3. 載入系統脈絡與你的 workspace
+4. 報告你上次做到哪裡、下一步是什麼
+
+### 進行：自然對話
+
+跟 AI 說你要做什麼：
+
+- 「設計 7C 英文第 2 單元」
+- 「記錄今天 7C 英文課的事」
+- 「產出 9C 英文期末評量報告」
+
+AI 會自動載入對應技能，按 Block 結構產出。
+
+### 收尾：「收工」
+
+一天結束時，對 AI 說「收工」（或「存檔」「備份」）。
+
+AI 會：
+
+1. 執行 `git status` 確認你改了哪些檔案
+2. **只 add 你 workspace 內的檔案**（不動別人、不動共用目錄）
+3. 寫一句中文 commit 訊息
+4. 推送到你的個人分支
+
+> **不要自己下 `git add .` 或 `git commit`。** 讓 AI 做，它會做安全檢查。
+> 如果 AI 想用 `git add -A`、`--force` 或 `--no-verify`，**請你立刻喊停**，要它重做。
+
+### 對話中的方向校正
+
+- 「回到中軸」→ AI 重新定位，告知當前步驟
+- 「我要繼續上次 7C 的工作」→ 載入對應 session.yaml
+
+---
+
+## 六、進 Block 2 之前：準備素材
+
+啟動 Block 1 或 Block 2 之前，強烈建議：
+
+1. 你自己先做主題研究（閱讀、文本分析、蒐集素材）
+2. 把筆記整理成 1-2 份 Markdown
+3. 對話開始時把這份素材丟給 AI 當基礎
+
+AI 會以你的研究為錨點設計課程，而不是從零憑空生成。沒素材時 AI 會要你補，或要你明確授權它在無基礎下進行。
+
+---
+
+## 七、文件輸出到 Google Drive
+
+AI 完成一份文件（例如 Block 1 大綱）後會問你：
+
+> 「這份要輸出到 Google Drive 嗎？」
+
+回答「要」之後：
+
+- **Claude Code / Cowork 老師**：AI 自動執行 `publish/build.sh`，經 Pandoc 轉成 `.docx`，上傳到你 Drive 的對應資料夾
+- **ChatGPT / Gemini 老師**：AI 提供格式化文字，你複製貼到 Google Docs
+
+Pandoc 沒裝？安裝精靈會提醒你。Mac 用 `brew install pandoc`，Windows 從 [pandoc.org/installing.html](https://pandoc.org/installing.html) 下載。
+
+---
+
+## 八、選配：Google Workspace CLI（gws）
+
+想讓 AI 直接操作你的 Google Drive / Calendar / Gmail？你需要**自行**安裝並設定 gws。
+
+**這是選配功能。TeacherOS v2.0 之後不再統一安裝或管理 gws。** 每位老師用自己的 Google 帳號建立獨立的 OAuth 專案，David 看不到也不會碰你的資料。
+
+簡要步驟：
+
+```bash
+# 安裝 Node.js LTS：https://nodejs.org
+npm install -g @googleworkspace/cli
+gws auth setup    # 建立你自己的 GCP OAuth 專案
+gws auth login    # 瀏覽器登入
+```
+
+完整步驟請看 `ai-core/reference/gws-cli-guide.md`，或把這份指南 + `gws-cli-guide.md` 丟給 AI 並說：「教我設定 gws。」
+
+不用 Drive / Email / Calendar 自動化的老師可跳過本章，完全不影響備課。
+
+---
+
+## 九、權限與安全：三層保護
+
+| 層級 | 位置 | 作用 |
+|------|------|------|
+| AI 層 | 每次對話 | AI 讀取你的身份（`environment.env`），只在授權範圍內操作 |
+| Git 層 | 每次 commit | Pre-commit Hook 攔截超出授權的檔案變更 |
+| GitHub 層 | Pull Request | David 手動審核才能合併進 main |
+
+### 你只會動到兩個地方
+
+- `workspaces/Working_Member/Teacher_你的姓名/`（你的 workspace）
+- 你自己的 `workspace/Teacher_你的姓名` 分支
+
+### 如果 Hook 攔截了 commit
+
+通常是 AI 不小心想 add 別人的檔案。把終端機畫面整段貼給 AI，它會自己排除。
+
+---
+
+## 十、個人技能（Personal Skills）
+
+系統內建了大量技能（`/opening`、`/lesson`、`/syllabus` 等），放在 `ai-core/skills/`。你也可以在 `workspaces/Working_Member/Teacher_你的姓名/skills/` 建立**個人技能**，把你自己的固定工作流程教給 AI。
+
+最小範本：
 
 ```yaml
 ---
@@ -651,244 +341,147 @@ triggers:
   - 設計朗讀
   - recitation
 requires_args: false
-author: 你的姓名
-created: 2026-03-05
 ---
+
+# recitation — 朗讀教學設計
+
+## 執行步驟
+1. ...
+2. ...
 ```
 
-frontmatter 之後用 Markdown 寫你希望 AI 執行的步驟。
+frontmatter 之後用 Markdown 寫步驟即可。完整範本：`workspaces/_template/skills/EXAMPLE-recitation.md`。
 
-完整範例見：`workspaces/_template/skills/EXAMPLE-recitation.md`
-
-### AI 如何使用你的個人技能
-
-- AI 在每次對話開始、載入你的 workspace 後，會自動掃描 `skills/` 資料夾
-- 當你說的話符合某個技能的 `triggers` 或 `description`，AI 會載入並執行
-- 如果你的個人技能與系統技能同名，**AI 會優先使用你的個人版本**，並告訴你：「你的個人技能與系統技能同名，本次使用個人版本。如需系統版本，請說『用系統的 [技能名]』。」
-
-### 個人技能格式規範
-
-詳見 `skills/README.md`（在你的 workspace 內）。關鍵欄位：
-
-| 欄位 | 必填 | 說明 |
-|------|------|------|
-| `name` | 是 | 技能名稱（英文，小寫，連字號分隔） |
-| `description` | 是 | 一句話描述（AI 用來判斷是否觸發） |
-| `triggers` | 是 | 觸發語清單（你會怎麼說） |
-| `requires_args` | 否 | 是否需要參數（預設 false） |
-| `args_format` | 否 | 參數格式說明 |
+**個人技能與系統技能同名時**，AI 在你的 session 內優先使用個人版，並主動告訴你。想切回系統版說「用系統的 [技能名]」即可。
 
 ---
 
-## 十四、Git 工作流程：儲存、分享、送出審核
+## 十一、學期末：合併回主系統
 
-這一章告訴你三件事：**怎麼儲存你的工作**、**怎麼看別人的工作**、**怎麼在學期末把工作送回主系統**。
+日常工作都存在你自己的個人分支，不會自動進 main。想讓某份備課成為全校共享版本時，發一個 Pull Request。
 
-### 首先：讓 AI 連上你的專案
+對 AI 說：
 
-TeacherOS CreatorHub 設計為搭配**能讀取檔案的 AI 工具**使用。這類工具可以直接看到你的備課檔案、幫你編輯、幫你存檔，就像一個坐在你旁邊的助理。
+> 「這學期 9C 英文備課完成了，幫我發合併申請給 David。」
 
-目前支援的工具包含 Claude Code（Anthropic）、Gemini with Project（Google）等具有代理功能或檔案讀取功能的 AI 工具。
+AI 會確認最新工作已推送、開 PR、填寫標題與摘要。David 收到通知審核後合併。
 
-**要讓 AI 能幫你做事，你需要先授權它讀取你的 TeacherOS 資料夾。** 不同工具的連線方式不同，以下是常見的做法：
+什麼時候該發 PR？
 
-- **Claude Code**：在終端機中進入你的 TeacherOS 資料夾，然後啟動 Claude Code，它就能自動讀取所有檔案。
-- **Gemini / 其他工具**：通常需要在設定中連結你的 GitHub 帳號，或授權讀取本機硬碟上的資料夾。
-
-**如果你不確定怎麼讓 AI 連上你的專案，直接問 AI：**
-
-> 「我想讓你讀取我電腦上的 TeacherOS 資料夾，請告訴我怎麼做。」
-
-AI 會根據你用的工具，一步一步引導你完成連線設定。連上之後，你就可以用說話的方式操作一切了。
-
----
-
-### 兩種操作方式
-
-連上之後，日常操作有兩種方式：
-
-- **方式 A：跟 AI 說**（主要方式）— AI 能讀取你的專案，直接用口語指令即可，AI 會幫你處理所有技術步驟。
-- **方式 B：在終端機貼一行指令**（備用方式）— 如果 AI 暫時無法操作，我們也準備了一行式腳本，貼上去就完成。
-
-兩種方式的效果完全一樣，選你順手的就好。
-
----
-
-### 第一部分：日常儲存工作
-
-每次用 AI 完成一段備課，或修改了什麼重要的東西，建議馬上儲存。這樣就算電腦出問題，你的工作也不會消失。**你一天可以儲存很多次，完全不需要任何人審核，也不會打擾其他老師。**
-
-**方式 A — 跟 AI 說：**
-
-> 「幫我儲存今天的工作，備註是完成了 Unit 2 的逐節教案。」
-
-> 「把剛才改的東西存起來。」
-
-> 「幫我 commit，說明是九年級英文 Unit 3 差異化任務初稿。」
-
-AI 會自動執行儲存、上傳，完成後告訴你存了哪些檔案。
-
-**方式 B — 在終端機貼一行：**
-
-```bash
-bash setup/save.sh "完成 Unit 2 的逐節教案"
-```
-
-引號裡寫你這次做了什麼。腳本會自動處理所有步驟，完成後顯示確認訊息。
-
-> **比喻**：這就像叫助理「幫我把剛才改的資料夾備份一份」。備份之後你繼續做其他事就好。
-
----
-
-### 第二部分：看其他老師的工作
-
-所有老師儲存之後，工作馬上就在 GitHub 上可見，你隨時可以去看。
-
-**方式 A — 跟 AI 說：**
-
-> 「幫我看看其他老師最近做了什麼。」
-
-> 「我想看林老師的備課，她最近有更新嗎？」
-
-> 「幫我打開陳老師的工作空間，我想參考她的 Unit 1 怎麼設計的。」
-
-**方式 B — 在終端機操作：**
-
-```bash
-git fetch --all                    # 更新所有人的最新狀態
-git branch -r                      # 列出所有老師的工作分支
-```
-
-你會看到類似這樣的清單：
-
-```
-origin/main
-origin/workspace/Teacher_林信宏
-origin/workspace/Teacher_陳美玲
-origin/workspace/Codeowner_David
-```
-
-> **提醒**：你看得到別人的工作，但你的瀏覽不會影響到他們，大家各自在自己的空間裡，互不干擾。
-
----
-
-### 第三部分：學期末，把工作送回主系統
-
-你日常的工作都存在自己的個人空間，不會自動進入全校共用的主系統。**當你想讓備課成果成為正式版本**（例如學期末、或完成一個完整的 Block），就需要發出「合併申請」給 David。
-
-**方式 A — 跟 AI 說：**
-
-> 「這學期的英文備課都完成了，幫我通知 David 可以合併進主系統了。」
-
-> 「Block 1 大綱定稿了，幫我發合併申請給 David。」
-
-AI 會先確認你最新的工作已儲存並上傳，然後引導你完成最後幾個步驟。
-
-**方式 B — 自己到 GitHub 網站操作：**
-
-先確認你最新的工作已儲存：
-
-```bash
-bash setup/save.sh "學期末：九年級英文 Block 1-4 完成"
-```
-
-然後到 GitHub 網站：
-
-1. 打開 TeacherOS 的 GitHub 頁面
-2. 頁面頂端會出現黃色提示欄，點「**Compare & pull request**」
-3. 填寫標題，例如：「林信宏：九年級英文學期末備課整合」
-4. 在說明欄寫一兩句：你做了什麼、有沒有需要 David 特別留意的地方
-5. 點「**Create pull request**」
-
-David 會收到通知，審核後合併進主系統。你不需要等待，繼續下學期的工作就好。
-
-**什麼時候該發合併申請？** 沒有硬性規定。建議時機：
-- 學期結束，這學期的備課已完整
+- 學期結束，整學期備課已完整
 - 完成一個完整的 Block（例如 Block 1 大綱定稿）
 - 有一份覺得很好、想讓其他老師也看到的教材
 
 ---
 
-## 十五、快速參考：常用指令
+## 十二、快速指令速查
 
 ### 跟 AI 說的話
 
 ```
-開工                                      ← 每次新對話的第一句（AI 自動更新系統＋載入）
-開工，9C 英文課                           ← 帶班級的開工（跳過詢問直接載入）
-幫我儲存，備註是「Unit 2 教案完成」       ← 日常存檔
-幫我看看其他老師最近做了什麼              ← 查看同事的工作
-我想看林老師的備課                        ← 打開特定老師的內容
-幫我發合併申請給 David                    ← 學期末送審
-幫我更新主系統最新的內容                  ← 同步 David 合併後的更新
-收尾                                      ← 結束今天的工作、同步進度
+開工                             ← 每次新對話的第一句
+開工，9C 英文課                   ← 帶班級開工，跳過詢問
+記錄今天 9C 英文課的事            ← Block 3 教學紀錄
+按 ABCD 設計差異化任務            ← DI 任務設計
+回到中軸                         ← 對話偏離時重新定位
+收工                             ← 結束時存檔並推送
+幫我發合併申請給 David            ← 學期末發 PR
+幫我看 xx 老師最近做了什麼        ← 查閱同事工作
 ```
 
-### 備課工作指令
+### Slash Commands（Claude Code）
 
 ```
-/opening       ← 每次新對話開場（自動 git pull + 載入系統）
-/syllabus      ← 開始學季大綱設計（Block 1）
-/lesson        ← 開始課堂教學設計（Block 2）
-/observe       ← 紀錄教學歷程（Block 3）
-/assessment    ← 產生評量報告（Block 4）
-回到中軸        ← 重新定位進度
+/opening      ← 自動 git pull + 載入系統 + 報告進度
+/load 9c english   ← 載入班級科目脈絡
+/lesson       ← 課堂教學設計（Block 2）
+/syllabus     ← 學季大綱（Block 1）
+/teaching-log ← 教學紀錄（Block 3）
+/di-check     ← 雙軸合規檢查
+/wrap-up      ← 收工（進度同步 + 存檔推送）
 ```
 
----
-
-## 附錄：終端機指令速查表
-
-> 以下指令是給習慣用終端機的老師、或 AI 無法直接操作時的備用方案。
-> 一般情況下，跟 AI 說話或用一行腳本就夠了。
+### 終端機指令（備用）
 
 ```bash
-# ── 系統安裝（只需做一次）──────────────────────────
-cd waldorf-teacher-os              # 進入系統資料夾
-bash setup/start.sh                # Mac/Linux 一鍵安裝
-# .\setup\start.ps1               # Windows 使用者改用這行（在 PowerShell 執行）
+# 一次性安裝
+bash setup/start.sh            # Mac
+.\setup\start.ps1              # Windows
 
-# ── 日常存檔（推薦用 save.sh）─────────────────────
-bash setup/save.sh "你做了什麼"    # 一行搞定 git add + commit + push
+# 分支確認
+git branch --show-current      # 看你在哪個分支
+git checkout workspace/Teacher_你的姓名   # 回到自己的分支
 
-# ── 手動 Git 操作（備查）──────────────────────────
-git status                         # 查看你改了什麼
-git add .                          # 準備儲存所有更動
-git commit -m "描述"               # 寫說明並儲存快照
-git push                           # 上傳到 GitHub
-
-# ── 查看其他老師的工作 ────────────────────────────
-git fetch --all                    # 更新所有人的最新狀態
-git branch -r                      # 列出所有老師的分支
-
-# ── 同步主系統最新內容（David 合併後）─────────────
-git pull origin main               # 把最新的主系統拉到你的電腦
+# 日常 Git（建議都讓 AI 做）
+git status
+git pull origin workspace/Teacher_你的姓名
+git push origin workspace/Teacher_你的姓名
 ```
 
 ---
 
-## 十六、給老師們的最後提醒
+## 十三、遇到問題時
 
-### 這套系統是什麼
+### 先問 AI，不要先找 David
 
-TeacherOS CreatorHub 不是一個「自動出教案」的工具。它是一個「教師與 AI 共創夥伴」系統。AI 處理架構、標準化、行政細節；你提供專業判斷、課堂經驗、教學靈魂。
+把畫面整段（終端機輸出、錯誤訊息）貼給 AI，加上「我在做什麼、卡在哪裡」。如果是設定檔問題，把 `environment.env`、`acl.yaml` 等檔案也餵給 AI 看。
 
-### 怎樣用最有效
+試過 AI 仍無解 → 傳訊息給 David，附上：
 
-- 帶著具體的班級、具體的學生進來
-- 帶著你的想法、你蒐集的素材進來
-- 不要被系統的複雜性嚇到；start.sh（或 start.ps1）會處理大部分細節
-- 第一單元可能需要多花時間，但之後會越來越順
-- 定期參考 `工作範例參考` 來看成熟的工作是什麼樣子
+1. 你做到哪一步
+2. 終端機完整截圖
+3. AI 之前的建議
+4. 你試了之後發生什麼
 
-### 遇到問題別硬幹
+### 常見狀況
 
-- 不懂就問 AI（AI 會解釋系統和操作）
-- 還是不懂就聯絡 David
-- 沒有愚蠢的問題，只有沒問的老師
+| 狀況 | 怎麼做 |
+|------|--------|
+| AI 忘記我們在做什麼 | 說「回到中軸」 |
+| 不知道進度在哪 | 問 AI：「現在到哪裡？」 |
+| 文件沒出現在 Drive | 確認 gws 有登入；或 Google Drive for Desktop 有開 |
+| Git commit 被攔截 | AI 會說明原因；多半是誤動別人檔案 |
+| AI 拒絕操作某路徑 | 不在 ACL 範圍內，如需擴充請聯繫 David |
+| 看不到 `start.sh` | 你不在 repo 根目錄，先 `cd WaldorfTeacherOS-Repo` |
+| `git pull` 失敗／衝突 | 停下來，把完整輸出貼給 AI |
+| 不小心在 main 分支做改動 | 停手、貼 `git status` 與 `git branch --show-current` 給 AI |
+
+### 絕對不要做的事
+
+- 不要直接改 `ai-core/`、`projects/_di-framework/`、`setup/`、`.github/` 裡的檔案
+- 不要在 `main` 分支工作
+- 不要用 `git add .` 或 `git add -A`
+- 不要接受 AI 提議的 `--force` 或 `--no-verify`（幾乎都是錯的）
 
 ---
 
-**TeacherOS CreatorHub 由 David 設計。版本 2.3 包含三層架構（系統路由 + 共用根基 + 個人身份）、Workspace 機制、個人技能系統、跨平台安裝（macOS / Windows / Linux）、工作範例參考與差異化教學決策樹。**
+## 十四、關於這套系統
 
-**最後更新：2026-03-15。如有任何回饋或問題，請直接聯絡 David。**
+TeacherOS 不是「自動出教案」的工具，是「教師與 AI 共創夥伴」系統。AI 處理架構、格式、行政細節；你提供專業判斷、課堂經驗、教學靈魂。
+
+**用得最有效的方式**：
+
+- 帶著具體的班級、具體的學生進來
+- 帶著你自己的想法與蒐集的素材進來
+- 第一個單元可能慢，之後會越來越快
+- 定期翻 `workspaces/工作範例參考/` 看成熟成品
+
+---
+
+## 附錄：本次系統大整理（v2.0）摘要
+
+2026-04-17 做了一次徹底整理：
+
+- 歷史中的機密檔（OAuth 憑證等）已清除
+- 每位老師改用獨立的 `workspace/Teacher_xxx` 分支，互不覆蓋
+- gws 自動安裝從系統移除，改為個人選配
+- `.git` 從 647 MB 壓縮至約 30 MB
+
+**既有老師的一次性重裝**：請看 `setup/teacher-reclone-guide-2026-04.md`。
+**新加入的老師**：直接照本指南「二、首次安裝」執行。
+
+---
+
+*維護者：David（elliot200852@gmail.com）*
+*GitHub：github.com/elliot200852-lab/waldorf-teacher-os*
+*本指南對應 TeacherOS v2.0 乾淨起點（commit 93d9012）*

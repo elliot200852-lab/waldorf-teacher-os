@@ -3,7 +3,6 @@
 # TeacherOS — Hook 一鍵安裝腳本（Python 版）
 # 路徑：setup/install-hooks.py
 # 使用方式：python3 setup/install-hooks.py
-# 原始版本：setup/install-hooks.sh（保留作為備份）
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 from __future__ import annotations

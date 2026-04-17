@@ -94,14 +94,14 @@ system_status:
     acl_yaml: 完成（David = Codeowner，教師 = Teacher_{姓名}，路徑皆指向 Working_Member/）
     codeowners: 完成（.github/CODEOWNERS，@elliot200852-lab 全域保護 + 核心路徑保護）
     pre_commit_hook: 完成（setup/hooks/pre-commit，雙重 email 驗證 + Python ACL 比對）
-    install_script: 完成（setup/install-hooks.sh）
+    install_script: 完成（setup/install-hooks.py）
     workspace_template: 完成（workspaces/_template/）
     workspace_david: 完成（workspaces/Working_Member/Codeowner_David/，含 class-9c + class-9d）
     teacher_guide: v2.0（AI 口語指令版，含 Git 工作流程）
     github_branch_protection: 已啟用（main branch 保護，PR 合併需 David 審批）
     skills_wrap_up: 完成（ai-core/skills/wrap-up.md — 「收工」「存檔」觸發進度同步 + git commit + push）
     skills_pull_request: 完成（ai-core/skills/pull-request.md — 「發 PR」觸發合併申請）
-    add_teacher_sh: 完成（自動建立 workspace + 權限 + 個人 branch）
+    add_teacher_py: 完成（自動建立 workspace + 權限 + 個人 branch）
     quick_start_sh: 完成（含 Check 8 自動偵測並切換個人 branch + Check 9 Claude Code Hook 自動設定）
     session_init_hook: 完成（.claude/scripts/session-init.py，動態 workspace 掃描，WORKSPACE_ID 驅動）
 

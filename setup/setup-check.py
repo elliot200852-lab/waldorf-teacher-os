@@ -4,7 +4,6 @@
 # 路徑：setup/setup-check.py
 # 用途：新老師第一次使用時，確認所有必要環境是否就緒
 # 使用方式：python3 setup/setup-check.py
-# 原始版本：setup/setup-check.sh（保留作為備份）
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 from __future__ import annotations
