@@ -268,7 +268,15 @@ else
   echo "  與 David 的帳號完全分離。"
   echo ""
   echo "  安裝步驟（之後想用再做即可）："
-  echo "    1. npm install -g @googleworkspace/cli"
+  if [ "$OS_TYPE" = "macos" ]; then
+    echo "    1a. brew install googleworkspace-cli   ← Mac 推薦"
+    echo "        （或 npm install -g @googleworkspace/cli）"
+    echo ""
+    echo "    注意：不要 brew install gws（那是另一個同名工具，會衝突）"
+  else
+    echo "    1. npm install -g @googleworkspace/cli"
+    echo "       （需要先有 Node.js — https://nodejs.org/）"
+  fi
   echo "    2. 依 ai-core/reference/gws-cli-guide.md 建立你自己的 OAuth client"
   echo "    3. gws auth login --account 你的@gmail.com"
 fi

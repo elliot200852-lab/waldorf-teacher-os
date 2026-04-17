@@ -66,12 +66,13 @@ skill_writing_rules:
   - 新建腳本一律用 Python 3，不用 bash
   - 既有 .sh 腳本逐步遷移為 .py（狀態見下方 migration_status）
 
-# 腳本遷移狀態（2026-03-15 更新）
+# 腳本遷移狀態（2026-04-17 更新）
 # completed = Python 版已完成，Shell 版保留作為備份
 # active     = Shell 版仍在服役，尚未遷移
 # shell-only = 必須保持 Shell（如 Git hook 薄層入口）
+# removed    = 已從 repo 移除
 migration_status:
-  setup/quick-start.sh:      { status: completed, python: setup/quick-start.py }
+  setup/quick-start.sh:      { status: removed, note: "v2.0 reclone 時刪除（含已失效的 GWS 部署 code），由 setup/start.sh → quick-start.py 取代" }
   setup/add-teacher.sh:      { status: completed, python: setup/add-teacher.py }
   setup/install-hooks.sh:    { status: completed, python: setup/install-hooks.py }
   setup/setup-check.sh:      { status: completed, python: setup/setup-check.py }

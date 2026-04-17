@@ -9,13 +9,20 @@ aliases:
 此資料夾透過 symlink 連結至 `~/Desktop/Personal-Asset-base/vault/`。
 編輯此處的檔案等同編輯 Personal-Asset-base，反之亦然。
 
-## 設定方式
+## 設定方式（如需重建）
 
-在 Mac 終端機執行一次：
+symlink 已建立。若需重新建立（例如換電腦），在 repo 根目錄執行：
 
 ```bash
-bash setup/scripts/setup-asset-link.sh
+ln -s ~/Desktop/Personal-Asset-base/vault/drafts \
+  workspaces/Working_Member/Codeowner_David/personal-asset-base/drafts
+ln -s ~/Desktop/Personal-Asset-base/vault/published \
+  workspaces/Working_Member/Codeowner_David/personal-asset-base/published
 ```
+
+> 此資料夾為 David 個人寫作工作流，與其他老師無關。
+> 原本的 `setup/scripts/setup-asset-link.sh` 與 `publish-drafts.sh`
+> 已於 v2.0 reclone 時移除（與通用 setup 工具切離）。
 
 ## 結構
 

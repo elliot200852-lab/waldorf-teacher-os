@@ -335,7 +335,16 @@ def check_gws(os_type: str) -> None:
         print("  與 David 的帳號完全分離。")
         print()
         print("  安裝步驟（之後想用再做即可）：")
-        print("    1. npm install -g @googleworkspace/cli")
+        if os_type == "macos":
+            print("    1a. brew install googleworkspace-cli   ← Mac 推薦")
+            print("        （或 npm install -g @googleworkspace/cli）")
+            print()
+            print("    注意：不要 brew install gws（那是另一個同名工具，會衝突）")
+        elif os_type == "windows":
+            print("    1. npm install -g @googleworkspace/cli")
+            print("       （需要先有 Node.js — https://nodejs.org/）")
+        else:
+            print("    1. npm install -g @googleworkspace/cli")
         print("    2. 依 ai-core/reference/gws-cli-guide.md 建立你自己的 OAuth client")
         print("    3. gws auth login --account 你的@gmail.com")
 

@@ -127,7 +127,6 @@ aliases:
 | 「填進去 Git history」「Git history 編寫」「更新週記」「git 回顧」 | `ai-core/skills/git-history.md` |
 | 「建立影片專案」「設定 Remotion」「video setup」「影片環境」 | `ai-core/skills/video-setup.md` |
 | 「同步檢查」「檢查系統」「sync agents」「系統一致性」 | `ai-core/skills/sync-agents.md` |
-| 「古文明神話故事」「每日古文明」「寫一篇古文明」「ancient myths daily」 | `ai-core/skills/ancient-myths-daily.md` |
 | 「NotebookLM」「NotebookLM 做簡報/影片/語音/資訊圖表/測驗/報告/心智圖/學習卡/資料表」 | `ai-core/skills/notebooklm.md` |
 | 「發布」「組裝上傳」「跑管線」「publish」「assemble and upload」「組裝並上傳」 | `ai-core/skills/publish-pipeline.md` |
 | 「評估課程」「evaluate」「跑品質檢查」「課程評估」「評估教案」 | `ai-core/skills/lesson-evaluator.md` |
