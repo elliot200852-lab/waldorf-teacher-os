@@ -3,12 +3,9 @@ aliases:
   - "David 寫作語氣規準"
 name: david-voice
 description: >
-  David 的個人品牌寫作語氣規準。任何為 David 撰寫公開文章（Facebook、部落格、
-  演講稿、自媒體貼文）時，必須載入此 Skill 作為語氣校準錨點。
-  觸發詞：寫文章、寫貼文、FB 文、部落格、演講稿、社群文、品牌文、
-  write article、blog post、social post。
-  若同時需要產出文章檔案，請搭配對應格式 Skill（docx / pdf / md）。
-trigger_keywords:
+  David 的個人品牌寫作語氣規準。為 David 撰寫公開文章（FB、部落格、演講稿、自媒體貼文）時載入。
+  寫作後若 David 說「不像我」「太冷」「太 AI」「語氣不對」「不是我的語氣」，立即重讀本檔並更新 voice-calibration-log.md。
+triggers:
   - 寫文章
   - 寫貼文
   - FB 文
@@ -19,12 +16,13 @@ trigger_keywords:
   - write article
   - blog post
   - social post
-  - 不像我
-  - 不是我的語氣
-  - 太冷
-  - 太AI
-  - 語氣不對
 ---
+
+<!--
+feedback_keywords（非 frontmatter，由 AI 在對話中偵測後重讀本檔）：
+  不像我、不是我的語氣、太冷、太AI、語氣不對
+-->
+
 
 # David Voice — 寫作語氣規準
 

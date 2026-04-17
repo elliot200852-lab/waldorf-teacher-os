@@ -10,9 +10,12 @@ aliases:
   ║  INSTRUCTIONS.md 已加入 .gitignore，不進版本控制              ║
   ║  修改此模板 = 修改所有人的 Cowork 上下文共用區塊              ║
   ╚══════════════════════════════════════════════════════════════╝
-  version: 1.0
-  last_updated: 2026-03-04
+  version: 1.1
+  last_updated: 2026-04-17
   compilation_engine: ai-core/skills/sync-cowork.md
+  changelog:
+    - 2026-04-17: Section 5 補上 v2.0 分支模型環境脈絡（一師一分支）
+    - 2026-03-04: v1.0 初版
 -->
 
 # TeacherOS CreatorHub — Cowork 工作上下文
@@ -174,6 +177,15 @@ WaldorfTeacherOS-Repo/
 <!-- ═══════════════════════════════════════════════════════ -->
 
 ## 五、Cowork 的角色邊界與工作指引
+
+### 環境脈絡（v2.0 分支模型）
+
+這個 repo 採「一師一分支」的協作模型：
+- **admin（David）** 在 `main` 分支工作
+- **其他教師** 在個人分支 `workspace/Teacher_{姓名}` 工作；系統更新透過把 main 合併進個人分支取得（不執行 `git pull origin main`）
+- 你（Cowork）**不執行** Git 操作，但若教師詢問「我在哪個分支」「分支模型怎麼運作」「要怎麼拉更新」，依此回答，並加一句「Git 操作請回 Claude Code 執行」
+
+完整 Git 規則見 `ai-core/AI_HANDOFF.md` 的「Git 安全規則」段落。
 
 ### 你可以做的事
 

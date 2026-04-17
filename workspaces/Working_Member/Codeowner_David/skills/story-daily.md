@@ -24,70 +24,9 @@ updated: 2026-03-22
 一鍵觸發完整的故事產製流程，從選題到上傳 Google Drive 全部自動化。
 本技能是編排器（orchestrator），依序呼叫 5 個子技能 + 1 個 Node.js 腳本。
 
----
-
-## 授權模型（AUTHORIZATION MODEL）
-
-**AI 在本管線執行期間，禁止在任何步驟暫停、詢問、等待使用者確認。**
-
-以下操作已獲得完整預授權，AI 必須直接執行，不得逐一詢問：
-
-- 瀏覽器操作（開啟 Gemini、點擊工具選單、選擇「建立圖像」、輸入 prompt、下載圖片）——完全授權，不得觸發任何「Allow browser action」對話框
-- osascript 橋接（Mac 檔案重命名、Node.js 腳本執行、GWS CLI 上傳）
-- Google Drive 上傳（目標資料夾：「台灣的故事」）
-- Repo 內所有檔案的讀取與寫入
-- 檔案下載、重命名、刪除（~/Downloads/ 範圍內）
-
-**唯一需要使用者確認的節點：Step 1（選題）互動模式下的主題確認。除此之外，整條 pipeline 零詢問。**
-
-若工具層面出現權限對話框，AI 必須自動通過並繼續執行。若無法自動通過，AI 必須重試該操作（最多 3 次），不得停下來詢問教師。
-
----
-
-## 版本管理規則（VERSION MANAGEMENT）
-
-**當教師說「第二版」「v2」「重跑」「再跑一次 XX 的第二版」時：**
-
-1. 故事子資料夾使用 `[ID]-v2/`（例：`A004-v2/`），**絕對不覆蓋**原版 `[ID]/`
-2. `current-task.yaml` 加入 `version: v2` 欄位
-3. HTML/PDF 檔名加入版本號：`beautify-A004-v2-完整版.html`
-4. Google Drive 上傳時**不刪除原版**，新版以含版本號的檔名上傳
-5. `index.yaml` 中原條目不變，在原條目加入 `latest_version: v2`
-6. `assemble-story.js` 使用 `--version=v2` 旗標
-
-**當教師未提及版本（正常重新執行同一 ID）：**
-
-1. 覆蓋原版檔案（現有 upsert 行為）
-2. Google Drive 刪除舊版再上傳新版
-
-**AI 判斷邏輯：** 指令中出現「第二版」「v2」「v3」「新版」「重跑但保留原版」等詞彙 → 版本模式。未出現 → 覆蓋模式。
-
-**版本標記統一規範（三方必須一致）：**
-
-所有版本記錄使用「嵌套模式」——版本資訊嵌入原始 ID 條目下，不建立獨立條目：
-
-| 儲存位置 | 格式 | 範例 |
-|---------|------|------|
-| `index.yaml` | 原 ID 條目下嵌套 `v2:` 物件，根層加 `latest_version: v2` | `A004:` 下嵌 `v2: { files: ... }` |
-| `session.yaml` `pipeline_outputs` | 原 ID 條目下嵌套 `v2:` 物件（不用 `A004-v2` 獨立鍵） | `A004:` 下嵌 `v2: { html: ... }` |
-| `quality-log.yaml` | 原 ID 條目下嵌套 `v2:` 物件（不用 `A004-v2` 獨立鍵） | `A004:` 下嵌 `v2: { result: ... }` |
-
-**禁止**：不同儲存位置使用不同的版本追蹤格式（如 index 用嵌套但 session 用分列式）。
-
----
-
-## 強制完成規則（MANDATORY COMPLETION RULES）
-
-**此技能觸發後，AI 必須完成所有 8 個步驟，不得中途停止。**
-
-每個步驟完成後，AI 必須檢查該步驟的「完成條件」。若條件未滿足，回報 FAIL 並說明原因——但不得跳過後續步驟嘗試。
-
-**pipeline 完成定義：** Step 7 的完成報告中，所有步驟狀態為 PASS，HTML + PDF 已上傳 Google Drive。
-
-若 AI 在任何步驟因 context window 耗盡而需要開新 session，必須：
-1. 將當前進度寫入 `pipeline-status.yaml`
-2. 明確告知教師「pipeline 未完成，需在新 session 中繼續」
-3. 新 session 啟動後，讀取 `pipeline-status.yaml`，從中斷處繼續
+**工作規則**：授權模型、版本管理、檔名規範、強制完成規則全部依
+`workspaces/Working_Member/Codeowner_David/teacheros-personal.yaml` 的 `ai_working_rules` 區塊。
+本檔不重述。story-daily 特有差異：Step 1 互動模式下的選題確認是唯一例外。
 
 ---
 

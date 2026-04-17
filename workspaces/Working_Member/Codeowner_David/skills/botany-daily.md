@@ -12,11 +12,12 @@ platforms:
   - claude-code
   - gemini
 requires_args: false
-version: 1.0.0
+version: 1.1.0
 created: 2026-03-24
+updated: 2026-04-17
 ---
 
-# 五年級植物學每日故事管線 v1.0.0
+# 五年級植物學每日故事管線 v1.1.0
 
 ## 專案路徑
 
@@ -24,16 +25,13 @@ created: 2026-03-24
 workspaces/Working_Member/Codeowner_David/projects/botany-grade5/
 ```
 
-## 預授權操作
+## 工作規則
 
-以下操作已獲得完整預授權，AI 必須直接執行，不得逐一詢問：
+授權、版本、檔名、強制完成規則全部依 `teacheros-personal.yaml` 的 `ai_working_rules` 區塊。
 
-- 瀏覽器操作（開啟 Gemini、點擊工具選單、選擇「建立圖像」、輸入 prompt、下載圖片）
-- osascript 橋接（Mac 檔案重命名、Node.js 腳本執行、GWS CLI 上傳）
-- Google Drive 上傳（目標資料夾 ID：`1jjtNmAtzcpbzVmHY8Dz8Dqz4w2fMJbU4`）
-- Repo 內所有檔案的讀取與寫入
-
-**唯一需要確認**：無（全自動模式）
+**本 pipeline 補充**：
+- Drive 目標資料夾 ID：`1jjtNmAtzcpbzVmHY8Dz8Dqz4w2fMJbU4`（「植物學五年級」）
+- 運行模式：全自動（無任何確認點）
 
 ---
 

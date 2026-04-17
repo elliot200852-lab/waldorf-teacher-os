@@ -210,3 +210,44 @@ working_style:
     - 敘事導向課程
     - 跨學科整合
     - 長期課程設計
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# AI 協作工作規則（所有 pipeline / skill 共用的操作鐵則）
+# 各 pipeline skill 不再重述，直接引用本區塊
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ai_working_rules:
+
+  authorization_model: >
+    David 的 pipeline 任務期間，AI 禁止在任何步驟暫停、詢問、等待確認。
+    以下操作已完整預授權，AI 必須直接執行：
+      - 瀏覽器操作（Gemini 生圖：開啟分頁、工具選單、建立圖像、輸入 prompt、下載）
+      - osascript 橋接（Mac 檔案重命名、Node.js 執行、GWS CLI 上傳）
+      - Google Drive 上傳（各 pipeline 各自的目標資料夾）
+      - Repo 內所有檔案的讀取與寫入
+      - ~/Downloads/ 範圍內的下載、重命名、刪除
+    唯一確認點：互動模式下 story-daily 的 Step 1（選題）。除此之外零詢問。
+    工具層權限對話框出現時自動通過；無法通過則重試最多 3 次，不停下來詢問教師。
+
+  version_management: >
+    版本模式觸發詞：「第二版」「v2」「v3」「重跑」「新版」「重跑但保留原版」。
+    觸發時：
+      - 子資料夾用 [ID]-v2/，不覆蓋原版
+      - current-task.yaml 加 version: v2 欄位
+      - 輸出檔名帶版本號（如 beautify-[ID]-v2-完整版.html）
+      - Drive 不刪原版，新版獨立上傳
+      - index.yaml 在原條目加 latest_version: v2
+      - assemble 腳本接收 --version=v2（或傳 [ID]-v2 資料夾名，擇一，禁止雙重疊加）
+    未觸發時：覆蓋原版（upsert），Drive 刪舊再傳。
+    版本標記統一用「嵌套模式」——index.yaml / session.yaml / quality-log.yaml 三方都在原 ID 條目下嵌 v2: { ... } 物件。
+    禁止建立獨立條目（如鍵名 "A004-v2"）。
+
+  naming_and_output: >
+    Google Drive 輸出檔名規則：繁體中文在前（如「台灣的故事-A001-完整版.html」）。
+    Drive 上傳：統一用 gws CLI（未安裝則退回 Drive Desktop，不寫死路徑）。
+    PDF 覆蓋舊檔後自驗：必須先關閉 Preview 再重新開啟（mdls 不可靠）。
+
+  mandatory_completion: >
+    pipeline 觸發後，AI 必須完成所有步驟，不得中途停止。
+    每步驟完成後檢查 checkpoint；FAIL 時回報原因並停止（不得跳過後續嘗試）。
+    context window 耗盡時：寫入 pipeline-status.yaml，告知教師「pipeline 未完成，需在新 session 中繼續」，新 session 讀取後從中斷處繼續。
