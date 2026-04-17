@@ -390,11 +390,66 @@ status:
             project_yaml.write_text(content, encoding="utf-8")
             print_success("project.yaml 已建立")
 
-    # ── Step 7: （已移除）──
-    # 原本此步驟會建立教師專用分支（workspace/Teacher_{姓名}），
-    # 但實際運作中所有教師都在 main 上工作（main-to-main），
-    # 分支反而造成混淆（教師不知道自己在分支上，commit 後無法 push 回 main）。
-    # 2026-04-04 移除此步驟。
+    # ── Step 7: 建立教師專用分支（v2.0 分支模型）──
+
+    def create_teacher_branch(self):
+        """建立 workspace/{teacher_id} 分支並 push 至 origin。
+
+        v2.0 分支模型（2026-04-17 起）：
+        - admin（David）在 main 分支工作
+        - 每位老師在各自的 workspace/Teacher_{姓名} 分支工作
+        - 老師透過把 main 合併進個人分支取得系統更新
+        - admin 執行此腳本後仍留在 main，只幫老師把 branch 建好 + push
+        """
+        print_section("步驟 7：建立教師分支（v2.0 分支模型）")
+
+        branch_name = f"workspace/{self.teacher_id}"
+
+        if self.dry_run:
+            print_info(f"[預覽] 將建立分支：{branch_name}")
+            print_info(f"[預覽] 將 push 到 origin/{branch_name}")
+            return
+
+        # 檢查 remote 是否已有同名分支
+        result = subprocess.run(
+            ["git", "ls-remote", "--heads", "origin", branch_name],
+            capture_output=True, text=True, cwd=self.repo_root,
+        )
+        if result.stdout.strip():
+            print_warning(f"遠端已有 {branch_name}，跳過建立（避免覆蓋老師既有工作）")
+            return
+
+        # 檢查本地是否已有同名分支
+        result = subprocess.run(
+            ["git", "show-ref", "--verify", "--quiet", f"refs/heads/{branch_name}"],
+            cwd=self.repo_root,
+        )
+        branch_exists_local = (result.returncode == 0)
+
+        if not branch_exists_local:
+            # 從當前 HEAD（應為 main）建立分支，不 checkout——admin 仍停留在 main
+            result = subprocess.run(
+                ["git", "branch", branch_name],
+                capture_output=True, text=True, cwd=self.repo_root,
+            )
+            if result.returncode != 0:
+                print_error(f"建立分支失敗：{result.stderr.strip()}")
+                print_warning(f"請手動執行：git branch {branch_name} && git push -u origin {branch_name}")
+                return
+            print_success(f"已建立本地分支：{branch_name}")
+        else:
+            print_info(f"本地已有 {branch_name}，直接 push")
+
+        # Push 到 remote（-u 建立 upstream tracking）
+        result = subprocess.run(
+            ["git", "push", "-u", "origin", branch_name],
+            capture_output=True, text=True, cwd=self.repo_root,
+        )
+        if result.returncode != 0:
+            print_error(f"push 失敗：{result.stderr.strip()}")
+            print_warning(f"請手動執行：git push -u origin {branch_name}")
+            return
+        print_success(f"已 push 到 origin/{branch_name}")
 
     # ── Step 8: 結果報告 ──
 
@@ -433,8 +488,9 @@ status:
         print()
         print(f"  - 確認 email：{self.email}")
         print(f"    （必須與你的 setup/environment.env 中的 USER_EMAIL 一致）")
-        print(f"  - 工作分支：main（所有教師都在 main 上工作）")
+        print(f"  - 工作分支：workspace/{self.teacher_id}（v2.0 分支模型，每位老師在自己的分支上工作）")
         print(f"  - 執行：bash setup/start.sh（Mac/Linux）或 .\\setup\\start.ps1（Windows）")
+        print(f"  - 切換分支：git checkout workspace/{self.teacher_id}")
         print()
 
         print_info(f"設定全部完成。歡迎 {self.name} 加入 TeacherOS！")
@@ -450,6 +506,7 @@ status:
         self.create_env_preset()
         self.update_acl()
         self.create_class_folder()
+        self.create_teacher_branch()
         self.print_summary()
 
 
