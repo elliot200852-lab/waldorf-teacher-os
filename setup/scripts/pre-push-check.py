@@ -34,9 +34,14 @@ NC = "\033[0m"
 # ── 工具函式 ──────────────────────────────────────────
 
 def git(*args: str) -> str:
+    """執行 git 指令，回傳 stdout（去尾換行）。
+
+    統一加 -c core.quotepath=false，避免中文路徑被 git 預設轉義
+    成 \\xxx\\xxx，導致與 acl.yaml 的 UTF-8 路徑比對失敗。
+    """
     try:
         result = subprocess.run(
-            ["git"] + list(args),
+            ["git", "-c", "core.quotepath=false"] + list(args),
             capture_output=True, text=True, encoding='utf-8', errors='ignore'
         )
         if result.returncode != 0:
@@ -152,10 +157,13 @@ def main() -> int:
         print(f"{YELLOW}[pre-push] ACL 解析錯誤，跳過檢查：{e}{NC}")
         return 0
 
-    # ── 分支偵測：非 main 分支攔截 ──────────────────
+    # ── 分支偵測：v2.0 分支模型 ──────────────────────
+    # admin：可以推送任何分支（包含 main）；非 main 時提示
+    # teacher：只能推送自己的 workspace/Teacher_{姓名} 分支
+    #         推 main 或別人的分支 → 攔截
     current_branch = git("rev-parse", "--abbrev-ref", "HEAD")
-    if current_branch and current_branch != "main":
-        # 先判斷 pusher 是否為管理員
+    if current_branch:
+        # 先判斷 pusher 身份
         env_file_br = repo_root / "setup" / "environment.env"
         pusher_br = ""
         if env_file_br.is_file():
@@ -166,20 +174,28 @@ def main() -> int:
                     break
         if not pusher_br:
             pusher_br = git("config", "user.email")
-        is_admin_br = pusher_br in teachers and teachers[pusher_br].get("is_admin")
 
-        if not is_admin_br:
-            print()
-            print(f"{RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
-            print(f"{RED}  [攔截] 你正在推送分支「{current_branch}」{NC}")
-            print(f"{RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
-            print()
-            print("  TeacherOS 的所有工作應在 main 分支上進行。")
-            print("  請切回 main 後重新操作：")
-            print(f"    git checkout main")
-            print(f"    git pull origin main")
-            print()
-            return 1
+        user_br = teachers.get(pusher_br)
+        if user_br and not user_br.get("is_admin"):
+            expected_branch = f"workspace/Teacher_{user_br['name']}"
+            if current_branch != expected_branch:
+                print()
+                print(f"{RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
+                if current_branch == "main":
+                    print(f"{RED}  [攔截] 你正在推送 main，但 v2.0 分支模型要求教師推送自己的分支。{NC}")
+                else:
+                    print(f"{RED}  [攔截] 你正在推送分支「{current_branch}」，不是你的個人分支。{NC}")
+                print(f"{RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
+                print()
+                print(f"  你的個人分支：{expected_branch}")
+                print()
+                print(f"  請切回自己的分支後再 push：")
+                print(f"    git checkout {expected_branch}")
+                print(f"    git push origin {expected_branch}")
+                print()
+                print(f"  若此分支尚未建立，請聯絡 David。")
+                print()
+                return 1
 
     # ── Pusher 身份檢查：Admin 直接放行 ─────────────
     # 管理員 cherry-pick 教師 commit 時，author email 是教師的，
