@@ -321,6 +321,31 @@ def main() -> int:
 
     print(f"  識別身份：{current_email}")
 
+    # ── Step 1.5：本機 hook 版本同步檢查（不阻擋，只警告）──
+    # 比對本機 setup/scripts/pre-commit-check.py 與 origin/main 上的版本。
+    # 若不一致，代表老師的個人分支沒把 main 上的系統修補合併進來，
+    # 可能在用舊版 hook 邏輯，會遇到不合理的攔截。
+    # 只比對本機快取的 origin/main，不主動 fetch（避免拖慢每次 commit）。
+    # 若 origin/main 不存在（剛 clone 還沒 fetch、或離線），靜默跳過。
+    self_rel = "setup/scripts/pre-commit-check.py"
+    local_hash = git("hash-object", str(repo_root / self_rel))
+    remote_hash = git("rev-parse", f"origin/main:{self_rel}")
+    if local_hash and remote_hash and local_hash != remote_hash:
+        print()
+        print(f"{YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
+        print(f"{YELLOW}  [版本提醒] 你本機的 pre-commit hook 與 origin/main 不一致。{NC}")
+        print(f"{YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
+        print()
+        print("  你的分支可能落後 main 上的系統修補。")
+        print("  若遇到不合理的攔截或攔截訊息對不上 v2.0 分支模型，")
+        print("  請先把 main 合併進你的分支：")
+        print()
+        print("    git fetch origin main")
+        print("    git merge origin/main --no-edit")
+        print()
+        print("  （本提醒不會阻擋 commit，只是提供線索。）")
+        print()
+
     # ── Step 2：確認 ACL 與暫存檔案 ──────────────────
 
     if not acl_file.is_file():
