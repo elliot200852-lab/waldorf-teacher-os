@@ -8,11 +8,11 @@
 
 english_session:
   class: class-9c
-  last_updated: 2026-04-08
+  last_updated: 2026-04-18
 
   current_position:
     block: 二
-    step: 5         # Block 2 — Week 7-3 已上課完成，Week 8 節次重排
+    step: 結案      # 春季班已結案（2026-04-18）
     sub_block: null
     unit_number: 2    # week 7-8 對應單元二
     current_week: 8   # 第八週（學校行事曆週次）
@@ -46,15 +46,14 @@ english_session:
 
   next_action:
     description: >
-      【已完成 — Week 8-4, 9-1, 9-2 (Edna's Ruthie) 教案與劇本 (David 定案 Reader's Theater 版)】
-      - 教案：8-4 (Meet Ruthie), 9-1 (The Truth about Ruthie), 9-2 (Adults are Just Kids 讀劇)
-      - 學習單：Papa 自學單, 8-4 學習單, 9-1 學習單
-      - 腳本：The Broken Umbrella, The Bingo Night
-      
-      【待做】
-      1. David 核對排版並列印上述教案/分組劇本發放給全班
-      2. 準備進入下一階段期末考評或結算
-    input_needed_from_teacher: "檢視成品是否需要微調或進入檔案輸出"
+      【春季班已結案 — 2026-04-18】
+      Week 8-4/9-1/9-2 (Edna's Ruthie) 教案與劇本全部定案（Reader's Theater 版）。
+
+      【夏季班準備中】
+      1. 評量方式：David 考慮中，待決定後更新
+      2. 春季結案工作：確認是否需要成績彙整或學習歷程輸出
+      3. 夏季學期：開始規劃
+    input_needed_from_teacher: "評量方式最終決定；夏季學期規劃方向"
   output_files:
     _archive_path: class-9c/english/session-archive.yaml
     # Block 1 紀錄、syllabus、evaluation_log、reference_files 已歸檔

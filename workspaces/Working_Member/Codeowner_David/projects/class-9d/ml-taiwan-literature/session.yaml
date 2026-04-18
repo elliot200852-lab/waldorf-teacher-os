@@ -5,11 +5,12 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ml_taiwan_literature_session:
   class: class-9d
-  last_updated: 2026-04-15
+  last_updated: 2026-04-18
+  phase: 已結案
 
   current_position:
     block: 一
-    step: 3
+    step: 結案
     sub_block: null
     unit_number: null
     current_week: 8    # 第 8 週開始上課（週二至週四）
@@ -36,21 +37,10 @@ ml_taiwan_literature_session:
 
   next_action:
     description: >
-      Day 1-8 全部教案完成。區塊一備課工作結束。
-
-      【已完成】
-      - Day 1-4 v2：全部定案
-      - Day 5 v1：David 審閱確認
-      - Day 6 v1：確認，收束段已修改（發放四首臺灣詩取代胡德夫）
-      - Day 7 v2：確認。收尾段更新為兩件回家任務
-      - Day 8 v1：回顧課。Lesson Engine 設計，稽核 10/10 通過
-
-      【待做】
-      1. Day 5-7 美化版 PDF/Word 輸出（如需列印）
-      2. 準備向陽〈我的姓氏〉朗讀音檔（David 手邊有）
-      3. 準備「葉石濤語錄」A4 講義
-      4. Day 8 教案 David 審閱
-    input_needed_from_teacher: "Day 8 教案審閱；確認是否需要美化版輸出"
+      【已結案 — 2026-04-18】
+      Day 1-8 全部教案完成，區塊一備課工作全部結束。
+      本工作線封存。
+    input_needed_from_teacher: null
 
   output_files:
     syllabus_versions:
@@ -80,6 +70,4 @@ ml_taiwan_literature_session:
       - content/完成檔案/Day5教案-汗奇蹟的代價.docx
     extensions_completed: []
 
-  open_questions:
-    - "Day 5-7 美化版 PDF/Word 是否需要輸出"
-    - "Day 8 教案待 David 審閱"
+  open_questions: []
