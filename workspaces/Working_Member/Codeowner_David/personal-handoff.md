@@ -18,6 +18,7 @@ aliases:
 | 「pua」「進入除錯模式」「不要放棄」「換路徑查到底」「再試一次」 | `pua-debugging` | `{workspace}/skills/pua-debugging.md` |
 | 「片語測驗」「片語考試」「phrase quiz」「動詞片語測驗」 | `phrase-quiz` | `{workspace}/skills/phrase-quiz.md` |
 | 「上傳展示」「素材展示」「showcase」「放到展示頁」「deploy showcase」 | `showcase-deploy` | `{workspace}/skills/showcase-deploy.md` |
+| 「inbox」「待辦」「github 待辦」「我要做什麼」「有哪些需求」「查 issue」「看 pr」「收件匣」 | `inbox` | `{workspace}/skills/inbox.md` |
 
 ---
 
