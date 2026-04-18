@@ -1,3 +1,15 @@
+---
+aliases:
+  - CreatorHub 頻道內頁規格書
+  - Channel Feature 規格書
+tags:
+  - creator-hub
+  - design-spec
+  - documentation
+type: 規格書
+teacher: David
+---
+
 # Channel Feature Page — 規格書（blocks 版）
 
 > 年鑑（Almanac）風格的頻道內頁規格。
