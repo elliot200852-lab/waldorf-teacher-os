@@ -542,9 +542,37 @@ function matchesBlock(file, match) {
 
 // Resolve files into blocks based on `feature.blocks` metadata.
 // Each block gets its own `units` array sorted by storyId (numeric-aware).
-// Files that don't match any block are collected into a trailing "其他" block.
+// If `feature.blocks` is not defined, auto-group files by storyId prefix into a
+// minimal single-block (or per-prefix blocks) fallback so any channel renders.
+// Files that don't match any defined block are collected into a trailing "其他" block.
 function resolveBlocks(files, feature, palette) {
   const blocks = (feature && Array.isArray(feature.blocks)) ? feature.blocks : [];
+
+  // Fallback path — no explicit blocks configured. Group by storyId prefix;
+  // if there's only one prefix (or none), emit a single "全部單元" block.
+  if (blocks.length === 0) {
+    const groups = new Map();
+    for (const f of files) {
+      const { prefix } = parseStoryId(f.storyId);
+      if (!groups.has(prefix)) groups.set(prefix, []);
+      groups.get(prefix).push(f);
+    }
+    for (const arr of groups.values()) {
+      arr.sort((a, b) => a.storyId.localeCompare(b.storyId, undefined, { numeric: true }));
+    }
+    if (groups.size <= 1) {
+      const only = [...groups.values()][0] || [];
+      return only.length > 0 ? [{
+        id: 'all', code: '全部', title: '全部單元', subtitle: '', description: '',
+        accent: palette.accent, units: only,
+      }] : [];
+    }
+    return [...groups.entries()].map(([prefix, units]) => ({
+      id: prefix, code: prefix, title: `${prefix} 系列`, subtitle: '', description: '',
+      accent: palette.accent, units,
+    }));
+  }
+
   const matched = new Set();
   const resolved = blocks.map((b) => {
     const units = files.filter((f) => matchesBlock(f, b.match));
@@ -596,7 +624,10 @@ function generateChannelPageFeature(channel, files) {
   const totalUnits = blocks.reduce((n, b) => n + b.units.length, 0);
   const prefixCode = (channel.prefix || 'MISC').toUpperCase();
   const titleEn = feature.titleEn || '';
+  // tagline: use feature.tagline if provided, else fall back to channel.description.
+  // When tagline falls back to description, we don't also show hero-desc to avoid duplication.
   const tagline = feature.tagline || channel.description || '';
+  const showHeroDesc = Boolean(feature.tagline) && Boolean(channel.description);
   const grade = feature.grade || '';
   const seasonLabel = feature.seasonLabel || SEASON_LABEL_CN[channel.season] || '';
   const number = feature.number || 'No. 01';
@@ -606,11 +637,14 @@ function generateChannelPageFeature(channel, files) {
     grade,
     seasonLabel,
     `共 ${totalUnits} 單元`,
-    `${blocks.length} 章節`,
+    blocks.length > 1 ? `${blocks.length} 章節` : null,
   ].filter(Boolean).join(' · ');
 
-  const introLead = (feature.intro && feature.intro.lead) || `《${channel.name}》系列索引。`;
-  const introBody = (feature.intro && feature.intro.body) || channel.description || '';
+  // Intro: rich when feature.intro present; minimal single-column otherwise (no body).
+  const hasRichIntro = feature.intro && (feature.intro.lead || feature.intro.body);
+  const introLead = (feature.intro && feature.intro.lead) || channel.description || '';
+  const introBody = (feature.intro && feature.intro.body) || '';
+  const showIntro = Boolean(introLead);
 
   // ─ Chapter directory (TOC) ─
   const directoryHtml = blocks.map((b, i) => `
@@ -798,6 +832,7 @@ a { color: inherit; }
 }
 .intro { padding: 56px 0 48px; border-bottom: 1px solid var(--fg); }
 .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.intro--single .intro-grid { grid-template-columns: 1fr; max-width: 720px; }
 @media (max-width: 820px) { .intro-grid { grid-template-columns: 1fr; gap: 24px; } }
 .intro-lead {
   font-family: "Cormorant Garamond", "Noto Serif TC", serif;
@@ -970,27 +1005,27 @@ a { color: inherit; }
         <h1 class="hero-title">${esc(channel.name)}</h1>
         ${titleEn ? `<div class="hero-title-en">${esc(titleEn)}</div>` : ''}
       </div>
-      ${channel.description ? `<div class="hero-desc">${esc(channel.description)}</div>` : ''}
+      ${showHeroDesc ? `<div class="hero-desc">${esc(channel.description)}</div>` : ''}
     </div>
   </div>
 </header>
 
 <div class="page-body">
   <main>
-    <section id="intro" class="intro">
+    ${showIntro ? `<section id="intro" class="intro${introBody ? '' : ' intro--single'}">
       <div class="section-label">序 · Introduction</div>
       <div class="intro-grid">
         <p class="intro-lead">${esc(introLead)}</p>
         ${introBody ? `<p class="intro-body">${esc(introBody)}</p>` : ''}
       </div>
-    </section>
+    </section>` : ''}
 
-    <section class="toc">
-      <div class="section-label">分部目錄 · Sub-Series</div>
+    ${blocks.length > 1 ? `<section class="toc">
+      <div class="section-label">章節目錄 · Chapters</div>
       <div class="toc-grid">
 ${directoryHtml}
       </div>
-    </section>
+    </section>` : ''}
 
 ${sectionsHtml}
 
@@ -1124,12 +1159,15 @@ ${storyCards}
 }
 
 // ─── Dispatcher ───────────────────────────────────────────────
-// Picks Magazine Feature layout when opted-in via feature.layout, else Legacy.
+// All channels now render via the Magazine Feature layout.
+// Channels without full feature metadata fall back gracefully via resolveBlocks()
+// (auto prefix grouping) and minimal hero/intro rendering.
+// Legacy gradient layout is kept only for emergency rollback via `feature.layout: "legacy"`.
 function generateChannelPage(channel, files) {
-  if (channel.feature && channel.feature.layout === 'magazine') {
-    return generateChannelPageFeature(channel, files);
+  if (channel.feature && channel.feature.layout === 'legacy') {
+    return generateChannelPageLegacy(channel, files);
   }
-  return generateChannelPageLegacy(channel, files);
+  return generateChannelPageFeature(channel, files);
 }
 
 // ─── Deploy Manifest ─────────────────────────────────────────
