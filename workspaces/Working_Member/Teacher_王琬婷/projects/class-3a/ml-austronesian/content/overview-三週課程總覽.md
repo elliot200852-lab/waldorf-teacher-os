@@ -288,7 +288,7 @@ related:
 ## 檔案索引
 
 ```
-grade3-austronesian-myths/
+class-3a/ml-austronesian/
 ├── project.yaml                  # 專案定義
 ├── session.yaml                  # 進度錨點
 ├── content/
