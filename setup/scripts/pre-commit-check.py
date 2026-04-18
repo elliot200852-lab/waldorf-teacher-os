@@ -164,6 +164,68 @@ def _check_home_quality(staged_files: list[str], repo_root: Path) -> bool:
     return False
 
 
+# ── 敏感檔案攔截 ───────────────────────────────────────
+#
+# GitHub 已啟用 secret scanning + push protection，會攔截 OAuth token /
+# AWS key 等 known patterns。但 SSH 私鑰、自訂 credentials.json、.pem
+# 等不在 GitHub 預設 pattern 內，需要本地 hook 補強，越早攔越好。
+
+SENSITIVE_BASENAMES = {
+    "id_rsa", "id_dsa", "id_ecdsa", "id_ed25519",
+    "credentials.json", "token.json", "tokens.json",
+    "client_secret.json",
+    ".aws_credentials",
+    ".npmrc", ".pypirc", ".netrc",
+}
+
+SENSITIVE_GLOBS = [
+    "*.pem", "*.key", "*.p12", "*.pfx",
+    "client_secret*.json", "service-account*.json",
+    "*-credentials.json", "*_credentials.json",
+]
+
+
+def _check_sensitive_files(staged_files: list[str]) -> bool:
+    """偵測敏感檔案（SSH 私鑰、OAuth credentials、雲端服務憑證等）。
+    回傳 True 表示應阻擋 commit。"""
+    import fnmatch as _fn
+    blocked: list[str] = []
+    for f in staged_files:
+        bn = os.path.basename(f)
+        if bn in SENSITIVE_BASENAMES:
+            blocked.append(f)
+            continue
+        for pat in SENSITIVE_GLOBS:
+            if _fn.fnmatch(bn, pat):
+                blocked.append(f)
+                break
+
+    if not blocked:
+        return False
+
+    print()
+    print(f"  {RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
+    print(f"  {RED}[攔截] 偵測到敏感檔案，禁止 commit：{NC}")
+    print(f"  {RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
+    print()
+    for f in blocked:
+        print(f"  {RED}  ✗ {f}{NC}")
+    print()
+    print(f"  這些檔案可能含 SSH 私鑰、OAuth 憑證、API key 或其他密碼。")
+    print(f"  即使你已 add 了，{YELLOW}它們不應該進入 git 歷史{NC}—— 一旦 push 出去，")
+    print(f"  即使後續刪除，secret 仍會永遠留在 GitHub 上，必須整把作廢重發。")
+    print()
+    print(f"  建議處理：")
+    print(f"  1. 從暫存區移除：git reset HEAD <檔案>")
+    print(f"  2. 把對應 pattern 加入 .gitignore")
+    print(f"  3. 把檔案放到 .git 之外（個人本機或 ~/.config/）")
+    print()
+    print(f"  若這個檔案確實應該入 git（例如測試用空白範本），請聯絡 David 評估")
+    print(f"  是否更新 SENSITIVE_BASENAMES / SENSITIVE_GLOBS 白名單。")
+    print()
+    return True
+
+
 # ── 大型二進位檔案攔截 ────────────────────────────────
 
 WARN_SIZE = 3 * 1024 * 1024    # 3 MB → 警告
@@ -431,6 +493,8 @@ def main() -> int:
         print(f"  {GREEN}管理員身份確認，全域授權通過。{NC}")
 
         # 管理員也受品質護欄約束
+        if _check_sensitive_files(staged_files):
+            return 1
         if _check_home_quality(staged_files, repo_root):
             return 1
         if _check_large_files(staged_files, repo_root):
@@ -462,6 +526,8 @@ def main() -> int:
         print(f"  {GREEN}身份確認：{name}，所有修改在授權範圍內，通過。{NC}")
 
         # ── 品質護欄（阻擋 commit） ──────────────────
+        if _check_sensitive_files(staged_files):
+            return 1
         if _check_home_quality(staged_files, repo_root):
             return 1
         if _check_large_files(staged_files, repo_root):
