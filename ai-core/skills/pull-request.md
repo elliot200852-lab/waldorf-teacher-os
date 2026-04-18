@@ -31,7 +31,7 @@ args_format: "[選填：PR 標題或說明]"
 若有未儲存的更動，先提醒教師：
 > 「你還有一些工作尚未儲存。要先幫你存檔嗎？」
 
-若教師同意，先執行 save 技能（git add + commit + push），再繼續。
+若教師同意，先執行 `wrap-up` 技能（git add + commit + push），再繼續。
 
 ### Step 2 — 收集 PR 資訊
 
@@ -46,11 +46,15 @@ args_format: "[選填：PR 標題或說明]"
 ### Step 3 — 確認當前 branch 與遠端狀態
 
 ```bash
-git branch --show-current
-git push
+current_branch=$(git -c core.quotepath=false branch --show-current)
+echo "$current_branch"
+# 明確指定分支 push，並用 -u 處理首次 push 沒有 upstream 的情境
+git -c core.quotepath=false push -u origin "$current_branch"
 ```
 
 確認教師在自己的個人 branch 上（格式：`workspace/Teacher_{姓名}`），且最新的工作已 push 到遠端。
+
+若 `current_branch` 為 `main` 或非 `workspace/Teacher_*`，**停下來**，先協助切回個人分支（`git switch workspace/Teacher_{姓名}`）；不要直接從 main 開 PR。
 
 ### Step 4 — 引導教師到 GitHub 完成 PR
 

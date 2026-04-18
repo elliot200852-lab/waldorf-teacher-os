@@ -62,13 +62,15 @@ git status --short
 git fetch origin main
 ```
 
-接著依分支身份分流：
+**先判斷教師身份**（從 Step 1.5 解析的 acl.yaml 結果取得 `is_admin`），再依**分支 × 身份**分流：
 
-| 身份 | 處理 |
-|------|------|
-| **admin**（current_branch = `main`） | 執行 `git pull --ff-only origin main`。 |
-| **老師**（current_branch = `workspace/Teacher_xxx`） | 先同步自己分支的 remote：`git fetch origin "$current_branch" 2>/dev/null \|\| true` 然後 `git pull --ff-only origin "$current_branch" 2>/dev/null \|\| true`（若 remote 還沒有此分支就略過）。**接著合併系統更新**：`git merge origin/main --no-edit`。 |
-| **既非 main 也非個人分支**（例如老師被意外留在奇怪的分支上） | **停下來**，報告當前分支並詢問：「你目前在 `{分支名}` 上，不是你的個人分支。要我幫你切回 `workspace/Teacher_xxx` 嗎？」 |
+| 教師身份 | current_branch | 處理 |
+|---------|---------------|------|
+| **admin** | `main` | 執行 `git pull --ff-only origin main`。 |
+| **admin** | `workspace/*` 或其他 | 提示「你目前在 `{分支名}`，admin 允許」，執行 `git fetch origin "$current_branch"` + `git pull --ff-only origin "$current_branch"`，再 `git merge origin/main --no-edit`。 |
+| **老師** | `workspace/Teacher_{自己}` | 先同步自己分支：`git fetch origin "$current_branch" 2>/dev/null \|\| true` 然後 `git pull --ff-only origin "$current_branch" 2>/dev/null \|\| true`（若 remote 還沒有此分支就略過）。**接著合併系統更新**：`git merge origin/main --no-edit`。 |
+| **老師** | `main` | **停下來**，報告：「你目前在 `main` 分支上，但教師應該在自己的 `workspace/Teacher_{姓名}` 分支工作。pre-commit hook 會擋你的 commit；建議現在就切回：`git switch workspace/Teacher_{姓名}`。要我幫你切嗎？」**不要**執行 `git pull origin main`（會把已 push 給 main 的內容拉進老師本機 main，但老師沒有 push main 的權限，後續會卡住）。 |
+| **老師** | 其他（含 `workspace/Teacher_{別人}`） | **停下來**，報告：「你目前在 `{分支名}` 上，不是你的個人分支。要我幫你切回 `workspace/Teacher_{你的姓名}` 嗎？」 |
 
 判斷結果：
 

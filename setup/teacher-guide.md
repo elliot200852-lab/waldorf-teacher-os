@@ -413,6 +413,8 @@ git branch --show-current      # 看你在哪個分支
 git checkout workspace/Teacher_你的姓名   # 回到自己的分支
 
 # 拉系統更新（開工時 AI 會自動做，手動做法備查）
+# ⚠️ 跑這兩行前先確認你在自己的 workspace/Teacher_xxx 分支上！
+#    git branch --show-current   ← 必須印出 workspace/Teacher_你的姓名
 git fetch origin main
 git merge origin/main --no-edit      # 把 ai-core/、skills/ 等共用更新合併進來
 
