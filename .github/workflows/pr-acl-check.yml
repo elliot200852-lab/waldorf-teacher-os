@@ -36,8 +36,9 @@ jobs:
 
           echo "PR author: $PR_AUTHOR"
 
-          # Get changed files in this PR
-          CHANGED_FILES=$(gh pr diff "$PR_NUMBER" --name-only)
+          # Get changed files in this PR via GitHub API
+          # （不用 gh pr diff —— 它會把中文路徑轉成 C-escape，比對失敗）
+          CHANGED_FILES=$(gh api --paginate "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/files" --jq '.[].filename')
           echo "Changed files:"
           echo "$CHANGED_FILES"
           export CHANGED_FILES
