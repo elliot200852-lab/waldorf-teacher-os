@@ -14,7 +14,22 @@
       "description": "從原住民的星空智慧到島嶼的海洋記憶——每一篇都是為課堂而生的臺灣敘事",
       "prefix": "A",
       "season": "autumn",
-      "icon": "auto_stories"
+      "icon": "auto_stories",
+      "feature": {
+        "tagline": "一座島嶼的呼吸",
+        "titleEn": "Stories of Formosa",
+        "grade": "五年級",
+        "intro": {
+          "lead": "這是一本為華德福教師而編的臺灣地誌。",
+          "body": "從島嶼誕生的地質詩篇，到原住民看待星空與土地的方式；從大甲溪的三彎彎、太魯閣的峽谷歌，到達悟族的飛魚祭——每一則故事都設計為可以被講述、被繪畫、被演出。"
+        },
+        "pullQuote": "不是把臺灣當成資料，\n而是把臺灣當成一位需要被傾聽的長者。",
+        "subSeries": {
+          "A":  { "label": "核心故事",   "description": "系列主幹——以敘事為核心的完整故事單元，適合連續主課朗讀。", "accent": "#3a5a3a" },
+          "EN": { "label": "英文延伸",   "description": "English extensions — 英文延伸閱讀與雙語教材，供英語課或混齡使用。", "accent": "#6b4a2e" },
+          "BT": { "label": "黑板畫指引", "description": "Blackboard teaching — 黑板畫步驟、構圖、色粉與留白示範。",     "accent": "#8b3a2e" }
+        }
+      }
     },
     "ancient-myths": {
       "folderName": "古文明神話五年級",
@@ -22,7 +37,21 @@
       "description": "印度、埃及、希臘、北歐——人類意識覺醒的旅程",
       "prefix": "AM",
       "season": "summer",
-      "icon": "temple_hindu"
+      "icon": "temple_hindu",
+      "feature": {
+        "tagline": "人類意識的覺醒旅程",
+        "titleEn": "Myths of Ancient Civilisations",
+        "grade": "五年級",
+        "intro": {
+          "lead": "這是五年級主課程的心跳——以神話看見人類意識的演化。",
+          "body": "從印度的梵我合一，到埃及人對靈魂的重量；從希臘的英雄悲劇，到北歐的諸神黃昏——每一則神話都在回答同一個問題：人是什麼？五年級的孩子以這些故事為鏡，從神話中找到自己。"
+        },
+        "pullQuote": "神話不是過去的遺物，\n是人類意識成長的軌跡。",
+        "subSeries": {
+          "AM": { "label": "古文明神話",      "description": "印度、埃及、希臘、北歐主線——五年級主課程核心敘事。",       "accent": "#8b3a2e" },
+          "TW": { "label": "臺灣島嶼插曲",    "description": "嵌在神話學期之間的臺灣地誌篇，對應在地時令與節氣。",       "accent": "#3a5a3a" }
+        }
+      }
     },
     "botany": {
       "folderName": "植物學五年級",
@@ -31,7 +60,20 @@
       "prefix": "B",
       "season": "spring",
       "icon": "park",
-      "sort": "storyId"
+      "sort": "storyId",
+      "feature": {
+        "tagline": "植物王國的演化之歌",
+        "titleEn": "Botany for Fifth Grade",
+        "grade": "五年級",
+        "intro": {
+          "lead": "植物學不是分類學，而是生命形態的詩。",
+          "body": "從海中的藻類到陸地的苔蘚，從蕨的孢子舞到被子植物的花冠——植物王國的演化是地球最安靜、最耐心的敘事。五年級的孩子以身體感受這個歷程：繪畫、觀察、對照自身的成長節律。"
+        },
+        "pullQuote": "植物不說話，\n但它們從不停止說什麼。",
+        "subSeries": {
+          "B":  { "label": "主線故事", "description": "植物王國演化主敘事，依分類層級從低到高展開。", "accent": "#3a5a3a" }
+        }
+      }
     },
     "island-myths-3rd": {
       "folderName": "南島神話三年級",
@@ -39,7 +81,20 @@
       "description": "臺灣南島語系民族的創世神話——為三年級主課程精心設計的教學素材",
       "prefix": "I",
       "season": "spring",
-      "icon": "sailing"
+      "icon": "sailing",
+      "feature": {
+        "tagline": "島嶼民族的原初記憶",
+        "titleEn": "Island Creation Myths",
+        "grade": "三年級",
+        "intro": {
+          "lead": "三年級的孩子開始問：我從哪裡來？",
+          "body": "臺灣南島語系民族的創世神話，是這個問題的答案。阿美族的 Cilangasan、排灣族的 Tjaquvuquvulj、達悟族的石頭誕生——這些故事既古老又新鮮，為三年級的「創世與建家」主題而生。"
+        },
+        "pullQuote": "我們不只是住在這座島上，\n我們的故事本身就是從這座島長出來的。",
+        "subSeries": {
+          "I": { "label": "南島創世神話", "description": "臺灣各南島族群創世敘事，適合三年級主課朗讀。", "accent": "#3a5a3a" }
+        }
+      }
     },
     "shanhaijing-3rd": {
       "folderName": "三年級山海經",
@@ -47,7 +102,20 @@
       "description": "以《山海經》神話為主線的三年級教學紀錄——奇獸、山川、上古世界的課堂探索",
       "prefix": "SH",
       "season": "autumn",
-      "icon": "terrain"
+      "icon": "terrain",
+      "feature": {
+        "tagline": "上古世界的奇獸地誌",
+        "titleEn": "Shanhaijing for Third Grade",
+        "grade": "三年級",
+        "intro": {
+          "lead": "《山海經》是一本會動的地圖。",
+          "body": "奇獸、仙山、異草——這些看似荒誕的條目，其實是上古人類觀察世界的方式。三年級的孩子正需要這種「萬物皆有生命」的目光，《山海經》恰好提供了最豐富的素材。"
+        },
+        "pullQuote": "世界不是被解釋的，\n世界是被命名的。",
+        "subSeries": {
+          "SH": { "label": "山海經教學紀錄", "description": "以奇獸山川為主線的三年級課堂實錄與教材。", "accent": "#8b6f47" }
+        }
+      }
     },
     "taiwan-literature-9d": {
       "folderName": "2026九年級台灣文學主課",
@@ -55,7 +123,20 @@
       "description": "「這座島嶼上的人」— 從離散到扎根，從沉默到發聲。8天×120分鐘完整教案與教學回顧。",
       "prefix": "TL",
       "season": "spring",
-      "icon": "menu_book"
+      "icon": "menu_book",
+      "feature": {
+        "tagline": "這座島嶼上的人",
+        "titleEn": "Taiwanese Literature · Grade 9",
+        "grade": "九年級",
+        "intro": {
+          "lead": "文學不是為了告訴青少年世界的樣子，是為了陪他們走過。",
+          "body": "九年級是離散感最強的年紀——對自己、對家、對島嶼都處於懷疑狀態。這個主課程以八天八段臺灣文學文本陪他們走一次：從葉石濤的〈紅鞋子〉，到莫那能、向陽的詩篇，從沉默走向發聲。"
+        },
+        "pullQuote": "我們不只是讀文學，\n我們是在文學裡重新認識自己是誰。",
+        "subSeries": {
+          "TL": { "label": "八日主課程",    "description": "Day 1–8 教案、課堂實錄、學生作品與反思。",     "accent": "#3a5a3a" }
+        }
+      }
     }
   },
   "defaults": {

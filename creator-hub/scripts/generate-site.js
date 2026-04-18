@@ -503,91 +503,534 @@ function getCurriculumPosition(storyId) {
   return n + 3;                // AM017-021 → 20-24
 }
 
-// ─── Generate Channel Page ───────────────────────────────────
-function generateChannelPage(channel, files) {
-  const s = SEASON_CSS[channel.season];
-  let sorted;
-  if (channel.id === 'ancient-myths') {
-    sorted = [...files].sort((a, b) => getCurriculumPosition(b.storyId) - getCurriculumPosition(a.storyId));
-  } else if (channel.sort === 'storyId') {
-    sorted = [...files].sort((a, b) => a.storyId.localeCompare(b.storyId, undefined, { numeric: true }));
-  } else {
-    sorted = [...files].sort((a, b) => (b.modifiedTime || '').localeCompare(a.modifiedTime || ''));
+// ─── Channel Palette (magazine-feature layout) ───────────────
+// Maps a season to the paper-based palette used by the channel page.
+// Keeps visual parity with index.html's almanac design while varying
+// the accent per season.
+const CHANNEL_PALETTE = {
+  spring: { bg: '#f5f0e5', paper: '#faf6ec', fg: '#2d3b2d', muted: '#6b6b5a', accent: '#3a5a3a', ink: '#1f2a1f' },
+  summer: { bg: '#fff7ea', paper: '#fbf0dc', fg: '#3a2418', muted: '#7a5a4a', accent: '#8b3a2e', ink: '#2a1810' },
+  autumn: { bg: '#f0e8d8', paper: '#f7f0df', fg: '#3a2820', muted: '#8a6a52', accent: '#8b6f47', ink: '#2d1f18' },
+  winter: { bg: '#eef1f5', paper: '#f7f9fc', fg: '#1c1e22', muted: '#5a6470', accent: '#3a4a5e', ink: '#10141a' },
+};
+
+const SEASON_LABEL_CN = { spring: '春之章', summer: '夏之章', autumn: '秋之章', winter: '冬之章' };
+
+// Auto-detect sub-series by parsing the storyId prefix (letters before digits).
+// Merges with any `feature.subSeries` metadata from channels.json for labels/accents.
+function detectSubSeries(files, feature, palette, sortMode) {
+  const subMeta = (feature && feature.subSeries) || {};
+  const groups = new Map();
+
+  for (const f of files) {
+    const m = (f.storyId || '').match(/^([A-Za-z]+)/);
+    const code = (m ? m[1] : 'OTHER').toUpperCase();
+    if (!groups.has(code)) groups.set(code, []);
+    groups.get(code).push(f);
   }
 
-  // Reset placeholder rotation for each channel
-  _placeholderIdx = 0;
+  for (const arr of groups.values()) {
+    arr.sort((a, b) => {
+      if (sortMode === 'modifiedTime') {
+        return (b.modifiedTime || '').localeCompare(a.modifiedTime || '');
+      }
+      return a.storyId.localeCompare(b.storyId, undefined, { numeric: true });
+    });
+  }
 
-  const storyCards = sorted.map(file => {
-    const hasThumb = thumbExists(file.storyId);
-    const hasHtml = storyHtmlExists(file.storyId);
-    const placeholderFile = nextWatercolorPlaceholder();
-    // Link to local HTML if deployed, otherwise Drive
-    const href = hasHtml ? storyUrl(file.storyId) : `https://drive.google.com/file/d/${file.fileId}/view`;
+  const explicitOrder = Object.keys(subMeta);
+  const detected = [...groups.keys()].filter(k => !explicitOrder.includes(k));
+  const finalOrder = [...explicitOrder, ...detected].filter(k => groups.has(k));
+
+  return finalOrder.map((code) => {
+    const meta = subMeta[code] || {};
+    return {
+      id: code,
+      code,
+      label: meta.label || `${code} 系列`,
+      description: meta.description || '',
+      accent: meta.accent || palette.accent,
+      units: groups.get(code),
+    };
+  });
+}
+
+const STRIPE_BG_DARK = 'repeating-linear-gradient(135deg, #2a2a22 0 8px, #1f1f18 8px 16px)';
+
+// ─── Generate Channel Page (magazine-feature layout) ─────────
+// Unified with the index almanac design — same fonts, paper palette, borders.
+// Layout (see creator-hub/docs/channel-feature-spec.md):
+//   topnav → slim hero → intro → pull quote → sub-series directory
+//   → sub-series section × N (unit grid) → colophon, + sticky scrollspy rail.
+function generateChannelPage(channel, files) {
+  const palette = CHANNEL_PALETTE[channel.season] || CHANNEL_PALETTE.spring;
+  const feature = channel.feature || {};
+
+  // Use storyId sort by default for readable sub-series grouping; keep ancient-myths curriculum order as a special case below.
+  const sortMode = (channel.sort === 'modifiedTime') ? 'modifiedTime' : 'storyId';
+  let subSeries = detectSubSeries(files, feature, palette, sortMode);
+
+  // ancient-myths: preserve curriculum order within the AM+TW interleaved sub-series view.
+  if (channel.id === 'ancient-myths') {
+    subSeries = subSeries.map(ss => ({
+      ...ss,
+      units: [...ss.units].sort((a, b) => getCurriculumPosition(a.storyId) - getCurriculumPosition(b.storyId)),
+    }));
+  }
+
+  const totalUnits = subSeries.reduce((n, ss) => n + ss.units.length, 0);
+  const prefixCode = (channel.prefix || 'MISC').toUpperCase();
+  const titleEn = feature.titleEn || '';
+  const tagline = feature.tagline || channel.description || '';
+  const grade = feature.grade || '';
+  const seasonLabel = feature.seasonLabel || SEASON_LABEL_CN[channel.season] || '';
+  const number = feature.number || 'No. 01';
+  const metaBits = [
+    number,
+    `${prefixCode}-SERIES`,
+    grade,
+    seasonLabel,
+    `共 ${totalUnits} 單元`,
+    `${subSeries.length} 分部`,
+  ].filter(Boolean).join(' · ');
+
+  const introLead = (feature.intro && feature.intro.lead) || `《${channel.name}》系列索引。`;
+  const introBody = (feature.intro && feature.intro.body) || channel.description || '';
+  const pullQuote = feature.pullQuote || '';
+
+
+  // ─ Sub-series directory (TOC) ─
+  const directoryHtml = subSeries.map((ss, i) => `
+      <a class="toc-item" href="#sub-${esc(ss.id)}" style="--accent:${esc(ss.accent)}">
+        <div class="toc-num">${String(i + 1).padStart(2, '0')}.</div>
+        <div class="toc-body">
+          <div class="toc-label">${esc(ss.label)}</div>
+          <div class="toc-title">${esc(ss.label)}</div>
+          <div class="toc-meta">${ss.units.length} 單元 · ${esc(ss.code)}-01 → ${esc(ss.code)}-${String(ss.units.length).padStart(2, '0')}</div>
+        </div>
+      </a>`).join('\n');
+
+  // ─ Unit card renderer ─
+  function unitCardHtml(u, accent, idx) {
+    const hasThumb = thumbExists(u.storyId);
+    const hasHtml = storyHtmlExists(u.storyId);
+    const href = hasHtml ? storyUrl(u.storyId) : `https://drive.google.com/file/d/${u.fileId}/view`;
     const target = hasHtml ? '' : ' target="_blank" rel="noopener"';
+    const thumbImg = hasThumb
+      ? `<img class="unit-thumb" src="../thumbnails/${esc(u.storyId)}.jpg" alt="" loading="lazy"/>`
+      : `<div class="unit-thumb unit-thumb--stripe" aria-hidden="true"><span class="unit-thumb__label">${esc(u.storyId)}</span></div>`;
     return `
-    <a href="${href}"${target} class="card-hover block rounded-xl overflow-hidden bg-white shadow-sm">
-      <div class="relative aspect-[16/10] overflow-hidden">
-        ${hasThumb
-          ? `<img src="../thumbnails/${file.storyId}.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>`
-          : `<img src="../thumbnails/${placeholderFile}" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>`}
-        <div class="thumb-overlay absolute inset-0"></div>
-        <div class="absolute top-2.5 left-2.5"><span class="bg-[${s.primary}] text-white text-xs font-label font-semibold px-2 py-0.5 rounded">${esc(file.storyId)}</span></div>
-      </div>
-      <div class="p-4">
-        <h3 class="font-headline text-base font-bold leading-snug mb-1" style="color:${s.onSurface}">${esc(file.title)}</h3>
-        <p class="text-xs" style="color:${s.onSurfaceVariant}">${formatSize(file.size)}</p>
-      </div>
-    </a>`;
-  }).join('\n');
+        <a class="unit-card" href="${href}"${target} style="--accent:${esc(accent)}; --delay:${idx * 50}ms">
+          <div class="unit-thumb-wrap">
+            ${thumbImg}
+            <span class="unit-code">${esc(u.storyId)}</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-meta">
+              <span>${esc(u.type || '單元')}</span>
+              <span>${esc(formatSize(u.size || 0))}</span>
+            </div>
+            <h3 class="unit-title">${esc(u.title || u.storyId)}</h3>
+            <div class="unit-footer">
+              <span class="unit-arrow">閱讀 <span class="unit-arrow-sym">→</span></span>
+            </div>
+          </div>
+        </a>`;
+  }
 
-  const prefix = channel.prefix ? channel.prefix.toUpperCase() + '-Series' : 'Collection';
+  // ─ Each sub-series section ─
+  const sectionsHtml = subSeries.map((ss) => `
+      <section id="sub-${esc(ss.id)}" class="sub-section" style="--accent:${esc(ss.accent)}">
+        <header class="sub-header">
+          <div class="sub-info">
+            <div class="sub-label">${esc(ss.label)} · ${ss.units.length} 單元</div>
+            <h2 class="sub-title">${esc(ss.label)}</h2>
+            ${ss.description ? `<p class="sub-desc">${esc(ss.description)}</p>` : ''}
+          </div>
+          <div class="sub-bigcode">${esc(ss.code)}</div>
+        </header>
+        <div class="unit-grid">
+          ${ss.units.map((u, i) => unitCardHtml(u, ss.accent, i)).join('')}
+        </div>
+      </section>`).join('\n');
+
+  // ─ Scrollspy rail ─
+  const railLinksHtml = [
+    `<a class="rail-link" href="#intro" data-spy="intro">序</a>`,
+    ...subSeries.map((ss, i) => `<a class="rail-link" href="#sub-${esc(ss.id)}" data-spy="sub-${esc(ss.id)}" style="--accent:${esc(ss.accent)}">${String(i + 1).padStart(2, '0')}. ${esc(ss.label)}</a>`),
+  ].join('\n      ');
 
   return `<!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" data-season="${esc(channel.season)}">
 <head>
-${HTML_HEAD}
-<title>${esc(channel.name)} \u2014 WaldorfCreatorHubDatabase</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<title>${esc(channel.name)} · ${esc(prefixCode)}-Series · Waldorf Creator Hub</title>
 <style>
-:root{--primary:${s.primary};--secondary:${s.secondary};--bg-wash-1:${s.bgWash1};--bg-wash-2:${s.bgWash2};--bg-wash-3:${s.bgWash3};--on-surface:${s.onSurface};--on-surface-variant:${s.onSurfaceVariant};--outline-variant:${s.outlineVariant}}
-body{background:${s.bodyGradient};min-height:100vh}
-${SHARED_CSS}
+:root {
+  --bg: ${palette.bg};
+  --paper: ${palette.paper};
+  --fg: ${palette.fg};
+  --muted: ${palette.muted};
+  --accent: ${palette.accent};
+  --ink: ${palette.ink};
+  --shadow-emboss: 0 1px 0 rgba(255,255,255,0.55), 0 1px 2px rgba(0,0,0,0.08);
+  --shadow-strong: 0 1px 0 rgba(255,255,255,0.6), 0 2px 3px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.08);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  color: var(--fg);
+  font-family: "Noto Serif TC", serif;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+a { color: inherit; }
+::selection { background: var(--ink); color: var(--paper); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px);} to { opacity: 1; transform: translateY(0);} }
+
+/* Topnav */
+.topnav {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 32px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 0.5px solid var(--fg);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px; letter-spacing: 0.25em; color: var(--muted); text-transform: uppercase;
+}
+.topnav a { text-decoration: none; color: var(--muted); transition: color 200ms; }
+.topnav a:hover { color: var(--fg); }
+.topnav-right { display: flex; gap: 20px; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--fg); }
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 55%),
+    radial-gradient(ellipse at 85% 30%, color-mix(in srgb, var(--ink) 16%, transparent), transparent 60%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 52px 48px 44px; color: var(--ink); }
+.hero-meta {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 16px;
+}
+.hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end; }
+.hero-tagline {
+  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-style: italic; font-size: clamp(17px, 2vw, 22px);
+  color: var(--muted); margin-bottom: 6px; letter-spacing: 0.04em;
+}
+.hero-title {
+  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-weight: 500; font-style: italic;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1.04; margin: 0; letter-spacing: 0.01em;
+  background: linear-gradient(180deg, var(--ink) 0%, color-mix(in srgb, var(--ink) 60%, var(--muted)) 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+.hero-title-en {
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-size: clamp(15px, 1.6vw, 22px);
+  margin-top: 6px; color: var(--muted); letter-spacing: 0.08em;
+}
+.hero-desc {
+  font-family: "Noto Serif TC", serif;
+  font-size: 13px; line-height: 1.75; color: var(--fg);
+  opacity: 0.82; max-width: 280px; text-align: right; padding-bottom: 4px;
+}
+@media (max-width: 820px) {
+  .hero-inner { padding: 40px 20px 32px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 18px; }
+  .hero-desc { max-width: none; text-align: left; }
+}
+
+/* Body layout */
+.page-body { max-width: 1280px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: 1fr 200px; gap: 64px; }
+@media (max-width: 1024px) {
+  .page-body { grid-template-columns: 1fr; gap: 24px; padding: 0 20px; }
+  .rail { position: static !important; order: -1; padding-top: 24px !important; }
+}
+
+/* Intro */
+.section-label {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 20px;
+}
+.intro { padding: 56px 0 48px; border-bottom: 1px solid var(--fg); }
+.intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+@media (max-width: 820px) { .intro-grid { grid-template-columns: 1fr; gap: 24px; } }
+.intro-lead {
+  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-style: italic; font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.38; margin: 0; color: var(--ink); letter-spacing: 0.01em;
+}
+.intro-body {
+  font-family: "Noto Serif TC", serif;
+  font-size: 15px; line-height: 2; margin: 0;
+  color: var(--fg); opacity: 0.9; text-indent: 2em;
+}
+
+/* Pull quote */
+.pullquote { padding: 64px 0; border-bottom: 1px solid var(--fg); position: relative; }
+.pullquote::before {
+  content: '\u201C';
+  position: absolute; left: -4px; top: 40px;
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-size: 140px; line-height: 0.5;
+  color: var(--accent); opacity: 0.35;
+}
+.pullquote blockquote {
+  margin: 0 auto; max-width: 720px;
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(22px, 3vw, 36px);
+  line-height: 1.55; color: var(--ink);
+  text-align: center; white-space: pre-line; letter-spacing: 0.02em;
+}
+.pullquote-attr {
+  text-align: center; margin-top: 18px;
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-size: 13px; color: var(--muted);
+}
+
+/* Directory / TOC */
+.toc { padding: 64px 0 32px; }
+.toc-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  border-top: 0.5px solid var(--fg);
+}
+.toc-item {
+  padding: 22px 20px;
+  border-bottom: 0.5px solid var(--fg);
+  border-right: 0.5px solid var(--fg);
+  color: var(--fg); text-decoration: none;
+  display: flex; gap: 18px; align-items: baseline;
+  transition: background 240ms;
+}
+.toc-item:last-child { border-right: none; }
+.toc-item:hover { background: var(--paper); }
+.toc-num {
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-size: 32px; color: var(--accent); width: 54px; flex-shrink: 0;
+}
+.toc-body { flex: 1; min-width: 0; }
+.toc-label {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px; letter-spacing: 0.25em;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 4px;
+}
+.toc-title { font-family: "Noto Serif TC", serif; font-size: 19px; color: var(--ink); margin-bottom: 4px; }
+.toc-meta { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px; letter-spacing: 0.08em; color: var(--muted); }
+
+/* Sub-series section */
+.sub-section { padding: 64px 0 32px; }
+.sub-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 28px; border-bottom: 1px solid var(--fg); padding-bottom: 18px; gap: 20px;
+}
+.sub-info { flex: 1; min-width: 0; }
+.sub-label {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 10px;
+}
+.sub-title {
+  font-family: "Noto Serif TC", serif; font-weight: 500;
+  font-size: clamp(28px, 3.6vw, 44px); margin: 0 0 10px;
+  color: var(--ink); letter-spacing: 0.01em;
+}
+.sub-desc {
+  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-style: italic; font-size: 16px; line-height: 1.7;
+  color: var(--muted); margin: 0; max-width: 640px;
+}
+.sub-bigcode {
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  font-size: 64px; line-height: 0.9;
+  color: var(--accent); opacity: 0.85;
+  padding-left: 20px; flex-shrink: 0;
+}
+
+/* Unit grid */
+.unit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 26px; }
+.unit-card {
+  background: var(--paper);
+  border: 1px solid var(--fg);
+  position: relative;
+  text-decoration: none; color: inherit; display: block;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp 560ms cubic-bezier(.2,.7,.2,1) forwards;
+  animation-delay: var(--delay, 0ms);
+  transition: box-shadow 300ms, transform 300ms;
+}
+.unit-card:hover { box-shadow: 4px 4px 0 0 var(--accent); transform: translateY(-2px); }
+
+.unit-thumb-wrap { height: 180px; overflow: hidden; border-bottom: 1px solid var(--fg); position: relative; }
+.unit-thumb { width: 100%; height: 100%; object-fit: cover; display: block; }
+.unit-thumb--stripe { display: flex; align-items: center; justify-content: center; background: ${STRIPE_BG_DARK}; color: rgba(255,255,255,0.22); }
+.unit-thumb__label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.25em; color: rgba(255,255,255,0.45); }
+.unit-code {
+  position: absolute; bottom: 12px; left: 12px;
+  background: var(--paper); color: var(--accent);
+  border: 1px solid var(--accent);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px; letter-spacing: 0.2em;
+  padding: 4px 9px;
+}
+
+.unit-body { padding: 18px 20px 18px; }
+.unit-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+}
+.unit-title {
+  font-family: "Noto Serif TC", serif; font-size: 18px; font-weight: 500;
+  margin: 0 0 14px; line-height: 1.35; color: var(--ink);
+}
+.unit-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 12px; border-top: 0.5px solid var(--fg);
+}
+.unit-arrow {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px; letter-spacing: 0.2em;
+  color: var(--ink); text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.unit-arrow-sym { transition: transform 260ms; display: inline-block; }
+.unit-card:hover .unit-arrow-sym { transform: translateX(4px); }
+
+/* Scrollspy rail */
+.rail { position: sticky; top: 80px; align-self: start; padding-top: 72px; height: fit-content; }
+.rail-label {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.rail-link {
+  display: block; padding: 7px 0 7px 14px;
+  border-left: 1px solid color-mix(in srgb, var(--muted) 50%, transparent);
+  color: var(--muted);
+  font-family: "Noto Serif TC", serif; font-size: 13px; text-decoration: none;
+  transition: all 280ms;
+}
+.rail-link.is-active {
+  border-left: 2px solid var(--accent, var(--ink));
+  color: var(--ink); font-weight: 500;
+}
+
+/* Colophon */
+.colophon {
+  border-top: 1px solid var(--fg); padding: 32px 0 64px; margin-top: 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;
+  flex-wrap: wrap; gap: 14px;
+}
+.colophon a { text-decoration: none; color: var(--muted); transition: color 200ms; }
+.colophon a:hover { color: var(--ink); }
+.colophon-motto {
+  font-family: "Cormorant Garamond", serif; font-style: italic;
+  text-transform: none; letter-spacing: normal; font-size: 14px;
+}
 </style>
 </head>
-<body class="font-body" style="color:${s.onSurface}">
-<header class="relative overflow-hidden">
-  <div class="watercolor-wash-header px-6 py-12 md:py-16" style="background:${s.gradient}">
-    <div class="max-w-5xl mx-auto relative z-10">
-      <a href="../index.html" class="inline-flex items-center gap-1.5 text-white/60 hover:text-white/90 text-sm font-label mb-6 transition-colors">
-        <span class="material-symbols-outlined" style="font-size:1.2rem">arrow_back</span>All Channels</a>
-      <div class="flex items-center gap-4 mb-3">
-        <span class="material-symbols-outlined text-white/80" style="font-size:2.5rem">${channel.icon}</span>
-        <div>
-          <h1 class="font-headline text-3xl md:text-5xl text-white font-bold italic leading-tight">${esc(channel.name)}</h1>
-          <p class="text-white/60 font-label text-sm tracking-[0.15em] uppercase mt-1">${prefix} &middot; ${files.length} Stories</p>
-        </div>
+<body>
+<nav class="topnav">
+  <a href="../index.html">← Waldorf Creator Hub</a>
+  <span>${esc(prefixCode)} · Feature No. 01</span>
+  <span class="topnav-right"><span>系列</span><span>每日</span><span>關於</span></span>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-meta">${esc(metaBits)}</div>
+    <div class="hero-grid">
+      <div>
+        ${tagline ? `<div class="hero-tagline">${esc(tagline)}</div>` : ''}
+        <h1 class="hero-title">${esc(channel.name)}</h1>
+        ${titleEn ? `<div class="hero-title-en">${esc(titleEn)}</div>` : ''}
       </div>
-      <p class="text-white/70 font-body text-base max-w-2xl leading-relaxed mt-4">${esc(channel.description)}</p>
+      ${channel.description ? `<div class="hero-desc">${esc(channel.description)}</div>` : ''}
     </div>
   </div>
-  <div class="h-6 bg-gradient-to-b from-[${s.secondary}]/10 to-transparent"></div>
 </header>
-<main class="max-w-6xl mx-auto px-4 md:px-8 py-8">
-  <div class="flex items-center justify-between mb-6">
-    <p class="text-sm font-label" style="color:${s.onSurfaceVariant}"><span class="font-semibold">${files.length}</span> stories &middot; ${channel.sort === 'storyId' || channel.id === 'ancient-myths' ? 'curriculum order' : 'latest first'}</p>
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-${storyCards}
-  </div>
-</main>
-<footer style="background:${s.bgWash1}" class="border-t py-8 mt-8" style="border-color:${s.outlineVariant}30">
-  <div class="max-w-4xl mx-auto flex flex-col items-center gap-3 px-6 text-center">
-    <a href="../index.html" class="inline-flex items-center gap-1.5 text-sm font-label transition-colors" style="color:${s.primary}">
-      <span class="material-symbols-outlined" style="font-size:1.2rem">arrow_back</span>Back to All Channels</a>
-    <p class="font-headline italic text-lg" style="color:${s.primary}">\u5b9c\u862d\u6148\u5fc3\u83ef\u5fb7\u798f\u5be6\u9a57\u5b78\u6821</p>
-    <p class="text-xs tracking-widest uppercase" style="color:${s.secondary}">Powered by TeacherOS &middot; Updated Daily</p>
-  </div>
-</footer>
+
+<div class="page-body">
+  <main>
+    <section id="intro" class="intro">
+      <div class="section-label">序 · Introduction</div>
+      <div class="intro-grid">
+        <p class="intro-lead">${esc(introLead)}</p>
+        ${introBody ? `<p class="intro-body">${esc(introBody)}</p>` : ''}
+      </div>
+    </section>
+
+    ${pullQuote ? `<section class="pullquote">
+      <blockquote>${esc(pullQuote)}</blockquote>
+      <div class="pullquote-attr">— 編者的話</div>
+    </section>` : ''}
+
+    <section class="toc">
+      <div class="section-label">分部目錄 · Sub-Series</div>
+      <div class="toc-grid">
+${directoryHtml}
+      </div>
+    </section>
+
+${sectionsHtml}
+
+    <footer class="colophon">
+      <a href="../index.html">← 返回年鑑</a>
+      <span class="colophon-motto">Per aspera ad astra</span>
+      <span>MMXXVI · 宜蘭慈心華德福實驗學校</span>
+    </footer>
+  </main>
+
+  <aside class="rail">
+    <div class="rail-label">本輯分部</div>
+    <nav>
+      ${railLinksHtml}
+    </nav>
+  </aside>
+</div>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail-link'));
+  var targets = links.map(function(a){
+    var id = a.getAttribute('data-spy');
+    return { id: id, el: document.getElementById(id), link: a };
+  }).filter(function(t){ return !!t.el; });
+
+  function onScroll(){
+    var y = window.scrollY + 160;
+    var current = targets[0];
+    for (var i = 0; i < targets.length; i++){
+      if (targets[i].el.offsetTop <= y) current = targets[i];
+    }
+    links.forEach(function(l){ l.classList.remove('is-active'); });
+    if (current) current.link.classList.add('is-active');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 </body>
 </html>`;
 }
@@ -645,6 +1088,7 @@ function main() {
       icon: cfg.icon || rt.icon || 'science',
       dynamic: rt.isNew || false,
       sort: cfg.sort || 'modifiedTime',
+      feature: cfg.feature || null,
     };
   }).sort((a, b) => {
     const ia = PREFIX_ORDER.indexOf(a.prefix.toUpperCase());
