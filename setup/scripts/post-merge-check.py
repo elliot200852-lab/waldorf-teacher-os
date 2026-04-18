@@ -229,16 +229,25 @@ def main() -> None:
     verify_identity(repo_root, my_emails)
 
     # ── 分支偵測（每次 pull 後提醒）──────────────────
+    # v2.0 分支模型：
+    #   - main：admin 的工作分支（正常）
+    #   - workspace/Teacher_{姓名}：教師的個人工作分支（正常）
+    #   - 其他分支：不應該，提示
     result_br = subprocess.run(
         ["git", "rev-parse", "--abbrev-ref", "HEAD"],
         capture_output=True, text=True,
     )
     current_branch = result_br.stdout.strip() if result_br.returncode == 0 else ""
-    if current_branch and current_branch != "main":
+    if (
+        current_branch
+        and current_branch != "main"
+        and not current_branch.startswith("workspace/Teacher_")
+    ):
         print()
-        print("\033[1;33m  [提醒] 你目前在分支「%s」，不是 main。\033[0m" % current_branch)
-        print("  建議切回 main 再繼續工作：")
-        print("    git checkout main")
+        print("\033[1;33m  [提醒] 你目前在分支「%s」，不是 main 也不是個人分支。\033[0m" % current_branch)
+        print("  若這是意外，請切回正確的分支：")
+        print("    git checkout main                          （管理員）")
+        print("    git checkout workspace/Teacher_{你的姓名}  （教師）")
         print()
 
     orig_head = get_orig_head(repo_root)
