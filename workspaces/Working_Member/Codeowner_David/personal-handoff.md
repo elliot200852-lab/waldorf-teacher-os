@@ -29,6 +29,24 @@ aliases:
 
 ---
 
+## 開機自動動作（Codeowner 專屬）
+
+**SessionStart Hook** — `.claude/scripts/codeowner-inbox-on-start.sh`
+
+每次新對話啟動時，Claude Code 的 SessionStart hook 會自動：
+
+1. 比對 `setup/environment.env` 的 `USER_EMAIL` 與 `ai-core/acl.yaml` 的 admin email
+2. 若身份為 codeowner（David）→ 執行 `workspaces/.../scripts/inbox.py`
+3. 若身份為教師 → silent exit（hook 不產生任何輸出）
+
+Hook 的輸出會以 SessionStart 訊息形式注入當前對話的 context，AI 讀到後必須：
+
+- 把 inbox 結果（PR 與 Issue 分類表）**納入開機報告的「上次工作紀錄」之後**，作為「Codeowner 工作追蹤」段
+- 若 inbox 顯示「需要你動作：PR N · Issue M」且 N+M > 0，主動點名最優先 1-3 件
+- 若 inbox 乾淨（PR 0 · Issue 0），在開機報告中簡短註記「Codeowner Inbox：乾淨」即可，不贅述
+
+---
+
 ## 已完成：Repo 架構地圖工程化
 
 **狀態：** 全 6 Phase 已完成（2026-03-26）

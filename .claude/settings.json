@@ -1,1 +1,15 @@
-{}
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/codeowner-inbox-on-start.sh",
+            "timeout": 15000
+          }
+        ]
+      }
+    ]
+  }
+}
