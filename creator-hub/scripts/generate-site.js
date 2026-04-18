@@ -50,7 +50,7 @@ const SEASON_CSS = {
 const HTML_HEAD = `<meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="robots" content="noindex, nofollow"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+TC:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
@@ -80,84 +80,411 @@ function nextWatercolorPlaceholder() {
   return `watercolor-${_placeholderIdx}.jpg`;
 }
 
-// ─── Generate Homepage ───────────────────────────────────────
-function generateIndex(site, channels, filesData) {
-  const channelCards = channels.map(ch => {
-    const count = filesData.channels[ch.id]?.count || 0;
-    const s = SEASON_CSS[ch.season];
-    const coverFile = `thumbnails/cover-${ch.id}.jpg`;
-    const hasCover = fs.existsSync(path.join(PUBLIC_DIR, coverFile));
-    const countLabel = ch.dynamic ? 'updating...' : `${count} ${count === 1 ? 'story' : 'stories'}`;
-    const prefix = ch.prefix ? ch.prefix.toUpperCase() + '-SERIES' : 'MISC';
+// ─── Almanac Mode (homepage) ─────────────────────────────────
+// Editorial archive layout: two-column (daily feed + series index cards)
+// Design source: Waldorf Creator Hub design bundle (2026-04-18).
 
-    return `
-    <a href="channel/${ch.id}.html" class="card-hover block rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl">
-      <div class="relative aspect-[16/9] overflow-hidden">
-        ${hasCover
-          ? `<img src="${coverFile}" alt="${esc(ch.name)}" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>`
-          : `<img src="thumbnails/watercolor-${channels.indexOf(ch) + 1}.jpg" alt="${esc(ch.name)}" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>`}
-        <div class="thumb-overlay absolute inset-0"></div>
-        <div class="absolute bottom-3 left-3"><span class="stats-badge bg-black/40 text-white text-xs font-label px-2.5 py-1 rounded-full">${countLabel}</span></div>
-        <div class="absolute top-3 right-3"><span class="material-symbols-outlined text-white/70" style="font-size:1.5rem">${ch.icon}</span></div>
-      </div>
-      <div class="p-5" style="background:${s.bgWash1}">
-        <div class="flex items-start justify-between mb-2">
-          <h3 class="font-headline text-xl font-bold" style="color:${s.primary}">${esc(ch.name)}</h3>
-          <span class="text-xs font-label tracking-wider uppercase px-2 py-0.5 rounded-full" style="background:${s.bgWash2};color:${s.primary}">${prefix}</span>
+const GLYPH_SVG = {
+  leaf: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 38 C 10 20, 24 10, 38 10 C 38 24, 28 38, 10 38 Z"/><path d="M10 38 L 32 16"/></svg>',
+  sprout: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40 V 22"/><path d="M24 22 C 24 14, 16 12, 10 14 C 12 20, 18 24, 24 22 Z"/><path d="M24 22 C 24 16, 32 14, 38 16 C 36 22, 30 26, 24 22 Z"/></svg>',
+  column: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 H 34"/><path d="M12 14 H 36"/><path d="M16 14 V 36"/><path d="M32 14 V 36"/><path d="M24 14 V 36" stroke-dasharray="2 3"/><path d="M12 36 H 36"/><path d="M10 40 H 38"/></svg>',
+  diamond: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 L 42 24 L 24 42 L 6 24 Z"/><path d="M24 14 L 34 24 L 24 34 L 14 24 Z"/></svg>',
+  star: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="2" fill="currentColor"/><path d="M24 8 V 14"/><path d="M24 34 V 40"/><path d="M8 24 H 14"/><path d="M34 24 H 40"/><path d="M12 12 L 16 16"/><path d="M32 32 L 36 36"/><path d="M36 12 L 32 16"/><path d="M16 32 L 12 36"/></svg>',
+  wheat: '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 42 V 14"/><path d="M24 14 C 20 14, 16 12, 16 8 C 20 8, 24 10, 24 14"/><path d="M24 14 C 28 14, 32 12, 32 8 C 28 8, 24 10, 24 14"/><path d="M24 22 C 20 22, 16 20, 16 16 C 20 16, 24 18, 24 22"/><path d="M24 22 C 28 22, 32 20, 32 16 C 28 16, 24 18, 24 22"/><path d="M24 30 C 20 30, 16 28, 16 24 C 20 24, 24 26, 24 30"/><path d="M24 30 C 28 30, 32 28, 32 24 C 28 24, 24 26, 24 30"/></svg>',
+};
+
+// Per-channel metadata for almanac view (grade / glyph). Add entries as new channels appear.
+const CHANNEL_META = {
+  'taiwan-stories':       { grade: '五年級', glyph: 'leaf' },
+  'ancient-myths':        { grade: '五年級', glyph: 'column' },
+  'botany':               { grade: '五年級', glyph: 'sprout' },
+  'island-myths-3rd':     { grade: '三年級', glyph: 'wheat' },
+  'shanhaijing-3rd':      { grade: '三年級', glyph: 'diamond' },
+  'taiwan-literature-9d': { grade: '九年級', glyph: 'star' },
+};
+const CHANNEL_META_DEFAULT = { grade: '', glyph: 'leaf' };
+
+const SEASON_CHINESE = { spring: '春', summer: '夏', autumn: '秋', winter: '冬' };
+
+// Accent colour used for card hover shadow + feed date
+const SEASON_ACCENT = {
+  spring: '#3a5a3a',
+  summer: '#8b3a2e',
+  autumn: '#8b6f47',
+  winter: '#1e2a3a',
+};
+
+function cnNum(n) {
+  const d = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+  if (n < 10) return d[n];
+  if (n === 10) return '十';
+  if (n < 20) return '十' + d[n - 10];
+  if (n < 100) {
+    const t = Math.floor(n / 10), o = n % 10;
+    return d[t] + '十' + (o === 0 ? '' : d[o]);
+  }
+  return String(n);
+}
+
+function getRecentUpdates(filesData, channels, limit = 7) {
+  const all = [];
+  for (const ch of channels) {
+    const files = filesData.channels[ch.id]?.files || [];
+    for (const f of files) {
+      all.push({
+        mtime: f.modifiedTime || '',
+        dateLabel: f.modifiedTime
+          ? (() => { const d = new Date(f.modifiedTime); return `${d.getMonth() + 1}.${d.getDate()}`; })()
+          : '—',
+        seriesCode: (ch.prefix || 'MISC').toUpperCase(),
+        channelId: ch.id,
+        season: ch.season,
+        title: f.title || f.storyId,
+        storyId: f.storyId,
+        type: '單元',
+      });
+    }
+  }
+  all.sort((a, b) => (b.mtime || '').localeCompare(a.mtime || ''));
+  return all.slice(0, limit);
+}
+
+function generateIndex(site, channels, filesData) {
+  const updates = getRecentUpdates(filesData, channels, 7);
+  const today = new Date();
+  const weekdayNames = ['日', '一', '二', '三', '四', '五', '六'];
+  const dateStr = `${today.getFullYear()} 年 ${today.getMonth() + 1} 月 ${today.getDate()} 日`;
+  const weekStr = `週${weekdayNames[today.getDay()]}`;
+  // Simple rolling issue number from the site's epoch (Spring 2024 launch)
+  const epoch = new Date('2024-03-20T00:00:00Z');
+  const issueNo = Math.max(1, Math.floor((today - epoch) / (7 * 24 * 60 * 60 * 1000)));
+
+  const totalStories = channels.reduce((sum, ch) => sum + (filesData.channels[ch.id]?.files?.length || 0), 0);
+  const seriesCount = channels.length;
+
+  const updatesHtml = updates.map((u, i) => `
+      <li class="feed-item${i === 0 ? ' feed-item--first' : ''}" style="--accent:${SEASON_ACCENT[u.season] || '#3a5a3a'}">
+        <div class="feed-row">
+          <div class="feed-date">${esc(u.dateLabel)}</div>
+          <div class="feed-body">
+            <div class="feed-label">${esc(u.seriesCode)}-Series · ${esc(u.type)}</div>
+            <a class="feed-title" href="stories/${esc(u.storyId)}.html">${esc(u.title)}</a>
+          </div>
         </div>
-        <p class="text-sm leading-relaxed" style="color:${s.primary};opacity:.7">${esc(ch.description)}</p>
-      </div>
-    </a>`;
+      </li>`).join('\n');
+
+  const cardsHtml = channels.map((ch, i) => {
+    const meta = CHANNEL_META[ch.id] || CHANNEL_META_DEFAULT;
+    const season = ch.season || 'winter';
+    const accent = SEASON_ACCENT[season];
+    const count = filesData.channels[ch.id]?.files?.length || 0;
+    const code = ch.prefix ? `${ch.prefix.toUpperCase()}-SERIES` : 'MISC';
+    const seasonCN = SEASON_CHINESE[season] || '';
+    const thumbCandidates = [
+      `thumbnails/cover-${ch.id}.jpg`,
+      `thumbnails/${ch.id}-default.jpg`,
+      `thumbnails/others-default.jpg`,
+    ];
+    const thumbSrc = thumbCandidates.find(p => fs.existsSync(path.join(PUBLIC_DIR, p))) || thumbCandidates[2];
+    return `
+      <a class="series-card" href="channel/${ch.id}.html" style="--accent:${accent};--delay:${i * 120}ms">
+        <div class="card-top">
+          <span class="card-code">${esc(code)}</span>
+          <span class="card-glyph" aria-hidden="true">${GLYPH_SVG[meta.glyph] || GLYPH_SVG.leaf}</span>
+        </div>
+        <div class="card-rule"></div>
+        <div class="card-body">
+          <div class="card-text">
+            <h3 class="card-title">${esc(ch.name)}</h3>
+            <div class="card-grade">${esc(meta.grade)}${seasonCN ? ' · ' + seasonCN + '之章' : ''}</div>
+            <p class="card-subtitle">${esc(ch.description || '')}</p>
+          </div>
+          <div class="card-thumb-wrap">
+            <img class="card-thumb" src="${thumbSrc}" alt="" loading="lazy"/>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>${String(count).padStart(2, '0')} 單元</span>
+          <span class="card-arrow">進入 <span class="card-arrow-sym">→</span></span>
+        </div>
+      </a>`;
   }).join('\n');
 
   return `<!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" data-theme="spring" data-density="loose" data-card="outlined" data-motion="strong">
 <head>
 ${HTML_HEAD}
-<title>${esc(site.title)}</title>
+<title>${esc(site.title)} · 華德福教材年鑑</title>
 <style>
-body{background:radial-gradient(ellipse at top left,#FAF8F5 0%,#F0EDE8 50%,#E8E5E0 100%);min-height:100vh}
-${SHARED_CSS}
+:root {
+  --bg: #f5f0e5; --paper: #faf6ec; --fg: #2d3b2d; --muted: #6b6b5a; --moss: #8a9a7b;
+  --shadow-emboss: 0 1px 0 rgba(255,255,255,0.55), 0 1px 2px rgba(45,59,45,0.08);
+  --shadow-strong: 0 1px 0 rgba(255,255,255,0.6), 0 2px 3px rgba(45,59,45,0.18), 0 4px 12px rgba(45,59,45,0.08);
+}
+html[data-theme="autumn"] {
+  --bg: #f0e8d8; --paper: #f7f0df; --fg: #3a2820; --muted: #7a5a42; --moss: #c4a57b;
+  --shadow-emboss: 0 1px 0 rgba(255,248,232,0.55), 0 1px 2px rgba(58,40,32,0.1);
+  --shadow-strong: 0 1px 0 rgba(255,248,232,0.6), 0 2px 3px rgba(58,40,32,0.2), 0 4px 12px rgba(58,40,32,0.1);
+}
+html[data-theme="dark"] {
+  --bg: #1a1e1a; --paper: #232823; --fg: #e8e2d2; --muted: #aaa598; --moss: #c4a57b;
+  --shadow-emboss: 0 1px 0 rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.6);
+  --shadow-strong: 0 1px 0 rgba(0,0,0,0.6), 0 2px 3px rgba(0,0,0,0.7), 0 0 12px rgba(232,226,210,0.06);
+}
+html[data-density="loose"] { --pad-y: 72px; --grid-gap: 32px; --card-pad: 24px; }
+html[data-density="tight"] { --pad-y: 40px; --grid-gap: 16px; --card-pad: 18px; }
+
+* , *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: "Noto Serif TC", "EB Garamond", serif;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--fg); color: var(--bg); }
+a { color: inherit; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px);} to { opacity: 1; transform: translateY(0);} }
+
+.topnav {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 32px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 0.5px solid var(--fg);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px; letter-spacing: 0.25em; color: var(--muted); text-transform: uppercase;
+  text-shadow: var(--shadow-emboss);
+}
+.topnav-links { display: flex; gap: 22px; }
+
+.page { padding: var(--pad-y) 48px; max-width: 1240px; margin: 0 auto; }
+@media (max-width: 768px) { .page { padding: 48px 16px; } }
+
+.masthead { border-bottom: 1px solid var(--fg); padding-bottom: 32px; margin-bottom: 56px; }
+.masthead-meta { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.3em; color: var(--muted); text-transform: uppercase; text-shadow: var(--shadow-emboss); }
+.masthead-title {
+  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-style: italic; font-weight: 500;
+  font-size: clamp(38px, 5vw, 72px);
+  line-height: 1.05; margin: 22px 0 14px;
+  color: var(--fg); letter-spacing: -0.01em; text-align: center;
+  text-shadow: var(--shadow-strong);
+}
+.masthead-title .masthead-title-zh {
+  font-family: "Noto Serif TC", serif; font-style: normal; font-weight: 600;
+  margin-left: 0.25em; letter-spacing: 0.02em;
+}
+.masthead-sub { display: flex; justify-content: center; align-items: center; gap: 16px; font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 22px; color: var(--muted); text-shadow: var(--shadow-emboss); }
+.masthead-sub .rule { flex: 1; height: 1px; background: var(--fg); opacity: 0.3; max-width: 120px; }
+.masthead-desc { text-align: center; font-family: "Noto Serif TC", serif; font-size: 16px; color: var(--fg); opacity: 0.85; margin: 18px auto 0; max-width: 580px; line-height: 1.85; text-shadow: var(--shadow-emboss); }
+
+.layout { display: grid; grid-template-columns: 300px 1fr; gap: 52px; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; gap: 32px; }
+  .rail { position: static !important; }
+}
+.rail { position: sticky; top: 80px; align-self: start; }
+.rail-label, .idx-label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.3em; color: var(--muted); text-transform: uppercase; padding-bottom: 14px; border-bottom: 1px solid var(--fg); margin-bottom: 22px; text-shadow: var(--shadow-emboss); }
+.feed { list-style: none; padding: 0; margin: 0; }
+.feed-item { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 0.5px dashed var(--fg); opacity: 0.88; }
+.feed-item--first { opacity: 1; }
+.feed-item:last-child { border-bottom: none; }
+.feed-row { display: flex; gap: 14px; align-items: baseline; }
+.feed-date { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 28px; font-weight: 500; color: var(--accent); width: 56px; flex-shrink: 0; text-shadow: var(--shadow-strong); }
+.feed-body { flex: 1; min-width: 0; }
+.feed-label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; margin-bottom: 5px; text-shadow: var(--shadow-emboss); }
+.feed-title { font-family: "Noto Serif TC", serif; font-size: 17px; font-weight: 500; line-height: 1.55; color: var(--fg); text-decoration: none; display: inline-block; text-shadow: var(--shadow-emboss); }
+.feed-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.idx-bar { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 30px; gap: 16px; flex-wrap: wrap; }
+.idx-count { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 17px; color: var(--muted); text-shadow: var(--shadow-emboss); }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--grid-gap); }
+.series-card {
+  text-decoration: none; color: inherit;
+  background: var(--paper); border: 1px solid var(--fg);
+  padding: var(--card-pad); position: relative; display: block;
+  transition: transform 400ms cubic-bezier(.2,.7,.2,1), box-shadow 400ms cubic-bezier(.2,.7,.2,1);
+  opacity: 0; transform: translateY(16px);
+  animation: fadeUp 500ms cubic-bezier(.2,.7,.2,1) forwards;
+  animation-delay: var(--delay, 0ms);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.04);
+}
+html[data-theme="dark"] .series-card { box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2); }
+html[data-motion="off"] .series-card { animation: none; opacity: 1; transform: none; transition: none; }
+html[data-motion="subtle"] .series-card { animation-duration: 260ms; }
+.series-card:hover { transform: translateY(-4px); box-shadow: 6px 6px 0 0 var(--accent), 0 8px 20px rgba(0,0,0,0.1); }
+html[data-motion="off"] .series-card:hover { transform: none; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+
+html[data-card="filled"] .series-card { background: var(--accent); color: #f5f0e5; border-color: transparent; }
+html[data-card="filled"] .series-card .card-rule { background: #f5f0e5; opacity: 0.4; }
+html[data-card="filled"] .card-glyph { color: #f5f0e5; }
+html[data-card="minimal"] .series-card { background: transparent; border: none; border-top: 2px solid var(--accent); padding-left: 0; padding-right: 0; box-shadow: none; }
+html[data-card="minimal"] .series-card:hover { box-shadow: none; transform: translateY(-2px); }
+
+.card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.card-code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: 0.25em; opacity: 0.75; text-shadow: var(--shadow-emboss); }
+.card-glyph { display: inline-flex; width: 26px; height: 26px; color: var(--accent); filter: drop-shadow(0 1px 1px rgba(45,59,45,0.12)); }
+.card-glyph svg { width: 100%; height: 100%; }
+.card-rule { height: 1px; background: currentColor; opacity: 0.2; margin-bottom: 20px; }
+
+/* Layout (b): 2/3 text-left, 1/3 image-right */
+.card-body { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: start; margin-bottom: 18px; }
+.card-text { min-width: 0; }
+.card-title { font-family: "Noto Serif TC", serif; font-size: 26px; font-weight: 600; margin: 0 0 8px; letter-spacing: 0.02em; line-height: 1.2; text-shadow: var(--shadow-strong); }
+.card-grade { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 16px; opacity: 0.75; margin-bottom: 12px; text-shadow: var(--shadow-emboss); }
+.card-subtitle { font-family: "Noto Serif TC", serif; font-size: 15px; line-height: 1.75; margin: 0; opacity: 0.82; text-shadow: var(--shadow-emboss); }
+html[data-card="filled"] .card-subtitle { opacity: 0.94; }
+.card-thumb-wrap { aspect-ratio: 3 / 4; width: 100%; overflow: hidden; border: 1px solid currentColor; background: var(--bg); box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
+html[data-card="minimal"] .card-thumb-wrap { border-color: var(--accent); }
+.card-thumb { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.card-footer { display: flex; justify-content: space-between; align-items: center; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.18em; opacity: 0.8; text-transform: uppercase; text-shadow: var(--shadow-emboss); padding-top: 14px; border-top: 0.5px solid currentColor; }
+.card-footer { border-top-color: color-mix(in srgb, currentColor 20%, transparent); }
+.card-arrow { display: inline-flex; align-items: center; gap: 6px; }
+.card-arrow-sym { transition: transform 300ms; display: inline-block; }
+.series-card:hover .card-arrow-sym { transform: translateX(4px); }
+
+.about { max-width: 640px; margin: 88px auto 0; text-align: center; font-family: "Noto Serif TC", serif; font-size: 16px; line-height: 1.9; color: var(--fg); opacity: 0.85; border-top: 0.5px solid var(--fg); padding-top: 36px; text-shadow: var(--shadow-emboss); }
+.about-title { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 24px; margin: 0 0 14px; opacity: 1; text-shadow: var(--shadow-strong); }
+
+.colophon { margin-top: 96px; border-top: 1px solid var(--fg); padding-top: 28px; display: flex; justify-content: space-between; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; flex-wrap: wrap; gap: 14px; text-shadow: var(--shadow-emboss); }
+.colophon-motto { font-family: "Cormorant Garamond", serif; font-style: italic; text-transform: none; letter-spacing: normal; font-size: 17px; }
+
+/* Tweaks panel */
+.tweaks-btn { position: fixed; top: 16px; right: 16px; z-index: 30; width: 40px; height: 40px; border-radius: 50%; background: var(--paper); border: 1px solid var(--fg); color: var(--fg); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: transform 400ms ease; }
+.tweaks-btn:hover { transform: rotate(60deg); }
+.tweaks-backdrop { position: fixed; inset: 0; z-index: 35; background: rgba(20,24,20,0.3); opacity: 0; pointer-events: none; transition: opacity 300ms; }
+.tweaks-backdrop.open { opacity: 1; pointer-events: auto; }
+.tweaks-panel { position: fixed; top: 0; right: 0; bottom: 0; z-index: 40; width: min(320px, 88vw); background: var(--paper); color: var(--fg); border-left: 1px solid var(--fg); padding: 32px 28px; overflow-y: auto; transform: translateX(100%); transition: transform 400ms cubic-bezier(.2,.7,.2,1); box-shadow: -12px 0 40px rgba(0,0,0,0.08); }
+.tweaks-panel.open { transform: translateX(0); }
+.tweaks-title { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 22px; margin: 0 0 6px; }
+.tweaks-subtitle { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 9px; letter-spacing: 0.25em; color: var(--muted); text-transform: uppercase; margin-bottom: 28px; }
+.tweaks-group { margin-bottom: 24px; }
+.tweaks-label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 9px; letter-spacing: 0.25em; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; }
+.tweaks-options { display: flex; gap: 6px; flex-wrap: wrap; }
+.tweaks-opt { font-family: "Noto Serif TC", serif; font-size: 13px; padding: 6px 12px; border: 1px solid var(--fg); background: transparent; color: var(--fg); cursor: pointer; transition: all 200ms; }
+.tweaks-opt:hover { background: color-mix(in srgb, var(--fg) 10%, transparent); }
+.tweaks-opt.active { background: var(--fg); color: var(--paper); }
+.tweaks-close { position: absolute; top: 16px; right: 16px; background: none; border: none; color: var(--muted); cursor: pointer; font-size: 22px; line-height: 1; padding: 4px 8px; }
 </style>
 </head>
-<body class="font-body text-[#1C1C18]">
-<header class="relative overflow-hidden">
-  <div class="watercolor-wash-header px-6 py-16 md:py-24" style="background:linear-gradient(135deg,#5E6B7F 0%,#8B6F47 40%,#4A7C6F 70%,#6B7F5E 100%)">
-    <div class="max-w-5xl mx-auto text-center relative z-10">
-      <div class="flex items-center justify-center gap-3 mb-4"><span class="material-symbols-outlined text-white/80" style="font-size:2.5rem">school</span></div>
-      <h1 class="font-headline text-4xl md:text-6xl text-white font-bold italic leading-tight mb-4">Waldorf Creator Hub</h1>
-      <p class="text-white/80 font-label text-sm md:text-base tracking-[0.25em] uppercase mb-6">Database of Teaching Materials</p>
-      <p class="text-white/70 font-body text-base md:text-lg max-w-2xl mx-auto leading-relaxed">${esc(site.description)}</p>
+<body>
+<nav class="topnav">
+  <span>Waldorf Creator Hub · WCH</span>
+  <span class="topnav-links"><span>系列</span><span>每日</span><span>關於</span></span>
+</nav>
+
+<button class="tweaks-btn" id="tweaks-btn" title="Tweaks" aria-label="開啟設定">⚙</button>
+<div class="tweaks-backdrop" id="tweaks-backdrop"></div>
+<aside class="tweaks-panel" id="tweaks-panel" aria-hidden="true">
+  <button class="tweaks-close" id="tweaks-close" aria-label="關閉">×</button>
+  <h3 class="tweaks-title">Tweaks</h3>
+  <div class="tweaks-subtitle">Customise your view</div>
+  <div class="tweaks-group"><div class="tweaks-label">Theme · 色彩主題</div>
+    <div class="tweaks-options" data-tweak="theme">
+      <button class="tweaks-opt" data-val="spring">春（紙色）</button>
+      <button class="tweaks-opt" data-val="autumn">秋</button>
+      <button class="tweaks-opt" data-val="dark">夜</button>
+    </div></div>
+  <div class="tweaks-group"><div class="tweaks-label">Density · 排版密度</div>
+    <div class="tweaks-options" data-tweak="density">
+      <button class="tweaks-opt" data-val="loose">寬鬆</button>
+      <button class="tweaks-opt" data-val="tight">緊密</button>
+    </div></div>
+  <div class="tweaks-group"><div class="tweaks-label">Card Style · 卡片樣式</div>
+    <div class="tweaks-options" data-tweak="card">
+      <button class="tweaks-opt" data-val="outlined">邊框</button>
+      <button class="tweaks-opt" data-val="filled">填色</button>
+      <button class="tweaks-opt" data-val="minimal">極簡</button>
+    </div></div>
+  <div class="tweaks-group"><div class="tweaks-label">Motion · 動態</div>
+    <div class="tweaks-options" data-tweak="motion">
+      <button class="tweaks-opt" data-val="strong">強</button>
+      <button class="tweaks-opt" data-val="subtle">弱</button>
+      <button class="tweaks-opt" data-val="off">關</button>
+    </div></div>
+</aside>
+
+<div class="page">
+  <header class="masthead">
+    <div class="masthead-meta">
+      <span>No. ${issueNo} · ${dateStr} · ${weekStr}</span>
+      <span>每日更新 · 建於 2024 年春分</span>
     </div>
+    <h1 class="masthead-title">CreatorHub <span class="masthead-title-zh">教學資源中心</span></h1>
+    <div class="masthead-sub"><span class="rule"></span><span>Almanac of the Seasons &amp; Stories</span><span class="rule"></span></div>
+    <p class="masthead-desc">${esc(site.description || '一本為教師而編的活節氣書——收錄黑板畫、故事文本、身體練習與教學筆記。')}</p>
+  </header>
+
+  <div class="layout">
+    <aside class="rail">
+      <div class="rail-label">每日更新 · Daily</div>
+      <ul class="feed">${updatesHtml || '<li class="feed-item">尚無更新</li>'}</ul>
+    </aside>
+    <main>
+      <div class="idx-bar">
+        <div class="idx-label">課程系列 · Index</div>
+        <div class="idx-count">${cnNum(seriesCount)}系列 · 共 ${totalStories} 單元</div>
+      </div>
+      <div class="card-grid">${cardsHtml}</div>
+    </main>
   </div>
-  <div class="h-8 bg-gradient-to-b from-[#4A7C6F]/10 to-transparent"></div>
-</header>
-<main class="max-w-6xl mx-auto px-4 md:px-8 py-8 md:py-12">
-  <div class="flex items-center gap-3 mb-8">
-    <span class="material-symbols-outlined text-[#8B6F47]" style="font-size:1.5rem">subscriptions</span>
-    <h2 class="font-headline text-2xl text-[#8B6F47]">Teaching Channels</h2>
-    <div class="flex-1 h-px bg-[#D1C4B7]/50"></div>
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-${channelCards}
-  </div>
-  <div class="flex justify-center gap-3 py-10 opacity-30">
-    <span class="material-symbols-outlined text-[#8B6F47] text-sm">eco</span>
-    <span class="material-symbols-outlined text-[#4A7C6F] text-sm">sunny</span>
-    <span class="material-symbols-outlined text-[#6B7F5E] text-sm">park</span>
-    <span class="material-symbols-outlined text-[#5E6B7F] text-sm">ac_unit</span>
-  </div>
-  <section class="max-w-3xl mx-auto text-center mb-8">
-    <h2 class="font-headline text-xl text-[#8B6F47] mb-4 italic">About This Hub</h2>
-    <p class="text-[15px] leading-relaxed text-[#4E453B]">WaldorfCreatorHubDatabase \u662f\u83ef\u5fb7\u798f\u6559\u5b78\u7d20\u6750\u7684\u516c\u958b\u5c55\u793a\u5e73\u53f0\u3002\u6240\u6709\u7d20\u6750\u7531 TeacherOS AI \u5354\u4f5c\u7cfb\u7d71\u6bcf\u65e5\u751f\u6210\uff0c\u5305\u542b\u9ed1\u677f\u756b\u3001\u6545\u4e8b\u6587\u672c\u3001\u6559\u5e2b\u8aaa\u66f8\u7a3f\u8207\u6559\u5b78\u6307\u5f15\u3002</p>
+
+  <section class="about">
+    <h2 class="about-title">About This Hub</h2>
+    <p>WaldorfCreatorHubDatabase 是華德福教學素材的公開展示平台。所有素材由 TeacherOS AI 協作系統每日生成，包含黑板畫、故事文本、教師說書稿與教學指引。</p>
   </section>
-</main>
-<footer class="bg-[#F0EDE8] border-t border-[#D1C4B7]/30 py-8">
-  <div class="max-w-4xl mx-auto flex flex-col items-center gap-3 px-6 text-center">
-    <p class="font-headline italic text-lg text-[#8B6F47]">\u5b9c\u862d\u6148\u5fc3\u83ef\u5fb7\u798f\u5be6\u9a57\u5b78\u6821</p>
-    <p class="text-[#7B6B60] text-xs tracking-widest uppercase">Powered by TeacherOS &middot; Updated Daily</p>
-  </div>
-</footer>
+
+  <footer class="colophon">
+    <span>Waldorf Creator Hub · Vol. IV</span>
+    <span class="colophon-motto">Per aspera ad astra</span>
+    <span>MMXXVI · 宜蘭慈心華德福實驗學校</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const KEY = 'wch-tweaks-v2';
+  const defaults = { theme: 'spring', density: 'loose', card: 'outlined', motion: 'strong' };
+  let state;
+  try { state = Object.assign({}, defaults, JSON.parse(localStorage.getItem(KEY) || 'null') || {}); }
+  catch (_) { state = Object.assign({}, defaults); }
+
+  function apply() {
+    const h = document.documentElement;
+    h.setAttribute('data-theme', state.theme);
+    h.setAttribute('data-density', state.density);
+    h.setAttribute('data-card', state.card);
+    h.setAttribute('data-motion', state.motion);
+    document.querySelectorAll('[data-tweak]').forEach(function(group){
+      const key = group.dataset.tweak;
+      group.querySelectorAll('.tweaks-opt').forEach(function(btn){
+        btn.classList.toggle('active', btn.dataset.val === state[key]);
+      });
+    });
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (_) {}
+  }
+  function openPanel(){ document.getElementById('tweaks-panel').classList.add('open'); document.getElementById('tweaks-backdrop').classList.add('open'); document.getElementById('tweaks-panel').setAttribute('aria-hidden','false'); }
+  function closePanel(){ document.getElementById('tweaks-panel').classList.remove('open'); document.getElementById('tweaks-backdrop').classList.remove('open'); document.getElementById('tweaks-panel').setAttribute('aria-hidden','true'); }
+
+  document.getElementById('tweaks-btn').addEventListener('click', openPanel);
+  document.getElementById('tweaks-close').addEventListener('click', closePanel);
+  document.getElementById('tweaks-backdrop').addEventListener('click', closePanel);
+  document.querySelectorAll('[data-tweak] .tweaks-opt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const key = btn.closest('[data-tweak]').dataset.tweak;
+      state[key] = btn.dataset.val; apply();
+    });
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closePanel(); });
+  apply();
+})();
+</script>
 </body>
 </html>`;
 }
@@ -298,19 +625,25 @@ function main() {
   const filesData = JSON.parse(fs.readFileSync(FILES_PATH, 'utf8'));
   const { site } = channelsData;
 
-  // Build channel objects from files.json channelList (populated by sync-drive)
-  // Sort by prefix order: A → AM → B → I → O
-  const PREFIX_ORDER = ['A', 'AM', 'B', 'I', 'O'];
-  const channels = (filesData.channelList || []).map(ch => {
-    const cfg = channelsData.channels[ch.id] || {};
+  // Build channel objects from channels.json as authoritative list,
+  // merging any runtime info from files.json.channelList (sync-drive populated).
+  const PREFIX_ORDER = ['A', 'AM', 'B', 'TL', 'I', 'SH', 'O'];
+  const runtime = Object.fromEntries((filesData.channelList || []).map(c => [c.id, c]));
+  const ids = new Set([
+    ...Object.keys(channelsData.channels || {}),
+    ...Object.keys(runtime),
+  ]);
+  const channels = [...ids].map(id => {
+    const cfg = channelsData.channels[id] || {};
+    const rt = runtime[id] || {};
     return {
-      id: ch.id,
-      name: ch.name,
-      description: ch.description || '',
-      prefix: ch.prefix || '',
-      season: ch.season || 'winter',
-      icon: ch.icon || 'science',
-      dynamic: ch.isNew || false,
+      id,
+      name: cfg.name || rt.name || id,
+      description: cfg.description || rt.description || '',
+      prefix: cfg.prefix || rt.prefix || '',
+      season: cfg.season || rt.season || 'winter',
+      icon: cfg.icon || rt.icon || 'science',
+      dynamic: rt.isNew || false,
       sort: cfg.sort || 'modifiedTime',
     };
   }).sort((a, b) => {

@@ -1,21 +1,26 @@
 {
-  "deployedAt": "2026-04-13T11:43:09.268Z",
+  "deployedAt": "2026-04-18T12:36:16.912Z",
   "syncedAt": "2026-04-13T06:56:34.818Z",
   "channels": {
     "taiwan-stories": {
       "name": "臺灣的故事",
       "count": 24,
-      "latest": "EN007"
+      "latest": "BT001"
     },
     "ancient-myths": {
       "name": "古文明神話五年級",
       "count": 14,
-      "latest": "TW02"
+      "latest": "AM012"
     },
     "botany": {
       "name": "植物學五年級",
       "count": 17,
       "latest": "B017"
+    },
+    "taiwan-literature-9d": {
+      "name": "九年級臺灣文學主課程｜林信宏",
+      "count": 0,
+      "latest": null
     },
     "island-myths-3rd": {
       "name": "南島神話三年級",
