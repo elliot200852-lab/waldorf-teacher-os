@@ -321,45 +321,6 @@ def main() -> int:
 
     print(f"  識別身份：{current_email}")
 
-    # ── 分支偵測：非 main 分支警告 ──────────────────
-    current_branch = git("rev-parse", "--abbrev-ref", "HEAD")
-    if current_branch and current_branch != "main":
-        print()
-        print(f"{YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
-        print(f"{YELLOW}  [警告] 你目前在分支「{current_branch}」，不是 main。{NC}")
-        print(f"{YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
-        print()
-        print("  TeacherOS 的所有工作應在 main 分支上進行。")
-        print("  在分支上的 commit 可能導致同步問題。")
-        print()
-        print("  請切回 main 後再 commit：")
-        print(f"    git checkout main")
-        print(f"    git pull origin main")
-        print()
-
-        # 管理員可在分支工作（顯示警告但不攔截）
-        # 先快速查 ACL 判斷是否為管理員
-        _acl_file = repo_root / "ai-core" / "acl.yaml"
-        _is_admin = False
-        if _acl_file.is_file():
-            _acl_text = _acl_file.read_text(encoding="utf-8")
-            _admin_m = re.search(r"admin:\s*\n(.*?)(?=\n\S|\Z)", _acl_text, re.DOTALL)
-            if _admin_m:
-                _admin_emails = re.findall(r"email:\s*([^\s#\n]+)", _admin_m.group(0))
-                _admin_ghs = re.findall(r"github_username:\s*([^\s#\n]+)", _admin_m.group(0))
-                _all_admin = {e.strip() for e in _admin_emails}
-                for gh in _admin_ghs:
-                    _all_admin.add(f"{gh.strip()}@users.noreply.github.com")
-                _is_admin = current_email in _all_admin
-
-        if _is_admin:
-            print(f"  {GREEN}管理員身份，允許在分支上操作。{NC}")
-            print()
-        else:
-            print(f"  {RED}非管理員不允許在分支上 commit，已攔截。{NC}")
-            print()
-            return 1
-
     # ── Step 2：確認 ACL 與暫存檔案 ──────────────────
 
     if not acl_file.is_file():
@@ -403,6 +364,37 @@ def main() -> int:
         return 1
 
     user = teachers[current_email]
+
+    # ── Step 3.5：v2.0 分支檢查 ──────────────────
+    # v2.0 分支模型：
+    #   - admin 可在 main 分支工作（主要），也允許在其他分支操作（僅提示）
+    #   - teacher 必須在自己的 workspace/Teacher_{姓名} 分支 commit
+    #   - teacher 不得在 main 或其他教師的分支上 commit
+    current_branch = git("rev-parse", "--abbrev-ref", "HEAD")
+    if current_branch:
+        if user["is_admin"]:
+            if current_branch != "main":
+                print()
+                print(f"{YELLOW}  [提示] 你在分支「{current_branch}」，管理員允許在此操作。{NC}")
+        else:
+            expected_branch = f"workspace/Teacher_{user['name']}"
+            if current_branch != expected_branch:
+                print()
+                print(f"{RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
+                if current_branch == "main":
+                    print(f"{RED}  [攔截] 你目前在 main 分支，但 v2.0 分支模型要求教師在自己的分支工作。{NC}")
+                else:
+                    print(f"{RED}  [攔截] 你目前在分支「{current_branch}」，不是你的個人分支。{NC}")
+                print(f"{RED}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{NC}")
+                print()
+                print(f"  你的個人分支：{expected_branch}")
+                print()
+                print(f"  請切回自己的分支後再 commit：")
+                print(f"    git checkout {expected_branch}")
+                print()
+                print(f"  若此分支尚未建立，請聯絡 David。")
+                print()
+                return 1
 
     # 管理員通過（仍需通過品質護欄）
     if user["is_admin"]:
