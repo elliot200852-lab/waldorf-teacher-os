@@ -234,31 +234,15 @@ git push origin $(git branch --show-current)
 若某項目為空（例如無 YAML 變動），從表格中省略該行。
 **YAML 變動欄位必須列出新值**，讓教師可 review 是否推斷正確；若下次開工發現有誤，可直接修正 session.yaml。
 
-### Step 6 — 跨平台開機提醒
+### Step 6 — 開機提醒
 
 每次收工必輸出，固定內容：
 
 > **下次啟動新對話時：**
->
-> **有終端機能力的 AI（Claude Code、Cowork）：**
-> 直接說「開工」即可。AI 會自動偵測你的分支，執行對應的更新指令（老師會 merge main 進個人分支；admin 會 pull main），然後載入系統、報告進度。
->
-> **無終端機能力的 AI（Gemini 語音、ChatGPT）：**
-> 先手動在終端機執行更新指令：
-> - **老師（在個人分支）**：
->   ```
->   git fetch origin main
->   git merge origin/main --no-edit
->   ```
-> - **David（在 main 分支）**：
->   ```
->   git pull origin main
->   ```
-> 完成後，跟 AI 說「開工」或「請讀取 `ai-core/AI_HANDOFF.md` 並依照載入序列初始化」。
->
-> （使用 Claude Code 的教師可直接輸入 `/opening`，AI 會自動處理上述步驟。）
+> 直接說「開工」即可（Claude Code 可直接輸入 `/opening`）。
+> AI 會自動偵測你的分支，執行對應的更新指令（老師會 merge main 進個人分支；admin 會 pull main），然後載入系統、報告進度。
 
-此提醒在所有 AI 平台（Claude Code、Gemini、ChatGPT 等）皆適用。
+TeacherOS 的對話 AI 預設都具備終端機能力（Claude Code、Cowork、Antigravity 等），不需另外列出無終端機 AI 的手動步驟。
 
 ## 注意事項
 
