@@ -27,25 +27,28 @@ jobs:
 
       - name: Check PR files against ACL
         id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
           ACL_FILE="ai-core/acl.yaml"
 
-          # Get PR author's GitHub username
-          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
           echo "PR author: $PR_AUTHOR"
 
           # Get changed files in this PR
-          CHANGED_FILES=$(gh pr diff ${{ github.event.pull_request.number }} --name-only)
+          CHANGED_FILES=$(gh pr diff "$PR_NUMBER" --name-only)
           echo "Changed files:"
           echo "$CHANGED_FILES"
+          export CHANGED_FILES
 
           # Run ACL check via Python (reuse pre-commit-check.py logic)
           python3 << 'PYEOF'
           import re, sys, os
 
           acl_content = open("ai-core/acl.yaml", encoding="utf-8").read()
-          pr_author = "${{ github.event.pull_request.user.login }}"
-          changed_files_raw = """$CHANGED_FILES"""
+          pr_author = os.environ["PR_AUTHOR"]
+          changed_files_raw = os.environ.get("CHANGED_FILES", "")
           changed_files = [f.strip() for f in changed_files_raw.strip().splitlines() if f.strip()]
 
           if not changed_files:
@@ -143,15 +146,15 @@ jobs:
                   f.write(f"message<<EOFMSG\n{message}\nEOFMSG\n")
               sys.exit(1)
           PYEOF
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Comment on PR if blocked
         if: failure()
         uses: actions/github-script@v7
+        env:
+          MESSAGE: ${{ steps.check.outputs.message }}
         with:
           script: |
-            const message = `${{ steps.check.outputs.message }}`;
+            const message = process.env.MESSAGE;
             if (message) {
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
