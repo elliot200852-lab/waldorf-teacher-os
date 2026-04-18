@@ -40,7 +40,13 @@ jobs:
           import fnmatch, os, re, subprocess, sys
 
           def git(*args):
-              r = subprocess.run(["git"] + list(args), capture_output=True, text=True)
+              # 加 -c core.quotepath=false 避免 git 對非 ASCII 路徑做 C 風格轉義，
+              # 否則中文姓名教師的 workspace 路徑會被轉義成 \xxx\xxx，與 acl.yaml
+              # 的 UTF-8 allowed_paths 比對失敗，被誤判為越權（會自動開 Issue）。
+              r = subprocess.run(
+                  ["git", "-c", "core.quotepath=false"] + list(args),
+                  capture_output=True, text=True,
+              )
               return r.stdout.strip()
 
           def matches(file_path, pattern):
