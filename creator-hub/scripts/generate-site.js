@@ -611,7 +611,6 @@ function generateChannelPageFeature(channel, files) {
 
   const introLead = (feature.intro && feature.intro.lead) || `《${channel.name}》系列索引。`;
   const introBody = (feature.intro && feature.intro.body) || channel.description || '';
-  const pullQuote = feature.pullQuote || '';
 
   // ─ Chapter directory (TOC) ─
   const directoryHtml = blocks.map((b, i) => `
@@ -725,13 +724,26 @@ a { color: inherit; }
 .topnav a:hover { color: var(--fg); }
 .topnav-right { display: flex; gap: 20px; }
 
-/* Hero */
-.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--fg); }
+/* Hero — warm diagonal wash, visibly distinct from the paper intro below */
+.hero {
+  position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--fg);
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--accent) 62%, var(--paper)) 0%,
+      color-mix(in srgb, var(--accent) 38%, var(--paper)) 45%,
+      color-mix(in srgb, var(--muted) 28%, var(--paper)) 100%);
+}
 .hero::before {
   content: ''; position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 20% 50%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 55%),
-    radial-gradient(ellipse at 85% 30%, color-mix(in srgb, var(--ink) 16%, transparent), transparent 60%);
+    radial-gradient(ellipse at 15% 30%, color-mix(in srgb, var(--paper) 55%, transparent), transparent 55%),
+    radial-gradient(ellipse at 88% 85%, color-mix(in srgb, var(--ink) 20%, transparent), transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 36px;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--paper) 70%, transparent) 70%, var(--paper));
   pointer-events: none;
 }
 .hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 52px 48px 44px; color: var(--ink); }
@@ -796,28 +808,6 @@ a { color: inherit; }
   font-family: "Noto Serif TC", serif;
   font-size: 15px; line-height: 2; margin: 0;
   color: var(--fg); opacity: 0.9; text-indent: 2em;
-}
-
-/* Pull quote */
-.pullquote { padding: 64px 0; border-bottom: 1px solid var(--fg); position: relative; }
-.pullquote::before {
-  content: '\u201C';
-  position: absolute; left: -4px; top: 40px;
-  font-family: "Cormorant Garamond", serif; font-style: italic;
-  font-size: 140px; line-height: 0.5;
-  color: var(--accent); opacity: 0.35;
-}
-.pullquote blockquote {
-  margin: 0 auto; max-width: 720px;
-  font-family: "Noto Serif TC", serif;
-  font-size: clamp(22px, 3vw, 36px);
-  line-height: 1.55; color: var(--ink);
-  text-align: center; white-space: pre-line; letter-spacing: 0.02em;
-}
-.pullquote-attr {
-  text-align: center; margin-top: 18px;
-  font-family: "Cormorant Garamond", serif; font-style: italic;
-  font-size: 13px; color: var(--muted);
 }
 
 /* Directory / TOC */
@@ -994,11 +984,6 @@ a { color: inherit; }
         ${introBody ? `<p class="intro-body">${esc(introBody)}</p>` : ''}
       </div>
     </section>
-
-    ${pullQuote ? `<section class="pullquote">
-      <blockquote>${esc(pullQuote)}</blockquote>
-      <div class="pullquote-attr">— 編者的話</div>
-    </section>` : ''}
 
     <section class="toc">
       <div class="section-label">分部目錄 · Sub-Series</div>
