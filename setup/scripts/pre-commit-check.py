@@ -33,10 +33,15 @@ NC = "\033[0m"
 # ── 工具函式 ──────────────────────────────────────────
 
 def git(*args: str) -> str:
-    """執行 git 指令，回傳 stdout（去尾換行）。"""
+    """執行 git 指令，回傳 stdout（去尾換行）。
+
+    統一加上 -c core.quotepath=false，避免 git 預設對非 ASCII 路徑做
+    C 風格轉義（\\xxx\\xxx）。否則中文姓名教師的 workspace 路徑會被
+    轉義成亂碼，與 acl.yaml 的原始 UTF-8 路徑比對失敗，被誤判為越權。
+    """
     try:
         result = subprocess.run(
-            ["git"] + list(args),
+            ["git", "-c", "core.quotepath=false"] + list(args),
             capture_output=True, text=True, encoding='utf-8', errors='ignore'
         )
         if result.returncode != 0:
