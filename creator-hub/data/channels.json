@@ -16,19 +16,45 @@
       "season": "autumn",
       "icon": "auto_stories",
       "feature": {
-        "tagline": "一座島嶼的呼吸",
+        "layout": "magazine",
+        "tagline": "這片土地的記憶",
         "titleEn": "Stories of Formosa",
         "grade": "五年級",
+        "seasonLabel": "跨年度",
         "intro": {
           "lead": "這是一本為華德福教師而編的臺灣地誌。",
-          "body": "從島嶼誕生的地質詩篇，到原住民看待星空與土地的方式；從大甲溪的三彎彎、太魯閣的峽谷歌，到達悟族的飛魚祭——每一則故事都設計為可以被講述、被繪畫、被演出。"
+          "body": "依臺灣歷史時序推進的長期敘事——從島嶼的誕生、原住民的聲音，到大航海時代的邂逅；再從紅毛城的殖民、國姓爺的抉擇，走到日治、戰後與我們的時代。每一篇都設計為可以被講述、被繪畫、被演出。"
         },
         "pullQuote": "不是把臺灣當成資料，\n而是把臺灣當成一位需要被傾聽的長者。",
-        "subSeries": {
-          "A":  { "label": "核心故事",   "description": "系列主幹——以敘事為核心的完整故事單元，適合連續主課朗讀。", "accent": "#3a5a3a" },
-          "EN": { "label": "英文延伸",   "description": "English extensions — 英文延伸閱讀與雙語教材，供英語課或混齡使用。", "accent": "#6b4a2e" },
-          "BT": { "label": "黑板畫指引", "description": "Blackboard teaching — 黑板畫步驟、構圖、色粉與留白示範。",     "accent": "#8b3a2e" }
-        }
+        "blocks": [
+          {
+            "id": "A-origins",
+            "code": "A",
+            "title": "島嶼的誕生與最初的人",
+            "subtitle": "史前—1624 · 起源篇",
+            "accent": "#3a5a3a",
+            "description": "在我們之前，誰住在這裡？從板塊運動、史前遺址、南島遷徙，到原住民各族的土地故事。",
+            "match": { "prefix": "A" }
+          },
+          {
+            "id": "EN-encounter",
+            "code": "EN",
+            "title": "海上來的人",
+            "subtitle": "1540s–1624 · 大航海時代",
+            "accent": "#6b4a2e",
+            "description": "是誰把臺灣帶到世界面前？Ilha Formosa、東亞海上十字路口、最早的漢人移民。",
+            "match": { "prefix": "EN" }
+          },
+          {
+            "id": "BT-botany",
+            "code": "BT",
+            "title": "島嶼的植物王國",
+            "subtitle": "跨時代 · 臺灣植物誌",
+            "accent": "#8b3a2e",
+            "description": "這座島上的植物，如何訴說一個比人類更古老的故事？神木、特有種、民族植物學與農業植物史。",
+            "match": { "prefix": "BT" }
+          }
+        ]
       }
     },
     "ancient-myths": {
@@ -40,17 +66,60 @@
       "icon": "temple_hindu",
       "feature": {
         "tagline": "人類意識的覺醒旅程",
-        "titleEn": "Myths of Ancient Civilisations",
+        "titleEn": "Ancient Mythologies · Grade 5",
         "grade": "五年級",
         "intro": {
           "lead": "這是五年級主課程的心跳——以神話看見人類意識的演化。",
-          "body": "從印度的梵我合一，到埃及人對靈魂的重量；從希臘的英雄悲劇，到北歐的諸神黃昏——每一則神話都在回答同一個問題：人是什麼？五年級的孩子以這些故事為鏡，從神話中找到自己。"
+          "body": "Charles Kovacs 的四大古文明敘事：印度的夢境意識、波斯的二元覺醒、巴比倫的星辰智慧、埃及的死亡與永生。島嶼插曲（TW）分散於文明轉換點——「不是附錄，是回家」。"
         },
         "pullQuote": "神話不是過去的遺物，\n是人類意識成長的軌跡。",
-        "subSeries": {
-          "AM": { "label": "古文明神話",      "description": "印度、埃及、希臘、北歐主線——五年級主課程核心敘事。",       "accent": "#8b3a2e" },
-          "TW": { "label": "臺灣島嶼插曲",    "description": "嵌在神話學期之間的臺灣地誌篇，對應在地時令與節氣。",       "accent": "#3a5a3a" }
-        }
+        "blocks": [
+          {
+            "id": "india",
+            "code": "印度",
+            "title": "古印度",
+            "subtitle": "夢境意識 · 向內",
+            "accent": "#c4a57b",
+            "description": "人類最初的精神家園——物質世界是幻象，真正的實在是精神世界。",
+            "match": { "prefix": "AM", "from": 1, "to": 7 }
+          },
+          {
+            "id": "persia",
+            "code": "波斯",
+            "title": "古波斯",
+            "subtitle": "二元覺醒 · 向下",
+            "accent": "#8b3a2e",
+            "description": "從夢境中醒來面對大地——光明與黑暗的對抗，人從冥想者變成勞動者。",
+            "match": { "prefix": "AM", "from": 8, "to": 11 }
+          },
+          {
+            "id": "babylon",
+            "code": "巴比倫",
+            "title": "古巴比倫",
+            "subtitle": "星辰智慧 · 向上",
+            "accent": "#7a5a9c",
+            "description": "仰望星空建造城市——觀測星辰、發明文字與法律、追問死亡。",
+            "match": { "prefix": "AM", "from": 12, "to": 16 }
+          },
+          {
+            "id": "egypt",
+            "code": "埃及",
+            "title": "古埃及",
+            "subtitle": "死亡與永生 · 向前",
+            "accent": "#d4a050",
+            "description": "面對死亡追求永恆——金字塔、木乃伊、死者之書。",
+            "match": { "prefix": "AM", "from": 17, "to": 21 }
+          },
+          {
+            "id": "island-interludes",
+            "code": "臺灣",
+            "title": "島嶼插曲",
+            "subtitle": "分散於文明轉換點",
+            "accent": "#3a5a3a",
+            "description": "臺灣這座島嶼上最古老的聲音——不是附錄，是回家。",
+            "match": { "prefix": "TW" }
+          }
+        ]
       }
     },
     "botany": {
@@ -63,16 +132,51 @@
       "sort": "storyId",
       "feature": {
         "tagline": "植物王國的演化之歌",
-        "titleEn": "Botany for Fifth Grade",
+        "titleEn": "Botany · Grade 5",
         "grade": "五年級",
         "intro": {
           "lead": "植物學不是分類學，而是生命形態的詩。",
-          "body": "從海中的藻類到陸地的苔蘚，從蕨的孢子舞到被子植物的花冠——植物王國的演化是地球最安靜、最耐心的敘事。五年級的孩子以身體感受這個歷程：繪畫、觀察、對照自身的成長節律。"
+          "body": "Charles Kovacs Botany（30 課）為華德福五年級主課程打造，四個區塊帶學生從「植物與大地的關係」走到「世界各地的植物與人」——以植物的姿態、生長環境與人的連結為觀察重點。"
         },
         "pullQuote": "植物不說話，\n但它們從不停止說什麼。",
-        "subSeries": {
-          "B":  { "label": "主線故事", "description": "植物王國演化主敘事，依分類層級從低到高展開。", "accent": "#3a5a3a" }
-        }
+        "blocks": [
+          {
+            "id": "plant-and-earth",
+            "code": "I",
+            "title": "植物與大地",
+            "subtitle": "太陽與大地之間",
+            "accent": "#7cb87c",
+            "description": "植物是連接天與地的橋樑——從蒲公英、真菌、藻類到地衣、苔蘚，生命的最初形態。",
+            "match": { "prefix": "B", "from": 1, "to": 6 }
+          },
+          {
+            "id": "fern-to-tree",
+            "code": "II",
+            "title": "從蕨類到樹",
+            "subtitle": "生命形態的上升",
+            "accent": "#4a6b3a",
+            "description": "從蕨類、針葉樹到開花植物——植物王國在陸地上逐層站起來的過程。",
+            "match": { "prefix": "B", "from": 7, "to": 14 }
+          },
+          {
+            "id": "individual-plants",
+            "code": "III",
+            "title": "毛蟲與蝴蝶、個別植物",
+            "subtitle": "與植物對話",
+            "accent": "#9c7c4a",
+            "description": "個別植物的特寫——單子葉、雙子葉、特定科屬，植物各自的脾氣與姿態。",
+            "match": { "prefix": "B", "from": 15, "to": 22 }
+          },
+          {
+            "id": "plants-and-people",
+            "code": "IV",
+            "title": "世界各地的植物與人",
+            "subtitle": "民族植物學",
+            "accent": "#a05040",
+            "description": "植物如何塑造人類的生活——小米、稻米、茶、糖，植物與文化的交織。",
+            "match": { "prefix": "B", "from": 23, "to": 30 }
+          }
+        ]
       }
     },
     "island-myths-3rd": {
@@ -81,20 +185,7 @@
       "description": "臺灣南島語系民族的創世神話——為三年級主課程精心設計的教學素材",
       "prefix": "I",
       "season": "spring",
-      "icon": "sailing",
-      "feature": {
-        "tagline": "島嶼民族的原初記憶",
-        "titleEn": "Island Creation Myths",
-        "grade": "三年級",
-        "intro": {
-          "lead": "三年級的孩子開始問：我從哪裡來？",
-          "body": "臺灣南島語系民族的創世神話，是這個問題的答案。阿美族的 Cilangasan、排灣族的 Tjaquvuquvulj、達悟族的石頭誕生——這些故事既古老又新鮮，為三年級的「創世與建家」主題而生。"
-        },
-        "pullQuote": "我們不只是住在這座島上，\n我們的故事本身就是從這座島長出來的。",
-        "subSeries": {
-          "I": { "label": "南島創世神話", "description": "臺灣各南島族群創世敘事，適合三年級主課朗讀。", "accent": "#3a5a3a" }
-        }
-      }
+      "icon": "sailing"
     },
     "shanhaijing-3rd": {
       "folderName": "三年級山海經",
@@ -102,20 +193,7 @@
       "description": "以《山海經》神話為主線的三年級教學紀錄——奇獸、山川、上古世界的課堂探索",
       "prefix": "SH",
       "season": "autumn",
-      "icon": "terrain",
-      "feature": {
-        "tagline": "上古世界的奇獸地誌",
-        "titleEn": "Shanhaijing for Third Grade",
-        "grade": "三年級",
-        "intro": {
-          "lead": "《山海經》是一本會動的地圖。",
-          "body": "奇獸、仙山、異草——這些看似荒誕的條目，其實是上古人類觀察世界的方式。三年級的孩子正需要這種「萬物皆有生命」的目光，《山海經》恰好提供了最豐富的素材。"
-        },
-        "pullQuote": "世界不是被解釋的，\n世界是被命名的。",
-        "subSeries": {
-          "SH": { "label": "山海經教學紀錄", "description": "以奇獸山川為主線的三年級課堂實錄與教材。", "accent": "#8b6f47" }
-        }
-      }
+      "icon": "terrain"
     },
     "taiwan-literature-9d": {
       "folderName": "2026九年級台灣文學主課",
@@ -123,20 +201,7 @@
       "description": "「這座島嶼上的人」— 從離散到扎根，從沉默到發聲。8天×120分鐘完整教案與教學回顧。",
       "prefix": "TL",
       "season": "spring",
-      "icon": "menu_book",
-      "feature": {
-        "tagline": "這座島嶼上的人",
-        "titleEn": "Taiwanese Literature · Grade 9",
-        "grade": "九年級",
-        "intro": {
-          "lead": "文學不是為了告訴青少年世界的樣子，是為了陪他們走過。",
-          "body": "九年級是離散感最強的年紀——對自己、對家、對島嶼都處於懷疑狀態。這個主課程以八天八段臺灣文學文本陪他們走一次：從葉石濤的〈紅鞋子〉，到莫那能、向陽的詩篇，從沉默走向發聲。"
-        },
-        "pullQuote": "我們不只是讀文學，\n我們是在文學裡重新認識自己是誰。",
-        "subSeries": {
-          "TL": { "label": "八日主課程",    "description": "Day 1–8 教案、課堂實錄、學生作品與反思。",     "accent": "#3a5a3a" }
-        }
-      }
+      "icon": "menu_book"
     }
   },
   "defaults": {

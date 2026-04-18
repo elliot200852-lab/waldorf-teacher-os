@@ -1,207 +1,226 @@
-# Channel Feature Page — 規格書
+# Channel Feature Page — 規格書（blocks 版）
 
 > 年鑑（Almanac）風格的頻道內頁規格。
 > 對應設計原型：Claude Design handoff《Series Feature》（2026-04-18）。
-> 適用所有頻道——每個頻道內頁共用同一版型，只有**資料**不同。
+> 2026-04-18 更新：改採 **blocks 模型** + **opt-in layout flag**；僅當頻道設定 `feature.layout: "magazine"` 時啟用。
 
 ---
 
-## 一、Skeleton 架構的編寫說明
+## 一、設計脈絡：為什麼是 blocks，不是 sub-series
 
-頻道內頁的資料骨幹來自 `creator-hub/data/channels.json`。
-每個頻道原本只有 6 個基本欄位（`folderName` / `name` / `description` / `prefix` / `season` / `icon`），
-為了支援「雜誌專題」式的內頁，新增一個**選填**的 `feature` 區塊。
+最初的原型把頻道分成「平行的 sub-series」（如 A 系列／EN 系列／BT 系列），但這與 TeacherOS 實際的教學架構**不符**：
 
-### 1.1 channels.json 完整欄位表
+- **臺灣的故事**：A／EN／BT 是**依臺灣歷史時序推進的章節**（起源 → 大航海邂逅 → 植物誌），不是平行支線。未來還會加入 C/D/E/F/G（荷西、鄭氏、清、日治、戰後）。
+- **古文明神話**：AM001-021 全用同一個前綴，但內部有**四大文明 block**（印度／波斯／巴比倫／埃及）＋**島嶼插曲（TW）**。單看前綴完全分不出四個 block。
+- **植物學**：B001-030 全用 B 前綴，內部有 Kovacs Botany 的**四個 block**，需要用編號範圍才能切分。
+
+因此 **block** 取代 sub-series 成為基本單位：
+- 一個 block 可能對應**單一前綴**（A = A-origins）
+- 一個 block 可能是**前綴 + 編號範圍**（AM001-007 = 印度）
+- 一個 block 可能是**指定 storyId 清單**（TW01, TW02, TW03, TW04 = 島嶼插曲）
+
+---
+
+## 二、Skeleton 架構的編寫說明（channels.json）
+
+### 2.1 完整欄位表
 
 | 欄位 | 必填 | 說明 |
 |------|------|------|
 | `folderName` | ✓ | Google Drive 資料夾名稱（同步用） |
 | `name` | ✓ | 頻道中文名稱，顯示在 index 卡片與內頁 hero |
 | `description` | ✓ | 簡短描述，index 卡片 + 內頁 hero 副標 |
-| `prefix` | ✓ | 主系列代號（A / AM / B / I / SH / TL / ...） |
+| `prefix` | ✓ | 頻道**主前綴**（用於 meta 顯示，非分 block 用） |
 | `season` | ✓ | `spring` / `summer` / `autumn` / `winter`，影響配色 |
-| `icon` | ✓ | Material Symbol 圖標名稱（向下相容，新版暫不顯示，保留） |
-| `sort` | ✕ | 排序方式 `modifiedTime`（預設）或 `storyId` |
-| `feature` | ✕ | 內頁編輯內容（見 §1.2） |
+| `icon` | ✓ | Material Symbol 名稱（legacy 版使用；magazine 版保留不顯示） |
+| `sort` | ✕ | 排序方式 `modifiedTime` 或 `storyId`（block 內部排序） |
+| `feature` | ✕ | 內頁編輯內容（見 §2.2） |
 
-### 1.2 `feature` 區塊 — 內頁編輯內容
-
-全部**選填**，未填則自動用 fallback 文字：
+### 2.2 `feature` — 內頁編輯內容
 
 ```jsonc
 "feature": {
-  "tagline": "一座島嶼的呼吸",              // hero 斜體小標（建議 10 字內）
-  "number": "No. 01",                       // hero 左上編號（預設從 prefix 推導）
-  "titleEn": "Stories of Formosa",          // hero 英文副標
-  "grade": "五年級",                         // hero meta 年級
-  "seasonLabel": "秋之章",                   // hero meta 章節（預設依 season 自動帶）
+  "layout": "magazine",            // ← 關鍵 opt-in 開關；缺省或其他值 = legacy
+  "tagline": "這片土地的記憶",
+  "titleEn": "Stories of Formosa",
+  "grade": "五年級",
+  "seasonLabel": "跨年度",          // 可選；預設從 season 帶「春/夏/秋/冬之章」
   "intro": {
     "lead": "這是一本為華德福教師而編的臺灣地誌。",
-    "body": "從島嶼誕生的地質詩篇，到原住民看待星空的方式——每一則故事都設計為可以被講述、被繪畫、被演出。"
+    "body": "依臺灣歷史時序推進的長期敘事——..."
   },
   "pullQuote": "不是把臺灣當成資料，\n而是把臺灣當成一位需要被傾聽的長者。",
-  "subSeries": {
-    "A":  { "label": "核心故事",  "description": "系列主幹——以敘事為核心的完整故事單元。",        "accent": "#3a5a3a" },
-    "EN": { "label": "英文延伸",  "description": "English extensions — 英文延伸閱讀與雙語教材。",    "accent": "#6b4a2e" },
-    "BT": { "label": "黑板畫指引","description": "Blackboard teaching — 步驟圖、構圖、色粉示範。",   "accent": "#8b3a2e" }
-  }
+  "blocks": [ /* 見 §2.3 */ ]
 }
 ```
 
-### 1.3 子系列（Sub-Series）偵測邏輯
+**重要**：
+- `layout: "magazine"` 是 magazine 版的**開關**。沒有這行，版型會退回 legacy（原本的 gradient 頁）。
+- 三條線（taiwan-stories / ancient-myths / botany）的 `feature.blocks` **已全部寫好**備用；但**只有 taiwan-stories 目前掛上 `layout: "magazine"`**，其他兩條等準備好再打開。
 
-子系列**不需要手動列出單元**——產生器會自動從 `files.json` 的 `storyId` 解析：
+### 2.3 `feature.blocks` — 章節定義
 
-- `storyId` 規則：`{字母前綴}{數字}`，例：`A001`、`BT001`、`EN007`、`TW01`
-- 產生器會把同前綴的單元歸在同一子系列
-- 若 channels.json 有對應的 `subSeries[前綴]`，用其中的 `label` / `description` / `accent`
-- 若無，用 fallback：`label = "{prefix} 系列"`、`description = ""`、`accent = 季節色`
-
-### 1.4 新增頻道的最小範本
-
-只要頻道的 storyId 有固定前綴，連 `feature` 都可以先不填——版型會用預設。想漂亮一點，補上 `feature.tagline` + `feature.intro.lead` 就有 80% 效果。
+每個 block 是一個物件，必填 `id`, `code`, `title`, `match`；其他選填。
 
 ```jsonc
-"my-new-channel": {
-  "folderName": "我的新頻道",
-  "name": "我的新頻道",
-  "description": "一句話描述這個頻道在做什麼",
-  "prefix": "MNC",
-  "season": "autumn",
-  "icon": "star"
+{
+  "id": "A-origins",                        // 唯一識別（不衝突即可），對應 URL anchor #block-<id>
+  "code": "A",                              // 右側大字（scrollspy 與 section header 顯示）
+  "title": "島嶼的誕生與最初的人",            // 主標
+  "subtitle": "史前—1624 · 起源篇",          // 小標（選填，顯示在 label 與 TOC）
+  "accent": "#3a5a3a",                      // block 專屬強調色
+  "description": "在我們之前，誰住在這裡？...", // 2-3 句簡介
+  "match": { "prefix": "A" }                // 選誰屬於這個 block（見 §2.4）
 }
 ```
+
+### 2.4 `match` 三種匹配模式
+
+| 模式 | 範例 | 選出的 storyId |
+|------|------|---------------|
+| **純前綴** | `{ "prefix": "A" }` | 所有以 A 開頭 |
+| **前綴+數字範圍** | `{ "prefix": "AM", "from": 1, "to": 7 }` | AM001-AM007 |
+| **明列清單** | `{ "ids": ["TW01", "TW02"] }` | 只有 TW01 / TW02 |
+
+**匹配順序**：先按 blocks 陣列順序過濾，每個 storyId 只會匹配第一個命中的 block。未匹配的 storyId 會自動被集中到「其他單元」block 於最後呈現（通常只在 Drive 尚未整理時出現）。
+
+### 2.5 新增 block 的最小範本
+
+要加入 C-dutch-spanish 區塊：
+
+```jsonc
+{
+  "id": "C-dutch-spanish",
+  "code": "C",
+  "title": "紅毛城的時代",
+  "subtitle": "1624-1662 · 荷蘭與西班牙統治",
+  "accent": "#7a5a42",
+  "description": "遠方來的人，在這裡留下了什麼？",
+  "match": { "prefix": "C" }
+}
+```
+
+加入 blocks 陣列、重跑 `node scripts/generate-site.js` 即生效。
 
 ---
 
-## 二、進入頻道後的目錄安排（Page Structure）
+## 三、進入頻道後的目錄安排（Page Structure）
 
-點開任何頻道卡片 → `/channel/{id}.html` → 依以下順序由上而下呈現：
-
-### 2.1 區塊流程
+當 `feature.layout === "magazine"`，頁面由上而下依序：
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│ TOPNAV     ← Waldorf Creator Hub    A·Feature    系列 每日 關於 │ 細線
+│ TOPNAV  ← Waldorf Creator Hub   A · Feature No. 01  系列… │
 ├──────────────────────────────────────────────────────────┤
+│  No. 01 · A-SERIES · 五年級 · 跨年度 · 共 24 單元 · 3 章節 │
 │                                                           │
-│    No. 01 · A-SERIES · 五年級 · 秋之章 · 共 24 單元 · 3 分部   │
-│                                                           │
-│    《一座島嶼的呼吸》                                       │
-│    臺灣的故事                 ← 斜體大標＋漸層陰影          │
-│    Stories of Formosa                                     │
-│                                     ← 右側：副標描述         │
+│   《這片土地的記憶》                                       │
+│   臺灣的故事              ← 斜體大標＋漸層陰影            │
+│   Stories of Formosa                                     │
+│                                   ← 右上：簡短副標         │
 ├──────────────────────────────────────────────────────────┤
 │ 序 · INTRODUCTION                                          │
-│                                                            │
-│  「大字斜體引言」     正文段落，首行縮排，兩欄對齊。           │
-│                                                            │
+│  大字斜體 lead        正文 body（兩欄）                    │
 ├──────────────────────────────────────────────────────────┤
-│ 「 引句（居中大字）                                         │
-│    不是把臺灣當成資料，                                     │
-│    而是把臺灣當成需要被傾聽的長者。」                         │
+│ 「 pull quote 居中大字                                     │
 │                        — 編者的話                          │
 ├──────────────────────────────────────────────────────────┤
 │ 分部目錄 · SUB-SERIES                                      │
-│                                                            │
-│ 01. A 系列 │ 02. EN 系列 │ 03. BT 系列     ← 點擊跳轉錨點    │
-│ 核心故事   │ 英文延伸    │ 黑板畫指引                        │
-│ 16 單元    │ 7 單元      │ 1 單元                            │
+│ 01. A · 起源篇 │ 02. EN · 大航海 │ 03. BT · 植物誌         │
+│ 島嶼的誕生...   │ 海上來的人     │ 島嶼的植物王國           │
+│ 16 單元         │ 7 單元         │ 1 單元                   │
 ├──────────────────────────────────────────────────────────┤
-│ A-SERIES · 16 單元                                    A     │ ← 子系列 header
-│ 核心故事                                                    │
-│ 系列主幹——以敘事為核心的完整故事單元                         │
-│                                                            │
-│  ┌────────┐  ┌────────┐  ┌────────┐                       │
-│  │ 封面圖  │  │ 封面圖  │  │ 封面圖  │   ← 每排 3 張         │
-│  │ [A-01] │  │ [A-02] │  │ [A-03] │     (UnitCard)        │
-│  │ 特寫    │  │         │  │         │                     │
-│  ├────────┤  ├────────┤  ├────────┤                       │
-│  │ 類型/週 │  │ 類型/週 │  │ 類型/週 │                       │
-│  │ 標題    │  │ 標題    │  │ 標題    │                       │
-│  │ 副標    │  │ 副標    │  │ 副標    │                       │
-│  │ 摘句    │  │         │  │         │                     │
-│  │ 閱讀→ 🏷📒 │                                             │
-│  └────────┘                                                │
-├──────────────────────────────────────────────────────────┤
-│ EN-SERIES · 7 單元                                    EN   │
-│ 英文延伸                                                    │
-│  ... 同樣的網格 ...                                         │
-├──────────────────────────────────────────────────────────┤
-│ BT-SERIES · 1 單元                                    BT   │
-│ ... 同樣的網格 ...                                          │
-├──────────────────────────────────────────────────────────┤
-│ ← 返回年鑑      Per aspera ad astra       下一系列 →         │
+│ block section × N                                          │
+│   A · 起源篇 · 16 單元                                A    │
+│   島嶼的誕生與最初的人                                     │
+│   在我們之前，誰住在這裡？...                              │
+│   ┌────┐ ┌────┐ ┌────┐                                   │
+│   │ 單元卡 │ 單元卡 │ 單元卡 │（每排 3 張）                │
 └──────────────────────────────────────────────────────────┘
-
-            ┌─ 右側 sticky rail ─┐
-            │ 本輯分部            │
-            │ 序                  │
-            │ 01. A 系列          │
-            │ 02. EN 系列         │
-            │ 03. BT 系列         │
-            │                     │
-            │ 我的書籤            │
-            │ ⊡ A-03 ⊡ EN-02     │
-            └─────────────────────┘
+      右側：sticky scrollspy rail，顯示當前 block 高亮
 ```
 
-### 2.2 各區塊說明
+| 區塊 | 資料來源 |
+|------|----------|
+| Topnav | 固定，顯示 `feature.number` 或預設 `No. 01` |
+| Hero | `name` / `feature.tagline` / `feature.titleEn` / meta 條 |
+| Intro | `feature.intro.lead` + `feature.intro.body` |
+| Pull Quote | `feature.pullQuote`（無則略去） |
+| Directory | `feature.blocks[i]` 的 code / title / subtitle / units.length |
+| Block Section × N | 每個 block 一段：header（code 大字、title、subtitle、description）+ unit grid |
+| Rail | 所有 block 的 title，隨滾動高亮 |
+| Colophon | 固定文字 |
 
-| 區塊 | 用途 | 資料來源 |
-|------|------|----------|
-| **Topnav** | 返回 index 的細線列 | 固定文字，無需設定 |
-| **Hero** | 頻道主視覺（縮窄版，不佔太高） | `name` / `feature.tagline` / `feature.titleEn` / meta 條 |
-| **Intro 序** | 雜誌式兩欄引言 + 正文 | `feature.intro.lead` + `feature.intro.body` |
-| **Pull Quote 引句** | 居中大字金句，雜誌感 | `feature.pullQuote` |
-| **Sub-Series Directory** | 分部目錄——編號＋名稱＋單元數 | 自動從 files.json + `feature.subSeries` 套名 |
-| **Sub-Series Section** × N | 每個子系列獨立一段，有自己的 header + 單元網格 | files.json 自動分組 |
-| **Unit Card** | 單元卡片（每排 3 張） | 每個 storyId 一張 |
-| **Scrollspy Rail** | 右側固定錨點索引，顯示當前位置 + 書籤清單 | 自動產生 + localStorage |
-| **Colophon 頁尾** | 返回鏈結＋座右銘＋下一系列 | 固定樣式 |
-
-### 2.3 單元卡片（Unit Card）內容
-
-每張卡片從上到下：
-
-1. **封面圖** 200px 高（有 `/thumbnails/{storyId}.jpg` 就用它，否則條紋 placeholder）
-2. **「特寫」絲帶**（若 `featured: true`，左上深色小條）
-3. **代號徽章**（storyId，左下邊框小條，顏色用子系列 accent）
-4. **分隔細線**
-5. **Meta**：`{type} · {duration}`（小字灰色）
-6. **主標題**（Noto Serif TC，20px）
-7. **副標**（Cormorant 斜體）
-8. **摘句**（選填，左側彩色邊條引述）
-9. **底部**：左側「閱讀 →」、右側 📒 筆記 🔖 書籤 icon（**第二期功能**，可先留但不實作邏輯）
-
-### 2.4 互動
+### 3.1 互動
 
 | 元素 | 行為 |
 |------|------|
-| 分部目錄卡 | 點擊 → scroll 到對應子系列 section（`#sub-{id}`） |
-| 右側 scrollspy | 隨滾動高亮當前子系列；點擊跳轉 |
-| 單元卡 | 點擊 → 該單元的 `/stories/{storyId}.html` |
-| 書籤 icon | 切換 localStorage 書籤（`wch-bookmarks`）— 第二期 |
-| 筆記 icon | 開啟 modal 寫筆記，存 localStorage（`wch-notes`）— 第二期 |
+| Directory 卡 | 點擊 → scroll 到 `#block-<id>` |
+| Rail 連結 | 點擊跳轉；滾動時自動高亮 |
+| 單元卡 | 點擊 → `/stories/{storyId}.html` 或 Drive view |
+
+### 3.2 單元卡片（Unit Card）
+
+每張卡片：
+
+1. **封面圖** 180px 高
+   - 有 `/thumbnails/{storyId}.jpg` → 顯示真圖（由 `extract-thumbnails.js` 產出）
+   - 無 → 深色對角斜紋 placeholder
+2. **代號徽章**（storyId，左下）
+3. **分隔線**
+4. **Meta**：`{type} · {檔案大小}`
+5. **主標題**（從 files.json 的 `title`）
+6. **底部**：左側「閱讀 →」
 
 ---
 
-## 三、套用原則
+## 四、切換 layout 的流程
 
-1. **版型統一**：所有頻道內頁共用同一個 `generateChannelPage()` 函數輸出的結構
-2. **資料差異化**：差異只來自 `channels.json` + `files.json`
-3. **季節配色**：`season` 欄位決定主色與背景，其他細節以季節色自動延展
-4. **無資料亦可生成**：`feature` 全空時自動 fallback 出可讀版本，頻道能先上線再逐步補內容
+### 目前狀態（2026-04-18）
+
+| 頻道 | layout | 狀態 |
+|------|--------|------|
+| taiwan-stories | **magazine** | ✅ 使用新版 |
+| ancient-myths | legacy | blocks 已備，等驗證後打開 |
+| botany | legacy | blocks 已備，等驗證後打開 |
+| island-myths-3rd | legacy | 未做 feature |
+| shanhaijing-3rd | legacy | 未做 feature |
+| taiwan-literature-9d | legacy | 未做 feature |
+
+### 要把某頻道升級到 magazine
+
+1. 確認 `feature.blocks` 已寫完並與實際 storyId 對齊
+2. 在 channels.json 該頻道加上 `"feature": { "layout": "magazine", ... }`
+3. `node scripts/generate-site.js` 重新產生
+4. 瀏覽 preview 確認
+5. commit + push 觸發 CI deploy
+
+### 要退回 legacy
+
+把 `feature.layout` 改成任何非 `"magazine"` 的值（或拿掉該欄位）即可。blocks 資料會留著，不影響 legacy 頁顯示。
 
 ---
 
-## 四、維護
+## 五、封面圖（thumbnail）流程
 
-- 新增頻道：在 `channels.json` 加一筆，同步 Drive，跑 `node scripts/generate-site.js`
-- 豐富內頁：補 `feature` 欄位，重跑產生器
-- 新增子系列：在 Drive 資料夾放入新前綴的 storyId（如 `DR001`），同步後自動成為一個新子系列；想要漂亮標題就在 `feature.subSeries` 補 `"DR": { label, description, accent }`
+**不需要手動放**，由 `extract-thumbnails.js` 自動跑 fallback chain：
+
+1. 從 story HTML 內嵌 base64 圖抽出
+2. Drive `pic-fetch` 資料夾按故事標題關鍵字比對
+3. `{channelId}-default.jpg`（本地預設）
+4. Drive `pic-fetch` 內的 others / default / fallback
+5. 本地 watercolor 水彩 placeholder（最後退路）
+
+正式站 deploy 前 CI 會跑 extract-thumbnails.js；本地 preview 若看到斜紋 placeholder 是因為本地沒跑過，部署後會正常顯示。
 
 ---
 
-*最後更新：2026-04-18*
+## 六、維護
+
+- 新增頻道：`channels.json` 加一筆 → 同步 Drive → `node scripts/generate-site.js`
+- 新增 block：在該頻道的 `feature.blocks` 陣列加一塊，定義 `match` → 重跑
+- 豐富既有頻道：補 `feature.intro` / `feature.pullQuote` / `feature.titleEn` 等，重跑
+
+---
+
+*最後更新：2026-04-18（改採 blocks 模型 + opt-in layout）*

@@ -516,69 +516,84 @@ const CHANNEL_PALETTE = {
 
 const SEASON_LABEL_CN = { spring: '春之章', summer: '夏之章', autumn: '秋之章', winter: '冬之章' };
 
-// Auto-detect sub-series by parsing the storyId prefix (letters before digits).
-// Merges with any `feature.subSeries` metadata from channels.json for labels/accents.
-function detectSubSeries(files, feature, palette, sortMode) {
-  const subMeta = (feature && feature.subSeries) || {};
-  const groups = new Map();
+// Parse a storyId into its letter prefix + numeric suffix.
+// e.g. "AM007" → { prefix: 'AM', num: 7 }; "TW01" → { prefix: 'TW', num: 1 }.
+function parseStoryId(storyId) {
+  const m = (storyId || '').match(/^([A-Za-z]+)(\d+)?/);
+  if (!m) return { prefix: 'OTHER', num: null };
+  return { prefix: m[1].toUpperCase(), num: m[2] ? parseInt(m[2], 10) : null };
+}
 
-  for (const f of files) {
-    const m = (f.storyId || '').match(/^([A-Za-z]+)/);
-    const code = (m ? m[1] : 'OTHER').toUpperCase();
-    if (!groups.has(code)) groups.set(code, []);
-    groups.get(code).push(f);
-  }
+// Check whether a file matches a block's `match` predicate.
+// Supported predicates:
+//   { prefix: "A" }                      — all stories with prefix A
+//   { prefix: "AM", from: 1, to: 7 }     — AM001..AM007
+//   { ids: ["TW01", "TW02"] }            — explicit storyId list
+function matchesBlock(file, match) {
+  if (!match) return false;
+  if (Array.isArray(match.ids) && match.ids.includes(file.storyId)) return true;
+  if (!match.prefix) return false;
+  const { prefix, num } = parseStoryId(file.storyId);
+  if (prefix !== match.prefix.toUpperCase()) return false;
+  if (match.from != null && (num == null || num < match.from)) return false;
+  if (match.to != null && (num == null || num > match.to)) return false;
+  return true;
+}
 
-  for (const arr of groups.values()) {
-    arr.sort((a, b) => {
-      if (sortMode === 'modifiedTime') {
-        return (b.modifiedTime || '').localeCompare(a.modifiedTime || '');
-      }
-      return a.storyId.localeCompare(b.storyId, undefined, { numeric: true });
-    });
-  }
-
-  const explicitOrder = Object.keys(subMeta);
-  const detected = [...groups.keys()].filter(k => !explicitOrder.includes(k));
-  const finalOrder = [...explicitOrder, ...detected].filter(k => groups.has(k));
-
-  return finalOrder.map((code) => {
-    const meta = subMeta[code] || {};
+// Resolve files into blocks based on `feature.blocks` metadata.
+// Each block gets its own `units` array sorted by storyId (numeric-aware).
+// Files that don't match any block are collected into a trailing "其他" block.
+function resolveBlocks(files, feature, palette) {
+  const blocks = (feature && Array.isArray(feature.blocks)) ? feature.blocks : [];
+  const matched = new Set();
+  const resolved = blocks.map((b) => {
+    const units = files.filter((f) => matchesBlock(f, b.match));
+    units.forEach((u) => matched.add(u.storyId));
+    units.sort((a, b2) => a.storyId.localeCompare(b2.storyId, undefined, { numeric: true }));
     return {
-      id: code,
-      code,
-      label: meta.label || `${code} 系列`,
-      description: meta.description || '',
-      accent: meta.accent || palette.accent,
-      units: groups.get(code),
+      id: b.id || b.code,
+      code: b.code || b.id,
+      title: b.title || b.code || b.id,
+      subtitle: b.subtitle || '',
+      description: b.description || '',
+      accent: b.accent || palette.accent,
+      units,
     };
   });
+  const leftover = files.filter((f) => !matched.has(f.storyId));
+  if (leftover.length > 0) {
+    leftover.sort((a, b) => a.storyId.localeCompare(b.storyId, undefined, { numeric: true }));
+    resolved.push({
+      id: 'other', code: '其他', title: '其他單元', subtitle: '', description: '尚未歸入章節的素材。',
+      accent: palette.muted, units: leftover,
+    });
+  }
+  return resolved.filter((b) => b.units.length > 0);
 }
 
 const STRIPE_BG_DARK = 'repeating-linear-gradient(135deg, #2a2a22 0 8px, #1f1f18 8px 16px)';
 
-// ─── Generate Channel Page (magazine-feature layout) ─────────
+// ─── Generate Channel Page — Magazine Feature layout ─────────
+// Opt-in via `channel.feature.layout === 'magazine'`.
 // Unified with the index almanac design — same fonts, paper palette, borders.
 // Layout (see creator-hub/docs/channel-feature-spec.md):
-//   topnav → slim hero → intro → pull quote → sub-series directory
-//   → sub-series section × N (unit grid) → colophon, + sticky scrollspy rail.
-function generateChannelPage(channel, files) {
+//   topnav → slim hero → intro → pull quote → chapter directory
+//   → block section × N (unit grid) → colophon, + sticky scrollspy rail.
+function generateChannelPageFeature(channel, files) {
   const palette = CHANNEL_PALETTE[channel.season] || CHANNEL_PALETTE.spring;
   const feature = channel.feature || {};
 
-  // Use storyId sort by default for readable sub-series grouping; keep ancient-myths curriculum order as a special case below.
-  const sortMode = (channel.sort === 'modifiedTime') ? 'modifiedTime' : 'storyId';
-  let subSeries = detectSubSeries(files, feature, palette, sortMode);
+  let blocks = resolveBlocks(files, feature, palette);
 
-  // ancient-myths: preserve curriculum order within the AM+TW interleaved sub-series view.
+  // ancient-myths: preserve curriculum order within each block (interludes interleaved by position).
   if (channel.id === 'ancient-myths') {
-    subSeries = subSeries.map(ss => ({
-      ...ss,
-      units: [...ss.units].sort((a, b) => getCurriculumPosition(a.storyId) - getCurriculumPosition(b.storyId)),
+    blocks = blocks.map(b => ({
+      ...b,
+      units: [...b.units].sort((a, c) => getCurriculumPosition(a.storyId) - getCurriculumPosition(c.storyId)),
     }));
   }
 
-  const totalUnits = subSeries.reduce((n, ss) => n + ss.units.length, 0);
+  const totalUnits = blocks.reduce((n, b) => n + b.units.length, 0);
   const prefixCode = (channel.prefix || 'MISC').toUpperCase();
   const titleEn = feature.titleEn || '';
   const tagline = feature.tagline || channel.description || '';
@@ -591,22 +606,21 @@ function generateChannelPage(channel, files) {
     grade,
     seasonLabel,
     `共 ${totalUnits} 單元`,
-    `${subSeries.length} 分部`,
+    `${blocks.length} 章節`,
   ].filter(Boolean).join(' · ');
 
   const introLead = (feature.intro && feature.intro.lead) || `《${channel.name}》系列索引。`;
   const introBody = (feature.intro && feature.intro.body) || channel.description || '';
   const pullQuote = feature.pullQuote || '';
 
-
-  // ─ Sub-series directory (TOC) ─
-  const directoryHtml = subSeries.map((ss, i) => `
-      <a class="toc-item" href="#sub-${esc(ss.id)}" style="--accent:${esc(ss.accent)}">
+  // ─ Chapter directory (TOC) ─
+  const directoryHtml = blocks.map((b, i) => `
+      <a class="toc-item" href="#block-${esc(b.id)}" style="--accent:${esc(b.accent)}">
         <div class="toc-num">${String(i + 1).padStart(2, '0')}.</div>
         <div class="toc-body">
-          <div class="toc-label">${esc(ss.label)}</div>
-          <div class="toc-title">${esc(ss.label)}</div>
-          <div class="toc-meta">${ss.units.length} 單元 · ${esc(ss.code)}-01 → ${esc(ss.code)}-${String(ss.units.length).padStart(2, '0')}</div>
+          <div class="toc-label">${esc(b.code)}${b.subtitle ? ' · ' + esc(b.subtitle) : ''}</div>
+          <div class="toc-title">${esc(b.title)}</div>
+          <div class="toc-meta">${b.units.length} 單元</div>
         </div>
       </a>`).join('\n');
 
@@ -638,26 +652,26 @@ function generateChannelPage(channel, files) {
         </a>`;
   }
 
-  // ─ Each sub-series section ─
-  const sectionsHtml = subSeries.map((ss) => `
-      <section id="sub-${esc(ss.id)}" class="sub-section" style="--accent:${esc(ss.accent)}">
+  // ─ Each block section ─
+  const sectionsHtml = blocks.map((b) => `
+      <section id="block-${esc(b.id)}" class="sub-section" style="--accent:${esc(b.accent)}">
         <header class="sub-header">
           <div class="sub-info">
-            <div class="sub-label">${esc(ss.label)} · ${ss.units.length} 單元</div>
-            <h2 class="sub-title">${esc(ss.label)}</h2>
-            ${ss.description ? `<p class="sub-desc">${esc(ss.description)}</p>` : ''}
+            <div class="sub-label">${esc(b.code)}${b.subtitle ? ' · ' + esc(b.subtitle) : ''} · ${b.units.length} 單元</div>
+            <h2 class="sub-title">${esc(b.title)}</h2>
+            ${b.description ? `<p class="sub-desc">${esc(b.description)}</p>` : ''}
           </div>
-          <div class="sub-bigcode">${esc(ss.code)}</div>
+          <div class="sub-bigcode">${esc(b.code)}</div>
         </header>
         <div class="unit-grid">
-          ${ss.units.map((u, i) => unitCardHtml(u, ss.accent, i)).join('')}
+          ${b.units.map((u, i) => unitCardHtml(u, b.accent, i)).join('')}
         </div>
       </section>`).join('\n');
 
   // ─ Scrollspy rail ─
   const railLinksHtml = [
     `<a class="rail-link" href="#intro" data-spy="intro">序</a>`,
-    ...subSeries.map((ss, i) => `<a class="rail-link" href="#sub-${esc(ss.id)}" data-spy="sub-${esc(ss.id)}" style="--accent:${esc(ss.accent)}">${String(i + 1).padStart(2, '0')}. ${esc(ss.label)}</a>`),
+    ...blocks.map((b, i) => `<a class="rail-link" href="#block-${esc(b.id)}" data-spy="block-${esc(b.id)}" style="--accent:${esc(b.accent)}">${String(i + 1).padStart(2, '0')}. ${esc(b.title)}</a>`),
   ].join('\n      ');
 
   return `<!DOCTYPE html>
@@ -1033,6 +1047,104 @@ ${sectionsHtml}
 </script>
 </body>
 </html>`;
+}
+
+// ─── Generate Channel Page — Legacy (gradient YouTube-card layout) ─
+// Used by channels that haven't opted into the Magazine Feature layout.
+// Kept verbatim from the previous design (pre-2026-04-18 redesign).
+function generateChannelPageLegacy(channel, files) {
+  const s = SEASON_CSS[channel.season];
+  let sorted;
+  if (channel.id === 'ancient-myths') {
+    sorted = [...files].sort((a, b) => getCurriculumPosition(b.storyId) - getCurriculumPosition(a.storyId));
+  } else if (channel.sort === 'storyId') {
+    sorted = [...files].sort((a, b) => a.storyId.localeCompare(b.storyId, undefined, { numeric: true }));
+  } else {
+    sorted = [...files].sort((a, b) => (b.modifiedTime || '').localeCompare(a.modifiedTime || ''));
+  }
+
+  _placeholderIdx = 0;
+
+  const storyCards = sorted.map(file => {
+    const hasThumb = thumbExists(file.storyId);
+    const hasHtml = storyHtmlExists(file.storyId);
+    const placeholderFile = nextWatercolorPlaceholder();
+    const href = hasHtml ? storyUrl(file.storyId) : `https://drive.google.com/file/d/${file.fileId}/view`;
+    const target = hasHtml ? '' : ' target="_blank" rel="noopener"';
+    return `
+    <a href="${href}"${target} class="card-hover block rounded-xl overflow-hidden bg-white shadow-sm">
+      <div class="relative aspect-[16/10] overflow-hidden">
+        ${hasThumb
+          ? `<img src="../thumbnails/${file.storyId}.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>`
+          : `<img src="../thumbnails/${placeholderFile}" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy"/>`}
+        <div class="thumb-overlay absolute inset-0"></div>
+        <div class="absolute top-2.5 left-2.5"><span class="bg-[${s.primary}] text-white text-xs font-label font-semibold px-2 py-0.5 rounded">${esc(file.storyId)}</span></div>
+      </div>
+      <div class="p-4">
+        <h3 class="font-headline text-base font-bold leading-snug mb-1" style="color:${s.onSurface}">${esc(file.title)}</h3>
+        <p class="text-xs" style="color:${s.onSurfaceVariant}">${formatSize(file.size)}</p>
+      </div>
+    </a>`;
+  }).join('\n');
+
+  const prefix = channel.prefix ? channel.prefix.toUpperCase() + '-Series' : 'Collection';
+
+  return `<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+${HTML_HEAD}
+<title>${esc(channel.name)} \u2014 WaldorfCreatorHubDatabase</title>
+<style>
+:root{--primary:${s.primary};--secondary:${s.secondary};--bg-wash-1:${s.bgWash1};--bg-wash-2:${s.bgWash2};--bg-wash-3:${s.bgWash3};--on-surface:${s.onSurface};--on-surface-variant:${s.onSurfaceVariant};--outline-variant:${s.outlineVariant}}
+body{background:${s.bodyGradient};min-height:100vh}
+${SHARED_CSS}
+</style>
+</head>
+<body class="font-body" style="color:${s.onSurface}">
+<header class="relative overflow-hidden">
+  <div class="watercolor-wash-header px-6 py-12 md:py-16" style="background:${s.gradient}">
+    <div class="max-w-5xl mx-auto relative z-10">
+      <a href="../index.html" class="inline-flex items-center gap-1.5 text-white/60 hover:text-white/90 text-sm font-label mb-6 transition-colors">
+        <span class="material-symbols-outlined" style="font-size:1.2rem">arrow_back</span>All Channels</a>
+      <div class="flex items-center gap-4 mb-3">
+        <span class="material-symbols-outlined text-white/80" style="font-size:2.5rem">${channel.icon}</span>
+        <div>
+          <h1 class="font-headline text-3xl md:text-5xl text-white font-bold italic leading-tight">${esc(channel.name)}</h1>
+          <p class="text-white/60 font-label text-sm tracking-[0.15em] uppercase mt-1">${prefix} &middot; ${files.length} Stories</p>
+        </div>
+      </div>
+      <p class="text-white/70 font-body text-base max-w-2xl leading-relaxed mt-4">${esc(channel.description)}</p>
+    </div>
+  </div>
+  <div class="h-6 bg-gradient-to-b from-[${s.secondary}]/10 to-transparent"></div>
+</header>
+<main class="max-w-6xl mx-auto px-4 md:px-8 py-8">
+  <div class="flex items-center justify-between mb-6">
+    <p class="text-sm font-label" style="color:${s.onSurfaceVariant}"><span class="font-semibold">${files.length}</span> stories &middot; ${channel.sort === 'storyId' || channel.id === 'ancient-myths' ? 'curriculum order' : 'latest first'}</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+${storyCards}
+  </div>
+</main>
+<footer style="background:${s.bgWash1}" class="border-t py-8 mt-8" style="border-color:${s.outlineVariant}30">
+  <div class="max-w-4xl mx-auto flex flex-col items-center gap-3 px-6 text-center">
+    <a href="../index.html" class="inline-flex items-center gap-1.5 text-sm font-label transition-colors" style="color:${s.primary}">
+      <span class="material-symbols-outlined" style="font-size:1.2rem">arrow_back</span>Back to All Channels</a>
+    <p class="font-headline italic text-lg" style="color:${s.primary}">\u5b9c\u862d\u6148\u5fc3\u83ef\u5fb7\u798f\u5be6\u9a57\u5b78\u6821</p>
+    <p class="text-xs tracking-widest uppercase" style="color:${s.secondary}">Powered by TeacherOS &middot; Updated Daily</p>
+  </div>
+</footer>
+</body>
+</html>`;
+}
+
+// ─── Dispatcher ───────────────────────────────────────────────
+// Picks Magazine Feature layout when opted-in via feature.layout, else Legacy.
+function generateChannelPage(channel, files) {
+  if (channel.feature && channel.feature.layout === 'magazine') {
+    return generateChannelPageFeature(channel, files);
+  }
+  return generateChannelPageLegacy(channel, files);
 }
 
 // ─── Deploy Manifest ─────────────────────────────────────────
