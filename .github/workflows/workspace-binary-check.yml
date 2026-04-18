@@ -53,7 +53,7 @@ jobs:
                   break
                 fi
               done
-            done < <(git ls-files -- "$ws_dir")
+            done < <(git -c core.quotepath=false ls-files -- "$ws_dir")
 
             if [ "$count" -gt "$THRESHOLD" ]; then
               ALERTS="${ALERTS}WORKSPACE=${ws_name} COUNT=${count}\n"

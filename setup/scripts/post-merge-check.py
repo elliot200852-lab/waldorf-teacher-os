@@ -65,7 +65,8 @@ def get_orig_head(repo_root: Path) -> str:
 def has_goodnotes_changes(repo_root: Path, orig_head: str) -> bool:
     """快速檢查 Good-notes/ 是否有變動。"""
     result = subprocess.run(
-        ["git", "diff", "--name-only", f"{orig_head}..HEAD", "--", "Good-notes/"],
+        ["git", "-c", "core.quotepath=false", "diff", "--name-only",
+         f"{orig_head}..HEAD", "--", "Good-notes/"],
         capture_output=True, text=True, cwd=str(repo_root)
     )
     if result.returncode != 0:

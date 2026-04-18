@@ -38,12 +38,15 @@ jobs:
         run: pip install pyyaml
 
       - name: Validate changed YAML files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           EXIT_CODE=0
 
           # Get changed yaml files (push or PR)
+          # 一律走 GitHub API 或加 core.quotepath=false，避免中文檔名 C-escape
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            FILES=$(gh pr diff ${{ github.event.pull_request.number }} --name-only | grep -E '\.ya?ml$' | grep -v '.github/workflows/' || true)
+            FILES=$(gh api --paginate "repos/${GITHUB_REPOSITORY}/pulls/${{ github.event.pull_request.number }}/files" --jq '.[].filename' | grep -E '\.ya?ml$' | grep -v '.github/workflows/' || true)
           else
             FILES=$(git -c core.quotepath=false diff --name-only HEAD~1 HEAD -- '*.yaml' '*.yml' | grep -v '.github/workflows/' || true)
           fi
@@ -151,5 +154,3 @@ jobs:
           fi
 
           exit $EXIT_CODE
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

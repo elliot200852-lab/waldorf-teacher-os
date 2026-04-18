@@ -16,8 +16,8 @@ ACL_EXIT=$?
 # ── HOME.md 自動收錄攔截（所有角色，含 admin）──────────────
 # 防止 AI 在收工時自動將「（自動收錄）」條目塞入 HOME.md。
 # 即使 ACL 檢查通過，此檢查仍會攔截。
-if git diff --cached --name-only | grep -q "^HOME\.md$"; then
-    if git diff --cached -- HOME.md | grep "^+" | grep -q "（自動收錄）"; then
+if git -c core.quotepath=false diff --cached --name-only | grep -q "^HOME\.md$"; then
+    if git -c core.quotepath=false diff --cached -- HOME.md | grep "^+" | grep -q "（自動收錄）"; then
         echo ""
         echo "\033[0;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo "\033[0;31m  [攔截] HOME.md 含有「（自動收錄）」條目\033[0m"

@@ -33,7 +33,7 @@ jobs:
           echo "" >> report.md
 
           # 1. Repo total size (tracked files)
-          TOTAL_SIZE=$(git ls-files -z | xargs -0 du -ch 2>/dev/null | tail -1 | cut -f1)
+          TOTAL_SIZE=$(git -c core.quotepath=false ls-files -z | xargs -0 du -ch 2>/dev/null | tail -1 | cut -f1)
           echo "### 1. Repo 總大小" >> report.md
           echo "" >> report.md
           echo "已追蹤檔案總計：**${TOTAL_SIZE}**" >> report.md
@@ -50,8 +50,8 @@ jobs:
             ws_name=$(basename "$ws_dir")
             [ "$ws_name" = "_template" ] && continue
 
-            ws_size=$(git ls-files -z -- "$ws_dir" | xargs -0 du -ch 2>/dev/null | tail -1 | cut -f1)
-            ws_count=$(git ls-files -- "$ws_dir" | wc -l | xargs)
+            ws_size=$(git -c core.quotepath=false ls-files -z -- "$ws_dir" | xargs -0 du -ch 2>/dev/null | tail -1 | cut -f1)
+            ws_count=$(git -c core.quotepath=false ls-files -- "$ws_dir" | wc -l | xargs)
             echo "| ${ws_name} | ${ws_size} | ${ws_count} |" >> report.md
           done
           echo "" >> report.md
@@ -62,7 +62,7 @@ jobs:
           echo "| 大小 | 檔案 |" >> report.md
           echo "|------|------|" >> report.md
 
-          git ls-files -z | xargs -0 du -b 2>/dev/null | sort -rn | head -10 | while read size filepath; do
+          git -c core.quotepath=false ls-files -z | xargs -0 du -b 2>/dev/null | sort -rn | head -10 | while read size filepath; do
             human_size=$(numfmt --to=iec-i --suffix=B "$size" 2>/dev/null || echo "${size}B")
             echo "| ${human_size} | \`${filepath}\` |" >> report.md
           done
@@ -92,7 +92,7 @@ jobs:
                   break
                 fi
               done
-            done < <(git ls-files -- "$ws_dir")
+            done < <(git -c core.quotepath=false ls-files -- "$ws_dir")
 
             if [ "$bin_count" -gt 10 ]; then
               status="⚠️ 超標"
@@ -111,7 +111,7 @@ jobs:
           echo "| 類型 | 數量 |" >> report.md
           echo "|------|------|" >> report.md
 
-          git ls-files | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -15 | while read count ext; do
+          git -c core.quotepath=false ls-files | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -15 | while read count ext; do
             echo "| .${ext} | ${count} |" >> report.md
           done
           echo "" >> report.md
