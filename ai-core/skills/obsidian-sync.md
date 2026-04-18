@@ -31,17 +31,35 @@ python3 setup/scripts/map-validate.py --validate
 - 若有 **backward warnings**（目錄未覆蓋）：自動執行 `python3 setup/scripts/map-validate.py --rebuild-dirs`
 - 若 地圖檔不存在：跳過此步驟（graceful 退化，obsidian-check.py 會自動退化為無建議模式）
 
-### Step 1 — 執行偵測腳本（地圖驅動過濾模式）
+### Step 1 — 執行偵測腳本（地圖驅動過濾 + 身份 scope）
+
+**身份 scope 原則（v2.0 分支模型）：**
+obsidian-sync 只改執行者能 commit 的檔案範圍。HOME.md 收錄（NOT_IN_HOME）不受 scope 限制，因為只動 HOME.md 本身；但 aliases / frontmatter / wikilinks 的寫入必須局限在執行者 workspace 內，不跨線污染其他老師的檔案。
+
+**scope 決策：**
+
+| 身份 | 執行指令 |
+|------|---------|
+| admin（David） | `--exclude-scope="workspaces/Working_Member/Teacher_*"` — 掃全 repo，排除其他老師 workspace |
+| 老師 | `--write-scope="workspaces/Working_Member/Teacher_{姓名}"` — 只動自己 workspace |
+
+從 `ai-core/acl.yaml` 取得當前使用者的 workspace 路徑，轉成對應的 scope 參數。
+
+**執行：**
 
 ```bash
-python3 setup/scripts/obsidian-check.py --map-filter
+# David（admin）
+python3 setup/scripts/obsidian-check.py --map-filter --exclude-scope="workspaces/Working_Member/Teacher_*"
+
+# 老師（以 {姓名} 代入）
+python3 setup/scripts/obsidian-check.py --map-filter --write-scope="workspaces/Working_Member/Teacher_{姓名}"
 ```
 
 解析輸出，取得分類清單：
-- `UNLABELED_MD` — 缺少 `aliases:` frontmatter 的 .md 檔
-- `UNLABELED_YAML` — 前 5 行無中文字元的 .yaml 檔
-- `ROUTED` — 未收錄 HOME.md，但地圖有匹配路由（AI 可自動歸類）
-- `UNROUTED` — 未收錄 HOME.md，且地圖無匹配路由（需教師決定）
+- `UNLABELED_MD` — 缺少 `aliases:` frontmatter 的 .md 檔（已過 scope 過濾）
+- `UNLABELED_YAML` — 前 5 行無中文字元的 .yaml 檔（已過 scope 過濾）
+- `ROUTED` — 未收錄 HOME.md，但地圖有匹配路由（全 repo，不過濾）
+- `UNROUTED` — 未收錄 HOME.md，且地圖無匹配路由（全 repo，不過濾）
 
 輸出格式：
 - `FILE:NOT_IN_HOME:path|section` — 有路由（ROUTED）
@@ -51,8 +69,14 @@ python3 setup/scripts/obsidian-check.py --map-filter
 
 ### Step 1.5 — 連結完整性檢查（wikilink）
 
+連結檢查同樣套用身份 scope：
+
 ```bash
-python3 setup/scripts/obsidian-check.py --link-check --skip-home-check --count-only
+# David
+python3 setup/scripts/obsidian-check.py --link-check --skip-home-check --count-only --exclude-scope="workspaces/Working_Member/Teacher_*"
+
+# 老師
+python3 setup/scripts/obsidian-check.py --link-check --skip-home-check --count-only --write-scope="workspaces/Working_Member/Teacher_{姓名}"
 ```
 
 解析輸出中的 `LINK_ORPHAN` 數量。
@@ -61,7 +85,8 @@ python3 setup/scripts/obsidian-check.py --link-check --skip-home-check --count-o
 - 若大於 0：執行完整掃描取得清單
 
 ```bash
-python3 setup/scripts/obsidian-check.py --link-check --skip-home-check
+# 帶上與 Step 1 相同的 scope 參數
+python3 setup/scripts/obsidian-check.py --link-check --skip-home-check <scope flag>
 ```
 
 解析 `FILE:LINK_ORPHAN:path|type|missing:what` 清單，向教師報告：

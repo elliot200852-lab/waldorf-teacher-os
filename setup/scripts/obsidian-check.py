@@ -12,7 +12,12 @@ TeacherOS Obsidian Label Checker
     python3 obsidian-check.py --map-filter       # 地圖驅動過濾：無路由的檔案報告為 UNROUTED
     python3 obsidian-check.py --auto-fix         # 自動將有格式建議的條目寫入 HOME.md
     python3 obsidian-check.py --link-check       # 掃描缺少 related: 或 ## 連結 的 .md 檔
+    python3 obsidian-check.py --write-scope=PATHS   # 只輸出寫入目標在 PATHS 範圍內的 UNLABELED_MD / UNLABELED_YAML / LINK_ORPHAN（逗號分隔，路徑相對 repo 根目錄）
+    python3 obsidian-check.py --exclude-scope=PATHS # 從寫入清單排除這些路徑（逗號分隔；write-scope 套用後再套 exclude）
     python3 obsidian-check.py --self-test        # 內建自測（驗證 file_in_home 比對邏輯）
+
+說明：--write-scope / --exclude-scope 只過濾「AI 會寫入的檔案類別」（UNLABELED_MD / UNLABELED_YAML / LINK_ORPHAN）。
+NOT_IN_HOME / ROUTED / UNROUTED 不受影響，因為這些類別只改 HOME.md 本身，不動來源檔案。
 
 不依賴外部套件，只使用 Python 標準函式庫。
 """
@@ -438,6 +443,56 @@ def is_excluded(filepath):
     return False
 
 
+def parse_scope_arg(argv, flag_prefix):
+    """解析 --write-scope=a,b,c 或 --exclude-scope=a,b,c，回傳路徑清單（已正規化）。
+    flag_prefix 不含 =。"""
+    paths = []
+    for arg in argv:
+        if arg.startswith(flag_prefix + "="):
+            value = arg.split("=", 1)[1]
+            for p in value.split(","):
+                p = p.strip()
+                if not p:
+                    continue
+                # 正規化：去尾 slash、POSIX 分隔（與 git 追蹤路徑一致）
+                p = p.replace(os.sep, "/").rstrip("/")
+                paths.append(p)
+    return paths
+
+
+def in_write_scope(filepath, includes, excludes):
+    """判斷檔案是否在 AI 可寫入的範圍內。
+    includes 為空 → 視同全 repo；否則必須至少匹配一個 include。
+    匹配後再檢查 excludes（任何命中 → 排除）。
+    匹配規則：
+      - 含 `*` → fnmatch glob 比對（例：`workspaces/Working_Member/Teacher_*` 匹配所有教師 workspace）
+      - 不含 `*` → 目錄 prefix（`dir/` 當作前綴）或完整檔案路徑"""
+    import fnmatch as _fnmatch
+
+    def matches(fp, pattern):
+        if "*" in pattern:
+            # glob：對 pattern 本身與 pattern/** 都比對（覆蓋目錄底下的遞迴匹配）
+            if _fnmatch.fnmatch(fp, pattern):
+                return True
+            if _fnmatch.fnmatch(fp, pattern + "/*") or _fnmatch.fnmatch(fp, pattern + "/**"):
+                return True
+            # 對目錄型 glob 補一層：pattern 去掉 * 後用 prefix 比對
+            return False
+        if fp == pattern:
+            return True
+        if fp.startswith(pattern + "/"):
+            return True
+        return False
+
+    if includes:
+        if not any(matches(filepath, p) for p in includes):
+            return False
+    if excludes:
+        if any(matches(filepath, p) for p in excludes):
+            return False
+    return True
+
+
 def should_index_in_home(filepath):
     """判斷檔案是否應該被索引到 HOME.md（只有 .md/.yaml/.yml 且不在排除路徑中）"""
     import fnmatch as _fnmatch
@@ -709,6 +764,11 @@ def main():
     auto_fix = "--auto-fix" in sys.argv
     link_check = "--link-check" in sys.argv
 
+    # 寫入範圍過濾：只影響 UNLABELED_MD / UNLABELED_YAML / LINK_ORPHAN
+    # NOT_IN_HOME / ROUTED / UNROUTED 不過濾（只改 HOME.md 本身）
+    write_scope_includes = parse_scope_arg(sys.argv, "--write-scope")
+    write_scope_excludes = parse_scope_arg(sys.argv, "--exclude-scope")
+
     # 取得檔案清單
     if staged_only:
         files = get_staged_new_files()
@@ -740,19 +800,21 @@ def main():
 
         ext = os.path.splitext(filepath)[1].lower()
 
+        in_scope = in_write_scope(filepath, write_scope_includes, write_scope_excludes)
+
         if ext == ".md":
-            if md_needs_alias(filepath):
+            if in_scope and md_needs_alias(filepath):
                 unlabeled_md.append(filepath)
             if not skip_home_check and should_index_in_home(filepath) and not file_in_home(filepath, home_content):
                 not_in_home.append(filepath)
-            if link_check:
+            if link_check and in_scope:
                 result = check_links(filepath)
                 if result:
                     mr, mb, label = result
                     link_orphans.append((filepath, mr, mb, label))
 
         elif ext == ".yaml" or ext == ".yml":
-            if yaml_needs_label(filepath):
+            if in_scope and yaml_needs_label(filepath):
                 unlabeled_yaml.append(filepath)
             if not skip_home_check and should_index_in_home(filepath) and not file_in_home(filepath, home_content):
                 not_in_home.append(filepath)
